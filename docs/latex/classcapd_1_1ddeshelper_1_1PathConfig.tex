@@ -1,0 +1,85 @@
+\hypertarget{classcapd_1_1ddeshelper_1_1PathConfig}{}\doxysection{capd\+::ddeshelper\+::Path\+Config Class Reference}
+\label{classcapd_1_1ddeshelper_1_1PathConfig}\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Helper\+Common.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig_a6ba1dcaa56bac5525deb818bae5aa802}{Path\+Config}} (std\+::string dir\+Path=\char`\"{}.\char`\"{}, std\+::string prefix=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig_a5acb8a9eefd73c8c9863d530d3336514}{suffix}} (std\+::string suffix) const
+\item 
+std\+::string \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig_a2c4060b3f13ea216a933389e8c799140}{fullpath}} () const
+\item 
+std\+::string \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig_a33e7a4cc0aeb8e1fbd8015d019402a1b}{filepath}} (std\+::string name) const
+\item 
+std\+::string \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig_a32b506f121ce559b4a58eb28f3bc1930}{filename}} (std\+::string name) const
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig_ab6e7c809d090783c4123c4dab8e32887}{mkdir\+\_\+p}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_ab242a7f302a1dc720eb787224727e469}\label{classcapd_1_1ddeshelper_1_1PathConfig_ab242a7f302a1dc720eb787224727e469}} 
+std\+::string {\bfseries dirpath} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a1ca983bb0c7cb6ce7f8dc12301704b7d}\label{classcapd_1_1ddeshelper_1_1PathConfig_a1ca983bb0c7cb6ce7f8dc12301704b7d}} 
+std\+::string {\bfseries dir\+Path}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a6cf360435856be79dba31e87e928c7c5}\label{classcapd_1_1ddeshelper_1_1PathConfig_a6cf360435856be79dba31e87e928c7c5}} 
+std\+::string {\bfseries prefix}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+used in some helpers to define where the output goes. It does not check the correctness of those paths! You need to assure they are correct!
+
+dir\+Path -\/ a base directory to where the output save prefix -\/ as name says -\/ prefix of all generated files. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a6ba1dcaa56bac5525deb818bae5aa802}\label{classcapd_1_1ddeshelper_1_1PathConfig_a6ba1dcaa56bac5525deb818bae5aa802}} 
+\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}!PathConfig@{PathConfig}}
+\index{PathConfig@{PathConfig}!capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+\doxysubsubsection{\texorpdfstring{PathConfig()}{PathConfig()}}
+{\footnotesize\ttfamily capd\+::ddeshelper\+::\+Path\+Config\+::\+Path\+Config (\begin{DoxyParamCaption}\item[{std\+::string}]{dir\+Path = {\ttfamily \char`\"{}.\char`\"{}},  }\item[{std\+::string}]{prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+make a config path, default is ./ with no prefix 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a32b506f121ce559b4a58eb28f3bc1930}\label{classcapd_1_1ddeshelper_1_1PathConfig_a32b506f121ce559b4a58eb28f3bc1930}} 
+\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}!filename@{filename}}
+\index{filename@{filename}!capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+\doxysubsubsection{\texorpdfstring{filename()}{filename()}}
+{\footnotesize\ttfamily std\+::string capd\+::ddeshelper\+::\+Path\+Config\+::filename (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes just a prefixed filename (no path attached) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a33e7a4cc0aeb8e1fbd8015d019402a1b}\label{classcapd_1_1ddeshelper_1_1PathConfig_a33e7a4cc0aeb8e1fbd8015d019402a1b}} 
+\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}!filepath@{filepath}}
+\index{filepath@{filepath}!capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+\doxysubsubsection{\texorpdfstring{filepath()}{filepath()}}
+{\footnotesize\ttfamily std\+::string capd\+::ddeshelper\+::\+Path\+Config\+::filepath (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a new prefixed filepath for a given filename \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a2c4060b3f13ea216a933389e8c799140}\label{classcapd_1_1ddeshelper_1_1PathConfig_a2c4060b3f13ea216a933389e8c799140}} 
+\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}!fullpath@{fullpath}}
+\index{fullpath@{fullpath}!capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+\doxysubsubsection{\texorpdfstring{fullpath()}{fullpath()}}
+{\footnotesize\ttfamily std\+::string capd\+::ddeshelper\+::\+Path\+Config\+::fullpath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+dirpath with prefix \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_ab6e7c809d090783c4123c4dab8e32887}\label{classcapd_1_1ddeshelper_1_1PathConfig_ab6e7c809d090783c4123c4dab8e32887}} 
+\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}!mkdir\_p@{mkdir\_p}}
+\index{mkdir\_p@{mkdir\_p}!capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+\doxysubsubsection{\texorpdfstring{mkdir\_p()}{mkdir\_p()}}
+{\footnotesize\ttfamily void capd\+::ddeshelper\+::\+Path\+Config\+::mkdir\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+assure there is really this folder -\/ not very safe!!! \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1PathConfig_a5acb8a9eefd73c8c9863d530d3336514}\label{classcapd_1_1ddeshelper_1_1PathConfig_a5acb8a9eefd73c8c9863d530d3336514}} 
+\index{capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}!suffix@{suffix}}
+\index{suffix@{suffix}!capd::ddeshelper::PathConfig@{capd::ddeshelper::PathConfig}}
+\doxysubsubsection{\texorpdfstring{suffix()}{suffix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} capd\+::ddeshelper\+::\+Path\+Config\+::suffix (\begin{DoxyParamCaption}\item[{std\+::string}]{suffix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+make a new Path\+Confix with a longer prefix \+: \char`\"{}prefix-\/suffix\char`\"{} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddeshelper/D\+D\+E\+Helper\+Common.\+h\end{DoxyCompactItemize}

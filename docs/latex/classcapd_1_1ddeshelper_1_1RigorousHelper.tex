@@ -1,0 +1,418 @@
+\hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper}{}\doxysection{capd\+::ddeshelper\+::Rigorous\+Helper$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddeshelper_1_1RigorousHelper}\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Helper\+Rigorous.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a5e1054a98f769a4f9ae50fe8b2d99928}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a5e1054a98f769a4f9ae50fe8b2d99928}} 
+typedef Eq\+Spec {\bfseries Eq}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a1ebf4b5fdd408d6433ce6dcab6116d0c}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a1ebf4b5fdd408d6433ce6dcab6116d0c}} 
+typedef Eq\+::\+Param\+Type {\bfseries Param\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ace28e9a1d4cab7dcf33898fa8e073195}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ace28e9a1d4cab7dcf33898fa8e073195}} 
+typedef Vector\+Spec {\bfseries Vector}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a4c672c74e87090eefe9b8217e3c07afd}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a4c672c74e87090eefe9b8217e3c07afd}} 
+typedef Matrix\+Spec {\bfseries Matrix}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aaeb4e71c139f66b8fb6425b7d6b38fe2}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aaeb4e71c139f66b8fb6425b7d6b38fe2}} 
+typedef Matrix\+::\+Scalar\+Type {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ad4ce5c3f56f8ac824d4026c9bed185cb}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ad4ce5c3f56f8ac824d4026c9bed185cb}} 
+typedef Matrix\+::\+Scalar\+Type {\bfseries Real}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a1314c06dca45cefef2f6086ec550502c}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a1314c06dca45cefef2f6086ec550502c}} 
+typedef capd\+::vectalg\+::\+Vector$<$ Param\+Type, 0 $>$ {\bfseries Params\+Vector}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a9b9539aa2ffaf64852cc55f2e3c3f023}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a9b9539aa2ffaf64852cc55f2e3c3f023}} 
+typedef Policies\+Spec {\bfseries Policies}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a59b1d4c2cb646c4ea967ece2b5d499fc}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a59b1d4c2cb646c4ea967ece2b5d499fc}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1SharedDoubleton}{capd\+::ddes\+::\+Shared\+Doubleton}}$<$ Matrix, Policies $>$ {\bfseries Set\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aa360be363ee20c34b505b9920b8d1bc0}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aa360be363ee20c34b505b9920b8d1bc0}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1SharedDoubleton}{Set\+Type}} $>$ {\bfseries Solution}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_acc03be826abf99b0c1d9c88730fc1b21}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_acc03be826abf99b0c1d9c88730fc1b21}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Solution\+::\+Grid\+Type}} {\bfseries Grid}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ac8cdd957374e4ee6e679856e1cd79520}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ac8cdd957374e4ee6e679856e1cd79520}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Solution\+::\+Time\+Point\+Type}} {\bfseries Time\+Point}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a40167239fb95cf2b44eee785f5aef7a5}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a40167239fb95cf2b44eee785f5aef7a5}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Solution\+::\+Curve\+Piece\+Type}} {\bfseries Curve\+Piece}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a65693e4aa2083bdedb50c91a77e4672e}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a65693e4aa2083bdedb50c91a77e4672e}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{capd\+::ddes\+::\+Discrete\+Delays\+Functional\+Map}}$<$ Eq, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} $>$ {\bfseries D\+D\+Eq}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a6742acd6dc8bb335bcddad3e069c721d}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a6742acd6dc8bb335bcddad3e069c721d}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDETaylorSolver}{capd\+::ddes\+::\+D\+D\+E\+Taylor\+Solver}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{D\+D\+Eq}} $>$ {\bfseries Solver}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ae015aabd180153ab8b0be0a0cc5ad58d}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ae015aabd180153ab8b0be0a0cc5ad58d}} 
+typedef Solver\+::\+Variable\+Storage\+Type {\bfseries Variables}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aaf3ac6bc4754fb85219829aa4dcea1ae}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aaf3ac6bc4754fb85219829aa4dcea1ae}} 
+typedef Solver\+::\+Jacobian\+Storage\+Type {\bfseries Jacobians}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a62a13c2c71157ac8d173b17b8bf1c96d}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a62a13c2c71157ac8d173b17b8bf1c96d}} 
+typedef Solver\+::\+Value\+Storage\+Type {\bfseries Values}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_adba6d75b56793555993169620559fdad}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_adba6d75b56793555993169620559fdad}} 
+typedef Solver\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aae50360ec4fbbc4d27181bef6ae0add4}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aae50360ec4fbbc4d27181bef6ae0add4}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} $>$ {\bfseries Section}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a267a73b7495ad499754fcef3b83be8e7}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a267a73b7495ad499754fcef3b83be8e7}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Section\+::\+Jet\+Type}} {\bfseries Section\+Jet}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a29dd73ef0f2758260f816d9dcaa2bab7}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a29dd73ef0f2758260f816d9dcaa2bab7}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDETaylorSolver}{Solver}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Section}} $>$ {\bfseries Poincare\+Map}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a3fc3b565633f469e8c9788b46269fb3b}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a3fc3b565633f469e8c9788b46269fb3b}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1DDECompareHelper}{D\+D\+E\+Compare\+Helper}}$<$ Vector $>$ {\bfseries Comparator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a63bc59cad499af889234853f58099c56}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a63bc59cad499af889234853f58099c56}} 
+{\bfseries Rigorous\+Helper} (std\+::string filepath, int req\+Steps=0, int max\+Steps=0, int max\+Order=10)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a57c6e86d9fa88cecea5e496b61a1989a}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a57c6e86d9fa88cecea5e496b61a1989a}} 
+{\bfseries Rigorous\+Helper} (int p, int n, Params\+Vector const \&params, int req\+Steps=0, int max\+Steps=0, int max\+Order=10)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a7aeb8d631ce2815dbb18da789a1a48f0}{data\+To\+Solution}} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&coords, Vector dx, Vector r0, Vector Xi) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_adba91cc113a8ae9ae5fc5a1acdef005f}{data\+To\+Solution}} (Vector dx, Vector r0, Vector Xi) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a3306752b36ce9857a5c4e19d7ae546cf}{constant\+Initial\+Solution}} (Vector const \&vx) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a9f1eace81fe92e7a88575044cdf9ec65}{constant\+Initial\+Solution}} (Vector const \&vx, size\+\_\+type order) const
+\item 
+{\footnotesize template$<$typename Any\+Matrix\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_accb2d19afe88c17ab093d041cd7d4137}{function\+To\+Solution}} (capd\+::map\+::\+Map$<$ Any\+Matrix\+Spec $>$ f) const
+\item 
+{\footnotesize template$<$typename Any\+Matrix\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a04cbd077fc267cb828892f0ba99a61cb}{function\+To\+Solution}} (capd\+::map\+::\+Map$<$ Any\+Matrix\+Spec $>$ f, int starti) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a03e967e99abf08a9faa690c6072291ef}{r0\+To\+Solution}} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&coords, Vector r0, Vector Xi) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_ae3cf601b4cc2e2297ebe983ae7da22d2}{r0\+To\+Solution}} (Vector r0, Vector Xi) const
+\item 
+capd\+::poincare\+::\+Crossing\+Direction \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_ac5fbb3fe61edfede2ab16528a22d22f5}{detect\+Crossing\+Direction}} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ad3297fc8ade196d9bd98e7ba6279b77b}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ad3297fc8ade196d9bd98e7ba6279b77b}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDETaylorSolver}{Solver}} {\bfseries make\+Solver} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a7357bf797d94f69e6832b87df49eec61}{timemap}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \&X, const size\+\_\+type \&steps, const Real \&epsilon=0.)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aba6f4b02ca5eb1d188785b9d653a9669}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aba6f4b02ca5eb1d188785b9d653a9669}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} {\bfseries timemap} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&in\+\_\+coords, Vector const \&dx, Vector const \&r0, Vector const \&Xi, const size\+\_\+type \&steps, const Real \&epsilon, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&out\+\_\+coords, Vector \&Tdx, Vector \&Tr0, Vector \&T\+Xi)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ab81bcba83bf54719bb154bd2bc1fc70f}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ab81bcba83bf54719bb154bd2bc1fc70f}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} {\bfseries timemap} (Vector const \&dx, Vector const \&r0, Vector const \&Xi, const size\+\_\+type \&steps, const Real \&epsilon, Vector \&Tdx, Vector \&Tr0, Vector \&T\+Xi)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a21dd210f960d2c25814fd8b61a4bca7a}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Section}} section, capd\+::poincare\+::\+Crossing\+Direction crossing\+\_\+direction, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} const \&X, Real \&reach\+Time, size\+\_\+type \&steps, Real \&epsilon, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \&PX)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a6b850950d9863f2a49692bfa9325cb9a}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Section}} section, capd\+::poincare\+::\+Crossing\+Direction crossing\+\_\+direction, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} const \&X, Real \&reach\+Time, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \&PX)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_af11a28695ced42dc3d0b46fa8c6452a3}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&in\+\_\+coords, Vector const \&dx, Vector const \&r0, Vector const \&Xi, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&out\+\_\+coords, Real \&reach\+Time, size\+\_\+type \&steps, Real \&epsilon, Vector \&Pdx, Vector \&Pr0, Vector \&P\+Xi)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_af2fa57d810aec8ced8520496ce3caee1}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_af2fa57d810aec8ced8520496ce3caee1}} 
+void {\bfseries to\+Coords} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} const \&PX, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&coords, Vector \&Pdx, Vector \&Pr0, Vector \&P\+Xi)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_ab4a726f807d27b56c89fb36671e73dd9}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&in\+\_\+coords, Vector const \&dx, Vector const \&r0, Vector const \&Xi, Real \&reach\+Time, Vector \&Pdx, Vector \&Pr0, Vector \&P\+Xi)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_af79b0347ed17c44656044f3c29922b50}{poincare}} (Vector const \&dx, Vector const \&r0, Vector const \&Xi, Real \&reach\+Time, Vector \&Pdx, Vector \&Pr0, Vector \&P\+Xi)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a626bbebc5a5639ef8533c1d3250f8db2}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a626bbebc5a5639ef8533c1d3250f8db2}} 
+void {\bfseries load\+Setup} (std\+::string filepath)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_afde68c309c23bbc1acefdc77ec7e28d2}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_afde68c309c23bbc1acefdc77ec7e28d2}} 
+void {\bfseries set\+Required\+Steps} (int req\+Steps, bool ensure\+\_\+long\+\_\+enough=true)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aa8e12412d9d7ea5f382933bda63cad9b}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aa8e12412d9d7ea5f382933bda63cad9b}} 
+int {\bfseries get\+Required\+Steps} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a05d9eb861cc26a7cd1ac2202db82e64c}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a05d9eb861cc26a7cd1ac2202db82e64c}} 
+void {\bfseries set\+Maximum\+Steps} (int max\+Steps, bool ensure\+\_\+long\+\_\+enough=true)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a93f6e12a9916bd481bddedccef2ee000}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a93f6e12a9916bd481bddedccef2ee000}} 
+int {\bfseries get\+Maximum\+Steps} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a1c1d62a5ab49b3d4bd2d454dccffaf44}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a1c1d62a5ab49b3d4bd2d454dccffaf44}} 
+void {\bfseries set\+Maximum\+Order} (int max\+Order)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aa980aa71733f112a4beda98f408294bc}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aa980aa71733f112a4beda98f408294bc}} 
+int {\bfseries get\+Maximum\+Order} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a3751ef988526e5203302fb1a21768a70}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a3751ef988526e5203302fb1a21768a70}} 
+Params\+Vector {\bfseries params} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a12317c83e2571e9826adb1c40d0d6503}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a12317c83e2571e9826adb1c40d0d6503}} 
+int {\bfseries M} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ab3168abec41f97df1b71070c001e01db}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ab3168abec41f97df1b71070c001e01db}} 
+int {\bfseries p} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a3492452d8dc14b239eaaf2184c9d907b}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a3492452d8dc14b239eaaf2184c9d907b}} 
+int {\bfseries n} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_abb8eb4c22719589fee3040e31ae99fbe}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_abb8eb4c22719589fee3040e31ae99fbe}} 
+int {\bfseries d} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a89790877d94d12848f4b7b4c72cd779e}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a89790877d94d12848f4b7b4c72cd779e}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point}} {\bfseries h} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a74906569c553f03d85d2a71fd5387f55}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a74906569c553f03d85d2a71fd5387f55}} 
+Real {\bfseries H} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a968f55cca13c4a5e6e4a109749f0d797}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a968f55cca13c4a5e6e4a109749f0d797}} 
+Real {\bfseries get\+Basic\+Interval\+Length} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a8e74efea7323af2bda174bcbd5541d33}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a8e74efea7323af2bda174bcbd5541d33}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point}} {\bfseries tau} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a076a62aae549c88c80e502b8438859f7}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a076a62aae549c88c80e502b8438859f7}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}} \& {\bfseries grid} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_abd989af4e4ed418a613adc9388557dad}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_abd989af4e4ed418a613adc9388557dad}} 
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}} \& {\bfseries grid} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a69e93cd3fcc009b222e8c4a7acaea10d}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a69e93cd3fcc009b222e8c4a7acaea10d}} 
+capd\+::poincare\+::\+Crossing\+Direction {\bfseries get\+Crossing\+Direction} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a7151630263ee77850c920570cd0fed6e}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a7151630263ee77850c920570cd0fed6e}} 
+void {\bfseries set\+Crossing\+Direction} (capd\+::poincare\+::\+Crossing\+Direction d)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a973e95b72327249c05868ce9a7cd559b}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a973e95b72327249c05868ce9a7cd559b}} 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} {\bfseries coords} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aa14d4ecf662efa663a705473ff21728c}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aa14d4ecf662efa663a705473ff21728c}} 
+void {\bfseries set\+Coords} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&c)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a934c86c1f4e08157482116d69cc28a52}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a934c86c1f4e08157482116d69cc28a52}} 
+Vector {\bfseries reference} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a282c2f851b7031808826c5611a085739}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a282c2f851b7031808826c5611a085739}} 
+Vector {\bfseries x0} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_abfb455383062a87773d1717d849fd463}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_abfb455383062a87773d1717d849fd463}} 
+Matrix {\bfseries C} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aa0753131db68252be01e60d0072f35cd}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aa0753131db68252be01e60d0072f35cd}} 
+Matrix {\bfseries invC} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a10c5352c92e67643a501bef9b76df7e0}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a10c5352c92e67643a501bef9b76df7e0}} 
+Vector {\bfseries section\+Vector} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a84b7158616b3005d7fa580ac03ce2b96}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a84b7158616b3005d7fa580ac03ce2b96}} 
+Scalar {\bfseries section\+Value} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a809dff6d9d7c6a30f915c611f0fcff2a}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a809dff6d9d7c6a30f915c611f0fcff2a}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Section}} {\bfseries section} ()
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_aed34d2b770bb376a123b19e6f0f8b8e6}{dump\+Data}} (std\+::ostream \&out, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&coords, Vector const \&dx, Vector const \&r0, Vector const \&Xi)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a3879e73714c3fede6cd3471b3cf35af7}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a3879e73714c3fede6cd3471b3cf35af7}} 
+void {\bfseries save\+Data} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&paths, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&coords, Vector const \&dx, Vector const \&r0, Vector const \&Xi, std\+::string extra\+Msg=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ac914dfc45dc5ad27eb456bd3008434de}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ac914dfc45dc5ad27eb456bd3008434de}} 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} {\bfseries load\+Data} (std\+::istream \&input, Vector \&dx, Vector \&r0, Vector \&Xi)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a1f014e8afd83e19d701a29c650939f4e}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a1f014e8afd83e19d701a29c650939f4e}} 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} {\bfseries load\+Data} (std\+::string filepath, Vector \&dx, Vector \&r0, Vector \&Xi)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_afdc394de75e3d63e40681417811c4a2e}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_afdc394de75e3d63e40681417811c4a2e}} 
+{\footnotesize template$<$typename SolutionT $>$ }\\void {\bfseries draw\+Solution} (std\+::string dirpath, std\+::string filename, SolutionT const \&X)
+\item 
+Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_a750838aa571ee95cd0a351bd13763ec2}{set\+Params}} (Params\+Vector const \&new\+\_\+params)
+\item 
+Param\+Type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_ae7b7a9f6e48b574caea1b2d9308f0edf}{set\+Param}} (size\+\_\+type index, Param\+Type const \&new\+\_\+param)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aed3e39ccdd69ff5c4482aadf9581a4ef}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aed3e39ccdd69ff5c4482aadf9581a4ef}} 
+static const int {\bfseries P\+A\+R\+A\+M\+S\+\_\+\+C\+O\+U\+NT} = Eq\+Spec\+::get\+Params\+Count() + delays\+Spec
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a1e21f06b157eb30d51cea9ab13114158}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a1e21f06b157eb30d51cea9ab13114158}} 
+static const int {\bfseries D\+I\+M\+E\+N\+S\+I\+ON} = Eq\+Spec\+::image\+Dimension()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Eq\+Spec, int delays\+Spec = 1, typename Matrix\+Spec = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$\newline
+class capd\+::ddeshelper\+::\+Rigorous\+Helper$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$}
+
+A helper class to facilitate programmer using capd\+D\+D\+Es. It takes the burden of {\bfseries{defining}} the final library classes from templates. Basically, the C\+A\+PD code is written in such a way that templates do not need to be tailored for specyfic equations, as R\+HS of O\+DE is given in explicit form (a string). Therefore C\+A\+PD can have ready types such as D\+Solver, D\+Poincare\+Map, etc. for the user to use right away.
+
+In capd\+D\+D\+Es we supply R\+HS as a templated class for Automatic Differentiation to work. Therefore we need to generate a code specyfic to that D\+DE. In order to do that, we need to generate code for Solver, Poincare, Section, etc. There are like 10 classes to configure in this way, but the way is usually the same each time. Therefore I have gathered this process in this helper class to simplify things for the user. Simply define a class My\+Equation (see examples for docs) then use (num\+Delays is an integer)\+: \begin{DoxyVerb}    class RigorousHelper<MyEquation, numDelays>;
+\end{DoxyVerb}
+
+
+To generate your code. You can add\+: \begin{DoxyVerb}    typedef RigorousHelper<MyEquation, numDelays> Setup;
+\end{DoxyVerb}
+
+
+And then use Setup\+::\+Solver, Setup\+::\+Poincare, Setup\+::\+Solution, etc. classes as you would do in C\+A\+PD (e.\+g. instead of I\+Ode\+Solver, I\+Poincare, etc.).
+
+The default values of the template arguments Matrix\+Spec and Vector\+Spec are tested to work with many equations, and with \textquotesingle{}complicated\textquotesingle{} functions in R\+HS, like log, exp, sin, tanh, etc. Hovewer, you can use I\+Vector and I\+Matrix to get maybe a little faster computations by using\+: \begin{DoxyVerb}typedef RigorousHelper<MyEquation, numDelays, capd::IMatrix, capd::IVector> Setup;
+class RigorousHelper<MyEquation, numDelays, capd::IMatrix, capd::IVector>;
+\end{DoxyVerb}
+
+
+but it might not work with some functions in the R\+HS. This might be corrected in the future, when C\+A\+PD resolves a problem with autodiff for capd\+::\+Interval type. The setup will definitely work for polynomial R\+HS.
+
+T\+O\+DO\+: (N\+OT U\+R\+G\+E\+NT)\+: work more on the docs below
+
+Besides, this class also allows to supply good coordinates and compute in those coordinates (also, to give data in those coordinates). So for example if you have coordinates C such that the are given by eigenvectors of Jacobian of poincare map then you can slice your data by 1 along any vector j by specifying dx = \{0,...,0,1,0,...\}, where 1 is on j-\/th place.
+
+The coordinate change P to good coordinates is\+: B(dx) = reference + C $\ast$ dx (so that B(0) == reference) So the backward change is B$^\wedge$\{-\/1\} (y) = C$^\wedge$\{-\/1\} $\ast$ (y -\/ reference) Backward change is used in poincare to produce result in \textquotesingle{}good\textquotesingle{} coordinates That is we compute B$^\wedge$\{-\/1\}(P(B(.))) applied on a set (dx, r0, Xi) And we get (Pdx, Pr0, P\+Xi) for an easy comparison (coord by coord)
+
+\begin{DoxyVerb}TODO: (IMPORTANT!!! IN THIS CASE!) docs - GOOD COMMENTS TO ALL ROUTINES!
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a3306752b36ce9857a5c4e19d7ae546cf}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a3306752b36ce9857a5c4e19d7ae546cf}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!constantInitialSolution@{constantInitialSolution}}
+\index{constantInitialSolution@{constantInitialSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{constantInitialSolution()}{constantInitialSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::constant\+Initial\+Solution (\begin{DoxyParamCaption}\item[{Vector const \&}]{vx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a constant solution over basic delay interval \mbox{[}-\/tau, 0\mbox{]} \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a9f1eace81fe92e7a88575044cdf9ec65}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a9f1eace81fe92e7a88575044cdf9ec65}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!constantInitialSolution@{constantInitialSolution}}
+\index{constantInitialSolution@{constantInitialSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{constantInitialSolution()}{constantInitialSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::constant\+Initial\+Solution (\begin{DoxyParamCaption}\item[{Vector const \&}]{vx,  }\item[{size\+\_\+type}]{order }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a constant solution over basic delay interval \mbox{[}-\/tau, 0\mbox{]} \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a7aeb8d631ce2815dbb18da789a1a48f0}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a7aeb8d631ce2815dbb18da789a1a48f0}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!dataToSolution@{dataToSolution}}
+\index{dataToSolution@{dataToSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dataToSolution()}{dataToSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::data\+To\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&}]{coords,  }\item[{Vector}]{dx,  }\item[{Vector}]{r0,  }\item[{Vector}]{Xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes a set of the form (reference + C $\ast$ dx) + C $\ast$ r0 It is best to supply r0 as zero centered vector, but the program makes an adjustment to assure that. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_adba91cc113a8ae9ae5fc5a1acdef005f}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_adba91cc113a8ae9ae5fc5a1acdef005f}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!dataToSolution@{dataToSolution}}
+\index{dataToSolution@{dataToSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dataToSolution()}{dataToSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::data\+To\+Solution (\begin{DoxyParamCaption}\item[{Vector}]{dx,  }\item[{Vector}]{r0,  }\item[{Vector}]{Xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes a set of the form (reference + C $\ast$ dx) + C $\ast$ r0 It is best to supply r0 as zero centered vector, but the program makes an adjustment to assure that. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ac5fbb3fe61edfede2ab16528a22d22f5}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ac5fbb3fe61edfede2ab16528a22d22f5}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!detectCrossingDirection@{detectCrossingDirection}}
+\index{detectCrossingDirection@{detectCrossingDirection}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{detectCrossingDirection()}{detectCrossingDirection()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+capd\+::poincare\+::\+Crossing\+Direction \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::detect\+Crossing\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: Not implemented yet! \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_aed34d2b770bb376a123b19e6f0f8b8e6}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_aed34d2b770bb376a123b19e6f0f8b8e6}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!dumpData@{dumpData}}
+\index{dumpData@{dumpData}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dumpData()}{dumpData()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::dump\+Data (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&}]{coords,  }\item[{Vector const \&}]{dx,  }\item[{Vector const \&}]{r0,  }\item[{Vector const \&}]{Xi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+this is to dump data as text format (vectors as text representation) Not the best to use in the proofs, but can be of use in preparation of data. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_accb2d19afe88c17ab093d041cd7d4137}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_accb2d19afe88c17ab093d041cd7d4137}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!functionToSolution@{functionToSolution}}
+\index{functionToSolution@{functionToSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{functionToSolution()}{functionToSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+template$<$typename Any\+Matrix\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::function\+To\+Solution (\begin{DoxyParamCaption}\item[{capd\+::map\+::\+Map$<$ Any\+Matrix\+Spec $>$}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a solution based on the function values over basic delay interval \mbox{[}-\/tau, 0\mbox{]} The function must be capd\+::map\+::\+Map type, I\+M\+AP works great. Function must be R -\/$>$ R$^\wedge$dimension, otherwise -\/ exception! \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a04cbd077fc267cb828892f0ba99a61cb}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a04cbd077fc267cb828892f0ba99a61cb}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!functionToSolution@{functionToSolution}}
+\index{functionToSolution@{functionToSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{functionToSolution()}{functionToSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+template$<$typename Any\+Matrix\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::function\+To\+Solution (\begin{DoxyParamCaption}\item[{capd\+::map\+::\+Map$<$ Any\+Matrix\+Spec $>$}]{f,  }\item[{int}]{starti }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a solution based on the function values over basic delay interval \mbox{[}-\/tau, 0\mbox{]} The function must be capd\+::map\+::\+Map type, I\+M\+AP works great. Function must be R -\/$>$ R$^\wedge$dimension, otherwise -\/ exception! \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_af11a28695ced42dc3d0b46fa8c6452a3}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_af11a28695ced42dc3d0b46fa8c6452a3}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&}]{in\+\_\+coords,  }\item[{Vector const \&}]{dx,  }\item[{Vector const \&}]{r0,  }\item[{Vector const \&}]{Xi,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&}]{out\+\_\+coords,  }\item[{Real \&}]{reach\+Time,  }\item[{size\+\_\+type \&}]{steps,  }\item[{Real \&}]{epsilon,  }\item[{Vector \&}]{Pdx,  }\item[{Vector \&}]{Pr0,  }\item[{Vector \&}]{P\+Xi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (I\+M\+P\+O\+R\+T\+A\+N\+T!!! IN T\+H\+IS C\+A\+S\+E!) docs, \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ab4a726f807d27b56c89fb36671e73dd9}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ab4a726f807d27b56c89fb36671e73dd9}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&}]{in\+\_\+coords,  }\item[{Vector const \&}]{dx,  }\item[{Vector const \&}]{r0,  }\item[{Vector const \&}]{Xi,  }\item[{Real \&}]{reach\+Time,  }\item[{Vector \&}]{Pdx,  }\item[{Vector \&}]{Pr0,  }\item[{Vector \&}]{P\+Xi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+out\+\_\+coords are given by the coords of this Helper \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a21dd210f960d2c25814fd8b61a4bca7a}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a21dd210f960d2c25814fd8b61a4bca7a}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Section}}}]{section,  }\item[{capd\+::poincare\+::\+Crossing\+Direction}]{crossing\+\_\+direction,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} const \&}]{X,  }\item[{Real \&}]{reach\+Time,  }\item[{size\+\_\+type \&}]{steps,  }\item[{Real \&}]{epsilon,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \&}]{PX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (I\+M\+P\+O\+R\+T\+A\+N\+T!!! IN T\+H\+IS C\+A\+S\+E!) docs, \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a6b850950d9863f2a49692bfa9325cb9a}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a6b850950d9863f2a49692bfa9325cb9a}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Section}}}]{section,  }\item[{capd\+::poincare\+::\+Crossing\+Direction}]{crossing\+\_\+direction,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} const \&}]{X,  }\item[{Real \&}]{reach\+Time,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \&}]{PX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (I\+M\+P\+O\+R\+T\+A\+N\+T!!! IN T\+H\+IS C\+A\+S\+E!) docs, \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_af79b0347ed17c44656044f3c29922b50}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_af79b0347ed17c44656044f3c29922b50}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{Vector const \&}]{dx,  }\item[{Vector const \&}]{r0,  }\item[{Vector const \&}]{Xi,  }\item[{Real \&}]{reach\+Time,  }\item[{Vector \&}]{Pdx,  }\item[{Vector \&}]{Pr0,  }\item[{Vector \&}]{P\+Xi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+in\+\_\+ and out\+\_\+ coords are given by the coords of this Helper \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a03e967e99abf08a9faa690c6072291ef}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a03e967e99abf08a9faa690c6072291ef}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!r0ToSolution@{r0ToSolution}}
+\index{r0ToSolution@{r0ToSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{r0ToSolution()}{r0ToSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::r0\+To\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper_1_1CoordinateSystem}{Coordinate\+System}} const \&}]{coords,  }\item[{Vector}]{r0,  }\item[{Vector}]{Xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes a set of the form reference + C $\ast$ r0 It is best to supply r0 as zero centered vector, but the program makes an adjustment to assure that. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ae3cf601b4cc2e2297ebe983ae7da22d2}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ae3cf601b4cc2e2297ebe983ae7da22d2}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!r0ToSolution@{r0ToSolution}}
+\index{r0ToSolution@{r0ToSolution}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{r0ToSolution()}{r0ToSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::r0\+To\+Solution (\begin{DoxyParamCaption}\item[{Vector}]{r0,  }\item[{Vector}]{Xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes a set of the form reference + C $\ast$ r0 It is best to supply r0 as zero centered vector, but the program makes an adjustment to assure that. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_ae7b7a9f6e48b574caea1b2d9308f0edf}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_ae7b7a9f6e48b574caea1b2d9308f0edf}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!setParam@{setParam}}
+\index{setParam@{setParam}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+Param\+Type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::set\+Param (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index,  }\item[{Param\+Type const \&}]{new\+\_\+param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns old param value; T\+O\+DO\+: add index checking \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a750838aa571ee95cd0a351bd13763ec2}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a750838aa571ee95cd0a351bd13763ec2}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!setParams@{setParams}}
+\index{setParams@{setParams}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setParams()}{setParams()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::set\+Params (\begin{DoxyParamCaption}\item[{Params\+Vector const \&}]{new\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns old params \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1RigorousHelper_a7357bf797d94f69e6832b87df49eec61}\label{classcapd_1_1ddeshelper_1_1RigorousHelper_a7357bf797d94f69e6832b87df49eec61}} 
+\index{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}!timemap@{timemap}}
+\index{timemap@{timemap}!capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$@{capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{timemap()}{timemap()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$, typename Policies\+Spec  = capd\+::dynset\+::\+C11\+Rect2\+Policies$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1RigorousHelper}{capd\+::ddeshelper\+::\+Rigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec, Policies\+Spec $>$\+::timemap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Solution}} \&}]{X,  }\item[{const size\+\_\+type \&}]{steps,  }\item[{const Real \&}]{epsilon = {\ttfamily 0.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+computes timemap using the solution as initial data W\+A\+R\+N\+I\+NG\+: it will extend the solution given in X by a given number of steps! returns\+: it returns the last segment of the solution in a shape of the same representation as the initial segment of X. if the segment cannot be produced (due to continuity class issues) the exception will be thrown. if epsilon is given as != 0. then the procedure will try to do the epsilon\+Step procedure. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddeshelper/D\+D\+E\+Helper\+Rigorous.\+h\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddeshelper/D\+D\+E\+Helper\+Rigorous.\+hpp\end{DoxyCompactItemize}

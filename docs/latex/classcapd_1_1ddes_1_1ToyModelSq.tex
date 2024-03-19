@@ -1,0 +1,59 @@
+\hypertarget{classcapd_1_1ddes_1_1ToyModelSq}{}\doxysection{capd\+::ddes\+::Toy\+Model\+Sq Class Reference}
+\label{classcapd_1_1ddes_1_1ToyModelSq}\index{capd::ddes::ToyModelSq@{capd::ddes::ToyModelSq}}
+
+
+{\ttfamily \#include $<$Sample\+Eqns.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_add6265d8fbfda72590a22a4557d0065b}\label{classcapd_1_1ddes_1_1ToyModelSq_add6265d8fbfda72590a22a4557d0065b}} 
+typedef long {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_afb9ac41136fc15667b06238543717f36}\label{classcapd_1_1ddes_1_1ToyModelSq_afb9ac41136fc15667b06238543717f36}} 
+{\bfseries Toy\+Model\+Sq} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModelSq}{Toy\+Model\+Sq}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_af8fb8af6f215b41dd2f0a6ca8c4b057a}\label{classcapd_1_1ddes_1_1ToyModelSq_af8fb8af6f215b41dd2f0a6ca8c4b057a}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModelSq}{Toy\+Model\+Sq}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModelSq}{Toy\+Model\+Sq}} const \&orig)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModelSq_a6abbd283d0f0b96738e926ba6e0b4ec8}{image\+Dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModelSq_a617cbeb959e13221f138e27635ff0a0b}{dimension}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_a368de339fb220ce4daba83bd3d068527}\label{classcapd_1_1ddes_1_1ToyModelSq_a368de339fb220ce4daba83bd3d068527}} 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void {\bfseries operator()} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_aaddbffa2f941260fdd832dcd099762d5}\label{classcapd_1_1ddes_1_1ToyModelSq_aaddbffa2f941260fdd832dcd099762d5}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scalar eq. Depends only on the past, f(x(t), x(t-\/1)) = 2$\ast$x(t-\/1) + (x(t-\/1))$^\wedge$2. Used for tests.
+
+Use with \textquotesingle{}\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{Discrete\+Delays\+Functional\+Map}}\textquotesingle{} to define tau 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_a617cbeb959e13221f138e27635ff0a0b}\label{classcapd_1_1ddes_1_1ToyModelSq_a617cbeb959e13221f138e27635ff0a0b}} 
+\index{capd::ddes::ToyModelSq@{capd::ddes::ToyModelSq}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::ToyModelSq@{capd::ddes::ToyModelSq}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily size\+\_\+type capd\+::ddes\+::\+Toy\+Model\+Sq\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModelSq_a6abbd283d0f0b96738e926ba6e0b4ec8}\label{classcapd_1_1ddes_1_1ToyModelSq_a6abbd283d0f0b96738e926ba6e0b4ec8}} 
+\index{capd::ddes::ToyModelSq@{capd::ddes::ToyModelSq}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!capd::ddes::ToyModelSq@{capd::ddes::ToyModelSq}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily size\+\_\+type capd\+::ddes\+::\+Toy\+Model\+Sq\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+output dimension of the internal map 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/Sample\+Eqns.\+h\end{DoxyCompactItemize}

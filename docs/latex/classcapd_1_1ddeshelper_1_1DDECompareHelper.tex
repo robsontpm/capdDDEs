@@ -1,0 +1,119 @@
+\hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper}{}\doxysection{capd\+::ddeshelper\+::D\+D\+E\+Compare\+Helper$<$ Vector\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddeshelper_1_1DDECompareHelper}\index{capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$@{capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Compare\+Helper.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a90b552c1c5ff077d18680dd099fe3a94}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a90b552c1c5ff077d18680dd099fe3a94}} 
+typedef Vector\+Spec {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_aef972471dcb25af208993799f318c43c}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_aef972471dcb25af208993799f318c43c}} 
+typedef Vector\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a4b21481e7790dab3ae6ab356fafbdd1b}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a4b21481e7790dab3ae6ab356fafbdd1b}} 
+typedef Vector\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a28490d93f6f311d8350573d0b99d37ec}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a28490d93f6f311d8350573d0b99d37ec}} 
+{\bfseries D\+D\+E\+Compare\+Helper} (Vector\+Type const \&orig, Vector\+Type const \&other)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_ab52139982ab378bae07c596decc4b8a3}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_ab52139982ab378bae07c596decc4b8a3}} 
+void {\bfseries print\+Relation} (int i, std\+::ostream \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a73c4fd5894f3f6a52e41e3e57eda0af7}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a73c4fd5894f3f6a52e41e3e57eda0af7}} 
+void {\bfseries print\+Relations} (std\+::ostream \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_acd0ce7b20712493aa073ebe11998fb56}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_acd0ce7b20712493aa073ebe11998fb56}} 
+void {\bfseries print\+Summary} (std\+::ostream \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a9279f406daa66ffb4d846e42f5487ab6}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a9279f406daa66ffb4d846e42f5487ab6}} 
+std\+::string {\bfseries inline\+Summary} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a2262a1d241a843d85d11007a50c1c2ff}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a2262a1d241a843d85d11007a50c1c2ff}} 
+{\bfseries operator std\+::string} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a5f65bf902ac99be4c760ba54186dc71a}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a5f65bf902ac99be4c760ba54186dc71a}} 
+int {\bfseries get\+Subsets\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_ae79b9ba436c6a9f7d62516b94cccacd5}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_ae79b9ba436c6a9f7d62516b94cccacd5}} 
+int {\bfseries get\+Supsets\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a91397057fab7e7035097fbe7267d206f}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a91397057fab7e7035097fbe7267d206f}} 
+int {\bfseries get\+Miss\+Left\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a8ddd5e3748c6df841a0034f4d83ce1e5}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a8ddd5e3748c6df841a0034f4d83ce1e5}} 
+int {\bfseries get\+Miss\+Right\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a2c5c8542dbc9cec152d5131c68347b71}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a2c5c8542dbc9cec152d5131c68347b71}} 
+int {\bfseries get\+Miss\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_af0a416c96ec9403aafa38f5652c52504}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_af0a416c96ec9403aafa38f5652c52504}} 
+int {\bfseries get\+Intersection\+Left\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_ae82f96bafc30356b14d633a7f1278767}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_ae82f96bafc30356b14d633a7f1278767}} 
+int {\bfseries get\+Intersection\+Right\+Count} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a4b5bbc2d71fe6697971d80dbab445aa7}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a4b5bbc2d71fe6697971d80dbab445aa7}} 
+int {\bfseries get\+Intersections\+Count} () const
+\item 
+int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1DDECompareHelper_ac1c543008f41d25d5f4212598dd82a92}{get\+Unknowns\+Count}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a529a1ee6bfac18818b78b6694812a06a}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a529a1ee6bfac18818b78b6694812a06a}} 
+bool {\bfseries is\+Subset} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a9025ccaa38f35631d7af2caa5b7e90e1}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a9025ccaa38f35631d7af2caa5b7e90e1}} 
+bool {\bfseries is\+Supset} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a5cf68e807ecf7585a067e1f39e0b14f9}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a5cf68e807ecf7585a067e1f39e0b14f9}} 
+bool {\bfseries is\+Miss\+Left} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_adbd3931f1fb563d3fea6a65249e7a900}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_adbd3931f1fb563d3fea6a65249e7a900}} 
+bool {\bfseries is\+Miss\+Right} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a2ae968943a596e63009e5a9082c38906}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a2ae968943a596e63009e5a9082c38906}} 
+bool {\bfseries is\+Miss} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_aecdfaac538bfef3d2d75d7abebf6767d}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_aecdfaac538bfef3d2d75d7abebf6767d}} 
+bool {\bfseries is\+Intersect\+Left} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_af93c10118a2a10fe84e939b75af124ab}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_af93c10118a2a10fe84e939b75af124ab}} 
+bool {\bfseries is\+Intersect\+Right} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a759715b426436e4de8c606878d3b5ad4}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a759715b426436e4de8c606878d3b5ad4}} 
+bool {\bfseries is\+Intersection} (size\+\_\+type i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_aedd145874745a3b2599ffcb253986123}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_aedd145874745a3b2599ffcb253986123}} 
+bool {\bfseries is\+Unknown} (size\+\_\+type i) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_a68fac1da4ea50f0aec35147f3724a70b}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_a68fac1da4ea50f0aec35147f3724a70b}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1DDECompareHelper}{D\+D\+E\+Compare\+Helper}}$<$ Vector\+Spec $>$ const \&comp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Vector\+Spec$>$\newline
+class capd\+::ddeshelper\+::\+D\+D\+E\+Compare\+Helper$<$ Vector\+Spec $>$}
+
+allows to easily check how the other vector relates to the original. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1DDECompareHelper_ac1c543008f41d25d5f4212598dd82a92}\label{classcapd_1_1ddeshelper_1_1DDECompareHelper_ac1c543008f41d25d5f4212598dd82a92}} 
+\index{capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$@{capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$}!getUnknownsCount@{getUnknownsCount}}
+\index{getUnknownsCount@{getUnknownsCount}!capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$@{capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getUnknownsCount()}{getUnknownsCount()}}
+{\footnotesize\ttfamily template$<$typename Vector\+Spec $>$ \\
+int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1DDECompareHelper}{capd\+::ddeshelper\+::\+D\+D\+E\+Compare\+Helper}}$<$ Vector\+Spec $>$\+::get\+Unknowns\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+this should always return 0, otherwise some serious errors happen 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddeshelper/D\+D\+E\+Compare\+Helper.\+h\end{DoxyCompactItemize}

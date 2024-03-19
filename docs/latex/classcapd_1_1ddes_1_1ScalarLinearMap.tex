@@ -1,0 +1,90 @@
+\hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap}{}\doxysection{capd\+::ddes\+::Scalar\+Linear\+Map$<$ Scalar\+Spec, Param\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1ScalarLinearMap}\index{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}}
+
+
+{\ttfamily \#include $<$Sample\+Eqns.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a2abcfe62a8d93e1c8edcb3015ee8336b}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a2abcfe62a8d93e1c8edcb3015ee8336b}} 
+typedef Scalar\+Spec {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a6fb02275c77315aedcca22122a55240d}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a6fb02275c77315aedcca22122a55240d}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a8e1c7715e90a74b16ba195fbca533f0a}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a8e1c7715e90a74b16ba195fbca533f0a}} 
+typedef Param\+Spec {\bfseries Param\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_ae423d40461d11893b3c6098a0738662e}\label{classcapd_1_1ddes_1_1ScalarLinearMap_ae423d40461d11893b3c6098a0738662e}} 
+typedef int {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_ab8ce4e475be43c3b49c44945f5cfb9e6}\label{classcapd_1_1ddes_1_1ScalarLinearMap_ab8ce4e475be43c3b49c44945f5cfb9e6}} 
+{\bfseries Scalar\+Linear\+Map} (Scalar\+Type const \&a, Scalar\+Type const \&b, Scalar\+Type const \&c)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a1f7967e4f8e65ef4df95a80739d16eaa}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a1f7967e4f8e65ef4df95a80739d16eaa}} 
+{\bfseries Scalar\+Linear\+Map} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap}{Scalar\+Linear\+Map}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a29bb63aaa8e497c9657cd2d4d6fa1048}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a29bb63aaa8e497c9657cd2d4d6fa1048}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap}{Scalar\+Linear\+Map}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap}{Scalar\+Linear\+Map}} const \&orig)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap_afe1acd266af6fdf2b0900ba729797bb5}{image\+Dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap_a224391238e927e6dd9cf5fdb6bb7aa0d}{dimension}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_aa811bf093ef0edd5fea45c892bc10378}\label{classcapd_1_1ddes_1_1ScalarLinearMap_aa811bf093ef0edd5fea45c892bc10378}} 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void {\bfseries operator()} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a07808d159948b040609950b66fcb6202}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a07808d159948b040609950b66fcb6202}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a28af33d0876499e438d4c850cdf6d6bd}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a28af33d0876499e438d4c850cdf6d6bd}} 
+Param\+Type {\bfseries a}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a1233174d0682af0d71b8d0cdcbafecc6}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a1233174d0682af0d71b8d0cdcbafecc6}} 
+Param\+Type {\bfseries b}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a763d4c364923159d7e301fff0f01d7b0}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a763d4c364923159d7e301fff0f01d7b0}} 
+Param\+Type {\bfseries c}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+Spec, typename Param\+Spec = Scalar\+Spec$>$\newline
+class capd\+::ddes\+::\+Scalar\+Linear\+Map$<$ Scalar\+Spec, Param\+Spec $>$}
+
+Scalar linear equation of the form\+: \begin{DoxyVerb}    x'(t) = a * x(t) + b * x(t-tau) + c
+\end{DoxyVerb}
+
+
+Use with \textquotesingle{}\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{Discrete\+Delays\+Functional\+Map}}\textquotesingle{} to define tau 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_a224391238e927e6dd9cf5fdb6bb7aa0d}\label{classcapd_1_1ddes_1_1ScalarLinearMap_a224391238e927e6dd9cf5fdb6bb7aa0d}} 
+\index{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap}{capd\+::ddes\+::\+Scalar\+Linear\+Map}}$<$ Scalar\+Spec, Param\+Spec $>$\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classcapd_1_1ddes_1_1ScalarLinearMap_afe1acd266af6fdf2b0900ba729797bb5}\label{classcapd_1_1ddes_1_1ScalarLinearMap_afe1acd266af6fdf2b0900ba729797bb5}} 
+\index{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ScalarLinearMap}{capd\+::ddes\+::\+Scalar\+Linear\+Map}}$<$ Scalar\+Spec, Param\+Spec $>$\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+output dimension of the internal map 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/Sample\+Eqns.\+h\end{DoxyCompactItemize}

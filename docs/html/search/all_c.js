@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['nonrigorous_2c_20non_2dautonomous_20demo_169',['Nonrigorous, non-autonomous demo',['../md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_programs_examples_demo-elninio_README.html',1,'']]],
+  ['nonrigorous_2c_20non_2dautonomous_20demo_170',['Nonrigorous, non-autonomous demo',['../md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_programs_examples_rossler-ode-vs-dde-code_README.html',1,'']]],
+  ['n_171',['n',['../classcapd_1_1ddes_1_1MackeyGlass.html#aca5e50ac0a29e509a96f9d0c3b93e6b2',1,'capd::ddes::MackeyGlass']]],
+  ['nonrigoroushelper_172',['NonrigorousHelper',['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html',1,'capd::ddeshelper::NonrigorousHelper&lt; EqSpec, delaysSpec &gt;'],['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html#a4b15095804124c3443210d4591c36002',1,'capd::ddeshelper::NonrigorousHelper::NonrigorousHelper(ParamsVector params, size_type p, size_type n, step_type reqSteps=0, step_type maxSteps=0, size_type maxOrder=10)'],['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html#a354111a6d22289f785e17f3659370ade',1,'capd::ddeshelper::NonrigorousHelper::NonrigorousHelper(std::string filepath, step_type reqSteps=0, step_type maxSteps=0, size_type maxOrder=10)'],['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html#a4d50eff4cf01c93f4970f1e7e092312d',1,'capd::ddeshelper::NonrigorousHelper::NonrigorousHelper(std::istream &amp;input, step_type reqSteps=0, step_type maxSteps=0, size_type maxOrder=10)']]]
+];

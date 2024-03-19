@@ -1,0 +1,1765 @@
+\begin{theindex}
+
+  \item {$\sim$BasicDiscreteDelaysFunctionalMap}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{17}
+  \item {$\sim$BasicDoubleton}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{28}
+  \item {$\sim$DDEBasicFunctionalMap}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{45}
+  \item {$\sim$DDEForwardTaylorCurvePiece}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{63}
+  \item {$\sim$DDEPiecewisePolynomialCurve}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{88}
+  \item {$\sim$DDERigorousFunctionalMap}
+    \subitem {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{105}
+  \item {$\sim$DiscreteDelaysFunctionalMap}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{136}
+  \item {$\sim$DoubletonInterface}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{143}
+  \item {$\sim$GenericJet}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{163}
+  \item {$\sim$SharedDoubleton}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{208}
+
+  \indexspace
+
+  \item {a}
+    \subitem {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{199}
+  \item {add}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{29}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{88}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{116, 117}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{144}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{209}
+  \item {addPastPiece}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{88, 89}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{117}
+  \item {addPiece}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{89}
+  \item {affineTransform}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{29}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{63}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{89}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{117}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{144}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{209}
+  \item {allocate}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{63}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{209}
+  \item {allocateCoeffs}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{163}
+  \item {allocateJet}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{63}
+  \item {allocateR0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{64}
+  \item {allocateXi}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{64}
+  \item {assureOwner}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{209}
+  \item {at}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{89}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{163, 164}
+
+  \indexspace
+
+  \item {b}
+    \subitem {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{200}
+  \item {back}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{164}
+  \item {backJet}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{64}
+  \item {badge}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{64}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{89}
+    \subitem {capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$}, 
+		\hyperpage{140}
+    \subitem {capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$::TimePointType}, 
+		\hyperpage{220}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{164}
+  \item {BasicDoubleton}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{26--28}
+  \item {begin}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{18}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{90}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{136}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{164, 165}
+  \item {beginJet}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{65}
+
+  \indexspace
+
+  \item {c}
+    \subitem {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{200}
+  \item {capd}, \hyperpage{11}
+  \item {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{14}
+    \subitem {$\sim$BasicDiscreteDelaysFunctionalMap}, \hyperpage{17}
+    \subitem {begin}, \hyperpage{18}
+    \subitem {collectComputationData}, \hyperpage{18}
+    \subitem {computeDDECoefficients}, \hyperpage{18--20}
+    \subitem {const\_iterator}, \hyperpage{17}
+    \subitem {delaysCount}, \hyperpage{21}
+    \subitem {DelayStorageType}, \hyperpage{17}
+    \subitem {dimension}, \hyperpage{21}
+    \subitem {end}, \hyperpage{21}
+    \subitem {imageDimension}, \hyperpage{22}
+    \subitem {iterator}, \hyperpage{17}
+    \subitem {operator()}, \hyperpage{22}
+  \item {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$::rebind$<$ OtherSolutionSpec, OtherJetSpec $>$}, 
+		\hyperpage{191}
+  \item {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{22}
+    \subitem {$\sim$BasicDoubleton}, \hyperpage{28}
+    \subitem {add}, \hyperpage{29}
+    \subitem {affineTransform}, \hyperpage{29}
+    \subitem {BasicDoubleton}, \hyperpage{26--28}
+    \subitem {common\_B}, \hyperpage{29}
+    \subitem {common\_C}, \hyperpage{29}
+    \subitem {common\_r}, \hyperpage{30}
+    \subitem {common\_r0}, \hyperpage{30}
+    \subitem {common\_x}, \hyperpage{30}
+    \subitem {dimension}, \hyperpage{30}
+    \subitem {get\_B}, \hyperpage{31}
+    \subitem {get\_C}, \hyperpage{31}
+    \subitem {get\_r}, \hyperpage{31}
+    \subitem {get\_r0}, \hyperpage{31}
+    \subitem {get\_x}, \hyperpage{31}
+    \subitem {hull}, \hyperpage{31}
+    \subitem {midPoint}, \hyperpage{31}
+    \subitem {mul}, \hyperpage{32}
+    \subitem {mulThenAdd}, \hyperpage{32}
+    \subitem {operator=}, \hyperpage{32}
+    \subitem {reinitialize}, \hyperpage{32}
+    \subitem {sanityCheck}, \hyperpage{32}
+    \subitem {set\_B}, \hyperpage{32}
+    \subitem {set\_C}, \hyperpage{33}
+    \subitem {set\_Cr0}, \hyperpage{33}
+    \subitem {set\_r}, \hyperpage{33}
+    \subitem {set\_r0}, \hyperpage{33}
+    \subitem {set\_x}, \hyperpage{34}
+    \subitem {setupDimension}, \hyperpage{34}
+    \subitem {setupFromData}, \hyperpage{34}
+    \subitem {setupFromOther}, \hyperpage{35}
+    \subitem {show}, \hyperpage{35}
+    \subitem {storageDimension}, \hyperpage{35}
+    \subitem {storageN0}, \hyperpage{35}
+    \subitem {translate}, \hyperpage{35}
+  \item {capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{41}
+    \subitem {dimension}, \hyperpage{42}
+    \subitem {getParamsCount}, \hyperpage{42}
+    \subitem {imageDimension}, \hyperpage{42}
+  \item {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{42}
+    \subitem {$\sim$DDEBasicFunctionalMap}, \hyperpage{45}
+    \subitem {checkCurveDimension}, \hyperpage{45}
+    \subitem {collectComputationData}, \hyperpage{45}
+    \subitem {computeDDECoefficients}, \hyperpage{46--48}
+    \subitem {convert}, \hyperpage{48}
+    \subitem {deconvert}, \hyperpage{48}
+    \subitem {imageDimension}, \hyperpage{49}
+    \subitem {JacobianStorageType}, \hyperpage{44}
+    \subitem {operator()}, \hyperpage{49}
+    \subitem {ValueStorageType}, \hyperpage{44}
+    \subitem {VariableStorageType}, \hyperpage{44}
+  \item {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{50}
+    \subitem {detectCrossingDirection}, \hyperpage{51}
+    \subitem {findCrossingTime}, \hyperpage{51}
+    \subitem {integrateUntilSectionCrossing}, \hyperpage{52}
+    \subitem {operator()}, \hyperpage{52, 53}
+    \subitem {setCurrentV}, \hyperpage{53}
+    \subitem {setInitialV}, \hyperpage{54}
+  \item {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{56}
+    \subitem {$\sim$DDEForwardTaylorCurvePiece}, \hyperpage{63}
+    \subitem {affineTransform}, \hyperpage{63}
+    \subitem {allocate}, \hyperpage{63}
+    \subitem {allocateJet}, \hyperpage{63}
+    \subitem {allocateR0}, \hyperpage{64}
+    \subitem {allocateXi}, \hyperpage{64}
+    \subitem {backJet}, \hyperpage{64}
+    \subitem {badge}, \hyperpage{64}
+    \subitem {beginJet}, \hyperpage{65}
+    \subitem {DDEForwardTaylorCurvePiece}, \hyperpage{60--62}
+    \subitem {deallocate}, \hyperpage{65}
+    \subitem {deallocateJet}, \hyperpage{65}
+    \subitem {deallocateR0}, \hyperpage{65}
+    \subitem {deallocateXi}, \hyperpage{65}
+    \subitem {dimCheck}, \hyperpage{66}
+    \subitem {dimCheckB}, \hyperpage{66}
+    \subitem {dimCheckC}, \hyperpage{66}
+    \subitem {dimension}, \hyperpage{66}
+    \subitem {dot}, \hyperpage{66}
+    \subitem {dt}, \hyperpage{67}
+    \subitem {endJet}, \hyperpage{67}
+    \subitem {eval}, \hyperpage{67}
+    \subitem {evalAtDelta}, \hyperpage{68}
+    \subitem {evalCoeff}, \hyperpage{68}
+    \subitem {evalCoeffAtDelta}, \hyperpage{68, 69}
+    \subitem {get\_B}, \hyperpage{69}
+    \subitem {get\_C}, \hyperpage{69}
+    \subitem {get\_r}, \hyperpage{69}
+    \subitem {get\_r0}, \hyperpage{69}
+    \subitem {get\_x}, \hyperpage{70}
+    \subitem {get\_Xi}, \hyperpage{70}
+    \subitem {getT0}, \hyperpage{70}
+    \subitem {isMidCurve}, \hyperpage{70}
+    \subitem {jetAt}, \hyperpage{70}
+    \subitem {makeStorage\_x}, \hyperpage{71}
+    \subitem {midCurve}, \hyperpage{71}
+    \subitem {mul}, \hyperpage{71}
+    \subitem {operator=}, \hyperpage{71}
+    \subitem {operator[]}, \hyperpage{71, 72}
+    \subitem {order}, \hyperpage{72}
+    \subitem {reallocate}, \hyperpage{72}
+    \subitem {reallocateJet}, \hyperpage{72}
+    \subitem {reallocateR0}, \hyperpage{72}
+    \subitem {reallocateXi}, \hyperpage{73}
+    \subitem {reinitialize}, \hyperpage{73}
+    \subitem {set\_B}, \hyperpage{73}
+    \subitem {set\_Binv}, \hyperpage{73}
+    \subitem {set\_C}, \hyperpage{73}
+    \subitem {set\_Cr0}, \hyperpage{74}
+    \subitem {set\_r}, \hyperpage{74}
+    \subitem {set\_r0}, \hyperpage{74}
+    \subitem {set\_x}, \hyperpage{74}
+    \subitem {set\_Xi}, \hyperpage{75}
+    \subitem {setAsConstant}, \hyperpage{75, 76}
+    \subitem {setT0}, \hyperpage{76}
+    \subitem {setupFromData}, \hyperpage{76}
+    \subitem {show}, \hyperpage{77}
+    \subitem {storageDimension}, \hyperpage{77}
+    \subitem {storageN0}, \hyperpage{77}
+    \subitem {summa}, \hyperpage{77}
+    \subitem {summaAtDelta}, \hyperpage{78}
+    \subitem {t0}, \hyperpage{78}
+    \subitem {take\_r0}, \hyperpage{78}
+    \subitem {take\_Xi}, \hyperpage{78}
+    \subitem {taylor}, \hyperpage{78, 79}
+    \subitem {taylorAtDelta}, \hyperpage{79}
+    \subitem {translate}, \hyperpage{79}
+    \subitem {updateCommonR0}, \hyperpage{79}
+  \item {capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}, 
+		\hyperpage{80}
+    \subitem {DDEJetSection}, \hyperpage{81}
+    \subitem {getGradient}, \hyperpage{81}
+  \item {capd::ddes::DDENonrigorousTaylorSolver$<$ FunctionalMapSpec $>$}, 
+		\hyperpage{82}
+    \subitem {oneStep}, \hyperpage{83}
+    \subitem {operator()}, \hyperpage{83, 84}
+  \item {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{84}
+    \subitem {$\sim$DDEPiecewisePolynomialCurve}, \hyperpage{88}
+    \subitem {add}, \hyperpage{88}
+    \subitem {addPastPiece}, \hyperpage{88, 89}
+    \subitem {addPiece}, \hyperpage{89}
+    \subitem {affineTransform}, \hyperpage{89}
+    \subitem {at}, \hyperpage{89}
+    \subitem {badge}, \hyperpage{89}
+    \subitem {begin}, \hyperpage{90}
+    \subitem {clear}, \hyperpage{90}
+    \subitem {copyPieces}, \hyperpage{90}
+    \subitem {currentTime}, \hyperpage{90}
+    \subitem {DDEPiecewisePolynomialCurve}, \hyperpage{87, 88}
+    \subitem {deallocatePieces}, \hyperpage{90}
+    \subitem {dimension}, \hyperpage{91}
+    \subitem {dot}, \hyperpage{91}
+    \subitem {end}, \hyperpage{91}
+    \subitem {epsilonShift}, \hyperpage{91, 92}
+    \subitem {eval}, \hyperpage{92}
+    \subitem {extend}, \hyperpage{92}
+    \subitem {get\_x}, \hyperpage{92}
+    \subitem {getCurrentTime}, \hyperpage{93}
+    \subitem {getGrid}, \hyperpage{93}
+    \subitem {getPiece}, \hyperpage{93}
+    \subitem {getStep}, \hyperpage{93}
+    \subitem {getT0}, \hyperpage{93}
+    \subitem {getValueAtCurrent}, \hyperpage{93, 94}
+    \subitem {grid}, \hyperpage{94}
+    \subitem {j}, \hyperpage{94}
+    \subitem {jet}, \hyperpage{95}
+    \subitem {jetCommonMaximalOrder}, \hyperpage{95}
+    \subitem {jetOrderAt}, \hyperpage{95}
+    \subitem {jetPtr}, \hyperpage{95}
+    \subitem {length}, \hyperpage{96}
+    \subitem {mul}, \hyperpage{96}
+    \subitem {mulThenAdd}, \hyperpage{96}
+    \subitem {operator$<$$<$}, \hyperpage{100}
+    \subitem {operator$>$$>$}, \hyperpage{100}
+    \subitem {operator$\ast$=}, \hyperpage{96}
+    \subitem {operator=}, \hyperpage{96}
+    \subitem {pastTime}, \hyperpage{96}
+    \subitem {pointToIndex}, \hyperpage{97}
+    \subitem {rbegin}, \hyperpage{97}
+    \subitem {readFrom}, \hyperpage{97}
+    \subitem {rend}, \hyperpage{97}
+    \subitem {set\_x}, \hyperpage{98}
+    \subitem {setCurrentTime}, \hyperpage{98}
+    \subitem {setT0}, \hyperpage{98}
+    \subitem {setValueAtCurrent}, \hyperpage{98}
+    \subitem {show}, \hyperpage{98}
+    \subitem {storageDimension}, \hyperpage{98}
+    \subitem {subcurve}, \hyperpage{99}
+    \subitem {t0}, \hyperpage{99}
+    \subitem {translate}, \hyperpage{99}
+    \subitem {writeTo}, \hyperpage{100}
+  \item {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$::rebind$<$ OtherJetTypeSpec $>$}, 
+		\hyperpage{191}
+  \item {capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{100}
+    \subitem {detectCrossingDirection}, \hyperpage{102}
+    \subitem {findCrossingTime}, \hyperpage{102}
+    \subitem {integrateUntilSectionCrossing}, \hyperpage{102}
+    \subitem {operator()}, \hyperpage{102, 103}
+  \item {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{103}
+    \subitem {$\sim$DDERigorousFunctionalMap}, \hyperpage{105}
+    \subitem {checkCurveDimension}, \hyperpage{105}
+    \subitem {collectComputationData}, \hyperpage{105, 106}
+    \subitem {computeDDECoefficients}, \hyperpage{107, 108}
+    \subitem {convert}, \hyperpage{108}
+    \subitem {imageDimension}, \hyperpage{109}
+  \item {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, \hyperpage{109}
+    \subitem {add}, \hyperpage{116, 117}
+    \subitem {addPastPiece}, \hyperpage{117}
+    \subitem {affineTransform}, \hyperpage{117}
+    \subitem {copyPieces}, \hyperpage{117}
+    \subitem {DDESolutionCurve}, \hyperpage{114--116}
+    \subitem {dot}, \hyperpage{118}
+    \subitem {dt}, \hyperpage{118}
+    \subitem {epsilonShift}, \hyperpage{118}
+    \subitem {eval}, \hyperpage{119}
+    \subitem {extend}, \hyperpage{119}
+    \subitem {get\_B}, \hyperpage{119}
+    \subitem {get\_Binv}, \hyperpage{120}
+    \subitem {get\_C}, \hyperpage{120}
+    \subitem {get\_r}, \hyperpage{120}
+    \subitem {get\_r0}, \hyperpage{120}
+    \subitem {get\_x}, \hyperpage{120}
+    \subitem {get\_Xi}, \hyperpage{120}
+    \subitem {getLastEnclosure}, \hyperpage{120}
+    \subitem {getPiece}, \hyperpage{121}
+    \subitem {getValueAtCurrent}, \hyperpage{121}
+    \subitem {jetOrderAt}, \hyperpage{121}
+    \subitem {jetPtr}, \hyperpage{121}
+    \subitem {length}, \hyperpage{121}
+    \subitem {m\_r0}, \hyperpage{130}
+    \subitem {makeStorage\_x}, \hyperpage{122}
+    \subitem {move}, \hyperpage{122}
+    \subitem {mul}, \hyperpage{122}
+    \subitem {mulThenAdd}, \hyperpage{122}
+    \subitem {operator$<$$<$}, \hyperpage{130}
+    \subitem {operator=}, \hyperpage{122}
+    \subitem {pointToIndex}, \hyperpage{123}
+    \subitem {reduce}, \hyperpage{123}
+    \subitem {reinitialize}, \hyperpage{123}
+    \subitem {set\_B}, \hyperpage{123}
+    \subitem {set\_Binv}, \hyperpage{124}
+    \subitem {set\_C}, \hyperpage{124}
+    \subitem {set\_Cr0}, \hyperpage{124}
+    \subitem {set\_r}, \hyperpage{125}
+    \subitem {set\_r0}, \hyperpage{125}
+    \subitem {set\_x}, \hyperpage{126}
+    \subitem {set\_Xi}, \hyperpage{126}
+    \subitem {setValueAtCurrent}, \hyperpage{126}
+    \subitem {show}, \hyperpage{127}
+    \subitem {storageDimension}, \hyperpage{127}
+    \subitem {storageN0}, \hyperpage{127}
+    \subitem {subcurve}, \hyperpage{127, 128}
+    \subitem {take\_B}, \hyperpage{128}
+    \subitem {take\_Binv}, \hyperpage{128}
+    \subitem {take\_C}, \hyperpage{128}
+    \subitem {take\_r}, \hyperpage{128}
+    \subitem {take\_r0}, \hyperpage{129}
+    \subitem {take\_x}, \hyperpage{129}
+    \subitem {translate}, \hyperpage{129}
+    \subitem {writeTo}, \hyperpage{129}
+  \item {capd::ddes::DDETaylorSolver$<$ FunctionalMapSpec $>$}, 
+		\hyperpage{131}
+    \subitem {encloseSolution}, \hyperpage{131, 132}
+  \item {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{133}
+    \subitem {$\sim$DiscreteDelaysFunctionalMap}, \hyperpage{136}
+    \subitem {begin}, \hyperpage{136}
+    \subitem {collectComputationData}, \hyperpage{136, 137}
+    \subitem {computeDDECoefficients}, \hyperpage{137}
+    \subitem {const\_iterator}, \hyperpage{135}
+    \subitem {delaysCount}, \hyperpage{138}
+    \subitem {DelayStorageType}, \hyperpage{135}
+    \subitem {dimension}, \hyperpage{138}
+    \subitem {end}, \hyperpage{138}
+    \subitem {findRoughEnclosure}, \hyperpage{138}
+    \subitem {imageDimension}, \hyperpage{139}
+    \subitem {iterator}, \hyperpage{135}
+    \subitem {operator()}, \hyperpage{139}
+  \item {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$::rebind$<$ OtherSolutionSpec, OtherJetSpec $>$}, 
+		\hyperpage{190}
+  \item {capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$}, \hyperpage{139}
+    \subitem {badge}, \hyperpage{140}
+  \item {capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$::TimePointType}, 
+		\hyperpage{219}
+    \subitem {badge}, \hyperpage{220}
+  \item {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{141}
+    \subitem {$\sim$DoubletonInterface}, \hyperpage{143}
+    \subitem {add}, \hyperpage{144}
+    \subitem {affineTransform}, \hyperpage{144}
+    \subitem {common\_B}, \hyperpage{144}
+    \subitem {common\_C}, \hyperpage{145}
+    \subitem {common\_r}, \hyperpage{145}
+    \subitem {common\_r0}, \hyperpage{145}
+    \subitem {common\_x}, \hyperpage{145}
+    \subitem {dimension}, \hyperpage{146}
+    \subitem {dot}, \hyperpage{146}
+    \subitem {get\_B}, \hyperpage{146}
+    \subitem {get\_Binv}, \hyperpage{146}
+    \subitem {get\_C}, \hyperpage{146}
+    \subitem {get\_r}, \hyperpage{147}
+    \subitem {get\_r0}, \hyperpage{147}
+    \subitem {get\_x}, \hyperpage{147}
+    \subitem {hull}, \hyperpage{147}
+    \subitem {makeStorage\_B}, \hyperpage{147}
+    \subitem {makeStorage\_C}, \hyperpage{147}
+    \subitem {makeStorage\_r}, \hyperpage{148}
+    \subitem {makeStorage\_r0}, \hyperpage{148}
+    \subitem {makeStorage\_x}, \hyperpage{148}
+    \subitem {midPoint}, \hyperpage{148}
+    \subitem {mul}, \hyperpage{148}
+    \subitem {mulThenAdd}, \hyperpage{148}
+    \subitem {operator VectorType}, \hyperpage{149}
+    \subitem {operator$<$$<$}, \hyperpage{156}
+    \subitem {operator$>$$>$}, \hyperpage{156}
+    \subitem {operator$\ast$=}, \hyperpage{149}
+    \subitem {reinitialize}, \hyperpage{149}
+    \subitem {set\_B}, \hyperpage{149, 150}
+    \subitem {set\_Binv}, \hyperpage{150}
+    \subitem {set\_C}, \hyperpage{150, 151}
+    \subitem {set\_Cr0}, \hyperpage{151}
+    \subitem {set\_r}, \hyperpage{152}
+    \subitem {set\_r0}, \hyperpage{152, 153}
+    \subitem {set\_x}, \hyperpage{153}
+    \subitem {storageDimension}, \hyperpage{154}
+    \subitem {storageN0}, \hyperpage{154}
+    \subitem {take\_B}, \hyperpage{154}
+    \subitem {take\_Binv}, \hyperpage{154}
+    \subitem {take\_C}, \hyperpage{154}
+    \subitem {take\_r}, \hyperpage{155}
+    \subitem {take\_r0}, \hyperpage{155}
+    \subitem {take\_x}, \hyperpage{155}
+    \subitem {translate}, \hyperpage{155}
+  \item {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{159}
+    \subitem {$\sim$GenericJet}, \hyperpage{163}
+    \subitem {allocateCoeffs}, \hyperpage{163}
+    \subitem {at}, \hyperpage{163, 164}
+    \subitem {back}, \hyperpage{164}
+    \subitem {badge}, \hyperpage{164}
+    \subitem {begin}, \hyperpage{164, 165}
+    \subitem {coeff}, \hyperpage{165}
+    \subitem {deallocateCoeffs}, \hyperpage{165}
+    \subitem {decreasedOrder}, \hyperpage{165}
+    \subitem {dimension}, \hyperpage{165}
+    \subitem {dt}, \hyperpage{166}
+    \subitem {end}, \hyperpage{166}
+    \subitem {eval}, \hyperpage{166}
+    \subitem {evalAtDelta}, \hyperpage{167}
+    \subitem {evalCoeff}, \hyperpage{167}
+    \subitem {evalCoeffAtDelta}, \hyperpage{167, 168}
+    \subitem {GenericJet}, \hyperpage{162, 163}
+    \subitem {get\_x}, \hyperpage{168}
+    \subitem {getCoeffs}, \hyperpage{168}
+    \subitem {getT0}, \hyperpage{168}
+    \subitem {hull}, \hyperpage{168}
+    \subitem {increasedOrder}, \hyperpage{169}
+    \subitem {operator VectorType}, \hyperpage{169}
+    \subitem {operator$<$$<$}, \hyperpage{172}
+    \subitem {operator$>$$>$}, \hyperpage{172}
+    \subitem {operator=}, \hyperpage{169}
+    \subitem {operator[]}, \hyperpage{169}
+    \subitem {order}, \hyperpage{170}
+    \subitem {reallocateCoeffs}, \hyperpage{170}
+    \subitem {set\_x}, \hyperpage{170}
+    \subitem {setCoeffs}, \hyperpage{170}
+    \subitem {setOrder}, \hyperpage{170}
+    \subitem {setT0}, \hyperpage{171}
+    \subitem {show}, \hyperpage{171}
+    \subitem {storageDimension}, \hyperpage{171}
+    \subitem {t0}, \hyperpage{171}
+  \item {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$::rebind$<$ OtherTimePointSpec, OtherDataSpec, OtherVectorSpec, OtherMatrixSpec, OtherIsInterval $>$}, 
+		\hyperpage{191}
+  \item {capd::ddes::LasotaWazewska$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{172}
+    \subitem {dimension}, \hyperpage{173}
+    \subitem {getParamsCount}, \hyperpage{173}
+    \subitem {imageDimension}, \hyperpage{174}
+    \subitem {operator()}, \hyperpage{174}
+  \item {capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}, 
+		\hyperpage{174}
+    \subitem {dimension}, \hyperpage{175}
+    \subitem {imageDimension}, \hyperpage{175}
+    \subitem {operator()}, \hyperpage{176}
+  \item {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{176}
+    \subitem {dimension}, \hyperpage{178}
+    \subitem {gamma}, \hyperpage{178}
+    \subitem {getParamsCount}, \hyperpage{178}
+    \subitem {imageDimension}, \hyperpage{178}
+    \subitem {n}, \hyperpage{179}
+    \subitem {operator()}, \hyperpage{178}
+  \item {capd::ddes::ODEPendulum}, \hyperpage{185}
+    \subitem {dimension}, \hyperpage{186}
+    \subitem {imageDimension}, \hyperpage{186}
+  \item {capd::ddes::PerezMaltaCoutinho$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{188}
+    \subitem {dimension}, \hyperpage{189}
+    \subitem {getParamsCount}, \hyperpage{189}
+    \subitem {imageDimension}, \hyperpage{190}
+    \subitem {operator()}, \hyperpage{190}
+  \item {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{198}
+    \subitem {a}, \hyperpage{199}
+    \subitem {b}, \hyperpage{200}
+    \subitem {c}, \hyperpage{200}
+    \subitem {epsi}, \hyperpage{200}
+    \subitem {getParamsCount}, \hyperpage{199}
+    \subitem {imageDimension}, \hyperpage{199}
+  \item {capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{200}
+    \subitem {dimension}, \hyperpage{201}
+    \subitem {imageDimension}, \hyperpage{201}
+  \item {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{202}
+    \subitem {$\sim$SharedDoubleton}, \hyperpage{208}
+    \subitem {add}, \hyperpage{209}
+    \subitem {affineTransform}, \hyperpage{209}
+    \subitem {allocate}, \hyperpage{209}
+    \subitem {assureOwner}, \hyperpage{209}
+    \subitem {common\_B}, \hyperpage{210}
+    \subitem {common\_Binv}, \hyperpage{210}
+    \subitem {common\_C}, \hyperpage{210}
+    \subitem {common\_r}, \hyperpage{210}
+    \subitem {common\_r0}, \hyperpage{210}
+    \subitem {common\_x}, \hyperpage{211}
+    \subitem {deallocate}, \hyperpage{211}
+    \subitem {dimension}, \hyperpage{211}
+    \subitem {get\_B}, \hyperpage{211}
+    \subitem {get\_Binv}, \hyperpage{211}
+    \subitem {get\_C}, \hyperpage{212}
+    \subitem {get\_r}, \hyperpage{212}
+    \subitem {get\_r0}, \hyperpage{212}
+    \subitem {get\_x}, \hyperpage{212}
+    \subitem {mul}, \hyperpage{212}
+    \subitem {mulThenAdd}, \hyperpage{212}
+    \subitem {operator=}, \hyperpage{213}
+    \subitem {rawSetup}, \hyperpage{213}
+    \subitem {reallocate}, \hyperpage{213}
+    \subitem {reinitialize}, \hyperpage{213}
+    \subitem {sanityCheck}, \hyperpage{213}
+    \subitem {set\_B}, \hyperpage{214}
+    \subitem {set\_Binv}, \hyperpage{214}
+    \subitem {set\_C}, \hyperpage{215}
+    \subitem {set\_Cr0}, \hyperpage{215}
+    \subitem {set\_r}, \hyperpage{216}
+    \subitem {set\_r0}, \hyperpage{216}
+    \subitem {set\_x}, \hyperpage{217}
+    \subitem {SharedDoubleton}, \hyperpage{206--208}
+    \subitem {storageDimension}, \hyperpage{217}
+    \subitem {storageN0}, \hyperpage{217}
+    \subitem {take\_B}, \hyperpage{217}
+    \subitem {take\_Binv}, \hyperpage{218}
+    \subitem {take\_C}, \hyperpage{218}
+    \subitem {take\_r}, \hyperpage{218}
+    \subitem {take\_r0}, \hyperpage{218}
+    \subitem {take\_x}, \hyperpage{218}
+    \subitem {translate}, \hyperpage{219}
+    \subitem {updateBinv}, \hyperpage{219}
+  \item {capd::ddes::ToyModel}, \hyperpage{221}
+    \subitem {dimension}, \hyperpage{221}
+    \subitem {imageDimension}, \hyperpage{222}
+  \item {capd::ddes::ToyModelSq}, \hyperpage{222}
+    \subitem {dimension}, \hyperpage{223}
+    \subitem {imageDimension}, \hyperpage{223}
+  \item {capd::ddes::ToyModelSqA$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{223}
+    \subitem {dimension}, \hyperpage{224}
+    \subitem {getParamsCount}, \hyperpage{224}
+    \subitem {imageDimension}, \hyperpage{224}
+  \item {capd::ddes::VectorWithJacData$<$ VectorSpec, MatrixSpec $>$}, 
+		\hyperpage{225}
+  \item {capd::ddes::Wischert$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{226}
+    \subitem {dimension}, \hyperpage{227}
+    \subitem {getParamsCount}, \hyperpage{227}
+    \subitem {imageDimension}, \hyperpage{228}
+    \subitem {operator()}, \hyperpage{228}
+  \item {capd::ddeshelper::ArgumentParser}, \hyperpage{13}
+    \subitem {operator$<$$<$}, \hyperpage{14}
+  \item {capd::ddeshelper::BinaryData$<$ T $>$}, \hyperpage{36}
+  \item {capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$}, 
+		\hyperpage{36}
+  \item {capd::ddeshelper::CubeSet$<$ VectorSpec $>$}, \hyperpage{38}
+    \subitem {insert\_cover}, \hyperpage{39}
+    \subitem {operator$<$$<$}, \hyperpage{40}
+    \subitem {operator$>$$>$}, \hyperpage{40}
+    \subitem {subcubeset}, \hyperpage{39}
+  \item {capd::ddeshelper::CubeSet$<$ VectorSpec $>$::CubeSetIterator}, 
+		\hyperpage{40}
+  \item {capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$}, 
+		\hyperpage{54}
+    \subitem {getUnknownsCount}, \hyperpage{55}
+  \item {capd::ddeshelper::GeneratorRange$<$ IType $>$}, 
+		\hyperpage{158}
+    \subitem {increment}, \hyperpage{159}
+  \item {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{179}
+    \subitem {integrate}, \hyperpage{182, 183}
+    \subitem {loadData}, \hyperpage{183}
+    \subitem {makeSection}, \hyperpage{183}
+    \subitem {makeSolver}, \hyperpage{183}
+    \subitem {NonrigorousHelper}, \hyperpage{181, 182}
+    \subitem {poincare}, \hyperpage{184}
+    \subitem {refinePeriodic}, \hyperpage{184}
+    \subitem {setParam}, \hyperpage{185}
+    \subitem {setParams}, \hyperpage{185}
+  \item {capd::ddeshelper::PathConfig}, \hyperpage{186}
+    \subitem {filename}, \hyperpage{187}
+    \subitem {filepath}, \hyperpage{187}
+    \subitem {fullpath}, \hyperpage{188}
+    \subitem {mkdir\_p}, \hyperpage{188}
+    \subitem {PathConfig}, \hyperpage{187}
+    \subitem {suffix}, \hyperpage{188}
+  \item {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{191}
+    \subitem {constantInitialSolution}, \hyperpage{194}
+    \subitem {dataToSolution}, \hyperpage{194, 195}
+    \subitem {dumpData}, \hyperpage{195}
+    \subitem {functionToSolution}, \hyperpage{195}
+    \subitem {poincare}, \hyperpage{196}
+    \subitem {r0ToSolution}, \hyperpage{196, 197}
+    \subitem {setParam}, \hyperpage{197}
+    \subitem {setParams}, \hyperpage{197}
+    \subitem {timemap}, \hyperpage{197}
+  \item {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$::CoordinateSystem}, 
+		\hyperpage{37}
+  \item {checkCurveDimension}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{45}
+    \subitem {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{105}
+  \item {clear}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{90}
+  \item {coeff}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{165}
+  \item {collectComputationData}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{18}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{45}
+    \subitem {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{105, 106}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{136, 137}
+  \item {common\_B}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{29}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{144}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{210}
+  \item {common\_Binv}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{210}
+  \item {common\_C}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{29}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{145}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{210}
+  \item {common\_r}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{30}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{145}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{210}
+  \item {common\_r0}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{30}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{145}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{210}
+  \item {common\_x}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{30}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{145}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{211}
+  \item {computeDDECoefficients}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{18--20}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{46--48}
+    \subitem {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{107, 108}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{137}
+  \item {const\_iterator}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{17}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{135}
+  \item {constantInitialSolution}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{194}
+  \item {convert}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{48}
+    \subitem {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{108}
+  \item {copyPieces}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{90}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{117}
+  \item {currentTime}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{90}
+
+  \indexspace
+
+  \item {dataToSolution}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{194, 195}
+  \item {DDEForwardTaylorCurvePiece}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{60--62}
+  \item {DDEJetSection}
+    \subitem {capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}, 
+		\hyperpage{81}
+  \item {DDEPiecewisePolynomialCurve}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{87, 88}
+  \item {DDESolutionCurve}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{114--116}
+  \item {deallocate}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{65}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{211}
+  \item {deallocateCoeffs}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{165}
+  \item {deallocateJet}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{65}
+  \item {deallocatePieces}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{90}
+  \item {deallocateR0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{65}
+  \item {deallocateXi}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{65}
+  \item {deconvert}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{48}
+  \item {decreasedOrder}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{165}
+  \item {delaysCount}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{21}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{138}
+  \item {DelayStorageType}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{17}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{135}
+  \item {detectCrossingDirection}
+    \subitem {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{51}
+    \subitem {capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{102}
+  \item {dimCheck}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{66}
+  \item {dimCheckB}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{66}
+  \item {dimCheckC}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{66}
+  \item {dimension}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{21}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{30}
+    \subitem {capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{42}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{66}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{91}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{138}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{146}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{165}
+    \subitem {capd::ddes::LasotaWazewska$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{173}
+    \subitem {capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}, 
+		\hyperpage{175}
+    \subitem {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{178}
+    \subitem {capd::ddes::ODEPendulum}, \hyperpage{186}
+    \subitem {capd::ddes::PerezMaltaCoutinho$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{189}
+    \subitem {capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{201}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{211}
+    \subitem {capd::ddes::ToyModel}, \hyperpage{221}
+    \subitem {capd::ddes::ToyModelSq}, \hyperpage{223}
+    \subitem {capd::ddes::ToyModelSqA$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{224}
+    \subitem {capd::ddes::Wischert$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{227}
+    \subitem {ElNino$<$ ScalarSpec, ParamSpec $>$}, \hyperpage{157}
+  \item {dot}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{66}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{91}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{118}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{146}
+  \item {dt}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{67}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{118}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{166}
+  \item {dumpData}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{195}
+
+  \indexspace
+
+  \item {ElNino$<$ ScalarSpec, ParamSpec $>$}, \hyperpage{156}
+    \subitem {dimension}, \hyperpage{157}
+    \subitem {getParamsCount}, \hyperpage{157}
+    \subitem {imageDimension}, \hyperpage{157}
+    \subitem {operator()}, \hyperpage{158}
+  \item {encloseSolution}
+    \subitem {capd::ddes::DDETaylorSolver$<$ FunctionalMapSpec $>$}, 
+		\hyperpage{131, 132}
+  \item {end}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{21}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{91}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{138}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{166}
+  \item {endJet}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{67}
+  \item {epsi}
+    \subitem {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{200}
+  \item {epsilonShift}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{91, 92}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{118}
+  \item {eval}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{67}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{92}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{119}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{166}
+  \item {evalAtDelta}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{68}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{167}
+  \item {evalCoeff}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{68}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{167}
+  \item {evalCoeffAtDelta}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{68, 69}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{167, 168}
+  \item {extend}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{92}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{119}
+
+  \indexspace
+
+  \item {filename}
+    \subitem {capd::ddeshelper::PathConfig}, \hyperpage{187}
+  \item {filepath}
+    \subitem {capd::ddeshelper::PathConfig}, \hyperpage{187}
+  \item {findCrossingTime}
+    \subitem {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{51}
+    \subitem {capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{102}
+  \item {findRoughEnclosure}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{138}
+  \item {fullpath}
+    \subitem {capd::ddeshelper::PathConfig}, \hyperpage{188}
+  \item {functionToSolution}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{195}
+
+  \indexspace
+
+  \item {gamma}
+    \subitem {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{178}
+  \item {GenericJet}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{162, 163}
+  \item {get\_B}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{69}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{119}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{146}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{211}
+  \item {get\_Binv}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{146}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{211}
+  \item {get\_C}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{69}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{146}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{212}
+  \item {get\_r}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{69}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{147}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{212}
+  \item {get\_r0}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{69}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{147}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{212}
+  \item {get\_x}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{70}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{92}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{147}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{168}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{212}
+  \item {get\_Xi}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{70}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+  \item {getCoeffs}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{168}
+  \item {getCurrentTime}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{93}
+  \item {getGradient}
+    \subitem {capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}, 
+		\hyperpage{81}
+  \item {getGrid}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{93}
+  \item {getLastEnclosure}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{120}
+  \item {getParamsCount}
+    \subitem {capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{42}
+    \subitem {capd::ddes::LasotaWazewska$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{173}
+    \subitem {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{178}
+    \subitem {capd::ddes::PerezMaltaCoutinho$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{189}
+    \subitem {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{199}
+    \subitem {capd::ddes::ToyModelSqA$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{224}
+    \subitem {capd::ddes::Wischert$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{227}
+    \subitem {ElNino$<$ ScalarSpec, ParamSpec $>$}, \hyperpage{157}
+  \item {getPiece}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{93}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{121}
+  \item {getStep}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{93}
+  \item {getT0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{70}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{93}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{168}
+  \item {getUnknownsCount}
+    \subitem {capd::ddeshelper::DDECompareHelper$<$ VectorSpec $>$}, 
+		\hyperpage{55}
+  \item {getValueAtCurrent}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{93, 94}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{121}
+  \item {grid}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{94}
+
+  \indexspace
+
+  \item {hull}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{147}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{168}
+
+  \indexspace
+
+  \item {imageDimension}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{22}
+    \subitem {capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{42}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{49}
+    \subitem {capd::ddes::DDERigorousFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{109}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{139}
+    \subitem {capd::ddes::LasotaWazewska$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{174}
+    \subitem {capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}, 
+		\hyperpage{175}
+    \subitem {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{178}
+    \subitem {capd::ddes::ODEPendulum}, \hyperpage{186}
+    \subitem {capd::ddes::PerezMaltaCoutinho$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{190}
+    \subitem {capd::ddes::RosslerDelay$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{199}
+    \subitem {capd::ddes::ScalarLinearMap$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{201}
+    \subitem {capd::ddes::ToyModel}, \hyperpage{222}
+    \subitem {capd::ddes::ToyModelSq}, \hyperpage{223}
+    \subitem {capd::ddes::ToyModelSqA$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{224}
+    \subitem {capd::ddes::Wischert$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{228}
+    \subitem {ElNino$<$ ScalarSpec, ParamSpec $>$}, \hyperpage{157}
+  \item {increasedOrder}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{169}
+  \item {increment}
+    \subitem {capd::ddeshelper::GeneratorRange$<$ IType $>$}, 
+		\hyperpage{159}
+  \item {insert\_cover}
+    \subitem {capd::ddeshelper::CubeSet$<$ VectorSpec $>$}, 
+		\hyperpage{39}
+  \item {integrate}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{182, 183}
+  \item {integrateUntilSectionCrossing}
+    \subitem {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{52}
+    \subitem {capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{102}
+  \item {isMidCurve}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{70}
+  \item {iterator}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{17}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{135}
+
+  \indexspace
+
+  \item {j}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{94}
+  \item {JacobianStorageType}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{44}
+  \item {jet}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{95}
+  \item {jetAt}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{70}
+  \item {jetCommonMaximalOrder}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{95}
+  \item {jetOrderAt}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{95}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{121}
+  \item {jetPtr}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{95}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{121}
+
+  \indexspace
+
+  \item {length}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{96}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{121}
+  \item {loadData}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{183}
+
+  \indexspace
+
+  \item {m\_r0}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{130}
+  \item {makeSection}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{183}
+  \item {makeSolver}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{183}
+  \item {makeStorage\_B}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{147}
+  \item {makeStorage\_C}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{147}
+  \item {makeStorage\_r}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{148}
+  \item {makeStorage\_r0}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{148}
+  \item {makeStorage\_x}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{71}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{122}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{148}
+  \item {midCurve}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{71}
+  \item {midPoint}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{31}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{148}
+  \item {mkdir\_p}
+    \subitem {capd::ddeshelper::PathConfig}, \hyperpage{188}
+  \item {move}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{122}
+  \item {mul}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{32}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{71}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{96}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{122}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{148}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{212}
+  \item {mulThenAdd}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{32}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{96}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{122}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{148}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{212}
+
+  \indexspace
+
+  \item {n}
+    \subitem {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{179}
+  \item {NonrigorousHelper}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{181, 182}
+
+  \indexspace
+
+  \item {oneStep}
+    \subitem {capd::ddes::DDENonrigorousTaylorSolver$<$ FunctionalMapSpec $>$}, 
+		\hyperpage{83}
+  \item {operator VectorType}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{149}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{169}
+  \item {operator$<$$<$}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{100}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{130}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{156}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{172}
+    \subitem {capd::ddeshelper::ArgumentParser}, \hyperpage{14}
+    \subitem {capd::ddeshelper::CubeSet$<$ VectorSpec $>$}, 
+		\hyperpage{40}
+  \item {operator$>$$>$}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{100}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{156}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{172}
+    \subitem {capd::ddeshelper::CubeSet$<$ VectorSpec $>$}, 
+		\hyperpage{40}
+  \item {operator$\ast$=}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{96}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{149}
+  \item {operator()}
+    \subitem {capd::ddes::BasicDiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{22}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{49}
+    \subitem {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{52, 53}
+    \subitem {capd::ddes::DDENonrigorousTaylorSolver$<$ FunctionalMapSpec $>$}, 
+		\hyperpage{83, 84}
+    \subitem {capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{102, 103}
+    \subitem {capd::ddes::DiscreteDelaysFunctionalMap$<$ FinDimMapSpec, SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{139}
+    \subitem {capd::ddes::LasotaWazewska$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{174}
+    \subitem {capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}, 
+		\hyperpage{176}
+    \subitem {capd::ddes::MackeyGlass$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{178}
+    \subitem {capd::ddes::PerezMaltaCoutinho$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{190}
+    \subitem {capd::ddes::Wischert$<$ ScalarSpec, ParamSpec $>$}, 
+		\hyperpage{228}
+    \subitem {ElNino$<$ ScalarSpec, ParamSpec $>$}, \hyperpage{158}
+  \item {operator=}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{32}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{71}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{96}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{122}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{169}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{213}
+  \item {operator[]}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{71, 72}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{169}
+  \item {order}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{72}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{170}
+
+  \indexspace
+
+  \item {pastTime}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{96}
+  \item {PathConfig}
+    \subitem {capd::ddeshelper::PathConfig}, \hyperpage{187}
+  \item {poincare}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{184}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{196}
+  \item {pointToIndex}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{97}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{123}
+
+  \indexspace
+
+  \item {r0ToSolution}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{196, 197}
+  \item {rawSetup}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{213}
+  \item {rbegin}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{97}
+  \item {readFrom}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{97}
+  \item {reallocate}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{72}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{213}
+  \item {reallocateCoeffs}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{170}
+  \item {reallocateJet}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{72}
+  \item {reallocateR0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{72}
+  \item {reallocateXi}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{73}
+  \item {reduce}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{123}
+  \item {refinePeriodic}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{184}
+  \item {reinitialize}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{32}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{73}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{123}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{149}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{213}
+  \item {rend}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{97}
+
+  \indexspace
+
+  \item {sanityCheck}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{32}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{213}
+  \item {set\_B}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{32}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{73}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{123}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{149, 150}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{214}
+  \item {set\_Binv}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{73}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{124}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{150}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{214}
+  \item {set\_C}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{33}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{73}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{124}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{150, 151}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{215}
+  \item {set\_Cr0}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{33}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{74}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{124}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{151}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{215}
+  \item {set\_r}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{33}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{74}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{125}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{152}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{216}
+  \item {set\_r0}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{33}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{74}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{125}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{152, 153}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{216}
+  \item {set\_x}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{34}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{74}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{98}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{126}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{153}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{170}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{217}
+  \item {set\_Xi}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{75}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{126}
+  \item {setAsConstant}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{75, 76}
+  \item {setCoeffs}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{170}
+  \item {setCurrentTime}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{98}
+  \item {setCurrentV}
+    \subitem {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{53}
+  \item {setInitialV}
+    \subitem {capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}, 
+		\hyperpage{54}
+  \item {setOrder}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{170}
+  \item {setParam}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{185}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{197}
+  \item {setParams}
+    \subitem {capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}, 
+		\hyperpage{185}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{197}
+  \item {setT0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{76}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{98}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{171}
+  \item {setupDimension}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{34}
+  \item {setupFromData}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{34}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{76}
+  \item {setupFromOther}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{35}
+  \item {setValueAtCurrent}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{98}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{126}
+  \item {SharedDoubleton}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{206--208}
+  \item {show}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{35}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{77}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{98}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{127}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{171}
+  \item {storageDimension}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{35}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{77}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{98}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{127}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{154}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{171}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{217}
+  \item {storageN0}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{35}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{77}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{127}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{154}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{217}
+  \item {subcubeset}
+    \subitem {capd::ddeshelper::CubeSet$<$ VectorSpec $>$}, 
+		\hyperpage{39}
+  \item {subcurve}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{99}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{127, 128}
+  \item {suffix}
+    \subitem {capd::ddeshelper::PathConfig}, \hyperpage{188}
+  \item {summa}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{77}
+  \item {summaAtDelta}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{78}
+
+  \indexspace
+
+  \item {t0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{78}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{99}
+    \subitem {capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}, 
+		\hyperpage{171}
+  \item {take\_B}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{128}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{154}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{217}
+  \item {take\_Binv}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{128}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{154}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{218}
+  \item {take\_C}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{128}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{154}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{218}
+  \item {take\_r}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{128}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{155}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{218}
+  \item {take\_r0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{78}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{129}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{155}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{218}
+  \item {take\_x}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{129}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{155}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{218}
+  \item {take\_Xi}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{78}
+  \item {taylor}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{78, 79}
+  \item {taylorAtDelta}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{79}
+  \item {timemap}
+    \subitem {capd::ddeshelper::RigorousHelper$<$ EqSpec, delaysSpec, PoliciesSpec $>$}, 
+		\hyperpage{197}
+  \item {translate}
+    \subitem {capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{35}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{79}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{99}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{129}
+    \subitem {capd::ddes::DoubletonInterface$<$ MatrixSpec, PoliciesSpec $>$}, 
+		\hyperpage{155}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{219}
+
+  \indexspace
+
+  \item {updateBinv}
+    \subitem {capd::ddes::SharedDoubleton$<$ MatrixSpec, PolicySpec $>$}, 
+		\hyperpage{219}
+  \item {updateCommonR0}
+    \subitem {capd::ddes::DDEForwardTaylorCurvePiece$<$ TimePointSpec, SetSpec, isInterval $>$}, 
+		\hyperpage{79}
+
+  \indexspace
+
+  \item {ValueStorageType}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{44}
+  \item {VariableStorageType}
+    \subitem {capd::ddes::DDEBasicFunctionalMap$<$ SolutionCurveSpec, JetSpec $>$}, 
+		\hyperpage{44}
+
+  \indexspace
+
+  \item {writeTo}
+    \subitem {capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}, 
+		\hyperpage{100}
+    \subitem {capd::ddes::DDESolutionCurve$<$ SetSpec $>$}, 
+		\hyperpage{129}
+
+\end{theindex}

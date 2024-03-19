@@ -1,0 +1,78 @@
+\hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid}{}\doxysection{capd\+::ddes\+::Discrete\+Time\+Grid$<$ Real\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1DiscreteTimeGrid}\index{capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$@{capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Common.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_aae0353444fb867b390c0963b6294c05d}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_aae0353444fb867b390c0963b6294c05d}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Discrete\+Time\+Grid}} {\bfseries Class\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_a36237741d23b9dd4bdca8400bd44413e}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_a36237741d23b9dd4bdca8400bd44413e}} 
+{\bfseries Discrete\+Time\+Grid} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Discrete\+Time\+Grid}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_aadbfd1792f855977df81463afe739b5b}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_aadbfd1792f855977df81463afe739b5b}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Discrete\+Time\+Grid}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Discrete\+Time\+Grid}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_aa09f32fda62892186cbee54c1b3454bf}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_aa09f32fda62892186cbee54c1b3454bf}} 
+{\bfseries Discrete\+Time\+Grid} (Real\+Spec h)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_a02ca97a1ae87fac09ffffb36192dacd4}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_a02ca97a1ae87fac09ffffb36192dacd4}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries point} (int i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_adf6ecd5bcdc85fd56d6c0e1a04e4773e}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_adf6ecd5bcdc85fd56d6c0e1a04e4773e}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries operator()} (int i) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_a439d5e2e91832e4157f3ccf94b39b601}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_a439d5e2e91832e4157f3ccf94b39b601}} 
+void {\bfseries split} (Real\+Spec t, \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&ti, Real\+Spec \&epsi) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_a410c0e1519b5e99dbc4b907f6fc6e71c}{badge}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_aa7220d043af6748af7fd4cb2ad4fe1c2}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_aa7220d043af6748af7fd4cb2ad4fe1c2}} 
+static const Real\+Spec {\bfseries zero} = Real\+Spec(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_a00ae2e1b3754d09de53c1dfb5f57beb3}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_a00ae2e1b3754d09de53c1dfb5f57beb3}} 
+Real\+Spec {\bfseries m\+\_\+h}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Real\+Spec$>$\newline
+class capd\+::ddes\+::\+Discrete\+Time\+Grid$<$ Real\+Spec $>$}
+
+represents time points on a grid i $\ast$ h, i -\/ integer, h -\/ real
+
+T\+O\+DO\+: (N\+OT U\+R\+G\+E\+NT, F\+AR F\+U\+T\+U\+RE, R\+E\+T\+H\+I\+NK) rewrite so that Time\+Point holds ref to Grid, then no problems will be presented! T\+O\+DO\+: (N\+OT U\+R\+G\+E\+NT, F\+AR F\+U\+T\+U\+RE, R\+E\+T\+H\+I\+NK) (one problem\+: when we want to have Time\+Point(), i.\+e. to have 0.\+0 time point) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DiscreteTimeGrid_a410c0e1519b5e99dbc4b907f6fc6e71c}\label{classcapd_1_1ddes_1_1DiscreteTimeGrid_a410c0e1519b5e99dbc4b907f6fc6e71c}} 
+\index{capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$@{capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$}!badge@{badge}}
+\index{badge@{badge}!capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$@{capd::ddes::DiscreteTimeGrid$<$ RealSpec $>$}}
+\doxysubsubsection{\texorpdfstring{badge()}{badge()}}
+{\footnotesize\ttfamily template$<$typename Real\+Spec $>$ \\
+static std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{capd\+::ddes\+::\+Discrete\+Time\+Grid}}$<$ Real\+Spec $>$\+::badge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Badge must be a single word! 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Common.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+\hypertarget{classcapd_1_1ddes_1_1ToyModel}{}\doxysection{capd\+::ddes\+::Toy\+Model Class Reference}
+\label{classcapd_1_1ddes_1_1ToyModel}\index{capd::ddes::ToyModel@{capd::ddes::ToyModel}}
+
+
+{\ttfamily \#include $<$Sample\+Eqns.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_a943f9a2e444e8b09f3e2fab5f75768c1}\label{classcapd_1_1ddes_1_1ToyModel_a943f9a2e444e8b09f3e2fab5f75768c1}} 
+typedef long {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_a656623f5bb9ce9e0fa525544ca8ca75d}\label{classcapd_1_1ddes_1_1ToyModel_a656623f5bb9ce9e0fa525544ca8ca75d}} 
+{\bfseries Toy\+Model} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModel}{Toy\+Model}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_a79208b3d7b7b439912041f10e699278b}\label{classcapd_1_1ddes_1_1ToyModel_a79208b3d7b7b439912041f10e699278b}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModel}{Toy\+Model}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModel}{Toy\+Model}} const \&orig)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModel_af3e3bba00921c5d8db9839fd991e6bce}{image\+Dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ToyModel_a1f004bbb0f889c69b152341b048714f8}{dimension}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_a9a47beb89db1dad4763dec4571cb2b7f}\label{classcapd_1_1ddes_1_1ToyModel_a9a47beb89db1dad4763dec4571cb2b7f}} 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void {\bfseries operator()} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_af82c36d447f38b82541c6a785c37abef}\label{classcapd_1_1ddes_1_1ToyModel_af82c36d447f38b82541c6a785c37abef}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scalar eq. x(t) $\ast$ x(t-\/tau).
+
+Use with \textquotesingle{}\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{Discrete\+Delays\+Functional\+Map}}\textquotesingle{} to define tau 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_a1f004bbb0f889c69b152341b048714f8}\label{classcapd_1_1ddes_1_1ToyModel_a1f004bbb0f889c69b152341b048714f8}} 
+\index{capd::ddes::ToyModel@{capd::ddes::ToyModel}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::ToyModel@{capd::ddes::ToyModel}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily size\+\_\+type capd\+::ddes\+::\+Toy\+Model\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classcapd_1_1ddes_1_1ToyModel_af3e3bba00921c5d8db9839fd991e6bce}\label{classcapd_1_1ddes_1_1ToyModel_af3e3bba00921c5d8db9839fd991e6bce}} 
+\index{capd::ddes::ToyModel@{capd::ddes::ToyModel}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!capd::ddes::ToyModel@{capd::ddes::ToyModel}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily size\+\_\+type capd\+::ddes\+::\+Toy\+Model\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+output dimension of the internal map 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/Sample\+Eqns.\+h\end{DoxyCompactItemize}

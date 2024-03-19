@@ -1,0 +1,840 @@
+\hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{}\doxysection{capd\+::ddes\+::D\+D\+E\+Piecewise\+Polynomial\+Curve$<$ Grid\+Spec, Jet\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Piecewise\+Polynomial\+Curve.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_1_1rebind}{rebind}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a12609c4aa9ddc75f4f33862cbd05668b}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a12609c4aa9ddc75f4f33862cbd05668b}} 
+typedef Grid\+Spec {\bfseries Grid\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5edc99c3fb526c86171a24ddfa89eef9}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5edc99c3fb526c86171a24ddfa89eef9}} 
+typedef Jet\+Spec {\bfseries Jet\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aad379cf571c52d94216fbff134b5b55a}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aad379cf571c52d94216fbff134b5b55a}} 
+typedef Jet\+Type {\bfseries Curve\+Piece\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7ac3cb521153a68c5c67aedcaf45d270}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7ac3cb521153a68c5c67aedcaf45d270}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Type, Jet\+Type $>$ {\bfseries Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab9f2adc935a70165449681678adeea32}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab9f2adc935a70165449681678adeea32}} 
+typedef Jet\+Type\+::\+Data\+Type {\bfseries Data\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f8e9cd6eaa2af2d5835b045fbd7f6c4}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f8e9cd6eaa2af2d5835b045fbd7f6c4}} 
+typedef Jet\+Type\+::\+Matrix\+Type {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad68c711cdbffd14b964946fc7260444e}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad68c711cdbffd14b964946fc7260444e}} 
+typedef Jet\+Type\+::\+Vector\+Type {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ccfadc1700040ea295b233d11f9533a}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ccfadc1700040ea295b233d11f9533a}} 
+typedef Jet\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a558d815ca31b502afc0c73cb713de4f3}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a558d815ca31b502afc0c73cb713de4f3}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aa984ecdbcdeb267c2f19a4e6ea393e6a}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aa984ecdbcdeb267c2f19a4e6ea393e6a}} 
+typedef Grid\+Type\+::\+Time\+Point\+Type {\bfseries Time\+Point\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af8739529cfc889c3d5d36aa3a7259d17}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af8739529cfc889c3d5d36aa3a7259d17}} 
+typedef Jet\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a942e0b0b56fd2a8cdc1ffc11a5df66ea}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a942e0b0b56fd2a8cdc1ffc11a5df66ea}} 
+typedef std\+::deque$<$ Curve\+Piece\+Type $\ast$ $>$ {\bfseries Pieces\+Storage\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac80c2bc8a00fdb0983b1b408e365d7ab}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac80c2bc8a00fdb0983b1b408e365d7ab}} 
+typedef Pieces\+Storage\+Type\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a259cf2e101f25c68e52f7358ff2de56b}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a259cf2e101f25c68e52f7358ff2de56b}} 
+typedef Pieces\+Storage\+Type\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a950cda1340ca68c3ae1de6621a48b0e5}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a950cda1340ca68c3ae1de6621a48b0e5}} 
+typedef Pieces\+Storage\+Type\+::reverse\+\_\+iterator {\bfseries reverse\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a250f3e73972bbde72ea93dc8c05b34a8}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a250f3e73972bbde72ea93dc8c05b34a8}} 
+typedef Pieces\+Storage\+Type\+::const\+\_\+reverse\+\_\+iterator {\bfseries const\+\_\+reverse\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad98115946cda3cc62c8dcbd314cf7a56}{badge}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_adb33756a400dd9a0b0175e3c7db57b97}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ec87cca9c4252073f7b0f1e0be52ca8}{operator=}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a32dd2c423a9f8052bb24a387e2ec9880}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (const Grid\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}{grid}}, size\+\_\+type d=0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6df33dbe6aec0c8414e3368bdc9a3658}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (const Grid\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}{grid}}, const Time\+Point\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, size\+\_\+type d=0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab8ac40938e23c1ce069414a2fa905f82}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (const Grid\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}{grid}}, const Time\+Point\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, const Data\+Type \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af1e49c6a09618591b16d38fee376f76d}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (const Grid\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}{grid}}, const Time\+Point\+Type \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, const Time\+Point\+Type \&t1, size\+\_\+type order, const Data\+Type \&value)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2f3320ebdc0bc1ec7f0a6d04d933b620}{length}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2e0db83681efad5be3738a4e4b6f8d21}{subcurve}} (size\+\_\+type index1, size\+\_\+type index2) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f29df615f4c0760bdf548b165fb3379}{subcurve}} (size\+\_\+type index1) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a772ab87fc0e979128e80f79c0a0e0707}{subcurve}} (Time\+Point\+Type const \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, Time\+Point\+Type const \&t1) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a066016e30763f4079903d2bcd189420f}{subcurve}} (Time\+Point\+Type const \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}) const
+\item 
+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50cfffd13d5c7b68233c574aac4357f2}{rbegin}} ()
+\item 
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a36b2bf1f5cab369bbdbffc74ea97ad73}{rbegin}} () const
+\item 
+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acac5390ae2f29ca59327907d6fc9a5a8}{rend}} ()
+\item 
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6b492c13104b297c4af4e847facb17d8}{rend}} () const
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a886ca1cfaaa02573d6851991443dcd35}{begin}} ()
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07563a09dc06c6731c22856b435c6327}{begin}} () const
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0211c9014740055189b930a63e9be278}{end}} ()
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1bc3bce2f2606209f4ff4cab1afe1b12}{end}} () const
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab1866d8e958aed6b50fdf1a23dbfae2f}{at}} (Time\+Point\+Type const \&t)
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab966677e2d4174aadb5744d4e8daf33c}{at}} (Time\+Point\+Type const \&t) const
+\item 
+Grid\+Type const  \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}{grid}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2587907ce74999b69604f5d1ff1b4612}{dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_afa3f1fe9db0cd083d43552bbabb384cf}{storage\+Dimension}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac797e68a9f64042528a18adf61e0e993}{set\+Current\+Time}} (Time\+Point\+Type const \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}})
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_abbdc593a2d19db52c438f69b1e7af0d7}{get\+Current\+Time}} () const
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5acfd7f2cfbd78150b78170c93492a39}{current\+Time}} () const
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}} () const
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad01cd157744c72a7620b2f21609e0c0d}{get\+T0}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab50036906fe5763ee8af841ea44147d1}{set\+T0}} (Time\+Point\+Type const \&\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}})
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae616a956837537cb5a116e18a43d866c}{past\+Time}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1bbd54be292505410ad947875e1db143}{get\+\_\+x}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3528771a51173a2d42ae5c981b7f74d7}{set\+\_\+x}} (Vector\+Type const \&x)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3d5abcf269ea3630e86f55e828cdaff8}{affine\+Transform}} (Matrix\+Type const \&M, Vector\+Type const \&v)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a9b08d9fb806e64aa8cffbb23b9090bab}{translate}} (Vector\+Type const \&v)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a783d1ecb0e21ac94fa278835cd13a4fa}{add}} (Vector\+Type const \&v)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7aeb74237df5d61f3a8b9a3e539dea8e}{add}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&set)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a08850a0ee76f4a5c167f4f0f45d6b631}{mul\+Then\+Add}} (Scalar\+Type const \&c, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&set)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aeb997783473c7a64d5448538fab69760}{mul}} (Scalar\+Type const \&c)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a92cfbf2bacad5ad558ebc0eef6ea1681}{operator$\ast$=}} (Scalar\+Type const \&c)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50134a39710fc3ffa76c312253fceab1}{point\+To\+Index}} (Time\+Point\+Type const \&t) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a853083a93e4271b29e6a68629e3007e3}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a853083a93e4271b29e6a68629e3007e3}} 
+Curve\+Piece\+Type \& {\bfseries get\+Piece} (Time\+Point\+Type const \&t) const
+\item 
+Curve\+Piece\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac4a6765deb4357354f180563abd285ad}{get\+Piece}} (size\+\_\+type const \&index) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a16381ced09c2ce63d853c0d6c231124c}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a16381ced09c2ce63d853c0d6c231124c}} 
+Vector\+Type {\bfseries eval} (Time\+Point\+Type t) const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3673e626f17c6df53d3367c93b5a7c87}{eval}} (Real\+Type t) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a91c417d756d004e20b74b01fa817a170}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a91c417d756d004e20b74b01fa817a170}} 
+void {\bfseries eval} (Time\+Point\+Type t, Data\+Type \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1717fc87143392b1cd1da7ddbeb0ec0a}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1717fc87143392b1cd1da7ddbeb0ec0a}} 
+void {\bfseries eval} (Real\+Type t, Data\+Type \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af51241f19ab373bd0332b0d1fd7cdc81}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af51241f19ab373bd0332b0d1fd7cdc81}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} {\bfseries dt} (Data\+Type const \&value\+At\+Current, size\+\_\+type n=1) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a061272c2e91e0e8ad64f56aff3b6ed38}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a061272c2e91e0e8ad64f56aff3b6ed38}} 
+{\footnotesize template$<$typename Functional\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} {\bfseries dt} (Functional\+Spec const \&f, size\+\_\+type n=1) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4551aea59bbc68482c862f7793379665}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4551aea59bbc68482c862f7793379665}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} {\bfseries increased\+Order} (size\+\_\+type r=1)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_accaa6f2a27724fde3d9a1eed4db5c21c}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_accaa6f2a27724fde3d9a1eed4db5c21c}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} {\bfseries decreased\+Order} (size\+\_\+type r=1)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae48b4bcff5f2b23f5f8bf70c70d5c0d8}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae48b4bcff5f2b23f5f8bf70c70d5c0d8}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& {\bfseries add\+Piece} (Curve\+Piece\+Type const \&new\+Piece)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4d6ddb9101963e4cc678757b51ff63cd}{add\+Piece}} (Curve\+Piece\+Type $\ast$new\+Piece)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ba981fc432c8e06c33736340adaa93b}{add\+Past\+Piece}} (const Curve\+Piece\+Type \&new\+Piece)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab35784d6047599a5016a6a665490bf0f}{add\+Past\+Piece}} (Curve\+Piece\+Type $\ast$new\+Piece)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0bc5578041612fb9c5c41dc01f80d7ff}{set\+Value\+At\+Current}} (const Data\+Type \&value)
+\item 
+Data\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7445eec830196ba992f5ff4211470c40}{get\+Value\+At\+Current}} ()
+\item 
+const Data\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad5a9583f29a0c53a42034f43913d0369}{get\+Value\+At\+Current}} () const
+\item 
+Jet\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a045e4da1baae894dd047dbaaa5c2eb78}{jet}} (Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, Real\+Type t1) const
+\item 
+Jet\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1cba6d31cb1f63dc575dc7fe6cb62194}{jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, Time\+Point\+Type t1) const
+\item 
+Jet\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aafd6d51f09e6b937cd0ba67066c86dad}{jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}) const
+\item 
+Jet\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a8b0e595f3a067836bf452c69135e6646}{jet\+Ptr}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}) const
+\item 
+Data\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07570ab51c37969f9a3a7aeedc23479c}{j}} (size\+\_\+type i, size\+\_\+type k) const
+\item 
+Data\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0a663b60fb66753cad5c9679f65df360}{j}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}, size\+\_\+type k) const
+\item 
+Jet\+Type const  \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a60f5f457c5e90d69ac7af726134bfb30}{j}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}}) const
+\item 
+Jet\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a67bde50b280bb9487675db35a42ef1e1}{j}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}})
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab2b2e795bca059e7e51de68e11b7a689}{jet\+Order\+At}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}{t0}})
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a23d665f025dbd679b638458b49ab20d0}{jet\+Common\+Maximal\+Order}} ()
+\item 
+const Grid\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f3fbf254c67b9e511916b7c459ff5da}{get\+Grid}} () const
+\item 
+const Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_add5e22a63fe36c3b09c9799cd4ad1c87}{get\+Step}} () const
+\item 
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a51ec0883b6c3e38cc24b35545eb5cf04}{show}} () const
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4e90f6cc4a9f2a6e21997183ce409fdd}{extend}} (Dyn\+Sys\+Spec \&solver)
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3538628ed44fd9d9fcb9a1284e3ae2eb}{epsilon\+Shift}} (Dyn\+Sys\+Spec const \&solver, Real\+Type const \&epsilon, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \&out\+\_\+result) const
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a236f4fdba6898d040341f32ab1c96141}{epsilon\+Shift}} (Dyn\+Sys\+Spec const \&solver, Time\+Point\+Type const \&at\+\_\+t0, Real\+Type const \&epsilon, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \&out\+\_\+result) const
+\item 
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad31322f0d0d1307f3bba15d38251be72}{dot}} (Vector\+Type const \&v) const
+\item 
+{\footnotesize template$<$typename Jet\+Section $>$ }\\Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4dc8b666189a852f9efe759c5764f8a5}{dot}} (Jet\+Section const \&v) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a9d870249bee8e062fcd6df7ca6d48a35}{clear}} ()
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af88d7cd9470718d644e7ed7a9f33d86f}{$\sim$\+D\+D\+E\+Piecewise\+Polynomial\+Curve}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a97f45f0af5330e480d64e40d4ef40fff}{deallocate\+Pieces}} ()
+\item 
+{\footnotesize template$<$typename Iterator\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aefb6c635eb31d59c773f83d49398c17e}{copy\+Pieces}} (Iterator\+Spec from, Iterator\+Spec to)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acbc9821ed72c46ed24c259ff7dfd8b18}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acbc9821ed72c46ed24c259ff7dfd8b18}} 
+void {\bfseries copy\+Pieces} (iterator from, iterator to)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acb30fb77302e2dfc4b3a69308f679fdd}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acb30fb77302e2dfc4b3a69308f679fdd}} 
+void {\bfseries copy\+Pieces} (const\+\_\+iterator from, const\+\_\+iterator to)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a059e66ab1a128a0ba6aa285499d2a2c5}{write\+To}} (std\+::ostream \&out) const
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a57a2f3d6353bdfe6167f871dcba0551d}{read\+From}} (std\+::istream \&out) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac93f5f066da93502e80b92b234601111}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac93f5f066da93502e80b92b234601111}} 
+const Grid\+Type \& {\bfseries m\+\_\+grid}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae7e4d9ba33acf68844c7e4f4d709c687}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae7e4d9ba33acf68844c7e4f4d709c687}} 
+Time\+Point\+Type {\bfseries m\+\_\+t\+\_\+current}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4a55efa80953b99e9013d87f3b24cbc5}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4a55efa80953b99e9013d87f3b24cbc5}} 
+Vector\+Type {\bfseries m\+\_\+last\+Enclosure}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7f2ed3fbb8748523cff7878b3d22c4de}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7f2ed3fbb8748523cff7878b3d22c4de}} 
+Data\+Type {\bfseries m\+\_\+value\+At\+Current}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5006924f1172af048ffbf9fc5405a055}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5006924f1172af048ffbf9fc5405a055}} 
+size\+\_\+type {\bfseries m\+\_\+dimension}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a837bb81d3774d3a1cb883200229a5d6c}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a837bb81d3774d3a1cb883200229a5d6c}} 
+Pieces\+Storage\+Type {\bfseries m\+\_\+pieces}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6967598492a7596c0394d176453b9e83}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&curve)
+\item 
+std\+::istream \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6d17cf21c6bac7eaa3f0b2cfd8440ab5}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&curve)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Grid\+Spec, typename Jet\+Spec$>$\newline
+class capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve$<$ Grid\+Spec, Jet\+Spec $>$}
+
+T\+O\+DO\+: docs 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_adb33756a400dd9a0b0175e3c7db57b97}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_adb33756a400dd9a0b0175e3c7db57b97}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}}
+\index{DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPiecewisePolynomialCurve()}{DDEPiecewisePolynomialCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$ \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+copy constructor, standard thing \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a32dd2c423a9f8052bb24a387e2ec9880}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a32dd2c423a9f8052bb24a387e2ec9880}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}}
+\index{DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPiecewisePolynomialCurve()}{DDEPiecewisePolynomialCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (\begin{DoxyParamCaption}\item[{const Grid\+Type \&}]{grid,  }\item[{size\+\_\+type}]{d = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a Curve that is d dimensional, over given grid, located initially at Time\+Point 0 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6df33dbe6aec0c8414e3368bdc9a3658}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6df33dbe6aec0c8414e3368bdc9a3658}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}}
+\index{DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPiecewisePolynomialCurve()}{DDEPiecewisePolynomialCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (\begin{DoxyParamCaption}\item[{const Grid\+Type \&}]{grid,  }\item[{const Time\+Point\+Type \&}]{t0,  }\item[{size\+\_\+type}]{d = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a Curve that is d dimensional, over given grid starting at a given Time\+Point \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab8ac40938e23c1ce069414a2fa905f82}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab8ac40938e23c1ce069414a2fa905f82}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}}
+\index{DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPiecewisePolynomialCurve()}{DDEPiecewisePolynomialCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (\begin{DoxyParamCaption}\item[{const Grid\+Type \&}]{grid,  }\item[{const Time\+Point\+Type \&}]{t0,  }\item[{const Data\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a Curve that is a single point of given value at time point t0 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af1e49c6a09618591b16d38fee376f76d}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af1e49c6a09618591b16d38fee376f76d}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}}
+\index{DDEPiecewisePolynomialCurve@{DDEPiecewisePolynomialCurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPiecewisePolynomialCurve()}{DDEPiecewisePolynomialCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (\begin{DoxyParamCaption}\item[{const Grid\+Type \&}]{grid,  }\item[{const Time\+Point\+Type \&}]{t0,  }\item[{const Time\+Point\+Type \&}]{t1,  }\item[{size\+\_\+type}]{order,  }\item[{const Data\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a constant function with a given value on interval \mbox{[}t1, t0\mbox{]} and with given order (useful for future use as a a set in integration). \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af88d7cd9470718d644e7ed7a9f33d86f}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_af88d7cd9470718d644e7ed7a9f33d86f}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!````~DDEPiecewisePolynomialCurve@{$\sim$DDEPiecewisePolynomialCurve}}
+\index{````~DDEPiecewisePolynomialCurve@{$\sim$DDEPiecewisePolynomialCurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$DDEPiecewisePolynomialCurve()}{~DDEPiecewisePolynomialCurve()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::$\sim$\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{D\+D\+E\+Piecewise\+Polynomial\+Curve}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+standard C++ thing 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7aeb74237df5d61f3a8b9a3e539dea8e}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7aeb74237df5d61f3a8b9a3e539dea8e}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!add@{add}}
+\index{add@{add}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a783d1ecb0e21ac94fa278835cd13a4fa}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a783d1ecb0e21ac94fa278835cd13a4fa}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!add@{add}}
+\index{add@{add}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::add (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ba981fc432c8e06c33736340adaa93b}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ba981fc432c8e06c33736340adaa93b}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!addPastPiece@{addPastPiece}}
+\index{addPastPiece@{addPastPiece}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{addPastPiece()}{addPastPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::add\+Past\+Piece (\begin{DoxyParamCaption}\item[{const Curve\+Piece\+Type \&}]{new\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+same as add\+Piece but adds in the past (before existing pieces) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab35784d6047599a5016a6a665490bf0f}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab35784d6047599a5016a6a665490bf0f}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!addPastPiece@{addPastPiece}}
+\index{addPastPiece@{addPastPiece}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{addPastPiece()}{addPastPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::add\+Past\+Piece (\begin{DoxyParamCaption}\item[{Curve\+Piece\+Type $\ast$}]{new\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+adds directly by pointer, faster than by copying from reference. The curve will be resp. for deleting. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4d6ddb9101963e4cc678757b51ff63cd}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4d6ddb9101963e4cc678757b51ff63cd}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!addPiece@{addPiece}}
+\index{addPiece@{addPiece}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{addPiece()}{addPiece()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::add\+Piece (\begin{DoxyParamCaption}\item[{Curve\+Piece\+Type $\ast$}]{new\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+adds directly by pointer, faster than by copying from reference. The curve will be resp. for deleting. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3d5abcf269ea3630e86f55e828cdaff8}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3d5abcf269ea3630e86f55e828cdaff8}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!affineTransform@{affineTransform}}
+\index{affineTransform@{affineTransform}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{affineTransform()}{affineTransform()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::affine\+Transform (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{M,  }\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab1866d8e958aed6b50fdf1a23dbfae2f}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab1866d8e958aed6b50fdf1a23dbfae2f}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!at@{at}}
+\index{at@{at}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::at (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab966677e2d4174aadb5744d4e8daf33c}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab966677e2d4174aadb5744d4e8daf33c}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!at@{at}}
+\index{at@{at}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::at (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad98115946cda3cc62c8dcbd314cf7a56}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad98115946cda3cc62c8dcbd314cf7a56}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!badge@{badge}}
+\index{badge@{badge}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{badge()}{badge()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+virtual std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::badge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+for identifying in exceptions and output eventual derived classes \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a886ca1cfaaa02573d6851991443dcd35}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a886ca1cfaaa02573d6851991443dcd35}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!begin@{begin}}
+\index{begin@{begin}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07563a09dc06c6731c22856b435c6327}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07563a09dc06c6731c22856b435c6327}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!begin@{begin}}
+\index{begin@{begin}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a9d870249bee8e062fcd6df7ca6d48a35}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a9d870249bee8e062fcd6df7ca6d48a35}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!clear@{clear}}
+\index{clear@{clear}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+clears the Curve, removing all pieces and setting it to be a point of value 0. at current t0 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aefb6c635eb31d59c773f83d49398c17e}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aefb6c635eb31d59c773f83d49398c17e}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!copyPieces@{copyPieces}}
+\index{copyPieces@{copyPieces}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{copyPieces()}{copyPieces()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+template$<$typename Iterator\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::copy\+Pieces (\begin{DoxyParamCaption}\item[{Iterator\+Spec}]{from,  }\item[{Iterator\+Spec}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+low level, does not care about changing time points, does not clear m\+\_\+pieces, etc. just copies from to \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5acfd7f2cfbd78150b78170c93492a39}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5acfd7f2cfbd78150b78170c93492a39}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!currentTime@{currentTime}}
+\index{currentTime@{currentTime}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{currentTime()}{currentTime()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a97f45f0af5330e480d64e40d4ef40fff}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a97f45f0af5330e480d64e40d4ef40fff}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!deallocatePieces@{deallocatePieces}}
+\index{deallocatePieces@{deallocatePieces}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{deallocatePieces()}{deallocatePieces()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::deallocate\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+safely deallocates pointers in m\+\_\+pieces and clears the container \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2587907ce74999b69604f5d1ff1b4612}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2587907ce74999b69604f5d1ff1b4612}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4dc8b666189a852f9efe759c5764f8a5}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4dc8b666189a852f9efe759c5764f8a5}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!dot@{dot}}
+\index{dot@{dot}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+template$<$typename Jet\+Section $>$ \\
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::dot (\begin{DoxyParamCaption}\item[{Jet\+Section const \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+computes dot taking appropriate jets into account. T\+O\+DO\+: only template with a given type of section (based on Jet\+Type)? \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad31322f0d0d1307f3bba15d38251be72}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad31322f0d0d1307f3bba15d38251be72}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!dot@{dot}}
+\index{dot@{dot}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::dot (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+computes dot taking appropriate number of first components from Curve \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0211c9014740055189b930a63e9be278}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0211c9014740055189b930a63e9be278}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!end@{end}}
+\index{end@{end}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1bc3bce2f2606209f4ff4cab1afe1b12}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1bc3bce2f2606209f4ff4cab1afe1b12}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!end@{end}}
+\index{end@{end}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3538628ed44fd9d9fcb9a1284e3ae2eb}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3538628ed44fd9d9fcb9a1284e3ae2eb}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!epsilonShift@{epsilonShift}}
+\index{epsilonShift@{epsilonShift}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{epsilonShift()}{epsilonShift()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::epsilon\+Shift (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec const \&}]{solver,  }\item[{Real\+Type const \&}]{epsilon,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \&}]{out\+\_\+result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+it computes epsilon shift of in\+\_\+curve and store it in out\+\_\+result. out\+\_\+result must be setup so that all desired Time\+Points are presented and Jets must be initialized to a desired order. Most probable scenario\+: out\+\_\+result has Jets of order n at times -\/tau, -\/tau+1/h, ..., -\/h, 0 (current time), where h = 1/p, as in the paper. Then we shift the final part of the in\+\_\+curve starting at t0 -\/ tau -\/ h up to -\/h, to t0 -\/ tau -\/ h + epsi, ..., -\/h + epsi. The coefficients will be stored in out\+\_\+result at -\/tau, .., 0, respectively! The t0 is taken from in\+\_\+curve.\+t0() in this procedure. For a general t0 see other function.
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) this should be not templated by Dyn\+Sys\+Spec but concrete \char`\"{}interfaced\char`\"{} type, known in advance (?) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a236f4fdba6898d040341f32ab1c96141}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a236f4fdba6898d040341f32ab1c96141}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!epsilonShift@{epsilonShift}}
+\index{epsilonShift@{epsilonShift}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{epsilonShift()}{epsilonShift()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::epsilon\+Shift (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec const \&}]{solver,  }\item[{Time\+Point\+Type const \&}]{at\+\_\+t0,  }\item[{Real\+Type const \&}]{epsilon,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \&}]{out\+\_\+result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+it computes epsilon shift of in\+\_\+curve and store it in out\+\_\+result. out\+\_\+result must be setup so that all desired Time\+Points are presented and Jets must be initialized to a desired order. Most probable scenario\+: out\+\_\+result has Jets of order n at times -\/tau, -\/tau+1/h, ..., -\/h, 0 (current time), where h = 1/p, as in the paper. Then we shift the final part of the in\+\_\+curve starting at at\+\_\+t0 -\/ tau -\/ h up to -\/h, to t0 -\/ tau -\/ h + epsi, ..., -\/h + epsi. The coefficients will be stored in out\+\_\+result at -\/tau, .., 0, respectively!
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) this should be not templated by Dyn\+Sys\+Spec but concrete \char`\"{}interfaced\char`\"{} type, known in advance \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3673e626f17c6df53d3367c93b5a7c87}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3673e626f17c6df53d3367c93b5a7c87}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!eval@{eval}}
+\index{eval@{eval}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::eval (\begin{DoxyParamCaption}\item[{Real\+Type}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+W\+A\+R\+N\+I\+NG\+: T\+H\+IS F\+U\+N\+C\+T\+I\+ON IS N\+OT R\+I\+G\+O\+R\+O\+US F\+OR I\+N\+T\+E\+R\+V\+A\+L\+S! DO N\+OT U\+SE IN P\+R\+O\+O\+FS W\+A\+R\+N\+I\+NG\+: C\+O\+M\+P\+U\+TE R\+I\+G\+O\+R\+O\+U\+S\+LY O\+N\+LY U\+S\+I\+NG eval(\+Time\+Point\+Type t) V\+E\+R\+S\+I\+ON \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4e90f6cc4a9f2a6e21997183ce409fdd}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a4e90f6cc4a9f2a6e21997183ce409fdd}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!extend@{extend}}
+\index{extend@{extend}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::extend (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec \&}]{solver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Naming convention. To be a pair of extend $<$-\/$>$ epsilon\+Shift See move() for more docs. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1bbd54be292505410ad947875e1db143}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1bbd54be292505410ad947875e1db143}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!get\_x@{get\_x}}
+\index{get\_x@{get\_x}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_x()}{get\_x()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_abbdc593a2d19db52c438f69b1e7af0d7}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_abbdc593a2d19db52c438f69b1e7af0d7}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getCurrentTime@{getCurrentTime}}
+\index{getCurrentTime@{getCurrentTime}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getCurrentTime()}{getCurrentTime()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f3fbf254c67b9e511916b7c459ff5da}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f3fbf254c67b9e511916b7c459ff5da}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getGrid@{getGrid}}
+\index{getGrid@{getGrid}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getGrid()}{getGrid()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const Grid\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns grid object for this curve \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac4a6765deb4357354f180563abd285ad}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac4a6765deb4357354f180563abd285ad}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Curve\+Piece\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+Piece (\begin{DoxyParamCaption}\item[{size\+\_\+type const \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+it assumes that index is already processed (see \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50134a39710fc3ffa76c312253fceab1}{point\+To\+Index()}}) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_add5e22a63fe36c3b09c9799cd4ad1c87}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_add5e22a63fe36c3b09c9799cd4ad1c87}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getStep@{getStep}}
+\index{getStep@{getStep}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getStep()}{getStep()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the grid step for this curve \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad01cd157744c72a7620b2f21609e0c0d}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad01cd157744c72a7620b2f21609e0c0d}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getT0@{getT0}}
+\index{getT0@{getT0}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getT0()}{getT0()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+T0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7445eec830196ba992f5ff4211470c40}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a7445eec830196ba992f5ff4211470c40}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getValueAtCurrent@{getValueAtCurrent}}
+\index{getValueAtCurrent@{getValueAtCurrent}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getValueAtCurrent()}{getValueAtCurrent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Data\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+Value\+At\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the value at current \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad5a9583f29a0c53a42034f43913d0369}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ad5a9583f29a0c53a42034f43913d0369}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!getValueAtCurrent@{getValueAtCurrent}}
+\index{getValueAtCurrent@{getValueAtCurrent}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getValueAtCurrent()}{getValueAtCurrent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const Data\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::get\+Value\+At\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the value at current (const object) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a29b9060deff43d6ce6be070c586391c6}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!grid@{grid}}
+\index{grid@{grid}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{grid()}{grid()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Grid\+Type const\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07570ab51c37969f9a3a7aeedc23479c}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07570ab51c37969f9a3a7aeedc23479c}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!j@{j}}
+\index{j@{j}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{j()}{j()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Data\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::j (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i,  }\item[{size\+\_\+type}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+k-\/th coeff at grid point i \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a67bde50b280bb9487675db35a42ef1e1}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a67bde50b280bb9487675db35a42ef1e1}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!j@{j}}
+\index{j@{j}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{j()}{j()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Jet\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::j (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+jet at grid point t0 (reference) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a60f5f457c5e90d69ac7af726134bfb30}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a60f5f457c5e90d69ac7af726134bfb30}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!j@{j}}
+\index{j@{j}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{j()}{j()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Jet\+Type const\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::j (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+jet at grid point t0 (reference) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0a663b60fb66753cad5c9679f65df360}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0a663b60fb66753cad5c9679f65df360}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!j@{j}}
+\index{j@{j}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{j()}{j()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Data\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::j (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0,  }\item[{size\+\_\+type}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+k-\/th coeff at grid point t0 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a045e4da1baae894dd047dbaaa5c2eb78}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a045e4da1baae894dd047dbaaa5c2eb78}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!jet@{jet}}
+\index{jet@{jet}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jet()}{jet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Jet\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::jet (\begin{DoxyParamCaption}\item[{Real\+Type}]{t0,  }\item[{Real\+Type}]{t1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+jet at grid point t0 and valid until t1 (copy, see \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07570ab51c37969f9a3a7aeedc23479c}{j()}} for reference) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aafd6d51f09e6b937cd0ba67066c86dad}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aafd6d51f09e6b937cd0ba67066c86dad}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!jet@{jet}}
+\index{jet@{jet}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jet()}{jet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Jet\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::jet (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+jet at grid point t0, and valid for t0 to t0 + grid\+\_\+step (copy, see \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07570ab51c37969f9a3a7aeedc23479c}{j()}} for reference) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1cba6d31cb1f63dc575dc7fe6cb62194}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1cba6d31cb1f63dc575dc7fe6cb62194}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!jet@{jet}}
+\index{jet@{jet}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jet()}{jet()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Jet\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::jet (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0,  }\item[{Time\+Point\+Type}]{t1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+jet at grid point t0 and valid until t1 (copy, see \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a07570ab51c37969f9a3a7aeedc23479c}{j()}} for reference) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a23d665f025dbd679b638458b49ab20d0}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a23d665f025dbd679b638458b49ab20d0}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!jetCommonMaximalOrder@{jetCommonMaximalOrder}}
+\index{jetCommonMaximalOrder@{jetCommonMaximalOrder}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jetCommonMaximalOrder()}{jetCommonMaximalOrder()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::jet\+Common\+Maximal\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns maximal common jet of all jets in this curve ~\newline
+ \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab2b2e795bca059e7e51de68e11b7a689}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab2b2e795bca059e7e51de68e11b7a689}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!jetOrderAt@{jetOrderAt}}
+\index{jetOrderAt@{jetOrderAt}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jetOrderAt()}{jetOrderAt()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::jet\+Order\+At (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns order of jet available at point t. This is for optimization purposes (do not copy whole Jet just to know its order) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a8b0e595f3a067836bf452c69135e6646}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a8b0e595f3a067836bf452c69135e6646}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!jetPtr@{jetPtr}}
+\index{jetPtr@{jetPtr}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jetPtr()}{jetPtr()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Jet\+Type$\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::jet\+Ptr (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+use with caution! Mainly for internal use for speed purposes \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2f3320ebdc0bc1ec7f0a6d04d933b620}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2f3320ebdc0bc1ec7f0a6d04d933b620}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!length@{length}}
+\index{length@{length}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+number of pieces \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aeb997783473c7a64d5448538fab69760}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aeb997783473c7a64d5448538fab69760}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!mul@{mul}}
+\index{mul@{mul}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::mul (\begin{DoxyParamCaption}\item[{Scalar\+Type const \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a08850a0ee76f4a5c167f4f0f45d6b631}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a08850a0ee76f4a5c167f4f0f45d6b631}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!mulThenAdd@{mulThenAdd}}
+\index{mulThenAdd@{mulThenAdd}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{mulThenAdd()}{mulThenAdd()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::mul\+Then\+Add (\begin{DoxyParamCaption}\item[{Scalar\+Type const \&}]{c,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a92cfbf2bacad5ad558ebc0eef6ea1681}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a92cfbf2bacad5ad558ebc0eef6ea1681}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{Scalar\+Type const \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ec87cca9c4252073f7b0f1e0be52ca8}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0ec87cca9c4252073f7b0f1e0be52ca8}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+assign operator, standard thing \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae616a956837537cb5a116e18a43d866c}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ae616a956837537cb5a116e18a43d866c}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!pastTime@{pastTime}}
+\index{pastTime@{pastTime}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{pastTime()}{pastTime()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::past\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50134a39710fc3ffa76c312253fceab1}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50134a39710fc3ffa76c312253fceab1}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!pointToIndex@{pointToIndex}}
+\index{pointToIndex@{pointToIndex}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{pointToIndex()}{pointToIndex()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::point\+To\+Index (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns index in the array of the Jets for a given Time\+Point \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50cfffd13d5c7b68233c574aac4357f2}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a50cfffd13d5c7b68233c574aac4357f2}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::rbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a36b2bf1f5cab369bbdbffc74ea97ad73}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a36b2bf1f5cab369bbdbffc74ea97ad73}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::rbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a57a2f3d6353bdfe6167f871dcba0551d}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a57a2f3d6353bdfe6167f871dcba0551d}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!readFrom@{readFrom}}
+\index{readFrom@{readFrom}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{readFrom()}{readFrom()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::read\+From (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+internal function to make short impl. of $>$$>$ operator and the long impl. in .hpp file (see comment in $>$$>$ operator) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acac5390ae2f29ca59327907d6fc9a5a8}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_acac5390ae2f29ca59327907d6fc9a5a8}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!rend@{rend}}
+\index{rend@{rend}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::rend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6b492c13104b297c4af4e847facb17d8}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6b492c13104b297c4af4e847facb17d8}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!rend@{rend}}
+\index{rend@{rend}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::rend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3528771a51173a2d42ae5c981b7f74d7}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a3528771a51173a2d42ae5c981b7f74d7}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::set\+\_\+x (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac797e68a9f64042528a18adf61e0e993}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ac797e68a9f64042528a18adf61e0e993}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!setCurrentTime@{setCurrentTime}}
+\index{setCurrentTime@{setCurrentTime}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setCurrentTime()}{setCurrentTime()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::set\+Current\+Time (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab50036906fe5763ee8af841ea44147d1}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_ab50036906fe5763ee8af841ea44147d1}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!setT0@{setT0}}
+\index{setT0@{setT0}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setT0()}{setT0()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::set\+T0 (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0bc5578041612fb9c5c41dc01f80d7ff}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a0bc5578041612fb9c5c41dc01f80d7ff}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!setValueAtCurrent@{setValueAtCurrent}}
+\index{setValueAtCurrent@{setValueAtCurrent}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setValueAtCurrent()}{setValueAtCurrent()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::set\+Value\+At\+Current (\begin{DoxyParamCaption}\item[{const Data\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set the value at a current time \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a51ec0883b6c3e38cc24b35545eb5cf04}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a51ec0883b6c3e38cc24b35545eb5cf04}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!show@{show}}
+\index{show@{show}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::show}
+
+show human readable representation \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_afa3f1fe9db0cd083d43552bbabb384cf}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_afa3f1fe9db0cd083d43552bbabb384cf}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!storageDimension@{storageDimension}}
+\index{storageDimension@{storageDimension}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{storageDimension()}{storageDimension()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::storage\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f29df615f4c0760bdf548b165fb3379}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a1f29df615f4c0760bdf548b165fb3379}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns subcurve from idex1 to current time. Mainly for internal use. Better use subcurve(\+Time\+Point, Time\+Point) version in your programs. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2e0db83681efad5be3738a4e4b6f8d21}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a2e0db83681efad5be3738a4e4b6f8d21}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index1,  }\item[{size\+\_\+type}]{index2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns subcurve from index1 to index2 (in indexaction of internal data. Mainly for internal use. Better use subcurve(\+Time\+Point, Time\+Point) version in your programs. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a066016e30763f4079903d2bcd189420f}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a066016e30763f4079903d2bcd189420f}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns subcurve of the segment between t0 and \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a5acfd7f2cfbd78150b78170c93492a39}{current\+Time()}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a772ab87fc0e979128e80f79c0a0e0707}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a772ab87fc0e979128e80f79c0a0e0707}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t0,  }\item[{Time\+Point\+Type const \&}]{t1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns subcurve of the segment between t0 and t1 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_aadda7aeec6c233a3456f0c5f02344a24}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!t0@{t0}}
+\index{t0@{t0}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{t0()}{t0()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::t0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a9b08d9fb806e64aa8cffbb23b9090bab}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a9b08d9fb806e64aa8cffbb23b9090bab}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!translate@{translate}}
+\index{translate@{translate}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::translate (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+todo\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a059e66ab1a128a0ba6aa285499d2a2c5}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a059e66ab1a128a0ba6aa285499d2a2c5}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!writeTo@{writeTo}}
+\index{writeTo@{writeTo}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{writeTo()}{writeTo()}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ Grid\+Spec, Jet\+Spec $>$\+::write\+To (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+internal function to make short impl. of $<$$<$ operator and the long impl. in .hpp file (see comment in $<$$<$ operator) 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6967598492a7596c0394d176453b9e83}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6967598492a7596c0394d176453b9e83}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&}]{curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+friend operator must be inline, or the linker gets confused, so we use write\+To/read\+From \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6d17cf21c6bac7eaa3f0b2cfd8440ab5}\label{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve_a6d17cf21c6bac7eaa3f0b2cfd8440ab5}} 
+\index{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$@{capd::ddes::DDEPiecewisePolynomialCurve$<$ GridSpec, JetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily template$<$typename Grid\+Spec , typename Jet\+Spec $>$ \\
+std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Class}} const \&}]{curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+friend operator must be inline, or the linker gets confused, so we use write\+To/read\+From 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Piecewise\+Polynomial\+Curve.\+h\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Piecewise\+Polynomial\+Curve.\+hpp\end{DoxyCompactItemize}

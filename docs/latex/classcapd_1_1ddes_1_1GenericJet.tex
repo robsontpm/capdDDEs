@@ -1,0 +1,564 @@
+\hypertarget{classcapd_1_1ddes_1_1GenericJet}{}\doxysection{capd\+::ddes\+::Generic\+Jet$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1GenericJet}\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+
+
+{\ttfamily \#include $<$Generic\+Jet.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcapd_1_1ddes_1_1GenericJet_1_1rebind}{rebind}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a63a70cee90ad9c419132043b6d027c28}\label{classcapd_1_1ddes_1_1GenericJet_a63a70cee90ad9c419132043b6d027c28}} 
+typedef Time\+Point\+Spec {\bfseries Time\+Point\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aa088223c139681b4e873d48663398119}\label{classcapd_1_1ddes_1_1GenericJet_aa088223c139681b4e873d48663398119}} 
+typedef Data\+Spec {\bfseries Data\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ab450be29d8523a871cbcaab2b0d19b21}\label{classcapd_1_1ddes_1_1GenericJet_ab450be29d8523a871cbcaab2b0d19b21}} 
+typedef Vector\+Spec {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a07787618f02706ac2794afdcd6db788f}\label{classcapd_1_1ddes_1_1GenericJet_a07787618f02706ac2794afdcd6db788f}} 
+typedef Matrix\+Spec {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a1dce96b4e41c3ee4312f8d965b854082}\label{classcapd_1_1ddes_1_1GenericJet_a1dce96b4e41c3ee4312f8d965b854082}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Type, Data\+Type, Vector\+Type, Matrix\+Type $>$ {\bfseries Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ab3ba527604ef2e79c168dc01fda7a4f4}\label{classcapd_1_1ddes_1_1GenericJet_ab3ba527604ef2e79c168dc01fda7a4f4}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} {\bfseries Base\+Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a04e8acf577bcf0ab34d973013c9d3aa9}\label{classcapd_1_1ddes_1_1GenericJet_a04e8acf577bcf0ab34d973013c9d3aa9}} 
+typedef Matrix\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a56a8bbe2594067d6c5b1d15945829b05}\label{classcapd_1_1ddes_1_1GenericJet_a56a8bbe2594067d6c5b1d15945829b05}} 
+typedef Matrix\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_af90e0c14c9b3f74a92de166c23d330a8}\label{classcapd_1_1ddes_1_1GenericJet_af90e0c14c9b3f74a92de166c23d330a8}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ac26889f040428068db1ef1b25ac7f8bc}\label{classcapd_1_1ddes_1_1GenericJet_ac26889f040428068db1ef1b25ac7f8bc}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} {\bfseries Jet\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a263f04920158f1c00b2c0925277ea021}\label{classcapd_1_1ddes_1_1GenericJet_a263f04920158f1c00b2c0925277ea021}} 
+typedef Data\+Type const  $\ast$ {\bfseries const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a719c2d1ba9bbb87826ad17f333f6a7bf}\label{classcapd_1_1ddes_1_1GenericJet_a719c2d1ba9bbb87826ad17f333f6a7bf}} 
+typedef Data\+Type $\ast$ {\bfseries iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a48edeac716107cbf6811decd1c9f3a1a}\label{classcapd_1_1ddes_1_1GenericJet_a48edeac716107cbf6811decd1c9f3a1a}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \& {\bfseries setup\+Coeffs} (const\+\_\+iterator it, const\+\_\+iterator it\+End, size\+\_\+type override\+Order=0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a2a577dd33580048a915ea093efecfa39}\label{classcapd_1_1ddes_1_1GenericJet_a2a577dd33580048a915ea093efecfa39}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \& {\bfseries setup\+Coeffs} (std\+::vector$<$ Data\+Type $>$ const \&coeffs, size\+\_\+type override\+Order=0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a29eda10d52a221040f6fb3d997e703dd}{operator=}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} const \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a37c445e9b40bcbaa5253d8a283704217}{Generic\+Jet}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} const \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_af655c256b4e4b746c6698f4984270464}{Generic\+Jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}}=Time\+Point\+Type(), size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ae9623c5cbfa310a58395223f06f8d7a2}{dimension}}=0, size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}{order}}=0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_af97e494acb6c23424a5b87d52c495faa}{Generic\+Jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}}, size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}{order}}, const Data\+Type \&v)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a83e126d84b7af7161aa8b082ab5b75cb}{Generic\+Jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}}, const\+\_\+iterator it, const\+\_\+iterator it\+End)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ad09e40e1e771c4d3ea271e84496767bd}{Generic\+Jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}}, size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}{order}}, const\+\_\+iterator it, const\+\_\+iterator it\+End)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a87a33f6c3be94156de1c4fbb47788efe}{Generic\+Jet}} (Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}}, std\+::vector$<$ Data\+Type $>$ coeffs)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ae9623c5cbfa310a58395223f06f8d7a2}{dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}{order}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_acd5f6e345e5d7b19c3f21202311aa1fd}{storage\+Dimension}} () const
+\item 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ad161b125a029d75cad0a506a49ff09ff}{eval\+At\+Delta}} (const Real\+Type \&delta\+\_\+t) const
+\item 
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a1b64aec5011feda78ea9fd94df5afec3}{eval\+At\+Delta}} (const Real\+Type \&delta\+\_\+t, Data\+Type \&out) const
+\item 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a774fd6f76f52dd22fe7e8142e8afa803}{eval}} (const Real\+Type \&t) const
+\item 
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_abba3713e1cc2089690afb9e42e66ac7f}{eval}} (const Real\+Type \&t, Data\+Type \&out) const
+\item 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a627a25103d5c6279b8f2674d2c63f56a}{eval\+Coeff\+At\+Delta}} (size\+\_\+type n, const Real\+Type \&delta\+\_\+t) const
+\item 
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a7669f305259c8f63af6b2bbe04e5d657}{eval\+Coeff\+At\+Delta}} (size\+\_\+type n, const Real\+Type \&delta\+\_\+t, Data\+Type \&out) const
+\item 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_add4439bb28a6e4ca0f772e751e5b0bef}{eval\+Coeff}} (size\+\_\+type n, const Real\+Type \&t) const
+\item 
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac4476da719df56de778df78ac8fd9c0e}{eval\+Coeff}} (size\+\_\+type n, const Real\+Type \&t, Data\+Type \&out) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac366d88a356a66970858e11295b11e87}{dt}} (size\+\_\+type n=1)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_aade8e1bd19d239211761783a52c148b4}{coeff}} (size\+\_\+type n=1)
+\item 
+virtual std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a60c9ff96c0f8c8f05462627fa901628c}{show}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a86fab3cdd8a07dd2ba693766d4e1d643}{operator Vector\+Type}} () const
+\item 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a3b7279d9be8aee52005be4497ee364e2}{hull}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a356f2d77b263faf3e40a2236b53c4dce}{set\+\_\+x}} (Vector\+Type const \&x)
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a2172153e6608cfdc8724a9cdd77a49b1}{get\+\_\+x}} () const
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_acdcbb90920227e156171d7bfb4500a5d}{begin}} ()
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_aa95fc897d5f01135625d165cddd2507f}{end}} ()
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a8f358c7765c65c1f55122dc5b0d85029}{back}} ()
+\item 
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a37ddbf4f623cb6846c7deaffd16f3ead}{at}} (size\+\_\+type k)
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a9d199cb3813a8eaf3559877b39a2322f}{begin}} () const
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ab8fab872268e096b642bff80c9d238f5}{end}} () const
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a510749be31d461bd8f045cd38bdc88f3}{back}} () const
+\item 
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a7dd645b8e8c8f7846894bac6cb17b704}{at}} (size\+\_\+type k) const
+\item 
+Data\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ae079dc4f02dff683dcab01ffe1f6b15a}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+type k)
+\item 
+Data\+Type const  \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a4d5433c6a3cd8012c4d25a9e78119fb0}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+type k) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_aebfb1360903d50aa18dc04e2b105b498}{set\+T0}} (Time\+Point\+Type const \&\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}})
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a2abf07b5da300a29128d7cd74891fbdc}{get\+T0}} () const
+\item 
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}{t0}} () const
+\item 
+Data\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ab56607ff915b011b00fd448662f9d55a}{get\+Coeffs}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_ac4faff30a64833b4f05ddcfab3759f08}{set\+Coeffs}} (Data\+Type $\ast$coeffs, size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}{order}})
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_af8b3c086ed98adf7086969d6d75eb117}{set\+Order}} (size\+\_\+type n)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_aa485aa7e3b91097be8b267ca8d13f2be}{increased\+Order}} (size\+\_\+type n=1)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a626451db4b74b9e22ab2baeba9ccd9bf}{decreased\+Order}} (size\+\_\+type n=1)
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a94a3d35e9cfcc0b3ac1d43d1c2aa8fc6}{$\sim$\+Generic\+Jet}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a45ba679bffae0299999d5fcd2f892789}{badge}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a46d57e1fb3ece95a54ee46417597a2d9}{allocate\+Coeffs}} ()
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a27fc7e350286da90349efdb0621c7764}{deallocate\+Coeffs}} ()
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a9d82d431a9f2a22f8fef2f947096f62f}{reallocate\+Coeffs}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ad06b124f3e37a896f8e1ba517d176af4}\label{classcapd_1_1ddes_1_1GenericJet_ad06b124f3e37a896f8e1ba517d176af4}} 
+Time\+Point\+Type {\bfseries m\+\_\+t0}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a277d8c03ca75611a82b173201a591d26}\label{classcapd_1_1ddes_1_1GenericJet_a277d8c03ca75611a82b173201a591d26}} 
+size\+\_\+type {\bfseries m\+\_\+dimension}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a54e670a3981b2ec73d7becefef64179e}\label{classcapd_1_1ddes_1_1GenericJet_a54e670a3981b2ec73d7becefef64179e}} 
+size\+\_\+type {\bfseries m\+\_\+order}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a6e1acc1dbe3effeb37fcdf00855b5f66}\label{classcapd_1_1ddes_1_1GenericJet_a6e1acc1dbe3effeb37fcdf00855b5f66}} 
+Data\+Type $\ast$ {\bfseries m\+\_\+coeffs}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_aa182d115aff5b677b3b964d3df411da3}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} const \&jet)
+\item 
+std\+::istream \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_aa2b7bf7a853a8e089a1e2118469806fe}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \&jet)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Time\+Point\+Spec, typename Data\+Spec, typename Vector\+Spec = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$\newline
+class capd\+::ddes\+::\+Generic\+Jet$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$}
+
+A class to represent a generic jet for any data type
+
+We assume that Data\+Type has default constructor and is convertible form/to Vector\+Type, i.\+e. Data\+Type has\+:
+\begin{DoxyItemize}
+\item a constructor Data\+Type(\+Vector\+Type) or Data\+Type(const Vector\+Type\&)
+\item a cast operator Vector\+Type()
+\item a copy operator and copy constructor.
+\item default constructor
+\end{DoxyItemize}
+
+Examples\+: capd\+::\+Vector and Sets types are compatible. ddes/storage/doubleton types are compatible. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a37c445e9b40bcbaa5253d8a283704217}\label{classcapd_1_1ddes_1_1GenericJet_a37c445e9b40bcbaa5253d8a283704217}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!GenericJet@{GenericJet}}
+\index{GenericJet@{GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{GenericJet()}{GenericJet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$ const \&}]{orig }\end{DoxyParamCaption})}
+
+copy constructor \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_af655c256b4e4b746c6698f4984270464}\label{classcapd_1_1ddes_1_1GenericJet_af655c256b4e4b746c6698f4984270464}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!GenericJet@{GenericJet}}
+\index{GenericJet@{GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{GenericJet()}{GenericJet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0 = {\ttfamily TimePointType()},  }\item[{size\+\_\+type}]{dimension = {\ttfamily 0},  }\item[{size\+\_\+type}]{order = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+makes a constant function of the vector value 0 \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_af97e494acb6c23424a5b87d52c495faa}\label{classcapd_1_1ddes_1_1GenericJet_af97e494acb6c23424a5b87d52c495faa}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!GenericJet@{GenericJet}}
+\index{GenericJet@{GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{GenericJet()}{GenericJet()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0,  }\item[{size\+\_\+type}]{order,  }\item[{const Data\+Type \&}]{v }\end{DoxyParamCaption})}
+
+makes a constant function of the vector value v \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a83e126d84b7af7161aa8b082ab5b75cb}\label{classcapd_1_1ddes_1_1GenericJet_a83e126d84b7af7161aa8b082ab5b75cb}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!GenericJet@{GenericJet}}
+\index{GenericJet@{GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{GenericJet()}{GenericJet()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0,  }\item[{const\+\_\+iterator}]{it,  }\item[{const\+\_\+iterator}]{it\+End }\end{DoxyParamCaption})}
+
+fills vector with data. Determine order from the size of data. \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ad09e40e1e771c4d3ea271e84496767bd}\label{classcapd_1_1ddes_1_1GenericJet_ad09e40e1e771c4d3ea271e84496767bd}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!GenericJet@{GenericJet}}
+\index{GenericJet@{GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{GenericJet()}{GenericJet()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0,  }\item[{size\+\_\+type}]{order,  }\item[{const\+\_\+iterator}]{it,  }\item[{const\+\_\+iterator}]{it\+End }\end{DoxyParamCaption})}
+
+fills vector with data, but sets the order to n (fills higher orders with 0 vectors) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a87a33f6c3be94156de1c4fbb47788efe}\label{classcapd_1_1ddes_1_1GenericJet_a87a33f6c3be94156de1c4fbb47788efe}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!GenericJet@{GenericJet}}
+\index{GenericJet@{GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{GenericJet()}{GenericJet()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}\item[{Time\+Point\+Type}]{t0,  }\item[{std\+::vector$<$ Data\+Type $>$}]{coeffs }\end{DoxyParamCaption})}
+
+fills vector with data. Determine order from the size of data. \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a94a3d35e9cfcc0b3ac1d43d1c2aa8fc6}\label{classcapd_1_1ddes_1_1GenericJet_a94a3d35e9cfcc0b3ac1d43d1c2aa8fc6}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!````~GenericJet@{$\sim$GenericJet}}
+\index{````~GenericJet@{$\sim$GenericJet}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$GenericJet()}{~GenericJet()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::$\sim$\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+standard thing 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a46d57e1fb3ece95a54ee46417597a2d9}\label{classcapd_1_1ddes_1_1GenericJet_a46d57e1fb3ece95a54ee46417597a2d9}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!allocateCoeffs@{allocateCoeffs}}
+\index{allocateCoeffs@{allocateCoeffs}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{allocateCoeffs()}{allocateCoeffs()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::allocate\+Coeffs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a37ddbf4f623cb6846c7deaffd16f3ead}\label{classcapd_1_1ddes_1_1GenericJet_a37ddbf4f623cb6846c7deaffd16f3ead}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!at@{at}}
+\index{at@{at}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the k-\/th element in coefficients. Standard thing in C++ \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a7dd645b8e8c8f7846894bac6cb17b704}\label{classcapd_1_1ddes_1_1GenericJet_a7dd645b8e8c8f7846894bac6cb17b704}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!at@{at}}
+\index{at@{at}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the k-\/th element in coefficients. Standard thing in C++ \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a8f358c7765c65c1f55122dc5b0d85029}\label{classcapd_1_1ddes_1_1GenericJet_a8f358c7765c65c1f55122dc5b0d85029}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!back@{back}}
+\index{back@{back}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the last element in coefficients. Standard thing in C++ \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a510749be31d461bd8f045cd38bdc88f3}\label{classcapd_1_1ddes_1_1GenericJet_a510749be31d461bd8f045cd38bdc88f3}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!back@{back}}
+\index{back@{back}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the last element in coefficients. Standard thing in C++ \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a45ba679bffae0299999d5fcd2f892789}\label{classcapd_1_1ddes_1_1GenericJet_a45ba679bffae0299999d5fcd2f892789}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!badge@{badge}}
+\index{badge@{badge}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{badge()}{badge()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+static std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::badge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Badge must be a single word! \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_acdcbb90920227e156171d7bfb4500a5d}\label{classcapd_1_1ddes_1_1GenericJet_acdcbb90920227e156171d7bfb4500a5d}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!begin@{begin}}
+\index{begin@{begin}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the 0-\/th order Taylor coefficient (might by many-\/dimensions) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a9d199cb3813a8eaf3559877b39a2322f}\label{classcapd_1_1ddes_1_1GenericJet_a9d199cb3813a8eaf3559877b39a2322f}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!begin@{begin}}
+\index{begin@{begin}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the 0-\/th order Taylor coefficient (might by many-\/dimensions) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aade8e1bd19d239211761783a52c148b4}\label{classcapd_1_1ddes_1_1GenericJet_aade8e1bd19d239211761783a52c148b4}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!coeff@{coeff}}
+\index{coeff@{coeff}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{coeff()}{coeff()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::coeff (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a Jet that represents n-\/th coefficient (i.\+e. jet$^\wedge$\{(n)\}/n! of the jet as a function of t, by default n=1 \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a27fc7e350286da90349efdb0621c7764}\label{classcapd_1_1ddes_1_1GenericJet_a27fc7e350286da90349efdb0621c7764}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!deallocateCoeffs@{deallocateCoeffs}}
+\index{deallocateCoeffs@{deallocateCoeffs}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{deallocateCoeffs()}{deallocateCoeffs()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::deallocate\+Coeffs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a626451db4b74b9e22ab2baeba9ccd9bf}\label{classcapd_1_1ddes_1_1GenericJet_a626451db4b74b9e22ab2baeba9ccd9bf}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!decreasedOrder@{decreasedOrder}}
+\index{decreasedOrder@{decreasedOrder}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{decreasedOrder()}{decreasedOrder()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::decreased\+Order (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ae9623c5cbfa310a58395223f06f8d7a2}\label{classcapd_1_1ddes_1_1GenericJet_ae9623c5cbfa310a58395223f06f8d7a2}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+dimension of the value space of the Jet (i.\+e. \$J \+: \textbackslash{}R \textbackslash{}to \textbackslash{}R$^\wedge$\{dimension\}\$) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ac366d88a356a66970858e11295b11e87}\label{classcapd_1_1ddes_1_1GenericJet_ac366d88a356a66970858e11295b11e87}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!dt@{dt}}
+\index{dt@{dt}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{dt()}{dt()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::dt (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a Jet that represents n-\/th derivative of the jet, by default n=1 \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aa95fc897d5f01135625d165cddd2507f}\label{classcapd_1_1ddes_1_1GenericJet_aa95fc897d5f01135625d165cddd2507f}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!end@{end}}
+\index{end@{end}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the past the order place. Standard thing in C++ \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ab8fab872268e096b642bff80c9d238f5}\label{classcapd_1_1ddes_1_1GenericJet_ab8fab872268e096b642bff80c9d238f5}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!end@{end}}
+\index{end@{end}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+iterator to the past the order place. Standard thing in C++ \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a774fd6f76f52dd22fe7e8142e8afa803}\label{classcapd_1_1ddes_1_1GenericJet_a774fd6f76f52dd22fe7e8142e8afa803}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!eval@{eval}}
+\index{eval@{eval}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval (\begin{DoxyParamCaption}\item[{const Real\+Type \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+evaluates the the jet at t \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_abba3713e1cc2089690afb9e42e66ac7f}\label{classcapd_1_1ddes_1_1GenericJet_abba3713e1cc2089690afb9e42e66ac7f}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!eval@{eval}}
+\index{eval@{eval}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval (\begin{DoxyParamCaption}\item[{const Real\+Type \&}]{t,  }\item[{Data\+Type \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+evaluates the jet at t \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ad161b125a029d75cad0a506a49ff09ff}\label{classcapd_1_1ddes_1_1GenericJet_ad161b125a029d75cad0a506a49ff09ff}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!evalAtDelta@{evalAtDelta}}
+\index{evalAtDelta@{evalAtDelta}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{evalAtDelta()}{evalAtDelta()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+Vector\+Spec \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval\+At\+Delta (\begin{DoxyParamCaption}\item[{const Real\+Type \&}]{delta\+\_\+t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+evaluates the the jet at t0 + delta\+\_\+t \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a1b64aec5011feda78ea9fd94df5afec3}\label{classcapd_1_1ddes_1_1GenericJet_a1b64aec5011feda78ea9fd94df5afec3}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!evalAtDelta@{evalAtDelta}}
+\index{evalAtDelta@{evalAtDelta}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{evalAtDelta()}{evalAtDelta()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval\+At\+Delta (\begin{DoxyParamCaption}\item[{const Real\+Type \&}]{delta\+\_\+t,  }\item[{Data\+Type \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+evaluates the jet at t0 + delta\+\_\+t \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_add4439bb28a6e4ca0f772e751e5b0bef}\label{classcapd_1_1ddes_1_1GenericJet_add4439bb28a6e4ca0f772e751e5b0bef}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!evalCoeff@{evalCoeff}}
+\index{evalCoeff@{evalCoeff}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{evalCoeff()}{evalCoeff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval\+Coeff (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n,  }\item[{const Real\+Type \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+evaluates the n-\/th time derivative of the jet at t ( n-\/th coeff is 1/n! $\ast$ jet$^\wedge$\{(n)\}(t) = jet$^\wedge$\{\mbox{[}n\mbox{]}\}(t) ) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ac4476da719df56de778df78ac8fd9c0e}\label{classcapd_1_1ddes_1_1GenericJet_ac4476da719df56de778df78ac8fd9c0e}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!evalCoeff@{evalCoeff}}
+\index{evalCoeff@{evalCoeff}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{evalCoeff()}{evalCoeff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval\+Coeff (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n,  }\item[{const Real\+Type \&}]{t,  }\item[{Data\+Type \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+evaluates the n-\/th time derivative of jet at t ( n-\/th coeff is 1/n! $\ast$ jet$^\wedge$\{(n)\}(t) = jet$^\wedge$\{\mbox{[}n\mbox{]}\}(t) ) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a627a25103d5c6279b8f2674d2c63f56a}\label{classcapd_1_1ddes_1_1GenericJet_a627a25103d5c6279b8f2674d2c63f56a}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!evalCoeffAtDelta@{evalCoeffAtDelta}}
+\index{evalCoeffAtDelta@{evalCoeffAtDelta}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{evalCoeffAtDelta()}{evalCoeffAtDelta()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+Vector\+Spec \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval\+Coeff\+At\+Delta (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n,  }\item[{const Real\+Type \&}]{delta\+\_\+t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+evaluates the n-\/th Coeff of jet at t0 + delta\+\_\+t ( n-\/th coeff is 1/n! $\ast$ jet$^\wedge$\{(n)\}(t) = jet$^\wedge$\{\mbox{[}n\mbox{]}\}(t) ) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a7669f305259c8f63af6b2bbe04e5d657}\label{classcapd_1_1ddes_1_1GenericJet_a7669f305259c8f63af6b2bbe04e5d657}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!evalCoeffAtDelta@{evalCoeffAtDelta}}
+\index{evalCoeffAtDelta@{evalCoeffAtDelta}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{evalCoeffAtDelta()}{evalCoeffAtDelta()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::eval\+Coeff\+At\+Delta (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n,  }\item[{const Real\+Type \&}]{delta\+\_\+t,  }\item[{Data\+Type \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+evaluates the n-\/th time derivative of jet at t0 + delta\+\_\+t ( n-\/th coeff is 1/n! $\ast$ jet$^\wedge$\{(n)\}(t) = jet$^\wedge$\{\mbox{[}n\mbox{]}\}(t) ) \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a2172153e6608cfdc8724a9cdd77a49b1}\label{classcapd_1_1ddes_1_1GenericJet_a2172153e6608cfdc8724a9cdd77a49b1}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!get\_x@{get\_x}}
+\index{get\_x@{get\_x}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{get\_x()}{get\_x()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::get\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+gets the coefficients as a single vector of dimension \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_acd5f6e345e5d7b19c3f21202311aa1fd}{storage\+Dimension()}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ab56607ff915b011b00fd448662f9d55a}\label{classcapd_1_1ddes_1_1GenericJet_ab56607ff915b011b00fd448662f9d55a}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!getCoeffs@{getCoeffs}}
+\index{getCoeffs@{getCoeffs}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{getCoeffs()}{getCoeffs()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Data\+Type$\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::get\+Coeffs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a2abf07b5da300a29128d7cd74891fbdc}\label{classcapd_1_1ddes_1_1GenericJet_a2abf07b5da300a29128d7cd74891fbdc}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!getT0@{getT0}}
+\index{getT0@{getT0}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{getT0()}{getT0()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::get\+T0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns time at which this jet is located \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a3b7279d9be8aee52005be4497ee364e2}\label{classcapd_1_1ddes_1_1GenericJet_a3b7279d9be8aee52005be4497ee364e2}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!hull@{hull}}
+\index{hull@{hull}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{hull()}{hull()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+return vector representation of the jet. Other name (more explicit for Vector\+Type), can be overwritten (virtual). \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aa485aa7e3b91097be8b267ca8d13f2be}\label{classcapd_1_1ddes_1_1GenericJet_aa485aa7e3b91097be8b267ca8d13f2be}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!increasedOrder@{increasedOrder}}
+\index{increasedOrder@{increasedOrder}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{increasedOrder()}{increasedOrder()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::increased\+Order (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a86fab3cdd8a07dd2ba693766d4e1d643}\label{classcapd_1_1ddes_1_1GenericJet_a86fab3cdd8a07dd2ba693766d4e1d643}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!operator VectorType@{operator VectorType}}
+\index{operator VectorType@{operator VectorType}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{operator VectorType()}{operator VectorType()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::operator Vector\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return Vector\+Spec representation of the jet. It is vector of dimension storage\+Dimension and d-\/dim blocks of the natural order (0-\/th coefficient first). \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a29eda10d52a221040f6fb3d997e703dd}\label{classcapd_1_1ddes_1_1GenericJet_a29eda10d52a221040f6fb3d997e703dd}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$ \& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$ const \&}]{orig }\end{DoxyParamCaption})}
+
+copy operator \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ae079dc4f02dff683dcab01ffe1f6b15a}\label{classcapd_1_1ddes_1_1GenericJet_ae079dc4f02dff683dcab01ffe1f6b15a}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Data\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns n-\/th order Taylor coefficient. \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a4d5433c6a3cd8012c4d25a9e78119fb0}\label{classcapd_1_1ddes_1_1GenericJet_a4d5433c6a3cd8012c4d25a9e78119fb0}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Data\+Type const\& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns n-\/th order Taylor coefficient. \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}\label{classcapd_1_1ddes_1_1GenericJet_a544ec6f8047578282598f4c48ae6e3f7}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!order@{order}}
+\index{order@{order}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{order()}{order()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+order of the Taylor part of the Jet \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a9d82d431a9f2a22f8fef2f947096f62f}\label{classcapd_1_1ddes_1_1GenericJet_a9d82d431a9f2a22f8fef2f947096f62f}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!reallocateCoeffs@{reallocateCoeffs}}
+\index{reallocateCoeffs@{reallocateCoeffs}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{reallocateCoeffs()}{reallocateCoeffs()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::reallocate\+Coeffs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a356f2d77b263faf3e40a2236b53c4dce}\label{classcapd_1_1ddes_1_1GenericJet_a356f2d77b263faf3e40a2236b53c4dce}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::set\+\_\+x (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set the coeficients from a vector. get/set\+\_\+x() are compatible. \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ac4faff30a64833b4f05ddcfab3759f08}\label{classcapd_1_1ddes_1_1GenericJet_ac4faff30a64833b4f05ddcfab3759f08}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!setCoeffs@{setCoeffs}}
+\index{setCoeffs@{setCoeffs}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{setCoeffs()}{setCoeffs()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::set\+Coeffs (\begin{DoxyParamCaption}\item[{Data\+Type $\ast$}]{coeffs,  }\item[{size\+\_\+type}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_af8b3c086ed98adf7086969d6d75eb117}\label{classcapd_1_1ddes_1_1GenericJet_af8b3c086ed98adf7086969d6d75eb117}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!setOrder@{setOrder}}
+\index{setOrder@{setOrder}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{setOrder()}{setOrder()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::set\+Order (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aebfb1360903d50aa18dc04e2b105b498}\label{classcapd_1_1ddes_1_1GenericJet_aebfb1360903d50aa18dc04e2b105b498}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!setT0@{setT0}}
+\index{setT0@{setT0}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{setT0()}{setT0()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::set\+T0 (\begin{DoxyParamCaption}\item[{Time\+Point\+Type const \&}]{t0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set the base time of the jet \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_a60c9ff96c0f8c8f05462627fa901628c}\label{classcapd_1_1ddes_1_1GenericJet_a60c9ff96c0f8c8f05462627fa901628c}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!show@{show}}
+\index{show@{show}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec , typename Matrix\+Spec , bool is\+Interval$>$ \\
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::show\hspace{0.3cm}{\ttfamily [virtual]}}
+
+more verbose output, more human-\/friendly. Not rigorous-\/friendly. \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_acd5f6e345e5d7b19c3f21202311aa1fd}\label{classcapd_1_1ddes_1_1GenericJet_acd5f6e345e5d7b19c3f21202311aa1fd}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!storageDimension@{storageDimension}}
+\index{storageDimension@{storageDimension}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{storageDimension()}{storageDimension()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::storage\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+how many data need to store everything \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}\label{classcapd_1_1ddes_1_1GenericJet_ac7c1efd64794a46b306af4e628f771f5}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!t0@{t0}}
+\index{t0@{t0}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{t0()}{t0()}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Time\+Point\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$\+::t0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+naming convention. See \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet_a2abf07b5da300a29128d7cd74891fbdc}{get\+T0()}} 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aa182d115aff5b677b3b964d3df411da3}\label{classcapd_1_1ddes_1_1GenericJet_aa182d115aff5b677b3b964d3df411da3}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$ const \&}]{jet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+T\+O\+DO\+: docs \mbox{\Hypertarget{classcapd_1_1ddes_1_1GenericJet_aa2b7bf7a853a8e089a1e2118469806fe}\label{classcapd_1_1ddes_1_1GenericJet_aa2b7bf7a853a8e089a1e2118469806fe}} 
+\index{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$@{capd::ddes::GenericJet$<$ TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily template$<$typename Time\+Point\+Spec , typename Data\+Spec , typename Vector\+Spec  = typename Data\+Spec\+::\+Vector\+Type, typename Matrix\+Spec  = typename Data\+Spec\+::\+Matrix\+Type, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Matrix\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Spec, Data\+Spec, Vector\+Spec, Matrix\+Spec, is\+Interval $>$ \&}]{jet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+T\+O\+DO\+: docs 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/storage/Generic\+Jet.\+h\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/storage/Generic\+Jet.\+hpp\end{DoxyCompactItemize}

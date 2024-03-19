@@ -1,0 +1,57 @@
+\hypertarget{classcapd_1_1ddes_1_1ODEPendulum}{}\doxysection{capd\+::ddes\+::O\+D\+E\+Pendulum Class Reference}
+\label{classcapd_1_1ddes_1_1ODEPendulum}\index{capd::ddes::ODEPendulum@{capd::ddes::ODEPendulum}}
+
+
+{\ttfamily \#include $<$Sample\+Eqns.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_af1dcca3984fa10accd50429c2f3eb36d}\label{classcapd_1_1ddes_1_1ODEPendulum_af1dcca3984fa10accd50429c2f3eb36d}} 
+typedef long {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_af48574703dae0dc5c2c82ef66cd4e9f7}\label{classcapd_1_1ddes_1_1ODEPendulum_af48574703dae0dc5c2c82ef66cd4e9f7}} 
+{\bfseries O\+D\+E\+Pendulum} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ODEPendulum}{O\+D\+E\+Pendulum}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_a064365b8d231b91096771a54f0425b13}\label{classcapd_1_1ddes_1_1ODEPendulum_a064365b8d231b91096771a54f0425b13}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1ODEPendulum}{O\+D\+E\+Pendulum}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1ODEPendulum}{O\+D\+E\+Pendulum}} const \&orig)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ODEPendulum_aa44d4c4eef0c59f812ca094c211149f1}{image\+Dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1ODEPendulum_a9c636ec0a8f7641da244fe31c549cc7f}{dimension}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_af57f9a07aaef718a8d7224695b40168b}\label{classcapd_1_1ddes_1_1ODEPendulum_af57f9a07aaef718a8d7224695b40168b}} 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void {\bfseries operator()} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_aaa39a6a8d461fa6cbc49288682c2f19f}\label{classcapd_1_1ddes_1_1ODEPendulum_aaa39a6a8d461fa6cbc49288682c2f19f}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mainly for testing how D\+DE code compares to O\+DE in C\+A\+PD 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_a9c636ec0a8f7641da244fe31c549cc7f}\label{classcapd_1_1ddes_1_1ODEPendulum_a9c636ec0a8f7641da244fe31c549cc7f}} 
+\index{capd::ddes::ODEPendulum@{capd::ddes::ODEPendulum}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::ODEPendulum@{capd::ddes::ODEPendulum}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily size\+\_\+type capd\+::ddes\+::\+O\+D\+E\+Pendulum\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classcapd_1_1ddes_1_1ODEPendulum_aa44d4c4eef0c59f812ca094c211149f1}\label{classcapd_1_1ddes_1_1ODEPendulum_aa44d4c4eef0c59f812ca094c211149f1}} 
+\index{capd::ddes::ODEPendulum@{capd::ddes::ODEPendulum}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!capd::ddes::ODEPendulum@{capd::ddes::ODEPendulum}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily size\+\_\+type capd\+::ddes\+::\+O\+D\+E\+Pendulum\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+output dimension of the internal map 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/Sample\+Eqns.\+h\end{DoxyCompactItemize}

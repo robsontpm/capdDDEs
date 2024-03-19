@@ -1,0 +1,673 @@
+\hypertarget{classcapd_1_1ddes_1_1BasicDoubleton}{}\doxysection{capd\+::ddes\+::Basic\+Doubleton$<$ Matrix\+Spec, Policies\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1BasicDoubleton}\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+
+
+{\ttfamily \#include $<$Basic\+Doubleton.\+h$>$}
+
+
+
+Inheritance diagram for capd\+::ddes\+::Basic\+Doubleton$<$ Matrix\+Spec, Policies\+Spec $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classcapd_1_1ddes_1_1BasicDoubleton__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for capd\+::ddes\+::Basic\+Doubleton$<$ Matrix\+Spec, Policies\+Spec $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classcapd_1_1ddes_1_1BasicDoubleton__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aebf7a834a30db73f6a49a95ce449ea71}\label{classcapd_1_1ddes_1_1BasicDoubleton_aebf7a834a30db73f6a49a95ce449ea71}} 
+typedef Matrix\+Spec {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a1aeffa8c25998963987b61faf084f384}\label{classcapd_1_1ddes_1_1BasicDoubleton_a1aeffa8c25998963987b61faf084f384}} 
+typedef Matrix\+Type\+::\+Row\+Vector\+Type {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a6ff83d09b815635ba3db706955e1cb84}\label{classcapd_1_1ddes_1_1BasicDoubleton_a6ff83d09b815635ba3db706955e1cb84}} 
+typedef Matrix\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ad77f16d9a0136f6cfbd676449740d025}\label{classcapd_1_1ddes_1_1BasicDoubleton_ad77f16d9a0136f6cfbd676449740d025}} 
+typedef Matrix\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a7a21762ad9fb7481ae116900d9cff2ce}\label{classcapd_1_1ddes_1_1BasicDoubleton_a7a21762ad9fb7481ae116900d9cff2ce}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} {\bfseries Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ac07e678253da683f5e412f594442f8da}\label{classcapd_1_1ddes_1_1BasicDoubleton_ac07e678253da683f5e412f594442f8da}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}}$<$ Matrix\+Spec $>$ {\bfseries Base\+Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ab1fd547f0d559ce7597f1d35b843f0d0}\label{classcapd_1_1ddes_1_1BasicDoubleton_ab1fd547f0d559ce7597f1d35b843f0d0}} 
+typedef Vector\+Type $\ast$ {\bfseries Vector\+Type\+Ptr}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a63def4986cfafd6dcbd40665288ccb94}\label{classcapd_1_1ddes_1_1BasicDoubleton_a63def4986cfafd6dcbd40665288ccb94}} 
+typedef Matrix\+Type $\ast$ {\bfseries Matrix\+Type\+Ptr}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ae2f7cc602ed560361cf50568ce249985}\label{classcapd_1_1ddes_1_1BasicDoubleton_ae2f7cc602ed560361cf50568ce249985}} 
+typedef std\+::bitset$<$ 5 $>$ {\bfseries Ownership\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_afe5406e371c651ad0d77620f742465ae}\label{classcapd_1_1ddes_1_1BasicDoubleton_afe5406e371c651ad0d77620f742465ae}} 
+typedef Policies\+Spec {\bfseries Policy}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a5d27233de1aef836ef3244c154a3b8ce}\label{classcapd_1_1ddes_1_1BasicDoubleton_a5d27233de1aef836ef3244c154a3b8ce}} 
+typedef Policies\+Spec {\bfseries Q\+R\+Policy}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_af63c2d06d3d0edca40a14d389f36a840}{operator=}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a47f6c79c81719577c30d9fd342ca91e2}{Basic\+Doubleton}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a062b7a9fee1520e355388f90fd43c99c}{Basic\+Doubleton}} (Vector\+Type const \&x, Vector\+Type $\ast$\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a168fa2cac8d4358a1368fbe9944bde42}{common\+\_\+r0}}=0, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a84b4da4ba539b16a4f2085964f1df1b2}{Basic\+Doubleton}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a8261c9729a14819075c0a0bcc8588f64}{Basic\+Doubleton}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type const \&r0, Matrix\+Type const \&B, Vector\+Type const \&r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a13b982387fa483c02fc52c73fc8c2858}{Basic\+Doubleton}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type const \&r0, Matrix\+Type const \&B, Matrix\+Type const \&Binv, Vector\+Type const \&r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a15f46067ed1adaaeaaf88ac9fbf6af7b}{Basic\+Doubleton}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type $\ast$r0, Matrix\+Type const \&B, Vector\+Type const \&r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a55e3d1e37b474b8a1de6acdf72a139f3}{Basic\+Doubleton}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type $\ast$r0, Matrix\+Type const \&B, Matrix\+Type const \&Binv, Vector\+Type const \&r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_af6c9c3d43d2207c3fed9fbb42d7374c7}{Basic\+Doubleton}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type const \&r0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_accf49302e9d9e01bb3afa15a996a1c09}{Basic\+Doubleton}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type $\ast$r0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a471be9096741fbcb47cd92c23b033ba0}{Basic\+Doubleton}} (Vector\+Type $\ast$x, Matrix\+Type $\ast$C, Vector\+Type $\ast$r0, Matrix\+Type $\ast$B, Vector\+Type $\ast$r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ab4281dc21451a91c3f9412916ca50350}{Basic\+Doubleton}} (size\+\_\+type d, size\+\_\+type N0=-\/1)
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a20ebfddd06f59a878e2cd2d4ab805207}{$\sim$\+Basic\+Doubleton}} ()
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ae2e42485d6b6860d6dbcb8380e370c36}{storage\+N0}} () const
+\begin{DoxyCompactList}\small\item\em $<$ import dimension from interface \end{DoxyCompactList}\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a29739cee3ea8b449232cea230e6a371d}{storage\+Dimension}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a9345927ca1b901e5f62fea4c4df8617f}{get\+\_\+x}} () const
+\item 
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a90471a2bec89dac78ae67d708937814d}{get\+\_\+C}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ad05609541fd542a88f0e158892252569}{get\+\_\+r0}} () const
+\item 
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a0f0871c404f393d1f6e0e5217af7ded9}{get\+\_\+B}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a37f849489434d91927a83b70efa634d7}{get\+\_\+r}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a1696204a59a96cd5cddbbcf4e7fbb3ae}{set\+\_\+x}} (Vector\+Type const \&x)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a4b134adcd56bcf116017873c18951717}{set\+\_\+C}} (Matrix\+Type const \&C)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ae95dffebbddc89479f47ca89afce57fc}{set\+\_\+r0}} (Vector\+Type const \&r0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_aa932d50b281466b57c39d48aff421b56}{set\+\_\+B}} (Matrix\+Type const \&B)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a2cda9cc1b63cbbb768305ec4611dd9bf}{set\+\_\+r}} (Vector\+Type const \&r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a175b95e496454737b357f7a40c9558a4}{set\+\_\+\+Cr0}} (Matrix\+Type const \&C, Vector\+Type const \&r0)
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a6ae92210f57188a093606a0e02be37b1}{mid\+Point}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ab1cb9ce114a6423b84f2388abeb2021f}{hull}} () const
+\item 
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_aa5d7517b95d0ac70b06e430912fa27e0}{common\+\_\+x}} (Vector\+Type const $\ast$x) const
+\begin{DoxyCompactList}\small\item\em $<$ using the base class take\+\_\+$\ast$ method... \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ac8396576e7b1fb1ac274d9adb21b2b68}{common\+\_\+C}} (Matrix\+Type const $\ast$C) const
+\item 
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a168fa2cac8d4358a1368fbe9944bde42}{common\+\_\+r0}} (Vector\+Type const $\ast$r0) const
+\item 
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a7173b17d237c1e92c7de6541450ea657}{common\+\_\+B}} (Matrix\+Type const $\ast$B) const
+\item 
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_af236c566c7e0f09390dd18aac0968f3d}{common\+\_\+r}} (Vector\+Type const $\ast$r) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a5b0d9dc45b30340eec5522814b1ba8a9}{affine\+Transform}} (Matrix\+Type const \&M, Vector\+Type const \&v)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a9e84eeb28912ec4e58a9f0381a72348d}{translate}} (Vector\+Type const \&v)
+\item 
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ae8f9e29cb9a3c607c03b64ea9b9dd783}{show}} () const
+\item 
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_aab81243d04750455c7ebbab6efabe3ed}{reinitialize}} (size\+\_\+type d, size\+\_\+type N0)
+\item 
+virtual size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a9b9e5b7337fb3f9370716a7ca0e299d7}{dimension}} () const
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ac3dba969c987316f1c69100c175f77bb}{set\+\_\+x}} (Vector\+Type const \&x)=0
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a7aa4fd9f1943f60304938c593d1d3e07}{set\+\_\+x}} (Vector\+Type $\ast$x, bool pass\+Ownership=false)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_adf54cc63f22cd36f8200f5e124a6e876}\label{classcapd_1_1ddes_1_1BasicDoubleton_adf54cc63f22cd36f8200f5e124a6e876}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_adf54cc63f22cd36f8200f5e124a6e876}{set\+\_\+C}} (Matrix\+Type const \&C)=0
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a0a5d44b592b76ea3b684d92b7d8d43d2}\label{classcapd_1_1ddes_1_1BasicDoubleton_a0a5d44b592b76ea3b684d92b7d8d43d2}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a0a5d44b592b76ea3b684d92b7d8d43d2}{set\+\_\+C}} (Matrix\+Type $\ast$C, bool pass\+Ownership=false)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a07b5058b53a5370a9592dd7a469037fa}\label{classcapd_1_1ddes_1_1BasicDoubleton_a07b5058b53a5370a9592dd7a469037fa}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a07b5058b53a5370a9592dd7a469037fa}{set\+\_\+r0}} (Vector\+Type const \&r0)=0
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a3eb84ec05f6a3c23292887f156fbdf11}\label{classcapd_1_1ddes_1_1BasicDoubleton_a3eb84ec05f6a3c23292887f156fbdf11}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a3eb84ec05f6a3c23292887f156fbdf11}{set\+\_\+r0}} (Vector\+Type $\ast$r0, bool pass\+Ownership=false)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a56518a643811828f695f1aa779c5e408}\label{classcapd_1_1ddes_1_1BasicDoubleton_a56518a643811828f695f1aa779c5e408}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a56518a643811828f695f1aa779c5e408}{set\+\_\+B}} (Matrix\+Type const \&B)=0
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a85ca182b6be9f62d71bc37b8dc4dece0}\label{classcapd_1_1ddes_1_1BasicDoubleton_a85ca182b6be9f62d71bc37b8dc4dece0}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a85ca182b6be9f62d71bc37b8dc4dece0}{set\+\_\+B}} (Matrix\+Type $\ast$B, bool pass\+Ownership=false)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ad7fee473cee4d86d3c049124cd7958cf}\label{classcapd_1_1ddes_1_1BasicDoubleton_ad7fee473cee4d86d3c049124cd7958cf}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ad7fee473cee4d86d3c049124cd7958cf}{set\+\_\+r}} (Vector\+Type const \&r)=0
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a1b638dfbdaba3d008a241b9b61155af9}\label{classcapd_1_1ddes_1_1BasicDoubleton_a1b638dfbdaba3d008a241b9b61155af9}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a1b638dfbdaba3d008a241b9b61155af9}{set\+\_\+r}} (Vector\+Type $\ast$r, bool pass\+Ownership=false)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a358e94f4ca598fc63b6a808bdd597cf0}\label{classcapd_1_1ddes_1_1BasicDoubleton_a358e94f4ca598fc63b6a808bdd597cf0}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a358e94f4ca598fc63b6a808bdd597cf0}{set\+\_\+\+Cr0}} (Matrix\+Type const \&C, Vector\+Type const \&r0)=0
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a8c39e0f558cb817ac308cb041ca0d15f}\label{classcapd_1_1ddes_1_1BasicDoubleton_a8c39e0f558cb817ac308cb041ca0d15f}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a8c39e0f558cb817ac308cb041ca0d15f}{set\+\_\+\+Cr0}} (Matrix\+Type $\ast$C, Vector\+Type $\ast$r0, bool pass\+Ownership1=false, bool pass\+Ownership2=false)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_abda6cf5f5bb4e8f56fd744c802ffa043}\label{classcapd_1_1ddes_1_1BasicDoubleton_abda6cf5f5bb4e8f56fd744c802ffa043}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_abda6cf5f5bb4e8f56fd744c802ffa043}{set\+\_\+\+Binv}} (Matrix\+Type $\ast$Binv, bool pass\+Ownership=false)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aefe035ee75a042bf3a6e4fb1b0d93410}\label{classcapd_1_1ddes_1_1BasicDoubleton_aefe035ee75a042bf3a6e4fb1b0d93410}} 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_aefe035ee75a042bf3a6e4fb1b0d93410}{set\+\_\+\+Binv}} (Matrix\+Type const \&Binv)
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_adce0616a9a6fd1dccc587c79d9c3aa32}\label{classcapd_1_1ddes_1_1BasicDoubleton_adce0616a9a6fd1dccc587c79d9c3aa32}} 
+virtual Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_adce0616a9a6fd1dccc587c79d9c3aa32}{take\+\_\+x}} ()
+\begin{DoxyCompactList}\small\item\em $<$ using the base class set\+\_\+$\ast$(pointer, ownershhip) method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a08384ce0a1355fa9352d7c50a3dc4729}\label{classcapd_1_1ddes_1_1BasicDoubleton_a08384ce0a1355fa9352d7c50a3dc4729}} 
+virtual Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a08384ce0a1355fa9352d7c50a3dc4729}{take\+\_\+C}} ()
+\begin{DoxyCompactList}\small\item\em $<$ using the base class take\+\_\+$\ast$ method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a6b30bd625018a26d60f95b71ccbadaac}\label{classcapd_1_1ddes_1_1BasicDoubleton_a6b30bd625018a26d60f95b71ccbadaac}} 
+virtual Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a6b30bd625018a26d60f95b71ccbadaac}{take\+\_\+r0}} ()
+\begin{DoxyCompactList}\small\item\em $<$ using the base class take\+\_\+$\ast$ method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a48b21a614bbdbef99fb8e07f403f9489}\label{classcapd_1_1ddes_1_1BasicDoubleton_a48b21a614bbdbef99fb8e07f403f9489}} 
+virtual Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a48b21a614bbdbef99fb8e07f403f9489}{take\+\_\+B}} ()
+\begin{DoxyCompactList}\small\item\em $<$ using the base class take\+\_\+$\ast$ method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_adbad985ba13066d895609ea216966588}\label{classcapd_1_1ddes_1_1BasicDoubleton_adbad985ba13066d895609ea216966588}} 
+virtual Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_adbad985ba13066d895609ea216966588}{take\+\_\+r}} ()
+\begin{DoxyCompactList}\small\item\em $<$ using the base class take\+\_\+$\ast$ method... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aa10f06d681f47425611dab7f113c2345}\label{classcapd_1_1ddes_1_1BasicDoubleton_aa10f06d681f47425611dab7f113c2345}} 
+virtual Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_aa10f06d681f47425611dab7f113c2345}{take\+\_\+\+Binv}} ()
+\begin{DoxyCompactList}\small\item\em $<$ using the base class take\+\_\+$\ast$ method... \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_af73caa2b38382fd754ac22d7a9a3eb9b}{add}} (Vector\+Type const \&v)
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_af6db95337f15134c92ea4e1db0e723a9}{add}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&set)
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_ad39aac08cec1541fe32375651c7412dc}{mul}} (Scalar\+Type const \&c)
+\item 
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a3a5a986c295419927110aa630e09f77b}{mul\+Then\+Add}} (Scalar\+Type const \&c, \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&set)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a530656c8731f14f91ba0a1e51f162538}{sanity\+Check}} (std\+::string const \&what=\char`\"{}\char`\"{}) const
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_afadf3e5698e1fe29b67ce311474e73da}{setup\+Dimension}} (size\+\_\+type d, size\+\_\+type N0=0)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_adc8682ea526f3b30737e0b12739a5e37}{setup\+From\+Data}} (Vector\+Type const \&x, Matrix\+Type const \&C, Vector\+Type const \&r0, Matrix\+Type const \&B, Vector\+Type const \&r)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a759ab080c00dd973f57617026867afe3}{setup\+From\+Other}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&other)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton_a4a73adafe4bef8649c228f2a7a7551bc}{setup\+From\+Other}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} const \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a6a0958bfd466a3f54da87e3a455f1978}\label{classcapd_1_1ddes_1_1BasicDoubleton_a6a0958bfd466a3f54da87e3a455f1978}} 
+Vector\+Type {\bfseries m\+\_\+x}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ab72cb4d5c869720a0d9fe341f3a0b209}\label{classcapd_1_1ddes_1_1BasicDoubleton_ab72cb4d5c869720a0d9fe341f3a0b209}} 
+Matrix\+Type {\bfseries m\+\_\+C}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a0ae811d9984a2472cee4bac3f75f1800}\label{classcapd_1_1ddes_1_1BasicDoubleton_a0ae811d9984a2472cee4bac3f75f1800}} 
+Vector\+Type {\bfseries m\+\_\+r0}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a5d9a5e8d675f572e4ebe05fab736a9f5}\label{classcapd_1_1ddes_1_1BasicDoubleton_a5d9a5e8d675f572e4ebe05fab736a9f5}} 
+Matrix\+Type {\bfseries m\+\_\+B}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aafd19ad982efc2bff646414bb53d5c51}\label{classcapd_1_1ddes_1_1BasicDoubleton_aafd19ad982efc2bff646414bb53d5c51}} 
+Vector\+Type {\bfseries m\+\_\+r}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Spec, typename Policies\+Spec = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$\newline
+class capd\+::ddes\+::\+Basic\+Doubleton$<$ Matrix\+Spec, Policies\+Spec $>$}
+
+This class stores a set X \textbackslash{}in \textbackslash{}R$^\wedge$d of the form\+:
+
+X = x + C $\ast$ r0 + B $\ast$ r
+
+with \$x \textbackslash{}in \textbackslash{}R$^\wedge$d\$, \$r0, r\$ -\/ closed intervals centered at 0, \$r0 \textbackslash{}subset \textbackslash{}R$^\wedge$\{N\+\_\+0\}\$, \$C \textbackslash{}in Lin(\textbackslash{}R$^\wedge$\{N\+\_\+0\}, \textbackslash{}R$^\wedge$d)\$, \$B \textbackslash{}in Lin(\textbackslash{}R$^\wedge$d, \textbackslash{}R$^\wedge$d)\$, \$r \textbackslash{}in \textbackslash{}R$^\wedge$d\$, \$B\$ being a matrix easy to invert, e.\+g. B = ID (Interval form of the remainder) or \$B\$ orthogonal (Doubleton set with QR decomposition).
+
+N\+O\+TE\+: compare to the classic Lohner Doubleton Set in C\+A\+PD, where authors assume \$\+N\+\_\+0 = d\$) N\+O\+TE\+: This is the most basic implementation, I use bare Vectors and Matrices and all the data is stored inside the set. For D\+D\+Es as described in notes it is somehow innefficient, as each component will contain its copy of r0 vector which in the computation in fact is common to all the components. Therefore we will store O(size of repr.) elements of size dim(r0) instead of O(1). \mbox{\hyperlink{classcapd_1_1ddes_1_1SharedDoubleton}{Shared\+Doubleton}} is designed for this purpose, but is is highly complicated as of now (and I have some problems with memory leak -\/ o be corrected later). I have decided to implement simple solution to test things without need to worry about the problems with dynamical memory allocation. The code is also simpler to read.
+
+N\+O\+TE\+: This is quite long and tedious code in C++ because of C++ This should be heavily tested for correctedness and memory leaks Reader (e.\+g. reviewer of the manuscript for publication) should not worry to check that code
+
+N\+O\+TE\+: T\+H\+IS P\+A\+R\+T\+I\+C\+U\+L\+AR I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON does not use shared memory, everything is static (from the point of view of implkemnentation, afaik C\+A\+PD uses shared ptr inside the library) Its main purpose is testing, as it will be (probably) slower and (for sure) more memory consuming (2x at least) than a \mbox{\hyperlink{classcapd_1_1ddes_1_1SharedDoubleton}{Shared\+Doubleton}} version. \mbox{\hyperlink{classcapd_1_1ddes_1_1SharedDoubleton}{Shared\+Doubleton}} will be used in applications.
+
+T\+O\+DO\+: (N\+OT U\+R\+G\+E\+NT) implement QR policy in BinvB (now Id\+Policy is hardcoded). This is not urgent, as I use \mbox{\hyperlink{classcapd_1_1ddes_1_1SharedDoubleton}{Shared\+Doubleton}} in my computations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a47f6c79c81719577c30d9fd342ca91e2}\label{classcapd_1_1ddes_1_1BasicDoubleton_a47f6c79c81719577c30d9fd342ca91e2}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+default constructor makes a 1D point-\/set at 0 \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a062b7a9fee1520e355388f90fd43c99c}\label{classcapd_1_1ddes_1_1BasicDoubleton_a062b7a9fee1520e355388f90fd43c99c}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Vector\+Type $\ast$}]{common\+\_\+r0 = {\ttfamily 0},  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup set with a given vector. You can pass common\+\_\+r0 and pass\+Ownership = false (default) if you want to set externally controlled r0 element. If pass\+Ownership = true then the set will take responsibility for deallocating item. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a84b4da4ba539b16a4f2085964f1df1b2}\label{classcapd_1_1ddes_1_1BasicDoubleton_a84b4da4ba539b16a4f2085964f1df1b2}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+copies the original set (ownership is preserved) \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a8261c9729a14819075c0a0bcc8588f64}\label{classcapd_1_1ddes_1_1BasicDoubleton_a8261c9729a14819075c0a0bcc8588f64}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type const \&}]{r0,  }\item[{Matrix\+Type const \&}]{B,  }\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data, set owns everything \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a13b982387fa483c02fc52c73fc8c2858}\label{classcapd_1_1ddes_1_1BasicDoubleton_a13b982387fa483c02fc52c73fc8c2858}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type const \&}]{r0,  }\item[{Matrix\+Type const \&}]{B,  }\item[{Matrix\+Type const \&}]{Binv,  }\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data, set owns everything \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a15f46067ed1adaaeaaf88ac9fbf6af7b}\label{classcapd_1_1ddes_1_1BasicDoubleton_a15f46067ed1adaaeaaf88ac9fbf6af7b}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type $\ast$}]{r0,  }\item[{Matrix\+Type const \&}]{B,  }\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data but the set does not own the r0 (user is responsible for deleting it) \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a55e3d1e37b474b8a1de6acdf72a139f3}\label{classcapd_1_1ddes_1_1BasicDoubleton_a55e3d1e37b474b8a1de6acdf72a139f3}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type $\ast$}]{r0,  }\item[{Matrix\+Type const \&}]{B,  }\item[{Matrix\+Type const \&}]{Binv,  }\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data but the set does not own the r0 (user is responsible for deleting it) \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_af6c9c3d43d2207c3fed9fbb42d7374c7}\label{classcapd_1_1ddes_1_1BasicDoubleton_af6c9c3d43d2207c3fed9fbb42d7374c7}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type const \&}]{r0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data, set is owner of everything \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_accf49302e9d9e01bb3afa15a996a1c09}\label{classcapd_1_1ddes_1_1BasicDoubleton_accf49302e9d9e01bb3afa15a996a1c09}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type $\ast$}]{r0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data but the set does not own the r0 (user is responsible for deleting it) \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a471be9096741fbcb47cd92c23b033ba0}\label{classcapd_1_1ddes_1_1BasicDoubleton_a471be9096741fbcb47cd92c23b033ba0}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{Vector\+Type $\ast$}]{x,  }\item[{Matrix\+Type $\ast$}]{C,  }\item[{Vector\+Type $\ast$}]{r0,  }\item[{Matrix\+Type $\ast$}]{B,  }\item[{Vector\+Type $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set with a given data but the set does not own the data (user is responsible for deleting) \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ab4281dc21451a91c3f9412916ca50350}\label{classcapd_1_1ddes_1_1BasicDoubleton_ab4281dc21451a91c3f9412916ca50350}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!BasicDoubleton@{BasicDoubleton}}
+\index{BasicDoubleton@{BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{BasicDoubleton()}{BasicDoubleton()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{N0 = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setup this set as zero vector, but the structure of given dimensions. If second arg is $<$ 0 then d is used instead. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a20ebfddd06f59a878e2cd2d4ab805207}\label{classcapd_1_1ddes_1_1BasicDoubleton_a20ebfddd06f59a878e2cd2d4ab805207}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!````~BasicDoubleton@{$\sim$BasicDoubleton}}
+\index{````~BasicDoubleton@{$\sim$BasicDoubleton}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$BasicDoubleton()}{~BasicDoubleton()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::$\sim$\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Basic\+Doubleton}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+standard thing 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_af6db95337f15134c92ea4e1db0e723a9}\label{classcapd_1_1ddes_1_1BasicDoubleton_af6db95337f15134c92ea4e1db0e723a9}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!add@{add}}
+\index{add@{add}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::add\hspace{0.3cm}{\ttfamily [inline]}}
+
+add a Set or Vector to this representation. It takes the representation into consideration. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_af73caa2b38382fd754ac22d7a9a3eb9b}\label{classcapd_1_1ddes_1_1BasicDoubleton_af73caa2b38382fd754ac22d7a9a3eb9b}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!add@{add}}
+\index{add@{add}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::add\hspace{0.3cm}{\ttfamily [inline]}}
+
+add a Set or Vector to this representation. It takes the representation into consideration. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a5b0d9dc45b30340eec5522814b1ba8a9}\label{classcapd_1_1ddes_1_1BasicDoubleton_a5b0d9dc45b30340eec5522814b1ba8a9}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!affineTransform@{affineTransform}}
+\index{affineTransform@{affineTransform}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{affineTransform()}{affineTransform()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::affine\+Transform (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{M,  }\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+applies in a smart way to this set X the affine transform f(y) = M $\ast$ (X -\/ v) 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a865e7db08b22b353c3f18086335d72cf}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a7173b17d237c1e92c7de6541450ea657}\label{classcapd_1_1ddes_1_1BasicDoubleton_a7173b17d237c1e92c7de6541450ea657}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!common\_B@{common\_B}}
+\index{common\_B@{common\_B}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{common\_B()}{common\_B()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::common\+\_\+B (\begin{DoxyParamCaption}\item[{Matrix\+Type const $\ast$}]{B }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+checked by object equality 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_adad63466257e3974163d661eb3ff8aed}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ac8396576e7b1fb1ac274d9adb21b2b68}\label{classcapd_1_1ddes_1_1BasicDoubleton_ac8396576e7b1fb1ac274d9adb21b2b68}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!common\_C@{common\_C}}
+\index{common\_C@{common\_C}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{common\_C()}{common\_C()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::common\+\_\+C (\begin{DoxyParamCaption}\item[{Matrix\+Type const $\ast$}]{C }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+checked by object equality 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a8f73feb75c0601afcc3a46bed6c38fc3}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_af236c566c7e0f09390dd18aac0968f3d}\label{classcapd_1_1ddes_1_1BasicDoubleton_af236c566c7e0f09390dd18aac0968f3d}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!common\_r@{common\_r}}
+\index{common\_r@{common\_r}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{common\_r()}{common\_r()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::common\+\_\+r (\begin{DoxyParamCaption}\item[{Vector\+Type const $\ast$}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+checked by object equality 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_afbae4d530a024b7abeb7b5720be74f2a}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a168fa2cac8d4358a1368fbe9944bde42}\label{classcapd_1_1ddes_1_1BasicDoubleton_a168fa2cac8d4358a1368fbe9944bde42}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!common\_r0@{common\_r0}}
+\index{common\_r0@{common\_r0}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{common\_r0()}{common\_r0()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::common\+\_\+r0 (\begin{DoxyParamCaption}\item[{Vector\+Type const $\ast$}]{r0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+checked by object equality 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ac4893ba5773d9e9ba6db20d7e5ccbbf5}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aa5d7517b95d0ac70b06e430912fa27e0}\label{classcapd_1_1ddes_1_1BasicDoubleton_aa5d7517b95d0ac70b06e430912fa27e0}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!common\_x@{common\_x}}
+\index{common\_x@{common\_x}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{common\_x()}{common\_x()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual bool \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::common\+\_\+x (\begin{DoxyParamCaption}\item[{Vector\+Type const $\ast$}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+$<$ using the base class take\+\_\+$\ast$ method... 
+
+checked by object equality 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a48466337c06cc9f91958d5f8ca6b61ff}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a9b9e5b7337fb3f9370716a7ca0e299d7}\label{classcapd_1_1ddes_1_1BasicDoubleton_a9b9e5b7337fb3f9370716a7ca0e299d7}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::dimension\hspace{0.3cm}{\ttfamily [inline]}}
+
+by default dimension is equal to storage dimension \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a0f0871c404f393d1f6e0e5217af7ded9}\label{classcapd_1_1ddes_1_1BasicDoubleton_a0f0871c404f393d1f6e0e5217af7ded9}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!get\_B@{get\_B}}
+\index{get\_B@{get\_B}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_B()}{get\_B()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::get\+\_\+B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a90471a2bec89dac78ae67d708937814d}\label{classcapd_1_1ddes_1_1BasicDoubleton_a90471a2bec89dac78ae67d708937814d}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!get\_C@{get\_C}}
+\index{get\_C@{get\_C}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_C()}{get\_C()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::get\+\_\+C (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a37f849489434d91927a83b70efa634d7}\label{classcapd_1_1ddes_1_1BasicDoubleton_a37f849489434d91927a83b70efa634d7}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!get\_r@{get\_r}}
+\index{get\_r@{get\_r}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_r()}{get\_r()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::get\+\_\+r (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ad05609541fd542a88f0e158892252569}\label{classcapd_1_1ddes_1_1BasicDoubleton_ad05609541fd542a88f0e158892252569}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!get\_r0@{get\_r0}}
+\index{get\_r0@{get\_r0}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_r0()}{get\_r0()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::get\+\_\+r0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a9345927ca1b901e5f62fea4c4df8617f}\label{classcapd_1_1ddes_1_1BasicDoubleton_a9345927ca1b901e5f62fea4c4df8617f}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!get\_x@{get\_x}}
+\index{get\_x@{get\_x}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_x()}{get\_x()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::get\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ab1cb9ce114a6423b84f2388abeb2021f}\label{classcapd_1_1ddes_1_1BasicDoubleton_ab1cb9ce114a6423b84f2388abeb2021f}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!hull@{hull}}
+\index{hull@{hull}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{hull()}{hull()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a6ae92210f57188a093606a0e02be37b1}\label{classcapd_1_1ddes_1_1BasicDoubleton_a6ae92210f57188a093606a0e02be37b1}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!midPoint@{midPoint}}
+\index{midPoint@{midPoint}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{midPoint()}{midPoint()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::mid\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ad39aac08cec1541fe32375651c7412dc}\label{classcapd_1_1ddes_1_1BasicDoubleton_ad39aac08cec1541fe32375651c7412dc}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!mul@{mul}}
+\index{mul@{mul}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::mul\hspace{0.3cm}{\ttfamily [inline]}}
+
+multiply set by a scalar. Should take set structure into consideration. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a3a5a986c295419927110aa630e09f77b}\label{classcapd_1_1ddes_1_1BasicDoubleton_a3a5a986c295419927110aa630e09f77b}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!mulThenAdd@{mulThenAdd}}
+\index{mulThenAdd@{mulThenAdd}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{mulThenAdd()}{mulThenAdd()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::mul\+Then\+Add\hspace{0.3cm}{\ttfamily [inline]}}
+
+multiply set by a scalar, then add another set. Very simple basic implementation by first mul then add. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_af63c2d06d3d0edca40a14d389f36a840}\label{classcapd_1_1ddes_1_1BasicDoubleton_af63c2d06d3d0edca40a14d389f36a840}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+assign operator -\/ it needs to deallocate memory if neccessery, then setup set anew \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aab81243d04750455c7ebbab6efabe3ed}\label{classcapd_1_1ddes_1_1BasicDoubleton_aab81243d04750455c7ebbab6efabe3ed}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!reinitialize@{reinitialize}}
+\index{reinitialize@{reinitialize}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{reinitialize()}{reinitialize()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::reinitialize (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{N0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+see base class 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a4e1272ad33c4a5afed203ec45221a697}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a530656c8731f14f91ba0a1e51f162538}\label{classcapd_1_1ddes_1_1BasicDoubleton_a530656c8731f14f91ba0a1e51f162538}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!sanityCheck@{sanityCheck}}
+\index{sanityCheck@{sanityCheck}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{sanityCheck()}{sanityCheck()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::sanity\+Check (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{what = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+helper function to check if the object represents sane data (all dimensions compatible and all pointers set if neccesary ) should be called after constructing or manipulating object \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_aa932d50b281466b57c39d48aff421b56}\label{classcapd_1_1ddes_1_1BasicDoubleton_aa932d50b281466b57c39d48aff421b56}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_B@{set\_B}}
+\index{set\_B@{set\_B}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_B()}{set\_B()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+B (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Note\+: the element must be compatible with other elements (dimensions!) or we throw exception! 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a56518a643811828f695f1aa779c5e408}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a4b134adcd56bcf116017873c18951717}\label{classcapd_1_1ddes_1_1BasicDoubleton_a4b134adcd56bcf116017873c18951717}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_C@{set\_C}}
+\index{set\_C@{set\_C}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_C()}{set\_C()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+C (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Note\+: the element must be compatible with other elements (dimensions!) or we throw exception! 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_adf54cc63f22cd36f8200f5e124a6e876}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a175b95e496454737b357f7a40c9558a4}\label{classcapd_1_1ddes_1_1BasicDoubleton_a175b95e496454737b357f7a40c9558a4}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_Cr0@{set\_Cr0}}
+\index{set\_Cr0@{set\_Cr0}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_Cr0()}{set\_Cr0()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+\+Cr0 (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type const \&}]{r0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Note\+: the element must be compatible with other elements (dimensions!) or we throw exception! 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a358e94f4ca598fc63b6a808bdd597cf0}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a2cda9cc1b63cbbb768305ec4611dd9bf}\label{classcapd_1_1ddes_1_1BasicDoubleton_a2cda9cc1b63cbbb768305ec4611dd9bf}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_r@{set\_r}}
+\index{set\_r@{set\_r}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_r()}{set\_r()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+r (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Note\+: the element must be compatible with other elements (dimensions!) or we throw exception! 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ad7fee473cee4d86d3c049124cd7958cf}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ae95dffebbddc89479f47ca89afce57fc}\label{classcapd_1_1ddes_1_1BasicDoubleton_ae95dffebbddc89479f47ca89afce57fc}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_r0@{set\_r0}}
+\index{set\_r0@{set\_r0}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_r0()}{set\_r0()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+r0 (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{r0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Note\+: the element must be compatible with other elements (dimensions!) or we throw exception! 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a07b5058b53a5370a9592dd7a469037fa}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a7aa4fd9f1943f60304938c593d1d3e07}\label{classcapd_1_1ddes_1_1BasicDoubleton_a7aa4fd9f1943f60304938c593d1d3e07}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+x\hspace{0.3cm}{\ttfamily [inline]}}
+
+A version of the interface that allows for sharing of the pointers from external source. pass\+Ownership is a flag to indicate if the class should take resposibility of freeing the memory allocation of the precceding pointer. A default implementation provided for convenience uses the corresponding set\+\_\+$\ast$ method and then frees the memory of the argument if pass\+Ownership = true. Must assure that args are compatible with other parts (dimensions!) or throw exception! Should return $\ast$this for a cascade. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a1696204a59a96cd5cddbbcf4e7fbb3ae}\label{classcapd_1_1ddes_1_1BasicDoubleton_a1696204a59a96cd5cddbbcf4e7fbb3ae}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+x (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Note\+: the element must be compatible with other elements (dimensions!) or we throw exception! 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ac3dba969c987316f1c69100c175f77bb}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ac3dba969c987316f1c69100c175f77bb}\label{classcapd_1_1ddes_1_1BasicDoubleton_ac3dba969c987316f1c69100c175f77bb}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+virtual \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::set\+\_\+x}
+
+Must assure that arg is compatible with other parts (dimensions!) or throw exception! Should return $\ast$this for a cascade. \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_afadf3e5698e1fe29b67ce311474e73da}\label{classcapd_1_1ddes_1_1BasicDoubleton_afadf3e5698e1fe29b67ce311474e73da}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!setupDimension@{setupDimension}}
+\index{setupDimension@{setupDimension}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setupDimension()}{setupDimension()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::setup\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{N0 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+makes all vector and matrices to be of appropriate dimension \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_adc8682ea526f3b30737e0b12739a5e37}\label{classcapd_1_1ddes_1_1BasicDoubleton_adc8682ea526f3b30737e0b12739a5e37}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!setupFromData@{setupFromData}}
+\index{setupFromData@{setupFromData}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setupFromData()}{setupFromData()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::setup\+From\+Data (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x,  }\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type const \&}]{r0,  }\item[{Matrix\+Type const \&}]{B,  }\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+helper in setup \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a4a73adafe4bef8649c228f2a7a7551bc}\label{classcapd_1_1ddes_1_1BasicDoubleton_a4a73adafe4bef8649c228f2a7a7551bc}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!setupFromOther@{setupFromOther}}
+\index{setupFromOther@{setupFromOther}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setupFromOther()}{setupFromOther()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::setup\+From\+Other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+helper in copying from base class (interface) \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a759ab080c00dd973f57617026867afe3}\label{classcapd_1_1ddes_1_1BasicDoubleton_a759ab080c00dd973f57617026867afe3}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!setupFromOther@{setupFromOther}}
+\index{setupFromOther@{setupFromOther}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setupFromOther()}{setupFromOther()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::setup\+From\+Other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{Class}} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+helper in copying \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ae8f9e29cb9a3c607c03b64ea9b9dd783}\label{classcapd_1_1ddes_1_1BasicDoubleton_ae8f9e29cb9a3c607c03b64ea9b9dd783}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!show@{show}}
+\index{show@{show}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+show info on this set \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a29739cee3ea8b449232cea230e6a371d}\label{classcapd_1_1ddes_1_1BasicDoubleton_a29739cee3ea8b449232cea230e6a371d}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!storageDimension@{storageDimension}}
+\index{storageDimension@{storageDimension}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{storageDimension()}{storageDimension()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::storage\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_ae2e42485d6b6860d6dbcb8380e370c36}\label{classcapd_1_1ddes_1_1BasicDoubleton_ae2e42485d6b6860d6dbcb8380e370c36}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!storageN0@{storageN0}}
+\index{storageN0@{storageN0}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{storageN0()}{storageN0()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::storage\+N0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+$<$ import dimension from interface 
+
+see interface \mbox{\Hypertarget{classcapd_1_1ddes_1_1BasicDoubleton_a9e84eeb28912ec4e58a9f0381a72348d}\label{classcapd_1_1ddes_1_1BasicDoubleton_a9e84eeb28912ec4e58a9f0381a72348d}} 
+\index{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}!translate@{translate}}
+\index{translate@{translate}!capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$@{capd::ddes::BasicDoubleton$<$ MatrixSpec, PoliciesSpec $>$}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Policies\+Spec  = capd\+::dynset\+::\+Id\+Q\+R\+Policy$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDoubleton}{capd\+::ddes\+::\+Basic\+Doubleton}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::translate (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+applies in a smart way to this set X the transform f(y) = X -\/ v 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a5dcda4bd6705435f9c0f005050d7c985}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Matrix\+Spec, capd\+::dynset\+::\+Id\+Q\+R\+Policy $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/storage/Basic\+Doubleton.\+h\end{DoxyCompactItemize}

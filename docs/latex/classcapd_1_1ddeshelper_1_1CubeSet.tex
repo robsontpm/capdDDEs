@@ -1,0 +1,129 @@
+\hypertarget{classcapd_1_1ddeshelper_1_1CubeSet}{}\doxysection{capd\+::ddeshelper\+::Cube\+Set$<$ Vector\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddeshelper_1_1CubeSet}\index{capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_1_1CubeSetIterator}{Cube\+Set\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a96e1fe80ea1e73137ba6b4a4aff29a9d}\label{classcapd_1_1ddeshelper_1_1CubeSet_a96e1fe80ea1e73137ba6b4a4aff29a9d}} 
+typedef Vector\+Spec {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a58667897d847364c50377221bb7e009f}\label{classcapd_1_1ddeshelper_1_1CubeSet_a58667897d847364c50377221bb7e009f}} 
+typedef Vector\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a06d1cb012a6979b0339341af135e16a1}\label{classcapd_1_1ddeshelper_1_1CubeSet_a06d1cb012a6979b0339341af135e16a1}} 
+typedef Vector\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a8b13d5ac6b3c3ceb8bb6297c9d54a69d}\label{classcapd_1_1ddeshelper_1_1CubeSet_a8b13d5ac6b3c3ceb8bb6297c9d54a69d}} 
+typedef std\+::vector$<$ int $>$ {\bfseries Cube\+Signature\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_ad7ccd620753a8c941406ee2845e2b4ed}\label{classcapd_1_1ddeshelper_1_1CubeSet_ad7ccd620753a8c941406ee2845e2b4ed}} 
+typedef std\+::set$<$ Cube\+Signature\+Type $>$ {\bfseries C\+S\+Container\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a915fc19133463cc1109aaa73ba40458e}\label{classcapd_1_1ddeshelper_1_1CubeSet_a915fc19133463cc1109aaa73ba40458e}} 
+typedef C\+S\+Container\+Type\+::const\+\_\+iterator {\bfseries Cube\+Signature\+Const\+Iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a49e8c64aa9d8def69954a8aa232918db}\label{classcapd_1_1ddeshelper_1_1CubeSet_a49e8c64aa9d8def69954a8aa232918db}} 
+typedef C\+S\+Container\+Type\+::iterator {\bfseries Cube\+Signature\+Iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_aee0e4de14700d54f006f49a5082f8bbc}\label{classcapd_1_1ddeshelper_1_1CubeSet_aee0e4de14700d54f006f49a5082f8bbc}} 
+{\bfseries Cube\+Set} (Vector\+Type const \&x0, Vector\+Type const \&r0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a17a089d55fa5b38aa0cd3fecb5420dc8}\label{classcapd_1_1ddeshelper_1_1CubeSet_a17a089d55fa5b38aa0cd3fecb5420dc8}} 
+{\bfseries Cube\+Set} (Vector\+Type const \&r0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a2253cd393ef122bcb6773a76af87ac7e}\label{classcapd_1_1ddeshelper_1_1CubeSet_a2253cd393ef122bcb6773a76af87ac7e}} 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}} \& {\bfseries insert} (Cube\+Signature\+Type const \&cube)
+\item 
+int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_a35cd5e5227ce52accce97c5ce985d1b0}{insert\+\_\+cover}} (Vector\+Type box, int max\+\_\+cuts=-\/1)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a947fc7ecf14f0c29a2c7db7058825a5d}\label{classcapd_1_1ddeshelper_1_1CubeSet_a947fc7ecf14f0c29a2c7db7058825a5d}} 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_1_1CubeSetIterator}{Cube\+Set\+Iterator}} {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a6a33037fdbb92c6b5f9e1d2f31253ee1}\label{classcapd_1_1ddeshelper_1_1CubeSet_a6a33037fdbb92c6b5f9e1d2f31253ee1}} 
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_1_1CubeSetIterator}{Cube\+Set\+Iterator}} {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_ae90d98fabb46255eb4908b9e8bd34910}\label{classcapd_1_1ddeshelper_1_1CubeSet_ae90d98fabb46255eb4908b9e8bd34910}} 
+Cube\+Signature\+Iterator {\bfseries csbegin} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a73984104481c3dcdf48c9fcc84ce81ac}\label{classcapd_1_1ddeshelper_1_1CubeSet_a73984104481c3dcdf48c9fcc84ce81ac}} 
+Cube\+Signature\+Iterator {\bfseries csend} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_ab9c0ca4e7007983ee7f08cadf42cecc4}\label{classcapd_1_1ddeshelper_1_1CubeSet_ab9c0ca4e7007983ee7f08cadf42cecc4}} 
+Cube\+Signature\+Const\+Iterator {\bfseries csbegin} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a278a40b406140f87f8645fb1f0939296}\label{classcapd_1_1ddeshelper_1_1CubeSet_a278a40b406140f87f8645fb1f0939296}} 
+Cube\+Signature\+Const\+Iterator {\bfseries csend} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a221198939edbb6f240cf15fa619b8868}\label{classcapd_1_1ddeshelper_1_1CubeSet_a221198939edbb6f240cf15fa619b8868}} 
+Vector\+Type {\bfseries get\+\_\+x0} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a5dbe4be894c037b72f1644449e6db92c}\label{classcapd_1_1ddeshelper_1_1CubeSet_a5dbe4be894c037b72f1644449e6db92c}} 
+Vector\+Type {\bfseries get\+\_\+r0} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a600b980489500564b64bb2173caaaaca}\label{classcapd_1_1ddeshelper_1_1CubeSet_a600b980489500564b64bb2173caaaaca}} 
+Vector\+Type {\bfseries get\+\_\+dx} (Cube\+Signature\+Type const \&signature) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a38f3d877b5179f9f50a9fe438b3f7a7b}\label{classcapd_1_1ddeshelper_1_1CubeSet_a38f3d877b5179f9f50a9fe438b3f7a7b}} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}} const \&other) const
+\item 
+bool \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_a9dd66ce203a93dec53af3d43407a49b3}{subcubeset}} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}} const \&other) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a7b04266ed7147b5c819d8a0fd33ee562}\label{classcapd_1_1ddeshelper_1_1CubeSet_a7b04266ed7147b5c819d8a0fd33ee562}} 
+{\footnotesize template$<$typename Iterator $>$ }\\\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}} \& {\bfseries insert} (Iterator from, Iterator to)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a93f958d8d5e9c5d87a66ae6e857734bb}\label{classcapd_1_1ddeshelper_1_1CubeSet_a93f958d8d5e9c5d87a66ae6e857734bb}} 
+int {\bfseries size} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_a049b57f9c9758c0fa018059e80e7e9c0}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}} const \&items)
+\item 
+std\+::istream \& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet_af472172c2ee754aa73a5c79b1e0e0eec}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}} \&items)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a35cd5e5227ce52accce97c5ce985d1b0}\label{classcapd_1_1ddeshelper_1_1CubeSet_a35cd5e5227ce52accce97c5ce985d1b0}} 
+\index{capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}!insert\_cover@{insert\_cover}}
+\index{insert\_cover@{insert\_cover}!capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{insert\_cover()}{insert\_cover()}}
+{\footnotesize\ttfamily template$<$typename Vector\+Spec $>$ \\
+int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{capd\+::ddeshelper\+::\+Cube\+Set}}$<$ Vector\+Spec $>$\+::insert\+\_\+cover (\begin{DoxyParamCaption}\item[{Vector\+Type}]{box,  }\item[{int}]{max\+\_\+cuts = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Max\+\_\+cuts == -\/1 means we mean cut in all neccessary dimensions. This is default behaviour. returns the last index at what the cut was needed. If it is smaller than max\+\_\+cuts requirement then we are ok with the set. If it is greater on equal, then we need to probably change the m\+\_\+r0, as the box cannot be covered with the current small boxes. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a9dd66ce203a93dec53af3d43407a49b3}\label{classcapd_1_1ddeshelper_1_1CubeSet_a9dd66ce203a93dec53af3d43407a49b3}} 
+\index{capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}!subcubeset@{subcubeset}}
+\index{subcubeset@{subcubeset}!capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcubeset()}{subcubeset()}}
+{\footnotesize\ttfamily template$<$typename Vector\+Spec $>$ \\
+bool \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{capd\+::ddeshelper\+::\+Cube\+Set}}$<$ Vector\+Spec $>$\+::subcubeset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}}$<$ Vector\+Spec $>$ const \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+this only check if x0\textquotesingle{}s, r0\textquotesingle{}s are equal (same cube structure), and that all cubes are in the other 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_a049b57f9c9758c0fa018059e80e7e9c0}\label{classcapd_1_1ddeshelper_1_1CubeSet_a049b57f9c9758c0fa018059e80e7e9c0}} 
+\index{capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename Vector\+Spec $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}}$<$ Vector\+Spec $>$ const \&}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+this only outputs cube signatures and add to the set \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CubeSet_af472172c2ee754aa73a5c79b1e0e0eec}\label{classcapd_1_1ddeshelper_1_1CubeSet_af472172c2ee754aa73a5c79b1e0e0eec}} 
+\index{capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!capd::ddeshelper::CubeSet$<$ VectorSpec $>$@{capd::ddeshelper::CubeSet$<$ VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily template$<$typename Vector\+Spec $>$ \\
+std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CubeSet}{Cube\+Set}}$<$ Vector\+Spec $>$ \&}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+this only reads cube signatures and adds to the set 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddeshelper/D\+D\+E\+Cube\+Set.\+h\end{DoxyCompactItemize}

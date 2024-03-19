@@ -1,0 +1,304 @@
+\hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap}{}\doxysection{capd\+::ddes\+::D\+D\+E\+Poincare\+Map$<$ Dyn\+Sys\+Spec, Section\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1DDEPoincareMap}\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Poincare\+Map.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_abe7b583da51b8da29fd7860ea40ec005}\label{classcapd_1_1ddes_1_1DDEPoincareMap_abe7b583da51b8da29fd7860ea40ec005}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$ {\bfseries Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a910828a05908b613b27a19b1f56030f8}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a910828a05908b613b27a19b1f56030f8}} 
+typedef Dyn\+Sys\+Spec {\bfseries Dyn\+Sys\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_ac3075c1e8b6018714b8ca51c0458843f}\label{classcapd_1_1ddes_1_1DDEPoincareMap_ac3075c1e8b6018714b8ca51c0458843f}} 
+typedef Section\+Spec {\bfseries Section\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a9267ab420e2d877fc752302c8290fb20}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a9267ab420e2d877fc752302c8290fb20}} 
+typedef Dyn\+Sys\+Spec\+::\+Curve\+Type {\bfseries Curve\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_aa4ea3b360c460ca4cf902d885d7cecbe}\label{classcapd_1_1ddes_1_1DDEPoincareMap_aa4ea3b360c460ca4cf902d885d7cecbe}} 
+typedef Curve\+Type\+::\+Time\+Point\+Type {\bfseries Time\+Point\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a45b49773dbcc6f935e136eee658ae8df}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a45b49773dbcc6f935e136eee658ae8df}} 
+typedef Curve\+Type\+::\+Vector\+Type {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a5ac11bb46255ffc3c2f9d1a56bbbf883}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a5ac11bb46255ffc3c2f9d1a56bbbf883}} 
+typedef Curve\+Type\+::\+Matrix\+Type {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_aad58e187c0789f3aec5bd3d9eee6f830}\label{classcapd_1_1ddes_1_1DDEPoincareMap_aad58e187c0789f3aec5bd3d9eee6f830}} 
+typedef Curve\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_af6df2bfe1ffe08203904e56d67840085}\label{classcapd_1_1ddes_1_1DDEPoincareMap_af6df2bfe1ffe08203904e56d67840085}} 
+typedef Curve\+Type\+::\+Real\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a805188e0483e7c1f8ccbecddfa4ed9df}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a805188e0483e7c1f8ccbecddfa4ed9df}} 
+typedef unsigned int {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a0ae301baf8f5ac5ade8651df9354ec6f}{D\+D\+E\+Poincare\+Map}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} const \&other)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a762d66a0280ae33d9693b810cb791cc6}{D\+D\+E\+Poincare\+Map}} (Dyn\+Sys\+Type \&dynsys, Section\+Type \&section, Crossing\+Direction direction=Crossing\+Direction\+::\+Both, int req\+Steps=0, int max\+Steps=-\/1, double binsearch\+Epsilon=D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+I\+N\+S\+E\+A\+R\+C\+H\+\_\+\+E\+P\+S\+I\+L\+ON)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a9b28be7053122e533b03c0a9362912e1}{operator()}} (Curve\+Type \&curve, Real\+Type \&out\+\_\+approach\+Time, Curve\+Type \&on\+\_\+section, size\+\_\+type n=1)
+\item 
+Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a6072efbeeb00eb53611c118e51b10dee}{operator()}} (Curve\+Type const \&X, Real\+Type \&out\+\_\+approach\+Time, size\+\_\+type n=1)
+\item 
+Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a97b5f2d09eb8bec8cf3d29bd6cd07118}{operator()}} (Curve\+Type const \&X, size\+\_\+type n=1)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a46213b9bada877ca29781c90883cc454}{set\+Direction}} (Crossing\+Direction direction)
+\item 
+Crossing\+Direction \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a299655470780db5002116459c69202df}{get\+Direction}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_ab6a535dc4d8c0da142884a62b61601ce}{set\+Max\+Steps}} (int max\+Steps)
+\item 
+int \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_aaee401fe2af8703cde91d200efaec83c}{get\+Max\+Steps}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a81923d4563ce85614df3bec0fdc69eb7}{set\+Required\+Steps}} (int required\+Steps)
+\item 
+int \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_af87fba21a7a8c6e60fecd259c493c11a}{get\+Required\+Steps}} ()
+\item 
+Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_abdb336f90662b5d7f1c14b7e84f61d88}{get\+Last\+Epsilon\+Time}} () const
+\item 
+Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a083322a486d894f5eee468f0345d050d}{get\+Last\+Time\+Before\+Section}} () const
+\item 
+Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a7fc9aff759affd085fb38ab8e0fe387d}{get\+Last\+Reach\+Time}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_ab6af6ac5ab806d3ad19201f98292d25d}{compute\+Poincare\+Map}} (Curve\+Type \&curve, Real\+Type \&out\+\_\+approach\+Time, Curve\+Type \&on\+\_\+section, size\+\_\+type n)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_aca06ce9b5e3106d9bfd9511e9249a77b}{check\+Steps}} ()
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_ae3184288cb7b17871780ed5d3b83d13a}{integrate\+Until\+Section\+Crossing}} (Curve\+Type \&curve, Real\+Type \&time\+Before\+Section, bool \&is\+Extra\+Step\+Needed, size\+\_\+type n=1)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a1fa1cdc3527ceac86bababe379a00223}{find\+Crossing\+Time}} (Curve\+Type const \&curve, Curve\+Type \&requested, Real\+Type \&crossing\+Time, int test\+Direction)
+\item 
+Crossing\+Direction \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a98d0b6955ca531a2a4340392be69d4cf}{detect\+Crossing\+Direction}} (Curve\+Type const \&curve)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_ab360639c9f637248f7f5caa693b5fd78}{operator=}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{Class}} const \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a2c892f84db87a1bfda960fd70ff9c4c6}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a2c892f84db87a1bfda960fd70ff9c4c6}} 
+Dyn\+Sys\+Type \& {\bfseries m\+\_\+dynsys}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_aa3bc72cbd126eecbc9ebc5494f54f5c3}\label{classcapd_1_1ddes_1_1DDEPoincareMap_aa3bc72cbd126eecbc9ebc5494f54f5c3}} 
+Section\+Type \& {\bfseries m\+\_\+section}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_aabd20f642e8525ef89eca012914764b4}\label{classcapd_1_1ddes_1_1DDEPoincareMap_aabd20f642e8525ef89eca012914764b4}} 
+Crossing\+Direction {\bfseries m\+\_\+direction}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a5e2f4e8fabd11667eeef3eed1655034b}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a5e2f4e8fabd11667eeef3eed1655034b}} 
+int {\bfseries m\+\_\+required\+Steps}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_af6574168db914d955f35b9a5b2bb098e}\label{classcapd_1_1ddes_1_1DDEPoincareMap_af6574168db914d955f35b9a5b2bb098e}} 
+int {\bfseries m\+\_\+max\+Steps}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a02404253cf7e2714c47ec000d9dfcf75}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a02404253cf7e2714c47ec000d9dfcf75}} 
+int {\bfseries m\+\_\+steps}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_ad0bc222e4b86eab78bdba8e82470f1fb}\label{classcapd_1_1ddes_1_1DDEPoincareMap_ad0bc222e4b86eab78bdba8e82470f1fb}} 
+double {\bfseries m\+\_\+binsearch\+Epsilon}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a3fdf09c53ce78bd2fe2786b86094bfcb}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a3fdf09c53ce78bd2fe2786b86094bfcb}} 
+Real\+Type {\bfseries m\+\_\+last\+Time\+Before\+Section}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a0f51b1e091f6ec8e67c78a2b6f4d52c7}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a0f51b1e091f6ec8e67c78a2b6f4d52c7}} 
+Real\+Type {\bfseries m\+\_\+last\+Epsilon\+Time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Dyn\+Sys\+Spec, typename Section\+Spec$>$\newline
+class capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map$<$ Dyn\+Sys\+Spec, Section\+Spec $>$}
+
+Implementation of Rigorous Poincare Map for use with D\+D\+E\+Solvers.
+
+In theory should work with any compatible D\+D\+E\+Dyn\+Sys and Section. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a0ae301baf8f5ac5ade8651df9354ec6f}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a0ae301baf8f5ac5ade8651df9354ec6f}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!DDEPoincareMap@{DDEPoincareMap}}
+\index{DDEPoincareMap@{DDEPoincareMap}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPoincareMap()}{DDEPoincareMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+copy constructor \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a762d66a0280ae33d9693b810cb791cc6}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a762d66a0280ae33d9693b810cb791cc6}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!DDEPoincareMap@{DDEPoincareMap}}
+\index{DDEPoincareMap@{DDEPoincareMap}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDEPoincareMap()}{DDEPoincareMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Type \&}]{dynsys,  }\item[{Section\+Type \&}]{section,  }\item[{Crossing\+Direction}]{direction = {\ttfamily CrossingDirection\+:\+:Both},  }\item[{int}]{req\+Steps = {\ttfamily 0},  }\item[{int}]{max\+Steps = {\ttfamily -\/1},  }\item[{double}]{binsearch\+Epsilon = {\ttfamily DEFAULT\+\_\+BINSEARCH\+\_\+EPSILON} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Poincare\+Map cannot be constructed without two main ingredients\+:
+\begin{DoxyItemize}
+\item (semi)dynamical system to push solutions forward (for now, we can use only \mbox{\hyperlink{classcapd_1_1ddes_1_1DDETaylorSolver}{D\+D\+E\+Taylor\+Solver}} for this) This dynsys contains the information of the D\+DE we are solving. See documentation there.
+\item section to which we want to go (you do not need to be on it with your initial set) the section is some codim-\/1 curve, usually a hyperplane in the space of C$^\wedge$n\+\_\+p functions. See the examples and docs of \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}}.
+\end{DoxyItemize}
+
+The other settings are as in C\+A\+PD -\/ direction of the crossing we want to check (from \textquotesingle{}left to right\textquotesingle{} or \textquotesingle{}right to left\textquotesingle{}, or \textquotesingle{}both\textquotesingle{} (any)). The Poincare will detect set crossing the section if it is going in the right direction. The flags are taken from capd\+::poincare\+::\+Corssing\+Direction\+: one of capd\+::poincare\+::\+Minus\+Plus, capd\+::poincare\+::\+Plus\+Minus, capd\+::poincare\+::\+Both.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req\+Steps} & -\/ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap_a81923d4563ce85614df3bec0fdc69eb7}{set\+Required\+Steps}} -\/ this is an important parameter! But the class can safely handle it for you!\\
+\hline
+{\em max\+Steps} & -\/ see @set\+Max\+Steps -\/ this is self explanatory\\
+\hline
+{\em binsearch\+Epsilon} & -\/ this controls a very basic algorithm of finding the crossing. The smaller the parameter the better results, but longer computations. Do not set this below 1e-\/14.\\
+\hline
+\end{DoxyParams}
+The set is given later as input to the operator(). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_aca06ce9b5e3106d9bfd9511e9249a77b}\label{classcapd_1_1ddes_1_1DDEPoincareMap_aca06ce9b5e3106d9bfd9511e9249a77b}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!checkSteps@{checkSteps}}
+\index{checkSteps@{checkSteps}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{checkSteps()}{checkSteps()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::check\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+helper used to check if maximum number of steps was made. Throws std\+::logic\+\_\+error in such a case \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_ab6af6ac5ab806d3ad19201f98292d25d}\label{classcapd_1_1ddes_1_1DDEPoincareMap_ab6af6ac5ab806d3ad19201f98292d25d}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!computePoincareMap@{computePoincareMap}}
+\index{computePoincareMap@{computePoincareMap}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{computePoincareMap()}{computePoincareMap()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::compute\+Poincare\+Map (\begin{DoxyParamCaption}\item[{Curve\+Type \&}]{curve,  }\item[{Real\+Type \&}]{out\+\_\+approach\+Time,  }\item[{Curve\+Type \&}]{on\+\_\+section,  }\item[{size\+\_\+type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+in curve there is a curve that reaches just after the section in on\+\_\+section there is the image on the section, as close to section as possible on\+\_\+section must be initialized with the desired \char`\"{}length\char`\"{} (time interval) and \char`\"{}order\char`\"{} of the representation. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a98d0b6955ca531a2a4340392be69d4cf}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a98d0b6955ca531a2a4340392be69d4cf}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!detectCrossingDirection@{detectCrossingDirection}}
+\index{detectCrossingDirection@{detectCrossingDirection}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{detectCrossingDirection()}{detectCrossingDirection()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Crossing\+Direction \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::detect\+Crossing\+Direction (\begin{DoxyParamCaption}\item[{Curve\+Type const \&}]{curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+warning\+: might be time consuming, it (might) integrate the solution... it assumes curve is on section. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a1fa1cdc3527ceac86bababe379a00223}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a1fa1cdc3527ceac86bababe379a00223}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!findCrossingTime@{findCrossingTime}}
+\index{findCrossingTime@{findCrossingTime}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{findCrossingTime()}{findCrossingTime()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::find\+Crossing\+Time (\begin{DoxyParamCaption}\item[{Curve\+Type const \&}]{curve,  }\item[{Curve\+Type \&}]{requested,  }\item[{Real\+Type \&}]{crossing\+Time,  }\item[{int}]{test\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+test\+Direction = -\/1 for before section test\+Direction = +1 for after section binsearch for now\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a299655470780db5002116459c69202df}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a299655470780db5002116459c69202df}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Crossing\+Direction \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+as in C\+A\+PD Poincare \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_abdb336f90662b5d7f1c14b7e84f61d88}\label{classcapd_1_1ddes_1_1DDEPoincareMap_abdb336f90662b5d7f1c14b7e84f61d88}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!getLastEpsilonTime@{getLastEpsilonTime}}
+\index{getLastEpsilonTime@{getLastEpsilonTime}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getLastEpsilonTime()}{getLastEpsilonTime()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::get\+Last\+Epsilon\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the last not full step made to reach the section. Usually it is an interval 0 $<$ \mbox{[}\textbackslash{}epsi\+\_\+1, \textbackslash{}epsi\+\_\+2\mbox{]} $<$ h \+:= tau/p. It is valid for the last computation of the poincare map. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a7fc9aff759affd085fb38ab8e0fe387d}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a7fc9aff759affd085fb38ab8e0fe387d}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!getLastReachTime@{getLastReachTime}}
+\index{getLastReachTime@{getLastReachTime}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getLastReachTime()}{getLastReachTime()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::get\+Last\+Reach\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the total time needed to return to section for the last computation of the Poincare map. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a083322a486d894f5eee468f0345d050d}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a083322a486d894f5eee468f0345d050d}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!getLastTimeBeforeSection@{getLastTimeBeforeSection}}
+\index{getLastTimeBeforeSection@{getLastTimeBeforeSection}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getLastTimeBeforeSection()}{getLastTimeBeforeSection()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Real\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::get\+Last\+Time\+Before\+Section (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the time before the crossing of the section begun. It is a multiple of the grid size h. It is valid for the last computation of the poincare map. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_aaee401fe2af8703cde91d200efaec83c}\label{classcapd_1_1ddes_1_1DDEPoincareMap_aaee401fe2af8703cde91d200efaec83c}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!getMaxSteps@{getMaxSteps}}
+\index{getMaxSteps@{getMaxSteps}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxSteps()}{getMaxSteps()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+int \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::get\+Max\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter for the upper bound of the steps before an exception is thrown \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_af87fba21a7a8c6e60fecd259c493c11a}\label{classcapd_1_1ddes_1_1DDEPoincareMap_af87fba21a7a8c6e60fecd259c493c11a}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!getRequiredSteps@{getRequiredSteps}}
+\index{getRequiredSteps@{getRequiredSteps}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getRequiredSteps()}{getRequiredSteps()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+int \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::get\+Required\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+see @set\+Required\+Steps \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_ae3184288cb7b17871780ed5d3b83d13a}\label{classcapd_1_1ddes_1_1DDEPoincareMap_ae3184288cb7b17871780ed5d3b83d13a}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!integrateUntilSectionCrossing@{integrateUntilSectionCrossing}}
+\index{integrateUntilSectionCrossing@{integrateUntilSectionCrossing}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrateUntilSectionCrossing()}{integrateUntilSectionCrossing()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::integrate\+Until\+Section\+Crossing (\begin{DoxyParamCaption}\item[{Curve\+Type \&}]{curve,  }\item[{Real\+Type \&}]{time\+Before\+Section,  }\item[{bool \&}]{is\+Extra\+Step\+Needed,  }\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+it extends the solution until the crossing with the section. Also, it takes into consideration the required number of steps (should be set-\/up before) It also moves away of section is initially curve crosses the section.
+
+W\+A\+R\+N\+I\+NG\+: it does not check for sanity of argument as of now, so it might cause runtime-\/errors if the proof is not well prepared. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a9b28be7053122e533b03c0a9362912e1}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a9b28be7053122e533b03c0a9362912e1}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{Curve\+Type \&}]{curve,  }\item[{Real\+Type \&}]{out\+\_\+approach\+Time,  }\item[{Curve\+Type \&}]{on\+\_\+section,  }\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+in curve there is a curve that reaches just after the section in on\+\_\+section there is the image on the section, as close to section as possible on\+\_\+section must be initialized with the desired \char`\"{}length\char`\"{} (time interval) and \char`\"{}order\char`\"{} of the representation. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a6072efbeeb00eb53611c118e51b10dee}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a6072efbeeb00eb53611c118e51b10dee}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{Curve\+Type const \&}]{X,  }\item[{Real\+Type \&}]{out\+\_\+approach\+Time,  }\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+To be compatible with standard notion and C\+A\+PD interface.
+
+It makes following assumptions\+:
+\begin{DoxyItemize}
+\item X and PX will have the same structure (i.\+e. over same grid points and jets of the same order).
+\end{DoxyItemize}
+
+N\+O\+TE\+: you can retrieve information on reach time and epsilon step, but you cannot acquire the solution on the whole time. If you need solution over the full integration time, then use other operator(). \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a97b5f2d09eb8bec8cf3d29bd6cd07118}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a97b5f2d09eb8bec8cf3d29bd6cd07118}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{Curve\+Type const \&}]{X,  }\item[{size\+\_\+type}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+See operator() with time. This version does not give the return time. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_ab360639c9f637248f7f5caa693b5fd78}\label{classcapd_1_1ddes_1_1DDEPoincareMap_ab360639c9f637248f7f5caa693b5fd78}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{Class}} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE)\+: assign operator hidden now for \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a46213b9bada877ca29781c90883cc454}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a46213b9bada877ca29781c90883cc454}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::set\+Direction (\begin{DoxyParamCaption}\item[{Crossing\+Direction}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+as in C\+A\+PD Poincare \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_ab6a535dc4d8c0da142884a62b61601ce}\label{classcapd_1_1ddes_1_1DDEPoincareMap_ab6a535dc4d8c0da142884a62b61601ce}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!setMaxSteps@{setMaxSteps}}
+\index{setMaxSteps@{setMaxSteps}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setMaxSteps()}{setMaxSteps()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::set\+Max\+Steps (\begin{DoxyParamCaption}\item[{int}]{max\+Steps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+sets the maximal number of steps to be made. This is in contrast to C\+A\+PD, as there you only sets max time. Here, since we have fixed size steps, it is better to prescirbe maximal steps.
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) add set\+Max\+Return\+Time(\+Real max\+Return\+Time) as in capd\+::\+Poincare. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEPoincareMap_a81923d4563ce85614df3bec0fdc69eb7}\label{classcapd_1_1ddes_1_1DDEPoincareMap_a81923d4563ce85614df3bec0fdc69eb7}} 
+\index{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}!setRequiredSteps@{setRequiredSteps}}
+\index{setRequiredSteps@{setRequiredSteps}!capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setRequiredSteps()}{setRequiredSteps()}}
+{\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{D\+D\+E\+Poincare\+Map}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::set\+Required\+Steps (\begin{DoxyParamCaption}\item[{int}]{required\+Steps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+H\+IS IS I\+M\+P\+O\+R\+T\+A\+NT S\+E\+T\+T\+I\+NG. It is set usually automatically in the rigorous code to the \textquotesingle{}Long Enough Integration time\textquotesingle{} (see papers), which guarantees that the enclosures are correct. Otherwise the image on the section for a given initial set might be ill-\/defined for some points and thus useless from C\+AP point of view.
+
+Use with caution! 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Poincare\+Map.\+h\end{DoxyCompactItemize}

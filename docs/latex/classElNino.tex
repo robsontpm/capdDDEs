@@ -1,0 +1,119 @@
+\hypertarget{classElNino}{}\doxysection{El\+Nino$<$ Scalar\+Spec, Param\+Spec $>$ Class Template Reference}
+\label{classElNino}\index{ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}}
+
+
+{\ttfamily \#include $<$equation.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classElNino_a359020489ed9ccf14f98de7d7d499260}\label{classElNino_a359020489ed9ccf14f98de7d7d499260}} 
+typedef Scalar\+Spec {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classElNino_a95cbbfe13e95bd1b5762bdfc793b49ef}\label{classElNino_a95cbbfe13e95bd1b5762bdfc793b49ef}} 
+typedef unsigned int {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classElNino_a850b194f0b01b1a19f76210b46ae88cf}\label{classElNino_a850b194f0b01b1a19f76210b46ae88cf}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classElNino_a1e7107a8725d364d1d7bad22718f3857}\label{classElNino_a1e7107a8725d364d1d7bad22718f3857}} 
+typedef Param\+Spec {\bfseries Param\+Type}
+\item 
+\mbox{\Hypertarget{classElNino_aac8d998075ce043909346bfb131e7f78}\label{classElNino_aac8d998075ce043909346bfb131e7f78}} 
+typedef capd\+::vectalg\+::\+Vector$<$ Param\+Spec, 0 $>$ {\bfseries Params\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{classElNino_a42b323cd2e9133bfb1832a3489b22726}\label{classElNino_a42b323cd2e9133bfb1832a3489b22726}} 
+typedef capd\+::vectalg\+::\+Vector$<$ Scalar\+Type, 0 $>$ {\bfseries Vector\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classElNino_a695d483b0e3e7b0b2c3c04863441174a}\label{classElNino_a695d483b0e3e7b0b2c3c04863441174a}} 
+{\bfseries El\+Nino} (Param\+Type kappa)
+\item 
+\mbox{\Hypertarget{classElNino_a50701a4a3a87df5759074053441eef6e}\label{classElNino_a50701a4a3a87df5759074053441eef6e}} 
+{\bfseries El\+Nino} (Param\+Type alpha, Param\+Type beta, Param\+Type gamma, Param\+Type kappa)
+\item 
+\mbox{\Hypertarget{classElNino_a83ea09db030a04d2af3eb15e6ddc97a1}\label{classElNino_a83ea09db030a04d2af3eb15e6ddc97a1}} 
+{\bfseries El\+Nino} (\mbox{\hyperlink{classElNino}{El\+Nino}} const \&orig)
+\item 
+\mbox{\Hypertarget{classElNino_a8ddb10246155577b123ee7211633b200}\label{classElNino_a8ddb10246155577b123ee7211633b200}} 
+{\bfseries El\+Nino} (capd\+::vectalg\+::\+Vector$<$ Param\+Spec, 0 $>$ const \&params)
+\item 
+\mbox{\Hypertarget{classElNino_a148a7efc51cd2b5dd8fc465ebafc616a}\label{classElNino_a148a7efc51cd2b5dd8fc465ebafc616a}} 
+\mbox{\hyperlink{classElNino}{El\+Nino}} \& {\bfseries operator=} (\mbox{\hyperlink{classElNino}{El\+Nino}} const \&orig)
+\item 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void \mbox{\hyperlink{classElNino_ae06c4ea702fae5f81084f4ea4f9a65ba}{operator()}} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+type \mbox{\hyperlink{classElNino_ae522935674222c9d42f4f95048e0ddb1}{image\+Dimension}} ()
+\item 
+static size\+\_\+type \mbox{\hyperlink{classElNino_ac053b36ad7734a2018be0456332065a0}{dimension}} ()
+\item 
+static size\+\_\+type \mbox{\hyperlink{classElNino_a6f33fbb98b65c573d8fc911964ce35a9}{get\+Params\+Count}} ()
+\item 
+\mbox{\Hypertarget{classElNino_a87d1f582ab3a99d879c0546c6ab29050}\label{classElNino_a87d1f582ab3a99d879c0546c6ab29050}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classElNino_a6ac482af63aff1c4fa6993b4d0b184d5}\label{classElNino_a6ac482af63aff1c4fa6993b4d0b184d5}} 
+Param\+Type {\bfseries alpha}
+\item 
+\mbox{\Hypertarget{classElNino_a41a39df2e7be69fb7eee9c9c3627d93d}\label{classElNino_a41a39df2e7be69fb7eee9c9c3627d93d}} 
+Param\+Type {\bfseries beta}
+\item 
+\mbox{\Hypertarget{classElNino_a887671cc32f46980fc8c39e89e5ae60d}\label{classElNino_a887671cc32f46980fc8c39e89e5ae60d}} 
+Param\+Type {\bfseries gamma}
+\item 
+\mbox{\Hypertarget{classElNino_a34b1e85576403bc758ac429e8be53ac3}\label{classElNino_a34b1e85576403bc758ac429e8be53ac3}} 
+Param\+Type {\bfseries kappa}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+Spec, typename Param\+Spec = Scalar\+Spec$>$\newline
+class El\+Nino$<$ Scalar\+Spec, Param\+Spec $>$}
+
+A model map of what I expect from a Map R$^\wedge$m -\/$>$ R$^\wedge$n to be good for use with D\+DE codes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classElNino_ac053b36ad7734a2018be0456332065a0}\label{classElNino_ac053b36ad7734a2018be0456332065a0}} 
+\index{ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+static size\+\_\+type \mbox{\hyperlink{classElNino}{El\+Nino}}$<$ Scalar\+Spec, Param\+Spec $>$\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classElNino_a6f33fbb98b65c573d8fc911964ce35a9}\label{classElNino_a6f33fbb98b65c573d8fc911964ce35a9}} 
+\index{ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}!getParamsCount@{getParamsCount}}
+\index{getParamsCount@{getParamsCount}!ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getParamsCount()}{getParamsCount()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+static size\+\_\+type \mbox{\hyperlink{classElNino}{El\+Nino}}$<$ Scalar\+Spec, Param\+Spec $>$\+::get\+Params\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+number of parameters to fully configure equation \mbox{\Hypertarget{classElNino_ae522935674222c9d42f4f95048e0ddb1}\label{classElNino_ae522935674222c9d42f4f95048e0ddb1}} 
+\index{ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+static size\+\_\+type \mbox{\hyperlink{classElNino}{El\+Nino}}$<$ Scalar\+Spec, Param\+Spec $>$\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+output dimension of the internal map \mbox{\Hypertarget{classElNino_ae06c4ea702fae5f81084f4ea4f9a65ba}\label{classElNino_ae06c4ea702fae5f81084f4ea4f9a65ba}} 
+\index{ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!ElNino$<$ ScalarSpec, ParamSpec $>$@{ElNino$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ \\
+void \mbox{\hyperlink{classElNino}{El\+Nino}}$<$ Scalar\+Spec, Param\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{const Real\+Spec \&}]{t,  }\item[{const In\+Vector\+Spec}]{x,  }\item[{Out\+Vector\+Spec \&}]{fx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+We require that solution class has a templated operator of this signature the program will pass in x the m values where m = \mbox{\hyperlink{classElNino_ac053b36ad7734a2018be0456332065a0}{dimension()}} in fx there will be reference to already initialized vector of dimension d = \mbox{\hyperlink{classElNino_ae522935674222c9d42f4f95048e0ddb1}{image\+Dimension()}}. The dimensions are as follows\+: if d = \mbox{\hyperlink{classElNino_ae522935674222c9d42f4f95048e0ddb1}{image\+Dimension()}} then usually m = d $\ast$ (number of delayed terms + 1). +1 is for the current term, which is always present, and always assumed to be stored in x\mbox{[}0\mbox{]}. (so if your equation is not dependent on this, then you should not use it in your formulas). In this example (Mackey-\/\+Glass Eq.), we have\+: d = 1 (scalar), m = 2 (two terms\+: current value at 0 and delayed term at t = t -\/ \textbackslash{}tau)
+
+Note that tau is not explicitely present in the equation. The concrete value of the delay is defined when constructing Discrete\+Delays\+Functional\+Map from this template function. See docs there. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/programs/examples/demo-\/elninio/equation.\+h\end{DoxyCompactItemize}

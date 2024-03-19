@@ -1,0 +1,98 @@
+\hypertarget{classcapd_1_1ddes_1_1CubicIkeda}{}\doxysection{capd\+::ddes\+::Cubic\+Ikeda$<$ Scalar\+Spec, Param\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1CubicIkeda}\index{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}}
+
+
+{\ttfamily \#include $<$Sample\+Eqns.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a084fb931f18b8e6c007a3cbd7317a7e9}\label{classcapd_1_1ddes_1_1CubicIkeda_a084fb931f18b8e6c007a3cbd7317a7e9}} 
+typedef Scalar\+Spec {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a85b45282402f8553a0d88f35cac5de42}\label{classcapd_1_1ddes_1_1CubicIkeda_a85b45282402f8553a0d88f35cac5de42}} 
+typedef unsigned int {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a1c3da2d582b5250f5fb1dcb20ba2f010}\label{classcapd_1_1ddes_1_1CubicIkeda_a1c3da2d582b5250f5fb1dcb20ba2f010}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a53571b45d2043e33e598f820cb47b9fa}\label{classcapd_1_1ddes_1_1CubicIkeda_a53571b45d2043e33e598f820cb47b9fa}} 
+typedef Param\+Spec {\bfseries Param\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_ac63963cfff20b45dcd61b791b3b82809}\label{classcapd_1_1ddes_1_1CubicIkeda_ac63963cfff20b45dcd61b791b3b82809}} 
+typedef capd\+::vectalg\+::\+Vector$<$ Param\+Spec, 0 $>$ {\bfseries Params\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a7aa5aa75f681e46a2a6dea1ff7fdba72}\label{classcapd_1_1ddes_1_1CubicIkeda_a7aa5aa75f681e46a2a6dea1ff7fdba72}} 
+typedef capd\+::vectalg\+::\+Vector$<$ Scalar\+Type, 0 $>$ {\bfseries Vector\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a258268ad93b2fe4af93bf1651f7ac0d0}\label{classcapd_1_1ddes_1_1CubicIkeda_a258268ad93b2fe4af93bf1651f7ac0d0}} 
+{\bfseries Cubic\+Ikeda} (Param\+Type a)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a3c0c229ae67bb729fee4881519afca5f}\label{classcapd_1_1ddes_1_1CubicIkeda_a3c0c229ae67bb729fee4881519afca5f}} 
+{\bfseries Cubic\+Ikeda} (\mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda}{Cubic\+Ikeda}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a28e2a76dfbb724e365c809ceec3305a5}\label{classcapd_1_1ddes_1_1CubicIkeda_a28e2a76dfbb724e365c809ceec3305a5}} 
+{\bfseries Cubic\+Ikeda} (capd\+::vectalg\+::\+Vector$<$ Param\+Spec, 0 $>$ const \&params)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_afc1eaa1d5455c16a83f5579516b8ded2}\label{classcapd_1_1ddes_1_1CubicIkeda_afc1eaa1d5455c16a83f5579516b8ded2}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda}{Cubic\+Ikeda}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda}{Cubic\+Ikeda}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a311f0befb0803cd47dea379864bfd128}\label{classcapd_1_1ddes_1_1CubicIkeda_a311f0befb0803cd47dea379864bfd128}} 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void {\bfseries operator()} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda_a72bf503ed7303890bf1cbc6facd0efb3}{image\+Dimension}} ()
+\item 
+static size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda_a548b1f174e27f928b4db168457ec19d6}{dimension}} ()
+\item 
+static size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda_a04853d55677e8787fb6d2b439c14ccc4}{get\+Params\+Count}} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_ac571f71575ead78be6a4c5229df11309}\label{classcapd_1_1ddes_1_1CubicIkeda_ac571f71575ead78be6a4c5229df11309}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a75b5c2563ef5e3da0f2acdd2848a8554}\label{classcapd_1_1ddes_1_1CubicIkeda_a75b5c2563ef5e3da0f2acdd2848a8554}} 
+Param\+Type {\bfseries a}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+Spec, typename Param\+Spec = Scalar\+Spec$>$\newline
+class capd\+::ddes\+::\+Cubic\+Ikeda$<$ Scalar\+Spec, Param\+Spec $>$}
+
+A model map of what I expect from a Map R$^\wedge$m -\/$>$ R$^\wedge$n to be good for use with D\+DE codes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a548b1f174e27f928b4db168457ec19d6}\label{classcapd_1_1ddes_1_1CubicIkeda_a548b1f174e27f928b4db168457ec19d6}} 
+\index{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+static size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda}{capd\+::ddes\+::\+Cubic\+Ikeda}}$<$ Scalar\+Spec, Param\+Spec $>$\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a04853d55677e8787fb6d2b439c14ccc4}\label{classcapd_1_1ddes_1_1CubicIkeda_a04853d55677e8787fb6d2b439c14ccc4}} 
+\index{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}!getParamsCount@{getParamsCount}}
+\index{getParamsCount@{getParamsCount}!capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getParamsCount()}{getParamsCount()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+static size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda}{capd\+::ddes\+::\+Cubic\+Ikeda}}$<$ Scalar\+Spec, Param\+Spec $>$\+::get\+Params\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+number of parameters to fully configure equation \mbox{\Hypertarget{classcapd_1_1ddes_1_1CubicIkeda_a72bf503ed7303890bf1cbc6facd0efb3}\label{classcapd_1_1ddes_1_1CubicIkeda_a72bf503ed7303890bf1cbc6facd0efb3}} 
+\index{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$@{capd::ddes::CubicIkeda$<$ ScalarSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Spec , typename Param\+Spec  = Scalar\+Spec$>$ \\
+static size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1CubicIkeda}{capd\+::ddes\+::\+Cubic\+Ikeda}}$<$ Scalar\+Spec, Param\+Spec $>$\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+output dimension of the internal map 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/Sample\+Eqns.\+h\end{DoxyCompactItemize}

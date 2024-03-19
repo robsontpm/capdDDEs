@@ -1,0 +1,173 @@
+\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md0}{}\doxysection{T\+L;\+DR}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md0}
+To start using this project you can do the following steps (we assume you have -\/nix type of system, Windows is unsupported)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# first clone the repo}
+\DoxyCodeLine{mkdir capdDDEs}
+\DoxyCodeLine{cd capdDDEs}
+\DoxyCodeLine{git clone [TODO:put-\/repo-\/name-\/here]}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# next, build CAPD external library (it is a long process)}
+\DoxyCodeLine{}
+\DoxyCodeLine{cd external}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# add permission to helper scripts if  and run build}
+\DoxyCodeLine{}
+\DoxyCodeLine{chmod a+x capd/configure}
+\DoxyCodeLine{chmod a+x capd-\/build.sh}
+\DoxyCodeLine{./capd-\/build.sh}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# then, after capd is build without errors, then compile programs.}
+\DoxyCodeLine{\# First go back to root directory of this project}
+\DoxyCodeLine{}
+\DoxyCodeLine{cd ..}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# then make the selected program or demo eg:}
+\DoxyCodeLine{}
+\DoxyCodeLine{make examples/mackey\_glass\_stable}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# compiled programs will be in ./bin directory}
+\DoxyCodeLine{}
+\DoxyCodeLine{cd bin/examples/mackey\_glass\_stable}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# there should be a directory corresponding to the name of the program}
+\DoxyCodeLine{}
+\DoxyCodeLine{ls}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# sample output of the above ls commands:}
+\DoxyCodeLine{\#}
+\DoxyCodeLine{\#    find\_and\_prove\_n6}
+\DoxyCodeLine{\#}
+\DoxyCodeLine{\# finally, run proofs or demos, e.g. :}
+\DoxyCodeLine{}
+\DoxyCodeLine{./find\_and\_prove\_n6}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# you can see list of available programs and demos by running}
+\DoxyCodeLine{\# in the main directory the following command:}
+\DoxyCodeLine{}
+\DoxyCodeLine{make list}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# if you are interested in more documentation, see ./docs}
+\end{DoxyCode}
+
+
+In case of any problems, please contact me at \href{mailto:robert.szczelina@uj.edu.pl}{\texttt{ robert.\+szczelina@uj.\+edu.\+pl}} -\/ I will provide as much support as possible, especially I will contact people from C\+A\+PD project if there would be any problems with building it. Please attach as much information as possible (e.\+g. output of build.\+sh / configure / make programs),version of your OS, maybe some screenshots.
+
+Aditional programs (proofs) are usually attached to the recent manuscripts, see the References section below.\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md1}{}\doxysection{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N O\+F T\+H\+I\+S P\+R\+O\+J\+E\+CT}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md1}
+The repository contains source codes for the rigorous integration library for Delay Differential Equations (D\+D\+Es) of the form\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{x'(t) = f(x(t), x(t-\/d1), ..., x(t-\/dm))}
+\end{DoxyCode}
+
+
+Where d1,..., dm are m delays. It is build upon ideas from C\+A\+PD library for O\+D\+Es (capd.\+ii.\+uj.\+edu.\+pl). By rigorous methods we understand routines that compute the enclosure (interval bounds) on the {\bfseries{true}} solutions to the problems, which enable applying them in Computer Assisted Proofs. Please reffer to \href{capd.ii.uj.edu.pl}{\texttt{ C\+A\+PD}} documentation for general papers on the topic. And see References for the ones specyfic to D\+D\+Es.
+
+This projec requires the \href{capd.ii.uj.edu.pl}{\texttt{ C\+A\+PD library}}, but the repository contains compatible C\+A\+PD version in \textquotesingle{}./external/\textquotesingle{} directory. You can use your own version of the C\+A\+PD, but in that case you need to modify {\ttfamily C\+A\+P\+D\+B\+I\+N\+D\+IR} and {\ttfamily C\+A\+P\+D\+L\+I\+B\+D\+IR} variables in the template Makefile scripts {\ttfamily build-\/conf.\+mk} and {\ttfamily build-\/conf-\/mp.\+mk}. ~\newline
+
+
+The work is open-\/source, under G\+PL license. Please consider citing some of the papers listed in References, when using this work in any scientific project.\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md2}{}\doxysection{P\+R\+O\+J\+E\+C\+T S\+T\+R\+U\+C\+T\+U\+RE}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md2}
+T\+O\+DO\+: tu skonczylem
+
+The integrator is written as a template-\/based C++ library and heavily uses C\+A\+PD library routines for rigorous numerics. The main part, that is designed to be used separately, is contained in \textquotesingle{}include/capd/ddes\textquotesingle{}. As of 2020 we aim to incorporate this part of the library in the core of C\+A\+PD Dyn\+Sys project. For details about C\+A\+PD see \href{http://capd.ii.uj.edu.pl}{\texttt{ http\+://capd.\+ii.\+uj.\+edu.\+pl}} . Files in \textquotesingle{}include/capd/ddes\+Helper\textquotesingle{} are designed to be outside of the base implementation and they aim at providing simple algorithms to create, manipulate and refine initial data for the integrator.
+
+This project also contains several programs under examples directory those programs can be build issuing the following command\+: \begin{DoxyVerb}make [program_name]
+\end{DoxyVerb}
+
+
+where \mbox{[}program\+\_\+name\mbox{]} is equal to the name of any directory under \textquotesingle{}examples/\textquotesingle{}. The resulting executable file will go to the bin/examples/\mbox{[}program\+\_\+name\mbox{]} directory.
+
+The most important part is the rigorous integrator for D\+D\+Es (D\+DE library). It is contained in include/capd/ddes. As of 2022, I have decided to reorganize it again to be more complaint with the C\+A\+PD structure. I have followed example of \textquotesingle{}external/capd/capd\+Dyn\+Sys4/include/capd/pdes\textquotesingle{} in this manner.
+
+As of 2022 the integrator uses C\+A\+PD Dyn\+Sys version 5.\+1.\+2.\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md3}{}\doxysection{C\+O\+M\+P\+I\+L\+A\+T\+I\+O\+N O\+F T\+H\+E L\+I\+B\+R\+A\+R\+Y O\+N\+D C\+U\+S\+T\+O\+M P\+R\+O\+G\+R\+A\+MS}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md3}
+If you have downloaded version without C\+A\+PD and want to use your own version of this library, then you need to modify file \textquotesingle{}build-\/conf.\+mk\textquotesingle{} first. Follow the instructions in that file to make the Makefile work.
+
+If you have version with bundled C\+A\+PD library (there is \textquotesingle{}./external/capd\textquotesingle{} folder), then you need to build it first.
+
+A script \textquotesingle{}capd-\/build.\+sh\textquotesingle{} in \textquotesingle{}./external\textquotesingle{} can do everything automatically\+: \begin{DoxyVerb}# first, build CAPD (it is a long process)
+cd external
+# add permission to helper scripts if neccessary
+chmod a+x capd/configure
+chmod a+x build.sh
+./build.sh
+\end{DoxyVerb}
+
+
+Finally, you can check C\+A\+PD build by entering\+: \begin{DoxyVerb}cd external/capd_build
+make check
+\end{DoxyVerb}
+
+
+In case of any errors in compiling C\+A\+PD library, please check requirements on \href{http://capd.ii.uj.edu.pl,}{\texttt{ http\+://capd.\+ii.\+uj.\+edu.\+pl,}} or contact me at \href{mailto:robert.szczelina@uj.edu.pl}{\texttt{ robert.\+szczelina@uj.\+edu.\+pl}}.\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md4}{}\doxysubsection{C\+A\+P\+D v. 5 A\+N\+D S\+H\+A\+R\+E\+D L\+I\+B\+R\+A\+R\+I\+E\+S (\+U\+P\+D\+A\+T\+E\+D 2022)}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md4}
+In a C\+A\+PD v5 there is a problem with compiled program, when the library was installed localy. The system does not see the dynamically linked libraries.
+
+From \textquotesingle{}make install\textquotesingle{} of C\+A\+PD you get info\+:
+
+Libraries have been installed in\+: /home/robson/workspace/capd\+D\+D\+Es5.1.\+2/bin/capd/lib
+
+If you ever happen to want to link against installed libraries in a given directory, L\+I\+B\+D\+IR, you must either use libtool, and specify the full pathname of the library, or use the \textquotesingle{}-\/L\+L\+I\+B\+D\+IR\textquotesingle{} flag during linking and do at least one of the following\+:
+\begin{DoxyItemize}
+\item add L\+I\+B\+D\+IR to the \textquotesingle{}L\+D\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH\textquotesingle{} environment variable during execution
+\item add L\+I\+B\+D\+IR to the \textquotesingle{}L\+D\+\_\+\+R\+U\+N\+\_\+\+P\+A\+TH\textquotesingle{} environment variable during linking
+\item use the \textquotesingle{}-\/Wl,-\/rpath -\/Wl,L\+I\+B\+D\+IR\textquotesingle{} linker flag
+\item have your system administrator add L\+I\+B\+D\+IR to \textquotesingle{}/etc/ld.so.\+conf\textquotesingle{}
+\end{DoxyItemize}
+
+See any operating system documentation about shared libraries for more information, such as the ld(1) and ld.\+so(8) manual pages.
+
+For now, I do the following\+:
+\begin{DoxyItemize}
+\item create file \textquotesingle{}/etc/ld.so.\+conf.\+d/\+C\+A\+P\+Dv5.conf\textquotesingle{} with the L\+I\+B\+D\+IR in it\+:
+
+sudo cat \textquotesingle{}/home/robson/workspace/capd\+D\+D\+Es5.1.\+2/bin/capd/lib\textquotesingle{} $>$ /etc/ld.so.\+conf.\+d/\+C\+A\+P\+Dv5.conf
+\item reload ldconfig\+:
+
+sudo ldconfig
+\end{DoxyItemize}
+
+This need admin rights. I think the option
+
+
+\begin{DoxyItemize}
+\item use the \textquotesingle{}-\/Wl,-\/rpath -\/Wl,L\+I\+B\+D\+IR\textquotesingle{} linker flag
+\end{DoxyItemize}
+
+could work better, it can be implemented with Makefile. T\+O\+DO\+: Try to implement this method instead of ldconfig.
+
+=== P\+R\+O\+J\+E\+CT S\+T\+R\+U\+C\+T\+U\+RE ================================ U\+P\+D\+A\+T\+ED 2022 ==
+
+A short description of available folders / files. A detailed R\+E\+A\+D\+M\+E.\+txt file can be found in some of them, when necessary. The project is in constant evolution, so changes can be made. When the core part of library would become part of C\+A\+PD, then the structure would be more or less constant.
+
+
+\begin{DoxyItemize}
+\item include/
+\item include/ddes the core of the rigorous integrator for D\+D\+Es The most important files\+:
+\begin{DoxyItemize}
+\item T\+O\+DO\+:
+\item T\+O\+DO\+:
+\item T\+O\+DO\+:
+\end{DoxyItemize}
+\item include/ddeshelper some extra routines to help with programs. Might not be the part of the C\+A\+PD library, when ddes are included.
+\item examples/ here are all the programs from computer assisted proofs. For now, only data from the latest paper is included. For data from older papers, check the links in respective manuscripts.
+\item Makefile this file may be used to build programs inside the library just call\+: \begin{DoxyVerb}make [program_name]
+\end{DoxyVerb}
+
+
+where \mbox{[}program\+\_\+name\mbox{]} is equal to the name of any directory under examples/. The resulting executable file will go to the bin/examples/\mbox{[}program\+\_\+name\mbox{]} directory.
+\item external/ You should build C\+A\+PD from this folder. The instructions are somwhere in this R\+E\+A\+D\+M\+E.\+txt file. ~\newline
+
+\item script/ some usefull scripts in languages other than C++ (bash / Python / tex) they are used in some proofs to generate human-\/readable output (e.\+g. the formulation of existence theorems with nice estimates) This folder is there only if neccessary
+\item bin/ this directory is initially empty. If you will compile any program which accompany the library in examples/ folder, then it will be placed here. Also bundled version of C\+A\+PD will be here.
+\item build-\/conf.\+mk build-\/conf-\/mp.\+mk this file serve to configure compilation (make), see above for the instruction on compilation. The -\/mp version is used for multiprecision compilation (see for example converter programs)
+\item R\+E\+A\+D\+M\+E.\+txt this file
+\end{DoxyItemize}\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md5}{}\doxysection{B\+I\+B\+L\+I\+O\+G\+R\+A\+P\+HY}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_README_autotoc_md5}
+\mbox{[}1\mbox{]} Szczelina, R., Zgliczyński, P. "High-\/\+Order Lohner-\/\+Type Algorithm for Rigorous Computation of Poincaré Maps in Systems of Delay Differential Equations with Several Delays\char`\"{}, Found Comput Math, Accepted, published online, 
+        $<$a href=\char`\"{}\href{https://doi.org/10.1007/s10208-023-09614-x}{\texttt{ https\+://doi.\+org/10.\+1007/s10208-\/023-\/09614-\/x}}"$>$doi\+:s10208-\/023-\/09614-\/x) (2023).
+
+\mbox{[}2\mbox{]} Szczelina, R., Zgliczyński, P. "Algorithm for Rigorous Integration of Delay Differential Equations and the Computer-\/\+Assisted Proof of Periodic Orbits in the Mackey–\+Glass Equation.\char`\"{}, Found Comput Math 18, 1299–1332 (2018).
+        $<$a href=\char`\"{}\href{https://doi.org/10.1007/s10208-017-9369-5}{\texttt{ https\+://doi.\+org/10.\+1007/s10208-\/017-\/9369-\/5}}"$>$doi\+:10.\+1007/s10208-\/017-\/9369-\/5
+
+\mbox{[}3\mbox{]} Szczelina, R. \char`\"{}\+A computer assisted proof of multiple periodic orbits in 
+        some first order non-\/linear delay differential equation\char`\"{}, Electronic Journal of Qualitative Theory of Differential Equations (2016), No. 83, 1-\/19, \href{https://doi.org/10.14232/ejqtde.2016.1.83}{\texttt{ doi\+:10.\+14232/ejqtde.2016.\+1.\+83}} 

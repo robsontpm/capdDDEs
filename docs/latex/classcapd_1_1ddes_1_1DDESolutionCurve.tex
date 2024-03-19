@@ -1,0 +1,1121 @@
+\hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve}{}\doxysection{capd\+::ddes\+::D\+D\+E\+Solution\+Curve$<$ Set\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1DDESolutionCurve}\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Solution\+Curve.\+h$>$}
+
+
+
+Inheritance diagram for capd\+::ddes\+::D\+D\+E\+Solution\+Curve$<$ Set\+Spec $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classcapd_1_1ddes_1_1DDESolutionCurve__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for capd\+::ddes\+::D\+D\+E\+Solution\+Curve$<$ Set\+Spec $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcapd_1_1ddes_1_1DDESolutionCurve__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9ee99064d1aec2b4e152365aabcd4224}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9ee99064d1aec2b4e152365aabcd4224}} 
+typedef Set\+Spec {\bfseries Set\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a45cc50f97a1377a5283958e78946f593}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a45cc50f97a1377a5283958e78946f593}} 
+typedef Set\+Type {\bfseries Data\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9b9caa4bd8eb04a4f9b918531f8d0709}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9b9caa4bd8eb04a4f9b918531f8d0709}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}}$<$ typename Set\+Spec\+::\+Matrix\+Type, typename Set\+Spec\+::\+Policy $>$ {\bfseries Base\+Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a45f8b7217ce87f06aea03730afd2cd8e}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a45f8b7217ce87f06aea03730afd2cd8e}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ {\bfseries Class}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac58b7402178baf810bc0d1a49ecba760}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac58b7402178baf810bc0d1a49ecba760}} 
+typedef Set\+Type\+::\+Matrix\+Type {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa71f57dba0f86ada5e310e3d59fec2c8}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa71f57dba0f86ada5e310e3d59fec2c8}} 
+typedef Matrix\+Type\+::\+Row\+Vector\+Type {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac86346b35b474fb47b885f51f6dc82d6}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac86346b35b474fb47b885f51f6dc82d6}} 
+typedef Matrix\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_abe7628d71554f1b40bdd8cce34184eac}\label{classcapd_1_1ddes_1_1DDESolutionCurve_abe7628d71554f1b40bdd8cce34184eac}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a7bf81cc6987ce7a057264cc117f85ebe}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a7bf81cc6987ce7a057264cc117f85ebe}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Discrete\+Time\+Grid}}$<$ Real\+Type $>$ {\bfseries Grid\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_afc8695d18cbb652b5ad2be206dc2d3fa}\label{classcapd_1_1ddes_1_1DDESolutionCurve_afc8695d18cbb652b5ad2be206dc2d3fa}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Grid\+Type\+::\+Time\+Point\+Type}} {\bfseries Time\+Point\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a5c72078f71c7a193e12debe51233b36f}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a5c72078f71c7a193e12debe51233b36f}} 
+typedef Base\+Class\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aacd97b095a2819ac370dd320a1aa895a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aacd97b095a2819ac370dd320a1aa895a}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{D\+D\+E\+Forward\+Taylor\+Curve\+Piece}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}}, Set\+Type $>$ {\bfseries Curve\+Piece\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9724fcce1e5c26b94af9155928e81f3b}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9724fcce1e5c26b94af9155928e81f3b}} 
+typedef Set\+Type\+::\+Policy {\bfseries Q\+R\+Policy}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a790c7a4fef986d7655fa59cf8ac034d6}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a790c7a4fef986d7655fa59cf8ac034d6}} 
+typedef Set\+Type\+::\+Policy {\bfseries Policy}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab10013b2e10b44d89b6b0daea5538f9a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab10013b2e10b44d89b6b0daea5538f9a}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} {\bfseries Jet\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac433ba8df3c7dbd81a965fd7daee1124}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac433ba8df3c7dbd81a965fd7daee1124}} 
+typedef std\+::deque$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} $\ast$ $>$ {\bfseries Pieces\+Storage\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab9ea8f6c37c1a1f7071b2b09658249a2}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab9ea8f6c37c1a1f7071b2b09658249a2}} 
+typedef std\+::deque$<$ bool $>$ {\bfseries Owner\+Storage\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a1b5fd784659791257fdf44b912841717}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a1b5fd784659791257fdf44b912841717}} 
+typedef Pieces\+Storage\+Type\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a7a0734dba93211bbf92acda497660f33}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a7a0734dba93211bbf92acda497660f33}} 
+typedef Pieces\+Storage\+Type\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a52f91008079e47e9c2dfef6e4c812858}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a52f91008079e47e9c2dfef6e4c812858}} 
+typedef Pieces\+Storage\+Type\+::reverse\+\_\+iterator {\bfseries reverse\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a511fef02aef55fd0abb7e9e44070b4a6}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a511fef02aef55fd0abb7e9e44070b4a6}} 
+typedef Pieces\+Storage\+Type\+::const\+\_\+reverse\+\_\+iterator {\bfseries const\+\_\+reverse\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a5bcaf8173cc454e7b7791d869531311e}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a45847efef0af62f060af7253861f4f82}{operator=}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \&orig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a95f14ffa433669d7f7c0cc255d045f5a}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, size\+\_\+type d=0, size\+\_\+type N0=0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ae1ab2323714d2dd71953ff1c6eda8563}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, size\+\_\+type d=0, size\+\_\+type N0=0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a40f087a2fb19655c3c36f840bd60465f}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, const Set\+Type \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a951ee54711fded5e5a332be3f91f414d}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, const Vector\+Type \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ae99b178b3bdaa3b4e5787283909defc5}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t1, size\+\_\+type order, const Set\+Type \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a91bf230f859445159e02ac627a148f24}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t1, size\+\_\+type order, Set\+Type \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a6bece6882cb9e9493e181cb023407308}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t1, size\+\_\+type order, const Vector\+Type \&value, size\+\_\+type N0=0)
+\item 
+{\footnotesize template$<$typename Any\+Matrix\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aa127e9e788192822268a62a31f95a3dc}{D\+D\+E\+Solution\+Curve}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&grid, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t0, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&t1, size\+\_\+type order, const capd\+::map\+::\+Map$<$ Any\+Matrix\+Spec $>$ \&f, size\+\_\+type N0=0)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aa33ce1520ed7d7c9310b1b04b05631fc}{length}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a557189e6cc1b85bbdaf754a580c5b206}{subcurve}} (size\+\_\+type index1, size\+\_\+type index2) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_af8da02ff8b3f455d0eeb644de7255486}{subcurve}} (size\+\_\+type index1) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a493fb95cd1f8e0b45ce69dfdc7c1c03a}{subcurve}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t0, \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t1) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_abde4ad48c1b99633976c225455fd55b3}{subcurve}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t0) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac46ac34c8e256a95d3fb051a899800fe}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac46ac34c8e256a95d3fb051a899800fe}} 
+reverse\+\_\+iterator {\bfseries rbegin} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ae427078cf77c4ce717f14e276651ac2b}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ae427078cf77c4ce717f14e276651ac2b}} 
+const\+\_\+reverse\+\_\+iterator {\bfseries rbegin} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a17e1013950b9dc12ecd11380c1a39035}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a17e1013950b9dc12ecd11380c1a39035}} 
+reverse\+\_\+iterator {\bfseries rend} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a72e1a7461a97ccd28ca8775cc070cc67}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a72e1a7461a97ccd28ca8775cc070cc67}} 
+const\+\_\+reverse\+\_\+iterator {\bfseries rend} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a35ba7d7aa7315c26161b3fb98f9dc8d7}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a35ba7d7aa7315c26161b3fb98f9dc8d7}} 
+iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a93ed72f559b337304f890950e4af3f8e}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a93ed72f559b337304f890950e4af3f8e}} 
+const\+\_\+iterator {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_af79f7e2f8c381d4041b31ce0e0924015}\label{classcapd_1_1ddes_1_1DDESolutionCurve_af79f7e2f8c381d4041b31ce0e0924015}} 
+iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a37cba87421b3c686902dc4a408f87e54}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a37cba87421b3c686902dc4a408f87e54}} 
+const\+\_\+iterator {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_abb9ef5e6a3a70c8641114f170ba18a55}\label{classcapd_1_1ddes_1_1DDESolutionCurve_abb9ef5e6a3a70c8641114f170ba18a55}} 
+iterator {\bfseries at} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a2ff9f04b8d47bf1bdf795b840cd180ad}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a2ff9f04b8d47bf1bdf795b840cd180ad}} 
+const\+\_\+iterator {\bfseries at} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a68050a8b026a42653ec3a8253d3e9f2c}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a68050a8b026a42653ec3a8253d3e9f2c}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} const  \& {\bfseries grid} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a13d144ca8b418c40f7e563b055ad0c73}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a13d144ca8b418c40f7e563b055ad0c73}} 
+size\+\_\+type {\bfseries dimension} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a37624aba74480f1b6e64816c55e48c45}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a37624aba74480f1b6e64816c55e48c45}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries t0} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a93db9615aac9df072f3574aa25fc696b}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a93db9615aac9df072f3574aa25fc696b}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries current\+Time} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a37b468ee6ae82f04bebd413bd78114a8}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a37b468ee6ae82f04bebd413bd78114a8}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries past\+Time} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a284e47d6d9382302cc292b7c023fcd15}{storage\+Dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a89ffac11f6cbb1278004167a3c340ca0}{storage\+N0}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aacb5f8df29115524aaa2c8869b178923}{affine\+Transform}} (Matrix\+Type const \&M, Vector\+Type const \&v)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a5b8635e48f1ce58d009529f51bead1ea}{translate}} (Vector\+Type const \&v)
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aca50906b5a5ed99e828a1edebb610ece}{get\+\_\+x}} () const
+\item 
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a8accb24ab75c71ac852d183376c63aaa}{get\+\_\+C}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a391a2a47e97e042e29cf0eb6d5fc053a}{get\+\_\+r0}} () const
+\item 
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a3561d5fefb8ef3624355797524547925}{get\+\_\+B}} () const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a8a1cd2a738b1ff5da53e153c24112205}{get\+\_\+r}} () const
+\item 
+Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aa3af106de745847120d2e60934bd27db}{get\+\_\+\+Binv}} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ab5f163a56f92fc800534f2998f7ed280}{set\+\_\+x}} (Vector\+Type const \&x)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_abcac73784163a1777c5c18b445e4bd83}{set\+\_\+C}} (Matrix\+Type const \&C)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a54a4e666f0b989690b5b0399497b82cc}{set\+\_\+r0}} (Vector\+Type const \&r0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a3757c9d1ff1e0f07c00877c44a74daf4}{set\+\_\+\+Cr0}} (Matrix\+Type const \&C, Vector\+Type const \&r0)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a26ae34d156f5c3647978f89ee84fdd59}{set\+\_\+B}} (Matrix\+Type const \&B)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a6f298598d7c68f900c5825b433084c36}{set\+\_\+r}} (Vector\+Type const \&r)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a7508353eff53fb37016c105ab1d3e2c3}{set\+\_\+\+Binv}} (Matrix\+Type const \&Binv)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a76e43d08b15ff6a3730b371384f6c807}{set\+\_\+x}} (Vector\+Type $\ast$x, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a6177ea47f30946e5f35c6e00e274406d}{set\+\_\+C}} (Matrix\+Type $\ast$C, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a8c19a72b654413143161adba210de211}{set\+\_\+r0}} (Vector\+Type $\ast$r0, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aca05056eae6cd49dbb664c060725147e}{set\+\_\+\+Cr0}} (Matrix\+Type $\ast$C, Vector\+Type $\ast$r0, bool pass\+C\+Ownership=false, bool passr0\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a1c9cb1bc7eef0cb94f6c95547b7caa7f}{set\+\_\+B}} (Matrix\+Type $\ast$B, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a9873071aa3e003001a21d012996dee9b}{set\+\_\+r}} (Vector\+Type $\ast$r, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ad2b08b984cbf50569ee1591f11052489}{set\+\_\+\+Binv}} (Matrix\+Type $\ast$B, bool pass\+Ownership=false)
+\item 
+Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a7aa039f7891e7533faeec878d733c286}{take\+\_\+x}} ()
+\item 
+Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a3b583336cc75ecd39d64c0387ea4ec2a}{take\+\_\+C}} ()
+\item 
+Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a2fa21689b8fd7594a690bd09ff9d765e}{take\+\_\+r0}} ()
+\item 
+Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a3d3c2e3f34e8658731a8966537019494}{take\+\_\+B}} ()
+\item 
+Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_afbee0f86d84b42b43e8f542babb7784d}{take\+\_\+r}} ()
+\item 
+Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a066d97af077a0d9a61a111c7d1c7f947}{take\+\_\+\+Binv}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a01d349753479f13dc9c680a54e795604}{add}} (Vector\+Type const \&v)
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a6a3f813b9b879f44676d17e72772b869}{add}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} const \&set)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_adfedb681821edd9f7f584c55ac611961}{mul\+Then\+Add}} (Scalar\+Type const \&c, \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} const \&set)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a2fe343664554c53b5415761ce6555862}{mul}} (Scalar\+Type const \&c)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a27fe60bcd4950747ee65dd754fe041d1}{set\+\_\+\+Xi}} (Vector\+Type const \&Xi)
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aa12453509c6bdb8ce360f104ff4f204b}{get\+\_\+\+Xi}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a24bcb5fb6b7c6c3df2fbe9174c29c7c6}{point\+To\+Index}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aae838e00e3943bd260be1c462f9f95a2}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aae838e00e3943bd260be1c462f9f95a2}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} \& {\bfseries get\+Piece} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&t) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a592945bc18d13031a88980fd5e41a16e}{get\+Piece}} (size\+\_\+type const \&index) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a4547f939cf25cbc7ba605c5486cf5d51}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a4547f939cf25cbc7ba605c5486cf5d51}} 
+Vector\+Type {\bfseries eval} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t) const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a4e968a91cceac23835c0eb0b1e5a4a8d}{eval}} (Real\+Type t) const
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ae3fbb5a3b85d053752f40d23d592cc67}{eval}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t, Set\+Type \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aaa190785114d7ad17352752e17663c59}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aaa190785114d7ad17352752e17663c59}} 
+void {\bfseries eval} (Real\+Type t, Set\+Type \&out) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a18b2531648a96841d40319002f3b40bc}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a18b2531648a96841d40319002f3b40bc}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& {\bfseries add\+Piece} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} $\ast$new\+Piece, bool pass\+Ownership=false)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac2f5a3e937dfea41788a781fba7e6519}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac2f5a3e937dfea41788a781fba7e6519}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& {\bfseries add\+Piece} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} const \&new\+Piece)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a8646d23266f1640721c7562362f14297}{add\+Past\+Piece}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} $\ast$new\+Piece, bool pass\+Ownership=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a8456b5702ec9053d135f096951fd55e4}{add\+Past\+Piece}} (const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} \&new\+Piece)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ac3df1ac9c3e7b068c9ee6419052e4471}{set\+Value\+At\+Current}} (const Set\+Type \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_af1293516480456626cd674b73792a60a}{set\+Value\+At\+Current}} (const Vector\+Type \&value)
+\item 
+Set\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a56e7e17776cd00ecfdca4db197c2c98a}{get\+Value\+At\+Current}} ()
+\item 
+const Set\+Type \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a81a622b77fd0618874a241b12369e823}{get\+Value\+At\+Current}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab27879856a234bea576284e23421b83d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab27879856a234bea576284e23421b83d}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}} {\bfseries jet} (Real\+Type t0, Real\+Type t1) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a875d20eee67910aa78e4654d848ed526}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a875d20eee67910aa78e4654d848ed526}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}} {\bfseries jet} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0, \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t1) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab3f880fa89681a18b85bbac989ce0e03}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab3f880fa89681a18b85bbac989ce0e03}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}} {\bfseries jet} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}} $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a3f084b5e6ecc577b57d9ad0d8f845fee}{jet\+Ptr}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ad0fe1a01c0aee216023049560edd7131}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ad0fe1a01c0aee216023049560edd7131}} 
+Set\+Type {\bfseries j} (size\+\_\+type i, size\+\_\+type k) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a235ed366f0b76e1cf97e942ab76f3f3f}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a235ed366f0b76e1cf97e942ab76f3f3f}} 
+Set\+Type {\bfseries j} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0, size\+\_\+type k) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a8f1d3b0067344b487fe871d56128ff8c}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a8f1d3b0067344b487fe871d56128ff8c}} 
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}} \& {\bfseries j} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3f142cf11149d84f5635fc15ab04d975}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3f142cf11149d84f5635fc15ab04d975}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}} \& {\bfseries j} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a2e83f1539f905e57475ae5e9f3ca620a}{jet\+Order\+At}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} t0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a159ce4632a95e51eae121e03ab651afc}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a159ce4632a95e51eae121e03ab651afc}} 
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \& {\bfseries get\+Grid} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a65edfcca654663c9cee0b24f03830909}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a65edfcca654663c9cee0b24f03830909}} 
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries get\+Step} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9cc4f3e1e6ae19e5f3d1cc20df2041be}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9cc4f3e1e6ae19e5f3d1cc20df2041be}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Class}} {\bfseries mid\+Curve} () const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a16cc952d668710e3d767fbead87006b6}{dt}} (int k=1) const
+\item 
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a29d387e38b5634be998304be91d666eb}{show}} () const
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aed2ba28a66ce226c582db8b4a7035892}{move}} (Dyn\+Sys\+Spec \&solver)
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ae54f6ad4d830a60e45fb1ee860d83214}{extend}} (Dyn\+Sys\+Spec \&solver)
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a49b016a9f19077b98683a2089a0e0db8}{get\+Last\+Enclosure}} () const
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ab870b6431d7ef438f27251def26a0d76}{epsilon\+Shift}} (Dyn\+Sys\+Spec const \&solver, Real\+Type const \&epsilon, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \&out\+\_\+result) const
+\item 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ab10ddf0688841c8af69e2c61ffaf5a77}{epsilon\+Shift}} (Dyn\+Sys\+Spec const \&solver, \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&at\+\_\+t0, Real\+Type const \&epsilon, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \&out\+\_\+result) const
+\item 
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a1418f46223adbeffea81b3d98e90976c}{reinitialize}} (size\+\_\+type d, size\+\_\+type N0)
+\item 
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a322d7260c24c9856def945f8520552e8}{dot}} (Vector\+Type const \&v) const
+\item 
+{\footnotesize template$<$typename Jet\+Section $>$ }\\Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a3b6dd1520fab56e3e76303f182e04856}{dot}} (Jet\+Section const \&v) const
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a5e061c79862c3f7d3c12664846d9153d}{reduce}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \&out\+\_\+result) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a0fde611c9b0237c5f9f2ae52e0a048fd}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a0fde611c9b0237c5f9f2ae52e0a048fd}} 
+{\footnotesize template$<$typename Set\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Scalar\+Type {\bfseries dot} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type const \&v) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aaa4a59ab2314dec5df016fe6b8b51868}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aaa4a59ab2314dec5df016fe6b8b51868}} 
+{\footnotesize template$<$typename Dyn\+Sys\+Spec $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \& {\bfseries move} (Dyn\+Sys\+Spec \&solver)
+\item 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a08b067f02a5dbc7463c8b4762acf2a00}{make\+Storage\+\_\+x}} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a52c58e860bbb4a94a586b091208ec9b2}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a52c58e860bbb4a94a586b091208ec9b2}} 
+virtual Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a52c58e860bbb4a94a586b091208ec9b2}{make\+Storage\+\_\+C}} () const
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a5f1cb259bb0ed6de4d4db9479c3fae04}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a5f1cb259bb0ed6de4d4db9479c3fae04}} 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a5f1cb259bb0ed6de4d4db9479c3fae04}{make\+Storage\+\_\+r0}} () const
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ae3e8fb6b0ed16e52e9411a27f88fbdae}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ae3e8fb6b0ed16e52e9411a27f88fbdae}} 
+virtual Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ae3e8fb6b0ed16e52e9411a27f88fbdae}{make\+Storage\+\_\+B}} () const
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9244095545fe408601d5f1c2edaaa67a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9244095545fe408601d5f1c2edaaa67a}} 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a9244095545fe408601d5f1c2edaaa67a}{make\+Storage\+\_\+r}} () const
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a36bf91698731e4c99bad9b3bf52588f7}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a36bf91698731e4c99bad9b3bf52588f7}} 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a36bf91698731e4c99bad9b3bf52588f7}{hull}} () const
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ad91f1cb8f7e274abb95f4e83654eec9d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ad91f1cb8f7e274abb95f4e83654eec9d}} 
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ad91f1cb8f7e274abb95f4e83654eec9d}{mid\+Point}} () const
+\begin{DoxyCompactList}\small\item\em $<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_af08fb2060e864a4f64e10cee5b85c176}\label{classcapd_1_1ddes_1_1DDESolutionCurve_af08fb2060e864a4f64e10cee5b85c176}} 
+void {\bfseries allocate} (size\+\_\+type N0=0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a10af335928d2c5795909a28f649a4ebb}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a10af335928d2c5795909a28f649a4ebb}} 
+void {\bfseries deallocate\+Pieces} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9e828fc9250feb131b2b4b7ab41185a9}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9e828fc9250feb131b2b4b7ab41185a9}} 
+void {\bfseries deallocate\+R0} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a1fe660acbb0ebcda8671abf448ac3b58}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a1fe660acbb0ebcda8671abf448ac3b58}} 
+void {\bfseries deallocate} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9a41b775f96904c8826e400a8d12e7f1}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9a41b775f96904c8826e400a8d12e7f1}} 
+void {\bfseries reallocate\+R0} (size\+\_\+type N0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a819993bae8744c03cf7e27038a8de223}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a819993bae8744c03cf7e27038a8de223}} 
+void {\bfseries reallocate\+R0} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_abd23a2126fc63aef0ea75fabc62cedd3}\label{classcapd_1_1ddes_1_1DDESolutionCurve_abd23a2126fc63aef0ea75fabc62cedd3}} 
+void {\bfseries reallocate} (size\+\_\+type N0)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa8716633b7e92ecf811ae77c2625e242}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa8716633b7e92ecf811ae77c2625e242}} 
+void {\bfseries reallocate} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a692699e22dd0eab9700387513555ec67}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a692699e22dd0eab9700387513555ec67}} 
+void {\bfseries update\+Common\+R0} ()
+\item 
+{\footnotesize template$<$typename Iterator\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a2c1b7f1759fa1c5ef49d1520aecc4e01}{copy\+Pieces}} (Iterator\+Spec from, Iterator\+Spec to)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac261ea1251f809b1811d542c303e0eaf}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac261ea1251f809b1811d542c303e0eaf}} 
+void {\bfseries copy\+Pieces} (iterator from, iterator to)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_afcc33f320ae4c633c9fa73bda932cdfd}\label{classcapd_1_1ddes_1_1DDESolutionCurve_afcc33f320ae4c633c9fa73bda932cdfd}} 
+void {\bfseries copy\+Pieces} (const\+\_\+iterator from, const\+\_\+iterator to)
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_abd3b43ed397cde70de2d64ace6bbc095}{write\+To}} (std\+::ostream \&out) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a205f8360359c774625ee5ed4edefb636}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a205f8360359c774625ee5ed4edefb636}} 
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \& {\bfseries m\+\_\+grid}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a466a42f7e90ca7e87639eb885aa7439f}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a466a42f7e90ca7e87639eb885aa7439f}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} {\bfseries m\+\_\+t\+\_\+current}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a25c8e65651aaa8560e592664671ad5f1}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a25c8e65651aaa8560e592664671ad5f1}} 
+Vector\+Type {\bfseries m\+\_\+last\+Enclosure}
+\item 
+Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ab9e962f74300c74e3decaa6f1b8cdc72}{m\+\_\+r0}}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9a2bd7f642e6f533dc1781e156f5e847}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9a2bd7f642e6f533dc1781e156f5e847}} 
+Set\+Type {\bfseries m\+\_\+value\+At\+Current}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a08aa841f5f3540b2b1dafb2b826ebc8a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a08aa841f5f3540b2b1dafb2b826ebc8a}} 
+size\+\_\+type {\bfseries m\+\_\+dimension}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aede4a084e4b383f3bf9f9bda2219ddbb}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aede4a084e4b383f3bf9f9bda2219ddbb}} 
+Pieces\+Storage\+Type {\bfseries m\+\_\+pieces}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_af8d38f84d1461b15fd87d925bd43d702}\label{classcapd_1_1ddes_1_1DDESolutionCurve_af8d38f84d1461b15fd87d925bd43d702}} 
+Owner\+Storage\+Type {\bfseries m\+\_\+piece\+Owner}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aa58eace912a07a17b5dea80e448a0050}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ const \&curve)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Set\+Spec$>$\newline
+class capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve$<$ Set\+Spec $>$}
+
+A class to represent the solution \$x(t)\$ of the D\+DE. It provides methods To ask for the D\+D\+E\+Curve\+Piece over specific intervals (time intervals) The basic implementation allow to ask about intervals \$\+I\+\_\+i = \mbox{[}i $\ast$ h, i$\ast$ h + h)\$, where \$h = \{\textbackslash{}tau\}\textbackslash{}over\{p\}\$ is the grid size as in Fo\+CM article / PhD thesis. The D\+D\+E\+Curve\+Piece is just a Jet of order n of this solution x at a given time and valid on the specified interval + estimates on the n+1-\/st derivative. Please consult D\+D\+E(\+Forward\+Taylor)Curve\+Piece for more information how this is organized.
+
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} also contains the value of the solution at a maximal time \$t\+\_\+\{current\}\$ -\/ to be used later in the process of solving D\+D\+Es. Usually, we will start with some candidate \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} defined over \mbox{[}-\/\textbackslash{}tau, 0\mbox{]}, with \$t\+\_\+\{current\} = 0\$. Then we propagate solution by Integrator (see D\+D\+E\+Solver) to some \$t\+\_\+\{future\}\$, so that the solution is estimated over \mbox{[}-\/\textbackslash{}tau, t\+\_\+\{future\}\mbox{]}. Please note that the history is preserved for theoretical and technical purposes.
+
+From the theoretical point of view, the history could be used to design solvers for varying delay (as long as it is bounded). From technical point of view, there might be some ways to improve current methods using the history (out of scope as of now).
+
+T\+O\+DO\+: (F\+AR F\+U\+T\+U\+RE) see notes below this line T\+O\+D\+Os / Dev\+N\+O\+T\+Es\+:
+
+Newer note\+: As of now, class is designed to work with my own implementation of Lohner sets (see \textquotesingle{}storage/\textquotesingle{} subdirectory). They are just Doubletons with some restrictions of classical C\+A\+PD sets removed to allow m\+\_\+C and m\+\_\+r0 parts to be more freely defined. Ideally I would like to use standard sets from C\+A\+PD, but this might be not possible / not optimal (because of the part r\+\_\+0 in definitions, which is ideally shared between sets). Alternatively, I might consider using a big C\+A\+PD set and some proxies that can extract subcolumns/subrows of various elements to be passed down to Forward\+Taylor\+Curve\+Pieces or Taylor coefficients of given order.
+
+Older note\+: The class is templated with a classical C\+A\+PD Lohner Set Type, but we will forcefully alter it behavior (I hope). I will probably use its QR policy etc., but I will alter the matrix m\+\_\+C and vector m\+\_\+r -\/ they will be stored from within the set more or less, and might not be related to the space dimension. What is required that the product \$m\+\_\+C $\ast$ m\+\_\+r\$ has dimension \$d\$, i.\+e. m\+\_\+C is \$d\$ rows, \$\+N0\$ columns, and \$m\+\_\+r0\$ is of dimension \$\+N0\$. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a5bcaf8173cc454e7b7791d869531311e}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a5bcaf8173cc454e7b7791d869531311e}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+copy constructor, standard thing \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a95f14ffa433669d7f7c0cc255d045f5a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a95f14ffa433669d7f7c0cc255d045f5a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{size\+\_\+type}]{d = {\ttfamily 0},  }\item[{size\+\_\+type}]{N0 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a Curve that is d dimensional, over given grid, located initially at Time\+Point 0, and its r0 vector is N0 dimensional \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ae1ab2323714d2dd71953ff1c6eda8563}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ae1ab2323714d2dd71953ff1c6eda8563}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{size\+\_\+type}]{d = {\ttfamily 0},  }\item[{size\+\_\+type}]{N0 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a Curve that is d dimensional, over given grid starting at a given Time\+Point, and its r0 vector is N0 dimensional \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a40f087a2fb19655c3c36f840bd60465f}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a40f087a2fb19655c3c36f840bd60465f}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{const Set\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a Curve that is a single point of given value at time point t0,m the r0 part of value is used as r0 of the Curve \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a951ee54711fded5e5a332be3f91f414d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a951ee54711fded5e5a332be3f91f414d}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{const Vector\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a Curve that is a single point of given value at time point t0 and with given dimension of r0 part. It splits x = value vector into the set mid(x) + C $\ast$ r0, C = Id, r0 = x -\/ mid(x), as in C\+A\+PD. It will use this r0 for the Lohner structure for the subsequent jets, i.\+e. when doing O\+DE integration. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ae99b178b3bdaa3b4e5787283909defc5}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ae99b178b3bdaa3b4e5787283909defc5}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t1,  }\item[{size\+\_\+type}]{order,  }\item[{const Set\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a constant function with a given value on interval \mbox{[}t1, t0\mbox{]} and with given order (useful for future use as a a set in integration). The r0 part will be C\+O\+P\+I\+ED from the set and will be common to all elements. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a91bf230f859445159e02ac627a148f24}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a91bf230f859445159e02ac627a148f24}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t1,  }\item[{size\+\_\+type}]{order,  }\item[{Set\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a constant function with a given value on interval \mbox{[}t1, t0\mbox{]} and with given order (useful for future use as a a set in integration). The r0 part will be transferred (take from, the pointer -\/ of possible / the set implementation allows that) from the set and will be common to all elements. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a6bece6882cb9e9493e181cb023407308}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a6bece6882cb9e9493e181cb023407308}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t1,  }\item[{size\+\_\+type}]{order,  }\item[{const Vector\+Type \&}]{value,  }\item[{size\+\_\+type}]{N0 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a constant function with a given value on interval \mbox{[}t1, t0\mbox{]} and with given order (useful for future use as a a set in integration). The r0 part will be N0 dimensional (default = 0, i.\+e. no C$\ast$r0 set part). \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa127e9e788192822268a62a31f95a3dc}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa127e9e788192822268a62a31f95a3dc}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!DDESolutionCurve@{DDESolutionCurve}}
+\index{DDESolutionCurve@{DDESolutionCurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{DDESolutionCurve()}{DDESolutionCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Any\+Matrix\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid\+Type}} \&}]{grid,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t0,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} \&}]{t1,  }\item[{size\+\_\+type}]{order,  }\item[{const capd\+::map\+::\+Map$<$ Any\+Matrix\+Spec $>$ \&}]{f,  }\item[{size\+\_\+type}]{N0 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+creates a representation of the function f over the interval \mbox{[}t0,t1\mbox{]} The r0 part will be N0 dimensional (default = 0, i.\+e. no C$\ast$r0 set part).
+
+T\+O\+DO\+: rethink\+: move to a ddeshelper? 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a6a3f813b9b879f44676d17e72772b869}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a6a3f813b9b879f44676d17e72772b869}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!add@{add}}
+\index{add@{add}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} const \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_af6db95337f15134c92ea4e1db0e723a9}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a01d349753479f13dc9c680a54e795604}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a01d349753479f13dc9c680a54e795604}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!add@{add}}
+\index{add@{add}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::add (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$<$ see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_af73caa2b38382fd754ac22d7a9a3eb9b}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a8456b5702ec9053d135f096951fd55e4}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a8456b5702ec9053d135f096951fd55e4}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!addPastPiece@{addPastPiece}}
+\index{addPastPiece@{addPastPiece}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{addPastPiece()}{addPastPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::add\+Past\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} \&}]{new\+Piece }\end{DoxyParamCaption})}
+
+same as add\+Piece but adds in the past (before existing pieces) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a8646d23266f1640721c7562362f14297}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a8646d23266f1640721c7562362f14297}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!addPastPiece@{addPastPiece}}
+\index{addPastPiece@{addPastPiece}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{addPastPiece()}{addPastPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::add\+Past\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}} $\ast$}]{new\+Piece,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})}
+
+same as add\+Piece but adds in the past (before existing pieces) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aacb5f8df29115524aaa2c8869b178923}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aacb5f8df29115524aaa2c8869b178923}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!affineTransform@{affineTransform}}
+\index{affineTransform@{affineTransform}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{affineTransform()}{affineTransform()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::affine\+Transform (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{M,  }\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a2c1b7f1759fa1c5ef49d1520aecc4e01}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a2c1b7f1759fa1c5ef49d1520aecc4e01}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!copyPieces@{copyPieces}}
+\index{copyPieces@{copyPieces}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{copyPieces()}{copyPieces()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Iterator\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::copy\+Pieces (\begin{DoxyParamCaption}\item[{Iterator\+Spec}]{from,  }\item[{Iterator\+Spec}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+low level, does not care about changing time points, does not clear m\+\_\+pieces, etc. just copies from to \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3b6dd1520fab56e3e76303f182e04856}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3b6dd1520fab56e3e76303f182e04856}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!dot@{dot}}
+\index{dot@{dot}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Jet\+Section $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::dot (\begin{DoxyParamCaption}\item[{Jet\+Section const \&}]{v }\end{DoxyParamCaption}) const}
+
+computes dot taking appropriate jets into account \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a322d7260c24c9856def945f8520552e8}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a322d7260c24c9856def945f8520552e8}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!dot@{dot}}
+\index{dot@{dot}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::dot (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+computes dot taking appropriate number of first components from Curve 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ad7e21739e1a9537178adbb71c96abf0e}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a16cc952d668710e3d767fbead87006b6}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a16cc952d668710e3d767fbead87006b6}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!dt@{dt}}
+\index{dt@{dt}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dt()}{dt()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{Class}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::dt (\begin{DoxyParamCaption}\item[{int}]{k = {\ttfamily 1} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+compute derivative of the whole curve w.\+r.\+t. t of order k \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab870b6431d7ef438f27251def26a0d76}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab870b6431d7ef438f27251def26a0d76}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!epsilonShift@{epsilonShift}}
+\index{epsilonShift@{epsilonShift}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{epsilonShift()}{epsilonShift()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::epsilon\+Shift (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec const \&}]{solver,  }\item[{Real\+Type const \&}]{epsilon,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \&}]{out\+\_\+result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+it computes epsilon shift of in\+\_\+curve and store it in out\+\_\+result. out\+\_\+result must be setup so that all desired Time\+Points are presented and Jets must be initialized to a desired order. Most probable scenario\+: out\+\_\+result has Jets of order n at times -\/tau, -\/tau+1/h, ..., -\/h, 0 (current time), where h = 1/p, as in the paper. Then we shift the final part of the in\+\_\+curve starting at t0 -\/ tau -\/ h up to -\/h, to t0 -\/ tau -\/ h + epsi, ..., -\/h + epsi. The coefficients will be stored in out\+\_\+result at -\/tau, .., 0, respectively! The t0 is taken from in\+\_\+curve.\+t0() in this procedure. For a general t0 see other function.
+
+The function does not check if the result is theoretically rigorous, i.\+e. it does not check if the solution curve is smooth enough to produce rigorous enclosure of a given order. Other classes of the library takes this responsibility (i.\+e. Poincare\+Map).
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) this should be not templated by Dyn\+Sys\+Spec but concrete \char`\"{}interfaced\char`\"{} type, known in advance (?) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab10ddf0688841c8af69e2c61ffaf5a77}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab10ddf0688841c8af69e2c61ffaf5a77}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!epsilonShift@{epsilonShift}}
+\index{epsilonShift@{epsilonShift}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{epsilonShift()}{epsilonShift()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::epsilon\+Shift (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec const \&}]{solver,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&}]{at\+\_\+t0,  }\item[{Real\+Type const \&}]{epsilon,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \&}]{out\+\_\+result }\end{DoxyParamCaption}) const}
+
+it computes epsilon shift of in\+\_\+curve and store it in out\+\_\+result. out\+\_\+result must be setup so that all desired Time\+Points are presented and Jets must be initialized to a desired order. Most probable scenario\+: out\+\_\+result has Jets of order n at times -\/tau, -\/tau+1/h, ..., -\/h, 0 (current time), where h = 1/p, as in the paper. Then we shift the final part of the in\+\_\+curve starting at at\+\_\+t0 -\/ tau -\/ h up to -\/h, to t0 -\/ tau -\/ h + epsi, ..., -\/h + epsi. The coefficients will be stored in out\+\_\+result at -\/tau, .., 0, respectively!
+
+The function does not check if the result is theoretically rigorous, i.\+e. it does not check if the solution curve is smooth enough to produce rigorous enclosure of a given order. Other classes of the library takes this responsibility (i.\+e. Poincare\+Map).
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) this should be not templated by Dyn\+Sys\+Spec but concrete \char`\"{}interfaced\char`\"{} type, known in advance \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a4e968a91cceac23835c0eb0b1e5a4a8d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a4e968a91cceac23835c0eb0b1e5a4a8d}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!eval@{eval}}
+\index{eval@{eval}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::eval (\begin{DoxyParamCaption}\item[{Real\+Type}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+W\+A\+R\+N\+I\+NG\+: T\+H\+IS F\+U\+N\+C\+T\+I\+ON IS N\+OT R\+I\+G\+O\+R\+O\+US F\+OR I\+N\+T\+E\+R\+V\+A\+L\+S! DO N\+OT U\+SE IN P\+R\+O\+O\+FS W\+A\+R\+N\+I\+NG\+: C\+O\+M\+P\+U\+TE R\+I\+G\+O\+R\+O\+U\+S\+LY O\+N\+LY U\+S\+I\+NG eval(\+Time\+Point\+Type t) V\+E\+R\+S\+I\+ON \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ae3fbb5a3b85d053752f40d23d592cc67}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ae3fbb5a3b85d053752f40d23d592cc67}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!eval@{eval}}
+\index{eval@{eval}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}}}]{t,  }\item[{Set\+Type \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+this is rigorous, it returns the value stored in the Jet at a given time point of the grid. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ae54f6ad4d830a60e45fb1ee860d83214}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ae54f6ad4d830a60e45fb1ee860d83214}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!extend@{extend}}
+\index{extend@{extend}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::extend (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec \&}]{solver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Naming convention. To be a pair of extend $<$-\/$>$ epsilon\+Shift See \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aed2ba28a66ce226c582db8b4a7035892}{move()}} for more docs. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3561d5fefb8ef3624355797524547925}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3561d5fefb8ef3624355797524547925}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_B@{get\_B}}
+\index{get\_B@{get\_B}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_B()}{get\_B()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+B}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa3af106de745847120d2e60934bd27db}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa3af106de745847120d2e60934bd27db}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_Binv@{get\_Binv}}
+\index{get\_Binv@{get\_Binv}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_Binv()}{get\_Binv()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+\+Binv}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a8accb24ab75c71ac852d183376c63aaa}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a8accb24ab75c71ac852d183376c63aaa}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_C@{get\_C}}
+\index{get\_C@{get\_C}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_C()}{get\_C()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Matrix\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+C}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a8a1cd2a738b1ff5da53e153c24112205}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a8a1cd2a738b1ff5da53e153c24112205}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_r@{get\_r}}
+\index{get\_r@{get\_r}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_r()}{get\_r()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+r}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a391a2a47e97e042e29cf0eb6d5fc053a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a391a2a47e97e042e29cf0eb6d5fc053a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_r0@{get\_r0}}
+\index{get\_r0@{get\_r0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_r0()}{get\_r0()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+r0}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aca50906b5a5ed99e828a1edebb610ece}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aca50906b5a5ed99e828a1edebb610ece}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_x@{get\_x}}
+\index{get\_x@{get\_x}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_x()}{get\_x()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+x}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa12453509c6bdb8ce360f104ff4f204b}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa12453509c6bdb8ce360f104ff4f204b}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!get\_Xi@{get\_Xi}}
+\index{get\_Xi@{get\_Xi}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{get\_Xi()}{get\_Xi()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+\_\+\+Xi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+allows to retrieve Xi for all Jets \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a49b016a9f19077b98683a2089a0e0db8}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a49b016a9f19077b98683a2089a0e0db8}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!getLastEnclosure@{getLastEnclosure}}
+\index{getLastEnclosure@{getLastEnclosure}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getLastEnclosure()}{getLastEnclosure()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+Last\+Enclosure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns last enclosure of the value of the function over \mbox{[}t0, t0+h\mbox{]} obtained in \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_ae54f6ad4d830a60e45fb1ee860d83214}{extend()}} / \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aed2ba28a66ce226c582db8b4a7035892}{move()}} procedure.
+
+T\+O\+DO\+: (N\+OT U\+R\+G\+E\+NT) make a function that returns enclosure of the whole Jet? \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a592945bc18d13031a88980fd5e41a16e}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a592945bc18d13031a88980fd5e41a16e}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Curve\+Piece\+Type}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+Piece (\begin{DoxyParamCaption}\item[{size\+\_\+type const \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+it assumes that index is already processed (see \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_a24bcb5fb6b7c6c3df2fbe9174c29c7c6}{point\+To\+Index()}}) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a56e7e17776cd00ecfdca4db197c2c98a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a56e7e17776cd00ecfdca4db197c2c98a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!getValueAtCurrent@{getValueAtCurrent}}
+\index{getValueAtCurrent@{getValueAtCurrent}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getValueAtCurrent()}{getValueAtCurrent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+Set\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+Value\+At\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the value at current \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a81a622b77fd0618874a241b12369e823}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a81a622b77fd0618874a241b12369e823}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!getValueAtCurrent@{getValueAtCurrent}}
+\index{getValueAtCurrent@{getValueAtCurrent}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getValueAtCurrent()}{getValueAtCurrent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+const Set\+Type\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::get\+Value\+At\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the value at current (const object) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a2e83f1539f905e57475ae5e9f3ca620a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a2e83f1539f905e57475ae5e9f3ca620a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!jetOrderAt@{jetOrderAt}}
+\index{jetOrderAt@{jetOrderAt}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jetOrderAt()}{jetOrderAt()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::jet\+Order\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}}}]{t0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns order of jet available at point t. This is for optimization purposes (do not copy whole Jet just to know its order) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3f084b5e6ecc577b57d9ad0d8f845fee}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3f084b5e6ecc577b57d9ad0d8f845fee}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!jetPtr@{jetPtr}}
+\index{jetPtr@{jetPtr}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{jetPtr()}{jetPtr()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece}{Jet\+Type}}$\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::jet\+Ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}}}]{t0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+use with caoution! Mainly for internal use for speed purposes \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa33ce1520ed7d7c9310b1b04b05631fc}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa33ce1520ed7d7c9310b1b04b05631fc}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!length@{length}}
+\index{length@{length}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+number of pieces \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a08b067f02a5dbc7463c8b4762acf2a00}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a08b067f02a5dbc7463c8b4762acf2a00}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!makeStorage\_x@{makeStorage\_x}}
+\index{makeStorage\_x@{makeStorage\_x}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeStorage\_x()}{makeStorage\_x()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+virtual Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{capd\+::ddes\+::\+Doubleton\+Interface}}$<$ Matrix\+Spec, Policies\+Spec $>$\+::make\+Storage\+\_\+x\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a vector that can store x part \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aed2ba28a66ce226c582db8b4a7035892}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aed2ba28a66ce226c582db8b4a7035892}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!move@{move}}
+\index{move@{move}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+template$<$typename Dyn\+Sys\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::move (\begin{DoxyParamCaption}\item[{Dyn\+Sys\+Spec \&}]{solver }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) this should be not templated by Dyn\+Sys\+Spec but concrete \char`\"{}interfaced\char`\"{} type, known in advance \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a2fe343664554c53b5415761ce6555862}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a2fe343664554c53b5415761ce6555862}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!mul@{mul}}
+\index{mul@{mul}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::mul (\begin{DoxyParamCaption}\item[{Scalar\+Type const \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ad39aac08cec1541fe32375651c7412dc}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_adfedb681821edd9f7f584c55ac611961}\label{classcapd_1_1ddes_1_1DDESolutionCurve_adfedb681821edd9f7f584c55ac611961}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!mulThenAdd@{mulThenAdd}}
+\index{mulThenAdd@{mulThenAdd}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{mulThenAdd()}{mulThenAdd()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::mul\+Then\+Add (\begin{DoxyParamCaption}\item[{Scalar\+Type const \&}]{c,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} const \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a3a5a986c295419927110aa630e09f77b}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a45847efef0af62f060af7253861f4f82}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a45847efef0af62f060af7253861f4f82}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+assign operator, standard thing \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a24bcb5fb6b7c6c3df2fbe9174c29c7c6}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a24bcb5fb6b7c6c3df2fbe9174c29c7c6}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!pointToIndex@{pointToIndex}}
+\index{pointToIndex@{pointToIndex}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{pointToIndex()}{pointToIndex()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::point\+To\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns index in the array of the Jets for a given Time\+Point \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a5e061c79862c3f7d3c12664846d9153d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a5e061c79862c3f7d3c12664846d9153d}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!reduce@{reduce}}
+\index{reduce@{reduce}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{reduce()}{reduce()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::reduce (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \&}]{out\+\_\+result }\end{DoxyParamCaption}) const}
+
+it reduces the representation so that the maximal order of the jets is the same as in out\+\_\+result.
+
+It throws exception if the out\+\_\+result order is higher than this solution at some jet. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a1418f46223adbeffea81b3d98e90976c}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a1418f46223adbeffea81b3d98e90976c}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!reinitialize@{reinitialize}}
+\index{reinitialize@{reinitialize}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{reinitialize()}{reinitialize()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+virtual void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::reinitialize (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{N0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+see base class \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a4e1272ad33c4a5afed203ec45221a697}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a1c9cb1bc7eef0cb94f6c95547b7caa7f}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a1c9cb1bc7eef0cb94f6c95547b7caa7f}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_B@{set\_B}}
+\index{set\_B@{set\_B}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_B()}{set\_B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+B (\begin{DoxyParamCaption}\item[{Matrix\+Type $\ast$}]{B,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a26ae34d156f5c3647978f89ee84fdd59}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a26ae34d156f5c3647978f89ee84fdd59}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_B@{set\_B}}
+\index{set\_B@{set\_B}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_B()}{set\_B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+B (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{B }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ad2b08b984cbf50569ee1591f11052489}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ad2b08b984cbf50569ee1591f11052489}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_Binv@{set\_Binv}}
+\index{set\_Binv@{set\_Binv}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_Binv()}{set\_Binv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+\+Binv (\begin{DoxyParamCaption}\item[{Matrix\+Type $\ast$}]{B,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a7508353eff53fb37016c105ab1d3e2c3}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a7508353eff53fb37016c105ab1d3e2c3}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_Binv@{set\_Binv}}
+\index{set\_Binv@{set\_Binv}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_Binv()}{set\_Binv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+\+Binv (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{Binv }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a6177ea47f30946e5f35c6e00e274406d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a6177ea47f30946e5f35c6e00e274406d}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_C@{set\_C}}
+\index{set\_C@{set\_C}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_C()}{set\_C()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+C (\begin{DoxyParamCaption}\item[{Matrix\+Type $\ast$}]{C,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_abcac73784163a1777c5c18b445e4bd83}\label{classcapd_1_1ddes_1_1DDESolutionCurve_abcac73784163a1777c5c18b445e4bd83}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_C@{set\_C}}
+\index{set\_C@{set\_C}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_C()}{set\_C()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+C (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{C }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aca05056eae6cd49dbb664c060725147e}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aca05056eae6cd49dbb664c060725147e}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_Cr0@{set\_Cr0}}
+\index{set\_Cr0@{set\_Cr0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_Cr0()}{set\_Cr0()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+\+Cr0 (\begin{DoxyParamCaption}\item[{Matrix\+Type $\ast$}]{C,  }\item[{Vector\+Type $\ast$}]{r0,  }\item[{bool}]{pass\+C\+Ownership = {\ttfamily false},  }\item[{bool}]{passr0\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3757c9d1ff1e0f07c00877c44a74daf4}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3757c9d1ff1e0f07c00877c44a74daf4}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_Cr0@{set\_Cr0}}
+\index{set\_Cr0@{set\_Cr0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_Cr0()}{set\_Cr0()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+\+Cr0 (\begin{DoxyParamCaption}\item[{Matrix\+Type const \&}]{C,  }\item[{Vector\+Type const \&}]{r0 }\end{DoxyParamCaption})}
+
+Set C $\ast$ r0 part of this set (as a doubleton). Because this set is defined by many sub-\/sets then we need to assume some order. The order is that, the value at current time is in first d (d = \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a9b9e5b7337fb3f9370716a7ca0e299d7}{dimension()}} of the curve) rows of C, the the first jet past the current time is in the following d rows,..., finally last d rows is the Jet at past\+Time(). see also \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}}. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a9873071aa3e003001a21d012996dee9b}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a9873071aa3e003001a21d012996dee9b}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_r@{set\_r}}
+\index{set\_r@{set\_r}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_r()}{set\_r()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+r (\begin{DoxyParamCaption}\item[{Vector\+Type $\ast$}]{r,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a1b638dfbdaba3d008a241b9b61155af9}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a6f298598d7c68f900c5825b433084c36}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a6f298598d7c68f900c5825b433084c36}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_r@{set\_r}}
+\index{set\_r@{set\_r}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_r()}{set\_r()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+r (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ad7fee473cee4d86d3c049124cd7958cf}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a8c19a72b654413143161adba210de211}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a8c19a72b654413143161adba210de211}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_r0@{set\_r0}}
+\index{set\_r0@{set\_r0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_r0()}{set\_r0()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+r0 (\begin{DoxyParamCaption}\item[{Vector\+Type $\ast$}]{r0,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a3eb84ec05f6a3c23292887f156fbdf11}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a54a4e666f0b989690b5b0399497b82cc}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a54a4e666f0b989690b5b0399497b82cc}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_r0@{set\_r0}}
+\index{set\_r0@{set\_r0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_r0()}{set\_r0()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+r0 (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{r0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a07b5058b53a5370a9592dd7a469037fa}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a76e43d08b15ff6a3730b371384f6c807}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a76e43d08b15ff6a3730b371384f6c807}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+x (\begin{DoxyParamCaption}\item[{Vector\+Type $\ast$}]{x,  }\item[{bool}]{pass\+Ownership = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a7aa4fd9f1943f60304938c593d1d3e07}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab5f163a56f92fc800534f2998f7ed280}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab5f163a56f92fc800534f2998f7ed280}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_x@{set\_x}}
+\index{set\_x@{set\_x}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_x()}{set\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+x (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_ac3dba969c987316f1c69100c175f77bb}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a27fe60bcd4950747ee65dd754fe041d1}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a27fe60bcd4950747ee65dd754fe041d1}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!set\_Xi@{set\_Xi}}
+\index{set\_Xi@{set\_Xi}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{set\_Xi()}{set\_Xi()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}}\& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+\_\+\+Xi (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{Xi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+allows to set Xi for all Jets \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ac3df1ac9c3e7b068c9ee6419052e4471}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ac3df1ac9c3e7b068c9ee6419052e4471}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!setValueAtCurrent@{setValueAtCurrent}}
+\index{setValueAtCurrent@{setValueAtCurrent}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setValueAtCurrent()}{setValueAtCurrent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+Value\+At\+Current (\begin{DoxyParamCaption}\item[{const Set\+Type \&}]{value }\end{DoxyParamCaption})}
+
+set the value at a current time \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_af1293516480456626cd674b73792a60a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_af1293516480456626cd674b73792a60a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!setValueAtCurrent@{setValueAtCurrent}}
+\index{setValueAtCurrent@{setValueAtCurrent}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setValueAtCurrent()}{setValueAtCurrent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::set\+Value\+At\+Current (\begin{DoxyParamCaption}\item[{const Vector\+Type \&}]{value }\end{DoxyParamCaption})}
+
+set the value at a current time \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a29d387e38b5634be998304be91d666eb}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a29d387e38b5634be998304be91d666eb}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!show@{show}}
+\index{show@{show}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+std\+::string \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::show}
+
+show detailed info \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a284e47d6d9382302cc292b7c023fcd15}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a284e47d6d9382302cc292b7c023fcd15}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!storageDimension@{storageDimension}}
+\index{storageDimension@{storageDimension}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{storageDimension()}{storageDimension()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::storage\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Doubleton\+Storage\+Interface\+: returns a dimension of the Jet as a Vector (sequence) to store all the coefficients (without Xi part) \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a89ffac11f6cbb1278004167a3c340ca0}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a89ffac11f6cbb1278004167a3c340ca0}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!storageN0@{storageN0}}
+\index{storageN0@{storageN0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{storageN0()}{storageN0()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::storage\+N0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Doubleton\+Storage\+Interface\+: returns a dimension of the r0 vector \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_af8da02ff8b3f455d0eeb644de7255486}\label{classcapd_1_1ddes_1_1DDESolutionCurve_af8da02ff8b3f455d0eeb644de7255486}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns subcurve from idex1 to current time. Mainly for internal use. Better use subcurve(\+Time\+Point, Time\+Point) version in your programs. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a557189e6cc1b85bbdaf754a580c5b206}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a557189e6cc1b85bbdaf754a580c5b206}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index1,  }\item[{size\+\_\+type}]{index2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns subcurve from index1 to index2 (in indexaction of internal data. Mainly for internal use. Better use subcurve(\+Time\+Point, Time\+Point) version in your programs. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_abde4ad48c1b99633976c225455fd55b3}\label{classcapd_1_1ddes_1_1DDESolutionCurve_abde4ad48c1b99633976c225455fd55b3}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&}]{t0 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns subcurve of the segment between t0 and current\+Time() \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a493fb95cd1f8e0b45ce69dfdc7c1c03a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a493fb95cd1f8e0b45ce69dfdc7c1c03a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!subcurve@{subcurve}}
+\index{subcurve@{subcurve}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{subcurve()}{subcurve()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}} \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::subcurve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&}]{t0,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid_1_1TimePointType}{Time\+Point\+Type}} const \&}]{t1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns subcurve of the segment between t0 and t1 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3d3c2e3f34e8658731a8966537019494}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3d3c2e3f34e8658731a8966537019494}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!take\_B@{take\_B}}
+\index{take\_B@{take\_B}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{take\_B()}{take\_B()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::take\+\_\+B\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a48b21a614bbdbef99fb8e07f403f9489}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a066d97af077a0d9a61a111c7d1c7f947}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a066d97af077a0d9a61a111c7d1c7f947}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!take\_Binv@{take\_Binv}}
+\index{take\_Binv@{take\_Binv}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{take\_Binv()}{take\_Binv()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::take\+\_\+\+Binv\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_aa10f06d681f47425611dab7f113c2345}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a3b583336cc75ecd39d64c0387ea4ec2a}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a3b583336cc75ecd39d64c0387ea4ec2a}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!take\_C@{take\_C}}
+\index{take\_C@{take\_C}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{take\_C()}{take\_C()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Matrix\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::take\+\_\+C\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a08384ce0a1355fa9352d7c50a3dc4729}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_afbee0f86d84b42b43e8f542babb7784d}\label{classcapd_1_1ddes_1_1DDESolutionCurve_afbee0f86d84b42b43e8f542babb7784d}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!take\_r@{take\_r}}
+\index{take\_r@{take\_r}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{take\_r()}{take\_r()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::take\+\_\+r\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_adbad985ba13066d895609ea216966588}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a2fa21689b8fd7594a690bd09ff9d765e}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a2fa21689b8fd7594a690bd09ff9d765e}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!take\_r0@{take\_r0}}
+\index{take\_r0@{take\_r0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{take\_r0()}{take\_r0()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::take\+\_\+r0\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a6b30bd625018a26d60f95b71ccbadaac}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a7aa039f7891e7533faeec878d733c286}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a7aa039f7891e7533faeec878d733c286}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!take\_x@{take\_x}}
+\index{take\_x@{take\_x}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{take\_x()}{take\_x()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::Vector\+Type $\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::take\+\_\+x\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Reimplemented from \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_adce0616a9a6fd1dccc587c79d9c3aa32}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_a5b8635e48f1ce58d009529f51bead1ea}\label{classcapd_1_1ddes_1_1DDESolutionCurve_a5b8635e48f1ce58d009529f51bead1ea}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!translate@{translate}}
+\index{translate@{translate}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Base\+Class}} \& \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::translate (\begin{DoxyParamCaption}\item[{Vector\+Type const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+see \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface}{Doubleton\+Interface}} 
+
+Implements \mbox{\hyperlink{classcapd_1_1ddes_1_1DoubletonInterface_a5dcda4bd6705435f9c0f005050d7c985}{capd\+::ddes\+::\+Doubleton\+Interface$<$ Set\+Spec\+::\+Matrix\+Type, Set\+Spec\+::\+Policy $>$}}.
+
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_abd3b43ed397cde70de2d64ace6bbc095}\label{classcapd_1_1ddes_1_1DDESolutionCurve_abd3b43ed397cde70de2d64ace6bbc095}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!writeTo@{writeTo}}
+\index{writeTo@{writeTo}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{writeTo()}{writeTo()}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::write\+To (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+internal function to make short impl. of $<$$<$ operator here, and the long impl. in .hpp file (see comment in $<$$<$ operator) T\+O\+DO\+: (N\+OT U\+R\+G\+E\+NT) maybe rethink... but I like how it is now with inline friend \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve_aa58eace912a07a17b5dea80e448a0050}{operator$<$$<$()}}. 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_aa58eace912a07a17b5dea80e448a0050}\label{classcapd_1_1ddes_1_1DDESolutionCurve_aa58eace912a07a17b5dea80e448a0050}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$ const \&}]{curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+friend operator must be inline, or the linker gets confused 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDESolutionCurve_ab9e962f74300c74e3decaa6f1b8cdc72}\label{classcapd_1_1ddes_1_1DDESolutionCurve_ab9e962f74300c74e3decaa6f1b8cdc72}} 
+\index{capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}!m\_r0@{m\_r0}}
+\index{m\_r0@{m\_r0}!capd::ddes::DDESolutionCurve$<$ SetSpec $>$@{capd::ddes::DDESolutionCurve$<$ SetSpec $>$}}
+\doxysubsubsection{\texorpdfstring{m\_r0}{m\_r0}}
+{\footnotesize\ttfamily template$<$typename Set\+Spec $>$ \\
+Vector\+Type$\ast$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDESolutionCurve}{capd\+::ddes\+::\+D\+D\+E\+Solution\+Curve}}$<$ Set\+Spec $>$\+::m\+\_\+r0\hspace{0.3cm}{\ttfamily [protected]}}
+
+this r0 will always be common for all elements. T\+H\+IS IS I\+M\+P\+O\+R\+T\+A\+NT (because how the Lohner algorithm is implemented). Solution is always the owner of r0, all copies must copy it by creating new instance. Each instance must assure that m\+\_\+r0 is always copied as a pointer (not owned) to the pieces and the current value. This variable must be before other dependent variables, because I use this fact to allocate it before others, so I can sometimes pass it to later dependable objects in the constructor list! 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Solution\+Curve.\+h\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Solution\+Curve\+\_\+dot\+Impl.\+hpp\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Solution\+Curve\+\_\+\+Doubleton\+Impl.\+hpp\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Solution\+Curve\+\_\+\+I\+O.\+hpp\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Solution\+Curve\+\_\+\+Move.\+hpp\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Solution\+Curve\+\_\+\+Pieces\+Manip.\+hpp\end{DoxyCompactItemize}

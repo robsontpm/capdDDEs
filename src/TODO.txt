@@ -1,0 +1,19 @@
+Na razie bardzo zgrudnie zrobione. 
+
+Część z tych rzeczy w ogóle nie powinna być w bibliotece.
+
+Sposób kompilacji jest na razie taki sobie... przemysleć...
+
+W skrócie:
+ - makelist.sh tworzy pliki .txt, które listują odpowiednie rzeczy
+ - tych list używam w innych plikach Makefile (np. w programach), aby stworzyć zaleźności
+ - (LIBS_OBJ zmienna itp.)
+ 
+Mozliwe problemy:
+ - kolizja plików .o i o.d z plikami użytkownika w jego programie (mało prawdopodobne)
+ - dłuższy czas kompilacji (?)
+ 
+Zalety:
+ - zależnośc od tych plików powoduje, że będą się rekompilowały programy, jak zmienię coś
+   w bibliotece (mam nadzieję, choć dobrze by było dodac pliki .h do zależności - teraz ich chyba nie ma!)
+   TODO: (URGENT) SPRAWDZIĆ!

@@ -1,0 +1,75 @@
+/*
+ * This file constitutes part of DDEs rigorous integration framework developed
+ * in PhD Thesis under supervision of prof. Piotr Zgliczynski:
+ *
+ * 		"Rigorous Integration of Delay Differential Equations", Jagiellonian University, 2015
+ *
+ * When using in scientific work please consider citing my articles (preffered),
+ * PhD thesis and/or my webpage. For the publications describing the source code
+ * please refer to http://scirsc.org/p/papers. Most notable paper up to date is:
+ *
+ *     Szczelina, R.; Zgliczyński, P.; "Algorithm for rigorous integration of 
+ *     Delay Differential Equations and the computer-assisted proof of periodic 
+ *     orbits in the Mackey-Glass equation", http://dx.doi.org/10.1007/s10208-017-9369-5
+ *     Foundations of Computational Mathematics (2018), Vol. 18, Iss 6, Pages 1299--1332
+ *
+ * This work would not be possible without aid and expertise of people involved in
+ * CAPD developing library (Computer Assisted Proofs in Dynamics).
+ * Please refer to http://capd.ii.uj.edu.pl and consider citing also this library 
+ * when using those codes in any scientific work.
+ *
+ * Author: Robert Szczelina, PhD
+ * Faculty of Mathematics and Computer Science, Jagiellonian University AND
+ * (former) Małopolska Center of Biotechnology, Jagiellonian University
+ * email: 	robert.szczelina@uj.edu.pl
+ * www: 	scirsc.org
+ *
+ * This source code is provided under GNU GPL license 
+ * (v.2 or whatever compatible with CAPD license)
+ */
+
+#ifndef _CAPD_DDES_DDEPIECEWISEPOLYNOMIALCURVE_HPP_
+#define _CAPD_DDES_DDEPIECEWISEPOLYNOMIALCURVE_HPP_
+
+#include <capd/ddes/DDEPiecewisePolynomialCurve.h>
+#include <capd/ddes/DDECommon.hpp>
+#include <string>
+
+////////////////////////////////////////////////////////////////////////
+// Below are implementations of more involved functions               //
+// (to be separated as usual from the declarations in the .h file     //
+// For more complete documentation/explanation please consult .h file //
+////////////////////////////////////////////////////////////////////////
+
+namespace capd{
+namespace ddes{
+
+template<typename GridSpec, typename JetSpec>
+std::string DDEPiecewisePolynomialCurve<GridSpec, JetSpec>::show() const {
+	std::ostringstream oss;
+	oss << badge() << " in dimension " << dimension() << " over time interval: " << pastTime() << " to " << currentTime() << "\n";
+	for (auto it = begin(); it != end(); ){
+		oss << (*it)->show();
+		RealType t0 = (*it)->t0(); ++it; RealType t1 = (it == end() ? this->currentTime() : (*it)->t0());
+		oss << " for t \\in " << capd::ddes::showEnclosedInterval(t0, t1) << "\n";
+	}
+	oss << VectorType(m_valueAtCurrent) << " for t == " << this->currentTime();
+	return oss.str();
+}
+
+template<typename GridSpec, typename JetSpec>
+void DDEPiecewisePolynomialCurve<GridSpec, JetSpec>::writeTo(std::ostream& out) const {
+	// TODO: (NOT URGENT) make it more sophisticated and make it compatible with >> (input operator)
+	out << this->show();
+}
+
+template<typename GridSpec, typename JetSpec>
+void DDEPiecewisePolynomialCurve<GridSpec, JetSpec>::readFrom(std::istream& out) const {
+	// TODO: (NOT URGENT) make it more sophisticated and make it compatible with << (output operator)
+	throw std::logic_error(badge() + ": Not Implemented Yet");
+}
+
+} // namespace ddes
+} // namespace capd
+
+#endif /* _CAPD_DDES_DDEPIECEWISEPOLYNOMIALCURVE_HPP_ */

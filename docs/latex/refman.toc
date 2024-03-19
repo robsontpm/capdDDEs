@@ -1,0 +1,804 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Nonrigorous, non-\/autonomous demo}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Exemplary programs}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Namespace Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Namespace List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Hierarchical Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class Hierarchy}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Class Index}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Class List}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Namespace Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}capd Namespace Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{11}{subsection.6.1.1}%
+\contentsline {chapter}{\numberline {7}Class Documentation}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Argument\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser Class Reference}{13}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{13}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Friends And Related Function Documentation}{14}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}operator$<$$<$}{14}{subsubsection.7.1.2.1}%
+\contentsline {section}{\numberline {7.2}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Basic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Discrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Fin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{14}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{16}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Member Typedef Documentation}{17}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}const\_iterator}{17}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}DelayStorageType}{17}{subsubsection.7.2.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.3}iterator}{17}{subsubsection.7.2.2.3}%
+\contentsline {subsection}{\numberline {7.2.3}Constructor \& Destructor Documentation}{17}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}$\sim $BasicDiscreteDelaysFunctionalMap()}{18}{subsubsection.7.2.3.1}%
+\contentsline {subsection}{\numberline {7.2.4}Member Function Documentation}{18}{subsection.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.4.1}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.7.2.4.1}%
+\contentsline {subsubsection}{\numberline {7.2.4.2}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.7.2.4.2}%
+\contentsline {subsubsection}{\numberline {7.2.4.3}collectComputationData()}{18}{subsubsection.7.2.4.3}%
+\contentsline {subsubsection}{\numberline {7.2.4.4}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [1/8]}}{19}{subsubsection.7.2.4.4}%
+\contentsline {subsubsection}{\numberline {7.2.4.5}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [2/8]}}{19}{subsubsection.7.2.4.5}%
+\contentsline {subsubsection}{\numberline {7.2.4.6}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [3/8]}}{19}{subsubsection.7.2.4.6}%
+\contentsline {subsubsection}{\numberline {7.2.4.7}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [4/8]}}{19}{subsubsection.7.2.4.7}%
+\contentsline {subsubsection}{\numberline {7.2.4.8}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [5/8]}}{20}{subsubsection.7.2.4.8}%
+\contentsline {subsubsection}{\numberline {7.2.4.9}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [6/8]}}{20}{subsubsection.7.2.4.9}%
+\contentsline {subsubsection}{\numberline {7.2.4.10}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [7/8]}}{20}{subsubsection.7.2.4.10}%
+\contentsline {subsubsection}{\numberline {7.2.4.11}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [8/8]}}{21}{subsubsection.7.2.4.11}%
+\contentsline {subsubsection}{\numberline {7.2.4.12}delaysCount()}{21}{subsubsection.7.2.4.12}%
+\contentsline {subsubsection}{\numberline {7.2.4.13}dimension()}{21}{subsubsection.7.2.4.13}%
+\contentsline {subsubsection}{\numberline {7.2.4.14}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.7.2.4.14}%
+\contentsline {subsubsection}{\numberline {7.2.4.15}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.7.2.4.15}%
+\contentsline {subsubsection}{\numberline {7.2.4.16}imageDimension()}{22}{subsubsection.7.2.4.16}%
+\contentsline {subsubsection}{\numberline {7.2.4.17}operator()()}{22}{subsubsection.7.2.4.17}%
+\contentsline {section}{\numberline {7.3}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Basic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Doubleton$<$ Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Policies\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{22}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{26}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Constructor \& Destructor Documentation}{26}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [1/11]}}{26}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [2/11]}}{27}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [3/11]}}{27}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [4/11]}}{27}{subsubsection.7.3.2.4}%
+\contentsline {subsubsection}{\numberline {7.3.2.5}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [5/11]}}{27}{subsubsection.7.3.2.5}%
+\contentsline {subsubsection}{\numberline {7.3.2.6}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [6/11]}}{27}{subsubsection.7.3.2.6}%
+\contentsline {subsubsection}{\numberline {7.3.2.7}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [7/11]}}{28}{subsubsection.7.3.2.7}%
+\contentsline {subsubsection}{\numberline {7.3.2.8}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [8/11]}}{28}{subsubsection.7.3.2.8}%
+\contentsline {subsubsection}{\numberline {7.3.2.9}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [9/11]}}{28}{subsubsection.7.3.2.9}%
+\contentsline {subsubsection}{\numberline {7.3.2.10}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [10/11]}}{28}{subsubsection.7.3.2.10}%
+\contentsline {subsubsection}{\numberline {7.3.2.11}BasicDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [11/11]}}{28}{subsubsection.7.3.2.11}%
+\contentsline {subsubsection}{\numberline {7.3.2.12}$\sim $BasicDoubleton()}{29}{subsubsection.7.3.2.12}%
+\contentsline {subsection}{\numberline {7.3.3}Member Function Documentation}{29}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{29}{subsubsection.7.3.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.3.2}add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.7.3.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3.3}affineTransform()}{29}{subsubsection.7.3.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.4}common\_B()}{29}{subsubsection.7.3.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.3.5}common\_C()}{30}{subsubsection.7.3.3.5}%
+\contentsline {subsubsection}{\numberline {7.3.3.6}common\_r()}{30}{subsubsection.7.3.3.6}%
+\contentsline {subsubsection}{\numberline {7.3.3.7}common\_r0()}{30}{subsubsection.7.3.3.7}%
+\contentsline {subsubsection}{\numberline {7.3.3.8}common\_x()}{30}{subsubsection.7.3.3.8}%
+\contentsline {subsubsection}{\numberline {7.3.3.9}dimension()}{31}{subsubsection.7.3.3.9}%
+\contentsline {subsubsection}{\numberline {7.3.3.10}get\_B()}{31}{subsubsection.7.3.3.10}%
+\contentsline {subsubsection}{\numberline {7.3.3.11}get\_C()}{31}{subsubsection.7.3.3.11}%
+\contentsline {subsubsection}{\numberline {7.3.3.12}get\_r()}{31}{subsubsection.7.3.3.12}%
+\contentsline {subsubsection}{\numberline {7.3.3.13}get\_r0()}{31}{subsubsection.7.3.3.13}%
+\contentsline {subsubsection}{\numberline {7.3.3.14}get\_x()}{31}{subsubsection.7.3.3.14}%
+\contentsline {subsubsection}{\numberline {7.3.3.15}hull()}{31}{subsubsection.7.3.3.15}%
+\contentsline {subsubsection}{\numberline {7.3.3.16}midPoint()}{32}{subsubsection.7.3.3.16}%
+\contentsline {subsubsection}{\numberline {7.3.3.17}mul()}{32}{subsubsection.7.3.3.17}%
+\contentsline {subsubsection}{\numberline {7.3.3.18}mulThenAdd()}{32}{subsubsection.7.3.3.18}%
+\contentsline {subsubsection}{\numberline {7.3.3.19}operator=()}{32}{subsubsection.7.3.3.19}%
+\contentsline {subsubsection}{\numberline {7.3.3.20}reinitialize()}{32}{subsubsection.7.3.3.20}%
+\contentsline {subsubsection}{\numberline {7.3.3.21}sanityCheck()}{32}{subsubsection.7.3.3.21}%
+\contentsline {subsubsection}{\numberline {7.3.3.22}set\_B()}{33}{subsubsection.7.3.3.22}%
+\contentsline {subsubsection}{\numberline {7.3.3.23}set\_C()}{33}{subsubsection.7.3.3.23}%
+\contentsline {subsubsection}{\numberline {7.3.3.24}set\_Cr0()}{33}{subsubsection.7.3.3.24}%
+\contentsline {subsubsection}{\numberline {7.3.3.25}set\_r()}{33}{subsubsection.7.3.3.25}%
+\contentsline {subsubsection}{\numberline {7.3.3.26}set\_r0()}{34}{subsubsection.7.3.3.26}%
+\contentsline {subsubsection}{\numberline {7.3.3.27}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{34}{subsubsection.7.3.3.27}%
+\contentsline {subsubsection}{\numberline {7.3.3.28}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{34}{subsubsection.7.3.3.28}%
+\contentsline {subsubsection}{\numberline {7.3.3.29}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{34}{subsubsection.7.3.3.29}%
+\contentsline {subsubsection}{\numberline {7.3.3.30}setupDimension()}{34}{subsubsection.7.3.3.30}%
+\contentsline {subsubsection}{\numberline {7.3.3.31}setupFromData()}{35}{subsubsection.7.3.3.31}%
+\contentsline {subsubsection}{\numberline {7.3.3.32}setupFromOther()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{35}{subsubsection.7.3.3.32}%
+\contentsline {subsubsection}{\numberline {7.3.3.33}setupFromOther()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.7.3.3.33}%
+\contentsline {subsubsection}{\numberline {7.3.3.34}show()}{35}{subsubsection.7.3.3.34}%
+\contentsline {subsubsection}{\numberline {7.3.3.35}storageDimension()}{35}{subsubsection.7.3.3.35}%
+\contentsline {subsubsection}{\numberline {7.3.3.36}storageN0()}{35}{subsubsection.7.3.3.36}%
+\contentsline {subsubsection}{\numberline {7.3.3.37}translate()}{36}{subsubsection.7.3.3.37}%
+\contentsline {section}{\numberline {7.4}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Binary\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data$<$ T $>$ Union Template Reference}{36}{section.7.4}%
+\contentsline {section}{\numberline {7.5}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Coordinate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frame$<$ Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{36}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{37}{subsection.7.5.1}%
+\contentsline {section}{\numberline {7.6}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Rigorous\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper$<$ Eq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Policies\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Coordinate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{37}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{38}{subsection.7.6.1}%
+\contentsline {section}{\numberline {7.7}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Cube\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set$<$ Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{38}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Member Function Documentation}{39}{subsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}insert\_cover()}{39}{subsubsection.7.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.2}subcubeset()}{40}{subsubsection.7.7.1.2}%
+\contentsline {subsection}{\numberline {7.7.2}Friends And Related Function Documentation}{40}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}operator$<$$<$}{40}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}operator$>$$>$}{40}{subsubsection.7.7.2.2}%
+\contentsline {section}{\numberline {7.8}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Cube\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set$<$ Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Cube\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Iterator Class Reference}{40}{section.7.8}%
+\contentsline {section}{\numberline {7.9}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Cubic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ikeda$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{41}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{42}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Member Function Documentation}{42}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}dimension()}{42}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}getParamsCount()}{42}{subsubsection.7.9.2.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.3}imageDimension()}{42}{subsubsection.7.9.2.3}%
+\contentsline {section}{\numberline {7.10}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{42}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{44}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Member Typedef Documentation}{44}{subsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.1}JacobianStorageType}{44}{subsubsection.7.10.2.1}%
+\contentsline {subsubsection}{\numberline {7.10.2.2}ValueStorageType}{44}{subsubsection.7.10.2.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.3}VariableStorageType}{45}{subsubsection.7.10.2.3}%
+\contentsline {subsection}{\numberline {7.10.3}Constructor \& Destructor Documentation}{45}{subsection.7.10.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.1}$\sim $DDEBasicFunctionalMap()}{45}{subsubsection.7.10.3.1}%
+\contentsline {subsection}{\numberline {7.10.4}Member Function Documentation}{45}{subsection.7.10.4}%
+\contentsline {subsubsection}{\numberline {7.10.4.1}checkCurveDimension()}{45}{subsubsection.7.10.4.1}%
+\contentsline {subsubsection}{\numberline {7.10.4.2}collectComputationData()}{46}{subsubsection.7.10.4.2}%
+\contentsline {subsubsection}{\numberline {7.10.4.3}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{46}{subsubsection.7.10.4.3}%
+\contentsline {subsubsection}{\numberline {7.10.4.4}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{46}{subsubsection.7.10.4.4}%
+\contentsline {subsubsection}{\numberline {7.10.4.5}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{47}{subsubsection.7.10.4.5}%
+\contentsline {subsubsection}{\numberline {7.10.4.6}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{47}{subsubsection.7.10.4.6}%
+\contentsline {subsubsection}{\numberline {7.10.4.7}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{48}{subsubsection.7.10.4.7}%
+\contentsline {subsubsection}{\numberline {7.10.4.8}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{48}{subsubsection.7.10.4.8}%
+\contentsline {subsubsection}{\numberline {7.10.4.9}convert()}{48}{subsubsection.7.10.4.9}%
+\contentsline {subsubsection}{\numberline {7.10.4.10}deconvert()}{49}{subsubsection.7.10.4.10}%
+\contentsline {subsubsection}{\numberline {7.10.4.11}imageDimension()}{49}{subsubsection.7.10.4.11}%
+\contentsline {subsubsection}{\numberline {7.10.4.12}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{49}{subsubsection.7.10.4.12}%
+\contentsline {subsubsection}{\numberline {7.10.4.13}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{49}{subsubsection.7.10.4.13}%
+\contentsline {section}{\numberline {7.11}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poincare\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Dyn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Section\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{50}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{51}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Member Function Documentation}{51}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}detectCrossingDirection()}{51}{subsubsection.7.11.2.1}%
+\contentsline {subsubsection}{\numberline {7.11.2.2}findCrossingTime()}{52}{subsubsection.7.11.2.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.3}integrateUntilSectionCrossing()}{52}{subsubsection.7.11.2.3}%
+\contentsline {subsubsection}{\numberline {7.11.2.4}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{52}{subsubsection.7.11.2.4}%
+\contentsline {subsubsection}{\numberline {7.11.2.5}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{52}{subsubsection.7.11.2.5}%
+\contentsline {subsubsection}{\numberline {7.11.2.6}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{53}{subsubsection.7.11.2.6}%
+\contentsline {subsubsection}{\numberline {7.11.2.7}setCurrentV()}{54}{subsubsection.7.11.2.7}%
+\contentsline {subsubsection}{\numberline {7.11.2.8}setInitialV()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{54}{subsubsection.7.11.2.8}%
+\contentsline {subsubsection}{\numberline {7.11.2.9}setInitialV()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{54}{subsubsection.7.11.2.9}%
+\contentsline {section}{\numberline {7.12}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Compare\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper$<$ Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{54}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{55}{subsection.7.12.1}%
+\contentsline {subsection}{\numberline {7.12.2}Member Function Documentation}{55}{subsection.7.12.2}%
+\contentsline {subsubsection}{\numberline {7.12.2.1}getUnknownsCount()}{55}{subsubsection.7.12.2.1}%
+\contentsline {section}{\numberline {7.13}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forward\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Taylor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Piece$<$ Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, is\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval $>$ Class Template Reference}{56}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{60}{subsection.7.13.1}%
+\contentsline {subsection}{\numberline {7.13.2}Constructor \& Destructor Documentation}{60}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [1/11]}}{60}{subsubsection.7.13.2.1}%
+\contentsline {subsubsection}{\numberline {7.13.2.2}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [2/11]}}{61}{subsubsection.7.13.2.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.3}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [3/11]}}{61}{subsubsection.7.13.2.3}%
+\contentsline {subsubsection}{\numberline {7.13.2.4}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [4/11]}}{61}{subsubsection.7.13.2.4}%
+\contentsline {subsubsection}{\numberline {7.13.2.5}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [5/11]}}{61}{subsubsection.7.13.2.5}%
+\contentsline {subsubsection}{\numberline {7.13.2.6}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [6/11]}}{61}{subsubsection.7.13.2.6}%
+\contentsline {subsubsection}{\numberline {7.13.2.7}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [7/11]}}{62}{subsubsection.7.13.2.7}%
+\contentsline {subsubsection}{\numberline {7.13.2.8}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [8/11]}}{62}{subsubsection.7.13.2.8}%
+\contentsline {subsubsection}{\numberline {7.13.2.9}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [9/11]}}{62}{subsubsection.7.13.2.9}%
+\contentsline {subsubsection}{\numberline {7.13.2.10}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [10/11]}}{62}{subsubsection.7.13.2.10}%
+\contentsline {subsubsection}{\numberline {7.13.2.11}DDEForwardTaylorCurvePiece()\hspace {0.1cm}{\footnotesize \ttfamily [11/11]}}{63}{subsubsection.7.13.2.11}%
+\contentsline {subsubsection}{\numberline {7.13.2.12}$\sim $DDEForwardTaylorCurvePiece()}{63}{subsubsection.7.13.2.12}%
+\contentsline {subsection}{\numberline {7.13.3}Member Function Documentation}{63}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}affineTransform()}{63}{subsubsection.7.13.3.1}%
+\contentsline {subsubsection}{\numberline {7.13.3.2}allocate()}{63}{subsubsection.7.13.3.2}%
+\contentsline {subsubsection}{\numberline {7.13.3.3}allocateJet()}{64}{subsubsection.7.13.3.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.4}allocateR0()}{64}{subsubsection.7.13.3.4}%
+\contentsline {subsubsection}{\numberline {7.13.3.5}allocateXi()}{64}{subsubsection.7.13.3.5}%
+\contentsline {subsubsection}{\numberline {7.13.3.6}backJet()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{64}{subsubsection.7.13.3.6}%
+\contentsline {subsubsection}{\numberline {7.13.3.7}backJet()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{64}{subsubsection.7.13.3.7}%
+\contentsline {subsubsection}{\numberline {7.13.3.8}badge()}{65}{subsubsection.7.13.3.8}%
+\contentsline {subsubsection}{\numberline {7.13.3.9}beginJet()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{65}{subsubsection.7.13.3.9}%
+\contentsline {subsubsection}{\numberline {7.13.3.10}beginJet()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{65}{subsubsection.7.13.3.10}%
+\contentsline {subsubsection}{\numberline {7.13.3.11}deallocate()}{65}{subsubsection.7.13.3.11}%
+\contentsline {subsubsection}{\numberline {7.13.3.12}deallocateJet()}{65}{subsubsection.7.13.3.12}%
+\contentsline {subsubsection}{\numberline {7.13.3.13}deallocateR0()}{65}{subsubsection.7.13.3.13}%
+\contentsline {subsubsection}{\numberline {7.13.3.14}deallocateXi()}{66}{subsubsection.7.13.3.14}%
+\contentsline {subsubsection}{\numberline {7.13.3.15}dimCheck()}{66}{subsubsection.7.13.3.15}%
+\contentsline {subsubsection}{\numberline {7.13.3.16}dimCheckB()}{66}{subsubsection.7.13.3.16}%
+\contentsline {subsubsection}{\numberline {7.13.3.17}dimCheckC()}{66}{subsubsection.7.13.3.17}%
+\contentsline {subsubsection}{\numberline {7.13.3.18}dimension()}{66}{subsubsection.7.13.3.18}%
+\contentsline {subsubsection}{\numberline {7.13.3.19}dot()}{67}{subsubsection.7.13.3.19}%
+\contentsline {subsubsection}{\numberline {7.13.3.20}dt()}{67}{subsubsection.7.13.3.20}%
+\contentsline {subsubsection}{\numberline {7.13.3.21}endJet()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{67}{subsubsection.7.13.3.21}%
+\contentsline {subsubsection}{\numberline {7.13.3.22}endJet()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{67}{subsubsection.7.13.3.22}%
+\contentsline {subsubsection}{\numberline {7.13.3.23}eval()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{67}{subsubsection.7.13.3.23}%
+\contentsline {subsubsection}{\numberline {7.13.3.24}eval()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.7.13.3.24}%
+\contentsline {subsubsection}{\numberline {7.13.3.25}evalAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.7.13.3.25}%
+\contentsline {subsubsection}{\numberline {7.13.3.26}evalAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.7.13.3.26}%
+\contentsline {subsubsection}{\numberline {7.13.3.27}evalCoeff()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.7.13.3.27}%
+\contentsline {subsubsection}{\numberline {7.13.3.28}evalCoeff()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.7.13.3.28}%
+\contentsline {subsubsection}{\numberline {7.13.3.29}evalCoeffAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{69}{subsubsection.7.13.3.29}%
+\contentsline {subsubsection}{\numberline {7.13.3.30}evalCoeffAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{69}{subsubsection.7.13.3.30}%
+\contentsline {subsubsection}{\numberline {7.13.3.31}get\_B()}{69}{subsubsection.7.13.3.31}%
+\contentsline {subsubsection}{\numberline {7.13.3.32}get\_C()}{69}{subsubsection.7.13.3.32}%
+\contentsline {subsubsection}{\numberline {7.13.3.33}get\_r()}{69}{subsubsection.7.13.3.33}%
+\contentsline {subsubsection}{\numberline {7.13.3.34}get\_r0()}{70}{subsubsection.7.13.3.34}%
+\contentsline {subsubsection}{\numberline {7.13.3.35}get\_x()}{70}{subsubsection.7.13.3.35}%
+\contentsline {subsubsection}{\numberline {7.13.3.36}get\_Xi()}{70}{subsubsection.7.13.3.36}%
+\contentsline {subsubsection}{\numberline {7.13.3.37}getT0()}{70}{subsubsection.7.13.3.37}%
+\contentsline {subsubsection}{\numberline {7.13.3.38}isMidCurve()}{70}{subsubsection.7.13.3.38}%
+\contentsline {subsubsection}{\numberline {7.13.3.39}jetAt()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{70}{subsubsection.7.13.3.39}%
+\contentsline {subsubsection}{\numberline {7.13.3.40}jetAt()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{71}{subsubsection.7.13.3.40}%
+\contentsline {subsubsection}{\numberline {7.13.3.41}makeStorage\_x()}{71}{subsubsection.7.13.3.41}%
+\contentsline {subsubsection}{\numberline {7.13.3.42}midCurve()}{71}{subsubsection.7.13.3.42}%
+\contentsline {subsubsection}{\numberline {7.13.3.43}mul()}{71}{subsubsection.7.13.3.43}%
+\contentsline {subsubsection}{\numberline {7.13.3.44}operator=()}{71}{subsubsection.7.13.3.44}%
+\contentsline {subsubsection}{\numberline {7.13.3.45}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{72}{subsubsection.7.13.3.45}%
+\contentsline {subsubsection}{\numberline {7.13.3.46}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{72}{subsubsection.7.13.3.46}%
+\contentsline {subsubsection}{\numberline {7.13.3.47}order()}{72}{subsubsection.7.13.3.47}%
+\contentsline {subsubsection}{\numberline {7.13.3.48}reallocate()}{72}{subsubsection.7.13.3.48}%
+\contentsline {subsubsection}{\numberline {7.13.3.49}reallocateJet()}{72}{subsubsection.7.13.3.49}%
+\contentsline {subsubsection}{\numberline {7.13.3.50}reallocateR0()}{73}{subsubsection.7.13.3.50}%
+\contentsline {subsubsection}{\numberline {7.13.3.51}reallocateXi()}{73}{subsubsection.7.13.3.51}%
+\contentsline {subsubsection}{\numberline {7.13.3.52}reinitialize()}{73}{subsubsection.7.13.3.52}%
+\contentsline {subsubsection}{\numberline {7.13.3.53}set\_B()}{73}{subsubsection.7.13.3.53}%
+\contentsline {subsubsection}{\numberline {7.13.3.54}set\_Binv()}{73}{subsubsection.7.13.3.54}%
+\contentsline {subsubsection}{\numberline {7.13.3.55}set\_C()}{74}{subsubsection.7.13.3.55}%
+\contentsline {subsubsection}{\numberline {7.13.3.56}set\_Cr0()}{74}{subsubsection.7.13.3.56}%
+\contentsline {subsubsection}{\numberline {7.13.3.57}set\_r()}{74}{subsubsection.7.13.3.57}%
+\contentsline {subsubsection}{\numberline {7.13.3.58}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{74}{subsubsection.7.13.3.58}%
+\contentsline {subsubsection}{\numberline {7.13.3.59}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{74}{subsubsection.7.13.3.59}%
+\contentsline {subsubsection}{\numberline {7.13.3.60}set\_x()}{75}{subsubsection.7.13.3.60}%
+\contentsline {subsubsection}{\numberline {7.13.3.61}set\_Xi()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{75}{subsubsection.7.13.3.61}%
+\contentsline {subsubsection}{\numberline {7.13.3.62}set\_Xi()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{75}{subsubsection.7.13.3.62}%
+\contentsline {subsubsection}{\numberline {7.13.3.63}setAsConstant()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{75}{subsubsection.7.13.3.63}%
+\contentsline {subsubsection}{\numberline {7.13.3.64}setAsConstant()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{75}{subsubsection.7.13.3.64}%
+\contentsline {subsubsection}{\numberline {7.13.3.65}setAsConstant()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{76}{subsubsection.7.13.3.65}%
+\contentsline {subsubsection}{\numberline {7.13.3.66}setAsConstant()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{76}{subsubsection.7.13.3.66}%
+\contentsline {subsubsection}{\numberline {7.13.3.67}setT0()}{76}{subsubsection.7.13.3.67}%
+\contentsline {subsubsection}{\numberline {7.13.3.68}setupFromData()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{76}{subsubsection.7.13.3.68}%
+\contentsline {subsubsection}{\numberline {7.13.3.69}setupFromData()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{77}{subsubsection.7.13.3.69}%
+\contentsline {subsubsection}{\numberline {7.13.3.70}show()}{77}{subsubsection.7.13.3.70}%
+\contentsline {subsubsection}{\numberline {7.13.3.71}storageDimension()}{77}{subsubsection.7.13.3.71}%
+\contentsline {subsubsection}{\numberline {7.13.3.72}storageN0()}{77}{subsubsection.7.13.3.72}%
+\contentsline {subsubsection}{\numberline {7.13.3.73}summa()}{78}{subsubsection.7.13.3.73}%
+\contentsline {subsubsection}{\numberline {7.13.3.74}summaAtDelta()}{78}{subsubsection.7.13.3.74}%
+\contentsline {subsubsection}{\numberline {7.13.3.75}t0()}{78}{subsubsection.7.13.3.75}%
+\contentsline {subsubsection}{\numberline {7.13.3.76}take\_r0()}{78}{subsubsection.7.13.3.76}%
+\contentsline {subsubsection}{\numberline {7.13.3.77}take\_Xi()}{78}{subsubsection.7.13.3.77}%
+\contentsline {subsubsection}{\numberline {7.13.3.78}taylor()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{79}{subsubsection.7.13.3.78}%
+\contentsline {subsubsection}{\numberline {7.13.3.79}taylor()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{79}{subsubsection.7.13.3.79}%
+\contentsline {subsubsection}{\numberline {7.13.3.80}taylorAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{79}{subsubsection.7.13.3.80}%
+\contentsline {subsubsection}{\numberline {7.13.3.81}taylorAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{79}{subsubsection.7.13.3.81}%
+\contentsline {subsubsection}{\numberline {7.13.3.82}translate()}{79}{subsubsection.7.13.3.82}%
+\contentsline {subsubsection}{\numberline {7.13.3.83}updateCommonR0()}{80}{subsubsection.7.13.3.83}%
+\contentsline {section}{\numberline {7.14}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Section$<$ Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, is\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval $>$ Class Template Reference}{80}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Constructor \& Destructor Documentation}{81}{subsection.7.14.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.1}DDEJetSection()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{81}{subsubsection.7.14.1.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.2}DDEJetSection()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{81}{subsubsection.7.14.1.2}%
+\contentsline {subsection}{\numberline {7.14.2}Member Function Documentation}{81}{subsection.7.14.2}%
+\contentsline {subsubsection}{\numberline {7.14.2.1}getGradient()}{82}{subsubsection.7.14.2.1}%
+\contentsline {section}{\numberline {7.15}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nonrigorous\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Taylor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Solver$<$ Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{82}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Member Function Documentation}{83}{subsection.7.15.1}%
+\contentsline {subsubsection}{\numberline {7.15.1.1}oneStep()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{83}{subsubsection.7.15.1.1}%
+\contentsline {subsubsection}{\numberline {7.15.1.2}oneStep()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{83}{subsubsection.7.15.1.2}%
+\contentsline {subsubsection}{\numberline {7.15.1.3}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{84}{subsubsection.7.15.1.3}%
+\contentsline {subsubsection}{\numberline {7.15.1.4}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{84}{subsubsection.7.15.1.4}%
+\contentsline {section}{\numberline {7.16}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Piecewise\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Polynomial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve$<$ Grid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{84}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{87}{subsection.7.16.1}%
+\contentsline {subsection}{\numberline {7.16.2}Constructor \& Destructor Documentation}{87}{subsection.7.16.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.1}DDEPiecewisePolynomialCurve()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{87}{subsubsection.7.16.2.1}%
+\contentsline {subsubsection}{\numberline {7.16.2.2}DDEPiecewisePolynomialCurve()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{87}{subsubsection.7.16.2.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.3}DDEPiecewisePolynomialCurve()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{87}{subsubsection.7.16.2.3}%
+\contentsline {subsubsection}{\numberline {7.16.2.4}DDEPiecewisePolynomialCurve()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{88}{subsubsection.7.16.2.4}%
+\contentsline {subsubsection}{\numberline {7.16.2.5}DDEPiecewisePolynomialCurve()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{88}{subsubsection.7.16.2.5}%
+\contentsline {subsubsection}{\numberline {7.16.2.6}$\sim $DDEPiecewisePolynomialCurve()}{88}{subsubsection.7.16.2.6}%
+\contentsline {subsection}{\numberline {7.16.3}Member Function Documentation}{88}{subsection.7.16.3}%
+\contentsline {subsubsection}{\numberline {7.16.3.1}add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{88}{subsubsection.7.16.3.1}%
+\contentsline {subsubsection}{\numberline {7.16.3.2}add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{88}{subsubsection.7.16.3.2}%
+\contentsline {subsubsection}{\numberline {7.16.3.3}addPastPiece()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{89}{subsubsection.7.16.3.3}%
+\contentsline {subsubsection}{\numberline {7.16.3.4}addPastPiece()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{89}{subsubsection.7.16.3.4}%
+\contentsline {subsubsection}{\numberline {7.16.3.5}addPiece()}{89}{subsubsection.7.16.3.5}%
+\contentsline {subsubsection}{\numberline {7.16.3.6}affineTransform()}{89}{subsubsection.7.16.3.6}%
+\contentsline {subsubsection}{\numberline {7.16.3.7}at()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{89}{subsubsection.7.16.3.7}%
+\contentsline {subsubsection}{\numberline {7.16.3.8}at()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{89}{subsubsection.7.16.3.8}%
+\contentsline {subsubsection}{\numberline {7.16.3.9}badge()}{90}{subsubsection.7.16.3.9}%
+\contentsline {subsubsection}{\numberline {7.16.3.10}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{90}{subsubsection.7.16.3.10}%
+\contentsline {subsubsection}{\numberline {7.16.3.11}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{90}{subsubsection.7.16.3.11}%
+\contentsline {subsubsection}{\numberline {7.16.3.12}clear()}{90}{subsubsection.7.16.3.12}%
+\contentsline {subsubsection}{\numberline {7.16.3.13}copyPieces()}{90}{subsubsection.7.16.3.13}%
+\contentsline {subsubsection}{\numberline {7.16.3.14}currentTime()}{90}{subsubsection.7.16.3.14}%
+\contentsline {subsubsection}{\numberline {7.16.3.15}deallocatePieces()}{91}{subsubsection.7.16.3.15}%
+\contentsline {subsubsection}{\numberline {7.16.3.16}dimension()}{91}{subsubsection.7.16.3.16}%
+\contentsline {subsubsection}{\numberline {7.16.3.17}dot()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{91}{subsubsection.7.16.3.17}%
+\contentsline {subsubsection}{\numberline {7.16.3.18}dot()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{91}{subsubsection.7.16.3.18}%
+\contentsline {subsubsection}{\numberline {7.16.3.19}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{91}{subsubsection.7.16.3.19}%
+\contentsline {subsubsection}{\numberline {7.16.3.20}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{91}{subsubsection.7.16.3.20}%
+\contentsline {subsubsection}{\numberline {7.16.3.21}epsilonShift()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{92}{subsubsection.7.16.3.21}%
+\contentsline {subsubsection}{\numberline {7.16.3.22}epsilonShift()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{92}{subsubsection.7.16.3.22}%
+\contentsline {subsubsection}{\numberline {7.16.3.23}eval()}{92}{subsubsection.7.16.3.23}%
+\contentsline {subsubsection}{\numberline {7.16.3.24}extend()}{92}{subsubsection.7.16.3.24}%
+\contentsline {subsubsection}{\numberline {7.16.3.25}get\_x()}{93}{subsubsection.7.16.3.25}%
+\contentsline {subsubsection}{\numberline {7.16.3.26}getCurrentTime()}{93}{subsubsection.7.16.3.26}%
+\contentsline {subsubsection}{\numberline {7.16.3.27}getGrid()}{93}{subsubsection.7.16.3.27}%
+\contentsline {subsubsection}{\numberline {7.16.3.28}getPiece()}{93}{subsubsection.7.16.3.28}%
+\contentsline {subsubsection}{\numberline {7.16.3.29}getStep()}{93}{subsubsection.7.16.3.29}%
+\contentsline {subsubsection}{\numberline {7.16.3.30}getT0()}{93}{subsubsection.7.16.3.30}%
+\contentsline {subsubsection}{\numberline {7.16.3.31}getValueAtCurrent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{94}{subsubsection.7.16.3.31}%
+\contentsline {subsubsection}{\numberline {7.16.3.32}getValueAtCurrent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{94}{subsubsection.7.16.3.32}%
+\contentsline {subsubsection}{\numberline {7.16.3.33}grid()}{94}{subsubsection.7.16.3.33}%
+\contentsline {subsubsection}{\numberline {7.16.3.34}j()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{94}{subsubsection.7.16.3.34}%
+\contentsline {subsubsection}{\numberline {7.16.3.35}j()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{94}{subsubsection.7.16.3.35}%
+\contentsline {subsubsection}{\numberline {7.16.3.36}j()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{94}{subsubsection.7.16.3.36}%
+\contentsline {subsubsection}{\numberline {7.16.3.37}j()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{95}{subsubsection.7.16.3.37}%
+\contentsline {subsubsection}{\numberline {7.16.3.38}jet()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{95}{subsubsection.7.16.3.38}%
+\contentsline {subsubsection}{\numberline {7.16.3.39}jet()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{95}{subsubsection.7.16.3.39}%
+\contentsline {subsubsection}{\numberline {7.16.3.40}jet()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{95}{subsubsection.7.16.3.40}%
+\contentsline {subsubsection}{\numberline {7.16.3.41}jetCommonMaximalOrder()}{95}{subsubsection.7.16.3.41}%
+\contentsline {subsubsection}{\numberline {7.16.3.42}jetOrderAt()}{95}{subsubsection.7.16.3.42}%
+\contentsline {subsubsection}{\numberline {7.16.3.43}jetPtr()}{96}{subsubsection.7.16.3.43}%
+\contentsline {subsubsection}{\numberline {7.16.3.44}length()}{96}{subsubsection.7.16.3.44}%
+\contentsline {subsubsection}{\numberline {7.16.3.45}mul()}{96}{subsubsection.7.16.3.45}%
+\contentsline {subsubsection}{\numberline {7.16.3.46}mulThenAdd()}{96}{subsubsection.7.16.3.46}%
+\contentsline {subsubsection}{\numberline {7.16.3.47}operator$\ast $=()}{96}{subsubsection.7.16.3.47}%
+\contentsline {subsubsection}{\numberline {7.16.3.48}operator=()}{96}{subsubsection.7.16.3.48}%
+\contentsline {subsubsection}{\numberline {7.16.3.49}pastTime()}{97}{subsubsection.7.16.3.49}%
+\contentsline {subsubsection}{\numberline {7.16.3.50}pointToIndex()}{97}{subsubsection.7.16.3.50}%
+\contentsline {subsubsection}{\numberline {7.16.3.51}rbegin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{97}{subsubsection.7.16.3.51}%
+\contentsline {subsubsection}{\numberline {7.16.3.52}rbegin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{97}{subsubsection.7.16.3.52}%
+\contentsline {subsubsection}{\numberline {7.16.3.53}readFrom()}{97}{subsubsection.7.16.3.53}%
+\contentsline {subsubsection}{\numberline {7.16.3.54}rend()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{97}{subsubsection.7.16.3.54}%
+\contentsline {subsubsection}{\numberline {7.16.3.55}rend()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{98}{subsubsection.7.16.3.55}%
+\contentsline {subsubsection}{\numberline {7.16.3.56}set\_x()}{98}{subsubsection.7.16.3.56}%
+\contentsline {subsubsection}{\numberline {7.16.3.57}setCurrentTime()}{98}{subsubsection.7.16.3.57}%
+\contentsline {subsubsection}{\numberline {7.16.3.58}setT0()}{98}{subsubsection.7.16.3.58}%
+\contentsline {subsubsection}{\numberline {7.16.3.59}setValueAtCurrent()}{98}{subsubsection.7.16.3.59}%
+\contentsline {subsubsection}{\numberline {7.16.3.60}show()}{98}{subsubsection.7.16.3.60}%
+\contentsline {subsubsection}{\numberline {7.16.3.61}storageDimension()}{99}{subsubsection.7.16.3.61}%
+\contentsline {subsubsection}{\numberline {7.16.3.62}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{99}{subsubsection.7.16.3.62}%
+\contentsline {subsubsection}{\numberline {7.16.3.63}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{99}{subsubsection.7.16.3.63}%
+\contentsline {subsubsection}{\numberline {7.16.3.64}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{99}{subsubsection.7.16.3.64}%
+\contentsline {subsubsection}{\numberline {7.16.3.65}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{99}{subsubsection.7.16.3.65}%
+\contentsline {subsubsection}{\numberline {7.16.3.66}t0()}{99}{subsubsection.7.16.3.66}%
+\contentsline {subsubsection}{\numberline {7.16.3.67}translate()}{100}{subsubsection.7.16.3.67}%
+\contentsline {subsubsection}{\numberline {7.16.3.68}writeTo()}{100}{subsubsection.7.16.3.68}%
+\contentsline {subsection}{\numberline {7.16.4}Friends And Related Function Documentation}{100}{subsection.7.16.4}%
+\contentsline {subsubsection}{\numberline {7.16.4.1}operator$<$$<$}{100}{subsubsection.7.16.4.1}%
+\contentsline {subsubsection}{\numberline {7.16.4.2}operator$>$$>$}{100}{subsubsection.7.16.4.2}%
+\contentsline {section}{\numberline {7.17}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Poincare\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Dyn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Section\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{100}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{102}{subsection.7.17.1}%
+\contentsline {subsection}{\numberline {7.17.2}Member Function Documentation}{102}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}detectCrossingDirection()}{102}{subsubsection.7.17.2.1}%
+\contentsline {subsubsection}{\numberline {7.17.2.2}findCrossingTime()}{102}{subsubsection.7.17.2.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.3}integrateUntilSectionCrossing()}{102}{subsubsection.7.17.2.3}%
+\contentsline {subsubsection}{\numberline {7.17.2.4}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{103}{subsubsection.7.17.2.4}%
+\contentsline {subsubsection}{\numberline {7.17.2.5}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{103}{subsubsection.7.17.2.5}%
+\contentsline {section}{\numberline {7.18}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rigorous\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{103}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{105}{subsection.7.18.1}%
+\contentsline {subsection}{\numberline {7.18.2}Constructor \& Destructor Documentation}{105}{subsection.7.18.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.1}$\sim $DDERigorousFunctionalMap()}{105}{subsubsection.7.18.2.1}%
+\contentsline {subsection}{\numberline {7.18.3}Member Function Documentation}{105}{subsection.7.18.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.1}checkCurveDimension()}{105}{subsubsection.7.18.3.1}%
+\contentsline {subsubsection}{\numberline {7.18.3.2}collectComputationData()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{106}{subsubsection.7.18.3.2}%
+\contentsline {subsubsection}{\numberline {7.18.3.3}collectComputationData()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{106}{subsubsection.7.18.3.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.4}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{107}{subsubsection.7.18.3.4}%
+\contentsline {subsubsection}{\numberline {7.18.3.5}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{107}{subsubsection.7.18.3.5}%
+\contentsline {subsubsection}{\numberline {7.18.3.6}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{107}{subsubsection.7.18.3.6}%
+\contentsline {subsubsection}{\numberline {7.18.3.7}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{108}{subsubsection.7.18.3.7}%
+\contentsline {subsubsection}{\numberline {7.18.3.8}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{108}{subsubsection.7.18.3.8}%
+\contentsline {subsubsection}{\numberline {7.18.3.9}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{108}{subsubsection.7.18.3.9}%
+\contentsline {subsubsection}{\numberline {7.18.3.10}convert()}{109}{subsubsection.7.18.3.10}%
+\contentsline {subsubsection}{\numberline {7.18.3.11}imageDimension()}{109}{subsubsection.7.18.3.11}%
+\contentsline {section}{\numberline {7.19}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve$<$ Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{109}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{114}{subsection.7.19.1}%
+\contentsline {subsection}{\numberline {7.19.2}Constructor \& Destructor Documentation}{114}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [1/9]}}{114}{subsubsection.7.19.2.1}%
+\contentsline {subsubsection}{\numberline {7.19.2.2}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [2/9]}}{115}{subsubsection.7.19.2.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.3}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [3/9]}}{115}{subsubsection.7.19.2.3}%
+\contentsline {subsubsection}{\numberline {7.19.2.4}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [4/9]}}{115}{subsubsection.7.19.2.4}%
+\contentsline {subsubsection}{\numberline {7.19.2.5}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [5/9]}}{115}{subsubsection.7.19.2.5}%
+\contentsline {subsubsection}{\numberline {7.19.2.6}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [6/9]}}{115}{subsubsection.7.19.2.6}%
+\contentsline {subsubsection}{\numberline {7.19.2.7}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [7/9]}}{116}{subsubsection.7.19.2.7}%
+\contentsline {subsubsection}{\numberline {7.19.2.8}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [8/9]}}{116}{subsubsection.7.19.2.8}%
+\contentsline {subsubsection}{\numberline {7.19.2.9}DDESolutionCurve()\hspace {0.1cm}{\footnotesize \ttfamily [9/9]}}{116}{subsubsection.7.19.2.9}%
+\contentsline {subsection}{\numberline {7.19.3}Member Function Documentation}{116}{subsection.7.19.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.1}add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{117}{subsubsection.7.19.3.1}%
+\contentsline {subsubsection}{\numberline {7.19.3.2}add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{117}{subsubsection.7.19.3.2}%
+\contentsline {subsubsection}{\numberline {7.19.3.3}addPastPiece()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{117}{subsubsection.7.19.3.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.4}addPastPiece()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{117}{subsubsection.7.19.3.4}%
+\contentsline {subsubsection}{\numberline {7.19.3.5}affineTransform()}{117}{subsubsection.7.19.3.5}%
+\contentsline {subsubsection}{\numberline {7.19.3.6}copyPieces()}{118}{subsubsection.7.19.3.6}%
+\contentsline {subsubsection}{\numberline {7.19.3.7}dot()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{118}{subsubsection.7.19.3.7}%
+\contentsline {subsubsection}{\numberline {7.19.3.8}dot()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{118}{subsubsection.7.19.3.8}%
+\contentsline {subsubsection}{\numberline {7.19.3.9}dt()}{118}{subsubsection.7.19.3.9}%
+\contentsline {subsubsection}{\numberline {7.19.3.10}epsilonShift()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{118}{subsubsection.7.19.3.10}%
+\contentsline {subsubsection}{\numberline {7.19.3.11}epsilonShift()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{119}{subsubsection.7.19.3.11}%
+\contentsline {subsubsection}{\numberline {7.19.3.12}eval()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{119}{subsubsection.7.19.3.12}%
+\contentsline {subsubsection}{\numberline {7.19.3.13}eval()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{119}{subsubsection.7.19.3.13}%
+\contentsline {subsubsection}{\numberline {7.19.3.14}extend()}{119}{subsubsection.7.19.3.14}%
+\contentsline {subsubsection}{\numberline {7.19.3.15}get\_B()}{120}{subsubsection.7.19.3.15}%
+\contentsline {subsubsection}{\numberline {7.19.3.16}get\_Binv()}{120}{subsubsection.7.19.3.16}%
+\contentsline {subsubsection}{\numberline {7.19.3.17}get\_C()}{120}{subsubsection.7.19.3.17}%
+\contentsline {subsubsection}{\numberline {7.19.3.18}get\_r()}{120}{subsubsection.7.19.3.18}%
+\contentsline {subsubsection}{\numberline {7.19.3.19}get\_r0()}{120}{subsubsection.7.19.3.19}%
+\contentsline {subsubsection}{\numberline {7.19.3.20}get\_x()}{120}{subsubsection.7.19.3.20}%
+\contentsline {subsubsection}{\numberline {7.19.3.21}get\_Xi()}{120}{subsubsection.7.19.3.21}%
+\contentsline {subsubsection}{\numberline {7.19.3.22}getLastEnclosure()}{121}{subsubsection.7.19.3.22}%
+\contentsline {subsubsection}{\numberline {7.19.3.23}getPiece()}{121}{subsubsection.7.19.3.23}%
+\contentsline {subsubsection}{\numberline {7.19.3.24}getValueAtCurrent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{121}{subsubsection.7.19.3.24}%
+\contentsline {subsubsection}{\numberline {7.19.3.25}getValueAtCurrent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{121}{subsubsection.7.19.3.25}%
+\contentsline {subsubsection}{\numberline {7.19.3.26}jetOrderAt()}{121}{subsubsection.7.19.3.26}%
+\contentsline {subsubsection}{\numberline {7.19.3.27}jetPtr()}{121}{subsubsection.7.19.3.27}%
+\contentsline {subsubsection}{\numberline {7.19.3.28}length()}{122}{subsubsection.7.19.3.28}%
+\contentsline {subsubsection}{\numberline {7.19.3.29}makeStorage\_x()}{122}{subsubsection.7.19.3.29}%
+\contentsline {subsubsection}{\numberline {7.19.3.30}move()}{122}{subsubsection.7.19.3.30}%
+\contentsline {subsubsection}{\numberline {7.19.3.31}mul()}{122}{subsubsection.7.19.3.31}%
+\contentsline {subsubsection}{\numberline {7.19.3.32}mulThenAdd()}{122}{subsubsection.7.19.3.32}%
+\contentsline {subsubsection}{\numberline {7.19.3.33}operator=()}{123}{subsubsection.7.19.3.33}%
+\contentsline {subsubsection}{\numberline {7.19.3.34}pointToIndex()}{123}{subsubsection.7.19.3.34}%
+\contentsline {subsubsection}{\numberline {7.19.3.35}reduce()}{123}{subsubsection.7.19.3.35}%
+\contentsline {subsubsection}{\numberline {7.19.3.36}reinitialize()}{123}{subsubsection.7.19.3.36}%
+\contentsline {subsubsection}{\numberline {7.19.3.37}set\_B()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{123}{subsubsection.7.19.3.37}%
+\contentsline {subsubsection}{\numberline {7.19.3.38}set\_B()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{124}{subsubsection.7.19.3.38}%
+\contentsline {subsubsection}{\numberline {7.19.3.39}set\_Binv()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{124}{subsubsection.7.19.3.39}%
+\contentsline {subsubsection}{\numberline {7.19.3.40}set\_Binv()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{124}{subsubsection.7.19.3.40}%
+\contentsline {subsubsection}{\numberline {7.19.3.41}set\_C()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{124}{subsubsection.7.19.3.41}%
+\contentsline {subsubsection}{\numberline {7.19.3.42}set\_C()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{124}{subsubsection.7.19.3.42}%
+\contentsline {subsubsection}{\numberline {7.19.3.43}set\_Cr0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{124}{subsubsection.7.19.3.43}%
+\contentsline {subsubsection}{\numberline {7.19.3.44}set\_Cr0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{125}{subsubsection.7.19.3.44}%
+\contentsline {subsubsection}{\numberline {7.19.3.45}set\_r()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{125}{subsubsection.7.19.3.45}%
+\contentsline {subsubsection}{\numberline {7.19.3.46}set\_r()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{125}{subsubsection.7.19.3.46}%
+\contentsline {subsubsection}{\numberline {7.19.3.47}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{125}{subsubsection.7.19.3.47}%
+\contentsline {subsubsection}{\numberline {7.19.3.48}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{126}{subsubsection.7.19.3.48}%
+\contentsline {subsubsection}{\numberline {7.19.3.49}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{126}{subsubsection.7.19.3.49}%
+\contentsline {subsubsection}{\numberline {7.19.3.50}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{126}{subsubsection.7.19.3.50}%
+\contentsline {subsubsection}{\numberline {7.19.3.51}set\_Xi()}{126}{subsubsection.7.19.3.51}%
+\contentsline {subsubsection}{\numberline {7.19.3.52}setValueAtCurrent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{126}{subsubsection.7.19.3.52}%
+\contentsline {subsubsection}{\numberline {7.19.3.53}setValueAtCurrent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{127}{subsubsection.7.19.3.53}%
+\contentsline {subsubsection}{\numberline {7.19.3.54}show()}{127}{subsubsection.7.19.3.54}%
+\contentsline {subsubsection}{\numberline {7.19.3.55}storageDimension()}{127}{subsubsection.7.19.3.55}%
+\contentsline {subsubsection}{\numberline {7.19.3.56}storageN0()}{127}{subsubsection.7.19.3.56}%
+\contentsline {subsubsection}{\numberline {7.19.3.57}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{127}{subsubsection.7.19.3.57}%
+\contentsline {subsubsection}{\numberline {7.19.3.58}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{127}{subsubsection.7.19.3.58}%
+\contentsline {subsubsection}{\numberline {7.19.3.59}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{128}{subsubsection.7.19.3.59}%
+\contentsline {subsubsection}{\numberline {7.19.3.60}subcurve()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{128}{subsubsection.7.19.3.60}%
+\contentsline {subsubsection}{\numberline {7.19.3.61}take\_B()}{128}{subsubsection.7.19.3.61}%
+\contentsline {subsubsection}{\numberline {7.19.3.62}take\_Binv()}{128}{subsubsection.7.19.3.62}%
+\contentsline {subsubsection}{\numberline {7.19.3.63}take\_C()}{128}{subsubsection.7.19.3.63}%
+\contentsline {subsubsection}{\numberline {7.19.3.64}take\_r()}{129}{subsubsection.7.19.3.64}%
+\contentsline {subsubsection}{\numberline {7.19.3.65}take\_r0()}{129}{subsubsection.7.19.3.65}%
+\contentsline {subsubsection}{\numberline {7.19.3.66}take\_x()}{129}{subsubsection.7.19.3.66}%
+\contentsline {subsubsection}{\numberline {7.19.3.67}translate()}{129}{subsubsection.7.19.3.67}%
+\contentsline {subsubsection}{\numberline {7.19.3.68}writeTo()}{130}{subsubsection.7.19.3.68}%
+\contentsline {subsection}{\numberline {7.19.4}Friends And Related Function Documentation}{130}{subsection.7.19.4}%
+\contentsline {subsubsection}{\numberline {7.19.4.1}operator$<$$<$}{130}{subsubsection.7.19.4.1}%
+\contentsline {subsection}{\numberline {7.19.5}Member Data Documentation}{130}{subsection.7.19.5}%
+\contentsline {subsubsection}{\numberline {7.19.5.1}m\_r0}{130}{subsubsection.7.19.5.1}%
+\contentsline {section}{\numberline {7.20}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Taylor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Solver$<$ Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{131}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Member Function Documentation}{131}{subsection.7.20.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.1}encloseSolution()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{132}{subsubsection.7.20.1.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.2}encloseSolution()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{132}{subsubsection.7.20.1.2}%
+\contentsline {section}{\numberline {7.21}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Discrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Fin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{133}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{135}{subsection.7.21.1}%
+\contentsline {subsection}{\numberline {7.21.2}Member Typedef Documentation}{135}{subsection.7.21.2}%
+\contentsline {subsubsection}{\numberline {7.21.2.1}const\_iterator}{135}{subsubsection.7.21.2.1}%
+\contentsline {subsubsection}{\numberline {7.21.2.2}DelayStorageType}{135}{subsubsection.7.21.2.2}%
+\contentsline {subsubsection}{\numberline {7.21.2.3}iterator}{136}{subsubsection.7.21.2.3}%
+\contentsline {subsection}{\numberline {7.21.3}Constructor \& Destructor Documentation}{136}{subsection.7.21.3}%
+\contentsline {subsubsection}{\numberline {7.21.3.1}$\sim $DiscreteDelaysFunctionalMap()}{136}{subsubsection.7.21.3.1}%
+\contentsline {subsection}{\numberline {7.21.4}Member Function Documentation}{136}{subsection.7.21.4}%
+\contentsline {subsubsection}{\numberline {7.21.4.1}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{136}{subsubsection.7.21.4.1}%
+\contentsline {subsubsection}{\numberline {7.21.4.2}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{136}{subsubsection.7.21.4.2}%
+\contentsline {subsubsection}{\numberline {7.21.4.3}collectComputationData()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{137}{subsubsection.7.21.4.3}%
+\contentsline {subsubsection}{\numberline {7.21.4.4}collectComputationData()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{137}{subsubsection.7.21.4.4}%
+\contentsline {subsubsection}{\numberline {7.21.4.5}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{137}{subsubsection.7.21.4.5}%
+\contentsline {subsubsection}{\numberline {7.21.4.6}computeDDECoefficients()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{138}{subsubsection.7.21.4.6}%
+\contentsline {subsubsection}{\numberline {7.21.4.7}delaysCount()}{138}{subsubsection.7.21.4.7}%
+\contentsline {subsubsection}{\numberline {7.21.4.8}dimension()}{138}{subsubsection.7.21.4.8}%
+\contentsline {subsubsection}{\numberline {7.21.4.9}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{138}{subsubsection.7.21.4.9}%
+\contentsline {subsubsection}{\numberline {7.21.4.10}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{138}{subsubsection.7.21.4.10}%
+\contentsline {subsubsection}{\numberline {7.21.4.11}findRoughEnclosure()}{139}{subsubsection.7.21.4.11}%
+\contentsline {subsubsection}{\numberline {7.21.4.12}imageDimension()}{139}{subsubsection.7.21.4.12}%
+\contentsline {subsubsection}{\numberline {7.21.4.13}operator()()}{139}{subsubsection.7.21.4.13}%
+\contentsline {section}{\numberline {7.22}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Discrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid$<$ Real\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{139}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Detailed Description}{140}{subsection.7.22.1}%
+\contentsline {subsection}{\numberline {7.22.2}Member Function Documentation}{140}{subsection.7.22.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.1}badge()}{141}{subsubsection.7.22.2.1}%
+\contentsline {section}{\numberline {7.23}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Doubleton\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface$<$ Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Policies\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{141}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Detailed Description}{143}{subsection.7.23.1}%
+\contentsline {subsection}{\numberline {7.23.2}Constructor \& Destructor Documentation}{143}{subsection.7.23.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.1}$\sim $DoubletonInterface()}{144}{subsubsection.7.23.2.1}%
+\contentsline {subsection}{\numberline {7.23.3}Member Function Documentation}{144}{subsection.7.23.3}%
+\contentsline {subsubsection}{\numberline {7.23.3.1}add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{144}{subsubsection.7.23.3.1}%
+\contentsline {subsubsection}{\numberline {7.23.3.2}add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{144}{subsubsection.7.23.3.2}%
+\contentsline {subsubsection}{\numberline {7.23.3.3}affineTransform()}{144}{subsubsection.7.23.3.3}%
+\contentsline {subsubsection}{\numberline {7.23.3.4}common\_B()}{145}{subsubsection.7.23.3.4}%
+\contentsline {subsubsection}{\numberline {7.23.3.5}common\_C()}{145}{subsubsection.7.23.3.5}%
+\contentsline {subsubsection}{\numberline {7.23.3.6}common\_r()}{145}{subsubsection.7.23.3.6}%
+\contentsline {subsubsection}{\numberline {7.23.3.7}common\_r0()}{145}{subsubsection.7.23.3.7}%
+\contentsline {subsubsection}{\numberline {7.23.3.8}common\_x()}{146}{subsubsection.7.23.3.8}%
+\contentsline {subsubsection}{\numberline {7.23.3.9}dimension()}{146}{subsubsection.7.23.3.9}%
+\contentsline {subsubsection}{\numberline {7.23.3.10}dot()}{146}{subsubsection.7.23.3.10}%
+\contentsline {subsubsection}{\numberline {7.23.3.11}get\_B()}{146}{subsubsection.7.23.3.11}%
+\contentsline {subsubsection}{\numberline {7.23.3.12}get\_Binv()}{146}{subsubsection.7.23.3.12}%
+\contentsline {subsubsection}{\numberline {7.23.3.13}get\_C()}{147}{subsubsection.7.23.3.13}%
+\contentsline {subsubsection}{\numberline {7.23.3.14}get\_r()}{147}{subsubsection.7.23.3.14}%
+\contentsline {subsubsection}{\numberline {7.23.3.15}get\_r0()}{147}{subsubsection.7.23.3.15}%
+\contentsline {subsubsection}{\numberline {7.23.3.16}get\_x()}{147}{subsubsection.7.23.3.16}%
+\contentsline {subsubsection}{\numberline {7.23.3.17}hull()}{147}{subsubsection.7.23.3.17}%
+\contentsline {subsubsection}{\numberline {7.23.3.18}makeStorage\_B()}{147}{subsubsection.7.23.3.18}%
+\contentsline {subsubsection}{\numberline {7.23.3.19}makeStorage\_C()}{148}{subsubsection.7.23.3.19}%
+\contentsline {subsubsection}{\numberline {7.23.3.20}makeStorage\_r()}{148}{subsubsection.7.23.3.20}%
+\contentsline {subsubsection}{\numberline {7.23.3.21}makeStorage\_r0()}{148}{subsubsection.7.23.3.21}%
+\contentsline {subsubsection}{\numberline {7.23.3.22}makeStorage\_x()}{148}{subsubsection.7.23.3.22}%
+\contentsline {subsubsection}{\numberline {7.23.3.23}midPoint()}{148}{subsubsection.7.23.3.23}%
+\contentsline {subsubsection}{\numberline {7.23.3.24}mul()}{148}{subsubsection.7.23.3.24}%
+\contentsline {subsubsection}{\numberline {7.23.3.25}mulThenAdd()}{149}{subsubsection.7.23.3.25}%
+\contentsline {subsubsection}{\numberline {7.23.3.26}operator VectorType()}{149}{subsubsection.7.23.3.26}%
+\contentsline {subsubsection}{\numberline {7.23.3.27}operator$\ast $=()}{149}{subsubsection.7.23.3.27}%
+\contentsline {subsubsection}{\numberline {7.23.3.28}reinitialize()}{149}{subsubsection.7.23.3.28}%
+\contentsline {subsubsection}{\numberline {7.23.3.29}set\_B()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{150}{subsubsection.7.23.3.29}%
+\contentsline {subsubsection}{\numberline {7.23.3.30}set\_B()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{150}{subsubsection.7.23.3.30}%
+\contentsline {subsubsection}{\numberline {7.23.3.31}set\_Binv()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{150}{subsubsection.7.23.3.31}%
+\contentsline {subsubsection}{\numberline {7.23.3.32}set\_Binv()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{150}{subsubsection.7.23.3.32}%
+\contentsline {subsubsection}{\numberline {7.23.3.33}set\_C()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{151}{subsubsection.7.23.3.33}%
+\contentsline {subsubsection}{\numberline {7.23.3.34}set\_C()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{151}{subsubsection.7.23.3.34}%
+\contentsline {subsubsection}{\numberline {7.23.3.35}set\_Cr0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{151}{subsubsection.7.23.3.35}%
+\contentsline {subsubsection}{\numberline {7.23.3.36}set\_Cr0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{152}{subsubsection.7.23.3.36}%
+\contentsline {subsubsection}{\numberline {7.23.3.37}set\_r()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{152}{subsubsection.7.23.3.37}%
+\contentsline {subsubsection}{\numberline {7.23.3.38}set\_r()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{152}{subsubsection.7.23.3.38}%
+\contentsline {subsubsection}{\numberline {7.23.3.39}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{153}{subsubsection.7.23.3.39}%
+\contentsline {subsubsection}{\numberline {7.23.3.40}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{153}{subsubsection.7.23.3.40}%
+\contentsline {subsubsection}{\numberline {7.23.3.41}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{153}{subsubsection.7.23.3.41}%
+\contentsline {subsubsection}{\numberline {7.23.3.42}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{154}{subsubsection.7.23.3.42}%
+\contentsline {subsubsection}{\numberline {7.23.3.43}storageDimension()}{154}{subsubsection.7.23.3.43}%
+\contentsline {subsubsection}{\numberline {7.23.3.44}storageN0()}{154}{subsubsection.7.23.3.44}%
+\contentsline {subsubsection}{\numberline {7.23.3.45}take\_B()}{154}{subsubsection.7.23.3.45}%
+\contentsline {subsubsection}{\numberline {7.23.3.46}take\_Binv()}{154}{subsubsection.7.23.3.46}%
+\contentsline {subsubsection}{\numberline {7.23.3.47}take\_C()}{155}{subsubsection.7.23.3.47}%
+\contentsline {subsubsection}{\numberline {7.23.3.48}take\_r()}{155}{subsubsection.7.23.3.48}%
+\contentsline {subsubsection}{\numberline {7.23.3.49}take\_r0()}{155}{subsubsection.7.23.3.49}%
+\contentsline {subsubsection}{\numberline {7.23.3.50}take\_x()}{155}{subsubsection.7.23.3.50}%
+\contentsline {subsubsection}{\numberline {7.23.3.51}translate()}{156}{subsubsection.7.23.3.51}%
+\contentsline {subsection}{\numberline {7.23.4}Friends And Related Function Documentation}{156}{subsection.7.23.4}%
+\contentsline {subsubsection}{\numberline {7.23.4.1}operator$<$$<$}{156}{subsubsection.7.23.4.1}%
+\contentsline {subsubsection}{\numberline {7.23.4.2}operator$>$$>$}{156}{subsubsection.7.23.4.2}%
+\contentsline {section}{\numberline {7.24}El\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nino$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{156}{section.7.24}%
+\contentsline {subsection}{\numberline {7.24.1}Detailed Description}{157}{subsection.7.24.1}%
+\contentsline {subsection}{\numberline {7.24.2}Member Function Documentation}{157}{subsection.7.24.2}%
+\contentsline {subsubsection}{\numberline {7.24.2.1}dimension()}{157}{subsubsection.7.24.2.1}%
+\contentsline {subsubsection}{\numberline {7.24.2.2}getParamsCount()}{157}{subsubsection.7.24.2.2}%
+\contentsline {subsubsection}{\numberline {7.24.2.3}imageDimension()}{158}{subsubsection.7.24.2.3}%
+\contentsline {subsubsection}{\numberline {7.24.2.4}operator()()}{158}{subsubsection.7.24.2.4}%
+\contentsline {section}{\numberline {7.25}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Generator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Range$<$ I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type $>$ Class Template Reference}{158}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Member Function Documentation}{159}{subsection.7.25.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.1}increment()}{159}{subsubsection.7.25.1.1}%
+\contentsline {section}{\numberline {7.26}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Generic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jet$<$ Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, is\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval $>$ Class Template Reference}{159}{section.7.26}%
+\contentsline {subsection}{\numberline {7.26.1}Detailed Description}{161}{subsection.7.26.1}%
+\contentsline {subsection}{\numberline {7.26.2}Constructor \& Destructor Documentation}{162}{subsection.7.26.2}%
+\contentsline {subsubsection}{\numberline {7.26.2.1}GenericJet()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{162}{subsubsection.7.26.2.1}%
+\contentsline {subsubsection}{\numberline {7.26.2.2}GenericJet()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{162}{subsubsection.7.26.2.2}%
+\contentsline {subsubsection}{\numberline {7.26.2.3}GenericJet()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{162}{subsubsection.7.26.2.3}%
+\contentsline {subsubsection}{\numberline {7.26.2.4}GenericJet()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{162}{subsubsection.7.26.2.4}%
+\contentsline {subsubsection}{\numberline {7.26.2.5}GenericJet()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{163}{subsubsection.7.26.2.5}%
+\contentsline {subsubsection}{\numberline {7.26.2.6}GenericJet()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{163}{subsubsection.7.26.2.6}%
+\contentsline {subsubsection}{\numberline {7.26.2.7}$\sim $GenericJet()}{163}{subsubsection.7.26.2.7}%
+\contentsline {subsection}{\numberline {7.26.3}Member Function Documentation}{163}{subsection.7.26.3}%
+\contentsline {subsubsection}{\numberline {7.26.3.1}allocateCoeffs()}{163}{subsubsection.7.26.3.1}%
+\contentsline {subsubsection}{\numberline {7.26.3.2}at()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{164}{subsubsection.7.26.3.2}%
+\contentsline {subsubsection}{\numberline {7.26.3.3}at()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{164}{subsubsection.7.26.3.3}%
+\contentsline {subsubsection}{\numberline {7.26.3.4}back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{164}{subsubsection.7.26.3.4}%
+\contentsline {subsubsection}{\numberline {7.26.3.5}back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{164}{subsubsection.7.26.3.5}%
+\contentsline {subsubsection}{\numberline {7.26.3.6}badge()}{164}{subsubsection.7.26.3.6}%
+\contentsline {subsubsection}{\numberline {7.26.3.7}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{165}{subsubsection.7.26.3.7}%
+\contentsline {subsubsection}{\numberline {7.26.3.8}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{165}{subsubsection.7.26.3.8}%
+\contentsline {subsubsection}{\numberline {7.26.3.9}coeff()}{165}{subsubsection.7.26.3.9}%
+\contentsline {subsubsection}{\numberline {7.26.3.10}deallocateCoeffs()}{165}{subsubsection.7.26.3.10}%
+\contentsline {subsubsection}{\numberline {7.26.3.11}decreasedOrder()}{165}{subsubsection.7.26.3.11}%
+\contentsline {subsubsection}{\numberline {7.26.3.12}dimension()}{166}{subsubsection.7.26.3.12}%
+\contentsline {subsubsection}{\numberline {7.26.3.13}dt()}{166}{subsubsection.7.26.3.13}%
+\contentsline {subsubsection}{\numberline {7.26.3.14}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{166}{subsubsection.7.26.3.14}%
+\contentsline {subsubsection}{\numberline {7.26.3.15}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{166}{subsubsection.7.26.3.15}%
+\contentsline {subsubsection}{\numberline {7.26.3.16}eval()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{166}{subsubsection.7.26.3.16}%
+\contentsline {subsubsection}{\numberline {7.26.3.17}eval()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{167}{subsubsection.7.26.3.17}%
+\contentsline {subsubsection}{\numberline {7.26.3.18}evalAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{167}{subsubsection.7.26.3.18}%
+\contentsline {subsubsection}{\numberline {7.26.3.19}evalAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{167}{subsubsection.7.26.3.19}%
+\contentsline {subsubsection}{\numberline {7.26.3.20}evalCoeff()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{167}{subsubsection.7.26.3.20}%
+\contentsline {subsubsection}{\numberline {7.26.3.21}evalCoeff()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{167}{subsubsection.7.26.3.21}%
+\contentsline {subsubsection}{\numberline {7.26.3.22}evalCoeffAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{168}{subsubsection.7.26.3.22}%
+\contentsline {subsubsection}{\numberline {7.26.3.23}evalCoeffAtDelta()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{168}{subsubsection.7.26.3.23}%
+\contentsline {subsubsection}{\numberline {7.26.3.24}get\_x()}{168}{subsubsection.7.26.3.24}%
+\contentsline {subsubsection}{\numberline {7.26.3.25}getCoeffs()}{168}{subsubsection.7.26.3.25}%
+\contentsline {subsubsection}{\numberline {7.26.3.26}getT0()}{168}{subsubsection.7.26.3.26}%
+\contentsline {subsubsection}{\numberline {7.26.3.27}hull()}{169}{subsubsection.7.26.3.27}%
+\contentsline {subsubsection}{\numberline {7.26.3.28}increasedOrder()}{169}{subsubsection.7.26.3.28}%
+\contentsline {subsubsection}{\numberline {7.26.3.29}operator VectorType()}{169}{subsubsection.7.26.3.29}%
+\contentsline {subsubsection}{\numberline {7.26.3.30}operator=()}{169}{subsubsection.7.26.3.30}%
+\contentsline {subsubsection}{\numberline {7.26.3.31}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{169}{subsubsection.7.26.3.31}%
+\contentsline {subsubsection}{\numberline {7.26.3.32}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{170}{subsubsection.7.26.3.32}%
+\contentsline {subsubsection}{\numberline {7.26.3.33}order()}{170}{subsubsection.7.26.3.33}%
+\contentsline {subsubsection}{\numberline {7.26.3.34}reallocateCoeffs()}{170}{subsubsection.7.26.3.34}%
+\contentsline {subsubsection}{\numberline {7.26.3.35}set\_x()}{170}{subsubsection.7.26.3.35}%
+\contentsline {subsubsection}{\numberline {7.26.3.36}setCoeffs()}{170}{subsubsection.7.26.3.36}%
+\contentsline {subsubsection}{\numberline {7.26.3.37}setOrder()}{171}{subsubsection.7.26.3.37}%
+\contentsline {subsubsection}{\numberline {7.26.3.38}setT0()}{171}{subsubsection.7.26.3.38}%
+\contentsline {subsubsection}{\numberline {7.26.3.39}show()}{171}{subsubsection.7.26.3.39}%
+\contentsline {subsubsection}{\numberline {7.26.3.40}storageDimension()}{171}{subsubsection.7.26.3.40}%
+\contentsline {subsubsection}{\numberline {7.26.3.41}t0()}{171}{subsubsection.7.26.3.41}%
+\contentsline {subsection}{\numberline {7.26.4}Friends And Related Function Documentation}{172}{subsection.7.26.4}%
+\contentsline {subsubsection}{\numberline {7.26.4.1}operator$<$$<$}{172}{subsubsection.7.26.4.1}%
+\contentsline {subsubsection}{\numberline {7.26.4.2}operator$>$$>$}{172}{subsubsection.7.26.4.2}%
+\contentsline {section}{\numberline {7.27}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Lasota\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wazewska$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{172}{section.7.27}%
+\contentsline {subsection}{\numberline {7.27.1}Detailed Description}{173}{subsection.7.27.1}%
+\contentsline {subsection}{\numberline {7.27.2}Member Function Documentation}{173}{subsection.7.27.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.1}dimension()}{173}{subsubsection.7.27.2.1}%
+\contentsline {subsubsection}{\numberline {7.27.2.2}getParamsCount()}{174}{subsubsection.7.27.2.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.3}imageDimension()}{174}{subsubsection.7.27.2.3}%
+\contentsline {subsubsection}{\numberline {7.27.2.4}operator()()}{174}{subsubsection.7.27.2.4}%
+\contentsline {section}{\numberline {7.28}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Linear\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{174}{section.7.28}%
+\contentsline {subsection}{\numberline {7.28.1}Detailed Description}{175}{subsection.7.28.1}%
+\contentsline {subsection}{\numberline {7.28.2}Member Function Documentation}{175}{subsection.7.28.2}%
+\contentsline {subsubsection}{\numberline {7.28.2.1}dimension()}{175}{subsubsection.7.28.2.1}%
+\contentsline {subsubsection}{\numberline {7.28.2.2}imageDimension()}{176}{subsubsection.7.28.2.2}%
+\contentsline {subsubsection}{\numberline {7.28.2.3}operator()()}{176}{subsubsection.7.28.2.3}%
+\contentsline {section}{\numberline {7.29}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Mackey\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glass$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{176}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Detailed Description}{177}{subsection.7.29.1}%
+\contentsline {subsection}{\numberline {7.29.2}Member Function Documentation}{178}{subsection.7.29.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.1}dimension()}{178}{subsubsection.7.29.2.1}%
+\contentsline {subsubsection}{\numberline {7.29.2.2}getParamsCount()}{178}{subsubsection.7.29.2.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.3}imageDimension()}{178}{subsubsection.7.29.2.3}%
+\contentsline {subsubsection}{\numberline {7.29.2.4}operator()()}{178}{subsubsection.7.29.2.4}%
+\contentsline {subsection}{\numberline {7.29.3}Member Data Documentation}{178}{subsection.7.29.3}%
+\contentsline {subsubsection}{\numberline {7.29.3.1}gamma}{179}{subsubsection.7.29.3.1}%
+\contentsline {subsubsection}{\numberline {7.29.3.2}n}{179}{subsubsection.7.29.3.2}%
+\contentsline {section}{\numberline {7.30}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Nonrigorous\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper$<$ Eq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{179}{section.7.30}%
+\contentsline {subsection}{\numberline {7.30.1}Detailed Description}{181}{subsection.7.30.1}%
+\contentsline {subsection}{\numberline {7.30.2}Constructor \& Destructor Documentation}{181}{subsection.7.30.2}%
+\contentsline {subsubsection}{\numberline {7.30.2.1}NonrigorousHelper()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{181}{subsubsection.7.30.2.1}%
+\contentsline {subsubsection}{\numberline {7.30.2.2}NonrigorousHelper()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{182}{subsubsection.7.30.2.2}%
+\contentsline {subsubsection}{\numberline {7.30.2.3}NonrigorousHelper()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{182}{subsubsection.7.30.2.3}%
+\contentsline {subsection}{\numberline {7.30.3}Member Function Documentation}{182}{subsection.7.30.3}%
+\contentsline {subsubsection}{\numberline {7.30.3.1}integrate()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{182}{subsubsection.7.30.3.1}%
+\contentsline {subsubsection}{\numberline {7.30.3.2}integrate()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{183}{subsubsection.7.30.3.2}%
+\contentsline {subsubsection}{\numberline {7.30.3.3}integrate()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{183}{subsubsection.7.30.3.3}%
+\contentsline {subsubsection}{\numberline {7.30.3.4}loadData()}{183}{subsubsection.7.30.3.4}%
+\contentsline {subsubsection}{\numberline {7.30.3.5}makeSection()}{183}{subsubsection.7.30.3.5}%
+\contentsline {subsubsection}{\numberline {7.30.3.6}makeSolver()}{184}{subsubsection.7.30.3.6}%
+\contentsline {subsubsection}{\numberline {7.30.3.7}poincare()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{184}{subsubsection.7.30.3.7}%
+\contentsline {subsubsection}{\numberline {7.30.3.8}poincare()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{184}{subsubsection.7.30.3.8}%
+\contentsline {subsubsection}{\numberline {7.30.3.9}poincare()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{184}{subsubsection.7.30.3.9}%
+\contentsline {subsubsection}{\numberline {7.30.3.10}refinePeriodic()}{185}{subsubsection.7.30.3.10}%
+\contentsline {subsubsection}{\numberline {7.30.3.11}setParam()}{185}{subsubsection.7.30.3.11}%
+\contentsline {subsubsection}{\numberline {7.30.3.12}setParams()}{185}{subsubsection.7.30.3.12}%
+\contentsline {section}{\numberline {7.31}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pendulum Class Reference}{185}{section.7.31}%
+\contentsline {subsection}{\numberline {7.31.1}Detailed Description}{186}{subsection.7.31.1}%
+\contentsline {subsection}{\numberline {7.31.2}Member Function Documentation}{186}{subsection.7.31.2}%
+\contentsline {subsubsection}{\numberline {7.31.2.1}dimension()}{186}{subsubsection.7.31.2.1}%
+\contentsline {subsubsection}{\numberline {7.31.2.2}imageDimension()}{186}{subsubsection.7.31.2.2}%
+\contentsline {section}{\numberline {7.32}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Path\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{186}{section.7.32}%
+\contentsline {subsection}{\numberline {7.32.1}Detailed Description}{187}{subsection.7.32.1}%
+\contentsline {subsection}{\numberline {7.32.2}Constructor \& Destructor Documentation}{187}{subsection.7.32.2}%
+\contentsline {subsubsection}{\numberline {7.32.2.1}PathConfig()}{187}{subsubsection.7.32.2.1}%
+\contentsline {subsection}{\numberline {7.32.3}Member Function Documentation}{187}{subsection.7.32.3}%
+\contentsline {subsubsection}{\numberline {7.32.3.1}filename()}{187}{subsubsection.7.32.3.1}%
+\contentsline {subsubsection}{\numberline {7.32.3.2}filepath()}{188}{subsubsection.7.32.3.2}%
+\contentsline {subsubsection}{\numberline {7.32.3.3}fullpath()}{188}{subsubsection.7.32.3.3}%
+\contentsline {subsubsection}{\numberline {7.32.3.4}mkdir\_p()}{188}{subsubsection.7.32.3.4}%
+\contentsline {subsubsection}{\numberline {7.32.3.5}suffix()}{188}{subsubsection.7.32.3.5}%
+\contentsline {section}{\numberline {7.33}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Perez\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Malta\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coutinho$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{188}{section.7.33}%
+\contentsline {subsection}{\numberline {7.33.1}Detailed Description}{189}{subsection.7.33.1}%
+\contentsline {subsection}{\numberline {7.33.2}Member Function Documentation}{189}{subsection.7.33.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.1}dimension()}{189}{subsubsection.7.33.2.1}%
+\contentsline {subsubsection}{\numberline {7.33.2.2}getParamsCount()}{190}{subsubsection.7.33.2.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.3}imageDimension()}{190}{subsubsection.7.33.2.3}%
+\contentsline {subsubsection}{\numberline {7.33.2.4}operator()()}{190}{subsubsection.7.33.2.4}%
+\contentsline {section}{\numberline {7.34}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Discrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Fin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::rebind$<$ Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Struct Template Reference}{190}{section.7.34}%
+\contentsline {section}{\numberline {7.35}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Basic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Discrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Functional\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Fin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::rebind$<$ Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Solution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Struct Template Reference}{191}{section.7.35}%
+\contentsline {section}{\numberline {7.36}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Generic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jet$<$ Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, is\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::rebind$<$ Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval $>$ Struct Template Reference}{191}{section.7.36}%
+\contentsline {section}{\numberline {7.37}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Piecewise\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Polynomial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Curve$<$ Grid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::rebind$<$ Other\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Struct Template Reference}{191}{section.7.37}%
+\contentsline {section}{\numberline {7.38}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddeshelper\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Rigorous\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper$<$ Eq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, delays\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Policies\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{191}{section.7.38}%
+\contentsline {subsection}{\numberline {7.38.1}Detailed Description}{194}{subsection.7.38.1}%
+\contentsline {subsection}{\numberline {7.38.2}Member Function Documentation}{194}{subsection.7.38.2}%
+\contentsline {subsubsection}{\numberline {7.38.2.1}constantInitialSolution()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{194}{subsubsection.7.38.2.1}%
+\contentsline {subsubsection}{\numberline {7.38.2.2}constantInitialSolution()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{194}{subsubsection.7.38.2.2}%
+\contentsline {subsubsection}{\numberline {7.38.2.3}dataToSolution()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{195}{subsubsection.7.38.2.3}%
+\contentsline {subsubsection}{\numberline {7.38.2.4}dataToSolution()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{195}{subsubsection.7.38.2.4}%
+\contentsline {subsubsection}{\numberline {7.38.2.5}dumpData()}{195}{subsubsection.7.38.2.5}%
+\contentsline {subsubsection}{\numberline {7.38.2.6}functionToSolution()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{195}{subsubsection.7.38.2.6}%
+\contentsline {subsubsection}{\numberline {7.38.2.7}functionToSolution()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{196}{subsubsection.7.38.2.7}%
+\contentsline {subsubsection}{\numberline {7.38.2.8}poincare()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{196}{subsubsection.7.38.2.8}%
+\contentsline {subsubsection}{\numberline {7.38.2.9}poincare()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{196}{subsubsection.7.38.2.9}%
+\contentsline {subsubsection}{\numberline {7.38.2.10}poincare()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{196}{subsubsection.7.38.2.10}%
+\contentsline {subsubsection}{\numberline {7.38.2.11}r0ToSolution()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{197}{subsubsection.7.38.2.11}%
+\contentsline {subsubsection}{\numberline {7.38.2.12}r0ToSolution()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{197}{subsubsection.7.38.2.12}%
+\contentsline {subsubsection}{\numberline {7.38.2.13}setParam()}{197}{subsubsection.7.38.2.13}%
+\contentsline {subsubsection}{\numberline {7.38.2.14}setParams()}{197}{subsubsection.7.38.2.14}%
+\contentsline {subsubsection}{\numberline {7.38.2.15}timemap()}{198}{subsubsection.7.38.2.15}%
+\contentsline {section}{\numberline {7.39}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Rossler\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delay$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{198}{section.7.39}%
+\contentsline {subsection}{\numberline {7.39.1}Detailed Description}{199}{subsection.7.39.1}%
+\contentsline {subsection}{\numberline {7.39.2}Member Function Documentation}{199}{subsection.7.39.2}%
+\contentsline {subsubsection}{\numberline {7.39.2.1}getParamsCount()}{199}{subsubsection.7.39.2.1}%
+\contentsline {subsubsection}{\numberline {7.39.2.2}imageDimension()}{199}{subsubsection.7.39.2.2}%
+\contentsline {subsection}{\numberline {7.39.3}Member Data Documentation}{199}{subsection.7.39.3}%
+\contentsline {subsubsection}{\numberline {7.39.3.1}a}{200}{subsubsection.7.39.3.1}%
+\contentsline {subsubsection}{\numberline {7.39.3.2}b}{200}{subsubsection.7.39.3.2}%
+\contentsline {subsubsection}{\numberline {7.39.3.3}c}{200}{subsubsection.7.39.3.3}%
+\contentsline {subsubsection}{\numberline {7.39.3.4}epsi}{200}{subsubsection.7.39.3.4}%
+\contentsline {section}{\numberline {7.40}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Linear\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{200}{section.7.40}%
+\contentsline {subsection}{\numberline {7.40.1}Detailed Description}{201}{subsection.7.40.1}%
+\contentsline {subsection}{\numberline {7.40.2}Member Function Documentation}{201}{subsection.7.40.2}%
+\contentsline {subsubsection}{\numberline {7.40.2.1}dimension()}{201}{subsubsection.7.40.2.1}%
+\contentsline {subsubsection}{\numberline {7.40.2.2}imageDimension()}{202}{subsubsection.7.40.2.2}%
+\contentsline {section}{\numberline {7.41}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Doubleton$<$ Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Policy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{202}{section.7.41}%
+\contentsline {subsection}{\numberline {7.41.1}Detailed Description}{206}{subsection.7.41.1}%
+\contentsline {subsection}{\numberline {7.41.2}Constructor \& Destructor Documentation}{206}{subsection.7.41.2}%
+\contentsline {subsubsection}{\numberline {7.41.2.1}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [1/11]}}{206}{subsubsection.7.41.2.1}%
+\contentsline {subsubsection}{\numberline {7.41.2.2}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [2/11]}}{206}{subsubsection.7.41.2.2}%
+\contentsline {subsubsection}{\numberline {7.41.2.3}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [3/11]}}{207}{subsubsection.7.41.2.3}%
+\contentsline {subsubsection}{\numberline {7.41.2.4}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [4/11]}}{207}{subsubsection.7.41.2.4}%
+\contentsline {subsubsection}{\numberline {7.41.2.5}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [5/11]}}{207}{subsubsection.7.41.2.5}%
+\contentsline {subsubsection}{\numberline {7.41.2.6}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [6/11]}}{207}{subsubsection.7.41.2.6}%
+\contentsline {subsubsection}{\numberline {7.41.2.7}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [7/11]}}{207}{subsubsection.7.41.2.7}%
+\contentsline {subsubsection}{\numberline {7.41.2.8}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [8/11]}}{208}{subsubsection.7.41.2.8}%
+\contentsline {subsubsection}{\numberline {7.41.2.9}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [9/11]}}{208}{subsubsection.7.41.2.9}%
+\contentsline {subsubsection}{\numberline {7.41.2.10}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [10/11]}}{208}{subsubsection.7.41.2.10}%
+\contentsline {subsubsection}{\numberline {7.41.2.11}SharedDoubleton()\hspace {0.1cm}{\footnotesize \ttfamily [11/11]}}{208}{subsubsection.7.41.2.11}%
+\contentsline {subsubsection}{\numberline {7.41.2.12}$\sim $SharedDoubleton()}{208}{subsubsection.7.41.2.12}%
+\contentsline {subsection}{\numberline {7.41.3}Member Function Documentation}{209}{subsection.7.41.3}%
+\contentsline {subsubsection}{\numberline {7.41.3.1}add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{209}{subsubsection.7.41.3.1}%
+\contentsline {subsubsection}{\numberline {7.41.3.2}add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{209}{subsubsection.7.41.3.2}%
+\contentsline {subsubsection}{\numberline {7.41.3.3}affineTransform()}{209}{subsubsection.7.41.3.3}%
+\contentsline {subsubsection}{\numberline {7.41.3.4}allocate()}{209}{subsubsection.7.41.3.4}%
+\contentsline {subsubsection}{\numberline {7.41.3.5}assureOwner()}{210}{subsubsection.7.41.3.5}%
+\contentsline {subsubsection}{\numberline {7.41.3.6}common\_B()}{210}{subsubsection.7.41.3.6}%
+\contentsline {subsubsection}{\numberline {7.41.3.7}common\_Binv()}{210}{subsubsection.7.41.3.7}%
+\contentsline {subsubsection}{\numberline {7.41.3.8}common\_C()}{210}{subsubsection.7.41.3.8}%
+\contentsline {subsubsection}{\numberline {7.41.3.9}common\_r()}{210}{subsubsection.7.41.3.9}%
+\contentsline {subsubsection}{\numberline {7.41.3.10}common\_r0()}{211}{subsubsection.7.41.3.10}%
+\contentsline {subsubsection}{\numberline {7.41.3.11}common\_x()}{211}{subsubsection.7.41.3.11}%
+\contentsline {subsubsection}{\numberline {7.41.3.12}deallocate()}{211}{subsubsection.7.41.3.12}%
+\contentsline {subsubsection}{\numberline {7.41.3.13}dimension()}{211}{subsubsection.7.41.3.13}%
+\contentsline {subsubsection}{\numberline {7.41.3.14}get\_B()}{211}{subsubsection.7.41.3.14}%
+\contentsline {subsubsection}{\numberline {7.41.3.15}get\_Binv()}{212}{subsubsection.7.41.3.15}%
+\contentsline {subsubsection}{\numberline {7.41.3.16}get\_C()}{212}{subsubsection.7.41.3.16}%
+\contentsline {subsubsection}{\numberline {7.41.3.17}get\_r()}{212}{subsubsection.7.41.3.17}%
+\contentsline {subsubsection}{\numberline {7.41.3.18}get\_r0()}{212}{subsubsection.7.41.3.18}%
+\contentsline {subsubsection}{\numberline {7.41.3.19}get\_x()}{212}{subsubsection.7.41.3.19}%
+\contentsline {subsubsection}{\numberline {7.41.3.20}mul()}{212}{subsubsection.7.41.3.20}%
+\contentsline {subsubsection}{\numberline {7.41.3.21}mulThenAdd()}{213}{subsubsection.7.41.3.21}%
+\contentsline {subsubsection}{\numberline {7.41.3.22}operator=()}{213}{subsubsection.7.41.3.22}%
+\contentsline {subsubsection}{\numberline {7.41.3.23}rawSetup()}{213}{subsubsection.7.41.3.23}%
+\contentsline {subsubsection}{\numberline {7.41.3.24}reallocate()}{213}{subsubsection.7.41.3.24}%
+\contentsline {subsubsection}{\numberline {7.41.3.25}reinitialize()}{213}{subsubsection.7.41.3.25}%
+\contentsline {subsubsection}{\numberline {7.41.3.26}sanityCheck()}{214}{subsubsection.7.41.3.26}%
+\contentsline {subsubsection}{\numberline {7.41.3.27}set\_B()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{214}{subsubsection.7.41.3.27}%
+\contentsline {subsubsection}{\numberline {7.41.3.28}set\_B()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{214}{subsubsection.7.41.3.28}%
+\contentsline {subsubsection}{\numberline {7.41.3.29}set\_Binv()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{214}{subsubsection.7.41.3.29}%
+\contentsline {subsubsection}{\numberline {7.41.3.30}set\_Binv()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{215}{subsubsection.7.41.3.30}%
+\contentsline {subsubsection}{\numberline {7.41.3.31}set\_C()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{215}{subsubsection.7.41.3.31}%
+\contentsline {subsubsection}{\numberline {7.41.3.32}set\_C()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{215}{subsubsection.7.41.3.32}%
+\contentsline {subsubsection}{\numberline {7.41.3.33}set\_Cr0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{215}{subsubsection.7.41.3.33}%
+\contentsline {subsubsection}{\numberline {7.41.3.34}set\_Cr0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{216}{subsubsection.7.41.3.34}%
+\contentsline {subsubsection}{\numberline {7.41.3.35}set\_r()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{216}{subsubsection.7.41.3.35}%
+\contentsline {subsubsection}{\numberline {7.41.3.36}set\_r()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{216}{subsubsection.7.41.3.36}%
+\contentsline {subsubsection}{\numberline {7.41.3.37}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{216}{subsubsection.7.41.3.37}%
+\contentsline {subsubsection}{\numberline {7.41.3.38}set\_r0()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{217}{subsubsection.7.41.3.38}%
+\contentsline {subsubsection}{\numberline {7.41.3.39}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{217}{subsubsection.7.41.3.39}%
+\contentsline {subsubsection}{\numberline {7.41.3.40}set\_x()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{217}{subsubsection.7.41.3.40}%
+\contentsline {subsubsection}{\numberline {7.41.3.41}storageDimension()}{217}{subsubsection.7.41.3.41}%
+\contentsline {subsubsection}{\numberline {7.41.3.42}storageN0()}{217}{subsubsection.7.41.3.42}%
+\contentsline {subsubsection}{\numberline {7.41.3.43}take\_B()}{218}{subsubsection.7.41.3.43}%
+\contentsline {subsubsection}{\numberline {7.41.3.44}take\_Binv()}{218}{subsubsection.7.41.3.44}%
+\contentsline {subsubsection}{\numberline {7.41.3.45}take\_C()}{218}{subsubsection.7.41.3.45}%
+\contentsline {subsubsection}{\numberline {7.41.3.46}take\_r()}{218}{subsubsection.7.41.3.46}%
+\contentsline {subsubsection}{\numberline {7.41.3.47}take\_r0()}{218}{subsubsection.7.41.3.47}%
+\contentsline {subsubsection}{\numberline {7.41.3.48}take\_x()}{219}{subsubsection.7.41.3.48}%
+\contentsline {subsubsection}{\numberline {7.41.3.49}translate()}{219}{subsubsection.7.41.3.49}%
+\contentsline {subsubsection}{\numberline {7.41.3.50}updateBinv()}{219}{subsubsection.7.41.3.50}%
+\contentsline {section}{\numberline {7.42}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Discrete\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid$<$ Real\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type Class Reference}{219}{section.7.42}%
+\contentsline {subsection}{\numberline {7.42.1}Member Function Documentation}{220}{subsection.7.42.1}%
+\contentsline {subsubsection}{\numberline {7.42.1.1}badge()}{221}{subsubsection.7.42.1.1}%
+\contentsline {section}{\numberline {7.43}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Toy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{221}{section.7.43}%
+\contentsline {subsection}{\numberline {7.43.1}Detailed Description}{221}{subsection.7.43.1}%
+\contentsline {subsection}{\numberline {7.43.2}Member Function Documentation}{221}{subsection.7.43.2}%
+\contentsline {subsubsection}{\numberline {7.43.2.1}dimension()}{222}{subsubsection.7.43.2.1}%
+\contentsline {subsubsection}{\numberline {7.43.2.2}imageDimension()}{222}{subsubsection.7.43.2.2}%
+\contentsline {section}{\numberline {7.44}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Toy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sq Class Reference}{222}{section.7.44}%
+\contentsline {subsection}{\numberline {7.44.1}Detailed Description}{222}{subsection.7.44.1}%
+\contentsline {subsection}{\numberline {7.44.2}Member Function Documentation}{223}{subsection.7.44.2}%
+\contentsline {subsubsection}{\numberline {7.44.2.1}dimension()}{223}{subsubsection.7.44.2.1}%
+\contentsline {subsubsection}{\numberline {7.44.2.2}imageDimension()}{223}{subsubsection.7.44.2.2}%
+\contentsline {section}{\numberline {7.45}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Toy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SqA$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{223}{section.7.45}%
+\contentsline {subsection}{\numberline {7.45.1}Detailed Description}{224}{subsection.7.45.1}%
+\contentsline {subsection}{\numberline {7.45.2}Member Function Documentation}{224}{subsection.7.45.2}%
+\contentsline {subsubsection}{\numberline {7.45.2.1}dimension()}{224}{subsubsection.7.45.2.1}%
+\contentsline {subsubsection}{\numberline {7.45.2.2}getParamsCount()}{224}{subsubsection.7.45.2.2}%
+\contentsline {subsubsection}{\numberline {7.45.2.3}imageDimension()}{225}{subsubsection.7.45.2.3}%
+\contentsline {section}{\numberline {7.46}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}With\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data$<$ Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{225}{section.7.46}%
+\contentsline {subsection}{\numberline {7.46.1}Detailed Description}{226}{subsection.7.46.1}%
+\contentsline {section}{\numberline {7.47}capd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ddes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Wischert$<$ Scalar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec, Param\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spec $>$ Class Template Reference}{226}{section.7.47}%
+\contentsline {subsection}{\numberline {7.47.1}Detailed Description}{227}{subsection.7.47.1}%
+\contentsline {subsection}{\numberline {7.47.2}Member Function Documentation}{227}{subsection.7.47.2}%
+\contentsline {subsubsection}{\numberline {7.47.2.1}dimension()}{227}{subsubsection.7.47.2.1}%
+\contentsline {subsubsection}{\numberline {7.47.2.2}getParamsCount()}{228}{subsubsection.7.47.2.2}%
+\contentsline {subsubsection}{\numberline {7.47.2.3}imageDimension()}{228}{subsubsection.7.47.2.3}%
+\contentsline {subsubsection}{\numberline {7.47.2.4}operator()()}{228}{subsubsection.7.47.2.4}%
+\contentsline {chapter}{Index}{229}{section*.228}%

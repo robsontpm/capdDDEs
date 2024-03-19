@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['nonrigoroushelper_465',['NonrigorousHelper',['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html#a4b15095804124c3443210d4591c36002',1,'capd::ddeshelper::NonrigorousHelper::NonrigorousHelper(ParamsVector params, size_type p, size_type n, step_type reqSteps=0, step_type maxSteps=0, size_type maxOrder=10)'],['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html#a354111a6d22289f785e17f3659370ade',1,'capd::ddeshelper::NonrigorousHelper::NonrigorousHelper(std::string filepath, step_type reqSteps=0, step_type maxSteps=0, size_type maxOrder=10)'],['../classcapd_1_1ddeshelper_1_1NonrigorousHelper.html#a4d50eff4cf01c93f4970f1e7e092312d',1,'capd::ddeshelper::NonrigorousHelper::NonrigorousHelper(std::istream &amp;input, step_type reqSteps=0, step_type maxSteps=0, size_type maxOrder=10)']]]
+];

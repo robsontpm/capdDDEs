@@ -1,0 +1,114 @@
+\hypertarget{classcapd_1_1ddes_1_1LinearMap}{}\doxysection{capd\+::ddes\+::Linear\+Map$<$ Matrix\+Spec, Param\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1LinearMap}\index{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}}
+
+
+{\ttfamily \#include $<$Sample\+Eqns.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_ad4562400d7041584df5db6e46c091f35}\label{classcapd_1_1ddes_1_1LinearMap_ad4562400d7041584df5db6e46c091f35}} 
+typedef Matrix\+Spec {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_aaa407eefcbc5b0cddd06b95444dfdb2b}\label{classcapd_1_1ddes_1_1LinearMap_aaa407eefcbc5b0cddd06b95444dfdb2b}} 
+typedef Matrix\+Spec\+::\+Row\+Vector\+Type {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a6ea18160fc4845d24b32104c1db1a93d}\label{classcapd_1_1ddes_1_1LinearMap_a6ea18160fc4845d24b32104c1db1a93d}} 
+typedef Vector\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_ade849de1b97df62ea04003159904cd79}\label{classcapd_1_1ddes_1_1LinearMap_ade849de1b97df62ea04003159904cd79}} 
+typedef Vector\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_ada4a0199d5f3383ad9644698d7068a88}\label{classcapd_1_1ddes_1_1LinearMap_ada4a0199d5f3383ad9644698d7068a88}} 
+typedef Scalar\+Type {\bfseries Real\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a6d11806e701217ebdd46d4e515a2dc86}\label{classcapd_1_1ddes_1_1LinearMap_a6d11806e701217ebdd46d4e515a2dc86}} 
+typedef Param\+Spec {\bfseries Param\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a9d872eaef4e8df83b6329abafb7b0a11}\label{classcapd_1_1ddes_1_1LinearMap_a9d872eaef4e8df83b6329abafb7b0a11}} 
+void {\bfseries reinitialize} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_ac3f8edae43cd46bbfacb535fb7318567}\label{classcapd_1_1ddes_1_1LinearMap_ac3f8edae43cd46bbfacb535fb7318567}} 
+{\bfseries Linear\+Map} (size\+\_\+type d)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a1a8c1f6426f828db3afbb9452f644dda}\label{classcapd_1_1ddes_1_1LinearMap_a1a8c1f6426f828db3afbb9452f644dda}} 
+{\bfseries Linear\+Map} (Matrix\+Type const \&A, Matrix\+Type const \&B, Vector\+Type const \&b)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_abcb3594d79f0caa58c78104606e0511e}\label{classcapd_1_1ddes_1_1LinearMap_abcb3594d79f0caa58c78104606e0511e}} 
+{\bfseries Linear\+Map} (\mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap}{Linear\+Map}} const \&orig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_af650466719f989939cce19a2f6034e52}\label{classcapd_1_1ddes_1_1LinearMap_af650466719f989939cce19a2f6034e52}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap}{Linear\+Map}} \& {\bfseries operator=} (\mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap}{Linear\+Map}} const \&orig)
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap_a326c61948cd935b746b2d8bc341f2223}{image\+Dimension}} () const
+\item 
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap_a96f50e9507122ff55f611d965e33a04d}{dimension}} () const
+\item 
+{\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap_a7366e48964400d1f2e4264f59ebd3c5c}{operator()}} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a796da8f5a8e8ad6d3a087cc0cec208f4}\label{classcapd_1_1ddes_1_1LinearMap_a796da8f5a8e8ad6d3a087cc0cec208f4}} 
+static std\+::string {\bfseries show} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a0cd643e9ab2cfe57651e7d8697feeb13}\label{classcapd_1_1ddes_1_1LinearMap_a0cd643e9ab2cfe57651e7d8697feeb13}} 
+Matrix\+Type {\bfseries A}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_ab25a0529135b720619843052123d773d}\label{classcapd_1_1ddes_1_1LinearMap_ab25a0529135b720619843052123d773d}} 
+Matrix\+Type {\bfseries B}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a4b45387b2164b8512a04e339f40842f5}\label{classcapd_1_1ddes_1_1LinearMap_a4b45387b2164b8512a04e339f40842f5}} 
+Vector\+Type {\bfseries b}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_af512cf355a7405c4a4da6896ca95b97f}\label{classcapd_1_1ddes_1_1LinearMap_af512cf355a7405c4a4da6896ca95b97f}} 
+Matrix\+Type {\bfseries AB}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Spec, typename Param\+Spec = typename Matrix\+Spec\+::\+Scalar\+Type$>$\newline
+class capd\+::ddes\+::\+Linear\+Map$<$ Matrix\+Spec, Param\+Spec $>$}
+
+Vector linear equation of the form\+: \begin{DoxyVerb}    x'(t) = A * x(t) + B * x(t-tau) + b
+\end{DoxyVerb}
+
+
+Use with \textquotesingle{}\mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{Discrete\+Delays\+Functional\+Map}}\textquotesingle{} to define tau 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a96f50e9507122ff55f611d965e33a04d}\label{classcapd_1_1ddes_1_1LinearMap_a96f50e9507122ff55f611d965e33a04d}} 
+\index{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Param\+Spec  = typename Matrix\+Spec\+::\+Scalar\+Type$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap}{capd\+::ddes\+::\+Linear\+Map}}$<$ Matrix\+Spec, Param\+Spec $>$\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+input dimension of the internal map, x(t) is one, x(t-\/tau\+\_\+1) is another, etc.. (thus the formula) \mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a326c61948cd935b746b2d8bc341f2223}\label{classcapd_1_1ddes_1_1LinearMap_a326c61948cd935b746b2d8bc341f2223}} 
+\index{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}!imageDimension@{imageDimension}}
+\index{imageDimension@{imageDimension}!capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{imageDimension()}{imageDimension()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Param\+Spec  = typename Matrix\+Spec\+::\+Scalar\+Type$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap}{capd\+::ddes\+::\+Linear\+Map}}$<$ Matrix\+Spec, Param\+Spec $>$\+::image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+output dimension of the internal map \mbox{\Hypertarget{classcapd_1_1ddes_1_1LinearMap_a7366e48964400d1f2e4264f59ebd3c5c}\label{classcapd_1_1ddes_1_1LinearMap_a7366e48964400d1f2e4264f59ebd3c5c}} 
+\index{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$@{capd::ddes::LinearMap$<$ MatrixSpec, ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Param\+Spec  = typename Matrix\+Spec\+::\+Scalar\+Type$>$ \\
+template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap}{capd\+::ddes\+::\+Linear\+Map}}$<$ Matrix\+Spec, Param\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{const Real\+Spec \&}]{t,  }\item[{const In\+Vector\+Spec}]{x,  }\item[{Out\+Vector\+Spec \&}]{fx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+We require that solution class has a templated operator of this signature the program will pass in x the m values where m = \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap_a96f50e9507122ff55f611d965e33a04d}{dimension()}} in fx there will be reference to already initialized vector of dimension d = \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap_a326c61948cd935b746b2d8bc341f2223}{image\+Dimension()}}. The dimensions are as follows\+: if d = \mbox{\hyperlink{classcapd_1_1ddes_1_1LinearMap_a326c61948cd935b746b2d8bc341f2223}{image\+Dimension()}} then usually m = d $\ast$ (number of delayed terms + 1). +1 is for the current term, which is always present, and always assumed to be stored in x\mbox{[}0\mbox{]}. (so if your equation is not dependent on this, then you should not use it in your formulas). In this example (Mackey-\/\+Glass Eq.), we have\+: d = 1 (scalar), m = 2 (two terms\+: current value at 0 and delayed term at t = t -\/ \textbackslash{}tau)
+
+Note that tau is not explicitely present in the equation. The concrete value of the delay is defined when constructing \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteDelaysFunctionalMap}{Discrete\+Delays\+Functional\+Map}} from this template function. See docs there. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/Sample\+Eqns.\+h\end{DoxyCompactItemize}

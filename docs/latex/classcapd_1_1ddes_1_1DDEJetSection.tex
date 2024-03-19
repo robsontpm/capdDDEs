@@ -1,0 +1,158 @@
+\hypertarget{classcapd_1_1ddes_1_1DDEJetSection}{}\doxysection{capd\+::ddes\+::D\+D\+E\+Jet\+Section$<$ Curve\+Spec, is\+Interval $>$ Class Template Reference}
+\label{classcapd_1_1ddes_1_1DDEJetSection}\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a25adf546336b9fe5205e795e64e79dc1}\label{classcapd_1_1ddes_1_1DDEJetSection_a25adf546336b9fe5205e795e64e79dc1}} 
+typedef Curve\+Spec {\bfseries Curve\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_aacbb27a001621aced55e2a1c1ae1464c}\label{classcapd_1_1ddes_1_1DDEJetSection_aacbb27a001621aced55e2a1c1ae1464c}} 
+typedef Curve\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a9c2b8f067a058668e376c1851205f15f}\label{classcapd_1_1ddes_1_1DDEJetSection_a9c2b8f067a058668e376c1851205f15f}} 
+typedef Curve\+Type\+::\+Time\+Point\+Type {\bfseries Time\+Point\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a4ea992f6326621d4e81896a6048b2f90}\label{classcapd_1_1ddes_1_1DDEJetSection_a4ea992f6326621d4e81896a6048b2f90}} 
+typedef Curve\+Type\+::\+Vector\+Type {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a99dc4ec30c89e648293c37a2c3a208c7}\label{classcapd_1_1ddes_1_1DDEJetSection_a99dc4ec30c89e648293c37a2c3a208c7}} 
+typedef Curve\+Type\+::\+Matrix\+Type {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_af1bf6112dcc4061356180d10d6b52600}\label{classcapd_1_1ddes_1_1DDEJetSection_af1bf6112dcc4061356180d10d6b52600}} 
+typedef Curve\+Type\+::\+Scalar\+Type {\bfseries Scalar\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a3b207dad3e49091a5734004461b624c3}\label{classcapd_1_1ddes_1_1DDEJetSection_a3b207dad3e49091a5734004461b624c3}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Generic\+Jet}}$<$ Time\+Point\+Type, Vector\+Type, Vector\+Type, Matrix\+Type, is\+Interval $>$ {\bfseries Jet\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a92a6b544731a80febc887286961ef14c}\label{classcapd_1_1ddes_1_1DDEJetSection_a92a6b544731a80febc887286961ef14c}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Jet\+Type}} $>$ {\bfseries Jet\+Storage\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_ad663b25c3449ada7578aca6d203fb1eb}\label{classcapd_1_1ddes_1_1DDEJetSection_ad663b25c3449ada7578aca6d203fb1eb}} 
+typedef Jet\+Storage\+Type\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a40cb5b4ddac8b47126a75fbf9163d130}\label{classcapd_1_1ddes_1_1DDEJetSection_a40cb5b4ddac8b47126a75fbf9163d130}} 
+typedef Jet\+Storage\+Type\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a9d0d0a69f9c3de400569f0d8f1b22fbe}\label{classcapd_1_1ddes_1_1DDEJetSection_a9d0d0a69f9c3de400569f0d8f1b22fbe}} 
+typedef Jet\+Storage\+Type\+::const\+\_\+reverse\+\_\+iterator {\bfseries const\+\_\+reverse\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_af49166b7c835d8606e5d382d4c71614d}\label{classcapd_1_1ddes_1_1DDEJetSection_af49166b7c835d8606e5d382d4c71614d}} 
+typedef Jet\+Storage\+Type\+::reverse\+\_\+iterator {\bfseries reverse\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_afb0d9380b116427ccf13abd3a69adbe3}{D\+D\+E\+Jet\+Section}} (size\+\_\+type d, size\+\_\+type i, Scalar\+Type c=0.)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_a1e6bf09bdc900a64238527c56741bfa7}{D\+D\+E\+Jet\+Section}} (size\+\_\+type d, size\+\_\+type p, size\+\_\+type n, Vector\+Type const \&vec, Scalar\+Type c)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a7729c35ecd04d6b16cfc4a935b515000}\label{classcapd_1_1ddes_1_1DDEJetSection_a7729c35ecd04d6b16cfc4a935b515000}} 
+Scalar\+Type {\bfseries operator()} (Curve\+Spec const \&curve) const
+\item 
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_aa5f4b066b4aa12db34ea5de7ae5518ac}{get\+Gradient}} (Curve\+Spec curve) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_ae7cf280efa67a1df9a299ad92ed2eb5a}\label{classcapd_1_1ddes_1_1DDEJetSection_ae7cf280efa67a1df9a299ad92ed2eb5a}} 
+{\bfseries operator Vector\+Type} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_aad18a4591df24926edb33f2693fc95f3}\label{classcapd_1_1ddes_1_1DDEJetSection_aad18a4591df24926edb33f2693fc95f3}} 
+size\+\_\+type {\bfseries storage\+Dimension} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_ada2bb816226326fe465fbc92a0d0621d}\label{classcapd_1_1ddes_1_1DDEJetSection_ada2bb816226326fe465fbc92a0d0621d}} 
+size\+\_\+type {\bfseries dimension} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a2d226d51d3dcfd7743c620fc398ce428}\label{classcapd_1_1ddes_1_1DDEJetSection_a2d226d51d3dcfd7743c620fc398ce428}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} \& {\bfseries set\+\_\+c} (Scalar\+Type c)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_ab3f5fa8811d49844b2566e4564b0a1d5}\label{classcapd_1_1ddes_1_1DDEJetSection_ab3f5fa8811d49844b2566e4564b0a1d5}} 
+Scalar\+Type {\bfseries get\+\_\+c} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a9a37766640e34507a67fd2b0ae6230dd}\label{classcapd_1_1ddes_1_1DDEJetSection_a9a37766640e34507a67fd2b0ae6230dd}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} \& {\bfseries set\+\_\+s} (Vector\+Type s)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a05e9ca382cf0503dc2d1aeb48f3c8aa4}\label{classcapd_1_1ddes_1_1DDEJetSection_a05e9ca382cf0503dc2d1aeb48f3c8aa4}} 
+Vector\+Type const  \& {\bfseries get\+\_\+s} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a8e89b16f83f9acedccdeae9ca1fdf495}\label{classcapd_1_1ddes_1_1DDEJetSection_a8e89b16f83f9acedccdeae9ca1fdf495}} 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} \& {\bfseries extend} (\mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Jet\+Type}} const \&jet)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a048c9378b56521925315f3a06cf70e5e}\label{classcapd_1_1ddes_1_1DDEJetSection_a048c9378b56521925315f3a06cf70e5e}} 
+reverse\+\_\+iterator {\bfseries rbegin} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_aaefb9a9c7aaacaa07cb780c983c558e3}\label{classcapd_1_1ddes_1_1DDEJetSection_aaefb9a9c7aaacaa07cb780c983c558e3}} 
+const\+\_\+reverse\+\_\+iterator {\bfseries rbegin} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a01f283330de6996878bf0fcdce03b1b5}\label{classcapd_1_1ddes_1_1DDEJetSection_a01f283330de6996878bf0fcdce03b1b5}} 
+reverse\+\_\+iterator {\bfseries rend} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_ad19d570f6d1b39fd8aa474956797a8ab}\label{classcapd_1_1ddes_1_1DDEJetSection_ad19d570f6d1b39fd8aa474956797a8ab}} 
+const\+\_\+reverse\+\_\+iterator {\bfseries rend} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a1021e4813f70b9f9843d202c172d4d6d}\label{classcapd_1_1ddes_1_1DDEJetSection_a1021e4813f70b9f9843d202c172d4d6d}} 
+iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_adcdac355a086f29a26464c930dbcc62e}\label{classcapd_1_1ddes_1_1DDEJetSection_adcdac355a086f29a26464c930dbcc62e}} 
+const\+\_\+iterator {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_ae6497297ab4ee1f3d1a74655f0c0b7a7}\label{classcapd_1_1ddes_1_1DDEJetSection_ae6497297ab4ee1f3d1a74655f0c0b7a7}} 
+iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a7ca81d5f305f332552cbfaf44432c26b}\label{classcapd_1_1ddes_1_1DDEJetSection_a7ca81d5f305f332552cbfaf44432c26b}} 
+const\+\_\+iterator {\bfseries end} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}\label{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}} 
+Scalar\+Type {\bfseries m\+\_\+c}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}\label{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}} 
+Vector\+Type {\bfseries m\+\_\+s}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}\label{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}} 
+Jet\+Storage\+Type {\bfseries m\+\_\+jets}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}\label{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}} 
+Vector\+Type {\bfseries m\+\_\+orig\+\_\+s}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_afb0d9380b116427ccf13abd3a69adbe3}\label{classcapd_1_1ddes_1_1DDEJetSection_afb0d9380b116427ccf13abd3a69adbe3}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!DDEJetSection@{DDEJetSection}}
+\index{DDEJetSection@{DDEJetSection}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{i,  }\item[{Scalar\+Type}]{c = {\ttfamily 0.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a section checking value at t=0 of a given direction, i.\+e. coordinate section\+: x(0)\+\_\+i == c, where x(0) is d dimensional. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a1e6bf09bdc900a64238527c56741bfa7}\label{classcapd_1_1ddes_1_1DDEJetSection_a1e6bf09bdc900a64238527c56741bfa7}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!DDEJetSection@{DDEJetSection}}
+\index{DDEJetSection@{DDEJetSection}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{p,  }\item[{size\+\_\+type}]{n,  }\item[{Vector\+Type const \&}]{vec,  }\item[{Scalar\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a section with p Jets of order n each and expected scalar value c. vector vec must be d $\ast$ (1 + p $\ast$ (n+1)) dimensional and will propagate the jets. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_aa5f4b066b4aa12db34ea5de7ae5518ac}\label{classcapd_1_1ddes_1_1DDEJetSection_aa5f4b066b4aa12db34ea5de7ae5518ac}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!getGradient@{getGradient}}
+\index{getGradient@{getGradient}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{getGradient()}{getGradient()}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::get\+Gradient (\begin{DoxyParamCaption}\item[{Curve\+Spec}]{curve }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This returns gradient of the section d/dx s(x) evaluated at x = j(curve)
+
+N\+O\+TE\+: Since in our case section is a hypersurface, the gradient is constant and equal (z(s), j(s)), extended to the structure of curve, se next N\+O\+TE.
+
+N\+O\+TE\+: this function uses structure in curve to deliver higher order jet elements needed for computations. They will be set simply to 0. Therefore, it would be possible to multiply as a Vectors, i.\+e. we can simply do the vector-\/vector dot product\+:
+
+get\+Gradient(curve) . (z(curve), j(curve))
+
+without worrying about (z(s), j(s)) having bad dimensions.
+
+Note\+: curve passed by copy, as I need it inside 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddes/D\+D\+E\+Jet\+Section.\+h\end{DoxyCompactItemize}

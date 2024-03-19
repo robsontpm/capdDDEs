@@ -1,0 +1,104 @@
+\hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame}{}\doxysection{capd\+::ddeshelper\+::Coordinate\+Frame$<$ Matrix\+Spec, Vector\+Spec, Scalar\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddeshelper_1_1CoordinateFrame}\index{capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$@{capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Coordinate\+Frame\+Helper.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_af84035da3cdda1f625a204083234872d}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_af84035da3cdda1f625a204083234872d}} 
+typedef Matrix\+Spec {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a99c86225a834c258a8334c3bb0839148}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a99c86225a834c258a8334c3bb0839148}} 
+typedef Vector\+Spec {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_ad42615345205dc924e898cb09d81d210}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_ad42615345205dc924e898cb09d81d210}} 
+typedef Scalar\+Spec {\bfseries Scalar\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a311a79fa2f77f6d63f7f8d7f94393397}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a311a79fa2f77f6d63f7f8d7f94393397}} 
+{\bfseries Coordinate\+Frame} (Vector\+Type x, Vector\+Type sec, Scalar\+Type secval, capd\+::poincare\+::\+Crossing\+Direction d, Matrix\+Type C, Matrix\+Type invC)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_afc16969d965d6b6742180f147c09930b}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_afc16969d965d6b6742180f147c09930b}} 
+{\bfseries Coordinate\+Frame} (Vector\+Type x, Matrix\+Type C, Matrix\+Type invC, capd\+::poincare\+::\+Crossing\+Direction d=capd\+::poincare\+::\+Minus\+Plus)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_ae0c6194e905d15c61caae50f6b03ccf0}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_ae0c6194e905d15c61caae50f6b03ccf0}} 
+{\bfseries Coordinate\+Frame} (int M)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_acf37f76cf4dcb697a20689879992e326}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_acf37f76cf4dcb697a20689879992e326}} 
+void {\bfseries set\+Crossing\+Direction} (capd\+::poincare\+::\+Crossing\+Direction d)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_ab0ad274639a6181a3112aacefdd6be63}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_ab0ad274639a6181a3112aacefdd6be63}} 
+Vector\+Type {\bfseries in\+Coords} (Vector\+Type \&x)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a506c992463adaa9d9b1ed1439df3ead2}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a506c992463adaa9d9b1ed1439df3ead2}} 
+Vector\+Type {\bfseries in\+Global} (Vector\+Type \&x)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_ab787f881531f76e2ff1d3b9115eab5ff}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_ab787f881531f76e2ff1d3b9115eab5ff}} 
+Vector\+Type {\bfseries x0} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a2d54c79b1db88c54aaa2784e63d42652}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a2d54c79b1db88c54aaa2784e63d42652}} 
+Matrix\+Type {\bfseries C} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_aebff9f8312b59f4657e3294b7bf6c0eb}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_aebff9f8312b59f4657e3294b7bf6c0eb}} 
+Matrix\+Type {\bfseries invC} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_adce94cc4c4da394823b19c9503b1d52a}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_adce94cc4c4da394823b19c9503b1d52a}} 
+Vector\+Type {\bfseries section\+Vector} ()
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a7300da5390377c8d20ea0aafc3a4bf4a}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a7300da5390377c8d20ea0aafc3a4bf4a}} 
+Scalar\+Type {\bfseries section\+Value} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a7eac9e49ff3cf2ceb07c28015c5b6373}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a7eac9e49ff3cf2ceb07c28015c5b6373}} 
+int {\bfseries M}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a70ab0ee03989d630cb862c951cedf9ee}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a70ab0ee03989d630cb862c951cedf9ee}} 
+Vector\+Type {\bfseries reference}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a431ab4429449dfb43173e831fa4e897f}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a431ab4429449dfb43173e831fa4e897f}} 
+Vector\+Type {\bfseries vsection}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a5d3f478a5099d95c561d8d652effea89}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a5d3f478a5099d95c561d8d652effea89}} 
+Scalar\+Type {\bfseries secvalue}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_afe8e567141fb487a0de66102e709a1c8}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_afe8e567141fb487a0de66102e709a1c8}} 
+capd\+::poincare\+::\+Crossing\+Direction {\bfseries crossing\+Direction}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a6f9385650a66c2387d8497eb6f0ddc1b}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a6f9385650a66c2387d8497eb6f0ddc1b}} 
+Matrix\+Type {\bfseries coords}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a498d20c890a79a13bca11826a11aca2d}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a498d20c890a79a13bca11826a11aca2d}} 
+Matrix\+Type {\bfseries inverse\+Coords}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_abcf49118e6cab9a1309a443f53ccfb42}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_abcf49118e6cab9a1309a443f53ccfb42}} 
+std\+::string {\bfseries filepath}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&in, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&coords)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a5d4930af134b0d95e8ed91cca4173eba}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a5d4930af134b0d95e8ed91cca4173eba}} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&first, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&second)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a9137772a196fbb6e4934524cf2f29326}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a9137772a196fbb6e4934524cf2f29326}} 
+bool {\bfseries operator!=} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&first, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Spec, typename Vector\+Spec = typename Matrix\+Spec\+::\+Vector\+Type, typename Scalar\+Spec = typename Vector\+Spec\+::\+Scalar\+Type$>$\newline
+class capd\+::ddeshelper\+::\+Coordinate\+Frame$<$ Matrix\+Spec, Vector\+Spec, Scalar\+Spec $>$}
+
+Internal class to hold a affine coordinate change on a (p,n)-\/fset. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robson/\+R\+O\+B\+E\+R\+T-\/\+P\+R\+A\+C\+A-\/\+C\+H\+M\+U\+R\+A/eclipse-\/workspace/capd\+D\+D\+Es5.\+1.\+2/include/capd/ddeshelper/D\+D\+E\+Coordinate\+Frame\+Helper.\+h\end{DoxyCompactItemize}
