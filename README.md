@@ -12,9 +12,8 @@ then to see the project in action, you can run:
 
 ```bash
 sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool
-mkdir capdDDEs
+git clone git@github.com:robsontpm/capdDDEs.git capdDDEs
 cd capdDDEs
-git clone git@github.com:robsontpm/capdDDEs.git .
 chmod a+x tldr.sh
 ./tldr.sh
 ```
@@ -55,9 +54,8 @@ to start using this project you can do the following steps
 First clone the repo:
 
 ```bash
-mkdir capdDDEs
+git clone git@github.com:robsontpm/capdDDEs.git capdDDEs
 cd capdDDEs
-git clone git@github.com:robsontpm/capdDDEs.git .
 ```
 
 Next, go to external, add permissions and build CAPD 
@@ -75,34 +73,32 @@ directory and compile some exemplary programs using make:
 
 ```bash
 cd ..
-make examples/mackey_glass_stable
+make examples/mackey-glass-stable-periodic
 ```
 
-Compiled programs will go to **./bin** directory:
+Compiled programs will go to **./bin** directory inside this particular example directory:
 
 ```bash
-ls bin/examples/
-ls bin/examples/mackey_glass_stable
+ls programs/examples/mackey-glass-stable-periodic/bin
 
 # sample output of the above ls commands are:
 #
-#    mackey_glass_stable
-#
-#    find_and_prove_n6
+#    find-and-prove-n6
 #
 ```
 
 Finally, run proofs or demos, e.g. :
 
 ```bash
-cd bin/examples/mackey_glass_stable
-./find_and_prove_n6
+cd programs/examples/mackey-glass-stable-periodic/bin
+./find-and-prove-n6
 ```
 
 You can see list of available programs and demos by running
 in the main directory of the repository the following command:
 
 ```bash
+cd ../../../..
 make list
 ```
 
