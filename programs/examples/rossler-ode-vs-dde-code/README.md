@@ -1,10 +1,10 @@
-Nonrigorous, non-autonomous demo
-================================
+Rigorous numerics for ODEs with the DDEs code
+=============================================
 
 This example replicates the result of the 
-[exemplary program]((http://capd.sourceforge.net/capdDynSys/docs/html/examples_RosslerChaoticDynamics.html) 
+[exemplary program](http://capd.sourceforge.net/capdDynSys/docs/html/examples_RosslerChaoticDynamics.html) 
 from the CAPD library about the existence of the attractor and the symbolic dynamic in the 
-[Rossler system](http://www.scholarpedia.org/article/Rossler_attractor).
+[Rössler system](http://www.scholarpedia.org/article/Rossler_attractor).
 
 This example shows that the capdDDEs code can be used in a quite similar way to the ODE code from CAPD.
 However, if you are going to work only with ODEs (not true DDEs), the CAPD is better for this task,
