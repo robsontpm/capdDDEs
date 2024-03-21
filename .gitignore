@@ -3,6 +3,7 @@ bin/
 .obj/
 __deprecated__
 /devel
+/programs/devel/*/
 
 external/capd/capdDynSys4/docs/html
 external/capd/capdDynSys4/docs/*.log
