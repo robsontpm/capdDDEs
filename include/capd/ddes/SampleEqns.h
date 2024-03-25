@@ -71,6 +71,7 @@ namespace ddes{
  * TODO: (FAR FUTURE) Need to consult Daniel Wilczak on the matter.
  * TODO: (FAR FUTURE) Need to understand the Node and the Graph of execution used by Daniel Wilczak
  * TODO: (FAR FUTURE) to implement my version of computeDDECoefficients with capd::map::Map (seems doable)
+ *
  */
 
 /**

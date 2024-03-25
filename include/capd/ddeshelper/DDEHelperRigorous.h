@@ -114,10 +114,10 @@ public:
 	typedef EqSpec Eq;
 	typedef typename Eq::ParamType ParamType;
 	typedef VectorSpec Vector;
-	typedef MatrixSpec  Matrix;
+	typedef MatrixSpec Matrix;
 	typedef typename Matrix::ScalarType Scalar;
 	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
-	typedef capd::vectalg::Vector<ParamType, 0> ParamsVector;
+	typedef typename Eq::ParamsVectorType ParamsVector;
 	typedef PoliciesSpec Policies;
 	typedef capd::ddes::SharedDoubleton<Matrix, Policies> SetType;
 	typedef capd::ddes::DDESolutionCurve<SetType> Solution;

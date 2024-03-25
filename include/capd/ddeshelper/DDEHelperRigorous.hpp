@@ -28,7 +28,10 @@
  *
  * This source code is provided under GNU GPL license
  * (v.2 or whatever compatible with CAPD license)
+ *
  */
+
+// TODO: (NOT URGENT): we have RigorousHelper but it is in DDEHelperRigorous.h/.hpp,... refactor...
 
 #ifndef _CAPD_DDEHELPERRIGOROUS_HPP_
 #define _CAPD_DDEHELPERRIGOROUS_HPP_

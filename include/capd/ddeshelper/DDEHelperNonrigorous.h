@@ -35,7 +35,10 @@
 #include <capd/ddeshelper/DDEHelperCommon.h>
 #include <capd/ddeshelper/DDECoordinateFrameHelper.h>
 
-// TODO: (VERY IMPORTANT) code below assume delaysSpec=1, it will not work for many delays, FIX!
+// TODO: (IMPORTANT) code below assume delaysSpec=1, it will not work for many delays, FIX!
+
+// TODO: (NOT URGENT): we have NonrigorousHelper but it is in DDEHelperNonrigorous.h/.hpp,... refactor...
+
 namespace capd {
 namespace ddeshelper {
 
@@ -46,25 +49,58 @@ namespace ddeshelper {
  * It provides functions like integrate and poincare
  * to compute images of the initial functions under your own
  * equations. You only need to supply the equation and the number
- * of delays in the system
+ * of delays in the system.
  *
- * It only server discrete delay differential equations in the form of
+ * The Equation (template @param EqSpec) must be a class of special form.
+ * See programs/examples for usage and examples and/or include/capd/ddes/SampleEqns.h for more information.
+ * A general form is as follows:
+ *
+ *    struct MyEquation{
+ *    	   typedef unsigned int size_type;								  // this is required to know what the three static functions return. This is usually unsigned int. At the cost of some warnings, you can use int as well.
+ *    	   typedef double ParamType;									  // the type to hold parameters. I usually make it a template parameter to be able to use in both rigorous and non-rigorous setting.
+ *    	   typedef capd::vectalg::Vector<ParamType, 0> ParamsVectorType;  // this defines the type to hold a vector of parameters
+ *
+ *    	   MyEquation(ParamsVectorType const & params); // we require that the equation has a canstructor that gets parameters vector.
+ *    	   MyEquation();						// default constructor, it must be defined, as we have another constructor (with params vector). All other constructors are entirely up to you.
+ *    	   static size_type imageDimension();   // output dimension of the internal map (usually, the dimension d of the space for x(t) variable)
+ *    	   static size_type dimension(); 		// input dimension of the internal map (usually, imageDimension() * (number_of_delays+1))
+ *    	   static size_type getParamsCount();   // number of parameters to fully configure the equation, but without delays! Depends on the equation, e.g. Mackey-Glass has 3 parameters, except the delay.
+ *    	   static std::string show();			// this is used in debug output, it can return empty string if you wish.
+ *
+ *    	   // this is the ost important part
+ *    	   // it takes t -time, x - the collection of values at 0 and consecutive delays, then
+ *    	   // it should compute the value of R.h.s f(x(0), x(t_1), ... ) in fx.
+ *    	   // the dimension of x is given by dimension(), the
+ *    	   // dimension of fx is given by imageDimension();
+ *    	   template<typename RealSpec, typename InVectorSpec, typename OutVectorSpec>
+ *    	   void operator()(const RealSpec& t, const InVectorSpec x, OutVectorSpec& fx) const;
+ *    };
+ *
+ * You might also supply Matrix and Vector type.
+ *
+ * It can only handle discrete delay differential equations in the form of
  *
  * x'(t) = f(x(t), x(t-\tau_1), ... , x(t-tau_m))
  *
  * TODO: (IMPORTANT) Currently it only support one delay!!!!!!
- * TODO: make sure all const qualifiers are put in the right places!
+ * TODO: (URGENT?) DEV: make sure all const qualifiers are put in the right places!
  */
-template<typename EqSpec, int delaysSpec=1>
+template<
+	typename EqSpec,
+	int delaysSpec=1,
+	typename MatrixSpec = capd::vectalg::Matrix<typename EqSpec::ParamType, 0, 0>,
+	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>,
+	typename PoliciesSpec=capd::dynset::C11Rect2Policies
+>
 class NonrigorousHelper{
 public:
 	typedef EqSpec Eq;
-	typedef typename Eq::ScalarType Scalar;
-	typedef typename Eq::RealType Real;
 	typedef typename Eq::ParamType ParamType;
-	typedef capd::vectalg::Vector<Scalar, 0> Vector;
-	typedef capd::vectalg::Matrix<Scalar, 0, 0>  Matrix;
-	typedef capd::vectalg::Vector<ParamType, 0> ParamsVector;
+	typedef VectorSpec Vector;
+	typedef MatrixSpec Matrix;
+	typedef typename Matrix::ScalarType Scalar;
+	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
+	typedef typename Eq::ParamsVectorType ParamsVector;
 	typedef capd::ddes::DiscreteTimeGrid<Real> Grid;
 	typedef typename Grid::TimePointType TimePoint;
 	typedef capd::ddes::GenericJet<TimePoint, Vector, Vector, Matrix> Jet;
@@ -604,10 +640,10 @@ private:
 	}
 };
 
-template<typename EqSpec, int delaysSpec>
-const typename NonrigorousHelper<EqSpec, delaysSpec>::size_type NonrigorousHelper<EqSpec, delaysSpec>::PARAMS_COUNT = EqSpec::getParamsCount() + delaysSpec;
-template<typename EqSpec, int delaysSpec>
-const typename NonrigorousHelper<EqSpec, delaysSpec>::size_type NonrigorousHelper<EqSpec, delaysSpec>::DIMENSION = EqSpec::imageDimension();
+template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
+const typename NonrigorousHelper<EqSpec, delaysSpec>::size_type NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::PARAMS_COUNT = EqSpec::getParamsCount() + delaysSpec;
+template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
+const typename NonrigorousHelper<EqSpec, delaysSpec>::size_type NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::DIMENSION = EqSpec::imageDimension();
 
 } // namespace ddeshelper
 } // namespace capd

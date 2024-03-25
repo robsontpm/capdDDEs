@@ -25,15 +25,17 @@ class Rossler{
 public:
 	/** this is not required */
 	typedef unsigned int size_type;
-	/** RigorousHelper requires to define explicitely what is the type of parameters! It must be named ParamType! */
+	/** RigorousHelper requires to define explicitly what is the type of parameters! It must be named ParamType! */
 	typedef ParamSpec ParamType;
+	/** RigorousHelper requires to define explicitly what is the type of a vector of parameters! It must be named ParamsVectorType! */
+	typedef capd::vectalg::Vector<ParamType, 0> ParamsVectorType;
 
 	/** default constructor for default values of parameters, its good to have one. */
 	Rossler(): a(ParamType(57) / ParamType(10)), b(ParamType(2) / ParamType(10)) {}
 	/** construct eq for given parameter values */
 	Rossler(ParamType a, ParamType b): a(a), b(b) {}
 	/** construct eq taking parameters from a vector. It must be of this form for RigorousHelper to work! */
-	Rossler(capd::vectalg::Vector<ParamType, 0> params): a(params[0]), b(params[1]) {}
+	Rossler(ParamsVectorType const& params): a(params[0]), b(params[1]) {}
 
 	/** output dimension of the map f in DDE (1), R\"ossler is 3D  */
 	static size_type imageDimension() { return 3; }
