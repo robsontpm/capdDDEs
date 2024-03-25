@@ -641,9 +641,12 @@ private:
 };
 
 template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
-const typename NonrigorousHelper<EqSpec, delaysSpec>::size_type NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::PARAMS_COUNT = EqSpec::getParamsCount() + delaysSpec;
+const typename NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::size_type
+NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::PARAMS_COUNT = EqSpec::getParamsCount() + delaysSpec;
+
 template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
-const typename NonrigorousHelper<EqSpec, delaysSpec>::size_type NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::DIMENSION = EqSpec::imageDimension();
+const typename NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::size_type
+NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::DIMENSION = EqSpec::imageDimension();
 
 } // namespace ddeshelper
 } // namespace capd

@@ -37,8 +37,8 @@
 namespace capd {
 namespace ddeshelper {
 
-template<typename EqSpec, int delaysSpec>
-void NonrigorousHelper<EqSpec, delaysSpec>::loadSetup(std::string filepath){
+template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
+void NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::loadSetup(std::string filepath){
 	std::ifstream in(filepath);
 	try {
 		rawLoadSetup(in, m_p, m_n, m_params);
@@ -49,8 +49,8 @@ void NonrigorousHelper<EqSpec, delaysSpec>::loadSetup(std::string filepath){
 	}
 }
 
-template<typename EqSpec, int delaysSpec>
-void NonrigorousHelper<EqSpec, delaysSpec>::rawLoadSetup(std::istream& in, size_type &p, size_type &n, Vector &params){
+template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
+void NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::rawLoadSetup(std::istream& in, size_type &p, size_type &n, Vector &params){
 	size_type numpars;
 	size_type d;
 	try {
