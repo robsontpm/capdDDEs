@@ -36,7 +36,7 @@ void to_dat(std::ostream& out, capd::interval const & v){
 }
 
 void to_dat(std::ostream& out, double const & v){
-	out << v;
+	out << v << " 0.0";
 }
 
 void plot_datfile(

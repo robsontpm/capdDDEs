@@ -8,32 +8,30 @@
 #ifndef EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_NONRIG_SETUP_H_
 #define EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_NONRIG_SETUP_H_
 
+#include <iostream>
 #include <capd/capdlib.h>
 #include <capd/ddes/ddeslib.h>
 #include <capd/ddeshelper/ddeshelperlib.h>
 #include <capd/ddeshelper/DDEHelperNonrigorous.hpp>
-#include <capd/ddeshelper/DDEHelperRigorous.hpp>
-#include "equation.h"
+#include "common-params.h"
 
 using namespace std;
-using namespace capd;
 
-/**
- * we will use Rossler DDE with interval parameters.
- * This is the definition of f from x'(t) = f(x(t), x(t-tau)).
- */
-typedef capd::interval::Interval<double> Scalar;
-typedef ddes::MackeyGlass<Scalar, Scalar> Eq;
+// we say that the system computes on Intervals and has Intervals as parameters
+typedef capd::ddes::MackeyGlass<double, double> Eq;
 
-/** this contains all necessary ingredients to do rigorous numerics in DDEs */
-typedef capd::ddeshelper::NonrigorousHelper<Eq, 1> Setup;
+// the number one (1) is the number of delays
+typedef capd::ddeshelper::NonrigorousHelper<Eq, 1, capd::DMatrix, capd::DVector> DDEs;
 
-// below are just renaming for shorter class names
-typedef Setup::Grid Grid;				// grid for the solutions in the C^n_p space.
-typedef Setup::DDEq DDEq;				// this is F from the abstract formulation x'(t) = F(x_t), that contains the information on delays. In our case F(x_t) := f(x_t(0), x_t(-tau)).
-typedef Setup::Solution DDESolution;	// basic set type for DDEs
-typedef Setup::Solver DDESolver;		// semidynamical system
-typedef Setup::PoincareMap DDEPoincare;	// Poincare map for the semidynamical system
-typedef Setup::Section DDESection;		// basic section for DDEs
+// setup parameters of the system
+// by default, we take the values of the double parameters
+// defined for both systems in common-parametrs.h, but they
+// might be changed here, for example to rigorous bounds on the parameters
+// if they are non-representable real numbers.
+namespace PARAMS {
+	// last one (i.e. 1.0) is the delay used in computations as the length of the delay
+	// we scale the parameters of the equations by PARAM_TAU. This is a standard thing.
+	const typename DDEs::ParamsVector params {GAMMA * TAU, BETA * TAU, N, 1.0};
+}
 
 #endif /* EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_NONRIG_SETUP_H_ */

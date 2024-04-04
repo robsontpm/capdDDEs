@@ -89,8 +89,7 @@ template<
 	typename EqSpec,
 	int delaysSpec=1,
 	typename MatrixSpec = capd::vectalg::Matrix<typename EqSpec::ParamType, 0, 0>,
-	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>,
-	typename PoliciesSpec=capd::dynset::C11Rect2Policies
+	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>
 >
 class NonrigorousHelper{
 public:
@@ -177,7 +176,7 @@ public:
 	/**
 	 * This creates a raw solver, if you want to do nonstandard tasks
 	 * If you want just to integrate initial values, consider using iterate() or poincare() instead.
-	 * TODO: add functions to create more elements
+	 * TODO: (FUTURE) add functions to create other types of elements
 	 */
 	Solver makeSolver(){
 		auto tau = m_grid.point(m_p);
@@ -185,6 +184,117 @@ public:
 		Solver solver(dde, m_maxOrder);
 		return solver;
 	}
+
+	/**
+	 * makes a segment of solution over [-tau, 0] of order n,
+	 * with a given value. If the dim(v) == d (dimension of the 'ambient' space),
+	 * then the constant solution will be made. If dim(v) = M(), then
+	 * a solution with the given data is produced.
+	 *
+	 * Without the v parameter, it creates a zero solution (v = {0,..,0}).
+	 * Without n, it creates solution with order m_n as set in this Helper.
+	 */
+	Solution makeSegment(int n, Vector v=Vector({})) const { return makeSegmentTemplate<Solution>(n, v); }
+	/** just a rename of makeSegment, for backward compatibility. */
+	Solution makeSolution(int n, Vector v=Vector({})) const { return makeSegment(n, v); }
+	/** Creates a segment over [-tau, 0] with order n as set in this helper. See other @method makeSegment() */
+	Solution makeSegment(Vector v=Vector({})) const { return makeSegment(m_n, v); }
+	/** just a rename of makeSegment, for backward compatibility. */
+	Solution makeSolution(Vector v=Vector({})) const { return makeSegment(m_n, v); }
+	/** @deprecated use makeSegment() instead! */
+	Solution vectorToSolution(Vector const& x) const { return makeSegment(x); }
+	/**
+	 * This version is suitable for approximate C^1 computations - computing Jacobian of a Poincare/Time map.
+	 *
+	 * makes a segment of solution over [-tau, 0] of order n,
+	 * with a given value. If the dim(v) == d (dimension of the 'ambient' space),
+	 * then the constant solution will be made. If dim(v) = M(), then
+	 * a solution with the given data is produced.
+	 *
+	 * Without the v parameter, it creates a zero solution (v = {0,..,0}).
+	 * Without n, it creates solution with order m_n as set in this Helper.
+	 */
+	JacSolution makeJacSegment(int n, Vector v=Vector(0)) const { return makeSegmentTemplate<JacSolution>(n, v); }
+	/** just a rename of makeSegment, for backward compatibility. */
+	JacSolution makeJacSolution(int n, Vector v=Vector(0)) const { return makeJacSegment(n, v); }
+	/** Creates a segment over [-tau, 0] with order n as set in this helper. See other @method makeSegment() */
+	JacSolution makeJacSegment(Vector v) const { return makeJacSegment(m_n, v); }
+	/** just a rename of makeSegment, for backward compatibility. */
+	JacSolution makeJacSolution(Vector v) const { return makeJacSegment(m_n, v); }
+	/** @deprecated use makeJacSegment() instead! */
+	JacSolution vectorToJacSolution(Vector const& x) const{ return makeJacSegment(x); }
+	/**
+	 * makes a section and stores it in out_section
+	 *
+	 * if dim(s) == d, then we setup section in the coordinate x(0) . s = c
+	 * otherwise we set full-space section s . x_0 = c
+	 */
+	template<typename SecionType>
+	void makeSection(Vector const& s, Scalar const& c, SecionType& out_section){
+		Vector v;
+		if (s.dimension() == d()){
+			v = Vector(M());
+			for (size_t i = 0; i < d(); ++i)
+				v[i] = s[i];
+		}else if (s.dimension() == M()){
+			v = s;
+		}else {
+			throw std::logic_error("NonrigorousHelper::makeSection(): vector must be either DIMENSION (for const) or M dimensional (for any initial)");
+		}
+		out_section = SecionType(d(), p(), n(), v, c);
+	}
+
+	/**
+	 * Just integrate the solution.
+	 *
+	 * Integrates for time T = iters * tau_max / p = iters * h.
+	 * The value h is the step size of the method / grid
+	 *
+     * If @param iter < 0 then it will be converted to full delays! The DDEs cannot be integrated backward in time!
+	 *
+	 * @return the solution on the whole integration time.
+	 *
+	 * The initial solution segment must have the same grid as the Helper, otherwise the exception
+	 * will be thrown. It is best to make a solution with makeSolution() methods of the helper.
+	 *
+	 * If @param use_extension is set to true, then the more accurate results will be produced due to use
+	 * of extension algorithm described in FoCM 2023 paper. But then, the returned full Solution
+	 * will have varying degree of the representation at various jets.
+	 *
+	 * In @param return it returns the last segment of the solution in the @param result. The structure
+	 * of result will be preserved, i.e. if extension is used, and the structure of result is the same as
+	 * initial, then the result still have the same structure as initial. This might be useful for
+	 * iterating maps.
+	 *
+	 * TODO: (FUTURE, IMPORTANT?) As in CAPD, create Timemap class to handle this in general...
+	 */
+	Solution integrate(int iters, const Solution& initial, Solution& result, bool use_extension=false){
+		try {
+			checkGrid(initial); checkGrid(result);
+		} catch (std::logic_error& e){
+			throw capd::ddes::rethrow("NonrigorousHelper::integrate(int, Solution, Solution, bool): initial and result must have the same grid!", e);
+		}
+		if (iters < 0) iters = -m_p * iters;
+		auto tau = m_grid.point(m_p);
+		DDEq dde(Eq(m_params), tau);
+		Solver solver(dde, use_extension ? m_maxOrder : m_n);
+		Solution XXX = initial;
+		for (int i = 0; i < iters; i++)
+			solver(XXX);
+		 Solution X = XXX.subcurve(XXX.currentTime() - tau);
+		 capd::ddeshelper::copyReduce(X, result);
+		 return XXX;
+	}
+	/** @see integrate(int, const Solution&, Solution&, bool) */
+	Solution integrate(int iters, const Solution& initial, bool use_extension=false){
+		try{
+			Solution dump = initial;
+			return integrate(iters, initial, dump, use_extension);
+		} catch (std::logic_error &e) {
+			throw capd::ddes::rethrow("NonrigorousHelper::integrate(int, Solution, bool):", e);
+		}
+	}
+
 	/**
 	 * just integrate the solution and return the solution
 	 *
@@ -201,27 +311,18 @@ public:
 	 * Can be used as an input to the next integrate() procedure, to create an initial solution
 	 * curve, or in other functions from the helper (e.g. poincare).
 	 *
-	 * TODO: use_extension was used for backward compatibility of some programs
-	 *       it should work with use_extension=true in the default version
-	 *       and user should control it with setting m_maxOrder with getter/setter
+	 * @deprecated It is better to use function based on Solution parameters
 	 */
 	Solution integrate(int iters, const Vector& initial, Vector& result, bool use_extension=false){
-		if (initial.dimension() != DIMENSION && initial.dimension() != M()){
-			throw std::logic_error("NonrigorousHelper::initialIteration(): vector must be either DIMENSION (for const) or M dimensional (for any initial)");
+		try{
+			Solution X = makeSegment(initial);
+			Solution TX = X;
+			Solution XXX = integrate(iters, X, TX, use_extension);
+			result = TX;
+			return XXX;
+		} catch (std::logic_error &e) {
+			throw capd::ddes::rethrow("NonrigorousHelper::integrate(int, Vector, Vector, bool):", e);
 		}
-		if (iters < 0) iters = -m_p * iters;
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		Vector v(DIMENSION); if (initial.dimension() == DIMENSION) v = initial;
-		Solution X(m_grid, -tau, t_0, m_n, v);
-		Solution XXX(m_grid, -tau, t_0, m_n, v);
-		if (initial.dimension() == X.storageDimension()){ X.set_x(initial); XXX.set_x(initial); }
-		DDEq dde(Eq(m_params), tau);
-		Solver solver(dde, use_extension ? m_maxOrder : m_n);
-		for (int i = 0; i < iters; i++)
-			solver(XXX);
-		 result = XXX.subcurve(XXX.currentTime() - tau).get_x();
-		 return XXX;
 	}
 	/**
 	 * just integrate the solution and return the solution
@@ -232,10 +333,16 @@ public:
 	 * in this vector is described elsewhere (see papers for example). But suppling it by hand
 	 * is extremely cumbersome. It is best to use output of other functions o get initials in this
 	 * form.
+	 *
+	 * @deprecated It is better to use function based on Solution parameters
 	 */
-	Solution integrate(int iters, const Vector& initial){
-		Vector dump;
-		return integrate(iters, initial, dump);
+	Solution integrate(int iters, const Vector& initial, bool use_extension=false){
+		try{
+			Vector dump;
+			return integrate(iters, initial, dump, use_extension);
+		} catch (std::logic_error &e) {
+			throw capd::ddes::rethrow("NonrigorousHelper::integrate(int, Vector, bool):", e);
+		}
 	}
 	/**
 	 * integrate, save output to files and draw the solution. See other versions
@@ -243,17 +350,174 @@ public:
 	 *
 	 * The variable outconfig holds a pair of strings that define paths to where store
 	 * the results of the computations. See documentation there.
+	 *
+	 * @deprecated For backward compatibility...
 	 */
-	Solution integrate(int iters, const Vector& initial, Vector& result, PathConfig const& outconfig){
+	Solution integrate(int iters, const Solution& initial, Solution& result, PathConfig const& outconfig){
 		Solution solution = integrate(iters, initial, result);
-		drawSolution(outconfig.dirPath, outconfig.prefix, solution);
-		Vector start = solution.subcurve(solution.pastTime(), m_grid(0)).get_x();
-		Vector iterated = solution.subcurve(solution.currentTime() - m_grid(m_p)).get_x();
-		saveData(outconfig.filepath("start"), &start, &start+1);
-		saveData(outconfig.filepath("iterated"), &iterated, &iterated+1);
+		drawMap(solution, outconfig);
 		return solution;
 	}
+	/** @deprecated For backward compatibility... */
+	Solution integrate(int iters, const Vector& initial, Vector& result, PathConfig const& outconfig){
+		Solution solution = integrate(iters, initial, result);
+		drawMap(solution, outconfig);
+		return solution;
+	}
+//	/**
+//	 * Detects the crossing direction of the section just by integration.
+//	 * Can be helpful, when section is weird and you cannot decide.
+//
+//	TODO: (IMPORTANT): finish it...
+//	 */
+//	capd::poincare::CrossingDirection detectCorssingDirection(JacJetSection section, Vector const& x){
+//		return detectCorssingDirectionTemplate<JacJetSection>(section, x)
+//		auto tau = m_grid.point(m_p);
+//		auto t_0 = m_grid.point(0);
+//		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+//		X.set_x(x);
+//		JacDDEq dde(Eq(m_params), tau);
+//		JacSolver solver(dde, m_maxOrder);
+//		JacPoincareMap pm(solver, section);
+//		return pm.detectCrossingDirection(X);
+//	}
 
+	/**
+	 * Computes a poincare map, starting from point x, until section s is crossed
+	 * in the direction set for this Helper. The result will be in Px.
+	 * The (p, \eta)-structure of Px is preserved (see papers, references).
+	 * the time to reach section is in reachTime.
+	 *
+	 * The reachTime will be at least base grid step h * requiredSteps, which are set for this Helper.
+     */
+	Solution poincare(
+				JetSection section, Solution const& x,
+				double& reachTime, Solution& Px){
+		try {
+			checkGrid(x); checkGrid(Px);
+		} catch (std::logic_error& e){
+			throw capd::ddes::rethrow("NonrigorousHelper::poincare(Section, Solution, double, Solution): initial and result must have the same grid!", e);
+		}
+
+		auto tau = m_grid.point(m_p);
+		Solution X = x;
+
+		DDEq dde(Eq(m_params), tau);
+		Solver solver(dde, m_maxOrder);
+
+		PoincareMap pm(solver, section);
+		pm.setDirection(this->crossingDirection);
+		pm.setRequiredSteps(m_reqSteps);
+		pm.setMaxSteps(m_maxSteps);
+
+		pm(X, Px, reachTime);
+		return X; // X contains full trajectory
+	}
+	/** @see poincare(JetSection, Solution const&, double, Solution&) */
+	Solution poincare(JetSection section, Solution const& x, Solution& Px){
+		double dumpTime;
+		return poincare(section, x, dumpTime, Px);
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	// TODO: TU SKONCZYLEM!!!!! //////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	/** the simples computation of poincare map, without extra data */
+	Solution poincare(
+				JetSection section, Vector const& x,
+				double& reachTime, Vector& Px){
+		auto tau = m_grid.point(m_p);
+		auto t_0 = m_grid.point(0);
+		Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+		X.set_x(x);
+
+		DDEq dde(Eq(m_params), tau);
+		Solver solver(dde, m_maxOrder);
+
+		PoincareMap pm(solver, section);
+		pm.setDirection(this->crossingDirection);
+		pm.setRequiredSteps(m_reqSteps);
+		pm.setMaxSteps(m_maxSteps);
+
+		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
+		Solution PX(X); PX *= 0.;
+		pm(X, PX, reachTime);
+		Px = PX.get_x();
+		return X; // X contains full trajectory
+	}
+	/** the simplest computation of poincare map, without extra data (even without return time */
+	Solution poincare(JetSection section, Vector const& x, Vector& Px){
+		double dumpReachTime;
+		return poincare(section, x, dumpReachTime, Px); // X contains full trajectory
+	}
+	// void computeCoordinates(std::ostream& info, Matrix const& V, Matrix const& DP, Matrix& coords);
+
+	/**
+	 * if you do not know what initV is, then
+	 * you should probably stick to using
+	 * the other JacSolution poincare() method (without initV).
+	 */
+	JacSolution poincare(
+				JacJetSection section,
+				Vector const& x, Matrix& initV,
+				double& reachTime, int& steps, Vector& Px, Vector& fPx,
+				Matrix& V, Matrix& DP){
+		auto tau = m_grid.point(m_p);
+		auto t_0 = m_grid.point(0);
+		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+		X.set_x(x);
+
+		JacDDEq dde(Eq(m_params), tau);
+		JacSolver solver(dde, m_maxOrder);
+
+		JacPoincareMap pm(solver, section);
+		pm.setDirection(this->crossingDirection);
+		pm.setRequiredSteps(m_reqSteps);
+		pm.setMaxSteps(m_maxSteps);
+
+		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
+		Px = Vector(M()); fPx = Vector(M());
+		V = Matrix(M(), M()); DP = Matrix(M(), M());
+		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
+		pm.setNormalizeVariational(m_experimentalRenormalizeVariational);
+		pm.setInitialV(X, initV);
+		JacSolution PX(X); PX *= 0.;
+		Vector dump = x;
+		pm(X, PX, reachTime, dump, Px, fPx, V, DP);
+		steps = pm.getLastStepsAfterSection();
+		return X; // X contains full trajectory
+	}
+	/**
+	 * computes poincare map and the (approximate)
+	 * solution to the variational equation on the coefficients
+	 * in V it returns the monodromy matrix, that is D_x \varph(t_P(x0), x)
+	 * in DP you get D \varphi(t_p(x), x)
+	 * (sic! the difference in t_p argument)
+	 * in fPx you get the value of the "vector field" at P(x0)
+	 * this is not straightforward as in ODE
+	 * that is for ODE you have fPx = f(P(x0)), where f is r.h.s. of the ODE.
+	 * But for DDE you do not have r.h.s for all of the points in [-tau, 0]
+	 * But it can be shown, that if $t_p \ge tau$ then $fPx = (Px)'$
+	 * (note Px : [-tau,0] \to \R^d is a function of time, so it can be differentiated)
+	 */
+	JacSolution poincare(
+				JacJetSection section, Vector const& x0,
+				double& reachTime, Vector& Px, Vector& fPx,
+				Matrix& V, Matrix& DP){
+		Matrix Id(x0.dimension(), x0.dimension()); Id.setToIdentity();
+		int steps;
+		return 	poincare(section, x0, Id, reachTime, steps, Px, fPx, V, DP);
+	}
+
+
+
+
+	/**
+	 * TODO: (!!!URGENT) docs!
+	 * TODO: (!!!URGENT) consider removing it??
+	 */
 	Real iteratePoincare(std::ostream& info, int iters, JacJetSection& section, Vector &x, Matrix& V, Matrix& DP){
 		info << "# iteratePoincare START" << std::endl;
 		auto tau = m_grid.point(m_p);
@@ -303,28 +567,7 @@ public:
 	}
 
 	/**
-	 * makes a section and stores it in out_section
-	 *
-	 * if dim(s) == d, then we setup section in the coordinate x(0) . s = c
-	 * otherwise we set full-space section s . x_0 = c
-	 */
-	template<typename SecionType>
-	void makeSection(Vector const& s, Scalar const& c, SecionType& out_section){
-		Vector v;
-		if (s.dimension() == d()){
-			v = Vector(M());
-			for (size_t i = 0; i < d(); ++i)
-				v[i] = s[i];
-		}else if (s.dimension() == M()){
-			v = s;
-		}else {
-			throw std::logic_error("NonrigorousHelper::initialIteration(): vector must be either DIMENSION (for const) or M dimensional (for any initial)");
-		}
-		out_section = SecionType(d(), p(), n(), v, c);
-	}
-
-	/**
-	 * helper function to refine a candidate periodic orbit with a Newton method.
+	 * Helper function to refine a candidate periodic orbit with a Newton method.
 	 *
 	 * First parameter is to get some text info back during the process, you can pass std::cout there.
 	 *
@@ -362,114 +605,15 @@ public:
 		info << "# refinePeriodic END" << std::endl;
 		return diff;
 	}
-	capd::poincare::CrossingDirection detectCorssingDirection(JacJetSection section, Vector const& x){
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
-		JacDDEq dde(Eq(m_params), tau);
-		JacSolver solver(dde, m_maxOrder);
-		JacPoincareMap pm(solver, section);
-		return pm.detectCrossingDirection(X);
+
+	void drawMap(Solution const& solution, PathConfig const& outconfig){
+		drawSolution(outconfig.dirPath, outconfig.prefix, solution);
+		Vector start = solution.subcurve(solution.pastTime(), m_grid(0)).get_x();
+		Vector iterated = solution.subcurve(solution.currentTime() - m_grid(m_p)).get_x();
+		saveData(outconfig.filepath("start"), &start, &start+1);
+		saveData(outconfig.filepath("iterated"), &iterated, &iterated+1);
 	}
-	/**
-	 * if you do not know what initV is, then
-	 * you should probably stick to using
-	 * the other JacSolution poincare() method (without initV).
-	 */
-	JacSolution poincare(
-				JacJetSection section,
-				Vector const& x, Matrix& initV,
-				double& reachTime, int& steps, Vector& Px, Vector& fPx,
-				Matrix& V, Matrix& DP){
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
-
-		JacDDEq dde(Eq(m_params), tau);
-		JacSolver solver(dde, m_maxOrder);
-
-		JacPoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
-
-		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
-		Px = Vector(M()); fPx = Vector(M());
-		V = Matrix(M(), M()); DP = Matrix(M(), M());
-		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
-		pm.setNormalizeVariational(m_experimentalRenormalizeVariational);
-		pm.setInitialV(X, initV);
-		JacSolution PX(X); PX *= 0.;
-		Vector dump = x;
-		pm(X, PX, reachTime, dump, Px, fPx, V, DP);
-		steps = pm.getLastStepsAfterSection();
-		return X; // X contains full trajectory
-	}
-	/**
-	 * compuytes poincare map and the (approximate)
-	 * solution to the variational equation on the coefficients
-	 * in V it returns the monodromy matrix, that is D_x \varph(t_P(x0), x)
-	 * in DP you get D \varphi(t_p(x), x)
-	 * (sic! the difference in t_p argument)
-	 * in fPx you get the value of the "vector field" at P(x0)
-	 * this is not straightforward as in ODE
-	 * that is for ODE you have fPx = f(P(x0)), where f is r.h.s. of the ODE.
-	 * But for DDE you do not have r.h.s for all of the points in [-tau, 0]
-	 * But it can be shown, that if $t_p \ge tau$ then $fPx = (Px)'$
-	 * (note Px : [-tau,0] \to \R^d is a function of time, so it can be differentiated)
-	 */
-	JacSolution poincare(
-				JacJetSection section, Vector const& x0,
-				double& reachTime, Vector& Px, Vector& fPx,
-				Matrix& V, Matrix& DP){
-		Matrix Id(x0.dimension(), x0.dimension()); Id.setToIdentity();
-		int steps;
-		return 	poincare(section, x0, Id, reachTime, steps, Px, fPx, V, DP);
-	}
-	/**
-	 * the simples computation of poincare map, without extra data
-	 */
-	Solution poincare(
-				JetSection section, Vector const& x,
-				double& reachTime, Vector& Px){
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
-
-		DDEq dde(Eq(m_params), tau);
-		Solver solver(dde, m_maxOrder);
-
-		PoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
-
-		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
-		Solution PX(X); PX *= 0.;
-		pm(X, PX, reachTime);
-		Px = PX.get_x();
-		return X; // X contains full trajectory
-	}
-	// void computeCoordinates(std::ostream& info, Matrix const& V, Matrix const& DP, Matrix& coords);
-
-	Solution vectorToSolution(Vector const& x) const{
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
-		return X;
-	}
-	JacSolution vectorToJacSolution(Vector const& x) const{
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
-		return X;
-	}
-
+	// TODO: (IMPORTANT): Why those are templated?
 	template<typename SolutionT>
 	std::string drawSolution(std::string dirpath, std::string filename, SolutionT const& X, double tshift = 0.) const {
 		{
@@ -498,6 +642,7 @@ public:
 		}
 		return plotcmd.str();
 	}
+
 	std::string drawSolution(std::string dirpath, std::string filename, Vector const& x, double tshift = 0.) const {
 		if (x.dimension() != M())
 			throw std::logic_error("NonrigorousHelper::drawSolution(Vector): bad x dimension");
@@ -508,10 +653,14 @@ public:
 		X.set_x(x);
 		return drawSolution(dirpath, filename, X, tshift);
 	}
+
+	// TODO: (IMPORTANT): Why those are templated?
 	template<typename SolutionT>
 	void drawSolution(PathConfig const& paths, SolutionT const& X, double tshift = 0.) const {
 		drawSolution(paths.dirpath(), paths.filename("solution"), X, tshift);
 	}
+
+	// TODO: (IMPORTANT): Why those are templated?
 	template<typename SolutionT>
 	void drawDelayMap(std::string dirpath, std::string filename, SolutionT const& X) const {
 		{
@@ -539,10 +688,13 @@ public:
 			capd::ddeshelper::runSystemCommand(cmd.str().c_str());
 		}
 	}
+
+	// TODO: (IMPORTANT): Why those are templated?
 	template<typename SolutionT>
 	void drawDelayMap(PathConfig const& paths, SolutionT const& X) const {
 		drawDelayMap(paths.dirpath(), paths.filename("phasespace"), X);
 	}
+	// TODO: (IMPORTANT): Why those are templated?
 	template<typename VectorIteratorSpec>
 	void saveData(std::string filepath, VectorIteratorSpec start, VectorIteratorSpec end, std::string extraComment=""){
 		std::ofstream outf(filepath); outf.precision(15);
@@ -592,10 +744,10 @@ public:
 	size_type d() const { return DIMENSION; }
 	Real h() const { return getBasicIntervalLength() / p(); }
 	Real getBasicIntervalLength() const { return m_params[m_params.dimension()-1]; /* TODO: (IMPORTANT): make it more general, many delays */ }
+	TimePoint t(int i) const { return m_grid(i); }
+	const Grid& grid() const { return m_grid; }
 
 	void setCrossingDirection(capd::poincare::CrossingDirection const& d) { this->crossingDirection = d; }
-
-	const Grid& grid() const { return m_grid; }
 
 	NonrigorousHelper& setExperimentalRenormalizeVariational(bool v) { m_experimentalRenormalizeVariational = v; return *this; }
 
@@ -612,8 +764,6 @@ public:
 		m_params[index] = new_param;
 		return old_param;
 	};
-
-	TimePoint t(int i) const { return m_grid(i); }
 
 private:
 	ParamsVector m_params;
@@ -638,15 +788,39 @@ private:
 		if (control_steps)
 			m_maxSteps = (m_maxSteps < m_reqSteps ? 10 * m_reqSteps : m_maxSteps);
 	}
+
+	template<typename SegSpec>
+	SegSpec makeSegmentTemplate(size_type n, Vector v) const {
+		if (!v.dimension()) v = Vector(d());
+		auto zero = m_grid.point(0);
+		auto tau = m_grid.point(m_p);
+		Vector v0(d());
+		if (v.dimension() == d()) v0 = v;
+		SegSpec X(m_grid, -tau, zero, n, v0);
+		if (v.dimension() != d() && v.dimension() != Vector(X).dimension()){
+			std::ostringstream info;
+			info << "NonrigorousHelper::makeSegment/Solution(): dim(v) = " << v.dimension() << ", ";
+			info << "should be either " << d() << " or " << Vector(X).dimension();
+			throw std::logic_error(info.str());
+		}
+		if (v.dimension() != d()) X.set_x(v);
+		return X;
+	}
+
+	void checkGrid(Solution const& segment){
+		if (segment.grid() != m_grid){
+			throw std::logic_error("NonrigorousHelper::checkGrid(Solution): Solution grid not compatible with this helper!");
+		}
+	}
 };
 
-template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
-const typename NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::size_type
-NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::PARAMS_COUNT = EqSpec::getParamsCount() + delaysSpec;
+template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec>
+const typename NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec>::size_type
+NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec>::PARAMS_COUNT = EqSpec::getParamsCount() + delaysSpec;
 
-template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec, typename PoliciesSpec>
-const typename NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::size_type
-NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec, PoliciesSpec>::DIMENSION = EqSpec::imageDimension();
+template<typename EqSpec, int delaysSpec, typename MatrixSpec, typename VectorSpec>
+const typename NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec>::size_type
+NonrigorousHelper<EqSpec, delaysSpec, MatrixSpec, VectorSpec>::DIMENSION = EqSpec::imageDimension();
 
 } // namespace ddeshelper
 } // namespace capd

@@ -1,4 +1,8 @@
-#include "setup.h"
+#include "rig-setup.h"
 
-template class Rossler<interval>;
-template class capd::ddeshelper::RigorousHelper<Eq, 1, IMatrix, IVector>;
+// this will generate the code of all the classes and subroutines
+
+template class capd::intervals::Interval<double, capd::rounding::DoubleRounding>;
+template class capd::ddes::MackeyGlass<Interval, Interval>;
+template class capd::ddeshelper::RigorousHelper<Eq, 1>;
+template class capd::ddeshelper::DDECompareHelper<RigSetup::Vector>;

@@ -54,7 +54,7 @@ void to_dat(std::ostream& out, capd::intervals::Interval<T_Bound, T_Rnd> const &
 	out << u.leftBound() << "  " << r.rightBound();
 }
 
-/** saves as several double values separated by spaces. special case for capd::interval (TODO: (NOT URGENT) add hadling for any filib type)*/
+/** saves as several double values separated by spaces. special case for capd::interval (TODO: (NOT URGENT) add handling for any filib type)*/
 void to_dat(std::ostream& out, capd::interval const & v);
 /** saves as several double values separated by spaces. special case for normal double */
 void to_dat(std::ostream& out, double const & v);
@@ -141,7 +141,7 @@ void value_to_gnuplot(
 
 template<typename TimePointSpec, typename CurveSpec, typename StepSpec>
 void plot_value(
-		std::string& pathprefix,
+		std::string const& pathprefix,
 		TimePointSpec const &t0,
 		TimePointSpec const &t1,
 		StepSpec const & h,
@@ -172,6 +172,28 @@ void plot_value(
 	std::ostringstream cmd; cmd << "cd '" << dirpath << "' && gnuplot " << (live ? "-p " : "") << "'" << gpname << "'";
 	capd::ddeshelper::runSystemCommand(cmd.str());
 	#endif
+}
+
+template<typename CurveSpec, typename StepSpec>
+void plot_value(
+		std::string const& pathprefix,
+		StepSpec const & h,
+		CurveSpec const & curve,
+		bool live = true){
+	typename CurveSpec::TimePointType t0 = curve.leftDomain();
+	typename CurveSpec::TimePointType t1 = curve.rightDomain();
+	plot_value(pathprefix, t0, t1, h, curve, live);
+}
+
+template<typename CurveSpec>
+void plot_value(
+		std::string const& pathprefix,
+		CurveSpec const & curve,
+		bool live = true){
+	typename CurveSpec::TimePointType t0 = curve.leftDomain();
+	typename CurveSpec::TimePointType t1 = curve.rightDomain();
+	typename CurveSpec::RealType h = (t1 - t0); h /= 128.0; // arbitrarily...
+	plot_value(pathprefix, t0, t1, h, curve, live);
 }
 
 /**

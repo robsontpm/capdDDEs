@@ -1,4 +1,6 @@
-#include "setup.h"
+#include "nonrig-setup.h"
 
-template class Rossler<interval>;
-template class capd::ddeshelper::RigorousHelper<Eq, 1, IMatrix, IVector>;
+// this will generate the code of all the classes and subroutines
+
+template class capd::ddes::MackeyGlass<double, double>;
+template class capd::ddeshelper::NonrigorousHelper<Eq, 1, capd::DMatrix, capd::DVector>;

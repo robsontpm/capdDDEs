@@ -201,6 +201,7 @@ public:
 		friend TimePointType operator*(RealType const & a, TimePointType const & b) { throw std::logic_error("DiscreteTimeGrid::TimePoints does not support multiplication!"); }
 		friend TimePointType operator*(TimePointType const & a, RealType const & b) { return b * a; }
 		friend bool operator==(TimePointType const & a, TimePointType const & b) { return (&a.m_h == &b.m_h) && (a.m_i == b.m_i); }
+		friend bool operator!=(TimePointType const & a, TimePointType const & b) { return !(a == b); }
 		TimePointType(TimePointType const & orig): m_h(orig.m_h), m_i(orig.m_i) {}
 		TimePointType(): m_h(zero), m_i(0) {}
 		TimePointType& operator=(TimePointType const & orig) {
@@ -214,9 +215,9 @@ public:
 			try { a.checkGridCompatible(b); } catch (std::logic_error& e) { return RealType(a) < RealType(b); }
 			return a.m_i < b.m_i;
 		}
-		friend bool operator>(TimePointType const & a, TimePointType const & b) { return b < a; }
-		friend bool operator<=(TimePointType const & a, TimePointType const & b) { return !(a > b); }
-		friend bool operator>=(TimePointType const & a, TimePointType const & b) { return !(b > a); }
+		friend bool operator>(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return b < a; }
+		friend bool operator<=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(a > b); }
+		friend bool operator>=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(b > a); }
 
 		friend std::ostream& operator<<(std::ostream & out, TimePointType const & t) {
 			out << TimePointType::badge() << " ";
@@ -254,6 +255,8 @@ public:
 
 	DiscreteTimeGrid(DiscreteTimeGrid const& orig): m_h(orig.m_h) {}
 	DiscreteTimeGrid& operator=(DiscreteTimeGrid const& orig) { m_h = orig.m_h; return *this; }
+	friend bool operator==(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return a.m_h == b.m_h; }
+	friend bool operator!=(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return !(a == b); }
 	DiscreteTimeGrid(): m_h(1.0) {}
 	DiscreteTimeGrid(RealSpec h): m_h(h) {}
 	TimePointType point(int i) const { return TimePointType(m_h, i); }

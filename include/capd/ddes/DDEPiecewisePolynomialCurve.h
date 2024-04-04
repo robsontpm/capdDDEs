@@ -130,6 +130,25 @@ public:
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent));
 	}
 
+	/**
+	 * creates a constant function with a given value on interval [-p * grid(1), grid(0)]
+	 * and with given order (useful for future use as a a set in integration).
+	 * It is especially useful if grid was made with h = tau/p, to setup initial
+	 * segment on [-tau, 0]
+	 */
+	DDEPiecewisePolynomialCurve(
+				const GridType& grid,
+				const int p,
+				size_type order,
+				const DataType& value):
+			m_grid(grid), m_t_current(grid(-p)),
+			m_valueAtCurrent(value),
+			m_dimension(value.dimension())
+	{
+		for (TimePointType t = grid(-p); t < grid(0); t += grid.point(1))
+			addPiece(new CurvePieceType(t, order, m_valueAtCurrent));
+	}
+
 	/** number of pieces */
 	size_type length() const { return m_pieces.size(); }
 
@@ -229,27 +248,46 @@ public:
 		return dim;
 	}
 
-	/** todo: docs */
+	/** changes the time at which the curve ends on the right. WARNING: this is mostly for internal use, should not be changed directly */
 	Class& setCurrentTime(TimePointType const& t0) { m_t_current = t0; return *this; }
-	/** todo: docs */
+	/** Returns the current time of the curve (right domain)  */
 	TimePointType getCurrentTime() const { return m_t_current; }
+	/** Return the time point of the first jet in the curve (left domain) */
+	TimePointType getPastTime() const { return m_pieces.size() ? (**m_pieces.begin()).t0() : t0(); }
 
-	/** todo: docs */
-	TimePointType currentTime() const { return getCurrentTime(); }
-	/** todo: docs */
+	/** same as getCurrentTime(), TODO: (NOT URGENT) deprecated? left for backward compatibility? */
 	TimePointType t0() const { return getCurrentTime(); }
-	/** todo: docs */
+	/** same as getCurrentTime(), TODO: (NOT URGENT) deprecated? left for backward compatibility? */
 	TimePointType getT0() const { return getCurrentTime(); }
-	/** todo: docs */
+	/** same as setCurrentTime(), TODO: (NOT URGENT) deprecated? left for backward compatibility? */
 	Class& setT0(TimePointType const& t0) { return this->setCurrentTime(t0); }
-	/** todo: docs */
-	TimePointType leftDomain() const { return pastTime(); } ///< CAPD map compatible
-	/** todo: docs */
-	TimePointType rightDomain() const { return t0(); } ///< CAPD map compatible
-	/** todo: docs */
-	TimePointType pastTime() const { return m_pieces.size() ? (**m_pieces.begin()).t0() : t0(); }
+	/** CAPD map compatible, same as getPastTime() */
+	TimePointType leftDomain() const { return getPastTime(); } ///< CAPD map compatible
+	/** CAPD map compatible, same as getCurrentTime() */
+	TimePointType rightDomain() const { return t0(); } ///<
+	/** TODO: (NOT URGENT) deprecated? left for backward compatibility? */
+	TimePointType pastTime() const { return getPastTime(); }
+	/** TODO: (NOT URGENT) deprecated? left for backward compatibility? */
+	TimePointType currentTime() const { return getCurrentTime(); }
 
-	/** todo: docs */
+	/**
+	 * returns raw representation of this solution as a vector.
+	 * Use with caution, as it forgets all the structure of the solution.
+	 * See @method get_x() for more information.
+	 */
+	operator VectorType() const { return this->get_x(); }
+
+	/**
+	 * returns raw representation of this solution as a vector.
+	 * Use with caution, as it forgets all the structure of the solution.
+	 *
+	 * The representation is as follows:
+	 *
+	 * - first d coordinates: value at t=t0 = currentTime() (i.e. x(0) \in \R^d).
+	 * - next, the jet at t = t0 - grid.h(), first the 0-th element of the jet, then order 1, and so on. Each element of the jest is d dimensional.
+	 * - the following jets, up the the last piece.
+	 * This might be a big vector, its size may vary, as in the representation, each jet can have in theory have different order.
+     */
 	VectorType get_x() const {
 		VectorType x(storageDimension());
 		size_type d = dimension();
@@ -335,6 +373,8 @@ public:
 	}
 	/** it assumes that index is already processed (see pointToIndex()) */
 	CurvePieceType& getPiece(size_type const& index) const {
+		// TODO: (IMPORTANT, RETHINK): this will slow computations down - make it to not check the constraints or add compiler flag to disabkle extra checking for speed purposes.
+		// TODO: (IMPORTANT, CHECK): check other time-critical code if it uses getPiece(TimePoint) or this one and make sure it uses this one, without checking.
 		int ibase = int(pastTime());
 		int i0 = int(currentTime()) - ibase;
 		if (index < 0 || index >= i0)
@@ -458,10 +498,23 @@ public:
 	JetType* jetPtr(TimePointType t0) const {
 		try { return &getPiece(t0); } catch (std::domain_error &e){ throw rethrow(badge() + "::jetPtr(TimePoint):", e); }
 	}
+	/** returns value of the curve at the time point i (size_type) */
+	DataType const& value(size_type i) const { try { return m_grid(i) == m_t_current ? m_valueAtCurrent : getPiece(i)[0]; } catch (std::domain_error &e){ throw rethrow(badge() + "::value(index): ", e); } }
+	/** returns value of the curve at the time point t0 (TimePointType) */
+	DataType const& value(TimePointType t0) const { try { return t0 == m_t_current ? m_valueAtCurrent : getPiece(t0)[0]; } catch (std::domain_error &e){ throw rethrow(badge() + "::value(TimePoint): ", e); } }
+	/** returns value of the curve at the time point i (size_type) */
+	DataType& value(size_type i) { try { return m_grid(i) == m_t_current ? m_valueAtCurrent : getPiece(i)[0]; } catch (std::domain_error &e){ throw rethrow(badge() + "::value(index): ", e); } }
+	/** returns value of the curve at the time point t0 (TimePointType) */
+	DataType& value(TimePointType t0) { try { return t0 == m_t_current ? m_valueAtCurrent : getPiece(t0)[0]; } catch (std::domain_error &e){ throw rethrow(badge() + "::value(TimePoint): ", e); } }
+
 	/** k-th coeff at grid point i */
-	DataType j(size_type i, size_type k) const { try { return getPiece(i)[k]; } catch (std::domain_error &e){ throw rethrow(badge() + "::j(index, order): ", e); } }
+	DataType const& j(size_type i, size_type k) const { try { return getPiece(i)[k]; } catch (std::domain_error &e){ throw rethrow(badge() + "::j(index, order): ", e); } }
 	/** k-th coeff at grid point t0 */
-	DataType j(TimePointType t0, size_type k) const { try { return getPiece(t0)[k]; } catch (std::domain_error &e){ throw rethrow(badge() + "::j(TimePoint, order): ", e); } }
+	DataType const& j(TimePointType t0, size_type k) const { try { return getPiece(t0)[k]; } catch (std::domain_error &e){ throw rethrow(badge() + "::j(TimePoint, order): ", e); } }
+	/** k-th coeff at grid point i */
+	DataType& j(size_type i, size_type k) { try { return getPiece(i)[k]; } catch (std::domain_error &e){ throw rethrow(badge() + "::j(index, order): ", e); } }
+	/** k-th coeff at grid point t0 */
+	DataType& j(TimePointType t0, size_type k) { try { return getPiece(t0)[k]; } catch (std::domain_error &e){ throw rethrow(badge() + "::j(TimePoint, order): ", e); } }
 	/** jet at grid point t0 (reference) */
 	JetType const& j(TimePointType t0) const { try { return getPiece(t0); } catch (std::domain_error &e){ throw rethrow(badge() + "::j(TimePoint): ", e); } }
 	/** jet at grid point t0 (reference) */

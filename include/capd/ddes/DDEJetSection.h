@@ -37,6 +37,22 @@
 namespace capd{
 namespace ddes{
 
+/**
+ * Represents a section that is a hyperplane with a given normal vector in some function space.
+ *
+ * Currently, the hyperplane is given as S = { v : <normal . v> = c }, where the scalar product < . > is
+ * the standard product in \R^M, where M is the dimension of all coefficients defining the space.
+ *
+ * It can bu used e.g. to represent many standard
+ *
+ * TODO: (FUTURE) allow the Curve to define .dot() product for the hyperplane, to allow for more natural functional space products, i.e. L^2 or such.
+ * TODO: (NOTE) consider e.g. L^2 product: s . v = \int_0^h s(t) * v(t) dt, where:
+ *    s(t) = s0 + s1*t + s2*t^2 + ... + sn*t^n
+ *    v(t) = v0 + v1*t + v2*t^2 + ... + vn*t^n
+ *    s . v = \sum_j=0^n v0 * (\int_0^h h^j * s(t) dt ), the last integral depends only on s, can be computed explicitly.
+ *    The j-th integral in ( ) is the j-th coefficent of the normal vector you should supply to
+ *    have L^2 norm. The coefficients of course should be applied jet-wise, over intervals [-ih, -ih +h).
+ */
 template<typename CurveSpec, bool isInterval = capd::TypeTraits<typename CurveSpec::ScalarType>::isInterval>
 class DDEJetSection {
 public:
@@ -85,6 +101,24 @@ public:
 			for (size_type k = 0; k <= n; ++k)
 				for (size_type i = 0; i < d; ++i, ++I)
 					(*jet)[k][i] = vec[I];
+	}
+
+	/**
+	 * makes a section that is a hyperplane with a given normal vector in some
+	 * function space (where @param normal lives, i.e. C^\eta_p space).
+	 *
+	 * It inherits structure from the normal, and the hyperplane is
+	 * S = { v : normal . v = c }, where the scalar product . is
+	 * the standard product in the
+	 */
+	DDEJetSection(CurveSpec const& normal, ScalarType c): m_c(c) {
+		VectorType vec = normal;
+		size_type expectedDim = vec.dimension();
+
+		m_orig_s = vec;
+		m_s = normal.getValueAtCurrent();
+		for (auto jet: normal)
+			m_jets.push_back(*jet);
 	}
 
 	ScalarType operator()(CurveSpec const& curve) const {

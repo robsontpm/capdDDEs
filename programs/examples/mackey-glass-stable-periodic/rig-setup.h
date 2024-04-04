@@ -5,35 +5,46 @@
  *
  * Also, we define some helper functions for the output
  */
-#ifndef EXAMPLES_ROSSLER_ODE_VS_DDE_CODE_SETUP_H_
-#define EXAMPLES_ROSSLER_ODE_VS_DDE_CODE_SETUP_H_
+#ifndef EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_RIG_SETUP_H_
+#define EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_RIG_SETUP_H_
 
 #include <iostream>
-#include <iomanip>
 #include <capd/capdlib.h>
 #include <capd/ddes/ddeslib.h>
 #include <capd/ddeshelper/ddeshelperlib.h>
 #include <capd/ddeshelper/DDEHelperRigorous.hpp>
-#include "equation.h"
+#include "common-params.h"
 
 using namespace std;
-using namespace capd;
 
-/**
- * we will use Rossler DDE with interval parameters.
- * This is the definition of f from x'(t) = f(x(t), x(t-tau)).
- */
-typedef Rossler<interval> Eq;
+// common setup for the DDE integrator machinery,
+// we will use old capd intervals, as the autodiff code is not ready for new intervals
+// especially, the ln() function used in the definition of the MackeyGlass in SampleEqns.h
+typedef capd::intervals::Interval<double, capd::rounding::DoubleRounding>  Interval;
 
-/** this contains all necessary ingredients to do rigorous numerics in DDEs */
-typedef capd::ddeshelper::RigorousHelper<Eq, 1, IMatrix, IVector> Setup;
+// we say that the system computes on Intervals and has Intervals as parameters
+typedef capd::ddes::MackeyGlass<Interval, Interval> Eq;
 
-// below are just renaming for shorter class names
-typedef Setup::Grid Grid;				// grid for the solutions in the C^n_p space.
-typedef Setup::DDEq DDEq;				// this is F from the abstract formulation x'(t) = F(x_t), that contains the information on delays. In our case F(x_t) := f(x_t(0), x_t(-tau)).
-typedef Setup::Solution DDESolution;	// basic set type for DDEs
-typedef Setup::Solver DDESolver;		// semidynamical system
-typedef Setup::PoincareMap DDEPoincare;	// Poincare map for the semidynamical system
-typedef Setup::Section DDESection;		// basic section for DDEs
+// the number one (1) is the number of delays
+typedef capd::ddeshelper::RigorousHelper<Eq, 1> RigSetup;
 
-#endif /* EXAMPLES_ROSSLER_ODE_VS_DDE_CODE_SETUP_H_ */
+// this helps output nice comparisons for high-dimensional sets
+typedef capd::ddeshelper::DDECompareHelper<RigSetup::Vector> Comparator;
+
+// setup parameters of the system
+// by default, we take the values of the double parameters
+// defined for both systems in common-parametrs.h, but they
+// might be changed here, for example to rigorous bounds on the parameters
+// if they are non-representable real numbers.
+namespace RIGPARAMS {
+	const Interval TAU { PARAMS::TAU };
+	const Interval BETA { PARAMS::BETA };
+	const Interval GAMMA { PARAMS::GAMMA };
+	const Interval N { PARAMS::N };
+
+	// last one (i.e. 1.0) is the delay used in computations as the length of the delay
+	// we scale the parameters of the equations by PARAM_TAU. This is a standard thing.
+	const RigSetup::ParamsVector params {GAMMA * TAU, BETA * TAU, N, 1.0};
+}
+
+#endif /* EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_RIG_SETUP_H_ */
