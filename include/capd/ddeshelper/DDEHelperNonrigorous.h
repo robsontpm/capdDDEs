@@ -37,7 +37,7 @@
 
 // TODO: (IMPORTANT) code below assume delaysSpec=1, it will not work for many delays, FIX!
 
-// TODO: (NOT URGENT): we have NonrigorousHelper but it is in DDEHelperNonrigorous.h/.hpp,... refactor...
+// TODO: (NOT URGENT): we have NonrigorousHelper but it is in DDEHelperNonrigorous.h/.hpp,... refactor...?
 
 namespace capd {
 namespace ddeshelper {
@@ -84,6 +84,8 @@ namespace ddeshelper {
  *
  * TODO: (IMPORTANT) Currently it only support one delay!!!!!!
  * TODO: (URGENT?) DEV: make sure all const qualifiers are put in the right places!
+ * TODO: (FUTURE) move implementation to hpp file to shorten this for end user
+ * TODO: (FUTURE): the normal and Jac versions are totaly separated. Rethink if they can reuse some code, because there is a lot of repetition...
  */
 template<
 	typename EqSpec,
@@ -174,15 +176,103 @@ public:
 	}
 
 	/**
-	 * This creates a raw solver, if you want to do nonstandard tasks
-	 * If you want just to integrate initial values, consider using iterate() or poincare() instead.
-	 * TODO: (FUTURE) add functions to create other types of elements
+	 * this controls how many steps are needed before the section crossing
+	 * would be detected when computing poincare maps. This is important
+	 * more in the rigorous setting, but to have consistent computations you might
+	 * want to keep it the same. The helper will set the right (long enough as in papers)
+	 * number of steps for you. Please make it at least p steps if you want to change it.
 	 */
-	Solver makeSolver(){
-		auto tau = m_grid.point(m_p);
-		DDEq dde(Eq(m_params), tau);
-		Solver solver(dde, m_maxOrder);
-		return solver;
+	void setRequiredSteps(step_type reqSteps, bool control_steps = true){ m_reqSteps = reqSteps; updateSteps(control_steps); }
+	/** sets the maximum allowed steps. This prevents the infinite loops when the solution goes astray */
+	void setMaximumSteps(step_type maxSteps, bool control_steps = true){ m_maxSteps = maxSteps; updateSteps(control_steps); }
+	/**
+	 * sets the maximum allowed order of the expanded representation as described in the 2023 FOCM paper.
+	 * it can be as large as you want. But please remember that the expansions occur by one every p steps (full delay).
+	 * Also, the size makes computations expensive very fast.
+	 */
+	void setMaximumOrder(step_type maxOrder, bool control_steps = true){ m_maxOrder = maxOrder; }
+	/** @see docs for setter */
+	step_type getRequiredSteps() const { return m_reqSteps; }
+	/** @see docs for setter */
+	step_type getMaximumSteps() const { return m_maxSteps; }
+	/** returns  */
+	step_type getMaximumOrder() const { return m_maxOrder; }
+
+	/** returns the parameters of the r.h.s of the DDE set for this helper */
+	ParamsVector params() const { return m_params; }
+	/** the intrinsic dimension of the (d,p,n)-representation. This is the constant M = M(d, p, n) from papers. It is usually a big number = O(d*p*n) */
+	size_type M() const { return DIMENSION * (1 + m_p * (m_n +1)); }
+	/** the grid size, i.e. into how many subintervals we divide basic delay */
+	size_type p() const { return m_p; }
+	/** the order of the representation of the solutions used in this helper */
+	size_type n() const { return m_n; }
+	/** dimension of the 'ambient' space, i.e. the dimension of x(t) for a fixed t */
+	size_type d() const { return DIMENSION; }
+	/** returns basic grid size step h := tau/p */
+	Real h() const { return getBasicIntervalLength() / p(); }
+	/** returns the basic interval (the longest one) */
+	TimePoint tau() const { return m_grid(p()); }
+	/** returns the size of the longest interval but as a Real value, not TimePoint */
+	Real getBasicIntervalLength() const { return m_params[m_params.dimension()-1]; /* TODO: (IMPORTANT): make it more general, many delays */ }
+	/** returns the i-th grid point, where e.g. t(-p) = -tau, t(0) = 0 */
+	TimePoint t(int i) const { return m_grid(i); }
+	/** returns the internal grid used by this helper */
+	const Grid& grid() const { return m_grid; }
+
+	/** sets the crossing directions for PoincareMaps used in this helper subroutines */
+	void setCrossingDirection(capd::poincare::CrossingDirection const& d) { this->crossingDirection = d; }
+
+	/** This creates an object representing the equation for the current value of parameters set in the helper. */
+	DDEq makeEquation(){ return makeEquationTemplate<DDEq>(); }
+	/** T@see the other. This is to be used with Jac*** types.  */
+	JacDDEq makeJacEquation(){ return makeEquationTemplate<JacDDEq>(); }
+
+	/**
+	 * This creates a raw solver, if you want to do nonstandard tasks and have an Equation made on the side.
+	 * If you want just to integrate initial values, consider using iterate() or poincare() instead.
+	 */
+	Solver makeSolver(DDEq const& eq){ return Solver(eq, m_maxOrder); }
+	/** It uses the other version with the current equation (@see makeEquation()). */
+	Solver makeSolver(){ return makeSolver(makeEquation()); }
+	/**
+	 * T@see makeSolver().
+	 *
+	 * This version can be used to compute monodromy matrix along the solution.
+	 */
+	JacSolver makeJacSolver(JacDDEq const& eq){ return JacSolver(eq, m_maxOrder); }
+	/** It uses the other version with the current equation (@see makeEquation()). */
+	JacSolver makeJacSolver(){ return makeJacSolver(makeJacEquation()); }
+
+	/**
+	 * This creates a PoincareMap.
+	 *
+	 * Warning: the solver and section are passed as references, so they need
+	 * to be non-temporary variables. You cannot do makePoincare(makeSolver(), makeSection());
+	 * You need to have:
+	 * auto solver = makeSolver();
+	 * auto section = makeSection();
+	 * auto pm = makePoincareMap(solver, section);
+	 */
+	PoincareMap makePoincareMap(Solver& solver, JetSection& section){
+		PoincareMap pm(solver, section);
+		pm.setDirection(this->crossingDirection);
+		pm.setRequiredSteps(m_reqSteps);
+		pm.setMaxSteps(m_maxSteps);
+		return pm;
+	}
+
+	/**
+	 * This creates a PoincareMap. See the other version for more docs.
+	 *
+	 * This version creates a Poincare map that can also compute Jacobian and Monodromy matrix (approximations).
+	 * Those are computationally expensive, so if you do not need them, then the other version is much faster.
+	 */
+	JacPoincareMap makePoincareMap(JacSolver& solver, JacJetSection& section){
+		JacPoincareMap pm(solver, section);
+		pm.setDirection(this->crossingDirection);
+		pm.setRequiredSteps(m_reqSteps);
+		pm.setMaxSteps(m_maxSteps);
+		return pm;
 	}
 
 	/**
@@ -229,20 +319,12 @@ public:
 	 * if dim(s) == d, then we setup section in the coordinate x(0) . s = c
 	 * otherwise we set full-space section s . x_0 = c
 	 */
-	template<typename SecionType>
-	void makeSection(Vector const& s, Scalar const& c, SecionType& out_section){
-		Vector v;
-		if (s.dimension() == d()){
-			v = Vector(M());
-			for (size_t i = 0; i < d(); ++i)
-				v[i] = s[i];
-		}else if (s.dimension() == M()){
-			v = s;
-		}else {
-			throw std::logic_error("NonrigorousHelper::makeSection(): vector must be either DIMENSION (for const) or M dimensional (for any initial)");
-		}
-		out_section = SecionType(d(), p(), n(), v, c);
-	}
+	JetSection makeSection(Vector const& s, Scalar const& c){ return makeSectionTemplate<JetSection>(s, c); }
+	/**
+	 * same as makeSection(), but returns a datatype needed for computation of poincare map
+	 * with monodromy and jacobian of the poincare map, @see the relevant makePoincareMap().
+	 */
+	JacJetSection makeJacSection(Vector const& s, Scalar const& c){ return makeSectionTemplate<JacJetSection>(s, c); }
 
 	/**
 	 * Just integrate the solution.
@@ -399,16 +481,10 @@ public:
 			throw capd::ddes::rethrow("NonrigorousHelper::poincare(Section, Solution, double, Solution): initial and result must have the same grid!", e);
 		}
 
-		auto tau = m_grid.point(m_p);
 		Solution X = x;
 
-		DDEq dde(Eq(m_params), tau);
-		Solver solver(dde, m_maxOrder);
-
-		PoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
+		Solver solver = makeSolver();
+		PoincareMap pm = makePoincareMap(solver, section);
 
 		pm(X, Px, reachTime);
 		return X; // X contains full trajectory
@@ -418,41 +494,27 @@ public:
 		double dumpTime;
 		return poincare(section, x, dumpTime, Px);
 	}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-	// TODO: TU SKONCZYLEM!!!!! //////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-	/** the simples computation of poincare map, without extra data */
+	/**
+	 * The simples computation of poincare map, without extra data.
+	 * This version operates on raw vectors (they need to comply
+	 * with the dimension M() of the Helper.
+	 */
 	Solution poincare(
 				JetSection section, Vector const& x,
 				double& reachTime, Vector& Px){
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
+		Solution X = makeSegment(x);
+		Solution PX = X;
 
-		DDEq dde(Eq(m_params), tau);
-		Solver solver(dde, m_maxOrder);
-
-		PoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
-
-		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
-		Solution PX(X); PX *= 0.;
-		pm(X, PX, reachTime);
+		auto trajectory = poincare(section, X, reachTime, PX);
 		Px = PX.get_x();
-		return X; // X contains full trajectory
+
+		return trajectory;
 	}
-	/** the simplest computation of poincare map, without extra data (even without return time */
+	/** the simplest computation of poincare map, without extra data (even without return time) */
 	Solution poincare(JetSection section, Vector const& x, Vector& Px){
 		double dumpReachTime;
 		return poincare(section, x, dumpReachTime, Px); // X contains full trajectory
 	}
-	// void computeCoordinates(std::ostream& info, Matrix const& V, Matrix const& DP, Matrix& coords);
 
 	/**
 	 * if you do not know what initV is, then
@@ -464,6 +526,8 @@ public:
 				Vector const& x, Matrix& initV,
 				double& reachTime, int& steps, Vector& Px, Vector& fPx,
 				Matrix& V, Matrix& DP){
+
+		// TODO: (NOT URGENT) refactor it to be more DRY.
 		auto tau = m_grid.point(m_p);
 		auto t_0 = m_grid.point(0);
 		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
@@ -511,82 +575,31 @@ public:
 		return 	poincare(section, x0, Id, reachTime, steps, Px, fPx, V, DP);
 	}
 
-
-
-
-	/**
-	 * TODO: (!!!URGENT) docs!
-	 * TODO: (!!!URGENT) consider removing it??
-	 */
-	Real iteratePoincare(std::ostream& info, int iters, JacJetSection& section, Vector &x, Matrix& V, Matrix& DP){
-		info << "# iteratePoincare START" << std::endl;
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
-
-		JacDDEq dde(Eq(m_params), tau);
-		JacSolver solver(dde, m_maxOrder);
-		JacPoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
-
-		Real reachTime; Jacobians Jac;
-		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
-		JacSolution on_section(X); on_section *= 0.;
-		pm(X, on_section, reachTime);
-		X = on_section; on_section *= 0.;
-		info << "# time of X on section: " << X.getT0() << " should be 0" << std::endl;
-		info << "# reqSteps: " << pm.getRequiredSteps() << std::endl;
-		info << "# maxSteps: " << pm.getMaximumSteps() << std::endl;
-		double diff;
-		for (int i = 0; i < iters; i++){
-			Vector xx = X.get_x();
-			pm(X, on_section, reachTime);
-			Vector yy = on_section.get_x();
-			diff = euclNorm(xx-yy);
-			X = on_section; on_section *= 0.;
-			info << "# reqSteps: " << pm.getRequiredSteps() << std::endl;
-			info << "# maxSteps: " << pm.getMaximumSteps() << std::endl;
-			info << "# time of X on section: " << X.getT0() << " should be 0" << std::endl;
-			info << "# reachTime = " << reachTime << std::endl;
-			info << "# ||PX - X|| = " << diff << std::endl;
-		}
-		info << "# Final poincare: " << std::flush;
-		pm.setRequiredSteps(m_reqSteps);			info << "#" << std::flush;
-		pm.setMaxSteps(m_maxSteps);					info << "#" << std::flush;
-		x = X.get_x();								info << "#" << std::flush;
-		Vector Px, fPx;								info << "#" << std::flush;
-		pm.setInitialV(X);							info << "#" << std::flush;
-		JacSolution PX(X); PX *= 0.; 				info << "#" << std::flush;
-		pm(X, PX, reachTime, x, Px, fPx, V, DP); 	info << "#" << std::flush;
-		diff = euclNorm(x - PX.get_x()); 			info << " DONE" << std::endl;
-		info << "# iteratePoincare END" << std::endl;
-		return diff;
-	}
-
 	/**
 	 * Helper function to refine a candidate periodic orbit with a Newton method.
 	 *
-	 * First parameter is to get some text info back during the process, you can pass std::cout there.
+	 * First parameter is to get some text info back during the process, you can pass std::cout there or some std::ostringstream to ignore it.
 	 *
-	 * Section you need to set-up, it will be s * x_0 = x, s \in \R^{M(d,p,n), c \in \R}
+	 * For technical reasons section must be of type JacJetSection, not JetSection.
+	 *
+	 * The V and DP matrices are the monodromy and Jacobian of Poincare map, respectively.
+	 * They might be helpful in finding good candidate for section coordinates.
+	 * @see periodicCoordinates(), where an example procedure described in 2023 FOCM paper is implemented.
+	 *
+	 * It returns the difference between candidate x and P(x) (in basic euclidean norm on the vector representations!).
+	 *
+	 * You should iterate the method for desired number of iterates or until desired accuracy is obtained.
+	 *
 	 */
 	Real refinePeriodic(std::ostream& info, JacJetSection& section, Vector& x, Matrix& V, Matrix&DP){
-		info << "refinePeriodic START" << std::endl;
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
+		info << "# refinePeriodic START" << std::endl;
 
-		JacDDEq dde(Eq(m_params), tau);
-		JacSolver solver(dde, m_maxOrder);
+		auto X = makeJacSegment(x);
+		auto solver = makeJacSolver();
+		auto pm = makePoincareMap(solver, section);
 
-		JacPoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
+		auto vsec = section(X);
+		info << "# section(X) = " << vsec << " (should be small)" << std::endl;
 
 		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
 		Real reachTime;
@@ -605,6 +618,65 @@ public:
 		info << "# refinePeriodic END" << std::endl;
 		return diff;
 	}
+	/**
+	 * refines, by one Newton iteration, the X if it is a candidate for periodic orbit on the given section.
+	 *
+	 * If X is not on the section or far from the true solution, then the method might fail.
+	 *
+	 * You should iterate the method for desired number of iterates or until desired accuracy is obtained.
+	 *
+	 * The V is the Monodromy matrix and DP is the Jacobian of the Poincare Map. They can be used to obtain good coordinates on the section.
+	 *
+	 * TODO: (FUTURE) this will only work if the segment X is of uniform order n(). This should be corrected to work for any...
+	 */
+	Real refinePeriodic(std::ostream& info, JetSection& section, Solution& X, Matrix& V, Matrix&DP){
+		auto x = X.get_x();
+		auto jacSection = makeJacSection(Vector(section), section.get_c());
+		auto diff = refinePeriodic(info, jacSection, x, V, DP);
+		X.set_x(x);
+		return diff;
+	}
+
+	// TODO: (FUTURE) copy / implement
+	// void periodicCoordinates(std::ostream& info, Matrix const& V, Matrix const& DP, Matrix& coords);
+
+	/** TODO: (URGENT): docs! */
+	template<typename VectorIteratorSpec>
+	void saveData(std::string filepath, VectorIteratorSpec start, VectorIteratorSpec end, std::string extraComment=""){
+		std::ofstream outf(filepath); outf.precision(15);
+		outf << PARAMS_COUNT << " " << m_params << std::endl;
+		outf << DIMENSION << " " << m_p << " " << m_n << std::endl;
+		outf << int(end - start) << std::endl;
+		for (; start != end; ++start)
+			outf << *start << std::endl;
+		outf << "# INFO on format: " << std::endl;
+		outf << "# first line:      number_of_params (" << PARAMS_COUNT << "), then params." << std::endl; // TODO: doac zeby rownania potrafily mowic jakie maja prarametry
+		outf << "# second line:     d p n, as in (p,n)-representations." << std::endl;
+		outf << "# third line:      count, the number of data for solutions. How the programs will use solutions, it depends on the program." << std::endl;
+		outf << "# following lines: the solutions that fit into (p,n)-representation. " << std::endl;
+		outf << std::endl << extraComment << std::endl;
+		outf.close();
+	}
+
+	/** TODO: (URGENT): docs! */
+	void loadSetup(std::string filepath);
+	/** load data only if compatible with setup */
+	std::vector<Vector> loadData(std::string filepath){
+		size_type dp, dn; Vector dumppar(PARAMS_COUNT);
+		std::ifstream in(filepath);
+		rawLoadSetup(in, dp, dn, dumppar);
+		if (dp != m_p || dn != m_n)
+			throw std::logic_error("NonrigorousHelper::loadData(): incompatible dimensions.");
+		int count = 0;
+		in >> count;
+		std::vector<Vector> result(count, Vector(M()));
+		if (in.good() && count > 0){
+			for (int i = 0; i < count; ++i)
+				in >> result[i];
+		}
+		in.close();
+		return result;
+	}
 
 	void drawMap(Solution const& solution, PathConfig const& outconfig){
 		drawSolution(outconfig.dirPath, outconfig.prefix, solution);
@@ -613,7 +685,9 @@ public:
 		saveData(outconfig.filepath("start"), &start, &start+1);
 		saveData(outconfig.filepath("iterated"), &iterated, &iterated+1);
 	}
-	// TODO: (IMPORTANT): Why those are templated?
+	// TODO: (FUTURE): Why those are templated?
+	// TODO: (FUTURE): some code repeats what is in plot_value), consider refactor DRY
+	// TODO: (FUTURE): the code doeas not test for system() or respect DDES_ALLOW_SYSTEM flag.
 	template<typename SolutionT>
 	std::string drawSolution(std::string dirpath, std::string filename, SolutionT const& X, double tshift = 0.) const {
 		{
@@ -630,7 +704,7 @@ public:
 		outg << "plot ";
 		std::ostringstream plotcmd;
 		if (tshift == 0.)
-			plotcmd << "'" << filename << ".dat" << "' using 1:2 with lines";
+			plotcmd << "'" << filename << ".dat" << "' using 1:3 with lines"; // 1, 3 because we have thickness 0 as the 2 and 4 column, see value_to_gnuplot()
 		else
 			plotcmd << "'" << filename << ".dat" << "' using ($1+" << tshift <<"):2 with lines";
 		outg << plotcmd.str();
@@ -652,6 +726,12 @@ public:
 		Solution X(m_grid, -tau, t_0, m_n, v);
 		X.set_x(x);
 		return drawSolution(dirpath, filename, X, tshift);
+	}
+
+	// TODO: (IMPORTANT): Why those are templated?
+	template<typename SolutionT>
+	void drawSolution(std::string filename, SolutionT const& X, double tshift = 0.) const {
+		drawSolution(".", filename, X, tshift);
 	}
 
 	// TODO: (IMPORTANT): Why those are templated?
@@ -691,79 +771,18 @@ public:
 
 	// TODO: (IMPORTANT): Why those are templated?
 	template<typename SolutionT>
+	void drawDelayMap(std::string filename, SolutionT const& X) const {
+		drawDelayMap(".", filename, X);
+	}
+
+	// TODO: (IMPORTANT): Why those are templated?
+	template<typename SolutionT>
 	void drawDelayMap(PathConfig const& paths, SolutionT const& X) const {
 		drawDelayMap(paths.dirpath(), paths.filename("phasespace"), X);
 	}
-	// TODO: (IMPORTANT): Why those are templated?
-	template<typename VectorIteratorSpec>
-	void saveData(std::string filepath, VectorIteratorSpec start, VectorIteratorSpec end, std::string extraComment=""){
-		std::ofstream outf(filepath); outf.precision(15);
-		outf << PARAMS_COUNT << " " << m_params << std::endl;
-		outf << DIMENSION << " " << m_p << " " << m_n << std::endl;
-		outf << int(end - start) << std::endl;
-		for (; start != end; ++start)
-			outf << *start << std::endl;
-		outf << "# INFO on format: " << std::endl;
-		outf << "# first line:      number_of_params (" << PARAMS_COUNT << "), then params." << std::endl; // TODO: doac zeby rownania potrafily mowic jakie maja prarametry
-		outf << "# second line:     d p n, as in (p,n)-representations." << std::endl;
-		outf << "# third line:      count, the number of data for solutions. How the programs will use solutions, it depends on the program." << std::endl;
-		outf << "# following lines: the solutions that fit into (p,n)-representation. " << std::endl;
-		outf << std::endl << extraComment << std::endl;
-		outf.close();
-	}
 
-	void loadSetup(std::string filepath);
-	/** load data only if compatible with setup */
-	std::vector<Vector> loadData(std::string filepath){
-		size_type dp, dn; Vector dumppar(PARAMS_COUNT);
-		std::ifstream in(filepath);
-		rawLoadSetup(in, dp, dn, dumppar);
-		if (dp != m_p || dn != m_n)
-			throw std::logic_error("NonrigorousHelper::loadData(): incompatible dimensions.");
-		int count = 0;
-		in >> count;
-		std::vector<Vector> result(count, Vector(M()));
-		if (in.good() && count > 0){
-			for (int i = 0; i < count; ++i)
-				in >> result[i];
-		}
-		in.close();
-		return result;
-	}
-
-	void setRequiredSteps(step_type reqSteps, bool control_steps = true){ m_reqSteps = reqSteps; updateSteps(control_steps); }
-	void setMaximumSteps(step_type maxSteps, bool control_steps = true){ m_maxSteps = maxSteps; updateSteps(control_steps); }
-	step_type getRequiredSteps() const { return m_reqSteps; }
-	step_type getMaximumSteps() const { return m_maxSteps; }
-	step_type getMaximumOrder() const { return m_maxOrder; }
-
-	ParamsVector params() const { return m_params; }
-	size_type M() const { return DIMENSION * (1 + m_p * (m_n +1)); }
-	size_type p() const { return m_p; }
-	size_type n() const { return m_n; }
-	size_type d() const { return DIMENSION; }
-	Real h() const { return getBasicIntervalLength() / p(); }
-	Real getBasicIntervalLength() const { return m_params[m_params.dimension()-1]; /* TODO: (IMPORTANT): make it more general, many delays */ }
-	TimePoint t(int i) const { return m_grid(i); }
-	const Grid& grid() const { return m_grid; }
-
-	void setCrossingDirection(capd::poincare::CrossingDirection const& d) { this->crossingDirection = d; }
-
+	/** This is DEVELOPMENTAL, pleas do not use */
 	NonrigorousHelper& setExperimentalRenormalizeVariational(bool v) { m_experimentalRenormalizeVariational = v; return *this; }
-
-	/** returns old params */
-	ParamsVector setParams(ParamsVector const& new_params) {
-		auto old_params = m_params;
-		m_params = new_params;
-		return old_params;
-	};
-
-	/** returns old param value; TODO: add index checking */
-	ParamType setParam(size_type index, ParamType const& new_param) {
-		auto old_param = m_params[index];
-		m_params[index] = new_param;
-		return old_param;
-	};
 
 private:
 	ParamsVector m_params;
@@ -805,6 +824,28 @@ private:
 		}
 		if (v.dimension() != d()) X.set_x(v);
 		return X;
+	}
+
+	template<typename SecionSpec>
+	SecionSpec makeSectionTemplate(Vector const& s, Scalar const& c){
+		Vector v;
+		if (s.dimension() == d()){
+			v = Vector(M());
+			for (size_t i = 0; i < d(); ++i)
+				v[i] = s[i];
+		}else if (s.dimension() == M()){
+			v = s;
+		}else {
+			throw std::logic_error("NonrigorousHelper::makeSection(): vector must be either DIMENSION (for const) or M dimensional (for any initial)");
+		}
+		return SecionSpec(d(), p(), n(), v, c);
+	}
+
+	template<typename DDEEqSpec>
+	DDEEqSpec makeEquationTemplate(){
+		auto tau = m_grid.point(m_p);
+		DDEEqSpec dde(Eq(m_params), tau);
+		return dde;
 	}
 
 	void checkGrid(Solution const& segment){

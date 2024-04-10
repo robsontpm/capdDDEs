@@ -289,6 +289,28 @@ void plot_phasespace(
 
 }
 
+template<typename CurveSpec, typename StepSpec>
+void plot_phasespace(
+		std::string const& pathprefix,
+		StepSpec const & h,
+		CurveSpec const & curve,
+		bool live = true){
+	typename CurveSpec::TimePointType t0 = curve.leftDomain();
+	typename CurveSpec::TimePointType t1 = curve.rightDomain();
+	plot_phasespace(pathprefix, t0, t1, h, curve, live);
+}
+
+template<typename CurveSpec>
+void plot_phasespace(
+		std::string const& pathprefix,
+		CurveSpec const & curve,
+		bool live = true){
+	typename CurveSpec::TimePointType t0 = curve.leftDomain();
+	typename CurveSpec::TimePointType t1 = curve.rightDomain();
+	typename CurveSpec::RealType h = (t1 - t0); h /= 128.0; // arbitrarily...
+	plot_phasespace(pathprefix, t0, t1, h, curve, live);
+}
+
 /**
  * outputs to the stream the pairs (t, curve(t))
  * for n equidistant points in [t0, t1].

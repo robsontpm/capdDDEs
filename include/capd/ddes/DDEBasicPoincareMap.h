@@ -113,10 +113,47 @@ public:
 	{}
 
 	/**
-	 * in curve there is a curve that reaches first full step after the section
-	 * in on_section there is the image on the section, as close to section as possible
-	 * on_section must be initialized with the desired "length" (time interval) and "order" of the representation.
-	 * on_section must be compatible (length, order) with the section
+	 * This is probably the simplest version to be used by the end user.
+	 *
+	 * It is simply applied like:
+	 *
+	 * 		CurveType X(...); // init to what you want
+	 * 		auto PX = P(X);   // PX will be the same shape as X
+	 * 		// so you can e.g. compute difference between representations
+	 * 		capd::vectalg::EuclNorm<VectorType, MatrixType> euclNorm;
+	 * 		auto diff = euclNorm((VectorType)PX - (VectorType)X)
+	 *
+	 * to be compatible with standard notion and CAPD interface,
+	 * It makes following assumptions:
+	 *  * X and PX will have the same structure
+	 *    (i.e. over same grid points and jets of the same order).
+	 *
+	 * NOTE: you can retrieve information on reach time and epsilon step
+	 *       (see getLast***() functions),
+	 *       but you cannot acquire the solution on the whole time.
+	 *       If you need solution over the full integration time,
+	 *       then use other operator().
+	 */
+	CurveType operator()(CurveType const& X) {
+		CurveType solution(X);
+		CurveType PX(X); PX *= 0.; // convenient way to have X and PX of the same structure, but PX \equiv 0
+		RealType dump;
+		this->operator()(solution, PX, dump);
+		return PX;
+	}
+
+	/**
+	 * First parameter will change! There will be a curve that reaches first full step after the section,
+	 * define dover the whole integration time. So if you want to save it, use a copy in curve parameter.
+	 *
+	 * In on_section there will be the image on the section, as close to section as possible.
+	 *
+	 * The parameter on_section must be initialized with the desired "length" (time interval)
+	 * and "order" of the representation. It also must be compatible (length, order) with the section.
+	 *
+	 * Both parameters should be defined on the same Grid.
+	 *
+	 * In out_approachTime you will get the return time to section.
 	 */
 	void operator()(CurveType& curve, CurveType& on_section, RealType& out_approachTime) {
 		integrateUntilSectionCrossing(curve, m_lastTimeBeforeSection, &Class::singleStep);
@@ -323,25 +360,6 @@ public:
 				ik->setMatrix(initialD);
 			}
 		}
-	}
-
-	/**
-	 * to be compatible with standard notion and CAPD interface,
-	 * It makes following assumptions:
-	 *  * X and PX will have the same structure
-	 *    (i.e. over same grid points and jets of the same order).
-	 *
-	 * NOTE: you can retrieve information on reach time and epsilon step,
-	 *       but you cannot acquire the solution on the whole time.
-	 *       If you need solution over the full integration time,
-	 *       then use other operator().
-	 */
-	CurveType operator()(CurveType const& X) {
-		CurveType solution(X);
-		CurveType PX(X); PX *= 0.; // convenient way to have X and PX of the same structure, but PX \equiv 0
-		RealType dump;
-		this->operator()(solution, PX, dump);
-		return PX;
 	}
 
 	DDEBasicPoincareMap& setDirection(CrossingDirection direction) { m_direction = direction; return *this; }
