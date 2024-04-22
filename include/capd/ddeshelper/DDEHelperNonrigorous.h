@@ -76,16 +76,21 @@ namespace ddeshelper {
  *    	   void operator()(const RealSpec& t, const InVectorSpec x, OutVectorSpec& fx) const;
  *    };
  *
- * You might also supply Matrix and Vector type.
+ * You might also supply Matrix and Vector type, but the dfault versions works ok.
  *
- * It can only handle discrete delay differential equations in the form of
+ * As of now, it can only handle discrete delay differential equations in the form of
  *
  * x'(t) = f(x(t), x(t-\tau_1), ... , x(t-tau_m))
+ *
+ * where tau_i's matches time points of the integration grid.
+ *
+ * C1-versions allows to do nonrigorous computations of the variational equation associated to the
+ * original equation, allowing e.g. to apply Newton method to find better candidates.
  *
  * TODO: (IMPORTANT) Currently it only support one delay!!!!!!
  * TODO: (URGENT?) DEV: make sure all const qualifiers are put in the right places!
  * TODO: (FUTURE) move implementation to hpp file to shorten this for end user
- * TODO: (FUTURE): the normal and Jac versions are totaly separated. Rethink if they can reuse some code, because there is a lot of repetition...
+ * TODO: (FUTURE): the normal and C^1 versions are totaly separated. Rethink if they can reuse some code, because there is a lot of repetition...
  */
 template<
 	typename EqSpec,
@@ -105,22 +110,22 @@ public:
 	typedef capd::ddes::DiscreteTimeGrid<Real> Grid;
 	typedef typename Grid::TimePointType TimePoint;
 	typedef capd::ddes::GenericJet<TimePoint, Vector, Vector, Matrix> Jet;
-	typedef capd::ddes::GenericJet<TimePoint, capd::ddes::VectorWithJacData<Vector, Matrix>, Vector, Matrix> JetWithJacobian;
+	typedef capd::ddes::GenericJet<TimePoint, capd::ddes::VectorWithJacData<Vector, Matrix>, Vector, Matrix> C1Jet;
 	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, Jet> Solution;
-	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, JetWithJacobian> JacSolution;
+	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, C1Jet> C1Solution;
 	typedef Jet CurvePiece;
-	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, JacSolution> JacDDEq;
+	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, C1Solution> C1DDEq;
 	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, Solution> DDEq;
-	typedef capd::ddes::DDENonrigorousTaylorSolver<JacDDEq> JacSolver;
+	typedef capd::ddes::DDENonrigorousTaylorSolver<C1DDEq> C1Solver;
 	typedef capd::ddes::DDENonrigorousTaylorSolver<DDEq> Solver;
-	typedef typename JacSolver::VariableStorageType Variables;
-	typedef typename JacSolver::JacobianStorageType Jacobians;
-	typedef typename JacSolver::ValueStorageType Values;
-	typedef typename JacSolver::size_type size_type;
+	typedef typename C1Solver::VariableStorageType Variables;
+	typedef typename C1Solver::JacobianStorageType Jacobians;
+	typedef typename C1Solver::ValueStorageType Values;
+	typedef typename C1Solver::size_type size_type;
 	typedef int step_type; // we need to have signed values here
-	typedef capd::ddes::DDEJetSection<JacSolution> JacJetSection;
-	typedef typename JacJetSection::JetType JacSecJet;
-	typedef capd::ddes::DDEBasicPoincareMap<JacSolver, JacJetSection> JacPoincareMap;
+	typedef capd::ddes::DDEJetSection<C1Solution> C1JetSection;
+	typedef typename C1JetSection::JetType C1SecJet;
+	typedef capd::ddes::DDEBasicPoincareMap<C1Solver, C1JetSection> C1PoincareMap;
 	typedef capd::ddes::DDEJetSection<Solution> JetSection;
 	typedef capd::ddes::DDEBasicPoincareMap<Solver, JetSection> PoincareMap;
 	static const size_type PARAMS_COUNT;
@@ -224,8 +229,8 @@ public:
 
 	/** This creates an object representing the equation for the current value of parameters set in the helper. */
 	DDEq makeEquation(){ return makeEquationTemplate<DDEq>(); }
-	/** T@see the other. This is to be used with Jac*** types.  */
-	JacDDEq makeJacEquation(){ return makeEquationTemplate<JacDDEq>(); }
+	/** T@see the other. This is to be used with C1*** types.  */
+	C1DDEq makeC1Equation(){ return makeEquationTemplate<C1DDEq>(); }
 
 	/**
 	 * This creates a raw solver, if you want to do nonstandard tasks and have an Equation made on the side.
@@ -239,9 +244,9 @@ public:
 	 *
 	 * This version can be used to compute monodromy matrix along the solution.
 	 */
-	JacSolver makeJacSolver(JacDDEq const& eq){ return JacSolver(eq, m_maxOrder); }
+	C1Solver makeC1Solver(C1DDEq const& eq){ return C1Solver(eq, m_maxOrder); }
 	/** It uses the other version with the current equation (@see makeEquation()). */
-	JacSolver makeJacSolver(){ return makeJacSolver(makeJacEquation()); }
+	C1Solver makeC1Solver(){ return makeC1Solver(makeC1Equation()); }
 
 	/**
 	 * This creates a PoincareMap.
@@ -267,8 +272,8 @@ public:
 	 * This version creates a Poincare map that can also compute Jacobian and Monodromy matrix (approximations).
 	 * Those are computationally expensive, so if you do not need them, then the other version is much faster.
 	 */
-	JacPoincareMap makePoincareMap(JacSolver& solver, JacJetSection& section){
-		JacPoincareMap pm(solver, section);
+	C1PoincareMap makeC1PoincareMap(C1Solver& solver, C1JetSection& section){
+		C1PoincareMap pm(solver, section);
 		pm.setDirection(this->crossingDirection);
 		pm.setRequiredSteps(m_reqSteps);
 		pm.setMaxSteps(m_maxSteps);
@@ -287,7 +292,7 @@ public:
 	Solution makeSegment(int n, Vector v=Vector({})) const { return makeSegmentTemplate<Solution>(n, v); }
 	/** just a rename of makeSegment, for backward compatibility. */
 	Solution makeSolution(int n, Vector v=Vector({})) const { return makeSegment(n, v); }
-	/** Creates a segment over [-tau, 0] with order n as set in this helper. See other @method makeSegment() */
+	/** Creates a constant value segment over [-tau, 0] with representation order n as set in this helper. See other @method makeSegment() */
 	Solution makeSegment(Vector v=Vector({})) const { return makeSegment(m_n, v); }
 	/** just a rename of makeSegment, for backward compatibility. */
 	Solution makeSolution(Vector v=Vector({})) const { return makeSegment(m_n, v); }
@@ -304,15 +309,15 @@ public:
 	 * Without the v parameter, it creates a zero solution (v = {0,..,0}).
 	 * Without n, it creates solution with order m_n as set in this Helper.
 	 */
-	JacSolution makeJacSegment(int n, Vector v=Vector(0)) const { return makeSegmentTemplate<JacSolution>(n, v); }
+	C1Solution makeC1Segment(int n, Vector v=Vector({})) const { return makeSegmentTemplate<C1Solution>(n, v); }
 	/** just a rename of makeSegment, for backward compatibility. */
-	JacSolution makeJacSolution(int n, Vector v=Vector(0)) const { return makeJacSegment(n, v); }
+	C1Solution makeC1Solution(int n, Vector v=Vector({})) const { return makeC1Segment(n, v); }
 	/** Creates a segment over [-tau, 0] with order n as set in this helper. See other @method makeSegment() */
-	JacSolution makeJacSegment(Vector v) const { return makeJacSegment(m_n, v); }
+	C1Solution makeC1Segment(Vector v=Vector({})) const { return makeC1Segment(m_n, v); }
 	/** just a rename of makeSegment, for backward compatibility. */
-	JacSolution makeJacSolution(Vector v) const { return makeJacSegment(m_n, v); }
+	C1Solution makeC1Solution(Vector v=Vector({})) const { return makeC1Segment(m_n, v); }
 	/** @deprecated use makeJacSegment() instead! */
-	JacSolution vectorToJacSolution(Vector const& x) const{ return makeJacSegment(x); }
+	C1Solution vectorToC1Solution(Vector const& x) const{ return makeC1Segment(x); }
 	/**
 	 * makes a section and stores it in out_section
 	 *
@@ -324,7 +329,7 @@ public:
 	 * same as makeSection(), but returns a datatype needed for computation of poincare map
 	 * with monodromy and jacobian of the poincare map, @see the relevant makePoincareMap().
 	 */
-	JacJetSection makeJacSection(Vector const& s, Scalar const& c){ return makeSectionTemplate<JacJetSection>(s, c); }
+	C1JetSection makeC1Section(Vector const& s, Scalar const& c){ return makeSectionTemplate<C1JetSection>(s, c); }
 
 	/**
 	 * Just integrate the solution.
@@ -384,7 +389,7 @@ public:
 	 * In the (1) case it integrates initial function x_0(s) == initial for all s \in [-tau, 0]
 	 * In the (2) case it constructs initial function from data stored in x0 (the order of coefficients
 	 * in this vector is described elsewhere (see papers for example). But suppling it by hand
-	 * is extremally cumbersome. It is best to use output of other functions o get initials in this
+	 * is very cumbersome. It is best to use output of other functions o get initials in this
 	 * form.
 	 *
 	 * Integrates for time T = iters * tau_max / p = iters * h. The value h is the step size of the method / grid
@@ -519,39 +524,46 @@ public:
 	/**
 	 * if you do not know what initV is, then
 	 * you should probably stick to using
-	 * the other JacSolution poincare() method (without initV).
+	 * the other C1Solution poincare() method (without initV).
 	 */
-	JacSolution poincare(
-				JacJetSection section,
+	C1Solution poincare(
+				C1JetSection section,
 				Vector const& x, Matrix& initV,
 				double& reachTime, int& steps, Vector& Px, Vector& fPx,
 				Matrix& V, Matrix& DP){
 
-		// TODO: (NOT URGENT) refactor it to be more DRY.
-		auto tau = m_grid.point(m_p);
-		auto t_0 = m_grid.point(0);
-		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-		X.set_x(x);
+//		// TODO: (NOT URGENT) refactor it to be more DRY.
+//		auto tau = m_grid.point(m_p);
+//		auto t_0 = m_grid.point(0);
+//		C1Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+//		X.set_x(x);
+//
+//		C1DDEq dde(Eq(m_params), tau);
+//		C1Solver solver(dde, m_maxOrder);
+//
+//		C1PoincareMap pm(solver, section);
+//		pm.setDirection(this->crossingDirection);
+//		pm.setRequiredSteps(m_reqSteps);
+//		pm.setMaxSteps(m_maxSteps);
+//
+//		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
+//		Px = Vector(M()); fPx = Vector(M());
+//		V = Matrix(M(), M()); DP = Matrix(M(), M());
+//		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
+//		pm.setNormalizeVariational(m_experimentalRenormalizeVariational);
+//		pm.setInitialV(X, initV);
+//		C1Solution PX(X); PX *= 0.;
+//		Vector dump = x;
+//		pm(X, PX, reachTime, dump, Px, fPx, V, DP);
+//		steps = pm.getLastStepsAfterSection();
+//		return X; // X contains full trajectory
 
-		JacDDEq dde(Eq(m_params), tau);
-		JacSolver solver(dde, m_maxOrder);
 
-		JacPoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
-
-		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
-		Px = Vector(M()); fPx = Vector(M());
-		V = Matrix(M(), M()); DP = Matrix(M(), M());
-		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
-		pm.setNormalizeVariational(m_experimentalRenormalizeVariational);
-		pm.setInitialV(X, initV);
-		JacSolution PX(X); PX *= 0.;
-		Vector dump = x;
-		pm(X, PX, reachTime, dump, Px, fPx, V, DP);
-		steps = pm.getLastStepsAfterSection();
-		return X; // X contains full trajectory
+		C1Solution X0 = makeC1Segment(x);
+		C1Solution PX = X0; PX *= 0.;
+		C1Solution trajectory = poincare(section, X0, initV, reachTime, steps, PX, fPx, V, DP);
+		Px = Vector(PX);
+		return trajectory; // returns full trajectory from the beginning
 	}
 	/**
 	 * computes poincare map and the (approximate)
@@ -566,13 +578,82 @@ public:
 	 * But it can be shown, that if $t_p \ge tau$ then $fPx = (Px)'$
 	 * (note Px : [-tau,0] \to \R^d is a function of time, so it can be differentiated)
 	 */
-	JacSolution poincare(
-				JacJetSection section, Vector const& x0,
+	C1Solution poincare(
+				C1JetSection section, Vector const& x0,
 				double& reachTime, Vector& Px, Vector& fPx,
 				Matrix& V, Matrix& DP){
 		Matrix Id(x0.dimension(), x0.dimension()); Id.setToIdentity();
 		int steps;
 		return 	poincare(section, x0, Id, reachTime, steps, Px, fPx, V, DP);
+	}
+
+	/**
+	 * if you do not know what initV is, then
+	 * you should probably stick to using
+	 * the other C1Solution poincare() method (without initV).
+	 */
+	C1Solution poincare(
+				C1JetSection section,
+				C1Solution const& X0, Matrix& initV,
+				double& reachTime, int& steps, C1Solution& PX, Vector& fPX,
+				Matrix& V, Matrix& DP){
+
+		C1Solution X(X0); // make a copy for modification
+		size_type M = X.storageDimension();
+
+		C1Solver solver = makeC1Solver();
+		C1PoincareMap pm = makeC1PoincareMap(solver, section);
+		pm.setDirection(this->crossingDirection);
+		pm.setRequiredSteps(m_reqSteps);
+		pm.setMaxSteps(m_maxSteps);
+
+		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
+		Vector x(M), Px(M); fPX = Vector(M);
+		V = Matrix(M, M); DP = Matrix(M, M);
+		// pm.setNormalizeVariational(m_experimentalRenormalizeVariational);
+		pm.setInitialV(X, initV);
+		PX = X; PX *= 0.;
+		pm(X, PX, reachTime, x, Px, fPX, V, DP);
+		steps = pm.getLastStepsAfterSection();
+		return X; // X contains full trajectory
+	}
+
+	/**
+	 * TODO: (URGENT!!!) docs
+	 */
+	C1Solution poincare(
+				C1JetSection section,
+				C1Solution const& X0,
+				double& reachTime,
+				C1Solution& PX,
+				Matrix& V, Matrix& DP){
+		size_type M = X0.storageDimension();
+		Matrix Id(M, M); Id.setToIdentity();
+		int dump_steps; Vector dump_fPx(M);
+		return poincare(section, X0, Id, reachTime, dump_steps, PX, dump_fPx, V, DP);
+	}
+
+	/**
+	 * TODO: (URGENT!!!) docs
+	 */
+	C1Solution poincare(
+				C1JetSection section,
+				C1Solution const& X0,
+				C1Solution& PX,
+				Matrix& V, Matrix& DP){
+		double dump_time;
+		return poincare(section, X0, dump_time, PX, V, DP);
+	}
+
+	/**
+	 * TODO: (URGENT!!!) docs
+	 */
+	C1Solution poincare(
+				C1JetSection section, C1Solution const& X0,
+				C1Solution& PX, Matrix& DP){
+		size_type M = X0.storageDimension();
+		Real dump_reachTime; Matrix dump_V(M, M);
+		return poincare(section, X0, dump_reachTime, PX, dump_V, DP);
 	}
 
 //	/**
@@ -593,7 +674,7 @@ public:
 	 *
 	 * First parameter is to get some text info back during the process, you can pass std::cout there or some std::ostringstream to ignore it.
 	 *
-	 * For technical reasons section must be of type JacJetSection, not JetSection.
+	 * For technical reasons section must be of type C1JetSection, not JetSection.
 	 *
 	 * The V and DP matrices are the monodromy and Jacobian of Poincare map, respectively.
 	 * They might be helpful in finding good candidate for section coordinates.
@@ -604,12 +685,12 @@ public:
 	 * You should iterate the method for desired number of iterates or until desired accuracy is obtained.
 	 *
 	 */
-	Real refinePeriodic(std::ostream& info, JacJetSection& section, Vector& x, Matrix& V, Matrix&DP){
+	Real refinePeriodic(std::ostream& info, C1JetSection& section, Vector& x, Matrix& V, Matrix&DP){
 		info << "# refinePeriodic START" << std::endl;
 
-		auto X = makeJacSegment(x);
-		auto solver = makeJacSolver();
-		auto pm = makePoincareMap(solver, section);
+		auto X = makeC1Segment(x);
+		auto solver = makeC1Solver();
+		auto pm = makeC1PoincareMap(solver, section);
 
 		auto vsec = section(X);
 		info << "# section(X) = " << vsec << " (should be small)" << std::endl;
@@ -619,8 +700,9 @@ public:
 		Vector Px, fPx, dx(X.storageDimension());
 		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
 		pm.setInitialV(X);
-		JacSolution PX(X); PX *= 0.;
+		C1Solution PX(X); PX *= 0.;
 		pm(X, PX, reachTime, x, Px, fPx, V, DP);
+
 		double diff = euclNorm(Px-x);
 		info << "# reachTime = " << reachTime << std::endl;
 		info << "# ||PX - X|| = " << diff << std::endl;
@@ -644,7 +726,7 @@ public:
 	 */
 	Real refinePeriodic(std::ostream& info, JetSection& section, Solution& X, Matrix& V, Matrix&DP){
 		auto x = X.get_x();
-		auto jacSection = makeJacSection(Vector(section), section.get_c());
+		auto jacSection = makeC1Section(Vector(section), section.get_c());
 		auto diff = refinePeriodic(info, jacSection, x, V, DP);
 		X.set_x(x);
 		return diff;

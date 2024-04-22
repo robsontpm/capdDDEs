@@ -23,13 +23,13 @@ using namespace std;
 typedef capd::intervals::Interval<double, capd::rounding::DoubleRounding>  Interval;
 
 // we say that the system computes on Intervals and has Intervals as parameters
-typedef capd::ddes::MackeyGlass<Interval, Interval> Eq;
+typedef capd::ddes::MackeyGlass<Interval, Interval> IEq;
 
 // the number one (1) is the number of delays
-typedef capd::ddeshelper::RigorousHelper<Eq, 1> RigSetup;
+typedef capd::ddeshelper::RigorousHelper<IEq, 1> IDDEs;
 
 // this helps output nice comparisons for high-dimensional sets
-typedef capd::ddeshelper::DDECompareHelper<RigSetup::Vector> Comparator;
+typedef capd::ddeshelper::DDECompareHelper<IDDEs::Vector> IComparator;
 
 // setup parameters of the system
 // by default, we take the values of the double parameters
@@ -44,7 +44,7 @@ namespace RIGPARAMS {
 
 	// last one (i.e. 1.0) is the delay used in computations as the length of the delay
 	// we scale the parameters of the equations by PARAM_TAU. This is a standard thing.
-	const RigSetup::ParamsVector params {GAMMA * TAU, BETA * TAU, N, 1.0};
+	const IDDEs::ParamsVector params {GAMMA * TAU, BETA * TAU, N, 1.0};
 }
 
 #endif /* EXAMPLES_MACKEY_GLASS_STABLE_PERIODIC_RIG_SETUP_H_ */
