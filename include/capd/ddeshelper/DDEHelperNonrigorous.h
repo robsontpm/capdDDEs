@@ -575,6 +575,19 @@ public:
 		return 	poincare(section, x0, Id, reachTime, steps, Px, fPx, V, DP);
 	}
 
+//	/**
+//	 * TODO: (URGENT!!!) docs!
+//	 */
+//	JacSolution poincare(
+//				JetSection section, Solution const& x0,
+//				double& reachTime, Solution& Px, Vector& fPx,
+//				Matrix& V, Matrix& DP){
+//		Matrix Id(x0.dimension(), x0.dimension()); Id.setToIdentity();
+//		int steps;
+//		JacJetSection jac_section = makeJacSection(section.get_s(), section.get_c());
+//		return 	poincare(section, x0, Id, reachTime, steps, Px, fPx, V, DP);
+//	}
+
 	/**
 	 * Helper function to refine a candidate periodic orbit with a Newton method.
 	 *

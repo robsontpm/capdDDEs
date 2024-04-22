@@ -22,7 +22,7 @@ namespace PARAMS {
 	const double TAU { 2.0 };
 	const double BETA { 2.0 };
 	const double GAMMA { 1.0 };
-	const double N { 8.0 }; // you might also try n=8, as in FOCM 2018 paper.
+	const double N { 6.0 }; // you might also try n=8, as in FOCM 2018 paper.
 
 	// setup for the nonrigorous procedure to find the candidate
 	// the method is as follows:

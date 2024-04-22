@@ -45,6 +45,7 @@ namespace ddes{
  *
  * It can bu used e.g. to represent many standard
  *
+ * TODO: (RETHINK, FUTURE): now the Section depends on Curve implementation, this should be removed as it introduces some problems, e.g. if two same curves are used, but one is a different type. Common problem: JacCurve (with C^1) and Curve (without C^1 computations)
  * TODO: (FUTURE) allow the Curve to define .dot() product for the hyperplane, to allow for more natural functional space products, i.e. L^2 or such.
  * TODO: (NOTE) consider e.g. L^2 product: s . v = \int_0^h s(t) * v(t) dt, where:
  *    s(t) = s0 + s1*t + s2*t^2 + ... + sn*t^n
@@ -203,10 +204,13 @@ public:
 
 
 protected:
+	/** the value on the section, i.e.: m_orig_s . vector = m_c */
 	ScalarType m_c;
+	/** the head part of the section 'normal vector'. WARINING! This is not the whole normal vector in the whole space of representations! */
 	VectorType m_s;
+	/** this is the rest of the section 'normal vector' */
 	JetStorageType m_jets;
-
+	/** this is the whole 'normal vector', containing head m_s and m_jests as a single vector */
 	VectorType m_orig_s;
 };
 
