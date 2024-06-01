@@ -74,8 +74,9 @@ void plot_datfile(
 	#endif
 }
 
-void plot_many(
+void xplot_many(
 		std::string const& pathprefix,
+		std::string plottype,
 		std::vector<std::string> const& gpplots,
 		bool live,
 		std::string filesuffix){
@@ -93,7 +94,7 @@ void plot_many(
 		outg << "set terminal png size 1600,1200" << std::endl;
 		outg << "set output '" << pngname << "'" << std::endl;
 	}
-	outg << "plot \\\n";
+	outg << plottype << " \\\n";
 	for (auto& item: gpplots){
 		outg << "    " << item << ", \\\n";
 	}
@@ -103,6 +104,22 @@ void plot_many(
 	std::ostringstream cmd; cmd << "cd '" << dirpath << "' && gnuplot " << (live ? "-p " : "") << "'" << gpname << "'";
 	capd::ddeshelper::runSystemCommand(cmd.str());
 	#endif
+}
+
+void plot_many(
+		std::string const& pathprefix,
+		std::vector<std::string> const& gpplots,
+		bool live,
+		std::string filesuffix){
+	xplot_many(pathprefix, "plot", gpplots, live, filesuffix);
+}
+
+void splot_many(
+		std::string const& pathprefix,
+		std::vector<std::string> const& gpplots,
+		bool live,
+		std::string filesuffix){
+	xplot_many(pathprefix, "splot", gpplots, live, filesuffix);
 }
 
 } // namespace ddeshelper

@@ -51,7 +51,7 @@ void to_dat(std::ostream& out, capd::intervals::Interval<T_Bound, T_Rnd> const &
 	typedef capd::intervals::Interval<T_Bound, T_Rnd> T_Intv;
 	T_Intv u = v, r;
 	u.split(r);
-	out << u.leftBound() << "  " << r.rightBound();
+	out << u.leftBound() << " " << r.rightBound();
 }
 
 /** saves as several double values separated by spaces. special case for capd::interval (TODO: (NOT URGENT) add handling for any filib type)*/
@@ -153,8 +153,8 @@ void plot_value(
 	#ifdef DDES_ALLOW_SYSTEM
 	if (dirpath != "") capd::ddeshelper::runSystemCommand(std::string("mkdir -p " + dirpath));
 	#endif
-	std::string datpath = pathprefix + "ddes-plot.dat";
-	std::string datname = fileprefix + "ddes-plot.dat";
+	std::string datpath = pathprefix + "ddes-plot.dat"; // TODO: (Not urgent) rethink if add suffix. Maybe check if prefix has filename in it or ends with / ?
+	std::string datname = fileprefix + "ddes-plot.dat"; // TODO: (not urgent) check other places in drawing for such behaviour.
 	std::string pngname = fileprefix + "ddes-plot.png";
 	std::string gppath = pathprefix + "ddes-plot.gp";
 	std::string gpname = fileprefix + "ddes-plot.gp";
@@ -207,6 +207,7 @@ void plot_datfile(
 		std::vector<std::string> const& gpoptions={},
 		bool live = true,
 		std::string filesuffix = "");
+
 /**
  * generates appropriate gnuplot files to draw with gnuplot
  * you give a path and prefix to a file:
@@ -217,7 +218,22 @@ void plot_datfile(
  *
  * in gpplots you must give full plot info, i.e. "'file.dat' u 1:2 with lines", etc.
  */
+void xplot_many(
+		std::string const& pathprefix,
+		std::string plottype,
+		std::vector<std::string> const& gpplots={},
+		bool live = true,
+		std::string filesuffix = "");
+
+/** xplot_many() but with default mode 'plot' (2d) */
 void plot_many(
+		std::string const& pathprefix,
+		std::vector<std::string> const& gpplots={},
+		bool live = true,
+		std::string filesuffix = "");
+
+/** xplot_many() but with default mode 'splot' (3d) */
+void splot_many(
 		std::string const& pathprefix,
 		std::vector<std::string> const& gpplots={},
 		bool live = true,

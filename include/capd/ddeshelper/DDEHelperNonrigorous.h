@@ -232,6 +232,27 @@ public:
 	/** T@see the other. This is to be used with C1*** types.  */
 	C1DDEq makeC1Equation(){ return makeEquationTemplate<C1DDEq>(); }
 
+	/** sets the value of the current params (but not the delays!) */
+	void setParams(ParamsVector const& new_params) {
+		int param_count = new_params.dimension();
+		if (m_params.dimension() - delaysSpec < param_count)
+			param_count = m_params.dimension() - delaysSpec < param_count;
+		for (int i = 0; i < param_count; i++){
+			m_params[i] = new_params[i];
+		}
+	}
+
+	/** sets the value of some parameter. Can't change value of the delay! Returns the previous value of the param. */
+	ParamType setParam(size_type i, ParamType const& value) {
+		if (i < m_params.dimension() - delaysSpec){
+			ParamType prev_val = m_params[i];
+			m_params[i] = value;
+			return prev_val;
+		} else {
+			throw std::logic_error("NonrigorousHelper::setParam(): cannot change value of the delays after creation!");
+		}
+	}
+
 	/**
 	 * This creates a raw solver, if you want to do nonstandard tasks and have an Equation made on the side.
 	 * If you want just to integrate initial values, consider using iterate() or poincare() instead.
