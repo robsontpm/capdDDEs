@@ -47,8 +47,12 @@ namespace ddes{
 template<typename SetSpec>
 DDESolutionCurve<SetSpec>&
 DDESolutionCurve<SetSpec>::addPiece(CurvePieceType* newPiece, bool passOwnership){
-	if (newPiece->storageN0() != storageN0())
-		throw std::logic_error("DDESolutionCurve::addPiece(): the new piece has different N_0.");
+	if (newPiece->storageN0() != storageN0()){
+		std::ostringstream info;
+		info << "DDESolutionCurve::addPiece(): the new piece has different N_0.";
+		info << "Should be: " << storageN0() << ", is " << newPiece->storageN0() << ".";
+		throw std::logic_error(info.str());
+	}
 	if (!passOwnership)
 		newPiece = new CurvePieceType(*newPiece);
 	m_pieces.push_back(newPiece);

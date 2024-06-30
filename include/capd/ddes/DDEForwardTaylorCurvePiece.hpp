@@ -175,10 +175,11 @@ template<typename TimePointSpec, typename SetSpec, bool isInterval>
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::DDEForwardTaylorCurvePiece(
 		TimePointType t0,
 		VectorType const* it,
-		VectorType const* itEnd):
+		VectorType const* itEnd,
+		size_type N0):
 	m_t0(t0), m_dimension(0), m_order(0),
 	m_jet_at_t0(0),
-	m_r0(0), m_r0_owner(true),
+	m_r0(new VectorType(N0)), m_r0_owner(true),
 	m_Xi(0), m_Xi_owner(true)
 {
 	try { setupFromData(it, itEnd); } catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece(t, VectorType*...): could not setup from data", e); }
@@ -187,10 +188,11 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::DDEForwardTaylor
 template<typename TimePointSpec, typename SetSpec, bool isInterval>
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::DDEForwardTaylorCurvePiece(
 		TimePointType t0,
-		std::vector<VectorType> coeffs):
+		std::vector<VectorType> coeffs,
+		size_type N0):
 	m_t0(t0), m_dimension(0), m_order(0),
 	m_jet_at_t0(0),
-	m_r0(0), m_r0_owner(true),
+	m_r0(new VectorType(N0)), m_r0_owner(true),
 	m_Xi(0), m_Xi_owner(true)
 {
 	try { setupFromData(coeffs.begin(), coeffs.end()); } catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece(t, std::vector... ): could not setup from data", e); }

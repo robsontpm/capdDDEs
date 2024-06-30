@@ -822,7 +822,7 @@ public:
 		if (tshift == 0.)
 			plotcmd << "'" << filename << ".dat" << "' using 1:3 with lines"; // 1, 3 because we have thickness 0 as the 2 and 4 column, see value_to_gnuplot()
 		else
-			plotcmd << "'" << filename << ".dat" << "' using ($1+" << tshift <<"):2 with lines";
+			plotcmd << "'" << filename << ".dat" << "' using ($1+" << tshift <<"):3 with lines"; // same here as above
 		outg << plotcmd.str();
 		outg.close();
 		{
