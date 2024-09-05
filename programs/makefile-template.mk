@@ -36,7 +36,7 @@ LIBS_OBJ = ${LIBITEMS:%=${PROJECT_PATH}/.obj/%.o}
 # we will treat LIBS_OBJ separately
 OBJ_FILES = ${OTHERS_OBJ} ${EXECUTABLES:%=${OBJDIR}%.o}
 
-# running just make will pront this info
+# running just make will print this info
 default: 
 	@echo "This is config test"
 	@echo "==================="
