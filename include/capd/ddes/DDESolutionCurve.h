@@ -263,6 +263,8 @@ public:
 	 * The r0 part will be N0 dimensional (default = 0, i.e. no C*r0 set part).
 	 *
 	 * TODO: rethink: move to a ddeshelper?
+	 * TODO: only support for the same MatrixType as the internal MatrixType?
+	 * TODO: now we have some overlap with DDEPiecewisePolynomial (Nonrigorous version), cleanup the code and make the good inheritance structure?
 	 */
 	template<typename AnyMatrixSpec>
 	DDESolutionCurve(

@@ -317,8 +317,26 @@ public:
 	Solution makeSegment(Vector v=Vector({})) const { return makeSegment(m_n, v); }
 	/** just a rename of makeSegment, for backward compatibility. */
 	Solution makeSolution(Vector v=Vector({})) const { return makeSegment(m_n, v); }
+	/**
+	 * makes a segment of solution by evaluating a CAPD Map \R \to \R^d. The map must be of this shape!
+	 * You cannot add more dimentsion, or have more variables! This is an example for d = 3:
+	 *
+	 * 		capd::DMap f("var:t;fun:t,2t,t*(t-1);");
+	 *
+	 * you can have aparmeters, but remember to set them before sending to this metod:
+	 *
+	 * 		capd::DMap f("par:a,b;var:t;fun:a*t,b*t,a*t*(b*t-1);");
+	 * 		f.set_parameter("a", 1);
+	 * 		f.set_parameter("b", 2);
+	 */
+	template<typename OtherMatrixType>
+	Solution makeSegment(int n, capd::map::Map<OtherMatrixType> f) const { return makeSegmentTemplate<Solution, OtherMatrixType>(n, f); }
+	/** just a rename of makeSegment, for backward compatibility. */
+	template<typename OtherMatrixType>
+	Solution makeSolution(capd::map::Map<OtherMatrixType> f) const { return makeSegment(m_n, f); }
 	/** @deprecated use makeSegment() instead! */
 	Solution vectorToSolution(Vector const& x) const { return makeSegment(x); }
+
 	/**
 	 * This version is suitable for approximate C^1 computations - computing Jacobian of a Poincare/Time map.
 	 *
@@ -962,6 +980,17 @@ private:
 		auto tau = m_grid.point(m_p);
 		DDEEqSpec dde(Eq(m_params), tau);
 		return dde;
+	}
+
+	template<typename SegSpec, typename OtherMatrixSpec>
+	SegSpec makeSegmentTemplate(size_type n, capd::map::Map<OtherMatrixSpec> f) const {
+		if (f.imageDimension() != d()){
+			throw std::logic_error("NonrigorousHelper::makeSegmentTemplate(Solution): Solution grid not compatible with this helper!");
+		}
+		auto zero = m_grid.point(0);
+		auto tau = m_grid.point(m_p);
+		SegSpec X(m_grid, -tau, zero, n, f);
+		return X;
 	}
 
 	void checkGrid(Solution const& segment){
