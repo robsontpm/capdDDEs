@@ -34,9 +34,6 @@ PREFIX=`pwd`
 cd "$WD"
 echo "$PREFIX"
 
-# for some reason I need to add permissions to execute to many files in this dir
-chmod -R a+x "$CAPD_SRC_DIR/capdMake/libcapd/"
-
 # make sure GCC and G++ are the compilers
 # clang may make strange errors...
 CXX=g++
@@ -45,13 +42,10 @@ CC=gcc
 # do the compilation (outside CAPD directory)
 echo "cd to build directory: $BUILD_DIR"
 cd "$BUILD_DIR"
-chmod a+x "$CAPD_REL_PATH/configure"
-$CAPD_REL_PATH/configure --prefix "$PREFIX" --with-mpfr=yes
-# FOR SOME REASON I need to use relative path in the configure invocation
-# otherwise I get strange errors from the CAPD configuration process...
+cmake --install-prefix "$PREFIX" "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
+cmake --build .
+cmake --install .
 
-# build it (it should go to $PREFIX)
-make -j 8
-
-# move everything to bin/capd for future use (dir.conf uses this location)
-make install
+# copy the missing include file into installation directory
+# bug in capd cmake files?
+cp -r "$CAPD_SRC_DIR"/capdAlg/include/capd/intervals/intra "$PREFIX"/include/capd/intervals
