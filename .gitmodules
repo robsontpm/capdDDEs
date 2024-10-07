@@ -1,0 +1,3 @@
+[submodule "external/capd"]
+	path = external/capd
+	url = https://github.com/CAPDGroup/CAPD.git
