@@ -250,7 +250,7 @@ public:
 
 		typedef fadbad::T<ScalarType> AutoDiffTScalar; 		// Auto Diff T (Taylor) scalar type
 		typedef typename VectorType::template rebind<AutoDiffTScalar>::other TADVectorType;
-		TADVectorType args(dimension());
+		TADVectorType args(dimension(), 0.);
 		// propagate arguments in a given order - first value at t0
 		// then jet of \tau_1, then \tau_2, etc...
 		// this is change from the initial paper!, where I have done delay terms first
@@ -266,7 +266,7 @@ public:
 		coeffs[0] = u[0]; // by definition, see paper
 		for (size_type k = 1 ; k <= resultOrder; ++k){
 			// eval Autodiff routine so that we would be able to extract v[k-1] = F^{[k-1]}(...)
-			TADVectorType v(imageDimension());
+			TADVectorType v(imageDimension(), 0.);
 			m_map(t0, args, v);
 			// propagate AD jets and output.
 			// this will be F_k from the latest paper on DDE integration.
@@ -331,7 +331,7 @@ public:
 		// this is Automatic Differentiation both w.r.t t but also w.r.t. coefficients.
 		// we will use it to automatically eval the r.h.s. of the equation with all
 		// partial derivatives when recursively compute Taylor coefficients at current t0
-		TFADVectorType args(dimension());
+		TFADVectorType args(dimension(), 0.);
 
 		// we will successively fill-in args as the recursion will go on
 		auto current_u = u.begin();
@@ -369,7 +369,7 @@ public:
 		for (size_type k = 1; k <= resultOrder; ++k){
 			// eval AutoDiff routine so we would be able to extract v[.][k-1] = F^{[k-1]}(...)
 			// together with partial derivatives with respect to coefficients in the past.
-			TFADVectorType v(imageDimension());
+			TFADVectorType v(imageDimension(), 0.);
 			m_map(t0, args, v);
 
 			// propagate AD jets and output.

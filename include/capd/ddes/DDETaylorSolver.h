@@ -163,6 +163,7 @@ public:
 		// we explicitely eval jet at t0 as a Taylor series to assure that the
 		// jacobian computed along is valid.
 		// TODO: (NOT URGENT) rewrite as iterators?
+		// TODO: change it to: do {} while(k--) loop, instead of a hack for unsigned. Test.
 		size_type k = order;
 		while(true){
 			out_Phi_z[0] = out_Phi_coeffs_t0[k] + h * out_Phi_z[0];
