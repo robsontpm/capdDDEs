@@ -25,7 +25,7 @@ make examples/rossler-ode-vs-dde-code
 
 # compiled programs will be in ./bin directory
 
-cd examples/rossler-ode-vs-dde-code/bin && ls
+cd programs/examples/rossler-ode-vs-dde-code/bin && ls
 
 # sample output of the above ls commands:
 #
@@ -38,7 +38,7 @@ cd examples/rossler-ode-vs-dde-code/bin && ls
 # you can see list of available programs and demos by running
 # in the main directory the following command:
 
-cd ../../..
+cd ../../../..
 make list
 
 # if you are interested in more documentation, see ./docs
