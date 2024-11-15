@@ -263,6 +263,8 @@ public:
 	 * The r0 part will be N0 dimensional (default = 0, i.e. no C*r0 set part).
 	 *
 	 * TODO: rethink: move to a ddeshelper?
+	 * TODO: only support for the same MatrixType as the internal MatrixType?
+	 * TODO: now we have some overlap with DDEPiecewisePolynomial (Nonrigorous version), cleanup the code and make the good inheritance structure?
 	 */
 	template<typename AnyMatrixSpec>
 	DDESolutionCurve(
@@ -309,11 +311,11 @@ public:
 				for (size_type i = 0; i < f.imageDimension(); ++i){
 					auto ftxi = FtXi.begin(i) + order + 1;
 					xi[i] = *ftxi;
+					// TODO: (URGENT!!!) test finally and remove verbose!
 					std::cout << ScalarType(t) << " " << order + 1 << " " << xi[i] << " (over interval)" << std::endl;
 				}
-
-				CurvePieceType* piece = new CurvePieceType(t, items);
-				piece->set_Xi(xi);
+				std::cout << "N0" << N0 << std::endl;
+				CurvePieceType* piece = new CurvePieceType(t, items, N0);
 				addPiece(piece, true); // is faster than by reference, true => pass the ownership
 			}
 			setValueAtCurrent(f({ScalarType(t1)}));

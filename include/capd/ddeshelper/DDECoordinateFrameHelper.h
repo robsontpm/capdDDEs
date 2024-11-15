@@ -40,6 +40,8 @@ namespace ddeshelper {
 /**
  * Internal class to hold a affine coordinate change
  * on a (p,n)-fset.
+ *
+ * TODO: more docs...
  */
 template<
 	typename MatrixSpec,
@@ -78,6 +80,7 @@ public:
 
 	void setCrossingDirection(capd::poincare::CrossingDirection d){ crossingDirection = d; }
 
+	/** TODO: add out<< operator... TODO: docs... */
 	friend std::istream& operator>>(std::istream& in, CoordinateFrame& coords){
 		int dir;
 		in >> dir;

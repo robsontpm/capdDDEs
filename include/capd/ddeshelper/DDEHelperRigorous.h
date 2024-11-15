@@ -284,8 +284,9 @@ public:
 		}
 		auto tau = m_grid.point(m_p);
 		auto t_0 = m_grid.point(0);
-		Solution X(m_grid, -tau, t_0, m_n, f);
-		X.set_Cr0(coords().coords, Vector(coords().coords.numberOfColumns()));
+		auto N0 = coords().coords.numberOfColumns();
+		Solution X(m_grid, -tau, t_0, m_n, f, N0);
+		X.set_Cr0(coords().coords, Vector(N0));
 		return X;
 	}
 

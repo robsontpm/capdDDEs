@@ -36,7 +36,7 @@ PROJECT_PATH := $(MAKEFILE_ABS_DIRPATH)
 
 # this is to tell which version of CAPD to use
 # (either capd, or mpcapd with multiprecision)
-CAPDSCRIPT := capd-config
+CAPDSCRIPT := mpcapd-config
 
 # static is used to prevent linker error for CAPD. 
 # Other methods to avoid it are described in CAPD docs. 

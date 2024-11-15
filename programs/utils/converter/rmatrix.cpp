@@ -13,7 +13,7 @@ int main(int argc, char** argv){
 	}
 	if (argc < 6 || opt_help == "-h" || opt_help == "--h" || opt_help == "--help" || opt_help == "help" ){
 		cout << "Program to convert r vector to a matrix R and R^-1, with r[i] and r[i]^{-1} on diagonal" << endl;
-		cout << "r is symetrized and max is taken before making R. " << endl;
+		cout << "r will be made symmetric (containing the original r) is taken before making R. " << endl;
 		cout << "usage: rmatrix [dimension] [interval|bin] [in_r_path] [out_R_path] [in_invR_path] [start_at]" << endl;
 		return 0;
 	}

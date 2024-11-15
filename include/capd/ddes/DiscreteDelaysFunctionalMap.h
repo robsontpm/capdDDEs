@@ -279,7 +279,7 @@ public:
 		coeffs[0] = u[0]; // by definition, see paper
 		for (size_type k = 1 ; k <= resultOrder; ++k){
 			// eval Autodiff routine so that we would be able to extract v[k-1] = F^{[k-1]}(...)
-			TADVectorType v(imageDimension());
+			TADVectorType v(imageDimension(), 0.);
 			m_map(t0, args, v);
 			// propagate AD jets and output.
 			// this will be F_k from the latest paper on DDE integration.

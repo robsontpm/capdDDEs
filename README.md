@@ -14,6 +14,7 @@ then to see the project in action, you can run:
 sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool
 git clone git@github.com:robsontpm/capdDDEs.git capdDDEs
 cd capdDDEs
+cp build-conf-bundle-mp.mk build-conf.mk 
 chmod a+x tldr.sh
 ./tldr.sh
 ```
@@ -40,9 +41,8 @@ sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf 
 ```
 
 The documentation and the compilation system uses for now the ```g++``` compiler.
-You can change it in **.mk** files in the root. 
-
-_TODO: get the ```$CXX``` from environment vars (?)_
+You can change it in your ```build-conf.mk``` file in the root directory 
+(see docs below).
 
 Compilation
 -----------
@@ -56,6 +56,26 @@ First clone the repo:
 ```bash
 git clone git@github.com:robsontpm/capdDDEs.git capdDDEs
 cd capdDDEs
+```
+
+You should choose one of the possible configs of the building system:
+```
+ls | grep "build-conf-"
+```
+
+You need to copy one of them into file named ```build-conf.mk```.
+This file is not tracked by the ```git``` version control.
+The differences between various versions 
+lies mainly in where the library will look for
+```CAPD``` library and if the file uses multiprecision
+or not (```-mp```).
+For example, you might decide to go with the ```CAPD``` 
+that is shipped (bundled) with the ```capdDDEs``` library
+and to use multiprecision (which is needed for some utility programs).
+In that case just run:
+
+```
+cp build-conf-bundle-mp.mk build-conf.mk
 ```
 
 Next, go to external, add permissions and build CAPD 
@@ -103,6 +123,24 @@ make list
 ```
 
 If you are interested in more documentation, see ./docs
+
+Using your own CAPD
+-------------------
+
+The ```-bundle``` version forces you to compile the 
+version of ```CAPD``` library, that is in ```external```
+folder. In case you already have ```CAPD``` ups and running,
+you might want to use other templates and configure them 
+to your needs. Just copy one of the ```-svn``` version, e.g.:
+
+```
+cp build-conf-svn-mp.mk build-conf.mk
+```
+
+and either specify the paths in the ```build-conf.mk``` file
+(uncomment some lines there) or follow the
+instructions in the file to export global system variables.
+
 
 Contact
 -------

@@ -325,9 +325,10 @@ public:
 		startNewParam(param);
 		if (help_s != "") (*this) << help_s << "\n";
 		(*this) << "[default: " << out << "]";
+		bool found = false;
 		for (ArgcType i = 0; i < argc; ++i)
-			conditionalExtractValue(argv[i], param, out);
-		return true;
+			found = found or conditionalExtractValue(argv[i], param, out);
+		return found;
 	}
 
 	/** same as the other tempated parse, but accepts old-fashion strings */

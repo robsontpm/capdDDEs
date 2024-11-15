@@ -149,6 +149,54 @@ public:
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent));
 	}
 
+	/**
+	 * creates a representation of the function f over the interval [t0,t1]
+	 *
+	 * TODO: move impl to .hpp
+	 */
+	template<typename AnyMatrixSpec>
+	DDEPiecewisePolynomialCurve(
+				const GridType& grid,
+				const TimePointType& t0,
+				const TimePointType& t1,
+				size_type order,
+				const capd::map::Map<AnyMatrixSpec>& f):
+			m_grid(grid), m_t_current(t0),
+			m_valueAtCurrent(VectorType(f.imageDimension())),
+			m_dimension(f.imageDimension())
+	{
+		typedef capd::map::Map<AnyMatrixSpec> FMap;
+		typedef typename FMap::JetType FJet;
+		if (f.dimension() != 1){
+			std::ostringstream info;
+			info << "DDESolutionCurve::__construct__(): f should be R -> R^n, ";
+			info << "is R^" << f.dimension() << " -> R^" << f.imageDimension() << ".";
+			throw std::logic_error(info.str());
+		}
+		try {
+			for (TimePointType t = t0; t < t1; t += grid.point(1)){
+				FJet tt(f.imageDimension(), 1, order + 1);
+				auto tti = tt.begin(0);
+				*(tti) = ScalarType(t);
+				*(++tti) = 1.;
+				FJet ft = f(tt);
+				std::vector<VectorType> items(order + 1, VectorType(m_dimension));
+				for (size_type i = 0; i < f.imageDimension(); ++i){
+					size_type j = 0;
+					for (auto fti = ft.begin(i); j <= order; ++fti, ++j){
+						std::cout << ScalarType(t) << " " << j << " " << (*fti) << std::endl;
+						items[j][i] = (*fti);
+					}
+				}
+				CurvePieceType* piece = new CurvePieceType(t, items);
+				addPiece(piece, true); // is faster than by reference, true => pass the ownership
+			}
+			setValueAtCurrent(f({ScalarType(t1)}));
+		} catch (std::logic_error &e) {
+			throw rethrow("DDEPiecewisePolynomialCurve::__construct__(grid,t0,t1,order,capd::map): ", e);
+		}
+	}
+
 	/** number of pieces */
 	size_type length() const { return m_pieces.size(); }
 

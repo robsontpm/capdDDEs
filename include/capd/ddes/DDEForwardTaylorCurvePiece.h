@@ -122,9 +122,9 @@ public:
 	/** makes a constant function of the vector value v */
 	DDEForwardTaylorCurvePiece(TimePointType t0, size_type order, const VectorType& v, VectorType* r0, bool passOwnership = false);
 	/** fills vector with data. Determine order from the size of data. */
-	DDEForwardTaylorCurvePiece(TimePointType t0, VectorType const* it, VectorType const* itEnd);
+	DDEForwardTaylorCurvePiece(TimePointType t0, VectorType const* it, VectorType const* itEnd, size_type N0 = 0);
 	/** fills vector with data. Determine order from the size of data. */
-	DDEForwardTaylorCurvePiece(TimePointType t0, std::vector<VectorType> coeffs);
+	DDEForwardTaylorCurvePiece(TimePointType t0, std::vector<VectorType> coeffs, size_type N0 = 0);
 	/** makes a curve piece of constant function, located at t0, of a given order and of given value. The r0 will be taken from the sets r0 (and no ownership transfer occurs). */
 	DDEForwardTaylorCurvePiece(TimePointType t0, size_type order, SetType& value);
 	/** makes a curve piece of constant function, located at t0, of a given order and of given value. The r0 will be taken from the sets r0 (as copy). */
@@ -526,13 +526,16 @@ protected:
 	void setupFromData(IteratorType it, IteratorType itEnd){
 		if (itEnd <= it) throw std::logic_error("DDEForwardTaylorCurvePiece::copyFromData(): cannot copy from empty range.");
 		m_order = itEnd - it - 1;
-		m_dimension = it->dimension();
-		reallocate();
+		m_dimension = it->dimension();  // we assume dimension of the first element
+		reallocate(storageN0());					// this will unnecessary reallocate R0, rethink...
+		MatrixType eachC(m_dimension, storageN0()); // to make sets of good shape to N0. The matrix = 0, so it should be set later by end user.
+		std::cout << "storageN0-piece" << storageN0() << std::endl;
 		for (auto jk = beginJet(); it != itEnd; ++it, ++jk){
 			try{ dimCheck(&(*it)); } catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece::copyFromData(): incompatible dimension.", e); }
-			*jk = SetType(*it);
+			try{*jk = SetType(*it, eachC, *m_r0);} catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece::copyFromData(): SetType constructor error.", e); }
 		}
-		updateCommonR0();
+		// previously, in SetType(..., eachC, *m_r0) we used a copy of the m_r0. Now we make it shared.
+		try{ updateCommonR0(); } catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece::copyFromData(): updateCommonR0 error.", e); }
 	}
 
 	/**

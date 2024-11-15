@@ -10,6 +10,14 @@
 # NOTICE: You not need to modify this file.                          #
 ######################################################################
 
+# I had to override it here, as Eclipse builder do not accept LLMV 
+# toolchain, and override it with GCC...
+# TODO: my current clang does not compile with mpcapd (Multiprec) 
+#export CXX=clang++
+#export CC=clang
+export CXX=g++
+export CC=gcc
+
 # those are taken from some stackoverflow and will return
 # the paths to __this__ file (..._FILEPATH) and the absolute path
 # to the folder (..._DIRPATH). It will work even for Makefiles
@@ -27,6 +35,15 @@ PROJECT_PATH := $(MAKEFILE_ABS_DIRPATH)
 CAPDBINDIR := $(PROJECT_PATH)/bin/capd/bin/
 CAPDLIBDIR := $(PROJECT_PATH)/bin/capd/lib/
 
-# this is to tell which version of CAPD to use
-# we use standard
-CAPDSCRIPT := capd-config
+# this is to tell to use multiprecision-enabled CAPD
+CAPDSCRIPT := mpcapd-config
+
+# static is used to prevent linker error for CAPD. 
+# Other methods to avoid it are described in CAPD docs. 
+EXTRALINKEROPTIONS=-static
+# uncomment for: support ggdb, slower execution time; 
+#GGDB_OPTION=-ggdb3 -g
+# uncomment for: gprof program (profiling, speed testing), slower execution time; 
+#GPROF_OPTION=-pg
+# TODO: think if uncomment some of those to get cleaner code?
+#CXXWARNINGFLAGS = -pedantic -Wall -Wclobbered -Wempty-body -Wignored-qualifiers -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wundef -Wcast-align -Wwrite-strings -Wlogical-op
