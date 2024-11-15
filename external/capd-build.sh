@@ -11,7 +11,9 @@ CAPD_SRC_DIR="$WD/capd"
 # Path relative to BUILD_DIR, where configure script sits
 CAPD_REL_PATH="../../external/capd"
 # where to install the library (locally)
-PREFIX="$BIN_DIR/capd"
+#PREFIX="$BIN_DIR/capd"
+# the above not works, as there is no install step now.
+PREFIX="$BUILD_DIR"
 
 # remove build to start anew
 if [ -d "$BUILD_DIR" ]
@@ -38,13 +40,17 @@ echo "$PREFIX"
 # clang may make strange errors...
 CXX=g++
 CC=gcc
+# TODO: shouldn't be export here? It seems to work...
 
 # do the compilation (outside CAPD directory)
 echo "cd to build directory: $BUILD_DIR"
 cd "$BUILD_DIR"
 cmake --install-prefix "$PREFIX" "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
-cmake --build .
-cmake --install .
+make
+# this is no longer needed, we just do make (se above)
+# cmake --build .
+# this is no longer needed, per docs in github capd
+# cmake --install .
 
 # copy the missing include file into installation directory
 # bug in capd cmake files?

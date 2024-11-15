@@ -4,7 +4,11 @@ cd external
 
 # add permission to helper scripts if  and run build
 
-chmod a+x capd/configure
+# this is no lomger needed becouse of a git submodule
+# chmod a+x capd/configure
+
+# instead we need to do this.
+git submodule update --init
 chmod a+x capd-build.sh
 ./capd-build.sh
 
