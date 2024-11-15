@@ -45,13 +45,16 @@ CC=gcc
 # do the compilation (outside CAPD directory)
 echo "cd to build directory: $BUILD_DIR"
 cd "$BUILD_DIR"
-cmake --install-prefix "$PREFIX" "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
+# no install prefix now, as we do not do cmake --install, per github capd docs
+#cmake --install-prefix "$PREFIX" "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
+cmake "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
 make
-# this is no longer needed, we just do make (se above)
+# this is no longer needed, we just do make (see above)
 # cmake --build .
 # this is no longer needed, per docs in github capd
 # cmake --install .
 
 # copy the missing include file into installation directory
 # bug in capd cmake files?
-cp -r "$CAPD_SRC_DIR"/capdAlg/include/capd/intervals/intra "$PREFIX"/include/capd/intervals
+# [edit] we do not need this, as the capd-config script uses includes from the original destination, if we do not do install
+# cp -r "$CAPD_SRC_DIR"/capdAlg/include/capd/intervals/intra "$PREFIX"/include/capd/intervals

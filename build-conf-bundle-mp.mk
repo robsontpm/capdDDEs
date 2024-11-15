@@ -32,11 +32,11 @@ PROJECT_PATH := $(MAKEFILE_ABS_DIRPATH)
 # scripts that are used in custom Makefiles to generate
 # neccessary C++ compile/link flags.
 # see http://capd.ii.uj.edu.pl for more info 
-CAPDBINDIR := $(PROJECT_PATH)/bin/capd/bin/
-CAPDLIBDIR := $(PROJECT_PATH)/bin/capd/lib/
+CAPDBINDIR := $(PROJECT_PATH)/bin/capd_build/bin/
+CAPDLIBDIR := $(PROJECT_PATH)/bin/capd_build/lib/
 
 # this is to tell to use multiprecision-enabled CAPD
-CAPDSCRIPT := mpcapd-config
+CAPDSCRIPT := capd-config
 
 # static is used to prevent linker error for CAPD. 
 # Other methods to avoid it are described in CAPD docs. 

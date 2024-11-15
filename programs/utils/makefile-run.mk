@@ -38,7 +38,7 @@ PROGRAMS_SUBDIR=
 
 # this will include helper file with paths configurable in one place
 # and different configurations for CAPD
-include ../../../build-conf-mp.mk
+include ../../../build-conf.mk
 
 # this will use symbols defined in the above file
 include ../../../build-common.mk

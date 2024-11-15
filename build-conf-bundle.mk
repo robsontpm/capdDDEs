@@ -32,8 +32,8 @@ PROJECT_PATH := $(MAKEFILE_ABS_DIRPATH)
 # scripts that are used in custom Makefiles to generate
 # neccessary C++ compile/link flags.
 # see http://capd.ii.uj.edu.pl for more info 
-CAPDBINDIR := $(PROJECT_PATH)/bin/capd/bin/
-CAPDLIBDIR := $(PROJECT_PATH)/bin/capd/lib/
+CAPDBINDIR := $(PROJECT_PATH)/bin/capd_build/bin/
+CAPDLIBDIR := $(PROJECT_PATH)/bin/capd_build/lib/
 
 # this is to tell which version of CAPD to use
 # we use standard

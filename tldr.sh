@@ -1,14 +1,16 @@
 #!/bin/bash
 
+# download CAPD external library first
+git submodule update --init
+
+# go to the folder where CAPD library is
 cd external
 
-# add permission to helper scripts if  and run build
-
-# this is no lomger needed becouse of a git submodule
+# this is no longer needed because of a git submodule
+# instead we do submodule --init above.
 # chmod a+x capd/configure
 
-# instead we need to do this.
-git submodule update --init
+# add permission to helper scripts if  and run build
 chmod a+x capd-build.sh
 ./capd-build.sh
 
@@ -19,19 +21,19 @@ cd ..
 
 # then make the selected program or demo eg:
 
-make examples/mackey_glass_stable
+make examples/rossler-ode-vs-dde-code
 
 # compiled programs will be in ./bin directory
 
-cd bin/examples/mackey_glass_stable && ls
+cd examples/rossler-ode-vs-dde-code/bin && ls
 
 # sample output of the above ls commands:
 #
-#    find_and_prove_n6
+#    capd-original-code  dde-vs-ode-code  nonrig-plotter
 #
 # finally, run proofs or demos, e.g. :
 
-./find_and_prove_n6
+./dde-vs-ode-code
 
 # you can see list of available programs and demos by running
 # in the main directory the following command:
