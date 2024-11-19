@@ -123,7 +123,11 @@ cd ../../../..
 make list
 ```
 
-If you are interested in more documentation, see ./docs
+If you are interested in more documentation, see ```./docs```
+or visit https://robsontpm.github.io/capdDDEs. 
+
+### The docs are not in a good shape now. It will improve over time. 
+
 
 Using your own CAPD
 -------------------
