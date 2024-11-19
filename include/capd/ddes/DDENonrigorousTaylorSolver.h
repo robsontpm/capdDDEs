@@ -151,8 +151,13 @@ public:
 	DDENonrigorousTaylorSolver(DDENonrigorousTaylorSolver const& solver): m_map(solver.m_map), m_maxOrder(solver.m_maxOrder) {}
 	DDENonrigorousTaylorSolver(FunctionalMapType const& map, size_type maxOrder = 20): m_map(map), m_maxOrder(maxOrder) {}
 
-	/** a nice operator form of the one step solver */
-	void operator()(CurveType&	 in_out_curve){
+	/**
+	 * a nice operator to do several steps at once
+	 * by default it only do one step, so computes solution on [t_0, t_0 + h]
+	 * NOTE: You can supply TimePointType as steps (see other function)! So the following code is valid:
+	 * NOTE: auto tau = grid(p); solver(solution, tau*4); // integrate on [t_0, t_0 + 4\tau]
+	 */
+	void operator()(CurveType& in_out_curve, size_type steps=1){
 		// TODO: DRY (see other)
 		auto& curve = in_out_curve;
 
@@ -166,19 +171,34 @@ public:
 		// collecting computation data
 		size_type coeffs_order = m_maxOrder;
 		VariableStorageType u;
-		m_map.collectComputationData(t0, th, h, curve, u, coeffs_order);
-		if (coeffs_order > m_maxOrder) coeffs_order = m_maxOrder;
-		ValueStorageType v; FunctionalMapType::convert(u, v);
 
-		ValueStorageType Phi_coeffs_t0(coeffs_order + 1);
-		ValueStorageType Phi_z(1); Phi_z[0] = zero;
+		for (size_type i = 0; i < steps; ++i){
+			m_map.collectComputationData(t0, th, h, curve, u, coeffs_order);
+			if (coeffs_order > m_maxOrder) coeffs_order = m_maxOrder;
+			ValueStorageType v; FunctionalMapType::convert(u, v);
 
-		this->oneStep(t0, th, h, v, Phi_coeffs_t0, Phi_z);
+			ValueStorageType Phi_coeffs_t0(coeffs_order + 1);
+			ValueStorageType Phi_z(1); Phi_z[0] = zero;
 
-		VariableStorageType new_jet;
-		FunctionalMapType::deconvert(Phi_coeffs_t0, new_jet);
-		curve.addPiece(new JetType(th, new_jet));
-		curve.setValueAtCurrent(Phi_z[0]);
+			this->oneStep(t0, th, h, v, Phi_coeffs_t0, Phi_z);
+
+			VariableStorageType new_jet;
+			FunctionalMapType::deconvert(Phi_coeffs_t0, new_jet);
+			curve.addPiece(new JetType(th, new_jet));
+			curve.setValueAtCurrent(Phi_z[0]);
+
+			t0 = th; th = t0 + curve.getStep();
+		}
+	}
+
+	/*
+	 * This allows to supply TimePointType as the destination time!
+	 * So the following code is valid:
+	 * 		auto tau = grid(p);
+	 * 		solver(solution, tau*4); // integrate on [t_0, t_0 + 4\tau]
+	 */
+	inline void operator()(CurveType& in_out_curve, TimePointType const&T){
+		this->operator()(in_out_curve, int(T));
 	}
 
 	/**
@@ -255,6 +275,8 @@ public:
 	 * like in Taylor method for ODEs.
 	 *
 	 * It is designed to be used internally. Operators() and epsilonShift() use this.
+	 *
+	 * TODO: RETHINK: Maybe it should be private?
 	 */
 	void oneStep(
 			TimePointType const& 		in_t0,
@@ -289,7 +311,10 @@ public:
 		// and we are done!
 	}
 
-	/** same as the other oneStep, but without computing JacPhi */
+	/**
+	 * same as the other oneStep, but without computing JacPhi
+	 * TODO: RETHINK: Maybe it should be private?
+	 */
 	void oneStep(
 			TimePointType const& 		in_t0,
 			TimePointType const&		in_th,

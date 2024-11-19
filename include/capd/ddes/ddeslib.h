@@ -46,4 +46,93 @@
 #include <capd/ddes/DDEBasicPoincareMap.hpp> // TODO: (!!!URGENT) PRAWDOPODOBNIE USUNAC JAK SKONCZE REFACTOR! (PoincareMap bedzie sciagac dane z tego)
 #include <capd/ddes/DDEPoincareMap.hpp>
 
+namespace capd {
+
+namespace ddes {
+
+// TODO: NOT-IMPORTANT Rethink what to use?
+//template<
+//	typename EqSpec,
+//	typename MatrixSpec = capd::vectalg::Matrix<typename EqSpec::ParamType, 0, 0>,
+//	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>
+//>
+template<
+	typename EqSpec,
+	typename MatrixSpec = capd::DMatrix,
+	typename VectorSpec = capd::DVector
+>
+class NonrigorousSetup{
+public:
+	typedef EqSpec Eq;
+	typedef typename Eq::ParamType ParamType;
+	typedef VectorSpec Vector;
+	typedef MatrixSpec Matrix;
+	typedef typename Matrix::ScalarType Scalar;
+	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
+	typedef typename Eq::ParamsVectorType ParamsVector;
+	typedef capd::ddes::DiscreteTimeGrid<Real> Grid;
+	typedef typename Grid::TimePointType TimePoint;
+	typedef capd::ddes::GenericJet<TimePoint, Vector, Vector, Matrix> Jet;
+	typedef capd::ddes::GenericJet<TimePoint, capd::ddes::VectorWithJacData<Vector, Matrix>, Vector, Matrix> C1Jet;
+	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, Jet> Solution;
+	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, C1Jet> C1Solution;
+	typedef Jet CurvePiece;
+	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, C1Solution> C1DDEq;
+	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, Solution> DDEq;
+	typedef capd::ddes::DDENonrigorousTaylorSolver<C1DDEq> C1Solver;
+	typedef capd::ddes::DDENonrigorousTaylorSolver<DDEq> Solver;
+	typedef typename C1Solver::VariableStorageType Variables;
+	typedef typename C1Solver::JacobianStorageType Jacobians;
+	typedef typename C1Solver::ValueStorageType Values;
+	typedef typename C1Solver::size_type size_type;
+	typedef capd::ddes::DDEJetSection<C1Solution> C1Section;
+	typedef typename C1Section::JetType C1SecJet;
+	typedef capd::ddes::DDEBasicPoincareMap<C1Solver, C1Section> C1PoincareMap;
+	typedef capd::ddes::DDEJetSection<Solution> Section;
+	typedef capd::ddes::DDEBasicPoincareMap<Solver, Section> PoincareMap;
+};
+
+
+// TODO: NOT-IMPORTANT Rethink what to use?
+//template<
+//	typename EqSpec,
+//	typename MatrixSpec = capd::vectalg::Matrix<typename EqSpec::ParamType, 0, 0>,
+//	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>
+//>
+template<
+	typename EqSpec,
+	typename MatrixSpec = capd::IMatrix,
+	typename VectorSpec = capd::IVector,
+	typename PoliciesSpec=capd::dynset::C11Rect2Policies
+>
+class RigorousSetup{
+public:
+	typedef EqSpec Eq;
+	typedef typename Eq::ParamType ParamType;
+	typedef VectorSpec Vector;
+	typedef MatrixSpec Matrix;
+	typedef typename Matrix::ScalarType Scalar;
+	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
+	typedef typename Eq::ParamsVectorType ParamsVector;
+	typedef PoliciesSpec Policies;
+	typedef capd::ddes::SharedDoubleton<Matrix, Policies> SetType;
+	typedef capd::ddes::DDESolutionCurve<SetType> Solution;
+	typedef typename Solution::GridType Grid;
+	typedef typename Solution::TimePointType TimePoint;
+	typedef typename Solution::CurvePieceType CurvePiece;
+	typedef capd::ddes::DiscreteDelaysFunctionalMap<Eq, Solution> DDEq;
+	typedef capd::ddes::DDETaylorSolver<DDEq> Solver;
+	typedef typename Solver::VariableStorageType Variables;
+	typedef typename Solver::JacobianStorageType Jacobians;
+	typedef typename Solver::ValueStorageType Values;
+	typedef typename Solver::size_type size_type;
+	typedef capd::ddes::DDEJetSection<Solution> Section;
+	typedef typename Section::JetType SectionJet;
+	typedef capd::ddes::DDEPoincareMap<Solver, Section> PoincareMap;
+};
+
+} // namespace ddes;
+
+} // namespace capd;
+
 #endif /* _CAPD_DDES_DDESSLIB_H_ */

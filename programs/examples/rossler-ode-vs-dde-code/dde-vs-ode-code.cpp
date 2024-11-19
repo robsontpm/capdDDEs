@@ -133,7 +133,7 @@ int main(int, char**){
 	// setup DDE solver and Poincare map
 	DDESolver dde_solver(dde, max_order);
 	DDESection dde_section(3, 0);
-	DDEPoincare dde_pm(dde_solver, dde_section, poincare::CrossingDirection::MinusPlus);
+	DDEPoincare dde_pm(dde_solver, dde_section, poincare::MinusPlus);
 	// extra setup, only for DDEs
 	dde_pm.setRequiredSteps(0);	// ODE should not care about this, but we must disable this manually. This is important for true DDEs, but it is controlled by the DDE code itself to be safe.
 	dde_pm.setMaxSteps(1000);	// this is equivalent to ode_pm.setMaxReturnTime(), but less convenient probably

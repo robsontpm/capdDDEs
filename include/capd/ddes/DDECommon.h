@@ -198,7 +198,9 @@ public:
 			return *this;
 		}
 		friend TimePointType operator-(const TimePointType& a) { return TimePointType(a.m_h, - a.m_i); }
-		friend TimePointType operator*(RealType const & a, TimePointType const & b) { throw std::logic_error("DiscreteTimeGrid::TimePoints does not support multiplication!"); }
+		friend TimePointType operator*(int const & a, TimePointType const & b) { return TimePointType(b.m_h, b.m_i * a); }
+		friend TimePointType operator*(TimePointType const & a, int const & b) { return b * a; }
+		friend TimePointType operator*(RealType const & a, TimePointType const & b) { throw std::logic_error("DiscreteTimeGrid::TimePoints does not support multiplication by a real value! Only integer multiplication is allowed!"); }
 		friend TimePointType operator*(TimePointType const & a, RealType const & b) { return b * a; }
 		friend bool operator==(TimePointType const & a, TimePointType const & b) { return (&a.m_h == &b.m_h) && (a.m_i == b.m_i); }
 		friend bool operator!=(TimePointType const & a, TimePointType const & b) { return !(a == b); }
@@ -220,17 +222,21 @@ public:
 		friend bool operator>=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(b > a); }
 
 		friend std::ostream& operator<<(std::ostream & out, TimePointType const & t) {
-			out << TimePointType::badge() << " ";
+			// TODO: IMPORTANT: test adding the representation in front!
+			out << RealType(t) << " := " << TimePointType::badge() << " ";
 			out << t.m_i << " " << t.m_h;
 			return out;
 		}
 		friend std::istream& operator>>(std::istream & in, TimePointType & t) {
-			helper_dump_badge(in);
+			// TODO: IMPORTANT: test adding the representation in front!
+			RealType dump_repr; in >> dump_repr;
+			helper_dump_badge(in); // dump ":="
+			helper_dump_badge(in); // dump badge() = "DiscreteTimePoint"
 			RealType tmp;
 			in >> t.m_i >> tmp;
 			if (tmp != t.m_h){ // check at least values
 				std::ostringstream info;
-				info << "TimePointType: Point from input probably from other grid. ";
+				info << "TimePointType: Point from input is probably from some other grid. ";
 				info << "Input h = " << tmp << " vs grid h = " << t.m_h;
 				throw std::logic_error(info.str());
 			}

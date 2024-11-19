@@ -184,12 +184,11 @@ public:
 				for (size_type i = 0; i < f.imageDimension(); ++i){
 					size_type j = 0;
 					for (auto fti = ft.begin(i); j <= order; ++fti, ++j){
-						std::cout << ScalarType(t) << " " << j << " " << (*fti) << std::endl;
 						items[j][i] = (*fti);
 					}
 				}
 				CurvePieceType* piece = new CurvePieceType(t, items);
-				addPiece(piece, true); // is faster than by reference, true => pass the ownership
+				addPiece(piece); // TODO: removed true here, didnt compiled. Test.
 			}
 			setValueAtCurrent(f({ScalarType(t1)}));
 		} catch (std::logic_error &e) {
