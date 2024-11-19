@@ -1,0 +1,27 @@
+This example replicates the result of the first Fo\+CM paper (see references in ../../../\+R\+E\+A\+D\+ME.md \char`\"{}\+R\+E\+A\+D\+M\+E.\+md\char`\"{}), but it is written in a more concise way. It shows usage of the helper classes.\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_programs_examples_mackey-glass-stable-periodic_README_autotoc_md1}{}\doxysection{Compilation}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_programs_examples_mackey-glass-stable-periodic_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item before compiling this demo, you need to compile extrenal libraries first, go to the root directory fo the project and read ../../../\+R\+E\+A\+D\+ME.md \char`\"{}\+R\+E\+A\+D\+M\+E.\+md\char`\"{} there.
+\item When you have compiled the external libraries, you can return here and compile this demo
+\item to compile this demo you need to invoke in this directory\+:
+
+make all
+\item it will create {\ttfamily ./bin} subdirectory
+
+ls ./bin
+\item the computation is split into 3 steps\+:
+\begin{DoxyEnumerate}
+\item Finding the candidate nonrigorously, done by {\ttfamily nonrig-\/find.\+cpp} It finds also the apparently good coordinates for the initial set on the section. The set will have form {\ttfamily X = x + C $\ast$ r0}, where {\ttfamily x} is the good approfimation of the {\ttfamily p\+\_\+0} segment of the periodic solution {\ttfamily p \+: R \textbackslash{}to R}. We also compute good section on which {\ttfamily X} is given.
+\item Rigorously computing the inverse of the matrix {\ttfamily C}, so that the {\ttfamily P(\+X)} can be later transformed into good coordinates. This step is done with the help of general set of programs available in {\ttfamily programs/utils/converter} ~\newline
+
+\item Computing {\ttfamily P(\+X)} and comparing {\ttfamily C$^\wedge$-\/1 (P(\+X) -\/ x0) =\+: Pr0} to {\ttfamily r0}. Here, {\ttfamily P} is the Poincare map that comes back to the section on which {\ttfamily X} was defined. This part is done by {\ttfamily rig-\/prove.\+cpp}.
+\end{DoxyEnumerate}
+\item all the setps can be run in order, simply by running\+:
+
+bash run-\/proof.\+sh
+\item We are using Schauder Fixed Point theorem to infer that if {\ttfamily Pr0 \textbackslash{}subset r0}, then there exists {\ttfamily p \textbackslash{}in X} that is a periodic point of {\ttfamily P}, thus a periodic solution to the D\+DE. For otherassumptions of Schauder Fixed Point theorem, the compactness comes from the smoothing of solutions in D\+D\+Es, and the set {\ttfamily X} is convex by definition. See papers in references for more details ../../../\+R\+E\+A\+D\+ME.md \char`\"{}\+R\+E\+A\+D\+M\+E.\+md\char`\"{}
+\item have a nice day!
+\end{DoxyItemize}\hypertarget{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_programs_examples_mackey-glass-stable-periodic_README_autotoc_md2}{}\doxysection{N\+O\+TE}\label{md__home_robson_ROBERT-PRACA-CHMURA_eclipse-workspace_capdDDEs5_81_82_programs_examples_mackey-glass-stable-periodic_README_autotoc_md2}
+You can try to change the parameters, but the program will not work on apparently unstable periodic solutions. It might also fail on a more complicated solutions, e.\+g. period-\/2 points for Poincare map.
+
+How to handle more complicated dynamics, see our other papers mentioned in main ../../../\+R\+E\+A\+D\+ME.md \char`\"{}\+R\+E\+A\+D\+M\+E.\+md\char`\"{} and references therein. 

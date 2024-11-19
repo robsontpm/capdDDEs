@@ -82,8 +82,7 @@ std\+::string {\bfseries filepath}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}} 
-std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&in, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&coords)
+std\+::istream \& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&coords)
 \item 
 \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a5d4930af134b0d95e8ed91cca4173eba}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a5d4930af134b0d95e8ed91cca4173eba}} 
 bool {\bfseries operator==} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&first, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}} \&second)
@@ -97,7 +96,19 @@ bool {\bfseries operator!=} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1Coordin
 \subsubsection*{template$<$typename Matrix\+Spec, typename Vector\+Spec = typename Matrix\+Spec\+::\+Vector\+Type, typename Scalar\+Spec = typename Vector\+Spec\+::\+Scalar\+Type$>$\newline
 class capd\+::ddeshelper\+::\+Coordinate\+Frame$<$ Matrix\+Spec, Vector\+Spec, Scalar\+Spec $>$}
 
-Internal class to hold a affine coordinate change on a (p,n)-\/fset. 
+Internal class to hold a affine coordinate change on a (p,n)-\/fset.
+
+T\+O\+DO\+: more docs... 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}\label{classcapd_1_1ddeshelper_1_1CoordinateFrame_a413471568c929f3c24922939b2fcffc2}} 
+\index{capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$@{capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$@{capd::ddeshelper::CoordinateFrame$<$ MatrixSpec, VectorSpec, ScalarSpec $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Spec , typename Vector\+Spec  = typename Matrix\+Spec\+::\+Vector\+Type, typename Scalar\+Spec  = typename Vector\+Spec\+::\+Scalar\+Type$>$ \\
+std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{Coordinate\+Frame}}$<$ Matrix\+Spec, Vector\+Spec, Scalar\+Spec $>$ \&}]{coords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+T\+O\+DO\+: add out$<$$<$ operator... T\+O\+DO\+: docs... 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

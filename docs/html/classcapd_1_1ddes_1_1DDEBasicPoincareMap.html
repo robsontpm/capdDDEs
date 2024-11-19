@@ -124,6 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a850ed85aeae39842e86969837f1f3177"><td class="memItemLeft" align="right" valign="top"><a id="a850ed85aeae39842e86969837f1f3177"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>DDEBasicPoincareMap</b> (DynSysType &amp;dynsys, SectionType &amp;section, CrossingDirection direction=CrossingDirection::Both, int reqSteps=0, int maxSteps=-1, double binsearchEpsilon=DEFAULT_BINSEARCH_EPSILON)</td></tr>
 <tr class="separator:a850ed85aeae39842e86969837f1f3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea57b2b9505711ea5b59a77d12cd7a63"><td class="memItemLeft" align="right" valign="top">CurveType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcapd_1_1ddes_1_1DDEBasicPoincareMap.html#aea57b2b9505711ea5b59a77d12cd7a63">operator()</a> (CurveType const &amp;X)</td></tr>
+<tr class="separator:aea57b2b9505711ea5b59a77d12cd7a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeec9b7a9bf93e497b38ee9a6e20fc17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcapd_1_1ddes_1_1DDEBasicPoincareMap.html#aaeec9b7a9bf93e497b38ee9a6e20fc17">operator()</a> (CurveType &amp;curve, CurveType &amp;on_section, RealType &amp;out_approachTime)</td></tr>
 <tr class="separator:aaeec9b7a9bf93e497b38ee9a6e20fc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d3814773af94e5cb310f8971526a776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcapd_1_1ddes_1_1DDEBasicPoincareMap.html#a2d3814773af94e5cb310f8971526a776">operator()</a> (CurveType &amp;in_out_curve, CurveType &amp;in_out_Pcurve, RealType &amp;out_approachTime, VectorType &amp;out_x, VectorType &amp;out_Px, VectorType &amp;out_fPx, MatrixType &amp;out_V, MatrixType &amp;out_DP)</td></tr>
@@ -134,8 +136,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a85df8673f19d569952a87bc7042f76c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5975c76ac0bfacae3e26a8fd63ce2eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcapd_1_1ddes_1_1DDEBasicPoincareMap.html#a5975c76ac0bfacae3e26a8fd63ce2eed">setCurrentV</a> (CurveType &amp;in_out_curve, MatrixType const &amp;V)</td></tr>
 <tr class="separator:a5975c76ac0bfacae3e26a8fd63ce2eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea57b2b9505711ea5b59a77d12cd7a63"><td class="memItemLeft" align="right" valign="top">CurveType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcapd_1_1ddes_1_1DDEBasicPoincareMap.html#aea57b2b9505711ea5b59a77d12cd7a63">operator()</a> (CurveType const &amp;X)</td></tr>
-<tr class="separator:aea57b2b9505711ea5b59a77d12cd7a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07e41bb641b00c46dc391f4288068dc3"><td class="memItemLeft" align="right" valign="top"><a id="a07e41bb641b00c46dc391f4288068dc3"></a>
 <a class="el" href="classcapd_1_1ddes_1_1DDEBasicPoincareMap.html">DDEBasicPoincareMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>setDirection</b> (CrossingDirection direction)</td></tr>
 <tr class="separator:a07e41bb641b00c46dc391f4288068dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -412,7 +412,11 @@ template&lt;typename DynSysSpec , typename SectionSpec &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>in curve there is a curve that reaches first full step after the section in on_section there is the image on the section, as close to section as possible on_section must be initialized with the desired "length" (time interval) and "order" of the representation. on_section must be compatible (length, order) with the section </p>
+<p>First parameter will change! There will be a curve that reaches first full step after the section, define dover the whole integration time. So if you want to save it, use a copy in curve parameter.</p>
+<p>In on_section there will be the image on the section, as close to section as possible.</p>
+<p>The parameter on_section must be initialized with the desired "length" (time interval) and "order" of the representation. It also must be compatible (length, order) with the section.</p>
+<p>Both parameters should be defined on the same Grid.</p>
+<p>In out_approachTime you will get the return time to section. </p>
 
 </div>
 </div>
@@ -527,10 +531,16 @@ template&lt;typename DynSysSpec , typename SectionSpec &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>to be compatible with standard notion and CAPD interface, It makes following assumptions:</p><ul>
+<p>This is probably the simplest version to be used by the end user.</p>
+<p>It is simply applied like: </p><pre class="fragment">    CurveType X(...); // init to what you want
+    auto PX = P(X);   // PX will be the same shape as X
+    // so you can e.g. compute difference between representations
+    capd::vectalg::EuclNorm&lt;VectorType, MatrixType&gt; euclNorm;
+    auto diff = euclNorm((VectorType)PX - (VectorType)X)
+</pre><p>to be compatible with standard notion and CAPD interface, It makes following assumptions:</p><ul>
 <li>X and PX will have the same structure (i.e. over same grid points and jets of the same order).</li>
 </ul>
-<p>NOTE: you can retrieve information on reach time and epsilon step, but you cannot acquire the solution on the whole time. If you need solution over the full integration time, then use other operator(). </p>
+<p>NOTE: you can retrieve information on reach time and epsilon step (see getLast***() functions), but you cannot acquire the solution on the whole time. If you need solution over the full integration time, then use other operator(). </p>
 
 </div>
 </div>

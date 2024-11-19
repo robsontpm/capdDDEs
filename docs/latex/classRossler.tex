@@ -10,6 +10,8 @@
 typedef unsigned int \mbox{\hyperlink{classRossler_aae3d7955490d7c70ffaccf31645dc0fe}{size\+\_\+type}}
 \item 
 typedef Param\+Spec \mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}
+\item 
+typedef capd\+::vectalg\+::\+Vector$<$ \mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}, 0 $>$ \mbox{\hyperlink{classRossler_a8993980d74b315b5d7674aa77d2f1b1e}{Params\+Vector\+Type}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -18,7 +20,7 @@ typedef Param\+Spec \mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638
 \item 
 \mbox{\hyperlink{classRossler_a8e4fdae3a75c8ff07d0f2518ccc2b2e7}{Rossler}} (\mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}} a, \mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}} b)
 \item 
-\mbox{\hyperlink{classRossler_ae32719b1585fb8e1f1a9a8d12cb99be6}{Rossler}} (capd\+::vectalg\+::\+Vector$<$ \mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}, 0 $>$ params)
+\mbox{\hyperlink{classRossler_af4cdbb29ca8b0ec20b7344f6a4c81ded}{Rossler}} (\mbox{\hyperlink{classRossler_a8993980d74b315b5d7674aa77d2f1b1e}{Params\+Vector\+Type}} const \&params)
 \item 
 {\footnotesize template$<$typename Real\+Spec , typename In\+Vector\+Spec , typename Out\+Vector\+Spec $>$ }\\void \mbox{\hyperlink{classRossler_adfb2ac3234acfd2c4a652f1b584b12b9}{operator()}} (const Real\+Spec \&t, const In\+Vector\+Spec x, Out\+Vector\+Spec \&fx) const
 \end{DoxyCompactItemize}
@@ -59,14 +61,21 @@ It is a little harder than in the C\+A\+PD itself, as C\+A\+PD allows for specif
 This does not need to be template class, but I like to do it that way so that i can use it for rigorous and non-\/rigorous computations! 
 
 \doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classRossler_a067d3b8a0caba5707b68580d29638b31}\label{classRossler_a067d3b8a0caba5707b68580d29638b31}} 
+\mbox{\Hypertarget{classRossler_a8993980d74b315b5d7674aa77d2f1b1e}\label{classRossler_a8993980d74b315b5d7674aa77d2f1b1e}} 
+\index{Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}!ParamsVectorType@{ParamsVectorType}}
+\index{ParamsVectorType@{ParamsVectorType}!Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}}
+\doxysubsubsection{\texorpdfstring{ParamsVectorType}{ParamsVectorType}}
+{\footnotesize\ttfamily template$<$typename Param\+Spec $>$ \\
+typedef capd\+::vectalg\+::\+Vector$<$\mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}, 0$>$ \mbox{\hyperlink{classRossler}{Rossler}}$<$ Param\+Spec $>$\+::\mbox{\hyperlink{classRossler_a8993980d74b315b5d7674aa77d2f1b1e}{Params\+Vector\+Type}}}
+
+Rigorous\+Helper requires to define explicitly what is the type of a vector of parameters! It must be named Params\+Vector\+Type! \mbox{\Hypertarget{classRossler_a067d3b8a0caba5707b68580d29638b31}\label{classRossler_a067d3b8a0caba5707b68580d29638b31}} 
 \index{Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}!ParamType@{ParamType}}
 \index{ParamType@{ParamType}!Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}}
 \doxysubsubsection{\texorpdfstring{ParamType}{ParamType}}
 {\footnotesize\ttfamily template$<$typename Param\+Spec $>$ \\
 typedef Param\+Spec \mbox{\hyperlink{classRossler}{Rossler}}$<$ Param\+Spec $>$\+::\mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}}
 
-Rigorous\+Helper requires to define explicitely what is the type of parameters! It must be named Param\+Type! \mbox{\Hypertarget{classRossler_aae3d7955490d7c70ffaccf31645dc0fe}\label{classRossler_aae3d7955490d7c70ffaccf31645dc0fe}} 
+Rigorous\+Helper requires to define explicitly what is the type of parameters! It must be named Param\+Type! \mbox{\Hypertarget{classRossler_aae3d7955490d7c70ffaccf31645dc0fe}\label{classRossler_aae3d7955490d7c70ffaccf31645dc0fe}} 
 \index{Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}!size\_type@{size\_type}}
 \index{size\_type@{size\_type}!Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}}
 \doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
@@ -90,12 +99,12 @@ default constructor for default values of parameters, its good to have one. \mbo
 {\footnotesize\ttfamily template$<$typename Param\+Spec $>$ \\
 \mbox{\hyperlink{classRossler}{Rossler}}$<$ Param\+Spec $>$\+::\mbox{\hyperlink{classRossler}{Rossler}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}}]{a,  }\item[{\mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-construct eq for given parameter values \mbox{\Hypertarget{classRossler_ae32719b1585fb8e1f1a9a8d12cb99be6}\label{classRossler_ae32719b1585fb8e1f1a9a8d12cb99be6}} 
+construct eq for given parameter values \mbox{\Hypertarget{classRossler_af4cdbb29ca8b0ec20b7344f6a4c81ded}\label{classRossler_af4cdbb29ca8b0ec20b7344f6a4c81ded}} 
 \index{Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}!Rossler@{Rossler}}
 \index{Rossler@{Rossler}!Rossler$<$ ParamSpec $>$@{Rossler$<$ ParamSpec $>$}}
 \doxysubsubsection{\texorpdfstring{Rossler()}{Rossler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename Param\+Spec $>$ \\
-\mbox{\hyperlink{classRossler}{Rossler}}$<$ Param\+Spec $>$\+::\mbox{\hyperlink{classRossler}{Rossler}} (\begin{DoxyParamCaption}\item[{capd\+::vectalg\+::\+Vector$<$ \mbox{\hyperlink{classRossler_a067d3b8a0caba5707b68580d29638b31}{Param\+Type}}, 0 $>$}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classRossler}{Rossler}}$<$ Param\+Spec $>$\+::\mbox{\hyperlink{classRossler}{Rossler}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRossler_a8993980d74b315b5d7674aa77d2f1b1e}{Params\+Vector\+Type}} const \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 construct eq taking parameters from a vector. It must be of this form for Rigorous\+Helper to work! 
 

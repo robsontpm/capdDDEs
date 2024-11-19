@@ -68,17 +68,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>A library to do rigorous numerics for Delay Differential Equations based on [^phd-thesis], [^rignum-ddes], [^high-order-ddes].</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 TL;DR</h1>
 <p>If you have <code>Debian</code> based system (tested: Ubuntu 20.04), then to see the project in action, you can run:</p>
 <div class="fragment"><div class="line">sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool</div>
-<div class="line">mkdir capdDDEs</div>
+<div class="line">git clone git@github.com:robsontpm/capdDDEs.git capdDDEs</div>
 <div class="line">cd capdDDEs</div>
-<div class="line">git clone git@github.com:robsontpm/capdDDEs.git .</div>
+<div class="line">cp build-conf-bundle.mk build-conf.mk </div>
 <div class="line">chmod a+x tldr.sh</div>
 <div class="line">./tldr.sh</div>
 </div><!-- fragment --><p>It might take some time to compile everything. The next sections describes what is done in <code>tldr.sh</code> script.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Requirements</h1>
 <p>The requirements are the same as for <a href="http://capd.ii.uj.edu.pl">CAPD library</a>, which are:</p>
 <ul>
@@ -91,15 +91,17 @@ Requirements</h1>
 </ul>
 <p>In Debian based systems you can run:</p>
 <div class="fragment"><div class="line">sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool</div>
-</div><!-- fragment --><p>The documentation and the compilation system uses for now the <code>g++</code> compiler. You can change it in **.mk** files in the root.</p>
-<p><em>TODO: get the <code>$CXX</code> from environment vars (?)</em></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><p>The documentation and the compilation system uses for now the <code>g++</code> compiler. You can change it in your <code>build-conf.mk</code> file in the root directory (see docs below).</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Compilation</h1>
 <p>Assuming you have all the needed requirements, to start using this project you can do the following steps (we assume you have -nix type of system, Windows is unsupported):</p>
 <p>First clone the repo:</p>
-<div class="fragment"><div class="line">mkdir capdDDEs</div>
+<div class="fragment"><div class="line">git clone git@github.com:robsontpm/capdDDEs.git capdDDEs</div>
 <div class="line">cd capdDDEs</div>
-<div class="line">git clone git@github.com:robsontpm/capdDDEs.git .</div>
+</div><!-- fragment --><p>You should choose one of the possible configs of the building system: </p><div class="fragment"><div class="line">ls | grep &quot;build-conf-&quot;</div>
+</div><!-- fragment --><p>You need to copy one of them into file named <code>build-conf.mk</code>. This file is not tracked by the <code>git</code> version control. Currently, the difference between various versions lies in where the library will look for <code>CAPD</code> library.</p>
+<p>Currently, you have two options: decide to go with the <code>CAPD</code> that is a submodule of this project and is maintained by github git repository (the default behaviour) or to setup your own distribution of <code>CAPD</code> if you already have one. In this example we go with the submoduled version (maintained from github and updated automatically):</p>
+<div class="fragment"><div class="line">cp build-conf-bundle.mk build-conf.mk</div>
 </div><!-- fragment --><p>Next, go to external, add permissions and build CAPD library (it is a long process):</p>
 <div class="fragment"><div class="line">cd external</div>
 <div class="line">chmod a+x capd/configure</div>
@@ -107,40 +109,54 @@ Compilation</h1>
 <div class="line">./capd-build.sh</div>
 </div><!-- fragment --><p>Then, after capd is build without errors, go back to root directory and compile some exemplary programs using make:</p>
 <div class="fragment"><div class="line">cd ..</div>
-<div class="line">make examples/mackey_glass_stable</div>
-</div><!-- fragment --><p>Compiled programs will go to **./bin** directory:</p>
-<div class="fragment"><div class="line">ls bin/examples/</div>
-<div class="line">ls bin/examples/mackey_glass_stable</div>
+<div class="line">make examples/mackey-glass-stable-periodic</div>
+</div><!-- fragment --><p>Compiled programs will go to **./bin** directory inside this particular example directory:</p>
+<div class="fragment"><div class="line">ls programs/examples/mackey-glass-stable-periodic/bin</div>
 <div class="line"> </div>
 <div class="line"># sample output of the above ls commands are:</div>
 <div class="line">#</div>
-<div class="line">#    mackey_glass_stable</div>
-<div class="line">#</div>
-<div class="line">#    find_and_prove_n6</div>
+<div class="line">#    find-and-prove-n6</div>
 <div class="line">#</div>
 </div><!-- fragment --><p>Finally, run proofs or demos, e.g. :</p>
-<div class="fragment"><div class="line">cd bin/examples/mackey_glass_stable</div>
-<div class="line">./find_and_prove_n6</div>
+<div class="fragment"><div class="line">cd programs/examples/mackey-glass-stable-periodic/bin</div>
+<div class="line">./find-and-prove-n6</div>
 </div><!-- fragment --><p>You can see list of available programs and demos by running in the main directory of the repository the following command:</p>
-<div class="fragment"><div class="line">make list</div>
+<div class="fragment"><div class="line">cd ../../../..</div>
+<div class="line">make list</div>
 </div><!-- fragment --><p>If you are interested in more documentation, see ./docs</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Using your own CAPD</h1>
+<p>The <code>-bundle</code> version forces you to compile the version of <code>CAPD</code> library, that is in <code>external</code> folder. In case you already have <code>CAPD</code> up and running, you might want to use other templates and configure them to your needs. Just copy the <code>-svn</code> version, e.g.:</p>
+<div class="fragment"><div class="line">cp build-conf-svn.mk build-conf.mk</div>
+</div><!-- fragment --><p>and either specify the paths in this <code>build-conf.mk</code> file (uncomment some lines there) or follow the instructions in the file to export global system variables.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Contact</h1>
 <p>In case of any problems, please contact me at <a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.s'+'zc'+'zel'+'in'+'a@u'+'j.'+'edu'+'.p'+'l'; return false;">rober<span style="display: none;">.nosp@m.</span>t.sz<span style="display: none;">.nosp@m.</span>czeli<span style="display: none;">.nosp@m.</span>na@u<span style="display: none;">.nosp@m.</span>j.edu<span style="display: none;">.nosp@m.</span>.pl</a> - I will provide as much support as possible, especially I will contact people from CAPD project if there would be any problems with building it. Please attach as much information as possible (e.g. output of build.sh / configure / make programs),version of your OS, maybe some screenshots.</p>
 <p>Aditional programs (proofs) are usually attached to the recent manuscripts, see the References section below.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 DESCRIPTION OF THIS PROJECT</h1>
 <p>The repository contains source codes for the rigorous integration library for Delay Differential Equations (DDEs) of the form[^1]:</p>
 <div class="fragment"><div class="line">x&#39;(t) = f(x(t), x(t-d1), ..., x(t-dm))</div>
 </div><!-- fragment --><p>Where d1,..., dm are m delays. It is build upon ideas from CAPD library for ODEs (capd.ii.uj.edu.pl). By rigorous methods we understand routines that compute the enclosure (interval bounds) on the <b>true</b> solutions to the problems. Those in turn might be applied in Computer Assisted Proofs, that is, in mathematical proofs, that verify some assumptions by appropriate computer programs. Please reffer to <a href="capd.ii.uj.edu.pl">CAPD</a> documentation for general papers on the topic. See <b>References</b> for the papers specyfic to DDEs [^1][^2][^3][^4].</p>
-<p>This project requires the <a href="capd.ii.uj.edu.pl">CAPD library</a>, but the repository contains compatible CAPD version in './external/' directory. You can use your own version of the CAPD, but in that case you need to modify <code>CAPDBINDIR</code> and <code>CAPDLIBDIR</code> variables in the template Makefile scripts <code>build-conf.mk</code> and <code>build-conf-mp.mk</code>. As of 2022 the integrator uses CAPD DynSys version 5.1.2.</p>
-<p><em>TODO: change it to have CAPD as a submodule (?) or downloaded from git separately.</em></p>
-<p>The work is open-source, under GPLv3 license. Please consider citing some of the papers listed in <b>References</b>, when using this work in any scientific project.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-PROJECT STRUCTURE (UPDATED 2023)</h1>
-<p>A short description of available folders / files. A detailed README.md file can be found in some of them, when necessary. The project is in constant evolution, so changes can be made. When the core part of library would become part of CAPD, then the structure would be more or less constant.</p>
-<ul>
-<li><code>include/</code> As the library is mostly based on C++ templates, most of the code is here.</li>
+<p>This project requires the <a href="capd.ii.uj.edu.pl">CAPD library</a>, but the repository contains compatible CAPD version in './external/' directory as a <code>git</code> submodule downloaded autmatically from <code>github.com</code>. You can use your own version of the CAPD, but in that case you need to modify <code>CAPDBINDIR</code> and <code>CAPDLIBDIR</code> variables in the template Makefile scripts </p><div class="fragment"><div class="line"> {build-conf.mk```.}</div>
+<div class="line"> </div>
+<div class="line">The work is open-source, under GPLv3 license. Please consider</div>
+<div class="line">citing some of the papers listed in **References**, when using this </div>
+<div class="line">work in any scientific project.</div>
+<div class="line"> </div>
+<div class="line">PROJECT STRUCTURE (UPDATED 2023)</div>
+<div class="line">--------------------------------</div>
+<div class="line"> </div>
+<div class="line">A short description of available folders / files. A detailed README.md</div>
+<div class="line">file can be found in some of them, when necessary. The project is in </div>
+<div class="line">constant evolution, so changes can be made. When the core part of </div>
+<div class="line">library would become part of CAPD, then the structure would be more</div>
+<div class="line">or less constant.</div>
+<div class="line"> </div>
+<div class="line"> - ```include</div>
+</div><!-- fragment --> <pre class="fragment">As the library is mostly based on C++ templates, most
+of the code is here. 
+</pre><ul>
 <li><code>include/ddes</code> the core of the rigorous integrator for DDEs</li>
 <li><code>include/ddeshelper</code> some extra routines to help with programs. Might not be the part of the CAPD library, when ddes are included.</li>
 <li><code>src/</code> As not all functions are templated, their implementation need to go to .cpp files in here.</li>
@@ -150,49 +166,79 @@ PROJECT STRUCTURE (UPDATED 2023)</h1>
 <li><p class="startli"><code>Makefile</code> this file may be used to build programs inside the library.</p>
 <p class="startli">Just call:</p>
 <p class="startli">```bash make <em>program-name</em> ```</p>
-<p class="startli">where <em>program-name</em> is equal to the name of any directory under <code>programs/</code>. The resulting executable file will go to the bin/_program-name_ directory.</p>
-<p class="startli">```bash make list ```</p>
-<p class="startli">will print out the list of available programs.</p>
+<p class="startli">where <code>_program-name_</code> is equal to the name of any directory under <code>programs/</code>. The resulting executable file will go either to the programs directory or to the <code>bin/_program-name_</code> directory. Check the documentation in the appropriate program directory. <br  />
+</p>
+<p class="startli">Example:</p>
 </li>
+</ul>
+<div class="fragment"><div class="line">make examples/demo-elninio</div>
+</div><!-- fragment --><pre class="fragment">```bash
+make list
+```
+
+will print out the list of available programs. You can copy
+</pre><p> the names of the targets from there.</p>
+<ul>
 <li><code>external/</code> You should build CAPD from this folder. The instructions are somwhere in this README.md file. <br  />
 </li>
 <li><code>scripts/</code> some usefull scripts in languages other than C++ (bash / Python / tex) to be used in some proofs to generate human-readable output (e.g. the formulation of existence theorems with nice estimates) This folder may not be present.</li>
 <li><code>bin/</code> this directory is initially empty (or non-existent). If you will compile any program which accompany the library (programs folder), then it will be most probably placed here. Also compiled version of bundled CAPD will be placed here.</li>
-<li><p class="startli"><code>build-common.mk</code> <code>build-conf.mk</code> <code>build-conf-mp.mk</code> <code>build-conf-svn.mk</code></p>
-<p class="startli">those files serve to configure compilation (make, Makefile files in programs, etc.), see above for the instruction on compilation. The <code>-mp</code> version is used for multiprecision compilation (see for example converter programs), <code>-svn</code> version is for using your own (external) compilation of CAPD.</p>
+<li><code>build-common.mk</code> <div class="fragment"><div class="line">{build-conf-bundle.mk```}</div>
+<div class="line">   ```build-conf-svn.m</div>
+</div><!-- fragment --></li>
+</ul>
+<pre class="fragment">those files serve to configure compilation 
+(make, Makefile files in programs, etc.), see above
+for the instruction on compilation. The ```-mp``` version is used
+for multiprecision compilation (see for example converter programs), ```-svn``` version 
+is for using your own (external) compilation of CAPD.
+</pre><ul>
+<li><p class="startli"><code>build-conf.mk</code></p>
+<p class="startli">this file initially do not exists, but is required for compiltion; you should copy one of the <code>-bundle.mk</code> or <code>-svn.mk</code> files to this location as shown in previous sections.</p>
 </li>
 <li><code>README.md</code> this file</li>
 </ul>
-<p>The most important part is the rigorous integrator for DDEs. It is contained in <code>include/capd/ddes</code> As of 2022, I have decided to reorganize it to be more complaint with the CAPD structure. I have followed example of <code>external/capd/capdDynSys4/include/capd/pdes</code> folder structure in this manner. I hope capdDDEs can become a part of CAPD library at some point, when the library is mature enough.</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
-YOUR OWN CAPD LIBRARY</h1>
-<p>If you want to use your own version of CAPD, e.g. from <code>svn</code> repo, then you need to modify file <code>build-conf.mk</code> (and other <code>.mk</code> probably) first. Follow the instructions in that file to make the <code>Makefile</code> work.</p>
-<p>In case of any errors in compiling CAPD library, please check requirements on <a href="http://capd.ii.uj.edu.pl,">http://capd.ii.uj.edu.pl,</a> or contact me at <a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.s'+'zc'+'zel'+'in'+'a@u'+'j.'+'edu'+'.p'+'l'; return false;">rober<span style="display: none;">.nosp@m.</span>t.sz<span style="display: none;">.nosp@m.</span>czeli<span style="display: none;">.nosp@m.</span>na@u<span style="display: none;">.nosp@m.</span>j.edu<span style="display: none;">.nosp@m.</span>.pl</a>.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
-CAPD v. 5 AND SHARED LIBRARIES (UPDATED 2022)</h2>
-<p>In a CAPD v5 there is a problem with compiled program, when the library was installed localy. The system does not see the dynamically linked libraries.</p>
-<p>From 'make install' of CAPD you get info similar to that:</p>
-<div class="fragment"><div class="line">&gt; Libraries have been installed in:</div>
-<div class="line">&gt;  ~/workspace/capdDDEs5.1.2/bin/capd/lib</div>
-<div class="line">&gt; </div>
-<div class="line">&gt; If you ever happen to want to link against installed libraries</div>
-<div class="line">&gt; in a given directory, LIBDIR, you must either use libtool, and</div>
-<div class="line">&gt; specify the full pathname of the library, or use the &#39;-LLIBDIR&#39;</div>
-<div class="line">&gt; flag during linking and do at least one of the following:</div>
-<div class="line">&gt;   - add LIBDIR to the &#39;LD_LIBRARY_PATH&#39; environment variable</div>
-<div class="line">&gt;     during execution</div>
-<div class="line">&gt;   - add LIBDIR to the &#39;LD_RUN_PATH&#39; environment variable</div>
-<div class="line">&gt;     during linking</div>
-<div class="line">&gt;   - use the &#39;-Wl,-rpath -Wl,LIBDIR&#39; linker flag</div>
-<div class="line">&gt;   - have your system administrator add LIBDIR to &#39;/etc/ld.so.conf&#39;</div>
-<div class="line">&gt;</div>
-<div class="line">&gt; See any operating system documentation about shared libraries for</div>
-<div class="line">&gt; more information, such as the ld(1) and ld.so(8) manual pages.</div>
-</div><!-- fragment --><p>For now, I do the following:</p>
-<ul>
-<li><p class="startli">create file '/etc/ld.so.conf.d/CAPDv5.conf' with the LIBDIR in it:</p>
-<p class="startli"><code>sudo cat '/home/robson/workspace/capdDDEs5.1.2/bin/capd/lib' &gt; /etc/ld.so.conf.d/CAPDv5.conf</code></p>
-</li>
+<p>The most important part is the rigorous integrator for DDEs. It is contained in <code>include/capd/ddes</code> As of 2022, I have decided to reorganize it to be more complaint with the CAPD structure. I have followed example of </p><div class="fragment"><div class="line"> {external/capd/capdDynSys4/include/capd/pdes```}</div>
+<div class="line">folder structure in this manner. I hope capdDDEs can become a part of CAPD library </div>
+<div class="line">at some point, when the library is mature enough.</div>
+<div class="line"> </div>
+<div class="line">THE CAPD LIBRARY</div>
+<div class="line">----------------</div>
+<div class="line"> </div>
+<div class="line">In case of any errors in compiling CAPD library, please check requirements</div>
+<div class="line">on http://capd.ii.uj.edu.pl, or contact me at robert.szczelina@uj.edu.pl.</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">### CAPD v. 6 AND SHARED LIBRARIES (UPDATED 2024)</div>
+<div class="line"> </div>
+<div class="line">The version from ```git``` repository seems to work out of the box,</div>
+<div class="line">and probably the below comment is not neccessary anymore. </div>
+<div class="line">Consider it deprecated, and remove it in future versions. </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">### CAPD v. 5 AND SHARED LIBRARIES (UPDATED 2022)</div>
+<div class="line"> </div>
+<div class="line">In a CAPD v5 there is a problem with compiled program, when the library</div>
+<div class="line">was installed localy. The system does not see the dynamically linked </div>
+<div class="line">libraries. </div>
+<div class="line"> </div>
+<div class="line">From &#39;make install&#39; of CAPD you get info similar to that:</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>Libraries have been installed in: ~/workspace/capdDDEs5.1.2/bin/capd/lib</p>
+<p>If you ever happen to want to link against installed libraries in a given directory, LIBDIR, you must either use libtool, and specify the full pathname of the library, or use the '-LLIBDIR' flag during linking and do at least one of the following:</p><ul>
+<li>add LIBDIR to the 'LD_LIBRARY_PATH' environment variable during execution</li>
+<li>add LIBDIR to the 'LD_RUN_PATH' environment variable during linking</li>
+<li>use the '-Wl,-rpath -Wl,LIBDIR' linker flag</li>
+<li>have your system administrator add LIBDIR to '/etc/ld.so.conf'</li>
+</ul>
+<p>See any operating system documentation about shared libraries for more information, such as the ld(1) and ld.so(8) manual pages. </p>
+</blockquote>
+<div class="fragment"><div class="line">For now, I do the following:</div>
+<div class="line"> </div>
+<div class="line"> - create file &#39;/etc/ld.so.conf.d/CAPDv5.conf&#39; with the LIBDIR in it:</div>
+<div class="line"> </div>
+<div class="line">    ```sudo cat &#39;/home/robson/workspace/capdDDEs5.1.2/bin/capd/lib&#39; &gt; /etc/ld.so.conf.d/CAPDv5.con</div>
+</div><!-- fragment --><ul>
 <li><p class="startli">reload ldconfig:</p>
 <p class="startli"><code>sudo ldconfig</code></p>
 </li>

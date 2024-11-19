@@ -118,74 +118,78 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;DDESolutionCurve&lt;SetSpec&gt;&amp;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;DDESolutionCurve&lt;SetSpec&gt;::addPiece(CurvePieceType* newPiece, <span class="keywordtype">bool</span> passOwnership){</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (newPiece-&gt;storageN0() != storageN0())</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::addPiece(): the new piece has different N_0.&quot;</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (!passOwnership)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        newPiece = <span class="keyword">new</span> CurvePieceType(*newPiece);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_pieces.push_back(newPiece);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_pieceOwner.push_back(passOwnership);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    newPiece-&gt;setT0(currentTime());</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    newPiece-&gt;set_r0(m_r0);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_t_current += m_grid.point(1);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;DDESolutionCurve&lt;SetSpec&gt;&amp;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;DDESolutionCurve&lt;SetSpec&gt;::addPiece(CurvePieceType <span class="keyword">const</span> &amp; newPiece){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> this-&gt;addPiece(<span class="keyword">new</span> CurvePieceType(newPiece), <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;DDESolutionCurve&lt;SetSpec&gt;&amp;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">   69</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">DDESolutionCurve&lt;SetSpec&gt;::addPastPiece</a>(<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>* newPiece, <span class="keywordtype">bool</span> passOwnership){</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (newPiece-&gt;<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#a9fe083dd80864a8e6de499087f91396b">storageN0</a>() != storageN0())</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::addPastPiece(): the new piece has different N_0.&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!passOwnership)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        newPiece = <span class="keyword">new</span> <a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>(*newPiece);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    m_pieces.push_front(newPiece);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    m_pieceOwner.push_front(passOwnership);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    newPiece-&gt;<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#a2500b7b8df003e434dcb7a90b1f1e0b4">setT0</a>(pastTime() - m_grid.point(1));</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    newPiece-&gt;<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#af971f429332a4ef2ac13ad30db0c5f91">set_r0</a>(m_r0);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html">DDESolutionCurve&lt;SetSpec&gt;</a>&amp;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8456b5702ec9053d135f096951fd55e4">   83</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">DDESolutionCurve&lt;SetSpec&gt;::addPastPiece</a>(<span class="keyword">const</span> <a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>&amp; newPiece){</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> this-&gt;addPastPiece(<span class="keyword">new</span> <a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>(newPiece), <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html">DDESolutionCurve&lt;SetSpec&gt;</a>&amp;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">   89</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">DDESolutionCurve&lt;SetSpec&gt;::setValueAtCurrent</a>(<span class="keyword">const</span> SetType&amp; value){</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (value.storageN0() != storageN0())</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::setValueAtCurrent(set): provided value has incompatible N0 dimension.&quot;</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (value.dimension() != dimension())</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::setValueAtCurrent(set): provided value has incompatible dimension.&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    this-&gt;m_valueAtCurrent = value;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (!value.common_r0(m_r0))</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        *m_r0 = intervalHull(*m_r0, value.get_r0());</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html">DDESolutionCurve&lt;SetSpec&gt;</a>&amp;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#af1293516480456626cd674b73792a60a">  102</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">DDESolutionCurve&lt;SetSpec&gt;::setValueAtCurrent</a>(<span class="keyword">const</span> VectorType&amp; value){</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (value.dimension() != dimension())</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::setValueAtCurrent(vector): provided value has incompatible dimension.&quot;</span>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    this-&gt;m_valueAtCurrent = SetSpec(value, m_r0); <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;} <span class="comment">// namespace ddes</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;} <span class="comment">// namespace capd</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _CAPD_DDES_DDESOLUTIONCURVE_PIECESMANIP_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (newPiece-&gt;storageN0() != storageN0()){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::ostringstream info;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        info &lt;&lt; <span class="stringliteral">&quot;DDESolutionCurve::addPiece(): the new piece has different N_0.&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        info &lt;&lt; <span class="stringliteral">&quot;Should be: &quot;</span> &lt;&lt; storageN0() &lt;&lt; <span class="stringliteral">&quot;, is &quot;</span> &lt;&lt; newPiece-&gt;storageN0() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(info.str());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (!passOwnership)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        newPiece = <span class="keyword">new</span> CurvePieceType(*newPiece);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_pieces.push_back(newPiece);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_pieceOwner.push_back(passOwnership);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    newPiece-&gt;setT0(currentTime());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    newPiece-&gt;set_r0(m_r0);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    m_t_current += m_grid.point(1);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;DDESolutionCurve&lt;SetSpec&gt;&amp;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;DDESolutionCurve&lt;SetSpec&gt;::addPiece(CurvePieceType <span class="keyword">const</span> &amp; newPiece){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> this-&gt;addPiece(<span class="keyword">new</span> CurvePieceType(newPiece), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;DDESolutionCurve&lt;SetSpec&gt;&amp;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">   73</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">DDESolutionCurve&lt;SetSpec&gt;::addPastPiece</a>(<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>* newPiece, <span class="keywordtype">bool</span> passOwnership){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (newPiece-&gt;<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#a9fe083dd80864a8e6de499087f91396b">storageN0</a>() != storageN0())</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::addPastPiece(): the new piece has different N_0.&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (!passOwnership)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        newPiece = <span class="keyword">new</span> <a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>(*newPiece);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    m_pieces.push_front(newPiece);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    m_pieceOwner.push_front(passOwnership);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    newPiece-&gt;<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#a2500b7b8df003e434dcb7a90b1f1e0b4">setT0</a>(pastTime() - m_grid.point(1));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    newPiece-&gt;<a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#af971f429332a4ef2ac13ad30db0c5f91">set_r0</a>(m_r0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html">DDESolutionCurve&lt;SetSpec&gt;</a>&amp;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8456b5702ec9053d135f096951fd55e4">   87</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">DDESolutionCurve&lt;SetSpec&gt;::addPastPiece</a>(<span class="keyword">const</span> <a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>&amp; newPiece){</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> this-&gt;addPastPiece(<span class="keyword">new</span> <a class="code" href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">CurvePieceType</a>(newPiece), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html">DDESolutionCurve&lt;SetSpec&gt;</a>&amp;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">   93</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">DDESolutionCurve&lt;SetSpec&gt;::setValueAtCurrent</a>(<span class="keyword">const</span> SetType&amp; value){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (value.storageN0() != storageN0())</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::setValueAtCurrent(set): provided value has incompatible N0 dimension.&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (value.dimension() != dimension())</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::setValueAtCurrent(set): provided value has incompatible dimension.&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    this-&gt;m_valueAtCurrent = value;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (!value.common_r0(m_r0))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        *m_r0 = intervalHull(*m_r0, value.get_r0());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SetSpec&gt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html">DDESolutionCurve&lt;SetSpec&gt;</a>&amp;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#af1293516480456626cd674b73792a60a">  106</a></span>&#160;<a class="code" href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">DDESolutionCurve&lt;SetSpec&gt;::setValueAtCurrent</a>(<span class="keyword">const</span> VectorType&amp; value){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (value.dimension() != dimension())</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;DDESolutionCurve::setValueAtCurrent(vector): provided value has incompatible dimension.&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    this-&gt;m_valueAtCurrent = SetSpec(value, m_r0); <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;} <span class="comment">// namespace ddes</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;} <span class="comment">// namespace capd</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _CAPD_DDES_DDESOLUTIONCURVE_PIECESMANIP_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasscapd_1_1ddes_1_1DDEForwardTaylorCurvePiece_html_a2500b7b8df003e434dcb7a90b1f1e0b4"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#a2500b7b8df003e434dcb7a90b1f1e0b4">capd::ddes::DDEForwardTaylorCurvePiece::setT0</a></div><div class="ttdeci">Class &amp; setT0(TimePointType const &amp;t0)</div><div class="ttdef"><b>Definition:</b> DDEForwardTaylorCurvePiece.h:359</div></div>
-<div class="ttc" id="aclasscapd_1_1ddes_1_1DDESolutionCurve_html_a8646d23266f1640721c7562362f14297"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">capd::ddes::DDESolutionCurve::addPastPiece</a></div><div class="ttdeci">DDESolutionCurve &amp; addPastPiece(CurvePieceType *newPiece, bool passOwnership=false)</div><div class="ttdef"><b>Definition:</b> DDESolutionCurve_PiecesManip.hpp:69</div></div>
+<div class="ttc" id="aclasscapd_1_1ddes_1_1DDESolutionCurve_html_a8646d23266f1640721c7562362f14297"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDESolutionCurve.html#a8646d23266f1640721c7562362f14297">capd::ddes::DDESolutionCurve::addPastPiece</a></div><div class="ttdeci">DDESolutionCurve &amp; addPastPiece(CurvePieceType *newPiece, bool passOwnership=false)</div><div class="ttdef"><b>Definition:</b> DDESolutionCurve_PiecesManip.hpp:73</div></div>
 <div class="ttc" id="aclasscapd_1_1ddes_1_1DDESolutionCurve_html"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDESolutionCurve.html">capd::ddes::DDESolutionCurve</a></div><div class="ttdef"><b>Definition:</b> DDESolutionCurve.h:90</div></div>
-<div class="ttc" id="aclasscapd_1_1ddes_1_1DDESolutionCurve_html_ac3df1ac9c3e7b068c9ee6419052e4471"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">capd::ddes::DDESolutionCurve::setValueAtCurrent</a></div><div class="ttdeci">DDESolutionCurve &amp; setValueAtCurrent(const SetType &amp;value)</div><div class="ttdef"><b>Definition:</b> DDESolutionCurve_PiecesManip.hpp:89</div></div>
-<div class="ttc" id="aclasscapd_1_1ddes_1_1DDEForwardTaylorCurvePiece_html_af971f429332a4ef2ac13ad30db0c5f91"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#af971f429332a4ef2ac13ad30db0c5f91">capd::ddes::DDEForwardTaylorCurvePiece::set_r0</a></div><div class="ttdeci">BaseClass &amp; set_r0(VectorType const &amp;r0)</div><div class="ttdef"><b>Definition:</b> DDEForwardTaylorCurvePiece.hpp:612</div></div>
+<div class="ttc" id="aclasscapd_1_1ddes_1_1DDESolutionCurve_html_ac3df1ac9c3e7b068c9ee6419052e4471"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDESolutionCurve.html#ac3df1ac9c3e7b068c9ee6419052e4471">capd::ddes::DDESolutionCurve::setValueAtCurrent</a></div><div class="ttdeci">DDESolutionCurve &amp; setValueAtCurrent(const SetType &amp;value)</div><div class="ttdef"><b>Definition:</b> DDESolutionCurve_PiecesManip.hpp:93</div></div>
+<div class="ttc" id="aclasscapd_1_1ddes_1_1DDEForwardTaylorCurvePiece_html_af971f429332a4ef2ac13ad30db0c5f91"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#af971f429332a4ef2ac13ad30db0c5f91">capd::ddes::DDEForwardTaylorCurvePiece::set_r0</a></div><div class="ttdeci">BaseClass &amp; set_r0(VectorType const &amp;r0)</div><div class="ttdef"><b>Definition:</b> DDEForwardTaylorCurvePiece.hpp:614</div></div>
 <div class="ttc" id="aclasscapd_1_1ddes_1_1DDEForwardTaylorCurvePiece_html_a9fe083dd80864a8e6de499087f91396b"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html#a9fe083dd80864a8e6de499087f91396b">capd::ddes::DDEForwardTaylorCurvePiece::storageN0</a></div><div class="ttdeci">size_type storageN0() const</div><div class="ttdef"><b>Definition:</b> DDEForwardTaylorCurvePiece.h:160</div></div>
 <div class="ttc" id="aclasscapd_1_1ddes_1_1DDEForwardTaylorCurvePiece_html"><div class="ttname"><a href="classcapd_1_1ddes_1_1DDEForwardTaylorCurvePiece.html">capd::ddes::DDEForwardTaylorCurvePiece</a></div><div class="ttdef"><b>Definition:</b> DDEForwardTaylorCurvePiece.h:83</div></div>
 <!-- start footer part -->

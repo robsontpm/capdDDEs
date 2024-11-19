@@ -49,6 +49,8 @@ typedef Curve\+Type\+::size\+\_\+type {\bfseries size\+\_\+type}
 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a850ed85aeae39842e86969837f1f3177}\label{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a850ed85aeae39842e86969837f1f3177}} 
 {\bfseries D\+D\+E\+Basic\+Poincare\+Map} (Dyn\+Sys\+Type \&dynsys, Section\+Type \&section, Crossing\+Direction direction=Crossing\+Direction\+::\+Both, int req\+Steps=0, int max\+Steps=-\/1, double binsearch\+Epsilon=D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+I\+N\+S\+E\+A\+R\+C\+H\+\_\+\+E\+P\+S\+I\+L\+ON)
 \item 
+Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_aea57b2b9505711ea5b59a77d12cd7a63}{operator()}} (Curve\+Type const \&X)
+\item 
 void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_aaeec9b7a9bf93e497b38ee9a6e20fc17}{operator()}} (Curve\+Type \&curve, Curve\+Type \&on\+\_\+section, Real\+Type \&out\+\_\+approach\+Time)
 \item 
 void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a2d3814773af94e5cb310f8971526a776}{operator()}} (Curve\+Type \&in\+\_\+out\+\_\+curve, Curve\+Type \&in\+\_\+out\+\_\+\+Pcurve, Real\+Type \&out\+\_\+approach\+Time, Vector\+Type \&out\+\_\+x, Vector\+Type \&out\+\_\+\+Px, Vector\+Type \&out\+\_\+f\+Px, Matrix\+Type \&out\+\_\+V, Matrix\+Type \&out\+\_\+\+DP)
@@ -58,8 +60,6 @@ void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a9cfc0b41360017d4
 void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a85df8673f19d569952a87bc7042f76c5}{set\+InitialV}} (Curve\+Type \&in\+\_\+out\+\_\+curve, Matrix\+Type const \&V)
 \item 
 void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a5975c76ac0bfacae3e26a8fd63ce2eed}{set\+CurrentV}} (Curve\+Type \&in\+\_\+out\+\_\+curve, Matrix\+Type const \&V)
-\item 
-Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap_aea57b2b9505711ea5b59a77d12cd7a63}{operator()}} (Curve\+Type const \&X)
 \item 
 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a07e41bb641b00c46dc391f4288068dc3}\label{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a07e41bb641b00c46dc391f4288068dc3}} 
 \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{D\+D\+E\+Basic\+Poincare\+Map}} \& {\bfseries set\+Direction} (Crossing\+Direction direction)
@@ -203,7 +203,15 @@ W\+A\+R\+N\+I\+NG\+: it does not check for sanity of argument as of now, so it m
 {\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
 void \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Basic\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{Curve\+Type \&}]{curve,  }\item[{Curve\+Type \&}]{on\+\_\+section,  }\item[{Real\+Type \&}]{out\+\_\+approach\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-in curve there is a curve that reaches first full step after the section in on\+\_\+section there is the image on the section, as close to section as possible on\+\_\+section must be initialized with the desired \char`\"{}length\char`\"{} (time interval) and \char`\"{}order\char`\"{} of the representation. on\+\_\+section must be compatible (length, order) with the section \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a2d3814773af94e5cb310f8971526a776}\label{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a2d3814773af94e5cb310f8971526a776}} 
+First parameter will change! There will be a curve that reaches first full step after the section, define dover the whole integration time. So if you want to save it, use a copy in curve parameter.
+
+In on\+\_\+section there will be the image on the section, as close to section as possible.
+
+The parameter on\+\_\+section must be initialized with the desired \char`\"{}length\char`\"{} (time interval) and \char`\"{}order\char`\"{} of the representation. It also must be compatible (length, order) with the section.
+
+Both parameters should be defined on the same Grid.
+
+In out\+\_\+approach\+Time you will get the return time to section. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a2d3814773af94e5cb310f8971526a776}\label{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a2d3814773af94e5cb310f8971526a776}} 
 \index{capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -238,12 +246,22 @@ I\+M\+P\+O\+R\+T\+A\+NT\+: curve\+\_\+f\+Px will be of one order higher than sim
 {\footnotesize\ttfamily template$<$typename Dyn\+Sys\+Spec , typename Section\+Spec $>$ \\
 Curve\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Basic\+Poincare\+Map}}$<$ Dyn\+Sys\+Spec, Section\+Spec $>$\+::operator() (\begin{DoxyParamCaption}\item[{Curve\+Type const \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+This is probably the simplest version to be used by the end user.
+
+It is simply applied like\+: \begin{DoxyVerb}    CurveType X(...); // init to what you want
+    auto PX = P(X);   // PX will be the same shape as X
+    // so you can e.g. compute difference between representations
+    capd::vectalg::EuclNorm<VectorType, MatrixType> euclNorm;
+    auto diff = euclNorm((VectorType)PX - (VectorType)X)
+\end{DoxyVerb}
+
+
 to be compatible with standard notion and C\+A\+PD interface, It makes following assumptions\+:
 \begin{DoxyItemize}
 \item X and PX will have the same structure (i.\+e. over same grid points and jets of the same order).
 \end{DoxyItemize}
 
-N\+O\+TE\+: you can retrieve information on reach time and epsilon step, but you cannot acquire the solution on the whole time. If you need solution over the full integration time, then use other operator(). \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a5975c76ac0bfacae3e26a8fd63ce2eed}\label{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a5975c76ac0bfacae3e26a8fd63ce2eed}} 
+N\+O\+TE\+: you can retrieve information on reach time and epsilon step (see get\+Last$\ast$$\ast$$\ast$() functions), but you cannot acquire the solution on the whole time. If you need solution over the full integration time, then use other operator(). \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a5975c76ac0bfacae3e26a8fd63ce2eed}\label{classcapd_1_1ddes_1_1DDEBasicPoincareMap_a5975c76ac0bfacae3e26a8fd63ce2eed}} 
 \index{capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}!setCurrentV@{setCurrentV}}
 \index{setCurrentV@{setCurrentV}!capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$@{capd::ddes::DDEBasicPoincareMap$<$ DynSysSpec, SectionSpec $>$}}
 \doxysubsubsection{\texorpdfstring{setCurrentV()}{setCurrentV()}}

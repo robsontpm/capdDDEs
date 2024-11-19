@@ -309,83 +309,84 @@ $(function() {
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        startNewParam(param);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (help_s != <span class="stringliteral">&quot;&quot;</span>) (*this) &lt;&lt; help_s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[default: &quot;</span> &lt;&lt; out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">for</span> (ArgcType i = 0; i &lt; argc; ++i)</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            conditionalExtractValue(argv[i], param, out);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ab9641d431b649a3952c0d9d96ae42083">  335</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ab9641d431b649a3952c0d9d96ae42083">parse</a>(<span class="keyword">const</span> std::string &amp;param, T &amp;out, <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> help_s) {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ac88d04a9df817a673fa14fdcb5ecfd7f">parse</a>(param, out, std::string(help_s));</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a3c55cdd4608cf8be898820d6b15a4eb1">  341</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a3c55cdd4608cf8be898820d6b15a4eb1">parse</a>(<span class="keyword">const</span> std::string &amp;param, T &amp;out,</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            std::initializer_list&lt;T&gt; allowed_values,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keyword">const</span> std::string &amp;help_s=<span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        startNewParam(param);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">if</span> (help_s != <span class="stringliteral">&quot;&quot;</span>) (*this) &lt;&lt; help_s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[default: &quot;</span> &lt;&lt; out &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[allowed: &quot;</span>; std::string sep = <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> v : allowed_values){</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            (*this) &lt;&lt; sep &lt;&lt; v;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            sep = <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        T tmp_out;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">for</span> (ArgcType i = 0; i &lt; argc; ++i){</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="keywordflow">if</span> (!conditionalExtractValue(argv[i], param, tmp_out)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="keywordtype">bool</span> allowed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> v : allowed_values){</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <span class="keywordflow">if</span> (v == tmp_out){</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    allowed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            }</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordflow">if</span> (allowed){</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                out = tmp_out;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            }</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">return</span> found;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a315459ddc4338a29ff778a05d977751c">  378</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a315459ddc4338a29ff778a05d977751c">parse</a>(<span class="keyword">const</span> std::string &amp;param, T &amp;out,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            F predicate, <span class="keyword">const</span> std::string &amp;help_s=<span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        startNewParam(param);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">if</span> (help_s != <span class="stringliteral">&quot;&quot;</span>) (*this) &lt;&lt; help_s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[default: &quot;</span> &lt;&lt; out &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[note: has predicate, check docs] &quot;</span>;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        T tmp_out;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">for</span> (ArgcType i = 0; i &lt; argc; ++i){</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keywordflow">if</span> (!conditionalExtractValue(argv[i], param, tmp_out)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span> (F(tmp_out)){</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                out = tmp_out;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            }</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        }</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> found;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;};</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;} <span class="comment">// namespace ddeshelper</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;} <span class="comment">// namespace capd</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _CAPD_DDES_DDESHELPERSLIB_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">for</span> (ArgcType i = 0; i &lt; argc; ++i)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            found = found or conditionalExtractValue(argv[i], param, out);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">return</span> found;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ab9641d431b649a3952c0d9d96ae42083">  336</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ab9641d431b649a3952c0d9d96ae42083">parse</a>(<span class="keyword">const</span> std::string &amp;param, T &amp;out, <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> help_s) {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ac88d04a9df817a673fa14fdcb5ecfd7f">parse</a>(param, out, std::string(help_s));</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a3c55cdd4608cf8be898820d6b15a4eb1">  342</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a3c55cdd4608cf8be898820d6b15a4eb1">parse</a>(<span class="keyword">const</span> std::string &amp;param, T &amp;out,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            std::initializer_list&lt;T&gt; allowed_values,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keyword">const</span> std::string &amp;help_s=<span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        startNewParam(param);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">if</span> (help_s != <span class="stringliteral">&quot;&quot;</span>) (*this) &lt;&lt; help_s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[default: &quot;</span> &lt;&lt; out &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[allowed: &quot;</span>; std::string sep = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> v : allowed_values){</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            (*this) &lt;&lt; sep &lt;&lt; v;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            sep = <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        T tmp_out;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">for</span> (ArgcType i = 0; i &lt; argc; ++i){</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="keywordflow">if</span> (!conditionalExtractValue(argv[i], param, tmp_out)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordtype">bool</span> allowed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> v : allowed_values){</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <span class="keywordflow">if</span> (v == tmp_out){</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                    allowed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <span class="keywordflow">if</span> (allowed){</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                out = tmp_out;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">return</span> found;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a315459ddc4338a29ff778a05d977751c">  379</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a315459ddc4338a29ff778a05d977751c">parse</a>(<span class="keyword">const</span> std::string &amp;param, T &amp;out,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            F predicate, <span class="keyword">const</span> std::string &amp;help_s=<span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        startNewParam(param);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">if</span> (help_s != <span class="stringliteral">&quot;&quot;</span>) (*this) &lt;&lt; help_s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[default: &quot;</span> &lt;&lt; out &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        (*this) &lt;&lt; <span class="stringliteral">&quot;[note: has predicate, check docs] &quot;</span>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        T tmp_out;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">for</span> (ArgcType i = 0; i &lt; argc; ++i){</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span> (!conditionalExtractValue(argv[i], param, tmp_out)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">if</span> (F(tmp_out)){</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                out = tmp_out;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">return</span> found;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;};</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;} <span class="comment">// namespace ddeshelper</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;} <span class="comment">// namespace capd</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _CAPD_DDES_DDESHELPERSLIB_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_a5d0d70e250bbbde6efd014ce2f6b87cb"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a5d0d70e250bbbde6efd014ce2f6b87cb">capd::ddeshelper::ArgumentParser::isHelpRequested</a></div><div class="ttdeci">bool isHelpRequested()</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:289</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_ac88d04a9df817a673fa14fdcb5ecfd7f"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ac88d04a9df817a673fa14fdcb5ecfd7f">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, const std::string &amp;help_s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:302</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_ae77c1b1665a697ee157ababdf23dbfe4"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ae77c1b1665a697ee157ababdf23dbfe4">capd::ddeshelper::ArgumentParser::operator&lt;&lt;</a></div><div class="ttdeci">friend ArgumentParser &amp; operator&lt;&lt;(ArgumentParser &amp;out, const T &amp;item)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:223</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_ad021e2d3f0771e6278425c6bf468ef9b"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ad021e2d3f0771e6278425c6bf468ef9b">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, const std::string &amp;help_s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:323</div></div>
-<div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_ab9641d431b649a3952c0d9d96ae42083"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ab9641d431b649a3952c0d9d96ae42083">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, const char *const help_s)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:335</div></div>
+<div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_ab9641d431b649a3952c0d9d96ae42083"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#ab9641d431b649a3952c0d9d96ae42083">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, const char *const help_s)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:336</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_acc2014d3a3a83ef1e11c2e69754391ea"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#acc2014d3a3a83ef1e11c2e69754391ea">capd::ddeshelper::ArgumentParser::getCommandLine</a></div><div class="ttdeci">std::string getCommandLine(std::string sep=&quot; \\\n#    &quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:276</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_a776bb6015988549dae355e1a9dae2257"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a776bb6015988549dae355e1a9dae2257">capd::ddeshelper::ArgumentParser::getHelp</a></div><div class="ttdeci">std::string getHelp()</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:294</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html">capd::ddeshelper::ArgumentParser</a></div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:189</div></div>
-<div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_a315459ddc4338a29ff778a05d977751c"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a315459ddc4338a29ff778a05d977751c">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, F predicate, const std::string &amp;help_s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:378</div></div>
-<div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_a3c55cdd4608cf8be898820d6b15a4eb1"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a3c55cdd4608cf8be898820d6b15a4eb1">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, std::initializer_list&lt; T &gt; allowed_values, const std::string &amp;help_s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:341</div></div>
+<div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_a315459ddc4338a29ff778a05d977751c"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a315459ddc4338a29ff778a05d977751c">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, F predicate, const std::string &amp;help_s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:379</div></div>
+<div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_a3c55cdd4608cf8be898820d6b15a4eb1"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#a3c55cdd4608cf8be898820d6b15a4eb1">capd::ddeshelper::ArgumentParser::parse</a></div><div class="ttdeci">bool parse(const std::string &amp;param, T &amp;out, std::initializer_list&lt; T &gt; allowed_values, const std::string &amp;help_s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:342</div></div>
 <div class="ttc" id="aclasscapd_1_1ddeshelper_1_1ArgumentParser_html_af2e7ec72f4209eb9c0a13b05eb5cea2f"><div class="ttname"><a href="classcapd_1_1ddeshelper_1_1ArgumentParser.html#af2e7ec72f4209eb9c0a13b05eb5cea2f">capd::ddeshelper::ArgumentParser::ArgumentParser</a></div><div class="ttdeci">ArgumentParser(ArgcType &amp;argc, ArgvType &amp;argv, int help_line_length=78)</div><div class="ttdef"><b>Definition:</b> ddeshelperlib.h:259</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

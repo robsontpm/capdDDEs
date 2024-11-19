@@ -82,6 +82,8 @@ Public Types</h2></td></tr>
 <tr class="separator:aae3d7955490d7c70ffaccf31645dc0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a067d3b8a0caba5707b68580d29638b31"><td class="memItemLeft" align="right" valign="top">typedef ParamSpec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a></td></tr>
 <tr class="separator:a067d3b8a0caba5707b68580d29638b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8993980d74b315b5d7674aa77d2f1b1e"><td class="memItemLeft" align="right" valign="top">typedef capd::vectalg::Vector&lt; <a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a>, 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRossler.html#a8993980d74b315b5d7674aa77d2f1b1e">ParamsVectorType</a></td></tr>
+<tr class="separator:a8993980d74b315b5d7674aa77d2f1b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -89,8 +91,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b4bb5d6eabb9788e7db5cda7df04e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4fdae3a75c8ff07d0f2518ccc2b2e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRossler.html#a8e4fdae3a75c8ff07d0f2518ccc2b2e7">Rossler</a> (<a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a> a, <a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a> b)</td></tr>
 <tr class="separator:a8e4fdae3a75c8ff07d0f2518ccc2b2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae32719b1585fb8e1f1a9a8d12cb99be6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRossler.html#ae32719b1585fb8e1f1a9a8d12cb99be6">Rossler</a> (capd::vectalg::Vector&lt; <a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a>, 0 &gt; params)</td></tr>
-<tr class="separator:ae32719b1585fb8e1f1a9a8d12cb99be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4cdbb29ca8b0ec20b7344f6a4c81ded"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRossler.html#af4cdbb29ca8b0ec20b7344f6a4c81ded">Rossler</a> (<a class="el" href="classRossler.html#a8993980d74b315b5d7674aa77d2f1b1e">ParamsVectorType</a> const &amp;params)</td></tr>
+<tr class="separator:af4cdbb29ca8b0ec20b7344f6a4c81ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb2ac3234acfd2c4a652f1b584b12b9"><td class="memTemplParams" colspan="2">template&lt;typename RealSpec , typename InVectorSpec , typename OutVectorSpec &gt; </td></tr>
 <tr class="memitem:adfb2ac3234acfd2c4a652f1b584b12b9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRossler.html#adfb2ac3234acfd2c4a652f1b584b12b9">operator()</a> (const RealSpec &amp;t, const InVectorSpec x, OutVectorSpec &amp;fx) const</td></tr>
 <tr class="separator:adfb2ac3234acfd2c4a652f1b584b12b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +126,23 @@ class Rossler&lt; ParamSpec &gt;</h3>
 <p>It is a little harder than in the CAPD itself, as CAPD allows for specifying RHS as a simple string. Here, the approach is similar to specifying RHS as a function Node f(Node t, Node in[], int inDim, Node out[], int outDim, Node params[], int parDim) used for example in ./external/capd/capdDynSys4/examples/poincare/IPoincareMapExample.cpp</p>
 <p>This does not need to be template class, but I like to do it that way so that i can use it for rigorous and non-rigorous computations! </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a8993980d74b315b5d7674aa77d2f1b1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8993980d74b315b5d7674aa77d2f1b1e">&#9670;&nbsp;</a></span>ParamsVectorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ParamSpec &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef capd::vectalg::Vector&lt;<a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a>, 0&gt; <a class="el" href="classRossler.html">Rossler</a>&lt; ParamSpec &gt;::<a class="el" href="classRossler.html#a8993980d74b315b5d7674aa77d2f1b1e">ParamsVectorType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>RigorousHelper requires to define explicitly what is the type of a vector of parameters! It must be named ParamsVectorType! </p>
+
+</div>
+</div>
 <a id="a067d3b8a0caba5707b68580d29638b31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a067d3b8a0caba5707b68580d29638b31">&#9670;&nbsp;</a></span>ParamType</h2>
 
@@ -137,7 +156,7 @@ template&lt;typename ParamSpec &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>RigorousHelper requires to define explicitely what is the type of parameters! It must be named ParamType! </p>
+<p>RigorousHelper requires to define explicitly what is the type of parameters! It must be named ParamType! </p>
 
 </div>
 </div>
@@ -226,8 +245,8 @@ template&lt;typename ParamSpec &gt; </div>
 
 </div>
 </div>
-<a id="ae32719b1585fb8e1f1a9a8d12cb99be6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae32719b1585fb8e1f1a9a8d12cb99be6">&#9670;&nbsp;</a></span>Rossler() <span class="overload">[3/3]</span></h2>
+<a id="af4cdbb29ca8b0ec20b7344f6a4c81ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4cdbb29ca8b0ec20b7344f6a4c81ded">&#9670;&nbsp;</a></span>Rossler() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +259,7 @@ template&lt;typename ParamSpec &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classRossler.html">Rossler</a>&lt; ParamSpec &gt;::<a class="el" href="classRossler.html">Rossler</a> </td>
           <td>(</td>
-          <td class="paramtype">capd::vectalg::Vector&lt; <a class="el" href="classRossler.html#a067d3b8a0caba5707b68580d29638b31">ParamType</a>, 0 &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classRossler.html#a8993980d74b315b5d7674aa77d2f1b1e">ParamsVectorType</a> const &amp;&#160;</td>
           <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
         </tr>

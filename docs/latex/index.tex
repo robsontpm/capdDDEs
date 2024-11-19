@@ -1,18 +1,18 @@
-A library to do rigorous numerics for Delay Differential Equations based on \mbox{[}$^\wedge$phd-\/thesis\mbox{]}, \mbox{[}$^\wedge$rignum-\/ddes\mbox{]}, \mbox{[}$^\wedge$high-\/order-\/ddes\mbox{]}.\hypertarget{index_autotoc_md3}{}\doxysection{T\+L;\+DR}\label{index_autotoc_md3}
+A library to do rigorous numerics for Delay Differential Equations based on \mbox{[}$^\wedge$phd-\/thesis\mbox{]}, \mbox{[}$^\wedge$rignum-\/ddes\mbox{]}, \mbox{[}$^\wedge$high-\/order-\/ddes\mbox{]}.\hypertarget{index_autotoc_md5}{}\doxysection{T\+L;\+DR}\label{index_autotoc_md5}
 If you have {\ttfamily Debian} based system (tested\+: Ubuntu 20.\+04), then to see the project in action, you can run\+:
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{sudo apt-\/get install libgmp-\/dev libmpfr-\/dev libboost-\/all-\/dev git cmake autoconf libtool}
-\DoxyCodeLine{mkdir capdDDEs}
+\DoxyCodeLine{git clone git@github.com:robsontpm/capdDDEs.git capdDDEs}
 \DoxyCodeLine{cd capdDDEs}
-\DoxyCodeLine{git clone git@github.com:robsontpm/capdDDEs.git .}
+\DoxyCodeLine{cp build-\/conf-\/bundle.mk build-\/conf.mk }
 \DoxyCodeLine{chmod a+x tldr.sh}
 \DoxyCodeLine{./tldr.sh}
 \end{DoxyCode}
 
 
-It might take some time to compile everything. The next sections describes what is done in {\ttfamily tldr.\+sh} script.\hypertarget{index_autotoc_md4}{}\doxysection{Requirements}\label{index_autotoc_md4}
+It might take some time to compile everything. The next sections describes what is done in {\ttfamily tldr.\+sh} script.\hypertarget{index_autotoc_md6}{}\doxysection{Requirements}\label{index_autotoc_md6}
 The requirements are the same as for \href{http://capd.ii.uj.edu.pl}{\texttt{ C\+A\+PD library}}, which are\+:
 
 
@@ -33,18 +33,31 @@ In Debian based systems you can run\+:
 \end{DoxyCode}
 
 
-The documentation and the compilation system uses for now the {\ttfamily g++} compiler. You can change it in $\ast$$\ast$.mk$\ast$$\ast$ files in the root.
-
-{\itshape T\+O\+DO\+: get the {\ttfamily \$\+C\+XX} from environment vars (?)}\hypertarget{index_autotoc_md5}{}\doxysection{Compilation}\label{index_autotoc_md5}
+The documentation and the compilation system uses for now the {\ttfamily g++} compiler. You can change it in your {\ttfamily build-\/conf.\+mk} file in the root directory (see docs below).\hypertarget{index_autotoc_md7}{}\doxysection{Compilation}\label{index_autotoc_md7}
 Assuming you have all the needed requirements, to start using this project you can do the following steps (we assume you have -\/nix type of system, Windows is unsupported)\+:
 
 First clone the repo\+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{mkdir capdDDEs}
+\DoxyCodeLine{git clone git@github.com:robsontpm/capdDDEs.git capdDDEs}
 \DoxyCodeLine{cd capdDDEs}
-\DoxyCodeLine{git clone git@github.com:robsontpm/capdDDEs.git .}
+\end{DoxyCode}
+
+
+You should choose one of the possible configs of the building system\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ls | grep "build-\/conf-\/"}
+\end{DoxyCode}
+
+
+You need to copy one of them into file named {\ttfamily build-\/conf.\+mk}. This file is not tracked by the {\ttfamily git} version control. Currently, the difference between various versions lies in where the library will look for {\ttfamily C\+A\+PD} library.
+
+Currently, you have two options\+: decide to go with the {\ttfamily C\+A\+PD} that is a submodule of this project and is maintained by github git repository (the default behaviour) or to setup your own distribution of {\ttfamily C\+A\+PD} if you already have one. In this example we go with the submoduled version (maintained from github and updated automatically)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cp build-\/conf-\/bundle.mk build-\/conf.mk}
 \end{DoxyCode}
 
 
@@ -64,22 +77,19 @@ Then, after capd is build without errors, go back to root directory and compile 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{cd ..}
-\DoxyCodeLine{make examples/mackey\_glass\_stable}
+\DoxyCodeLine{make examples/mackey-\/glass-\/stable-\/periodic}
 \end{DoxyCode}
 
 
-Compiled programs will go to $\ast$$\ast$./bin$\ast$$\ast$ directory\+:
+Compiled programs will go to $\ast$$\ast$./bin$\ast$$\ast$ directory inside this particular example directory\+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{ls bin/examples/}
-\DoxyCodeLine{ls bin/examples/mackey\_glass\_stable}
+\DoxyCodeLine{ls programs/examples/mackey-\/glass-\/stable-\/periodic/bin}
 \DoxyCodeLine{}
 \DoxyCodeLine{\# sample output of the above ls commands are:}
 \DoxyCodeLine{\#}
-\DoxyCodeLine{\#    mackey\_glass\_stable}
-\DoxyCodeLine{\#}
-\DoxyCodeLine{\#    find\_and\_prove\_n6}
+\DoxyCodeLine{\#    find-\/and-\/prove-\/n6}
 \DoxyCodeLine{\#}
 \end{DoxyCode}
 
@@ -88,8 +98,8 @@ Finally, run proofs or demos, e.\+g. \+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{cd bin/examples/mackey\_glass\_stable}
-\DoxyCodeLine{./find\_and\_prove\_n6}
+\DoxyCodeLine{cd programs/examples/mackey-\/glass-\/stable-\/periodic/bin}
+\DoxyCodeLine{./find-\/and-\/prove-\/n6}
 \end{DoxyCode}
 
 
@@ -97,14 +107,24 @@ You can see list of available programs and demos by running in the main director
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{cd ../../../..}
 \DoxyCodeLine{make list}
 \end{DoxyCode}
 
 
-If you are interested in more documentation, see ./docs\hypertarget{index_autotoc_md6}{}\doxysection{Contact}\label{index_autotoc_md6}
+If you are interested in more documentation, see ./docs\hypertarget{index_autotoc_md8}{}\doxysection{Using your own C\+A\+PD}\label{index_autotoc_md8}
+The {\ttfamily -\/bundle} version forces you to compile the version of {\ttfamily C\+A\+PD} library, that is in {\ttfamily external} folder. In case you already have {\ttfamily C\+A\+PD} up and running, you might want to use other templates and configure them to your needs. Just copy the {\ttfamily -\/svn} version, e.\+g.\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cp build-\/conf-\/svn.mk build-\/conf.mk}
+\end{DoxyCode}
+
+
+and either specify the paths in this {\ttfamily build-\/conf.\+mk} file (uncomment some lines there) or follow the instructions in the file to export global system variables.\hypertarget{index_autotoc_md9}{}\doxysection{Contact}\label{index_autotoc_md9}
 In case of any problems, please contact me at \href{mailto:robert.szczelina@uj.edu.pl}{\texttt{ robert.\+szczelina@uj.\+edu.\+pl}} -\/ I will provide as much support as possible, especially I will contact people from C\+A\+PD project if there would be any problems with building it. Please attach as much information as possible (e.\+g. output of build.\+sh / configure / make programs),version of your OS, maybe some screenshots.
 
-Aditional programs (proofs) are usually attached to the recent manuscripts, see the References section below.\hypertarget{index_autotoc_md7}{}\doxysection{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N O\+F T\+H\+I\+S P\+R\+O\+J\+E\+CT}\label{index_autotoc_md7}
+Aditional programs (proofs) are usually attached to the recent manuscripts, see the References section below.\hypertarget{index_autotoc_md10}{}\doxysection{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N O\+F T\+H\+I\+S P\+R\+O\+J\+E\+CT}\label{index_autotoc_md10}
 The repository contains source codes for the rigorous integration library for Delay Differential Equations (D\+D\+Es) of the form\mbox{[}$^\wedge$1\mbox{]}\+:
 
 
@@ -115,16 +135,32 @@ The repository contains source codes for the rigorous integration library for De
 
 Where d1,..., dm are m delays. It is build upon ideas from C\+A\+PD library for O\+D\+Es (capd.\+ii.\+uj.\+edu.\+pl). By rigorous methods we understand routines that compute the enclosure (interval bounds) on the {\bfseries{true}} solutions to the problems. Those in turn might be applied in Computer Assisted Proofs, that is, in mathematical proofs, that verify some assumptions by appropriate computer programs. Please reffer to \href{capd.ii.uj.edu.pl}{\texttt{ C\+A\+PD}} documentation for general papers on the topic. See {\bfseries{References}} for the papers specyfic to D\+D\+Es \mbox{[}$^\wedge$1\mbox{]}\mbox{[}$^\wedge$2\mbox{]}\mbox{[}$^\wedge$3\mbox{]}\mbox{[}$^\wedge$4\mbox{]}.
 
-This project requires the \href{capd.ii.uj.edu.pl}{\texttt{ C\+A\+PD library}}, but the repository contains compatible C\+A\+PD version in \textquotesingle{}./external/\textquotesingle{} directory. You can use your own version of the C\+A\+PD, but in that case you need to modify {\ttfamily C\+A\+P\+D\+B\+I\+N\+D\+IR} and {\ttfamily C\+A\+P\+D\+L\+I\+B\+D\+IR} variables in the template Makefile scripts {\ttfamily build-\/conf.\+mk} and {\ttfamily build-\/conf-\/mp.\+mk}. As of 2022 the integrator uses C\+A\+PD Dyn\+Sys version 5.\+1.\+2.
+This project requires the \href{capd.ii.uj.edu.pl}{\texttt{ C\+A\+PD library}}, but the repository contains compatible C\+A\+PD version in \textquotesingle{}./external/\textquotesingle{} directory as a {\ttfamily git} submodule downloaded autmatically from {\ttfamily github.\+com}. You can use your own version of the C\+A\+PD, but in that case you need to modify {\ttfamily C\+A\+P\+D\+B\+I\+N\+D\+IR} and {\ttfamily C\+A\+P\+D\+L\+I\+B\+D\+IR} variables in the template Makefile scripts 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{build-\/conf.mk```.\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{The work is open-\/source, under GPLv3 license. Please consider}
+\DoxyCodeLine{citing some of the papers listed in **References**, when using this }
+\DoxyCodeLine{work in any scientific project.}
+\DoxyCodeLine{}
+\DoxyCodeLine{PROJECT STRUCTURE (UPDATED 2023)}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{A short description of available folders / files. A detailed README.md}
+\DoxyCodeLine{file can be found in some of them, when necessary. The project is in }
+\DoxyCodeLine{constant evolution, so changes can be made. When the core part of }
+\DoxyCodeLine{library would become part of CAPD, then the structure would be more}
+\DoxyCodeLine{or less constant.}
+\DoxyCodeLine{}
+\DoxyCodeLine{ -\/ ```include}
+\end{DoxyCode}
+ \begin{DoxyVerb}As the library is mostly based on C++ templates, most
+of the code is here. 
+\end{DoxyVerb}
 
-{\itshape T\+O\+DO\+: change it to have C\+A\+PD as a submodule (?) or downloaded from git separately.}
-
-The work is open-\/source, under G\+P\+Lv3 license. Please consider citing some of the papers listed in {\bfseries{References}}, when using this work in any scientific project.\hypertarget{index_autotoc_md8}{}\doxysection{P\+R\+O\+J\+E\+C\+T S\+T\+R\+U\+C\+T\+U\+R\+E (\+U\+P\+D\+A\+T\+E\+D 2023)}\label{index_autotoc_md8}
-A short description of available folders / files. A detailed R\+E\+A\+D\+M\+E.\+md file can be found in some of them, when necessary. The project is in constant evolution, so changes can be made. When the core part of library would become part of C\+A\+PD, then the structure would be more or less constant.
 
 
 \begin{DoxyItemize}
-\item {\ttfamily include/} As the library is mostly based on C++ templates, most of the code is here.
 \item {\ttfamily include/ddes} the core of the rigorous integrator for D\+D\+Es
 \item {\ttfamily include/ddeshelper} some extra routines to help with programs. Might not be the part of the C\+A\+PD library, when ddes are included.
 \item {\ttfamily src/} As not all functions are templated, their implementation need to go to .cpp files in here.
@@ -137,57 +173,110 @@ Just call\+:
 
 \`{}\`{}\`{}bash make {\itshape program-\/name} \`{}\`{}\`{}
 
-where {\itshape program-\/name} is equal to the name of any directory under {\ttfamily programs/}. The resulting executable file will go to the bin/\+\_\+program-\/name\+\_\+ directory.
+where {\ttfamily \+\_\+program-\/name\+\_\+} is equal to the name of any directory under {\ttfamily programs/}. The resulting executable file will go either to the programs directory or to the {\ttfamily bin/\+\_\+program-\/name\+\_\+} directory. Check the documentation in the appropriate program directory. ~\newline
 
-\`{}\`{}\`{}bash make list \`{}\`{}\`{}
 
-will print out the list of available programs.
+Example\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make examples/demo-\/elninio}
+\end{DoxyCode}
+
+
+\begin{DoxyVerb}```bash
+make list
+```
+
+will print out the list of available programs. You can copy
+\end{DoxyVerb}
+ the names of the targets from there.
+
+
+\begin{DoxyItemize}
 \item {\ttfamily external/} You should build C\+A\+PD from this folder. The instructions are somwhere in this R\+E\+A\+D\+M\+E.\+md file. ~\newline
 
 \item {\ttfamily scripts/} some usefull scripts in languages other than C++ (bash / Python / tex) to be used in some proofs to generate human-\/readable output (e.\+g. the formulation of existence theorems with nice estimates) This folder may not be present.
 \item {\ttfamily bin/} this directory is initially empty (or non-\/existent). If you will compile any program which accompany the library (programs folder), then it will be most probably placed here. Also compiled version of bundled C\+A\+PD will be placed here.
-\item {\ttfamily build-\/common.\+mk} {\ttfamily build-\/conf.\+mk} {\ttfamily build-\/conf-\/mp.\+mk} {\ttfamily build-\/conf-\/svn.\+mk}
-
-those files serve to configure compilation (make, Makefile files in programs, etc.), see above for the instruction on compilation. The {\ttfamily -\/mp} version is used for multiprecision compilation (see for example converter programs), {\ttfamily -\/svn} version is for using your own (external) compilation of C\+A\+PD.
-\item {\ttfamily R\+E\+A\+D\+M\+E.\+md} this file
-\end{DoxyItemize}
-
-The most important part is the rigorous integrator for D\+D\+Es. It is contained in {\ttfamily include/capd/ddes} As of 2022, I have decided to reorganize it to be more complaint with the C\+A\+PD structure. I have followed example of {\ttfamily external/capd/capd\+Dyn\+Sys4/include/capd/pdes} folder structure in this manner. I hope capd\+D\+D\+Es can become a part of C\+A\+PD library at some point, when the library is mature enough.\hypertarget{index_autotoc_md9}{}\doxysection{Y\+O\+U\+R O\+W\+N C\+A\+P\+D L\+I\+B\+R\+A\+RY}\label{index_autotoc_md9}
-If you want to use your own version of C\+A\+PD, e.\+g. from {\ttfamily svn} repo, then you need to modify file {\ttfamily build-\/conf.\+mk} (and other {\ttfamily .mk} probably) first. Follow the instructions in that file to make the {\ttfamily Makefile} work.
-
-In case of any errors in compiling C\+A\+PD library, please check requirements on \href{http://capd.ii.uj.edu.pl,}{\texttt{ http\+://capd.\+ii.\+uj.\+edu.\+pl,}} or contact me at \href{mailto:robert.szczelina@uj.edu.pl}{\texttt{ robert.\+szczelina@uj.\+edu.\+pl}}.\hypertarget{index_autotoc_md10}{}\doxysubsection{C\+A\+P\+D v. 5 A\+N\+D S\+H\+A\+R\+E\+D L\+I\+B\+R\+A\+R\+I\+E\+S (\+U\+P\+D\+A\+T\+E\+D 2022)}\label{index_autotoc_md10}
-In a C\+A\+PD v5 there is a problem with compiled program, when the library was installed localy. The system does not see the dynamically linked libraries.
-
-From \textquotesingle{}make install\textquotesingle{} of C\+A\+PD you get info similar to that\+:
-
-
+\item {\ttfamily build-\/common.\+mk} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{> Libraries have been installed in:}
-\DoxyCodeLine{>  \string~/workspace/capdDDEs5.1.2/bin/capd/lib}
-\DoxyCodeLine{> }
-\DoxyCodeLine{> If you ever happen to want to link against installed libraries}
-\DoxyCodeLine{> in a given directory, LIBDIR, you must either use libtool, and}
-\DoxyCodeLine{> specify the full pathname of the library, or use the '-\/LLIBDIR'}
-\DoxyCodeLine{> flag during linking and do at least one of the following:}
-\DoxyCodeLine{>   -\/ add LIBDIR to the 'LD\_LIBRARY\_PATH' environment variable}
-\DoxyCodeLine{>     during execution}
-\DoxyCodeLine{>   -\/ add LIBDIR to the 'LD\_RUN\_PATH' environment variable}
-\DoxyCodeLine{>     during linking}
-\DoxyCodeLine{>   -\/ use the '-\/Wl,-\/rpath -\/Wl,LIBDIR' linker flag}
-\DoxyCodeLine{>   -\/ have your system administrator add LIBDIR to '/etc/ld.so.conf'}
-\DoxyCodeLine{>}
-\DoxyCodeLine{> See any operating system documentation about shared libraries for}
-\DoxyCodeLine{> more information, such as the ld(1) and ld.so(8) manual pages.}
+\DoxyCodeLine{\{build-\/conf-\/bundle.mk```\}}
+\DoxyCodeLine{   ```build-\/conf-\/svn.m}
 \end{DoxyCode}
 
+\end{DoxyItemize}
 
-For now, I do the following\+:
+\begin{DoxyVerb}those files serve to configure compilation 
+(make, Makefile files in programs, etc.), see above
+for the instruction on compilation. The ```-mp``` version is used
+for multiprecision compilation (see for example converter programs), ```-svn``` version 
+is for using your own (external) compilation of CAPD.
+\end{DoxyVerb}
+
 
 
 \begin{DoxyItemize}
-\item create file \textquotesingle{}/etc/ld.so.\+conf.\+d/\+C\+A\+P\+Dv5.conf\textquotesingle{} with the L\+I\+B\+D\+IR in it\+:
+\item {\ttfamily build-\/conf.\+mk}
 
-{\ttfamily sudo cat \textquotesingle{}/home/robson/workspace/capd\+D\+D\+Es5.1.\+2/bin/capd/lib\textquotesingle{} $>$ /etc/ld.so.\+conf.\+d/\+C\+A\+P\+Dv5.conf}
+this file initially do not exists, but is required for compiltion; you should copy one of the {\ttfamily -\/bundle.\+mk} or {\ttfamily -\/svn.\+mk} files to this location as shown in previous sections.
+\item {\ttfamily R\+E\+A\+D\+M\+E.\+md} this file
+\end{DoxyItemize}
+
+The most important part is the rigorous integrator for D\+D\+Es. It is contained in {\ttfamily include/capd/ddes} As of 2022, I have decided to reorganize it to be more complaint with the C\+A\+PD structure. I have followed example of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{external/capd/capdDynSys4/include/capd/pdes```\}}
+\DoxyCodeLine{folder structure in this manner. I hope capdDDEs can become a part of CAPD library }
+\DoxyCodeLine{at some point, when the library is mature enough.}
+\DoxyCodeLine{}
+\DoxyCodeLine{THE CAPD LIBRARY}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{In case of any errors in compiling CAPD library, please check requirements}
+\DoxyCodeLine{on http://capd.ii.uj.edu.pl, or contact me at robert.szczelina@uj.edu.pl.}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\# CAPD v. 6 AND SHARED LIBRARIES (UPDATED 2024)}
+\DoxyCodeLine{}
+\DoxyCodeLine{The version from ```git``` repository seems to work out of the box,}
+\DoxyCodeLine{and probably the below comment is not neccessary anymore. }
+\DoxyCodeLine{Consider it deprecated, and remove it in future versions. }
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\# CAPD v. 5 AND SHARED LIBRARIES (UPDATED 2022)}
+\DoxyCodeLine{}
+\DoxyCodeLine{In a CAPD v5 there is a problem with compiled program, when the library}
+\DoxyCodeLine{was installed localy. The system does not see the dynamically linked }
+\DoxyCodeLine{libraries. }
+\DoxyCodeLine{}
+\DoxyCodeLine{From 'make install' of CAPD you get info similar to that:}
+\end{DoxyCode}
+
+
+\begin{quote}
+Libraries have been installed in\+: $\sim$/workspace/capd\+D\+D\+Es5.1.\+2/bin/capd/lib
+
+If you ever happen to want to link against installed libraries in a given directory, L\+I\+B\+D\+IR, you must either use libtool, and specify the full pathname of the library, or use the \textquotesingle{}-\/L\+L\+I\+B\+D\+IR\textquotesingle{} flag during linking and do at least one of the following\+:
+\begin{DoxyItemize}
+\item add L\+I\+B\+D\+IR to the \textquotesingle{}L\+D\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH\textquotesingle{} environment variable during execution
+\item add L\+I\+B\+D\+IR to the \textquotesingle{}L\+D\+\_\+\+R\+U\+N\+\_\+\+P\+A\+TH\textquotesingle{} environment variable during linking
+\item use the \textquotesingle{}-\/Wl,-\/rpath -\/Wl,L\+I\+B\+D\+IR\textquotesingle{} linker flag
+\item have your system administrator add L\+I\+B\+D\+IR to \textquotesingle{}/etc/ld.so.\+conf\textquotesingle{}
+\end{DoxyItemize}
+
+See any operating system documentation about shared libraries for more information, such as the ld(1) and ld.\+so(8) manual pages. \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{For now, I do the following:}
+\DoxyCodeLine{}
+\DoxyCodeLine{ -\/ create file '/etc/ld.so.conf.d/CAPDv5.conf' with the LIBDIR in it:}
+\DoxyCodeLine{ }
+\DoxyCodeLine{    ```sudo cat '/home/robson/workspace/capdDDEs5.1.2/bin/capd/lib' > /etc/ld.so.conf.d/CAPDv5.con}
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
 \item reload ldconfig\+:
 
 {\ttfamily sudo ldconfig}

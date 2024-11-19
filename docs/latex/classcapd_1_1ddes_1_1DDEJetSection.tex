@@ -1,5 +1,9 @@
 \hypertarget{classcapd_1_1ddes_1_1DDEJetSection}{}\doxysection{capd\+::ddes\+::D\+D\+E\+Jet\+Section$<$ Curve\+Spec, is\+Interval $>$ Class Template Reference}
 \label{classcapd_1_1ddes_1_1DDEJetSection}\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+
+
+{\ttfamily \#include $<$D\+D\+E\+Jet\+Section.\+h$>$}
+
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,6 +49,8 @@ typedef Jet\+Storage\+Type\+::reverse\+\_\+iterator {\bfseries reverse\+\_\+iter
 \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_afb0d9380b116427ccf13abd3a69adbe3}{D\+D\+E\+Jet\+Section}} (size\+\_\+type d, size\+\_\+type i, Scalar\+Type c=0.)
 \item 
 \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_a1e6bf09bdc900a64238527c56741bfa7}{D\+D\+E\+Jet\+Section}} (size\+\_\+type d, size\+\_\+type p, size\+\_\+type n, Vector\+Type const \&vec, Scalar\+Type c)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_a68c15ee33de11d202c81698bda613940}{D\+D\+E\+Jet\+Section}} (Curve\+Spec const \&normal, Scalar\+Type c)
 \item 
 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a7729c35ecd04d6b16cfc4a935b515000}\label{classcapd_1_1ddes_1_1DDEJetSection_a7729c35ecd04d6b16cfc4a935b515000}} 
 Scalar\+Type {\bfseries operator()} (Curve\+Spec const \&curve) const
@@ -102,36 +108,56 @@ const\+\_\+iterator {\bfseries end} () const
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}\label{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}} 
-Scalar\+Type {\bfseries m\+\_\+c}
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}{m\+\_\+c}}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}\label{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}} 
-Vector\+Type {\bfseries m\+\_\+s}
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}{m\+\_\+s}}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}\label{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}} 
-Jet\+Storage\+Type {\bfseries m\+\_\+jets}
+Jet\+Storage\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}{m\+\_\+jets}}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}\label{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}} 
-Vector\+Type {\bfseries m\+\_\+orig\+\_\+s}
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}{m\+\_\+orig\+\_\+s}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Curve\+Spec, bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$\newline
+class capd\+::ddes\+::\+D\+D\+E\+Jet\+Section$<$ Curve\+Spec, is\+Interval $>$}
+
+Represents a section that is a hyperplane with a given normal vector in some function space.
+
+Currently, the hyperplane is given as S = \{ v \+: $<$normal . v$>$ = c \}, where the scalar product $<$ . $>$ is the standard product in \textbackslash{}R$^\wedge$M, where M is the dimension of all coefficients defining the space.
+
+It can bu used e.\+g. to represent many standard
+
+T\+O\+DO\+: (R\+E\+T\+H\+I\+NK, F\+U\+T\+U\+RE)\+: now the Section depends on Curve implementation, this should be removed as it introduces some problems, e.\+g. if two same curves are used, but one is a different type. Common problem\+: Jac\+Curve (with C$^\wedge$1) and Curve (without C$^\wedge$1 computations) T\+O\+DO\+: (F\+U\+T\+U\+RE) allow the Curve to define .dot() product for the hyperplane, to allow for more natural functional space products, i.\+e. L$^\wedge$2 or such. T\+O\+DO\+: (N\+O\+TE) consider e.\+g. L$^\wedge$2 product\+: s . v = \textbackslash{}int\+\_\+0$^\wedge$h s(t) $\ast$ v(t) dt, where\+: s(t) = s0 + s1$\ast$t + s2$\ast$t$^\wedge$2 + ... + sn$\ast$t$^\wedge$n v(t) = v0 + v1$\ast$t + v2$\ast$t$^\wedge$2 + ... + vn$\ast$t$^\wedge$n s . v = \textbackslash{}sum\+\_\+j=0$^\wedge$n v0 $\ast$ (\textbackslash{}int\+\_\+0$^\wedge$h h$^\wedge$j $\ast$ s(t) dt ), the last integral depends only on s, can be computed explicitly. The j-\/th integral in ( ) is the j-\/th coefficent of the normal vector you should supply to have L$^\wedge$2 norm. The coefficients of course should be applied jet-\/wise, over intervals \mbox{[}-\/ih, -\/ih +h). 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_afb0d9380b116427ccf13abd3a69adbe3}\label{classcapd_1_1ddes_1_1DDEJetSection_afb0d9380b116427ccf13abd3a69adbe3}} 
 \index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!DDEJetSection@{DDEJetSection}}
 \index{DDEJetSection@{DDEJetSection}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
-\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
 \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{i,  }\item[{Scalar\+Type}]{c = {\ttfamily 0.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 makes a section checking value at t=0 of a given direction, i.\+e. coordinate section\+: x(0)\+\_\+i == c, where x(0) is d dimensional. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a1e6bf09bdc900a64238527c56741bfa7}\label{classcapd_1_1ddes_1_1DDEJetSection_a1e6bf09bdc900a64238527c56741bfa7}} 
 \index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!DDEJetSection@{DDEJetSection}}
 \index{DDEJetSection@{DDEJetSection}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
-\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
 \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{d,  }\item[{size\+\_\+type}]{p,  }\item[{size\+\_\+type}]{n,  }\item[{Vector\+Type const \&}]{vec,  }\item[{Scalar\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-makes a section with p Jets of order n each and expected scalar value c. vector vec must be d $\ast$ (1 + p $\ast$ (n+1)) dimensional and will propagate the jets. 
+makes a section with p Jets of order n each and expected scalar value c. vector vec must be d $\ast$ (1 + p $\ast$ (n+1)) dimensional and will propagate the jets. \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a68c15ee33de11d202c81698bda613940}\label{classcapd_1_1ddes_1_1DDEJetSection_a68c15ee33de11d202c81698bda613940}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!DDEJetSection@{DDEJetSection}}
+\index{DDEJetSection@{DDEJetSection}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{DDEJetSection()}{DDEJetSection()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{D\+D\+E\+Jet\+Section}} (\begin{DoxyParamCaption}\item[{Curve\+Spec const \&}]{normal,  }\item[{Scalar\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+makes a section that is a hyperplane with a given normal vector in some function space (where
+\begin{DoxyParams}{Parameters}
+{\em normal} & lives, i.\+e. C$^\wedge$\textbackslash{}eta\+\_\+p space).\\
+\hline
+\end{DoxyParams}
+It inherits structure from the normal, and the hyperplane is S = \{ v \+: normal . v = c \}, where the scalar product . is the standard product in the 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_aa5f4b066b4aa12db34ea5de7ae5518ac}\label{classcapd_1_1ddes_1_1DDEJetSection_aa5f4b066b4aa12db34ea5de7ae5518ac}} 
@@ -152,6 +178,37 @@ get\+Gradient(curve) . (z(curve), j(curve))
 without worrying about (z(s), j(s)) having bad dimensions.
 
 Note\+: curve passed by copy, as I need it inside 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}\label{classcapd_1_1ddes_1_1DDEJetSection_abcfedaf09be22470999ac5cc8834a45d}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!m\_c@{m\_c}}
+\index{m\_c@{m\_c}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{m\_c}{m\_c}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Scalar\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::m\+\_\+c\hspace{0.3cm}{\ttfamily [protected]}}
+
+the value on the section, i.\+e.\+: m\+\_\+orig\+\_\+s . vector = m\+\_\+c \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}\label{classcapd_1_1ddes_1_1DDEJetSection_a68795841b814272891df32d075ab0edb}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!m\_jets@{m\_jets}}
+\index{m\_jets@{m\_jets}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{m\_jets}{m\_jets}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Jet\+Storage\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::m\+\_\+jets\hspace{0.3cm}{\ttfamily [protected]}}
+
+this is the rest of the section \textquotesingle{}normal vector\textquotesingle{} \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}\label{classcapd_1_1ddes_1_1DDEJetSection_a689ed31494cecf0bd57b03c76c4afdb4}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!m\_orig\_s@{m\_orig\_s}}
+\index{m\_orig\_s@{m\_orig\_s}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{m\_orig\_s}{m\_orig\_s}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::m\+\_\+orig\+\_\+s\hspace{0.3cm}{\ttfamily [protected]}}
+
+this is the whole \textquotesingle{}normal vector\textquotesingle{}, containing head m\+\_\+s and m\+\_\+jests as a single vector \mbox{\Hypertarget{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}\label{classcapd_1_1ddes_1_1DDEJetSection_a7dc1ad8e61a5d946d9faf102509dd0a9}} 
+\index{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}!m\_s@{m\_s}}
+\index{m\_s@{m\_s}!capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$@{capd::ddes::DDEJetSection$<$ CurveSpec, isInterval $>$}}
+\doxysubsubsection{\texorpdfstring{m\_s}{m\_s}}
+{\footnotesize\ttfamily template$<$typename Curve\+Spec , bool is\+Interval = capd\+::\+Type\+Traits$<$typename Curve\+Spec\+::\+Scalar\+Type$>$\+::is\+Interval$>$ \\
+Vector\+Type \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ Curve\+Spec, is\+Interval $>$\+::m\+\_\+s\hspace{0.3cm}{\ttfamily [protected]}}
+
+the head part of the section \textquotesingle{}normal vector\textquotesingle{}. W\+A\+R\+I\+N\+I\+N\+G! This is not the whole normal vector in the whole space of representations! 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

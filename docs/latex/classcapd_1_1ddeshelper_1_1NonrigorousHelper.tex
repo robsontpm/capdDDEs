@@ -1,5 +1,5 @@
-\hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{}\doxysection{capd\+::ddeshelper\+::Nonrigorous\+Helper$<$ Eq\+Spec, delays\+Spec $>$ Class Template Reference}
-\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper}\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+\hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{}\doxysection{capd\+::ddeshelper\+::Nonrigorous\+Helper$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$ Class Template Reference}
+\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper}\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 
 
 {\ttfamily \#include $<$D\+D\+E\+Helper\+Nonrigorous.\+h$>$}
@@ -7,239 +7,301 @@
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9187a6d3dd4cdcd5dcc66244e69a3830}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9187a6d3dd4cdcd5dcc66244e69a3830}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a466f3a98813130bd731c24a5c1c287ad}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a466f3a98813130bd731c24a5c1c287ad}} 
 typedef Eq\+Spec {\bfseries Eq}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af963bdcc6f9134c1eee9013deb9f470e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af963bdcc6f9134c1eee9013deb9f470e}} 
-typedef Eq\+::\+Scalar\+Type {\bfseries Scalar}
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5f6b7a47b0a1f879bf9a30b05e64f27e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5f6b7a47b0a1f879bf9a30b05e64f27e}} 
-typedef Eq\+::\+Real\+Type {\bfseries Real}
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1251d893a28f78ae3fdd86471b709a93}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1251d893a28f78ae3fdd86471b709a93}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a31830050e44c46b16bd6fe2019a48302}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a31830050e44c46b16bd6fe2019a48302}} 
 typedef Eq\+::\+Param\+Type {\bfseries Param\+Type}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a884611d8af71beb82d8c191fc1ce229f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a884611d8af71beb82d8c191fc1ce229f}} 
-typedef capd\+::vectalg\+::\+Vector$<$ Scalar, 0 $>$ {\bfseries Vector}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2b5f92ca0e40140b2e57f3e370579635}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2b5f92ca0e40140b2e57f3e370579635}} 
+typedef Vector\+Spec {\bfseries Vector}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acec3e6ef96ff644857d34219bc034e7e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acec3e6ef96ff644857d34219bc034e7e}} 
-typedef capd\+::vectalg\+::\+Matrix$<$ Scalar, 0, 0 $>$ {\bfseries Matrix}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_afdfaa8196045baf1843c0642c01b5653}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_afdfaa8196045baf1843c0642c01b5653}} 
+typedef Matrix\+Spec {\bfseries Matrix}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a3869bcffcc0d47306b4469d983cf55cc}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a3869bcffcc0d47306b4469d983cf55cc}} 
-typedef capd\+::vectalg\+::\+Vector$<$ Param\+Type, 0 $>$ {\bfseries Params\+Vector}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abbe3c52f5904e189f94c9f7261ffab55}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abbe3c52f5904e189f94c9f7261ffab55}} 
+typedef Matrix\+::\+Scalar\+Type {\bfseries Scalar}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a061faf319c2ba45cf973c659a819f444}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a061faf319c2ba45cf973c659a819f444}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a315a7ce166876515884745619e3dd1be}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a315a7ce166876515884745619e3dd1be}} 
+typedef Matrix\+::\+Scalar\+Type {\bfseries Real}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8c0283c381a30106817e870230a179b6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8c0283c381a30106817e870230a179b6}} 
+typedef Eq\+::\+Params\+Vector\+Type {\bfseries Params\+Vector}
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6f2fbe627bbf70f46ecfa47379135230}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6f2fbe627bbf70f46ecfa47379135230}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{capd\+::ddes\+::\+Discrete\+Time\+Grid}}$<$ Real $>$ {\bfseries Grid}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a467cb374fab36b48780f333af1b001a3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a467cb374fab36b48780f333af1b001a3}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5f43a77f520be5449233d28cd695392e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5f43a77f520be5449233d28cd695392e}} 
 typedef Grid\+::\+Time\+Point\+Type {\bfseries Time\+Point}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad0c62619c5b26e028823279bb98e45f8}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad0c62619c5b26e028823279bb98e45f8}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abf92e42037ccbe3401395a9d0efd1e6b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abf92e42037ccbe3401395a9d0efd1e6b}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point, Vector, Vector, Matrix $>$ {\bfseries Jet}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a96c0814954fc1107a8cc5089df6b2c5d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a96c0814954fc1107a8cc5089df6b2c5d}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point, \mbox{\hyperlink{classcapd_1_1ddes_1_1VectorWithJacData}{capd\+::ddes\+::\+Vector\+With\+Jac\+Data}}$<$ Vector, Matrix $>$, Vector, Matrix $>$ {\bfseries Jet\+With\+Jacobian}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac00f18e37801af152858340fca4244be}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac00f18e37801af152858340fca4244be}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{capd\+::ddes\+::\+Generic\+Jet}}$<$ Time\+Point, \mbox{\hyperlink{classcapd_1_1ddes_1_1VectorWithJacData}{capd\+::ddes\+::\+Vector\+With\+Jac\+Data}}$<$ Vector, Matrix $>$, Vector, Matrix $>$ {\bfseries C1\+Jet}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a56956ffbffba63096183cf9e146287d3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a56956ffbffba63096183cf9e146287d3}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad35870445c1dda17475f44e094507cad}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad35870445c1dda17475f44e094507cad}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Jet}} $>$ {\bfseries Solution}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a17f7237b63f83ae6239dbae3b3389e96}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a17f7237b63f83ae6239dbae3b3389e96}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Jet\+With\+Jacobian}} $>$ {\bfseries Jac\+Solution}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a79fc140ecc9c1e36a89afdd12206ed60}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a79fc140ecc9c1e36a89afdd12206ed60}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{capd\+::ddes\+::\+D\+D\+E\+Piecewise\+Polynomial\+Curve}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{C1\+Jet}} $>$ {\bfseries C1\+Solution}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab97bf2193301e746a4cdf0242d5d254f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab97bf2193301e746a4cdf0242d5d254f}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae3e002f6effee0a28fdebc4632974ee6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae3e002f6effee0a28fdebc4632974ee6}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Jet}} {\bfseries Curve\+Piece}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7f3bb4bd9f5c3c9df2e68a47a067ce5}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7f3bb4bd9f5c3c9df2e68a47a067ce5}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{capd\+::ddes\+::\+Basic\+Discrete\+Delays\+Functional\+Map}}$<$ Eq, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} $>$ {\bfseries Jac\+D\+D\+Eq}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5a9090ab2048eb4f2362d7253e9eedf3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5a9090ab2048eb4f2362d7253e9eedf3}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{capd\+::ddes\+::\+Basic\+Discrete\+Delays\+Functional\+Map}}$<$ Eq, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} $>$ {\bfseries C1\+D\+D\+Eq}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9cf662188aba4b4431fe50087f3bf5dc}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9cf662188aba4b4431fe50087f3bf5dc}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7acfd53671f88208ef551943cfb2cdd1}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7acfd53671f88208ef551943cfb2cdd1}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{capd\+::ddes\+::\+Basic\+Discrete\+Delays\+Functional\+Map}}$<$ Eq, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} $>$ {\bfseries D\+D\+Eq}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1d5efa5ba24012657c25154887c72814}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1d5efa5ba24012657c25154887c72814}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{capd\+::ddes\+::\+D\+D\+E\+Nonrigorous\+Taylor\+Solver}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{Jac\+D\+D\+Eq}} $>$ {\bfseries Jac\+Solver}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab7986f68aaa992f8a10dbae5def1e9b5}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab7986f68aaa992f8a10dbae5def1e9b5}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{capd\+::ddes\+::\+D\+D\+E\+Nonrigorous\+Taylor\+Solver}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{C1\+D\+D\+Eq}} $>$ {\bfseries C1\+Solver}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21e019e3cf856f833dcb1084abb2c98c}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21e019e3cf856f833dcb1084abb2c98c}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a409993105001a18077b5739a0750a303}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a409993105001a18077b5739a0750a303}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{capd\+::ddes\+::\+D\+D\+E\+Nonrigorous\+Taylor\+Solver}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{D\+D\+Eq}} $>$ {\bfseries Solver}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af3b4116d8c30943cc4899647382ad168}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af3b4116d8c30943cc4899647382ad168}} 
-typedef Jac\+Solver\+::\+Variable\+Storage\+Type {\bfseries Variables}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab31107dc17933e66dca29a3485c62f6a}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab31107dc17933e66dca29a3485c62f6a}} 
+typedef C1\+Solver\+::\+Variable\+Storage\+Type {\bfseries Variables}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8a0be7b9f100cd2fe5d77af598fe268e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8a0be7b9f100cd2fe5d77af598fe268e}} 
-typedef Jac\+Solver\+::\+Jacobian\+Storage\+Type {\bfseries Jacobians}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8088ad103f261ab2a0757e35a9ab0e1d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8088ad103f261ab2a0757e35a9ab0e1d}} 
+typedef C1\+Solver\+::\+Jacobian\+Storage\+Type {\bfseries Jacobians}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8bd40d9af965e257121316efdb260c46}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8bd40d9af965e257121316efdb260c46}} 
-typedef Jac\+Solver\+::\+Value\+Storage\+Type {\bfseries Values}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2767e10189712b8db7f20735554d0d9e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2767e10189712b8db7f20735554d0d9e}} 
+typedef C1\+Solver\+::\+Value\+Storage\+Type {\bfseries Values}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a071fb1e768796c99477bf1cc8e31b42b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a071fb1e768796c99477bf1cc8e31b42b}} 
-typedef Jac\+Solver\+::size\+\_\+type {\bfseries size\+\_\+type}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a358dc9dbd46406fecfc06cf21c5a6302}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a358dc9dbd46406fecfc06cf21c5a6302}} 
+typedef C1\+Solver\+::size\+\_\+type {\bfseries size\+\_\+type}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4d6441068048b6ce1ef002bc391f0295}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4d6441068048b6ce1ef002bc391f0295}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abc7e479f2e4ee2d2cbf789a4e9dec6ba}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abc7e479f2e4ee2d2cbf789a4e9dec6ba}} 
 typedef int {\bfseries step\+\_\+type}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a49d34485f5087e04bf57cf0fa25edf08}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a49d34485f5087e04bf57cf0fa25edf08}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} $>$ {\bfseries Jac\+Jet\+Section}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21e2090f24cb3aa379f0b0a8c123cc2e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21e2090f24cb3aa379f0b0a8c123cc2e}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} $>$ {\bfseries C1\+Jet\+Section}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aee912326e7237e7c48bbc107f50f607b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aee912326e7237e7c48bbc107f50f607b}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{Jac\+Jet\+Section\+::\+Jet\+Type}} {\bfseries Jac\+Sec\+Jet}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8b2f38aa2eeeca3c113bcc717606df9a}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8b2f38aa2eeeca3c113bcc717606df9a}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1GenericJet}{C1\+Jet\+Section\+::\+Jet\+Type}} {\bfseries C1\+Sec\+Jet}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4e38b3e824cf5d2ae2c1c7e736a4f853}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4e38b3e824cf5d2ae2c1c7e736a4f853}} 
-typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Basic\+Poincare\+Map}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Jac\+Solver}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} $>$ {\bfseries Jac\+Poincare\+Map}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9fed5a1c70bc157614a911bc0e824564}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9fed5a1c70bc157614a911bc0e824564}} 
+typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Basic\+Poincare\+Map}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} $>$ {\bfseries C1\+Poincare\+Map}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeadb506119b111e10eb8a2ac250031ea}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeadb506119b111e10eb8a2ac250031ea}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7e2bd24caf470f2d0c550230b3dea501}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7e2bd24caf470f2d0c550230b3dea501}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{capd\+::ddes\+::\+D\+D\+E\+Jet\+Section}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} $>$ {\bfseries Jet\+Section}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a856fb69d4c10e1533fa29991f70213c7}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a856fb69d4c10e1533fa29991f70213c7}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a56a246bb43caf2a88c10117fb31a1f88}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a56a246bb43caf2a88c10117fb31a1f88}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{capd\+::ddes\+::\+D\+D\+E\+Basic\+Poincare\+Map}}$<$ \mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}}, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} $>$ {\bfseries Poincare\+Map}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_afd984ea0b303fc65803131d31c83c4c2}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_afd984ea0b303fc65803131d31c83c4c2}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5b90f1eab57cc7b0da9964f567097956}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5b90f1eab57cc7b0da9964f567097956}} 
 typedef \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1CoordinateFrame}{capd\+::ddeshelper\+::\+Coordinate\+Frame}}$<$ Matrix, Vector, Scalar $>$ {\bfseries Coordinate\+Frame}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4b15095804124c3443210d4591c36002}{Nonrigorous\+Helper}} (Params\+Vector params, size\+\_\+type p, size\+\_\+type n, step\+\_\+type req\+Steps=0, step\+\_\+type max\+Steps=0, size\+\_\+type max\+Order=10)
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99d6006c4e704bb1c1f84b2fb17c4146}{Nonrigorous\+Helper}} (Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7e612e1bfa79f6976d12bede1a3dd7a}{params}}, size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb23f680d57b754324d7bd06b5d78635}{p}}, size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}}, step\+\_\+type req\+Steps=0, step\+\_\+type max\+Steps=0, size\+\_\+type max\+Order=10)
 \item 
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a354111a6d22289f785e17f3659370ade}{Nonrigorous\+Helper}} (std\+::string filepath, step\+\_\+type req\+Steps=0, step\+\_\+type max\+Steps=0, size\+\_\+type max\+Order=10)
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac1e62e94b910ad0bd7af27293959c938}{Nonrigorous\+Helper}} (std\+::string filepath, step\+\_\+type req\+Steps=0, step\+\_\+type max\+Steps=0, size\+\_\+type max\+Order=10)
 \item 
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4d50eff4cf01c93f4970f1e7e092312d}{Nonrigorous\+Helper}} (std\+::istream \&input, step\+\_\+type req\+Steps=0, step\+\_\+type max\+Steps=0, size\+\_\+type max\+Order=10)
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0a6d44d77612316f0384db78f7c3eff2}{Nonrigorous\+Helper}} (std\+::istream \&input, step\+\_\+type req\+Steps=0, step\+\_\+type max\+Steps=0, size\+\_\+type max\+Order=10)
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4b7d2665227a2614ab8a7920c2be7107}{make\+Solver}} ()
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0f364979bd5cc242a0e65aa87ee32b75}{set\+Required\+Steps}} (step\+\_\+type req\+Steps, bool control\+\_\+steps=true)
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae8f7379e30b2ea8a3fb0efddab3209b3}{integrate}} (int iters, const Vector \&initial, Vector \&result, bool use\+\_\+extension=false)
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7c70a51464c0cfe5b69944e68b1281aa}{set\+Maximum\+Steps}} (step\+\_\+type max\+Steps, bool control\+\_\+steps=true)
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae5267c7c9c15b8bef6e94c8c603e7875}{integrate}} (int iters, const Vector \&initial)
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_affebb75e5ec3a8b29d06a39b9299521f}{set\+Maximum\+Order}} (step\+\_\+type max\+Order, bool control\+\_\+steps=true)
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6a460294118cf2aeb21052ff75cbabb8}{integrate}} (int iters, const Vector \&initial, Vector \&result, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&outconfig)
+step\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9baea17f71a2b471b80621bbbdbf0c67}{get\+Required\+Steps}} () const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae8c601e704019f10242926bf25297d93}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae8c601e704019f10242926bf25297d93}} 
-Real {\bfseries iterate\+Poincare} (std\+::ostream \&info, int iters, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} \&section, Vector \&x, Matrix \&V, Matrix \&DP)
+step\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a392ac306219479df5d4c46f113c4b8db}{get\+Maximum\+Steps}} () const
 \item 
-{\footnotesize template$<$typename Secion\+Type $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af3ae8184da9a7923f19561de95468505}{make\+Section}} (Vector const \&s, Scalar const \&c, Secion\+Type \&out\+\_\+section)
+step\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7e53bfb541285766fd2e4edd5a98cabe}{get\+Maximum\+Order}} () const
 \item 
-Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a934c35818da7fa17efa8aa808cbf1c96}{refine\+Periodic}} (std\+::ostream \&info, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} \&section, Vector \&x, Matrix \&V, Matrix \&DP)
+Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7e612e1bfa79f6976d12bede1a3dd7a}{params}} () const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5e0d0cf182e83757fe30744a9cf78805}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5e0d0cf182e83757fe30744a9cf78805}} 
-capd\+::poincare\+::\+Crossing\+Direction {\bfseries detect\+Corssing\+Direction} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} section, Vector const \&x)
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab3f2ee87958fd2de006cfa6924a375b3}{M}} () const
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a357a4a151bb778e96d7788419f69c501}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} section, Vector const \&x, Matrix \&initV, double \&reach\+Time, int \&steps, Vector \&Px, Vector \&f\+Px, Matrix \&V, Matrix \&DP)
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb23f680d57b754324d7bd06b5d78635}{p}} () const
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aabd3a412f7475e4ae0ce69323e970685}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} section, Vector const \&x0, double \&reach\+Time, Vector \&Px, Vector \&f\+Px, Matrix \&V, Matrix \&DP)
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}} () const
 \item 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4c84cd02a36a799ca983175e6439b409}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} section, Vector const \&x, double \&reach\+Time, Vector \&Px)
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99a1aeb3088a057a7351725f90a71ea1}{d}} () const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a14566d2bbc08bce7dcc066c68e8a256c}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a14566d2bbc08bce7dcc066c68e8a256c}} 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} {\bfseries vector\+To\+Solution} (Vector const \&x) const
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad363d37efdee90bdb5b8ef4901ec5c4b}{h}} () const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a816474c84352bce1d3bc7cf4747adda3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a816474c84352bce1d3bc7cf4747adda3}} 
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} {\bfseries vector\+To\+Jac\+Solution} (Vector const \&x) const
+Time\+Point \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb683ec9adcd0d9e30bc437d7e5e4d11}{tau}} () const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeabbbe04ce800a1c4596e3d59377f173}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeabbbe04ce800a1c4596e3d59377f173}} 
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab386a6f606ecb11ab67e6fd490328f75}{get\+Basic\+Interval\+Length}} () const
+\item 
+Time\+Point \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a06e43a81cfbab139a0d9bb2b2f738aba}{t}} (int i) const
+\item 
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}} \& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6c3fbd3d1f93eea20c48ac0149d92b1e}{grid}} () const
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1169cb5fcd4487157267fe2fbfaac852}{set\+Crossing\+Direction}} (capd\+::poincare\+::\+Crossing\+Direction const \&\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99a1aeb3088a057a7351725f90a71ea1}{d}})
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{D\+D\+Eq}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8252b3e1fd6c91afb18527676da33e7d}{make\+Equation}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{C1\+D\+D\+Eq}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a52803a9ffdd19bc2bc459d548befb289}{make\+C1\+Equation}} ()
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0072768890c800dbcac12ba3f65751c2}{set\+Params}} (Params\+Vector const \&new\+\_\+params)
+\item 
+Param\+Type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aaad8e8d583eee78dae8ead667d112030}{set\+Param}} (size\+\_\+type i, Param\+Type const \&value)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a3ec47a31b16f17ed5e1fb1d08e6e2ebc}{make\+Solver}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{D\+D\+Eq}} const \&eq)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_add871b7bdd6152f5007e17a88751c378}{make\+Solver}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5031d4436a3d871ddcc0c5d9f34f73f6}{make\+C1\+Solver}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{C1\+D\+D\+Eq}} const \&eq)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a44819870756377b851e649c909ad3fea}{make\+C1\+Solver}} ()
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{Poincare\+Map}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5bdefa17188bfbf09f15a40e0793b0bf}{make\+Poincare\+Map}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \&solver, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} \&section)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{C1\+Poincare\+Map}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab84afcdc9656093912b290529718a708}{make\+C1\+Poincare\+Map}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}} \&solver, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} \&section)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1de2b2ecf29aba01679877dd5f308f1e}{make\+Segment}} (int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}}, Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa6b79ddbfcd15c3c9e711ec3484eb69c}{make\+Solution}} (int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}}, Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a34618ac366b58b907f03232e24c37a30}{make\+Segment}} (Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae10dc0eb6e7d3e7773fadb5f6a6b620a}{make\+Solution}} (Vector v=Vector(\{\})) const
+\item 
+{\footnotesize template$<$typename Other\+Matrix\+Type $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2a91480477417d4574c8871fff6ff8ec}{make\+Segment}} (int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}}, capd\+::map\+::\+Map$<$ Other\+Matrix\+Type $>$ f) const
+\item 
+{\footnotesize template$<$typename Other\+Matrix\+Type $>$ }\\\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8d933542238eb3952185f1d79fee982d}{make\+Solution}} (capd\+::map\+::\+Map$<$ Other\+Matrix\+Type $>$ f) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a53fd66b2f88be7d76b703334163066a6}{vector\+To\+Solution}} (Vector const \&x) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9af9bd3f6c8f44e7723d6182c791fad7}{make\+C1\+Segment}} (int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}}, Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4cc9a8f9225c7498d230f714b22cfd8f}{make\+C1\+Solution}} (int \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n}}, Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a029d320b141e7867ccca45e7baea2973}{make\+C1\+Segment}} (Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1bb0aab018d610b4b6c492c2cc489ec6}{make\+C1\+Solution}} (Vector v=Vector(\{\})) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ace21394b17bd0f70006573e95cdfaa27}{vector\+To\+C1\+Solution}} (Vector const \&x) const
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae9ccea21c5903856fdc0d63107d5355d}{make\+Section}} (Vector const \&s, Scalar const \&c)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad67b5ddea7b4d1520c7d875b0024c8f6}{make\+C1\+Section}} (Vector const \&s, Scalar const \&c)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab8c6569471ae1250915f1ccb2fcb3c3f}{integrate}} (int iters, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&initial, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&result, bool use\+\_\+extension=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acac6681ece9de1adfe87a7e92c29d843}{integrate}} (int iters, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&initial, bool use\+\_\+extension=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a44f5d543f176846800dd5d5b572db79f}{integrate}} (int iters, const Vector \&initial, Vector \&result, bool use\+\_\+extension=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1fdcb0ac3ad880f536049d963821f64e}{integrate}} (int iters, const Vector \&initial, bool use\+\_\+extension=false)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0959b3cfa7282e3b2ce02c011f12b43d}{integrate}} (int iters, const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&initial, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&result, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&outconfig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeb24ea056eb78521afe896a628b1d8dd}{integrate}} (int iters, const Vector \&initial, Vector \&result, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&outconfig)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acf0e53831aeed823559c4503f274bc53}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} const \&x, double \&reach\+Time, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&Px)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21f4ae4aa27eb335d5ab3da3e30b02e3}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} const \&x, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&Px)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af2bc74e4fdb8a59984b811e379d6bbb8}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} section, Vector const \&x, double \&reach\+Time, Vector \&Px)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1175f56219ecc092b229f06af2ab661b}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} section, Vector const \&x, Vector \&Px)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a002928c17e3409f9ec01d290e0819455}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} section, Vector const \&x, Matrix \&initV, double \&reach\+Time, int \&steps, Vector \&Px, Vector \&f\+Px, Matrix \&V, Matrix \&DP)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7578e6873799c2bbca3fc2b1e73c7e0}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} section, Vector const \&x0, double \&reach\+Time, Vector \&Px, Vector \&f\+Px, Matrix \&V, Matrix \&DP)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2e918e2a2afca824527757b420c68047}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&X0, Matrix \&initV, double \&reach\+Time, int \&steps, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&PX, Vector \&f\+PX, Matrix \&V, Matrix \&DP)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa59bd9bb22b2083556c28bb8f1d2a530}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&X0, double \&reach\+Time, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&PX, Matrix \&V, Matrix \&DP)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0cd85b2e0f823a0c59a716b390ab3565}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&X0, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&PX, Matrix \&V, Matrix \&DP)
+\item 
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1928e6b166470784e3318693c956b320}{poincare}} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&X0, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&PX, Matrix \&DP)
+\item 
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8e738585341c9b4499d485d9e135b244}{refine\+Periodic}} (std\+::ostream \&info, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} \&section, Vector \&x, Matrix \&V, Matrix \&DP)
+\item 
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad3410cf16c85ce6cbe22a3146b21bd93}{refine\+Periodic}} (std\+::ostream \&info, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} \&section, \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&X, Matrix \&V, Matrix \&DP)
+\item 
+{\footnotesize template$<$typename Vector\+Iterator\+Spec $>$ }\\void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acad9378ec191837fe11db6e7bb1decf0}{save\+Data}} (std\+::string filepath, Vector\+Iterator\+Spec start, Vector\+Iterator\+Spec end, std\+::string extra\+Comment=\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae38542d2431de8e4e4691289fce98f3e}{load\+Setup}} (std\+::string filepath)
+\item 
+std\+::vector$<$ Vector $>$ \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa9ec92d08ec872cafade5630ce53899c}{load\+Data}} (std\+::string filepath)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a96e17191ce743497233be64ebe8c4607}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a96e17191ce743497233be64ebe8c4607}} 
+void {\bfseries draw\+Map} (\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} const \&solution, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&outconfig)
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a73ca908f9efbaf8593e5e5e011a35743}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a73ca908f9efbaf8593e5e5e011a35743}} 
 {\footnotesize template$<$typename SolutionT $>$ }\\std\+::string {\bfseries draw\+Solution} (std\+::string dirpath, std\+::string filename, SolutionT const \&X, double tshift=0.) const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1c46bfba4a6c649632d07ff6f8ea025b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1c46bfba4a6c649632d07ff6f8ea025b}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab81a2fdc95331725f39fb883ae3c6bcb}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab81a2fdc95331725f39fb883ae3c6bcb}} 
 std\+::string {\bfseries draw\+Solution} (std\+::string dirpath, std\+::string filename, Vector const \&x, double tshift=0.) const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a40333c584d48ef0b6ca011bf091c6b0e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a40333c584d48ef0b6ca011bf091c6b0e}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aabac34e663b12e028b7b91752ab6fd54}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aabac34e663b12e028b7b91752ab6fd54}} 
+{\footnotesize template$<$typename SolutionT $>$ }\\void {\bfseries draw\+Solution} (std\+::string filename, SolutionT const \&X, double tshift=0.) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a46b0600b35a19e5b0015d1c1b4a2cb0b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a46b0600b35a19e5b0015d1c1b4a2cb0b}} 
 {\footnotesize template$<$typename SolutionT $>$ }\\void {\bfseries draw\+Solution} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&paths, SolutionT const \&X, double tshift=0.) const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeb2bf4ca311a4157b709aa1bf2178095}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeb2bf4ca311a4157b709aa1bf2178095}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a849902e058a8aa22119b5604114896b1}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a849902e058a8aa22119b5604114896b1}} 
 {\footnotesize template$<$typename SolutionT $>$ }\\void {\bfseries draw\+Delay\+Map} (std\+::string dirpath, std\+::string filename, SolutionT const \&X) const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac4e0100fd4b6857c22633ccc93a6b964}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac4e0100fd4b6857c22633ccc93a6b964}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae921f5631550c15774e6614f5a5a9454}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae921f5631550c15774e6614f5a5a9454}} 
+{\footnotesize template$<$typename SolutionT $>$ }\\void {\bfseries draw\+Delay\+Map} (std\+::string filename, SolutionT const \&X) const
+\item 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7a8e2735a480fdf7cd331c32653827ad}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7a8e2735a480fdf7cd331c32653827ad}} 
 {\footnotesize template$<$typename SolutionT $>$ }\\void {\bfseries draw\+Delay\+Map} (\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&paths, SolutionT const \&X) const
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a50113156ebd785020bb62b9bd795c757}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a50113156ebd785020bb62b9bd795c757}} 
-{\footnotesize template$<$typename Vector\+Iterator\+Spec $>$ }\\void {\bfseries save\+Data} (std\+::string filepath, Vector\+Iterator\+Spec start, Vector\+Iterator\+Spec end, std\+::string extra\+Comment=\char`\"{}\char`\"{})
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a274fc4a26f5a13eb21eafad1b4d87151}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a274fc4a26f5a13eb21eafad1b4d87151}} 
-void {\bfseries load\+Setup} (std\+::string filepath)
-\item 
-std\+::vector$<$ Vector $>$ \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a455225580f4fe57dcbd9b56a4a97e9bc}{load\+Data}} (std\+::string filepath)
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_addf7119cf6ab42d978577f25ccb81c7d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_addf7119cf6ab42d978577f25ccb81c7d}} 
-void {\bfseries set\+Required\+Steps} (step\+\_\+type req\+Steps, bool control\+\_\+steps=true)
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a512cdbb3daab927b2328c49d9bbdc811}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a512cdbb3daab927b2328c49d9bbdc811}} 
-void {\bfseries set\+Maximum\+Steps} (step\+\_\+type max\+Steps, bool control\+\_\+steps=true)
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1020e4657a6bae67545cbc3a16e522af}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1020e4657a6bae67545cbc3a16e522af}} 
-step\+\_\+type {\bfseries get\+Required\+Steps} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4a47992307b71f824525c9f189169f88}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4a47992307b71f824525c9f189169f88}} 
-step\+\_\+type {\bfseries get\+Maximum\+Steps} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a63ec646f7b7b749451e1a256517afa96}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a63ec646f7b7b749451e1a256517afa96}} 
-step\+\_\+type {\bfseries get\+Maximum\+Order} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae105103212c904de4e807a512d49f298}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae105103212c904de4e807a512d49f298}} 
-Params\+Vector {\bfseries params} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5b5de08d618a1cd1962be5706cd86ab5}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5b5de08d618a1cd1962be5706cd86ab5}} 
-size\+\_\+type {\bfseries M} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_afb2630855b7dfaf8961bc02436a19f2a}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_afb2630855b7dfaf8961bc02436a19f2a}} 
-size\+\_\+type {\bfseries p} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae6423b8b529dfcfcd0bfac97f567603a}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae6423b8b529dfcfcd0bfac97f567603a}} 
-size\+\_\+type {\bfseries n} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a280eca9fe0aa7064a3f32e3e407627cc}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a280eca9fe0aa7064a3f32e3e407627cc}} 
-size\+\_\+type {\bfseries d} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4546fc8797b58fa1f5d640a1e5ec7f6b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4546fc8797b58fa1f5d640a1e5ec7f6b}} 
-Real {\bfseries h} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9981671bffec7f6e43ee0d61a66a5723}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9981671bffec7f6e43ee0d61a66a5723}} 
-Real {\bfseries get\+Basic\+Interval\+Length} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7409caa46760b2e0e05385829e2b266f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7409caa46760b2e0e05385829e2b266f}} 
-void {\bfseries set\+Crossing\+Direction} (capd\+::poincare\+::\+Crossing\+Direction const \&d)
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2c3faf80865f45524806f4bd3075653c}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2c3faf80865f45524806f4bd3075653c}} 
-const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}} \& {\bfseries grid} () const
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a982df0ac6eff0e30284cd3c8be0299ae}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a982df0ac6eff0e30284cd3c8be0299ae}} 
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} \& {\bfseries set\+Experimental\+Renormalize\+Variational} (bool v)
-\item 
-Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a12854d660a8066d52102a29ba69092d9}{set\+Params}} (Params\+Vector const \&new\+\_\+params)
-\item 
-Param\+Type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8cdf5efd65be17510a5f5d30cae59d03}{set\+Param}} (size\+\_\+type index, Param\+Type const \&new\+\_\+param)
-\item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2842ab4eeb8051b65102af5765cb79ef}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2842ab4eeb8051b65102af5765cb79ef}} 
-Time\+Point {\bfseries t} (int i) const
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} \& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a08d17de5ba99e02ecb29a19f54099438}{set\+Experimental\+Renormalize\+Variational}} (bool v)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_adeba9fdf804ea89cef2cf2fc6e944486}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_adeba9fdf804ea89cef2cf2fc6e944486}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aab438b17a3fe1c34375f2476b7242104}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aab438b17a3fe1c34375f2476b7242104}} 
 static const size\+\_\+type {\bfseries P\+A\+R\+A\+M\+S\+\_\+\+C\+O\+U\+NT} = Eq\+Spec\+::get\+Params\+Count() + delays\+Spec
 \item 
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a805802bb3777fa72be057f7e9d04a433}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a805802bb3777fa72be057f7e9d04a433}} 
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad8f6fa0a73bcac671f1d5d933a7f69ad}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad8f6fa0a73bcac671f1d5d933a7f69ad}} 
 static const size\+\_\+type {\bfseries D\+I\+M\+E\+N\+S\+I\+ON} = Eq\+Spec\+::image\+Dimension()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$typename Eq\+Spec, int delays\+Spec = 1$>$\newline
-class capd\+::ddeshelper\+::\+Nonrigorous\+Helper$<$ Eq\+Spec, delays\+Spec $>$}
+\subsubsection*{template$<$typename Eq\+Spec, int delays\+Spec = 1, typename Matrix\+Spec = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$\newline
+class capd\+::ddeshelper\+::\+Nonrigorous\+Helper$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$}
 
 A helper class that made all the fuzzy boilerplate for you, so you do not need to know various things by yourself.
 
-It provides functions like integrate and poincare to compute images of the initial functions under your own equations. You only need to supply the equation and the number of delays in the system
+It provides functions like integrate and poincare to compute images of the initial functions under your own equations. You only need to supply the equation and the number of delays in the system.
 
-It only server discrete delay differential equations in the form of
+The Equation (template
+\begin{DoxyParams}{Parameters}
+{\em Eq\+Spec)} & must be a class of special form. See programs/examples for usage and examples and/or \mbox{\hyperlink{SampleEqns_8h_source}{include/capd/ddes/\+Sample\+Eqns.\+h}} for more information. A general form is as follows\+:\\
+\hline
+\end{DoxyParams}
+struct My\+Equation\{ typedef unsigned int size\+\_\+type; // this is required to know what the three static functions return. This is usually unsigned int. At the cost of some warnings, you can use int as well. typedef double Param\+Type; // the type to hold parameters. I usually make it a template parameter to be able to use in both rigorous and non-\/rigorous setting. typedef capd\+::vectalg\+::\+Vector$<$\+Param\+Type, 0$>$ Params\+Vector\+Type; // this defines the type to hold a vector of parameters
+
+My\+Equation(\+Params\+Vector\+Type const \& params); // we require that the equation has a canstructor that gets parameters vector. My\+Equation(); // default constructor, it must be defined, as we have another constructor (with params vector). All other constructors are entirely up to you. static size\+\_\+type image\+Dimension(); // output dimension of the internal map (usually, the dimension d of the space for x(t) variable) static size\+\_\+type dimension(); // input dimension of the internal map (usually, image\+Dimension() $\ast$ (number\+\_\+of\+\_\+delays+1)) static size\+\_\+type get\+Params\+Count(); // number of parameters to fully configure the equation, but without delays! Depends on the equation, e.\+g. Mackey-\/\+Glass has 3 parameters, except the delay. static std\+::string show(); // this is used in debug output, it can return empty string if you wish.
+
+// this is the ost important part // it takes t -\/time, x -\/ the collection of values at 0 and consecutive delays, then // it should compute the value of R.\+h.\+s f(x(0), x(t\+\_\+1), ... ) in fx. // the dimension of x is given by dimension(), the // dimension of fx is given by image\+Dimension(); template$<$typename Real\+Spec, typename In\+Vector\+Spec, typename Out\+Vector\+Spec$>$ void operator()(const Real\+Spec\& t, const In\+Vector\+Spec x, Out\+Vector\+Spec\& fx) const; \};
+
+You might also supply Matrix and Vector type, but the dfault versions works ok.
+
+As of now, it can only handle discrete delay differential equations in the form of
 
 x\textquotesingle{}(t) = f(x(t), x(t-\/\textbackslash{}tau\+\_\+1), ... , x(t-\/tau\+\_\+m))
 
-T\+O\+DO\+: (I\+M\+P\+O\+R\+T\+A\+NT) Currently it only support one delay!!!!!! T\+O\+DO\+: make sure all const qualifiers are put in the right places! 
+where tau\+\_\+i\textquotesingle{}s matches time points of the integration grid.
+
+C1-\/versions allows to do nonrigorous computations of the variational equation associated to the original equation, allowing e.\+g. to apply Newton method to find better candidates.
+
+T\+O\+DO\+: (I\+M\+P\+O\+R\+T\+A\+NT) Currently it only support one delay!!!!!! T\+O\+DO\+: (U\+R\+G\+E\+NT?) D\+EV\+: make sure all const qualifiers are put in the right places! T\+O\+DO\+: (F\+U\+T\+U\+RE) move implementation to hpp file to shorten this for end user T\+O\+DO\+: (F\+U\+T\+U\+RE)\+: the normal and C$^\wedge$1 versions are totaly separated. Rethink if they can reuse some code, because there is a lot of repetition... 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4b15095804124c3443210d4591c36002}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4b15095804124c3443210d4591c36002}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!NonrigorousHelper@{NonrigorousHelper}}
-\index{NonrigorousHelper@{NonrigorousHelper}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99d6006c4e704bb1c1f84b2fb17c4146}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99d6006c4e704bb1c1f84b2fb17c4146}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!NonrigorousHelper@{NonrigorousHelper}}
+\index{NonrigorousHelper@{NonrigorousHelper}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 \doxysubsubsection{\texorpdfstring{NonrigorousHelper()}{NonrigorousHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} (\begin{DoxyParamCaption}\item[{Params\+Vector}]{params,  }\item[{size\+\_\+type}]{p,  }\item[{size\+\_\+type}]{n,  }\item[{step\+\_\+type}]{req\+Steps = {\ttfamily 0},  }\item[{step\+\_\+type}]{max\+Steps = {\ttfamily 0},  }\item[{size\+\_\+type}]{max\+Order = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} (\begin{DoxyParamCaption}\item[{Params\+Vector}]{params,  }\item[{size\+\_\+type}]{p,  }\item[{size\+\_\+type}]{n,  }\item[{step\+\_\+type}]{req\+Steps = {\ttfamily 0},  }\item[{step\+\_\+type}]{max\+Steps = {\ttfamily 0},  }\item[{size\+\_\+type}]{max\+Order = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 you need to call at least one of the constructors and then use the setup variable
 
@@ -251,127 +313,592 @@ where q\+\_\+i\textquotesingle{}s are the parameters of the equation (r.\+h.\+s 
 
 x\textquotesingle{}(t) = f(x(t), x(t-\/tau\+\_\+1), ...)
 
-p, n -\/ are parameters of the (p,n)-\/representation of the functions. p is the number of grid points in the basic interval \mbox{[}-\/tau, 0\mbox{]}, tau = max(tau\+\_\+i) n is the order of the jet at each point. See papers for more details. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a354111a6d22289f785e17f3659370ade}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a354111a6d22289f785e17f3659370ade}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!NonrigorousHelper@{NonrigorousHelper}}
-\index{NonrigorousHelper@{NonrigorousHelper}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+p, n -\/ are parameters of the (p,n)-\/representation of the functions. p is the number of grid points in the basic interval \mbox{[}-\/tau, 0\mbox{]}, tau = max(tau\+\_\+i) n is the order of the jet at each point. See papers for more details. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac1e62e94b910ad0bd7af27293959c938}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac1e62e94b910ad0bd7af27293959c938}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!NonrigorousHelper@{NonrigorousHelper}}
+\index{NonrigorousHelper@{NonrigorousHelper}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 \doxysubsubsection{\texorpdfstring{NonrigorousHelper()}{NonrigorousHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath,  }\item[{step\+\_\+type}]{req\+Steps = {\ttfamily 0},  }\item[{step\+\_\+type}]{max\+Steps = {\ttfamily 0},  }\item[{size\+\_\+type}]{max\+Order = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath,  }\item[{step\+\_\+type}]{req\+Steps = {\ttfamily 0},  }\item[{step\+\_\+type}]{max\+Steps = {\ttfamily 0},  }\item[{size\+\_\+type}]{max\+Order = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-similar to the first one, but reads the parameters and p and n from a given file. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4d50eff4cf01c93f4970f1e7e092312d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4d50eff4cf01c93f4970f1e7e092312d}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!NonrigorousHelper@{NonrigorousHelper}}
-\index{NonrigorousHelper@{NonrigorousHelper}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+similar to the first one, but reads the parameters and p and n from a given file. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0a6d44d77612316f0384db78f7c3eff2}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0a6d44d77612316f0384db78f7c3eff2}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!NonrigorousHelper@{NonrigorousHelper}}
+\index{NonrigorousHelper@{NonrigorousHelper}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 \doxysubsubsection{\texorpdfstring{NonrigorousHelper()}{NonrigorousHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{step\+\_\+type}]{req\+Steps = {\ttfamily 0},  }\item[{step\+\_\+type}]{max\+Steps = {\ttfamily 0},  }\item[{size\+\_\+type}]{max\+Order = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}} (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{step\+\_\+type}]{req\+Steps = {\ttfamily 0},  }\item[{step\+\_\+type}]{max\+Steps = {\ttfamily 0},  }\item[{size\+\_\+type}]{max\+Order = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 similar to the second one, but user gives istream instead of filepath 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae5267c7c9c15b8bef6e94c8c603e7875}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae5267c7c9c15b8bef6e94c8c603e7875}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!integrate@{integrate}}
-\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const Vector \&}]{initial }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99a1aeb3088a057a7351725f90a71ea1}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a99a1aeb3088a057a7351725f90a71ea1}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!d@{d}}
+\index{d@{d}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{d()}{d()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-just integrate the solution and return the solution
+dimension of the \textquotesingle{}ambient\textquotesingle{} space, i.\+e. the dimension of x(t) for a fixed t \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab386a6f606ecb11ab67e6fd490328f75}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab386a6f606ecb11ab67e6fd490328f75}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!getBasicIntervalLength@{getBasicIntervalLength}}
+\index{getBasicIntervalLength@{getBasicIntervalLength}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getBasicIntervalLength()}{getBasicIntervalLength()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::get\+Basic\+Interval\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-initial can be either of (1) d-\/dimension (\textbackslash{}R$^\wedge$d) or (2) the M(d,p,n)-\/dimension (see papers) In the (1) case it integrates initial function x\+\_\+0(s) == initial for all s \textbackslash{}in \mbox{[}-\/tau, 0\mbox{]} In the (2) case it constructs initial function from data stored in x0 (the order of coefficients in this vector is described elsewhere (see papers for example). But suppling it by hand is extremely cumbersome. It is best to use output of other functions o get initials in this form. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae8f7379e30b2ea8a3fb0efddab3209b3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae8f7379e30b2ea8a3fb0efddab3209b3}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!integrate@{integrate}}
-\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const Vector \&}]{initial,  }\item[{Vector \&}]{result,  }\item[{bool}]{use\+\_\+extension = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+returns the size of the longest interval but as a Real value, not Time\+Point \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7e53bfb541285766fd2e4edd5a98cabe}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7e53bfb541285766fd2e4edd5a98cabe}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!getMaximumOrder@{getMaximumOrder}}
+\index{getMaximumOrder@{getMaximumOrder}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getMaximumOrder()}{getMaximumOrder()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+step\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::get\+Maximum\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-just integrate the solution and return the solution
+returns ~\newline
+ \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a392ac306219479df5d4c46f113c4b8db}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a392ac306219479df5d4c46f113c4b8db}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!getMaximumSteps@{getMaximumSteps}}
+\index{getMaximumSteps@{getMaximumSteps}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getMaximumSteps()}{getMaximumSteps()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+step\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::get\+Maximum\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-initial can be either of (1) d-\/dimension (\textbackslash{}R$^\wedge$d) or (2) the M(d,p,n)-\/dimension (see papers) In the (1) case it integrates initial function x\+\_\+0(s) == initial for all s \textbackslash{}in \mbox{[}-\/tau, 0\mbox{]} In the (2) case it constructs initial function from data stored in x0 (the order of coefficients in this vector is described elsewhere (see papers for example). But suppling it by hand is extremally cumbersome. It is best to use output of other functions o get initials in this form.
+\begin{DoxySeeAlso}{See also}
+docs for setter 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9baea17f71a2b471b80621bbbdbf0c67}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9baea17f71a2b471b80621bbbdbf0c67}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!getRequiredSteps@{getRequiredSteps}}
+\index{getRequiredSteps@{getRequiredSteps}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{getRequiredSteps()}{getRequiredSteps()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+step\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::get\+Required\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+docs for setter 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6c3fbd3d1f93eea20c48ac0149d92b1e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6c3fbd3d1f93eea20c48ac0149d92b1e}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!grid@{grid}}
+\index{grid@{grid}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{grid()}{grid()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+const \mbox{\hyperlink{classcapd_1_1ddes_1_1DiscreteTimeGrid}{Grid}}\& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the internal grid used by this helper \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad363d37efdee90bdb5b8ef4901ec5c4b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad363d37efdee90bdb5b8ef4901ec5c4b}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!h@{h}}
+\index{h@{h}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{h()}{h()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::h (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns basic grid size step h \+:= tau/p \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acac6681ece9de1adfe87a7e92c29d843}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acac6681ece9de1adfe87a7e92c29d843}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{initial,  }\item[{bool}]{use\+\_\+extension = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab8c6569471ae1250915f1ccb2fcb3c3f}{integrate(int, const Solution\&, Solution\&, bool)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab8c6569471ae1250915f1ccb2fcb3c3f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab8c6569471ae1250915f1ccb2fcb3c3f}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{initial,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{result,  }\item[{bool}]{use\+\_\+extension = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Just integrate the solution.
 
 Integrates for time T = iters $\ast$ tau\+\_\+max / p = iters $\ast$ h. The value h is the step size of the method / grid
 
-In the result the last segment x\+\_\+T from the solution in the vector format. Can be used as an input to the next \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae8f7379e30b2ea8a3fb0efddab3209b3}{integrate()}} procedure, to create an initial solution curve, or in other functions from the helper (e.\+g. poincare).
+If
+\begin{DoxyParams}{Parameters}
+{\em iter} & $<$ 0 then it will be converted to full delays! The D\+D\+Es cannot be integrated backward in time!\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the solution on the whole integration time.
+\end{DoxyReturn}
+The initial solution segment must have the same grid as the Helper, otherwise the exception will be thrown. It is best to make a solution with \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa6b79ddbfcd15c3c9e711ec3484eb69c}{make\+Solution()}} methods of the helper.
 
-T\+O\+DO\+: use\+\_\+extension was used for backward compatibility of some programs it should work with use\+\_\+extension=true in the default version and user should control it with setting m\+\_\+max\+Order with getter/setter \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6a460294118cf2aeb21052ff75cbabb8}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a6a460294118cf2aeb21052ff75cbabb8}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!integrate@{integrate}}
-\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const Vector \&}]{initial,  }\item[{Vector \&}]{result,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&}]{outconfig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+If
+\begin{DoxyParams}{Parameters}
+{\em use\+\_\+extension} & is set to true, then the more accurate results will be produced due to use of extension algorithm described in Fo\+CM 2023 paper. But then, the returned full Solution will have varying degree of the representation at various jets.\\
+\hline
+\end{DoxyParams}
+In
+\begin{DoxyParams}{Parameters}
+{\em return} & it returns the last segment of the solution in the\\
+\hline
+{\em result.} & The structure of result will be preserved, i.\+e. if extension is used, and the structure of result is the same as initial, then the result still have the same structure as initial. This might be useful for iterating maps.\\
+\hline
+\end{DoxyParams}
+T\+O\+DO\+: (F\+U\+T\+U\+RE, I\+M\+P\+O\+R\+T\+A\+NT?) As in C\+A\+PD, create Timemap class to handle this in general... \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0959b3cfa7282e3b2ce02c011f12b43d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0959b3cfa7282e3b2ce02c011f12b43d}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const \mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{initial,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{result,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&}]{outconfig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 integrate, save output to files and draw the solution. See other versions for more information on input and output.
 
-The variable outconfig holds a pair of strings that define paths to where store the results of the computations. See documentation there. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a455225580f4fe57dcbd9b56a4a97e9bc}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a455225580f4fe57dcbd9b56a4a97e9bc}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!loadData@{loadData}}
-\index{loadData@{loadData}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-std\+::vector$<$Vector$>$ \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::load\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+The variable outconfig holds a pair of strings that define paths to where store the results of the computations. See documentation there.
 
-load data only if compatible with setup \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af3ae8184da9a7923f19561de95468505}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af3ae8184da9a7923f19561de95468505}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!makeSection@{makeSection}}
-\index{makeSection@{makeSection}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000005}{Deprecated}}]For backward compatibility... \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1fdcb0ac3ad880f536049d963821f64e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1fdcb0ac3ad880f536049d963821f64e}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const Vector \&}]{initial,  }\item[{bool}]{use\+\_\+extension = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+just integrate the solution and return the solution
+
+initial can be either of (1) d-\/dimension (\textbackslash{}R$^\wedge$d) or (2) the M(d,p,n)-\/dimension (see papers) In the (1) case it integrates initial function x\+\_\+0(s) == initial for all s \textbackslash{}in \mbox{[}-\/tau, 0\mbox{]} In the (2) case it constructs initial function from data stored in x0 (the order of coefficients in this vector is described elsewhere (see papers for example). But suppling it by hand is extremely cumbersome. It is best to use output of other functions o get initials in this form.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]It is better to use function based on Solution parameters \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a44f5d543f176846800dd5d5b572db79f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a44f5d543f176846800dd5d5b572db79f}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const Vector \&}]{initial,  }\item[{Vector \&}]{result,  }\item[{bool}]{use\+\_\+extension = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+just integrate the solution and return the solution
+
+initial can be either of (1) d-\/dimension (\textbackslash{}R$^\wedge$d) or (2) the M(d,p,n)-\/dimension (see papers) In the (1) case it integrates initial function x\+\_\+0(s) == initial for all s \textbackslash{}in \mbox{[}-\/tau, 0\mbox{]} In the (2) case it constructs initial function from data stored in x0 (the order of coefficients in this vector is described elsewhere (see papers for example). But suppling it by hand is very cumbersome. It is best to use output of other functions o get initials in this form.
+
+Integrates for time T = iters $\ast$ tau\+\_\+max / p = iters $\ast$ h. The value h is the step size of the method / grid
+
+In the result the last segment x\+\_\+T from the solution in the vector format. Can be used as an input to the next \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab8c6569471ae1250915f1ccb2fcb3c3f}{integrate()}} procedure, to create an initial solution curve, or in other functions from the helper (e.\+g. poincare).
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]It is better to use function based on Solution parameters \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeb24ea056eb78521afe896a628b1d8dd}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aeb24ea056eb78521afe896a628b1d8dd}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::integrate (\begin{DoxyParamCaption}\item[{int}]{iters,  }\item[{const Vector \&}]{initial,  }\item[{Vector \&}]{result,  }\item[{\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1PathConfig}{Path\+Config}} const \&}]{outconfig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000006}{Deprecated}}]For backward compatibility... \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa9ec92d08ec872cafade5630ce53899c}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa9ec92d08ec872cafade5630ce53899c}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!loadData@{loadData}}
+\index{loadData@{loadData}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+std\+::vector$<$Vector$>$ \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::load\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+load data only if compatible with setup \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae38542d2431de8e4e4691289fce98f3e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae38542d2431de8e4e4691289fce98f3e}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!loadSetup@{loadSetup}}
+\index{loadSetup@{loadSetup}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{loadSetup()}{loadSetup()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec, typename Matrix\+Spec , typename Vector\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::load\+Setup (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: (U\+R\+G\+E\+NT)\+: docs! \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab3f2ee87958fd2de006cfa6924a375b3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab3f2ee87958fd2de006cfa6924a375b3}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!M@{M}}
+\index{M@{M}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{M()}{M()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::M (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+the intrinsic dimension of the (d,p,n)-\/representation. This is the constant M = M(d, p, n) from papers. It is usually a big number = O(d$\ast$p$\ast$n) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a52803a9ffdd19bc2bc459d548befb289}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a52803a9ffdd19bc2bc459d548befb289}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Equation@{makeC1Equation}}
+\index{makeC1Equation@{makeC1Equation}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Equation()}{makeC1Equation()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{C1\+D\+D\+Eq}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\begin{DoxySeeAlso}{See also}
+the other. This is to be used with C1$\ast$$\ast$$\ast$ types. ~\newline
+ 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab84afcdc9656093912b290529718a708}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab84afcdc9656093912b290529718a708}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1PoincareMap@{makeC1PoincareMap}}
+\index{makeC1PoincareMap@{makeC1PoincareMap}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1PoincareMap()}{makeC1PoincareMap()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{C1\+Poincare\+Map}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Poincare\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}} \&}]{solver,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} \&}]{section }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This creates a Poincare\+Map. See the other version for more docs.
+
+This version creates a Poincare map that can also compute Jacobian and Monodromy matrix (approximations). Those are computationally expensive, so if you do not need them, then the other version is much faster. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad67b5ddea7b4d1520c7d875b0024c8f6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad67b5ddea7b4d1520c7d875b0024c8f6}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Section@{makeC1Section}}
+\index{makeC1Section@{makeC1Section}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Section()}{makeC1Section()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Section (\begin{DoxyParamCaption}\item[{Vector const \&}]{s,  }\item[{Scalar const \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+same as \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae9ccea21c5903856fdc0d63107d5355d}{make\+Section()}}, but returns a datatype needed for computation of poincare map with monodromy and jacobian of the poincare map, \begin{DoxySeeAlso}{See also}
+the relevant \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5bdefa17188bfbf09f15a40e0793b0bf}{make\+Poincare\+Map()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9af9bd3f6c8f44e7723d6182c791fad7}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a9af9bd3f6c8f44e7723d6182c791fad7}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Segment@{makeC1Segment}}
+\index{makeC1Segment@{makeC1Segment}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Segment()}{makeC1Segment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Segment (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This version is suitable for approximate C$^\wedge$1 computations -\/ computing Jacobian of a Poincare/\+Time map.
+
+makes a segment of solution over \mbox{[}-\/tau, 0\mbox{]} of order n, with a given value. If the dim(v) == d (dimension of the \textquotesingle{}ambient\textquotesingle{} space), then the constant solution will be made. If dim(v) = \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab3f2ee87958fd2de006cfa6924a375b3}{M()}}, then a solution with the given data is produced.
+
+Without the v parameter, it creates a zero solution (v = \{0,..,0\}). Without n, it creates solution with order m\+\_\+n as set in this Helper. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a029d320b141e7867ccca45e7baea2973}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a029d320b141e7867ccca45e7baea2973}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Segment@{makeC1Segment}}
+\index{makeC1Segment@{makeC1Segment}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Segment()}{makeC1Segment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Segment (\begin{DoxyParamCaption}\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a segment over \mbox{[}-\/tau, 0\mbox{]} with order n as set in this helper. See other @method \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1de2b2ecf29aba01679877dd5f308f1e}{make\+Segment()}} \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4cc9a8f9225c7498d230f714b22cfd8f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4cc9a8f9225c7498d230f714b22cfd8f}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Solution@{makeC1Solution}}
+\index{makeC1Solution@{makeC1Solution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Solution()}{makeC1Solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Solution (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+just a rename of make\+Segment, for backward compatibility. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1bb0aab018d610b4b6c492c2cc489ec6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1bb0aab018d610b4b6c492c2cc489ec6}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Solution@{makeC1Solution}}
+\index{makeC1Solution@{makeC1Solution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Solution()}{makeC1Solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Solution (\begin{DoxyParamCaption}\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+just a rename of make\+Segment, for backward compatibility. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a44819870756377b851e649c909ad3fea}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a44819870756377b851e649c909ad3fea}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Solver@{makeC1Solver}}
+\index{makeC1Solver@{makeC1Solver}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Solver()}{makeC1Solver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It uses the other version with the current equation (\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8252b3e1fd6c91afb18527676da33e7d}{make\+Equation()}}). 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5031d4436a3d871ddcc0c5d9f34f73f6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5031d4436a3d871ddcc0c5d9f34f73f6}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeC1Solver@{makeC1Solver}}
+\index{makeC1Solver@{makeC1Solver}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeC1Solver()}{makeC1Solver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{C1\+Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+C1\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{C1\+D\+D\+Eq}} const \&}]{eq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_add871b7bdd6152f5007e17a88751c378}{make\+Solver()}}.
+\end{DoxySeeAlso}
+This version can be used to compute monodromy matrix along the solution. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8252b3e1fd6c91afb18527676da33e7d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8252b3e1fd6c91afb18527676da33e7d}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeEquation@{makeEquation}}
+\index{makeEquation@{makeEquation}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeEquation()}{makeEquation()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{D\+D\+Eq}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This creates an object representing the equation for the current value of parameters set in the helper. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5bdefa17188bfbf09f15a40e0793b0bf}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a5bdefa17188bfbf09f15a40e0793b0bf}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makePoincareMap@{makePoincareMap}}
+\index{makePoincareMap@{makePoincareMap}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makePoincareMap()}{makePoincareMap()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEBasicPoincareMap}{Poincare\+Map}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Poincare\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \&}]{solver,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} \&}]{section }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This creates a Poincare\+Map.
+
+Warning\+: the solver and section are passed as references, so they need to be non-\/temporary variables. You cannot do make\+Poincare(\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_add871b7bdd6152f5007e17a88751c378}{make\+Solver()}}, \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae9ccea21c5903856fdc0d63107d5355d}{make\+Section()}}); You need to have\+: auto solver = \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_add871b7bdd6152f5007e17a88751c378}{make\+Solver()}}; auto section = \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae9ccea21c5903856fdc0d63107d5355d}{make\+Section()}}; auto pm = make\+Poincare\+Map(solver, section); \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae9ccea21c5903856fdc0d63107d5355d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae9ccea21c5903856fdc0d63107d5355d}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSection@{makeSection}}
+\index{makeSection@{makeSection}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 \doxysubsubsection{\texorpdfstring{makeSection()}{makeSection()}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-template$<$typename Secion\+Type $>$ \\
-void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::make\+Section (\begin{DoxyParamCaption}\item[{Vector const \&}]{s,  }\item[{Scalar const \&}]{c,  }\item[{Secion\+Type \&}]{out\+\_\+section }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Section (\begin{DoxyParamCaption}\item[{Vector const \&}]{s,  }\item[{Scalar const \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 makes a section and stores it in out\+\_\+section
 
-if dim(s) == d, then we setup section in the coordinate x(0) . s = c otherwise we set full-\/space section s . x\+\_\+0 = c \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4b7d2665227a2614ab8a7920c2be7107}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4b7d2665227a2614ab8a7920c2be7107}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!makeSolver@{makeSolver}}
-\index{makeSolver@{makeSolver}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{makeSolver()}{makeSolver()}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::make\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+if dim(s) == d, then we setup section in the coordinate x(0) . s = c otherwise we set full-\/space section s . x\+\_\+0 = c \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2a91480477417d4574c8871fff6ff8ec}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2a91480477417d4574c8871fff6ff8ec}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSegment@{makeSegment}}
+\index{makeSegment@{makeSegment}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSegment()}{makeSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+template$<$typename Other\+Matrix\+Type $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Segment (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{capd\+::map\+::\+Map$<$ Other\+Matrix\+Type $>$}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-This creates a raw solver, if you want to do nonstandard tasks If you want just to integrate initial values, consider using iterate() or \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a357a4a151bb778e96d7788419f69c501}{poincare()}} instead. T\+O\+DO\+: add functions to create more elements \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a357a4a151bb778e96d7788419f69c501}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a357a4a151bb778e96d7788419f69c501}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!poincare@{poincare}}
-\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x,  }\item[{Matrix \&}]{initV,  }\item[{double \&}]{reach\+Time,  }\item[{int \&}]{steps,  }\item[{Vector \&}]{Px,  }\item[{Vector \&}]{f\+Px,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+makes a segment of solution by evaluating a C\+A\+PD Map \textbackslash{}R \textbackslash{}to \textbackslash{}R$^\wedge$d. The map must be of this shape! You cannot add more dimentsion, or have more variables! This is an example for d = 3\+: \begin{DoxyVerb}    capd::DMap f("var:t;fun:t,2t,t*(t-1);");
+\end{DoxyVerb}
 
-if you do not know what initV is, then you should probably stick to using the other Jac\+Solution \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a357a4a151bb778e96d7788419f69c501}{poincare()}} method (without initV). \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aabd3a412f7475e4ae0ce69323e970685}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aabd3a412f7475e4ae0ce69323e970685}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!poincare@{poincare}}
-\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Jac\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x0,  }\item[{double \&}]{reach\+Time,  }\item[{Vector \&}]{Px,  }\item[{Vector \&}]{f\+Px,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-compuytes poincare map and the (approximate) solution to the variational equation on the coefficients in V it returns the monodromy matrix, that is D\+\_\+x \textbackslash{}varph(t\+\_\+\+P(x0), x) in DP you get D \textbackslash{}varphi(t\+\_\+p(x), x) (sic! the difference in t\+\_\+p argument) in f\+Px you get the value of the \char`\"{}vector field\char`\"{} at P(x0) this is not straightforward as in O\+DE that is for O\+DE you have f\+Px = f(\+P(x0)), where f is r.\+h.\+s. of the O\+DE. But for D\+DE you do not have r.\+h.\+s for all of the points in \mbox{[}-\/tau, 0\mbox{]} But it can be shown, that if \$t\+\_\+p \textbackslash{}ge tau\$ then \$f\+Px = (Px)\textquotesingle{}\$ (note Px \+: \mbox{[}-\/tau,0\mbox{]} \textbackslash{}to \textbackslash{}R$^\wedge$d is a function of time, so it can be differentiated) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4c84cd02a36a799ca983175e6439b409}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a4c84cd02a36a799ca983175e6439b409}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!poincare@{poincare}}
-\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x,  }\item[{double \&}]{reach\+Time,  }\item[{Vector \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+you can have aparmeters, but remember to set them before sending to this metod\+: \begin{DoxyVerb}    capd::DMap f("par:a,b;var:t;fun:a*t,b*t,a*t*(b*t-1);");
+    f.set_parameter("a", 1);
+    f.set_parameter("b", 2);
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1de2b2ecf29aba01679877dd5f308f1e}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1de2b2ecf29aba01679877dd5f308f1e}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSegment@{makeSegment}}
+\index{makeSegment@{makeSegment}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSegment()}{makeSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Segment (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-the simples computation of poincare map, without extra data \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a934c35818da7fa17efa8aa808cbf1c96}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a934c35818da7fa17efa8aa808cbf1c96}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!refinePeriodic@{refinePeriodic}}
-\index{refinePeriodic@{refinePeriodic}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
-\doxysubsubsection{\texorpdfstring{refinePeriodic()}{refinePeriodic()}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::refine\+Periodic (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{info,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jac\+Jet\+Section}} \&}]{section,  }\item[{Vector \&}]{x,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+makes a segment of solution over \mbox{[}-\/tau, 0\mbox{]} of order n, with a given value. If the dim(v) == d (dimension of the \textquotesingle{}ambient\textquotesingle{} space), then the constant solution will be made. If dim(v) = \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab3f2ee87958fd2de006cfa6924a375b3}{M()}}, then a solution with the given data is produced.
 
-helper function to refine a candidate periodic orbit with a Newton method.
+Without the v parameter, it creates a zero solution (v = \{0,..,0\}). Without n, it creates solution with order m\+\_\+n as set in this Helper. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a34618ac366b58b907f03232e24c37a30}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a34618ac366b58b907f03232e24c37a30}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSegment@{makeSegment}}
+\index{makeSegment@{makeSegment}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSegment()}{makeSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Segment (\begin{DoxyParamCaption}\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-First parameter is to get some text info back during the process, you can pass std\+::cout there.
+Creates a constant value segment over \mbox{[}-\/tau, 0\mbox{]} with representation order n as set in this helper. See other @method \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1de2b2ecf29aba01679877dd5f308f1e}{make\+Segment()}} \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8d933542238eb3952185f1d79fee982d}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8d933542238eb3952185f1d79fee982d}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSolution@{makeSolution}}
+\index{makeSolution@{makeSolution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSolution()}{makeSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+template$<$typename Other\+Matrix\+Type $>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Solution (\begin{DoxyParamCaption}\item[{capd\+::map\+::\+Map$<$ Other\+Matrix\+Type $>$}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Section you need to set-\/up, it will be s $\ast$ x\+\_\+0 = x, s \textbackslash{}in \textbackslash{}R$^\wedge$\{M(d,p,n), c \textbackslash{}in \textbackslash{}R\} \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8cdf5efd65be17510a5f5d30cae59d03}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8cdf5efd65be17510a5f5d30cae59d03}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!setParam@{setParam}}
-\index{setParam@{setParam}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+just a rename of make\+Segment, for backward compatibility. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa6b79ddbfcd15c3c9e711ec3484eb69c}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa6b79ddbfcd15c3c9e711ec3484eb69c}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSolution@{makeSolution}}
+\index{makeSolution@{makeSolution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSolution()}{makeSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Solution (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+just a rename of make\+Segment, for backward compatibility. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae10dc0eb6e7d3e7773fadb5f6a6b620a}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ae10dc0eb6e7d3e7773fadb5f6a6b620a}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSolution@{makeSolution}}
+\index{makeSolution@{makeSolution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSolution()}{makeSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Solution (\begin{DoxyParamCaption}\item[{Vector}]{v = {\ttfamily Vector(\{\})} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+just a rename of make\+Segment, for backward compatibility. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_add871b7bdd6152f5007e17a88751c378}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_add871b7bdd6152f5007e17a88751c378}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSolver@{makeSolver}}
+\index{makeSolver@{makeSolver}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSolver()}{makeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It uses the other version with the current equation (\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8252b3e1fd6c91afb18527676da33e7d}{make\+Equation()}}). 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a3ec47a31b16f17ed5e1fb1d08e6e2ebc}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a3ec47a31b16f17ed5e1fb1d08e6e2ebc}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!makeSolver@{makeSolver}}
+\index{makeSolver@{makeSolver}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{makeSolver()}{makeSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDENonrigorousTaylorSolver}{Solver}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::make\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1BasicDiscreteDelaysFunctionalMap}{D\+D\+Eq}} const \&}]{eq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This creates a raw solver, if you want to do nonstandard tasks and have an Equation made on the side. If you want just to integrate initial values, consider using iterate() or \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acf0e53831aeed823559c4503f274bc53}{poincare()}} instead. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!n@{n}}
+\index{n@{n}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{n()}{n()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::n (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+the order of the representation of the solutions used in this helper \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb23f680d57b754324d7bd06b5d78635}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb23f680d57b754324d7bd06b5d78635}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!p@{p}}
+\index{p@{p}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{p()}{p()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+size\+\_\+type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+the grid size, i.\+e. into how many subintervals we divide basic delay \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7e612e1bfa79f6976d12bede1a3dd7a}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7e612e1bfa79f6976d12bede1a3dd7a}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!params@{params}}
+\index{params@{params}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{params()}{params()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the parameters of the r.\+h.\+s of the D\+DE set for this helper \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1928e6b166470784e3318693c956b320}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1928e6b166470784e3318693c956b320}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}}}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&}]{X0,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&}]{PX,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (U\+R\+G\+E\+N\+T!!!) docs \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0cd85b2e0f823a0c59a716b390ab3565}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0cd85b2e0f823a0c59a716b390ab3565}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}}}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&}]{X0,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&}]{PX,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (U\+R\+G\+E\+N\+T!!!) docs \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa59bd9bb22b2083556c28bb8f1d2a530}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aa59bd9bb22b2083556c28bb8f1d2a530}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}}}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&}]{X0,  }\item[{double \&}]{reach\+Time,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&}]{PX,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (U\+R\+G\+E\+N\+T!!!) docs \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2e918e2a2afca824527757b420c68047}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a2e918e2a2afca824527757b420c68047}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}}}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} const \&}]{X0,  }\item[{Matrix \&}]{initV,  }\item[{double \&}]{reach\+Time,  }\item[{int \&}]{steps,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \&}]{PX,  }\item[{Vector \&}]{f\+PX,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if you do not know what initV is, then you should probably stick to using the other C1\+Solution \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acf0e53831aeed823559c4503f274bc53}{poincare()}} method (without initV). \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a002928c17e3409f9ec01d290e0819455}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a002928c17e3409f9ec01d290e0819455}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x,  }\item[{Matrix \&}]{initV,  }\item[{double \&}]{reach\+Time,  }\item[{int \&}]{steps,  }\item[{Vector \&}]{Px,  }\item[{Vector \&}]{f\+Px,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if you do not know what initV is, then you should probably stick to using the other C1\+Solution \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acf0e53831aeed823559c4503f274bc53}{poincare()}} method (without initV). \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7578e6873799c2bbca3fc2b1e73c7e0}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ac7578e6873799c2bbca3fc2b1e73c7e0}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x0,  }\item[{double \&}]{reach\+Time,  }\item[{Vector \&}]{Px,  }\item[{Vector \&}]{f\+Px,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+computes poincare map and the (approximate) solution to the variational equation on the coefficients in V it returns the monodromy matrix, that is D\+\_\+x \textbackslash{}varph(t\+\_\+\+P(x0), x) in DP you get D \textbackslash{}varphi(t\+\_\+p(x), x) (sic! the difference in t\+\_\+p argument) in f\+Px you get the value of the \char`\"{}vector field\char`\"{} at P(x0) this is not straightforward as in O\+DE that is for O\+DE you have f\+Px = f(\+P(x0)), where f is r.\+h.\+s. of the O\+DE. But for D\+DE you do not have r.\+h.\+s for all of the points in \mbox{[}-\/tau, 0\mbox{]} But it can be shown, that if \$t\+\_\+p \textbackslash{}ge tau\$ then \$f\+Px = (Px)\textquotesingle{}\$ (note Px \+: \mbox{[}-\/tau,0\mbox{]} \textbackslash{}to \textbackslash{}R$^\wedge$d is a function of time, so it can be differentiated) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acf0e53831aeed823559c4503f274bc53}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acf0e53831aeed823559c4503f274bc53}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}}}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} const \&}]{x,  }\item[{double \&}]{reach\+Time,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes a poincare map, starting from point x, until section s is crossed in the direction set for this Helper. The result will be in Px. The (p, \textbackslash{}eta)-\/structure of Px is preserved (see papers, references). the time to reach section is in reach\+Time.
+
+The reach\+Time will be at least base grid step h $\ast$ required\+Steps, which are set for this Helper. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21f4ae4aa27eb335d5ab3da3e30b02e3}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a21f4ae4aa27eb335d5ab3da3e30b02e3}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}}}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} const \&}]{x,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+poincare(\+Jet\+Section, Solution const\&, double, Solution\&) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af2bc74e4fdb8a59984b811e379d6bbb8}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af2bc74e4fdb8a59984b811e379d6bbb8}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x,  }\item[{double \&}]{reach\+Time,  }\item[{Vector \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The simples computation of poincare map, without extra data. This version operates on raw vectors (they need to comply with the dimension \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ab3f2ee87958fd2de006cfa6924a375b3}{M()}} of the Helper. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1175f56219ecc092b229f06af2ab661b}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1175f56219ecc092b229f06af2ab661b}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!poincare@{poincare}}
+\index{poincare@{poincare}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{poincare()}{poincare()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::poincare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}}}]{section,  }\item[{Vector const \&}]{x,  }\item[{Vector \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+the simplest computation of poincare map, without extra data (even without return time) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8e738585341c9b4499d485d9e135b244}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a8e738585341c9b4499d485d9e135b244}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!refinePeriodic@{refinePeriodic}}
+\index{refinePeriodic@{refinePeriodic}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{refinePeriodic()}{refinePeriodic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::refine\+Periodic (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{info,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{C1\+Jet\+Section}} \&}]{section,  }\item[{Vector \&}]{x,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper function to refine a candidate periodic orbit with a Newton method.
+
+First parameter is to get some text info back during the process, you can pass std\+::cout there or some std\+::ostringstream to ignore it.
+
+For technical reasons section must be of type C1\+Jet\+Section, not Jet\+Section.
+
+The V and DP matrices are the monodromy and Jacobian of Poincare map, respectively. They might be helpful in finding good candidate for section coordinates. \begin{DoxySeeAlso}{See also}
+periodic\+Coordinates(), where an example procedure described in 2023 F\+O\+CM paper is implemented.
+\end{DoxySeeAlso}
+It returns the difference between candidate x and P(x) (in basic euclidean norm on the vector representations!).
+
+You should iterate the method for desired number of iterates or until desired accuracy is obtained. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad3410cf16c85ce6cbe22a3146b21bd93}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ad3410cf16c85ce6cbe22a3146b21bd93}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!refinePeriodic@{refinePeriodic}}
+\index{refinePeriodic@{refinePeriodic}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{refinePeriodic()}{refinePeriodic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Real \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::refine\+Periodic (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{info,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEJetSection}{Jet\+Section}} \&}]{section,  }\item[{\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \&}]{X,  }\item[{Matrix \&}]{V,  }\item[{Matrix \&}]{DP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+refines, by one Newton iteration, the X if it is a candidate for periodic orbit on the given section.
+
+If X is not on the section or far from the true solution, then the method might fail.
+
+You should iterate the method for desired number of iterates or until desired accuracy is obtained.
+
+The V is the Monodromy matrix and DP is the Jacobian of the Poincare Map. They can be used to obtain good coordinates on the section.
+
+T\+O\+DO\+: (F\+U\+T\+U\+RE) this will only work if the segment X is of uniform order \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_af87d20d3c12ca3d0193581895c51c0c6}{n()}}. This should be corrected to work for any... \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acad9378ec191837fe11db6e7bb1decf0}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_acad9378ec191837fe11db6e7bb1decf0}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!saveData@{saveData}}
+\index{saveData@{saveData}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{saveData()}{saveData()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+template$<$typename Vector\+Iterator\+Spec $>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::save\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath,  }\item[{Vector\+Iterator\+Spec}]{start,  }\item[{Vector\+Iterator\+Spec}]{end,  }\item[{std\+::string}]{extra\+Comment = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+T\+O\+DO\+: (U\+R\+G\+E\+NT)\+: docs! \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1169cb5fcd4487157267fe2fbfaac852}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1169cb5fcd4487157267fe2fbfaac852}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setCrossingDirection@{setCrossingDirection}}
+\index{setCrossingDirection@{setCrossingDirection}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setCrossingDirection()}{setCrossingDirection()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Crossing\+Direction (\begin{DoxyParamCaption}\item[{capd\+::poincare\+::\+Crossing\+Direction const \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+sets the crossing directions for Poincare\+Maps used in this helper subroutines \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a08d17de5ba99e02ecb29a19f54099438}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a08d17de5ba99e02ecb29a19f54099438}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setExperimentalRenormalizeVariational@{setExperimentalRenormalizeVariational}}
+\index{setExperimentalRenormalizeVariational@{setExperimentalRenormalizeVariational}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setExperimentalRenormalizeVariational()}{setExperimentalRenormalizeVariational()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{Nonrigorous\+Helper}}\& \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Experimental\+Renormalize\+Variational (\begin{DoxyParamCaption}\item[{bool}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is D\+E\+V\+E\+L\+O\+P\+M\+E\+N\+T\+AL, pleas do not use \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_affebb75e5ec3a8b29d06a39b9299521f}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_affebb75e5ec3a8b29d06a39b9299521f}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setMaximumOrder@{setMaximumOrder}}
+\index{setMaximumOrder@{setMaximumOrder}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setMaximumOrder()}{setMaximumOrder()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Maximum\+Order (\begin{DoxyParamCaption}\item[{step\+\_\+type}]{max\+Order,  }\item[{bool}]{control\+\_\+steps = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+sets the maximum allowed order of the expanded representation as described in the 2023 F\+O\+CM paper. it can be as large as you want. But please remember that the expansions occur by one every p steps (full delay). Also, the size makes computations expensive very fast. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7c70a51464c0cfe5b69944e68b1281aa}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a7c70a51464c0cfe5b69944e68b1281aa}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setMaximumSteps@{setMaximumSteps}}
+\index{setMaximumSteps@{setMaximumSteps}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setMaximumSteps()}{setMaximumSteps()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Maximum\+Steps (\begin{DoxyParamCaption}\item[{step\+\_\+type}]{max\+Steps,  }\item[{bool}]{control\+\_\+steps = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+sets the maximum allowed steps. This prevents the infinite loops when the solution goes astray \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aaad8e8d583eee78dae8ead667d112030}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_aaad8e8d583eee78dae8ead667d112030}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setParam@{setParam}}
+\index{setParam@{setParam}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 \doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-Param\+Type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::set\+Param (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index,  }\item[{Param\+Type const \&}]{new\+\_\+param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Param\+Type \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Param (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{i,  }\item[{Param\+Type const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-returns old param value; T\+O\+DO\+: add index checking \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a12854d660a8066d52102a29ba69092d9}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a12854d660a8066d52102a29ba69092d9}} 
-\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}!setParams@{setParams}}
-\index{setParams@{setParams}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec $>$}}
+sets the value of some parameter. Can\textquotesingle{}t change value of the delay! Returns the previous value of the param. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0072768890c800dbcac12ba3f65751c2}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0072768890c800dbcac12ba3f65751c2}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setParams@{setParams}}
+\index{setParams@{setParams}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
 \doxysubsubsection{\texorpdfstring{setParams()}{setParams()}}
-{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1$>$ \\
-Params\+Vector \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec $>$\+::set\+Params (\begin{DoxyParamCaption}\item[{Params\+Vector const \&}]{new\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Params (\begin{DoxyParamCaption}\item[{Params\+Vector const \&}]{new\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-returns old params 
+sets the value of the current params (but not the delays!) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0f364979bd5cc242a0e65aa87ee32b75}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a0f364979bd5cc242a0e65aa87ee32b75}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!setRequiredSteps@{setRequiredSteps}}
+\index{setRequiredSteps@{setRequiredSteps}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{setRequiredSteps()}{setRequiredSteps()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+void \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::set\+Required\+Steps (\begin{DoxyParamCaption}\item[{step\+\_\+type}]{req\+Steps,  }\item[{bool}]{control\+\_\+steps = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+this controls how many steps are needed before the section crossing would be detected when computing poincare maps. This is important more in the rigorous setting, but to have consistent computations you might want to keep it the same. The helper will set the right (long enough as in papers) number of steps for you. Please make it at least p steps if you want to change it. \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a06e43a81cfbab139a0d9bb2b2f738aba}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a06e43a81cfbab139a0d9bb2b2f738aba}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!t@{t}}
+\index{t@{t}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{t()}{t()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Time\+Point \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::t (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the i-\/th grid point, where e.\+g. t(-\/p) = -\/tau, t(0) = 0 \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb683ec9adcd0d9e30bc437d7e5e4d11}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_abb683ec9adcd0d9e30bc437d7e5e4d11}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!tau@{tau}}
+\index{tau@{tau}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{tau()}{tau()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+Time\+Point \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::tau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the basic interval (the longest one) \mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ace21394b17bd0f70006573e95cdfaa27}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_ace21394b17bd0f70006573e95cdfaa27}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!vectorToC1Solution@{vectorToC1Solution}}
+\index{vectorToC1Solution@{vectorToC1Solution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{vectorToC1Solution()}{vectorToC1Solution()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{C1\+Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::vector\+To\+C1\+Solution (\begin{DoxyParamCaption}\item[{Vector const \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]use make\+Jac\+Segment() instead! \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a53fd66b2f88be7d76b703334163066a6}\label{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a53fd66b2f88be7d76b703334163066a6}} 
+\index{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}!vectorToSolution@{vectorToSolution}}
+\index{vectorToSolution@{vectorToSolution}!capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$@{capd::ddeshelper::NonrigorousHelper$<$ EqSpec, delaysSpec, MatrixSpec, VectorSpec $>$}}
+\doxysubsubsection{\texorpdfstring{vectorToSolution()}{vectorToSolution()}}
+{\footnotesize\ttfamily template$<$typename Eq\+Spec , int delays\+Spec = 1, typename Matrix\+Spec  = capd\+::vectalg\+::\+Matrix$<$typename Eq\+Spec\+::\+Param\+Type, 0, 0$>$, typename Vector\+Spec  = capd\+::vectalg\+::\+Vector$<$typename Eq\+Spec\+::\+Param\+Type, 0$>$$>$ \\
+\mbox{\hyperlink{classcapd_1_1ddes_1_1DDEPiecewisePolynomialCurve}{Solution}} \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper}{capd\+::ddeshelper\+::\+Nonrigorous\+Helper}}$<$ Eq\+Spec, delays\+Spec, Matrix\+Spec, Vector\+Spec $>$\+::vector\+To\+Solution (\begin{DoxyParamCaption}\item[{Vector const \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]use \mbox{\hyperlink{classcapd_1_1ddeshelper_1_1NonrigorousHelper_a1de2b2ecf29aba01679877dd5f308f1e}{make\+Segment()}} instead! \end{DoxyRefDesc}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
