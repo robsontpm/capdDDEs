@@ -1,11 +1,12 @@
 ######################################################################
-#          !!! this is version for bundled with CAPD !!!             #
+# !!! this is a file to be used with the submoduled CAPD - github!!! #
 ######################################################################
 #                                                                    #
 # this version will work if the capd is compiled from within         #
 # './external/' directory in this project. Please check out if this  #
 # directory contains 'capd/' folder, if it is so, then               #
 # please build CAPD first (see README in 'external/' directory)      #
+# if you followed REDME.md or run ./tldr.sh the you should use this  #
 #                                                                    #
 # NOTICE: You not need to modify this file.                          #
 ######################################################################
@@ -35,13 +36,15 @@ PROJECT_PATH := $(MAKEFILE_ABS_DIRPATH)
 CAPDBINDIR := $(PROJECT_PATH)/bin/capd_build/bin/
 CAPDLIBDIR := $(PROJECT_PATH)/bin/capd_build/lib/
 
-# this is to tell which version of CAPD to use
-# we use standard
+# this was more important in the past, when there were many 
+# different scripts. Now it should stay as it is. 
 CAPDSCRIPT := capd-config
 
 # static is used to prevent linker error for CAPD. 
 # Other methods to avoid it are described in CAPD docs. 
-EXTRALINKEROPTIONS=-static
+# EXTRALINKEROPTIONS=-static
+# you should be ok without any linker options if you just use CAPD+capdDDEs
+EXTRALINKEROPTIONS=
 # uncomment for: support ggdb, slower execution time; 
 #GGDB_OPTION=-ggdb3 -g
 # uncomment for: gprof program (profiling, speed testing), slower execution time; 

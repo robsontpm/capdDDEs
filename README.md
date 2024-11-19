@@ -14,7 +14,7 @@ then to see the project in action, you can run:
 sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool
 git clone git@github.com:robsontpm/capdDDEs.git capdDDEs
 cd capdDDEs
-cp build-conf-bundle-mp.mk build-conf.mk 
+cp build-conf-bundle.mk build-conf.mk 
 chmod a+x tldr.sh
 ./tldr.sh
 ```
@@ -65,17 +65,18 @@ ls | grep "build-conf-"
 
 You need to copy one of them into file named ```build-conf.mk```.
 This file is not tracked by the ```git``` version control.
-The differences between various versions 
-lies mainly in where the library will look for
-```CAPD``` library and if the file uses multiprecision
-or not (```-mp```).
-For example, you might decide to go with the ```CAPD``` 
-that is shipped (bundled) with the ```capdDDEs``` library
-and to use multiprecision (which is needed for some utility programs).
-In that case just run:
+Currently, the difference between various versions 
+lies in where the library will look for ```CAPD``` library.
+
+Currently, you have two options: decide to go with the ```CAPD``` 
+that is a submodule of this project and is maintained by github git
+repository (the default behaviour) or to setup your own distribution
+of ```CAPD``` if you already have one. In this example we go with 
+the submoduled version (maintained from github and 
+updated automatically):
 
 ```
-cp build-conf-bundle-mp.mk build-conf.mk
+cp build-conf-bundle.mk build-conf.mk
 ```
 
 Next, go to external, add permissions and build CAPD 
@@ -129,15 +130,15 @@ Using your own CAPD
 
 The ```-bundle``` version forces you to compile the 
 version of ```CAPD``` library, that is in ```external```
-folder. In case you already have ```CAPD``` ups and running,
+folder. In case you already have ```CAPD``` up and running,
 you might want to use other templates and configure them 
-to your needs. Just copy one of the ```-svn``` version, e.g.:
+to your needs. Just copy the ```-svn``` version, e.g.:
 
 ```
-cp build-conf-svn-mp.mk build-conf.mk
+cp build-conf-svn.mk build-conf.mk
 ```
 
-and either specify the paths in the ```build-conf.mk``` file
+and either specify the paths in this ```build-conf.mk``` file
 (uncomment some lines there) or follow the
 instructions in the file to export global system variables.
 
@@ -180,12 +181,11 @@ papers specyfic to DDEs [^1][^2][^3][^4].
 
 This project requires the [CAPD library](capd.ii.uj.edu.pl),
 but the repository contains compatible CAPD version
-in './external/' directory. You can use your own version
-of the CAPD, but in that case you need to modify ```CAPDBINDIR``` and ```CAPDLIBDIR``` variables in the 
-template Makefile scripts ```build-conf.mk``` and ```build-conf-mp.mk```. 
-As of 2022 the integrator uses CAPD DynSys version 5.1.2. 
-
-_TODO: change it to have CAPD as a submodule (?) or downloaded from git separately._
+in './external/' directory as a ```git``` submodule downloaded
+autmatically from ```github.com```. You can use your own version
+of the CAPD, but in that case you need to modify ```CAPDBINDIR``` 
+and ```CAPDLIBDIR``` variables in the template Makefile scripts 
+```build-conf.mk```.
 
 The work is open-source, under GPLv3 license. Please consider
 citing some of the papers listed in **References**, when using this 
@@ -232,15 +232,23 @@ or less constant.
 	make _program-name_
 	```
  
- 	where _program-name_ is equal to the name of any directory under
- 	```programs/```. The resulting executable file will go to the
- 	bin/_program-name_ directory. 
+ 	where ```_program-name_``` is equal to the name of any directory under
+ 	```programs/```. The resulting executable file will go either to the
+  programs directory or to the ```bin/_program-name_``` directory.
+  Check the documentation in the appropriate program directory.  
+
+  Example:
+
+  ```bash
+  make examples/demo-elninio
+  ```
  
 	```bash
 	make list
 	```
  
- 	will print out the list of available programs. 
+ 	will print out the list of available programs. You can copy
+  the names of the targets from there. 
  
  - ```external/``` 
  	You should build CAPD from this folder. 
@@ -259,8 +267,7 @@ or less constant.
  	Also compiled version of bundled CAPD will be placed here. 
  
  - ```build-common.mk```
- 	```build-conf.mk```
- 	```build-conf-mp.mk```
+  ```build-conf-bundle.mk```
  	```build-conf-svn.mk```
  
  	those files serve to configure compilation 
@@ -268,6 +275,12 @@ or less constant.
  	for the instruction on compilation. The ```-mp``` version is used
  	for multiprecision compilation (see for example converter programs), ```-svn``` version 
  	is for using your own (external) compilation of CAPD.
+
+ - ```build-conf.mk```
+
+   this file initially do not exists, but is required for compiltion;
+   you should copy one of the ```-bundle.mk``` or ```-svn.mk```
+   files to this location as shown in previous sections. 
  
  - ```README.md```
  	this file
@@ -275,20 +288,23 @@ or less constant.
 The most important part is the rigorous integrator for DDEs. 
 It is contained in ```include/capd/ddes```
 As of 2022, I have decided to reorganize it to be more
-complaint with the CAPD structure. I have followed example of ```external/capd/capdDynSys4/include/capd/pdes``` 
+complaint with the CAPD structure. I have followed example of 
+```external/capd/capdDynSys4/include/capd/pdes``` 
 folder structure in this manner. I hope capdDDEs can become a part of CAPD library 
 at some point, when the library is mature enough.
 
-YOUR OWN CAPD LIBRARY
----------------------
-
-If you want to use your own version of CAPD, e.g. from ```svn``` repo, 
-then you need to modify file ```build-conf.mk``` 
-(and other ```.mk``` probably) first. Follow the instructions in that 
-file to make the ```Makefile``` work. 
+THE CAPD LIBRARY
+----------------
 
 In case of any errors in compiling CAPD library, please check requirements
 on http://capd.ii.uj.edu.pl, or contact me at robert.szczelina@uj.edu.pl.
+
+
+### CAPD v. 6 AND SHARED LIBRARIES (UPDATED 2024)
+
+The version from ```git``` repository seems to work out of the box,
+and probably the below comment is not neccessary anymore. 
+Consider it deprecated, and remove it in future versions. 
 
 
 ### CAPD v. 5 AND SHARED LIBRARIES (UPDATED 2022)
@@ -335,6 +351,7 @@ The above solution requires admin rights. I think the following option:
 	could work better, it can be implemented with ```Makefile```. 
 
 	_TODO: Try to implement this method instead of ldconfig._
+
 
 REFERENCES
 ----------
