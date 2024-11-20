@@ -32,6 +32,7 @@
 #define _CAPD_DDEHELPERDRAWING_HPP_
 
 #include <capd/ddes/DDECommon.hpp>
+#include <capd/ddeshelper/DDEHelperCommon.h>
 #include <capd/ddeshelper/DDEHelperDrawing.h>
 
 #endif /* _CAPD_DDEHELPERDRAWING_HPP_ */

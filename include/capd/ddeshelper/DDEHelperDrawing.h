@@ -32,6 +32,7 @@
 #define _CAPD_DDEHELPERDRAWING_H_
 
 #include <capd/ddes/DDECommon.h>
+#include <capd/ddeshelper/DDEHelperCommon.h>
 
 #include <capd/ddes/DDEForwardTaylorCurvePiece.hpp>
 #include <string>

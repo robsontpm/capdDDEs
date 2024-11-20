@@ -45,6 +45,9 @@ CAPDSCRIPT := capd-config
 # EXTRALINKEROPTIONS=-static
 # you should be ok without any linker options if you just use CAPD+capdDDEs
 EXTRALINKEROPTIONS=
+# this tells compiler to generate code inside the library that uses system(..) function.
+# you might remove it if you don't want the code to use system(..) calls directly. 
+EXTRACOMPILEROPTIONS=-DDDES_ALLOW_SYSTEM
 # uncomment for: support ggdb, slower execution time; 
 #GGDB_OPTION=-ggdb3 -g
 # uncomment for: gprof program (profiling, speed testing), slower execution time; 
