@@ -189,7 +189,7 @@ public:
 					}
 				}
 				CurvePieceType* piece = new CurvePieceType(t, items);
-				addPiece(piece, true); // is faster than by reference, true => pass the ownership
+				addPiece(piece); // is faster than by reference, true => pass the ownership
 			}
 			setValueAtCurrent(f({ScalarType(t1)}));
 		} catch (std::logic_error &e) {
