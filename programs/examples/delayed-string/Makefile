@@ -1,5 +1,5 @@
 # this will make it into a separate subfolder of a given name, trailing / is important!) 
-PACKAGE = delayed-string/
+PACKAGE = delayed-spring/
 
 # the defaut output folder (defined above) is ignored if those two are given (please keep trailing '/' !)
 OUTDIR = ./bin/
