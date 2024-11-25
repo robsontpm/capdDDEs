@@ -33,6 +33,7 @@
 #ifndef _CAPD_DDEHELPERRIGOROUS_H_
 #define _CAPD_DDEHELPERRIGOROUS_H_
 
+#include "capd/ddeshelper/ddeshelperlib.h"
 #include <capd/capdlib.h>
 #include <capd/ddes/ddeslib.h>
 #include <capd/ddeshelper/DDEHelperCommon.h>
