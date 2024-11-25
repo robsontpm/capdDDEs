@@ -1,43 +1,56 @@
 #ifndef ELNINIO_RIG_H_
 #define ELNINIO_RIG_H_
 
-#include <iostream>
-#include <iomanip>
 #include <capd/capdlib.h>
 #include <capd/ddes/ddeslib.h>
 #include <capd/ddeshelper/ddeshelperlib.h>
-#include <capd/ddeshelper/DDEHelperNonrigorous.hpp>
 
-// Initial setting of parameters. You can change some of them
-// by the program params. Then, other programs use values stored in run files!
-const int NUM_PARAMS = 6;
-const double DEFAULT_PAR_ALPHA = 1.0;
-const double DEFAULT_PAR_BETA = 1.0;
-const double DEFAULT_PAR_KAPPA = 1.0;
-const double DEFAULT_PAR_GAMMA = 1.0;
-const double DEFAULT_PAR_TAU1 = 2.0;
-const double DEFAULT_PAR_TAU2 = 1.0;
-const int DEFAULT_P = 128;
-const int DEFAULT_N = 4;
-const int DEFAULT_STEPS = -10;
-const int DEFAULT_REQUIRED_STEPS = -1;
-const int DEFAULT_MAX_STEPS = -10;
+template<class T, capd::filib::RoundingStrategy R, capd::filib::IntervalMode M> 
+struct fadbad::Op<capd::filib::Interval<T, R, M>>
+{
+  typedef capd::filib::Interval<T, R, M> Base;
 
-/*** definition must be in .h, as this is template. */
+  static Base myInteger(const int i) { return Base(i); }
+  static Base myZero() { return myInteger(0); }
+  static Base myOne() { return myInteger(1);}
+  static Base myTwo() { return myInteger(2); }
+  static Base myPI() { return Base::pi(); }
+  static Base myPos(const Base& x) { return +x; }
+  static Base myNeg(const Base& x) { return -x; }
+  template <typename U> static Base& myCadd(Base& x, const U& y) { return x+=y; }
+  template <typename U> static Base& myCsub(Base& x, const U& y) { return x-=y; }
+  template <typename U> static Base& myCmul(Base& x, const U& y) { return x*=y; }
+  template <typename U> static Base& myCdiv(Base& x, const U& y) { return x/=y; }
+  static Base myInv(const Base& x) { return myOne()/x; }
+  static Base mySqr(const Base& x) { return sqr(x); }
+  template <typename X, typename Y>
+  static Base myPow(const X& x, const Y& y) { return power(x,y); }
+  static Base mySqrt(const Base& x) { return sqrt(x); }
+  static Base myLog(const Base& x) { return log(x); }
+  static Base myExp(const Base& x) { return exp(x); }
+  static Base mySin(const Base& x) { return sin(x); }
+  static Base myCos(const Base& x) { return cos(x); }
+  static Base myBasean(const Base& x) { return tan(x); }
+  static Base myAsin(const Base& x) { return asin(x); }
+  static Base myAcos(const Base& x) { return acos(x); }
+  static Base myAtan(const Base& x) { return atan(x); }
+  static bool myEq(const Base& x, const Base& y) { return x==y; }
+  static bool myNe(const Base& x, const Base& y) { return x!=y; }
+  static bool myLt(const Base& x, const Base& y) { return x<y; }
+  static bool myLe(const Base& x, const Base& y) { return x<=y; }
+  static bool myGt(const Base& x, const Base& y) { return x>y; }
+  static bool myGe(const Base& x, const Base& y) { return x>=y; }
+};
+
+
 template<typename T> inline T get_pi(){ return T::pi(); }
-/*** definition must be in .h, as this is inline function. */
+
 template<> inline double get_pi(){ return 3.14159265358979323846; }
 
-/*** used in some DDEs from the article */
 template<typename T> inline T tanh(T const& x){
 	return (exp(2 * x) - 1) / (exp(2 * x) + 1);
 }
 
-/**
- * A model map of what I expect from a Map R^m -> R^n
- * to be good for use with DDE codes.
- *
- */
 template<typename ScalarSpec, typename ParamSpec = ScalarSpec>
 class ElNinoRig{
 public:
@@ -48,49 +61,30 @@ public:
 	typedef capd::vectalg::Vector<ParamSpec, 0> ParamsVectorType;
 	typedef capd::vectalg::Vector<ScalarType, 0> VectorType;
 
-	ElNinoRig(): alpha(1), gamma(1), kappa(1) {}
-	ElNinoRig(capd::vectalg::Vector<ParamSpec, 0> const & params): alpha(params[0]), gamma(params[1]), kappa(params[2]) {}
+	ElNinoRig(): alpha(1), beta(1), kappa(1) {}
+	ElNinoRig(capd::vectalg::Vector<ParamSpec, 0> const & params): alpha(params[0]), beta(params[1]), kappa(params[2]) {}
 
-	/** output dimension of the internal map */
-	static size_type imageDimension() { return 1; }
-	/** input dimension of the internal map, x(t) is one, x(t-tau_1) is another, etc.. (thus the formula) */
+	static size_type imageDimension() { return 1; };
+
 	static size_type dimension() { return 2; }
-	/** number of parameters to fully configure equation */
+
 	static size_type getParamsCount() { return 3; }
 
-	/**
-	 * We require that solution class has a templated operator of this signature
-	 * the program will pass in x the m values where m = dimension()
-	 * in fx there will be reference to already initialized vector of
-	 * dimension d = imageDimension().
-	 * The dimensions are as follows: if d = imageDimension() then usually
-	 * m = d * (number of delayed terms + 1).
-	 * +1 is for the current term, which is always present, and always
-	 * assumed to be stored in x[0]. (so if your equation is not dependent on
-	 * this, then you should not use it in your formulas).
-	 * In this example (Mackey-Glass Eq.), we have: d = 1 (scalar), m = 2
-	 * (two terms: current value at 0 and delayed term at t = t - \tau)
-	 *
-	 * Note that tau is not explicitely present in the equation. The concrete
-	 * value of the delay is defined when constructing DiscreteDelaysFunctionalMap
-	 * from this template function. See docs there.
-	 */
 	template<typename RealSpec, typename InVectorSpec, typename OutVectorSpec>
 	void operator()(const RealSpec& t, const InVectorSpec x, OutVectorSpec& fx) const {
 		typedef typename OutVectorSpec::ScalarType OutScalarType;
 		auto Tt = x[0];
 		auto Ttau = x[1];
-		/*fx[0] = -alpha * tanh(kappa * Ttau) + gamma * cos(2 * get_pi<ScalarType>() * t);*/
-                fx[0] = -Ttau;
+		fx[0] = -alpha * tanh(kappa * Ttau) + beta * cos(2 * get_pi<ScalarType>() * t);
 	}
 
 	static std::string show(){
-		return "El Nino equation as autonomous system: $T'(t) = \\gamma \\cos(2 \\pi s) - \\alpha \\tanh( \\kappa T(t-\\tau))$.";
+		return "El Nino equation as autonomous system: $T'(t) = \\beta \\cos(2 \\pi s) - \\alpha \\tanh( \\kappa T(t-\\tau))$.";
 	}
 
 protected:
 	ParamType alpha;
-	ParamType gamma;
+	ParamType beta;
 	ParamType kappa;
 };
 
