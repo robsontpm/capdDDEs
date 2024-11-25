@@ -114,6 +114,8 @@ public:
 		// order = order > m_maxOrder ? m_maxOrder : order;
 		size_type coeffs_order = order;
 		bool extraOrder = false;
+                std::cout << "order: " << order << "\n";
+                std::cout << "maxOrder: " << m_maxOrder << "\n";
 		if (order > m_maxOrder){
 			// extra rank computation as in old method
 			extraOrder = true;
@@ -219,6 +221,7 @@ public:
 			VectorType extra_YJ2 = extra_x + (extra_C * in_curve.get_r0()) + extra_r + (order + 2) * out_HH * out_Y[order + 2];
 
 			try {
+                                std::cout << extra_YJ1 << "\n" << out_Y[order + 1] << "\n";
 				out_Y[order + 1] = capd::vectalg::intersection(extra_YJ1, out_Y[order + 1]);
 			} catch (...) {
 				throw std::logic_error("CRITICAL: empty intersection of sets that THEORETICALLY ARE PROVED TO BE NON-EMPTY. Please contact authors (robert.szczelina@uj.edu.pl), as the source code could contain some error.");
