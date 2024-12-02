@@ -130,6 +130,8 @@ int closestSmallerInt(AnythingSpec const & value){ return int(value) - (value < 
 /** special case for capd::intervals::Interval template */
 template<typename T_Bound, typename T_Rnd>
 int closestSmallerInt(capd::intervals::Interval<T_Bound, T_Rnd> const & value){ return closestSmallerInt(value.leftBound()); }
+/** special case for capd::interval template */
+int closestSmallerInt(capd::interval const & value);
 
 /** require C++11 */
 template<typename VectorType, typename ...VectorTypes>

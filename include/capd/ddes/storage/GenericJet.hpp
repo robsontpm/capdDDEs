@@ -120,12 +120,12 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::Generic
 }
 
 template<typename TimePointSpec, typename DataSpec, typename VectorSpec, typename MatrixSpec, bool isInterval>	// template spec
-GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>&												// return type
+GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>&										// return type
 GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::setupCoeffs(							// func decl
-		const_iterator it, const_iterator itEnd, size_type overrideOrder													// params
+		const_iterator it, const_iterator itEnd, size_type overrideOrder										// params
 ){
-	if (it == NULL || itEnd == NULL || itEnd < it)
-		throw std::logic_error("GenericJet::setupCoeffs(begin*, end*): no data given (either one of ptr is NULL or begin > end)");
+	if (it == NULL || itEnd == NULL || itEnd <= it)
+		throw std::logic_error("GenericJet::setupCoeffs(begin*, end*): no data given (either one of ptr is NULL or begin >= end)");
 	deallocateCoeffs();
 	m_dimension = it->dimension();
 	m_order = overrideOrder ? overrideOrder : (itEnd - it - 1);

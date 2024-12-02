@@ -738,6 +738,7 @@ public:
 		Real reachTime;
 		Vector Px, fPx, dx(X.storageDimension());
 		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
+		DP = Id; V = Id;
 		pm.setInitialV(X);
 		C1Solution PX(X); PX *= 0.;
 		pm(X, PX, reachTime, x, Px, fPx, V, DP);

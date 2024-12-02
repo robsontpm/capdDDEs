@@ -411,6 +411,7 @@ public:
 	TimePointType currentTime() const { return t0(); }
 	TimePointType rightDomain() const { return t0(); } ///< CAPD map compatible
 	TimePointType pastTime() const { return m_pieces.size() ? (**m_pieces.begin()).t0() : t0(); }
+	TimePointType leftDomain() const { return pastTime(); } ///< CAPD map compatible
 	/** DoubletonStorageInterface: returns a dimension of the Jet as a Vector (sequence) to store all the coefficients (without Xi part) */
 	size_type storageDimension() const {
 		// size_type dim = m_valueAtCurrent.storageDimension();
@@ -565,8 +566,9 @@ public:
 		RealType epsi;
 		TimePointType ti = m_grid.point(0);
 		m_grid.split(t, ti, epsi);
+		std::cerr << "eval t = " << ti << " " << epsi << std::endl;
 		try{
-			return (ti == t0() && epsi == 0.0) ? VectorType(m_valueAtCurrent) : getPiece(ti).eval(t);
+			return (ti == t0() && epsi == 0.0) ? VectorType(m_valueAtCurrent) : /* getPiece(ti).eval(t); */ getPiece(ti).evalAtDelta(epsi);
 		} catch (std::domain_error &e){
 			throw rethrow("DDESolutionCurve::eval(Real):", e);
 		}
@@ -660,6 +662,7 @@ public:
 		Class result = *this; // TODO: (???) this is not so optimal to make a copy then once more rewrite items in this copy... REFACTOR IT!
 		for(auto i = result.begin(); i != result.end(); ++i)
 			(**i) = (**i).dt(k);
+		// TODO: IMPORTANT! what about the head????? do it as in Nonrig case? We should supply solver to move by one.
 		return result;
 	}
 

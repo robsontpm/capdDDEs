@@ -10,6 +10,7 @@
 namespace capd{
 namespace ddes{
 
+int closestSmallerInt(capd::interval const & value){ return closestSmallerInt(value.leftBound()); }
 
 void helper_dump_line(std::istream & in){
 	std::string dump; std::getline(in, dump);

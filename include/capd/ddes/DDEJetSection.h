@@ -90,8 +90,12 @@ public:
 	 */
 	DDEJetSection(size_type d, size_type p, size_type n, VectorType const& vec, ScalarType c): m_c(c) {
 		size_type expectedDim = d * (1 + p * (n+1));
-		if (expectedDim != vec.dimension()) // TODO: (NOT URGENT) more info in exception
-			throw std::logic_error("DDEJetSection::__construct__(): vector has bad dimension.");
+		if (expectedDim != vec.dimension()) {
+			std::ostringstream info;
+			info << "DDEJetSection::__construct__(): vector has bad dimension. ";
+			info << "Is: " << vec.dimension() << ", should be " << expectedDim << ".";
+			throw std::logic_error(info.str());
+		}
 
 		m_orig_s = vec;
 		size_type I = 0;

@@ -126,17 +126,25 @@ public:
 	virtual void evalCoeff(size_type n, const RealType& t, DataType& out) const { this->evalCoeffAtDelta(n, t - RealType(t0()), out); }
 	/** makes a Jet that represents n-th derivative of the jet, by default n=1 */
 	GenericJet dt(size_type n = 1){
-		GenericJet deriv(t0(), begin() + n, end());
-		// now, rescale coeffs respectively
-		for (size_type k = 1; k <= n; ++k){
-			ScalarType p = k;
-			for (auto icoeff = deriv.begin(); icoeff != deriv.end(); ++icoeff, p += 1.0)
-				(*icoeff) *= p;
+		try {
+			GenericJet deriv(t0(), begin() + n, end());
+			// now, rescale coeffs respectively
+			for (size_type k = 1; k <= n; ++k){
+				ScalarType p = k;
+				for (auto icoeff = deriv.begin(); icoeff != deriv.end(); ++icoeff, p += 1.0)
+					(*icoeff) *= p;
+			}
+			return deriv;
+		} catch (std::logic_error& e) {
+			std::ostringstream msg;
+			msg << "GenericJet::dt(" << n << "):";
+			msg << "at t = " << this->getT0() << ": could not create derivative representation!";
+			throw rethrow(msg.str(), e);
 		}
-		return deriv;
 	}
 	/** makes a Jet that represents n-th coefficient (i.e. jet^{(n)}/n! of the jet as a function of t, by default n=1 */
 	GenericJet coeff(size_type n = 1){
+		// TODO: SOMEHOW IMPORTANT: Not Implemented Yet
 		throw std::logic_error("GenericJet::coeff(): Not Implemented Yet");
 //		GenericJet deriv(t0(), begin() + n, end());
 //		// now, rescale coeffs respectively
@@ -246,6 +254,24 @@ public:
 			in >> jet.m_coeffs[k];
 		}
 		return in;
+	}
+	/**
+	 * It return true only if the time is the same, it comes from the same grid and
+	 * the order is the  same and all the coefficients match.
+	 */
+	bool operator==(Class const& that) {
+		if (m_t0 != that.m_t0) return false;
+		if (m_order != that.m_order) return false;
+		auto this_kth = begin();
+		auto that_kth = that.begin();
+		for (; this_kth != end(); ++this_kth, ++that_kth)
+			if (*this_kth != *that_kth)
+				return false;
+		return true;
+	}
+	/** see operator== */
+	bool operator!=(Class const& that) {
+		return !this->operator==(that);
 	}
 	/** TODO: docs */
 	Class setOrder(size_type n){

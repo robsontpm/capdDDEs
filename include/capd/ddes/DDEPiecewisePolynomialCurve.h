@@ -90,6 +90,29 @@ public:
 		copyPieces(orig.begin(), orig.end());
 		return *this;
 	}
+	/**
+	 * It return true only if the domain is the same,
+	 * the grid is the same and all the jets are the same
+	 * in the sense of operator== for Jets, see the docs for them.
+	 * (but basically it means the jets at the same grid points must
+	 * be of the same order)
+	 */
+	bool operator==(Class const& that) {
+		if (m_valueAtCurrent != that.m_valueAtCurrent) return false;
+		if (m_t_current != that.m_t_current) return false;
+		if (m_grid != that.m_grid) return false;
+		if (m_pieces.size() != that.m_pieces.size()) return false;
+		auto this_jet = begin();
+		auto that_jet = that.begin();
+		for (; this_jet != end(); ++this_jet, ++that_jet)
+			if (**this_jet != (**that_jet))
+				return false;
+		return true;
+	}
+	/** see operator== */
+	bool operator!=(Class const& that) {
+		return !this->operator==(that);
+	}
 
 	/** makes a Curve that is d dimensional, over given grid, located initially at TimePoint 0 */
 	DDEPiecewisePolynomialCurve(const GridType& grid, size_type d = 0):
@@ -443,11 +466,12 @@ public:
 	 */
 	VectorType eval(RealType t) const {
 		// TODO: (FUTURE???) raise warning (compilation time?) when this function is used?
+		// TODO: (FUTURE/IMPORTANT?) it should be possible to make it rigorous, you need
 		RealType epsi;
 		TimePointType ti = m_grid.point(0);
 		m_grid.split(t, ti, epsi);
 		try{
-			return (ti == t0() && epsi == 0.0) ? VectorType(m_valueAtCurrent) : getPiece(ti).eval(t);
+			return (ti == t0() && epsi == 0.0) ? VectorType(m_valueAtCurrent) : getPiece(ti).evalAtDelta(epsi);
 		} catch (std::domain_error &e){
 			throw rethrow(badge() + "::eval(Real):", e);
 		}
