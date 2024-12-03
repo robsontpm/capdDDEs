@@ -205,7 +205,8 @@ public:
 			VectorType extra_x(d), extra_r(d);
 			extra_x  = out_Phi_coeffs_t0[coeffs_order] + out_Rem_coeffs_t0[coeffs_order];
 			split(extra_x, extra_r);
-			split(extra_C, S);
+			// split(extra_C, S); // TODO: (IMPORTANT) this was redundant! We lost content of S! TEST then remove this line.
+			// TODO: also, rething removing this part as stated elsewhere!
 			extra_r += S * in_curve.get_r0();
 			for (size_type iu = 0; iu < out_u.size(); ++iu)
 				extra_r += (out_JacPhi_coeffs_t0[coeffs_order][iu] * out_u[iu].get_B()) * out_u[iu].get_r();
