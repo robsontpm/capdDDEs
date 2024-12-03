@@ -250,7 +250,7 @@ public:
 
 		typedef fadbad::T<ScalarType> AutoDiffTScalar; 		// Auto Diff T (Taylor) scalar type
 		typedef typename VectorType::template rebind<AutoDiffTScalar>::other TADVectorType;
-		TADVectorType args(dimension(), 0.);
+		TADVectorType args(dimension(), false);
 		// propagate arguments in a given order - first value at t0
 		// then jet of \tau_1, then \tau_2, etc...
 		// this is change from the initial paper!, where I have done delay terms first
@@ -263,23 +263,11 @@ public:
 				(*iarg)[0] = *iu;
 			}
 
-		// // TODO: REMOVE AFTER DEBUG
-		// //for (auto iu = current_u->begin(); iu != current_u->end(); ++iu)
-		// std::cout << "u         " << u << std::endl;
-		// if (current_u != u.end()) std::cout << "current_u " << *current_u << std::endl;
-		// std::cout << "args" << std::endl;
-		// for (auto aa = args.begin(); aa !=args.end(); ++aa){
-		// 	for (int kk = 0; kk <= 0; ++kk)
-		// 		std::cout << aa << ": " << (*aa)[kk] << "\t";
-		// 	std::cout << std::endl;
-		// }
-		// // TODO: REMOVE AFTER DEBUG
-
 		// we are ready to go for the recurrent relation on coefficients.
 		coeffs[0] = u[0]; // by definition, see paper
 		for (size_type k = 1 ; k <= resultOrder; ++k){
 			// eval Autodiff routine so that we would be able to extract v[k-1] = F^{[k-1]}(...)
-			TADVectorType v(imageDimension(), 0.);
+			TADVectorType v(imageDimension(), false);
 			m_map(t0, args, v);
 			// propagate AD jets and output.
 			// this will be F_k from the latest paper on DDE integration.
@@ -297,23 +285,10 @@ public:
 			if (k == resultOrder) break;
 			// propagate higher order coefficients in the past to the args Vector.
 			// the recurrent Taylor formula is already there.
-			iarg = args.begin();
 			for (size_type idelay = 1; idelay <= delaysCount(); ++idelay, ++current_u){
 				for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
 					(*iarg)[k] = *iu;
 			}
-
-			// // TODO: REMOVE AFTER DEBUG
-			// //for (auto iu = current_u->begin(); iu != current_u->end(); ++iu)
-			// std::cout << "u         " << u << std::endl;
-			// if (current_u != u.end()) std::cout << "current_u " << *current_u << std::endl;
-			// std::cout << "args" << std::endl;
-			// for (auto aa = args.begin(); aa !=args.end(); ++aa){
-			// 	for (int kk = 0; kk <= k; ++kk)
-			// 		std::cout << aa << ": " << (*aa)[kk] << "\t";
-			// 	std::cout << std::endl;
-			// }
-			// // TODO: REMOVE AFTER DEBUG
 		} /// for k loop
 	} /// computeDDECoefficients
 
@@ -357,7 +332,7 @@ public:
 		// this is Automatic Differentiation both w.r.t t but also w.r.t. coefficients.
 		// we will use it to automatically eval the r.h.s. of the equation with all
 		// partial derivatives when recursively compute Taylor coefficients at current t0
-		TFADVectorType args(dimension(), 0.);
+		TFADVectorType args(dimension(), false);
 
 		// we will successively fill-in args as the recursion will go on
 		auto current_u = u.begin();
@@ -395,7 +370,7 @@ public:
 		for (size_type k = 1; k <= resultOrder; ++k){
 			// eval AutoDiff routine so we would be able to extract v[.][k-1] = F^{[k-1]}(...)
 			// together with partial derivatives with respect to coefficients in the past.
-			TFADVectorType v(imageDimension(), 0.);
+			TFADVectorType v(imageDimension(), false);
 			m_map(t0, args, v);
 
 			// propagate AD jets and output.
