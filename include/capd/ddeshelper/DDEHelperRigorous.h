@@ -38,6 +38,7 @@
 #include <capd/ddeshelper/DDEHelperCommon.h>
 #include <capd/ddeshelper/DDECompareHelper.h>
 #include <capd/ddeshelper/DDECubeSet.h>
+#include <capd/ddeshelper/ddeshelperlib.h>
 
 namespace capd {
 namespace ddeshelper {
