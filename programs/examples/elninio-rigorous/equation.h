@@ -61,9 +61,11 @@ public:
 	typedef capd::vectalg::Vector<ParamSpec, 0> ParamsVectorType;
 	typedef capd::vectalg::Vector<ScalarType, 0> VectorType;
 
-	ElNinoRig(): alpha(1), beta(1), kappa(1) {}
-	ElNinoRig(ParamType alpha, ParamType beta, ParamType kappa): alpha(alpha), beta(beta), kappa(kappa) {}
-	ElNinoRig(capd::vectalg::Vector<ParamSpec, 0> const & params): alpha(params[0]), beta(params[1]), kappa(params[2]) {}
+  const ParamType PI;
+
+	ElNinoRig(): alpha(1), beta(1), kappa(1), PI(get_pi<ParamType>()) {}
+	ElNinoRig(ParamType alpha, ParamType beta, ParamType kappa): alpha(alpha), beta(beta), kappa(kappa), PI(get_pi<ParamType>()) {}
+	ElNinoRig(capd::vectalg::Vector<ParamSpec, 0> const & params): alpha(params[0]), beta(params[1]), kappa(params[2]), PI(get_pi<ParamType>()) {}
 
 	static size_type imageDimension() { return 1; };
 
@@ -74,9 +76,9 @@ public:
 	template<typename RealSpec, typename InVectorSpec, typename OutVectorSpec>
 	void operator()(const RealSpec& t, const InVectorSpec x, OutVectorSpec& fx) const {
 		typedef typename OutVectorSpec::ScalarType OutScalarType;
-		auto Tt = x[0];
-		auto Ttau = x[1];
-		fx[0] = -alpha * tanh(kappa * Ttau) + beta * cos(2 * get_pi<ScalarType>() * t);
+    auto Tt = x[0];
+    auto Ttau = x[1];
+		fx[0] = -alpha * tanh(kappa * Ttau) + beta * cos(2 * PI * t);
 	}
 
 	static std::string show(){

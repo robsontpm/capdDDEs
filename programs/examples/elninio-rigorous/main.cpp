@@ -28,23 +28,27 @@ int main() {
   const ParamType kappa = {11.0};
   const ParamType tau = {1.2};
   const Setup::ParamsVector params = {alpha, beta, kappa, tau};
-  const int p = 256; // number of points in the interval [-tau, 0]
-  const int n = 4; // degree of taylor polynomials
+  int pna1 = 800;
+  const int p = tau * pna1; // number of points in the interval [-tau, 0]
+  const int n = 6;   // degree of taylor polynomials
   Setup setup(params, p, n);
   const Setup::Grid& grid = setup.grid();
   const auto dtau = grid.point(-p);
   const auto zero = grid.point(0);
+  std::cout << "dtau = " << dtau << std::endl;
   
   Solution initial(grid, dtau, zero, n, {0.5});
   auto X = initial;
   auto Y = initial;
-  initial = setup.integrate(75*p, initial, initial);
-  initial = setup.integrate(25*p, initial, X);
-  initial = setup.integrate(25*p, initial, Y);
+  auto solution = initial;
+  solution = setup.integrate(100*p, initial, X);
+  setup.drawSolution(".", "d-initial", initial);
+  setup.drawSolution(".", "d-solution", solution);
 
-  setup.drawSolution(".", "initial", initial);
-  setup.drawSolution(".", "X", X);
-  setup.drawSolution(".", "Y", Y);
+  solution = setup.integrate(5 * pna1, X, Y);
+  setup.drawSolution(".", "d-Ysolution", solution);
+  setup.drawSolution(".", "d-X", X);
+  setup.drawSolution(".", "d-Y", Y);
 
   // RIGOROUS
 
@@ -57,15 +61,17 @@ int main() {
   const RSetup::Grid& rgrid = rsetup.grid();
   const auto rdtau = rgrid.point(-p);
   const auto rzero = rgrid.point(0);
-  RSolution rinitial(rgrid, rdtau, rzero, n, {{0.5-1.0e-12, 0.5+1.0e-12}}, 0);
-  capd::IVector r0(1+(n+1)*p);
-  for(auto& x: r0) {
-    x = {-1.0e-8, 1.0e-8};
-  }
+  RSolution rinitial(rgrid, rdtau, rzero, n, {0.5}, 0);
+  capd::IVector r0(rsetup.M());
+  for(auto& x: r0) x = {-1.0e-4, 1.0e-4};
   std::cout << "x" << std::endl;
   rinitial.set_x(capd::IVector(X.get_x()));
   std::cout << "Cr0" << std::endl;
-  rinitial.set_Cr0(capd::IMatrix::Identity(1+(n+1)*p), r0);
+  rinitial.set_Cr0(capd::IMatrix::Identity(rsetup.M()), r0);
+
+  capd::IVector Xi(rsetup.p() * rsetup.d());
+  for(auto& xi: Xi) xi = {-1.0e-1, 1.0e-1};
+  rinitial.set_Xi(Xi);
   /*std::cout << "B" << std::endl;*/
   /*rinitial.set_B(capd::IMatrix::Identity(2305));*/
   /*std::cout << "Binv" << std::endl;*/
@@ -73,9 +79,19 @@ int main() {
   /*std::cout << "r" << std::endl;*/
   /*rinitial.set_r(capd::IVector(1+(n+1)*p));*/
 
-  RSolution rX = rsetup.timemap(rinitial, p);
-  RSolution rY = rsetup.timemap(rinitial, p);
+  // RSolution rX = rsetup.timemap(rinitial, p);
+  RSolution rX = rinitial;
+  for(auto& x: r0) x = {0., 0.};
+  rinitial.set_r0(r0);
+  RSolution rY = rsetup.timemap(rinitial, 5 * pna1);
+  auto hull = rY.hull();
+  capd::vectalg::split(hull, r0);
+  rinitial = rX;
+  rinitial.set_r0(r0 * 2);
+  rX.set_r0(r0 * 2);
+  rY = rsetup.timemap(rinitial, 5 * pna1);
 
+  rsetup.drawSolution(".", "rsolution", rinitial);
   rsetup.drawSolution(".", "rX", rX);
   rsetup.drawSolution(".", "rY", rY);
   bool subset = true;
@@ -84,9 +100,9 @@ int main() {
   for(int i = 0; i < rXhull.dimension(); ++i) {
     if(!rXhull[i].contains(rYhull[i])) {
       std::cout << std::setprecision(16);
-      std::cout << i << "\n" << rXhull[i] << "\n" << rYhull[i] << "\n";
+      std::cout << i << "\n\t" << rXhull[i] << "\n\t" << rYhull[i] << "\n";
       subset = false;
-      break;
+      //break;
     }
   }
   std::cout << subset << "\n";
