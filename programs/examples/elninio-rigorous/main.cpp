@@ -87,23 +87,23 @@ int main() {
   auto hull = rY.hull();
   capd::vectalg::split(hull, r0);
   rinitial = rX;
-  rinitial.set_r0(r0 * 2);
+  rinitial.set_r0(r0 * 0.1);
   rX.set_r0(r0 * 2);
   rY = rsetup.timemap(rinitial, 5 * pna1);
 
   rsetup.drawSolution(".", "rsolution", rinitial);
   rsetup.drawSolution(".", "rX", rX);
   rsetup.drawSolution(".", "rY", rY);
-  bool subset = true;
+  int subset = 0;
   auto rXhull = rX.hull();
   auto rYhull = rY.hull();
   for(int i = 0; i < rXhull.dimension(); ++i) {
     if(!rXhull[i].contains(rYhull[i])) {
       std::cout << std::setprecision(16);
       std::cout << i << "\n\t" << rXhull[i] << "\n\t" << rYhull[i] << "\n";
-      subset = false;
-      //break;
+    }else{
+        subset += 1;
     }
   }
-  std::cout << subset << "\n";
+  std::cout << subset << "/" << rsetup.M() << "\n";
 }
