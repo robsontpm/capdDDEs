@@ -154,7 +154,7 @@ public:
 			m_params(params),
 			m_p(p), m_n(n),
 			m_reqSteps(reqSteps), m_maxSteps(maxSteps), m_maxOrder(maxOrder),
-			crossingDirection(capd::poincare::MinusPlus),
+			m_crossingDirection(capd::poincare::MinusPlus),
 			m_experimentalRenormalizeVariational(false)
 	{ updateGrid(); updateSteps(); }
 
@@ -163,7 +163,7 @@ public:
 			m_params(PARAMS_COUNT),
 			m_p(1), m_n(1),
 			m_reqSteps(reqSteps), m_maxSteps(maxSteps), m_maxOrder(maxOrder),
-			crossingDirection(capd::poincare::MinusPlus),
+			m_crossingDirection(capd::poincare::MinusPlus),
 			m_experimentalRenormalizeVariational(false)
 	{ loadSetup(filepath); }
 
@@ -172,7 +172,7 @@ public:
 			m_params(PARAMS_COUNT),
 			m_p(1), m_n(1),
 			m_reqSteps(reqSteps), m_maxSteps(maxSteps), m_maxOrder(maxOrder),
-			crossingDirection(capd::poincare::MinusPlus),
+			m_crossingDirection(capd::poincare::MinusPlus),
 			m_experimentalRenormalizeVariational(false)
 	{
 		rawLoadSetup(input, m_p, m_n, m_params);
@@ -225,7 +225,7 @@ public:
 	const Grid& grid() const { return m_grid; }
 
 	/** sets the crossing directions for PoincareMaps used in this helper subroutines */
-	void setCrossingDirection(capd::poincare::CrossingDirection const& d) { this->crossingDirection = d; }
+	void setCrossingDirection(capd::poincare::CrossingDirection const& d) { this->m_crossingDirection = d; }
 
 	/** This creates an object representing the equation for the current value of parameters set in the helper. */
 	DDEq makeEquation(){ return makeEquationTemplate<DDEq>(); }
@@ -281,7 +281,7 @@ public:
 	 */
 	PoincareMap makePoincareMap(Solver& solver, JetSection& section){
 		PoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
+		pm.setDirection(this->m_crossingDirection);
 		pm.setRequiredSteps(m_reqSteps);
 		pm.setMaxSteps(m_maxSteps);
 		return pm;
@@ -295,9 +295,10 @@ public:
 	 */
 	C1PoincareMap makeC1PoincareMap(C1Solver& solver, C1JetSection& section){
 		C1PoincareMap pm(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
+		pm.setDirection(this->m_crossingDirection);
+		pm.setRequiredSteps(this->m_reqSteps);
+		pm.setMaxSteps(this->m_maxSteps);
+		std::cerr << "req/max: " << this->m_reqSteps << " " << this->m_maxSteps << std::endl;
 		return pm;
 	}
 
@@ -642,9 +643,6 @@ public:
 
 		C1Solver solver = makeC1Solver();
 		C1PoincareMap pm = makeC1PoincareMap(solver, section);
-		pm.setDirection(this->crossingDirection);
-		pm.setRequiredSteps(m_reqSteps);
-		pm.setMaxSteps(m_maxSteps);
 
 		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
 		Vector x(M), Px(M); fPX = Vector(M);
@@ -927,7 +925,7 @@ private:
 	step_type m_maxSteps;
 	step_type m_maxOrder;
 	Grid m_grid;
-	capd::poincare::CrossingDirection crossingDirection; // TODO: rename m_... (cosistency)
+	capd::poincare::CrossingDirection m_crossingDirection; // TODO: rename m_... (cosistency)
 
 	// experimental setups...
 	bool m_experimentalRenormalizeVariational;
