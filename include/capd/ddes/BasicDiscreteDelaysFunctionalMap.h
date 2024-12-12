@@ -245,36 +245,53 @@ public:
 	 * Basically it computes Taylor coefficients of the solution at t0
 	 */
 	virtual void computeDDECoefficients(
-				const RealType& t0, const ValueStorageType& u, 	// input
+				const RealType& t0, const ValueStorageType& u, 		// input
 				ValueStorageType& coeffs) const {					// output
-		// we assume u[0] is always present, and all other u[i] has the same
+		// we assume u[0] is always present, and all other u[i] has the same dimension
+		// we only check once. If other have different, then the CAPD will throw a generic exception
 		checkDimension(u[0]);
 		// we assume that coeffs has a proper size for the computation.
 		// for example, set when user took data u with collectComputationData()
+		// if not, then some other generic exceptions can happen.
 		size_type resultOrder = coeffs.size() - 1;
 
 		typedef fadbad::T<ScalarType> AutoDiffTScalar; 		// Auto Diff T (Taylor) scalar type
 		typedef typename VectorType::template rebind<AutoDiffTScalar>::other TADVectorType;
 		TADVectorType args(dimension());
 		// propagate arguments in a given order - first value at t0
-		// then jet of \tau_1, then \tau_2, etc...
-		// this is change from the initial paper!, where I have done delay terms first
-		// this is coherent with what is in the general DDE literature though...
-		// we assume this order in u (because we produce itd this way in collectComputationData()!).
+		// then jet of x at t0-\tau_1, then t0-\tau_2, etc...
+		// please note that u is a Value storage (not variable storage), that is, it
+		// contains by assumption only vectors (interval hulls, not e.g. Lohner/Affine sets with a structure!)
+		// moreover, we have u[0] = x(t0) \subset \R^d, u[1] = x(t-\tau_1), ..., x[m] = x(t-\tau_m).
+		// we assume this order in u (because we produce it this way in collectComputationData()!).
+		// We will successively fill-in TFAD args below as the recursion will go on
+		// using this iterator to u variable.
+		// NOTE: IMPORTANT!
+		//		this iterator only goes forward, newer should get reset!
+		// 		because the older data was inserted into 'args', and we only need to fill new data,
+		// This is why we expect the u to be organized in this way!
 		auto current_u = u.begin();
 		auto iarg = args.begin();
+		// here we start from 0, as we are extracting the value at t0
+		// later in the code you might notice we start from 1.
 		for (size_type idelay = 0; idelay <= delaysCount(); ++idelay, ++current_u)
 			for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
 				(*iarg)[0] = *iu;
 
-		// we are ready to go for the recurrent relation on coefficients.
+		// now we are ready to go for the recurrent relation on coefficients
+		// to produce first derivative. Later, after each loop, we will have
+		// all derivatives up to order n and we are ready to compute n+1'st.
 		coeffs[0] = u[0]; // by definition, see paper
 		for (size_type k = 1 ; k <= resultOrder; ++k){
-			// eval Autodiff routine so that we would be able to extract v[k-1] = F^{[k-1]}(...)
-			TADVectorType v(imageDimension());
+			// eval Autodiff routine so that we would be able to
+			// extract v[k-1] = F^{[k-1]}(...), as in the paper.
+			// The constructor with false here is important to not initialize v data
+			// with anything, each position in v will be just a fresh AD variable.
+			// in (2024) there was an error introduced by use of other constructor, when CAPD changed.
+			TADVectorType v(imageDimension(), false);
 			m_map(t0, args, v);
 			// propagate AD jets and output.
-			// this will be F_k from the latest paper on DDE integration.
+			// this will be F_k from the latest paper on DDE integration (FoCM 2024).
 			VectorType Fk(imageDimension());
 			auto iarg = args.begin();
 			for (size_type i = 0; i < imageDimension(); ++i, ++iarg){
@@ -284,11 +301,14 @@ public:
 				(*iarg)[k] = Fk[i] / ScalarType(k);
 			}
 			// this is the right formula from the last paper!
+			// it is the value of x^{[k]}(t0) here.
 			coeffs[k] = Fk / ScalarType(k);
-			// do not propagate anything else if we are past the requestedOrder (it might cause errors)
+			// do not propagate anything else if we are past the
+			// requestedOrder (it might cause errors if we do!)
 			if (k == resultOrder) break;
 			// propagate higher order coefficients in the past to the args Vector.
-			// the recurrent Taylor formula is already there.
+			// note that we have already updated the vector with value at t0,
+			// therefore we are starting from idelay = 1.
 			for (size_type idelay = 1; idelay <= delaysCount(); ++idelay, ++current_u){
 				for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
 					(*iarg)[k] = *iu;
@@ -297,24 +317,39 @@ public:
 	} /// computeDDECoefficients
 
 	/**
-	 * see Interface docs.
+	 * see Interface docs. This is more involved version, that also
+	 * computes derivative of the step map with respect of initial data.
+	 * This might be used by Lohner algorithm in the set.move() to select
+	 * good coordinate frame for the next set.
+	 *
+	 * The steps are basically the same as in
+	 * @see virtual void computeDDECoefficients(const RealType&, const ValueStorageType&, ValueStorageType&),
+	 * but we do some extra steps. The comments from that procedure apply to this.
+	 *
+	 * TODO: (NOT URGENT, FUTURE, RETHINK) there is some redundancy in the code (with the other version),
+	 * TODO: (NOT URGENT, FUTURE, RETHINK) but I don't believe we can make it more DRY without sacrificing speed/RAM usage...
 	 */
 	virtual void computeDDECoefficients(
-				const RealType& t0, const ValueStorageType& u, 			// input
+				const RealType& t0, const ValueStorageType& u, 				// input
 				ValueStorageType& coeffs, JacobianStorageType& Du) const {	// output
-		// we assume u[0] is always present, and all other u[i] has the same
+		// we assume u[0] is always present, and all other u[i] has the same dimension
+		// we only check once. If other have different, then the CAPD will throw a generic exception
 		checkDimension(u[0]);
 		// we assume that coeffs has a proper size for the computation.
 		// for example, set when user took data u with collectComputationData()
+		// if not, then some other generic exceptions can happen.
 		size_type resultOrder = coeffs.size() - 1;
-		// d = space dimension of a single variable in the map / input data in ValueStorageType (must be the same).
+		// d = space dimension of a single variable in the
+		// map / input data in ValueStorageType (must be the same).
 		size_type d = this->imageDimension();
 		size_type numDelays = delaysCount();
 		// those are common matrices of dimension M(d, d),
 		MatrixType Id(d, d); Id.setToIdentity();
 		MatrixType Zero(d, d);
 
-		// This is obvious
+		// This is obviously the number of d-dimensional variables
+		// that the coefficients at t0 depend on.
+		// Those will be basically 1 + num-delays * resultOrder
 		size_type partialsCount = u.size();
 		// in partialsDimension we keep how many actual coefficients from all of the Jets used to
 		// compute rhs of the equation. As we are computing jets up to coeffs.order() (incl.).
@@ -323,9 +358,10 @@ public:
 		// Taylor coefficients in any jet used. Therefore the number of Taylor coeffs at each
 		// jet used is resultOrder. This is trivial, but I want this to be reiterated for readability.
 		size_type partialsDimension = d * u.size();
-		// we make room to store Jacobian matrices. Each matrix will be M(d,d).
-		// Du is shorthand for $D_u coeffs$
-		// in Du[i][j] we will have \partial coeffs[i]
+		// we make room to store Jacobian matrices. Each matrix will be of shape d x d.
+		// Du is shorthand for $D_u coeffs = \frac{\partial coeffs_j}{\partial u_i}$
+		// (the last notation means we are iterating over all possibilities and we put it into a matrix)
+		// in Du[i][j] we will have $\frac{\partial coeffs[i]}{\partial u[j]}$ (a d x d Matrix)
 		Du.clear(); Du.resize(resultOrder + 1);
 		for (auto iDu = Du.begin(); iDu != Du.end(); ++iDu)
 			iDu->resize(partialsCount);
@@ -336,9 +372,22 @@ public:
 		// this is Automatic Differentiation both w.r.t t but also w.r.t. coefficients.
 		// we will use it to automatically eval the r.h.s. of the equation with all
 		// partial derivatives when recursively compute Taylor coefficients at current t0
+		// So TAD computes derivatives of the jet composition, but with FAD inside we can see how the
+		// composition depends on the initial variables!
+		// again, we need the constructor with false here to combat a
+		// 'bug' in FADBAD/CAPD cooperation. The bug was that, using another constructor,
+		// all AD variables were assigned to the same space and shared internals
+		// form AD perspective this was ok, but this was not what we meant. We wanted to have n fresh
+		// variables inside the vector, not dependent on each other, not a vector (x, x, x, x), that
+		// depends on x. I leave this comment for future if we encounter similar problem.
 		TFADVectorType args(dimension());
 
-		// we will successively fill-in args as the recursion will go on
+		// we will successively fill-in TFAD args below as the recursion will go on
+		// using this iterator to u variable.
+		// NOTE: IMPORTANT!
+		//		this iterator only goes forward, newer should get reset!
+		// 		because the older data was inserted into 'args', and we only need to fill new data,
+		// This is why we expect the u to be organized in this way!
 		auto current_u = u.begin();
 		auto iarg = args.begin();
 		// this will hold current number of parameter (among 0,.., partialsDimension-1)
@@ -353,6 +402,7 @@ public:
 		// possibility to automatically compute dependence of the formulas on them
 		// i.e. the value \frac{\partial coeffs}{\partial u[partialu]}
 		// Note: here k = 0, and we iterate idelay from 0. Later, it will be from 1. See docs there.
+		// we start from 0to fill the data corresponding to the value u[0] = x(t0) (see other version of the computeDDECoefficients)
 		for (size_type idelay = 0; idelay <= numDelays; ++idelay, ++current_u, ++partialu){
 			for (auto iu = current_u->begin(); iu != current_u->end(); ++iarg, ++iu, ++partialAD){
 				// (*iarg)[0] is [0]-th order Taylor coefficient
@@ -409,6 +459,7 @@ public:
 			// We have now propagated dependence of the solution on the value at
 			// present time t0 to Du. Now, finally, we propagate higher order
 			// coefficients in the past to args for the next level of recurrence.
+			// we fill from idelay = 1 because we have filled the respective value from computation above.
 			for (size_type idelay = 1; idelay <= numDelays; ++idelay, ++current_u, ++partialu){
 				for (auto iu = current_u->begin(); iu != current_u->end(); ++iarg, ++iu, ++partialAD){
 					// (*iarg)[0] is [0]-th order Taylor coefficient

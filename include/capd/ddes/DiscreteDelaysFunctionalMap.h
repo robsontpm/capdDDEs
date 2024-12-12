@@ -298,6 +298,12 @@ public:
 		// contains by assumption only vectors (interval hulls, not e.g. Lohner/Affine sets with a structure!)
 		// moreover, we have u[0] = x(t0) \subset \R^d, u[1] = x(t-\tau_1), ..., x[m] = x(t-\tau_m).
 		// we assume this order in u (because we produce it this way in collectComputationData()!).
+		// We will successively fill-in TFAD args below as the recursion will go on
+		// using this iterator to u variable.
+		// NOTE: IMPORTANT!
+		//		this iterator only goes forward, newer should get reset!
+		// 		because the older data was inserted into 'args', and we only need to fill new data,
+		// This is why we expect the u to be organized in this way!
 		auto current_u = u.begin();
 		auto iarg = args.begin();
 		// here we start from 0, as we are extracting the value at t0
