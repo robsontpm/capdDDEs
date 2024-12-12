@@ -28,7 +28,6 @@
  * (v.2 or whatever compatible with CAPD license)
  */
 
-// TODO: (!!!URGENT!) wlozyc tam gdzie wersja rigorous, zrobicv, zeby rigorous korzystal z kodu (DRY)
 #ifndef _CAPD_DDES_BASICDISCRETEDELAYSFUNCTIONALMAP_H_
 #define _CAPD_DDES_BASICDISCRETEDELAYSFUNCTIONALMAP_H_
 
@@ -47,11 +46,11 @@ namespace ddes{
 /**
  * A class to represent right hand side of the DDE of the form:
  *
- *     x' = f(t, x(t), x(t-tau_1), ..., x(t-tau_m))
+ *     $x' = f(t, x(t), x(t-tau_1), ..., x(t-tau_m))$
  *
  * NOTE: This is a demo version of what I want to achieve with the DDEs code interface
  *       I assume it should be similar to ODEs in original CAPD.
- *       I assume that any RHS map f of the equation x'(t) = f(x_\tau)
+ *       I assume that any RHS map f of the equation $x'(t) = f(x_\tau)$
  *       should be representable with similar interface (i.e. the function
  *       accepts some SolutionCurve and can produce Jet at current time in the
  *       solution defined with the equation (function computeDDECoefficients)
@@ -59,17 +58,28 @@ namespace ddes{
  *       Forward Taylor Jets of itself at a given point (that is used in the equation)
  *       and that it can return its value at a current time.
  *
- *       In the implementation below, I assume that I can ask about SOlutionCUrve and its Jet
- *       at $t-\tau$, $t$ is current time. Then I construct an AD jet of x(t-\tau) and pass
- *       it to standard CAPD map.
+ *       In the implementation below, I assume that I can ask about SolutionCurve and its Jet
+ *       at $t-\tau_i$, where $t$ is current time. Then I construct an AD jet of
+ *       $x(t-\tau_i)$ for all necessary $i$'s and pass sequentially through
+ *       the procedure similar to that of CAPD computeODECoefficients().
  *
- * NOTE: I do not know if integral equations (i.e. x'(t) = F(\int_{t-\tau}^t g(x(s)) ds) could be described in this manner...
- *       But I hope it could be done, at least if g is linear in x (e.g. g = Id).
+ * NOTE: I do not know if integral equations (i.e. $x'(t) = F(\int_{t-\tau}^t g(x(s)) ds$)
+ * 		 could be described in this manner but I hope it could be done, at least if g is
+ * 		 linear in x (e.g. g = Id).
  * NOTE: in fact, functional map could have operators that are templates, but we assume that
  *       the argument curve might have some requirements when computing, for example
  *       it could determine only the delays at the specific grid points (because of the loss of regularity,
- *       we are not able to allways give jets over some general intervals, see new notes).
+ *       we are not able to always give jets over some general intervals, see new notes).
  *       Therefore, we supply the Map with appropriate CurveType that it can manipulate.
+ * NOTE: This version is used only in non-rigorous computations!
+ * NOTE: The @see capd::ddes::NonrigorousSetup and @see capd::ddeshelper::NonrigorousHelper classes
+ *       defines a concrete version of this class for you, so you don't need to worry
+ *       about the template parameters and such.
+ *
+ * Template parameters:
+ * @param FinDimMapSpec this is a specification of f in r.h.s., we assume $f : \R^{d + m*d} \to \R^d$
+ * @param SolutionCurveSpec the representation of the solution curve, the most important thing that this class depends on
+ * @param JetSpec the default value should always be ok
  */
 template<
 	typename FinDimMapSpec,
@@ -103,14 +113,51 @@ public:
     template <typename OtherSolutionSpec, typename OtherJetSpec=typename OtherSolutionSpec::JetType>
     struct rebind { typedef BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, OtherSolutionSpec, OtherJetSpec> other; };
 
+    /** conversion between e.g. rigorous and non-rigorous version */
 	template<typename OtherDiscreteDelaysFunctionalMap>
 	BasicDiscreteDelaysFunctionalMap(const OtherDiscreteDelaysFunctionalMap& orig): m_map(orig.m_map), m_delays(orig.m_delays){}
+	/** standard copy contructor */
 	BasicDiscreteDelaysFunctionalMap(const BasicDiscreteDelaysFunctionalMap& orig): m_map(orig.m_map), m_delays(orig.m_delays){}
-	BasicDiscreteDelaysFunctionalMap(){ this->checkMapSignature(); }
-	BasicDiscreteDelaysFunctionalMap(const TimePointType& tau) { m_delays.push_back(tau); this->checkMapSignature(); }
-	BasicDiscreteDelaysFunctionalMap(const MapType& f): m_map(f) { this->checkMapSignature(); }
-	BasicDiscreteDelaysFunctionalMap(const MapType& f, const TimePointType& tau): m_map(f) { m_delays.push_back(tau); this->checkMapSignature(); }
+	/**
+	 * this is the basic version, you should supply the finite map and the delays.
+	 *
+	 * You might do it this way (you need to use your own data types!), using initializers { }:
+	 *
+	 * 		MyMap f;
+	 * 		DiscreteDelaysFunctionalMap<MyMap, SolutionCurve>(f, {tau1, tau2});
+	 *
+	 * Please note that the constructors check if you supplied enough delays to match the signature of the MapType!
+	 * @see SampleEqns.h for some examples how to write your own MapType!
+	 *
+	 * If the number of delays do not match the MapType, then an std::error will be thrown.
+	 */
 	BasicDiscreteDelaysFunctionalMap(const MapType& f, std::vector<TimePointType> delays): m_map(f), m_delays(delays){ this->checkMapSignature(); }
+	/**
+	 * this uses default constructor of the MapType and assume no delays!
+	 * @see BasicDiscreteDelaysFunctionalMap(const MapType& f, std::vector<TimePointType> delays)
+	 */
+	BasicDiscreteDelaysFunctionalMap(){ this->checkMapSignature(); }
+	/**
+	 * this uses default constructor of the MapType and assume there is just one delay!
+	 * @see BasicDiscreteDelaysFunctionalMap(const MapType& f, std::vector<TimePointType> delays)
+	 */
+	BasicDiscreteDelaysFunctionalMap(const TimePointType& tau) { m_delays.push_back(tau); this->checkMapSignature(); }
+	/**
+	 * this uses the given map f and assume there is no delay!
+	 * @see BasicDiscreteDelaysFunctionalMap(const MapType& f, std::vector<TimePointType> delays)
+	 */
+	BasicDiscreteDelaysFunctionalMap(const MapType& f): m_map(f) { this->checkMapSignature(); }
+	/**
+	 * this uses the given map f and assume there is just one delay!
+	 * This is for convenience for the most users.
+	 * @see BasicDiscreteDelaysFunctionalMap(const MapType& f, std::vector<TimePointType> delays)
+	 */
+	BasicDiscreteDelaysFunctionalMap(const MapType& f, const TimePointType& tau): m_map(f) { m_delays.push_back(tau); this->checkMapSignature(); }
+	/**
+	 * this is a constructor in an old C like fashion. Maybe it should be deprecated?
+	 * n is the size of delays.
+	 * @see BasicDiscreteDelaysFunctionalMap(const MapType& f, std::vector<TimePointType> delays)
+	 */
 	BasicDiscreteDelaysFunctionalMap(const MapType& f, int n, TimePointType delays[]): m_map(f){ for (size_type i = 0; i < n; ++i) m_delays.push_back(delays[i]); this->checkMapSignature(); }
 	/** standard */
 	virtual ~BasicDiscreteDelaysFunctionalMap() {}
@@ -131,7 +178,10 @@ public:
 	/** number of delays */
 	size_type delaysCount() const { return m_delays.size(); }
 
-	/** Implementation of virual func. See Interface docs. */
+	/**
+	 * Implementation of the evaluation of this function on the given curve.
+	 * See Interface docs.
+	 */
 	VectorType operator()(const TimePointType& t, const CurveType& x) const {
 		// checkCurveDimension(x, "operator()"); // TODO: (NOT URGENT) use from Interface later
 		VectorType args(this->dimension());
@@ -148,11 +198,22 @@ public:
 	}
 
 	/**
-	 * Implementation of virual func. See Interface docs.
+	 * This is an implementation of a virtual func. that is needed
+	 * by Taylor-type integrators. See Interface docs for information
+	 * on what is expected to be returned in given variables.
 	 *
-	 * TODO: (NOT URGENT) explain what is stored in output for DiscreteDelaysMap...
+	 * Input is self explanatory: t0 = current time, th = t0 + h = next time,
+	 * dt = h = the step size, x - the solution curve.
+	 * Those are kind of redundant, but they might be useful in some other scenarios,
+	 * like computing epsilon steps, unbounded delays, etc.
+	 * The curve x is not necessary the solution segment x_t, it might be the
+	 * whole solution on a big interval, but it should span at least [t0 - max delay, t0].
 	 *
-	 * Warning: dt should be enclosure for the step [0, h]
+	 * The output (t = t0 here):
+	 * out_u = $(x(t), x(t-\tau_1), .., x(t-\tau_m), x^[1](t-\tau_1), ..., x^[1](t-\tau_m), x^[2](t-\tau_1), ..., x^[k](t-\tau_1), ... )$
+	 * out_admissible_order = the maximal order of a jet you are supposed to produce in your computations
+	 * you can use jests to out_admissible_order - 1, i.e. the order k in the definition of u
+	 * above goes up to out_admissible_order - 1.
 	 */
 	virtual void collectComputationData(
 					const TimePointType& t0, const TimePointType& th,	//input
@@ -160,6 +221,7 @@ public:
 					VariableStorageType& out_u, 						// output
 					size_type& out_admissible_order) const {			// output
 		// TODO: (NOT URGENT) DRY with the other  collectComputationData() method.
+		// TODO: (NOT URGENT) I'm not sure it will be possible, but think about it!
 		out_u.clear();
 		// we collect jets and compute admissible order
 		// TODO: (NOT URGENT) rewrite using pointers to Jets (will be faster)!
@@ -178,7 +240,10 @@ public:
 				out_u.push_back((*jit)[k]);
 	}
 
-	/** Implementation of virual func. See Interface docs. */
+	/**
+	 * Implementation of virtual func. See Interface docs.
+	 * Basically it computes Taylor coefficients of the solution at t0
+	 */
 	virtual void computeDDECoefficients(
 				const RealType& t0, const ValueStorageType& u, 	// input
 				ValueStorageType& coeffs) const {					// output

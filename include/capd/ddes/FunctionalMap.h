@@ -40,8 +40,11 @@ namespace capd{
 namespace ddes{
 
 /**
- * * TODO: rewrite DOCS
- * this is the interface of a Functional map, that can be evaluated
+ * NOTE: This is a base class that is not meant to be used directly by the end user.
+ * Please refer to user manual, publications and examples to see what classes
+ * you should use.
+ *
+ * This is the interface of a Functional map, that can be evaluated
  * only by "querying" the curve about its jets at various points in the past.
  * it can produce jet at a given time t together with partial derivatives
  * w.r.t. to internal variables from curve used in the computation by
@@ -59,15 +62,19 @@ namespace ddes{
  * will also fall into this category.
  *
  * The concrete implementations will be available later.
+ * For reference @see class BasicDiscreteDelaysFunctionalMap.
  *
- * Implementation note: when implementing concrete class of
+ * Developer note: when implementing concrete class of
  * this interface, do not forget to put
  * 	 using BaseClass::operator();
  *	 using BaseClass::computeDDECoefficients;
  * in the public part of your class to gain access to default
  * implementations of some functions.
  *
- * TODO: (NOT URGENT, FUTURE, RETHINK) it would be better not to pass containers to computeDDECoefficients, but maybe iterators to given types? It could be used to compute in a given place, i.e. at an already created Jet?
+ * TODO: (NOT URGENT, FUTURE, RETHINK) it would be better not to pass containers to computeDDECoefficients,
+ * TODO: (NOT URGENT, FUTURE, RETHINK) but maybe iterators to given types? It could be used to compute in a
+ * TODO: (NOT URGENT, FUTURE, RETHINK) given place, i.e. at an already created Jet?
+ * TODO: (NOT URGENT, FUTURE, RETHINK) This might be time/space saving optimization.
  */
 template<typename SolutionCurveSpec, typename JetSpec=typename SolutionCurveSpec::JetType>
 class DDEBasicFunctionalMap {
@@ -129,6 +136,7 @@ public:
 	virtual size_type imageDimension() const = 0;
 	/**
 	 * computes value of the map at a given time point for a given solution curve.
+	 *
 	 * THIS FUNCTION NEEDS TO BE IMPLEMENTED IN DERIVED CLASSES.
 	 */
 	virtual VectorType operator()(const TimePointType& t0, const CurveType& x) const = 0;
@@ -205,7 +213,7 @@ public:
 	 */
 	virtual void computeDDECoefficients(
 				const RealType& t0, const ValueStorageType& u, 	// input
-				ValueStorageType& coeffs) const = 0;				// output
+				ValueStorageType& coeffs) const = 0;			// output
 
 	/**
 	 * computes recursively the Jet at time t for a given curve for a DDE of the form:
@@ -293,34 +301,12 @@ protected:
 
 
 /**
- * TODO: rewrite DOCS
- * this is the interface of a Functional map, that can be evaluated
- * only by "querying" the curve about its jets at various points in the past.
- * it can produce jet at a given time t together with partial derivatives
- * w.r.t. to internal variables from curve used in the computation by
- * recurrent formula for a functional equation:
+ * NOTE: This is a base class that is not meant to be used directly by the end user.
+ * Please refer to user manual, publications and examples to see what classes
+ * you should use.
  *
- * 		x'(t) = f(t, x)
- *
- * where x is the solution curve in \R^d defined for times smaller than
- * t (up to some maximal past time usually).
- *
- * A good example of such a functional map is discrete delay case,
- * e.g. F(t, x) = f(t, x(t), x(t-tau)), f : \R \times \R^{2d}->\R
- * (easily extended to more delays). (Probably) the functionals
- * that include integral over the past: F(t, x) = f(t, \int_{t-tau}^{t} x(s) ds)
- * will also fall into this category.
- *
- * The concrete implementations will be available later.
- *
- * Implementation note: when implementing concrete class of
- * this interface, do not forget to put
- * 	 using BaseClass::operator();
- *	 using BaseClass::computeDDECoefficients;
- * in the public part of your class to gain access to default
- * implementations of some functions.
- *
- * TODO: (NOT URGENT, FUTURE, RETHINK) it would be better not to pass containers to computeDDECoefficients, but maybe iterators to given types? It could be used to compute in a given place, i.e. at an already created Jet?
+ * This is a base class for rigorous computation, but the same documentation applies here
+ * as in @see class DDEBasicFunctionalMap (the version for non-rigorous computation).
  */
 template<typename SolutionCurveSpec, typename JetSpec=typename SolutionCurveSpec::JetType>
 class DDERigorousFunctionalMap : public DDEBasicFunctionalMap<SolutionCurveSpec, JetSpec> {
@@ -380,6 +366,24 @@ public:
 				const RealType& dt, const CurveType& x, 	 						// input
 				VariableStorageType& out_u, ValueStorageType& out_encl,				// output
 				size_type& out_admissible_order) const = 0;							// output
+
+	/**
+	 * Warning: By default, we make this method to throw an std::logic_error, as we expect
+	 * only the other version, with all the exra data might return enough information to
+	 * perform the rigorous computation. We throw an exception to prevent potentially non-rigorous
+	 * code to run in rigorous setting. The user implementing this interface might decide to
+	 * overwrite this default behaviour as needed.
+	 *
+	 * This will also cause the exception to be thrown if one of the basic computeDDECoefficients(..)
+	 * is not properly overloaded in the implementing class!
+	 */
+	virtual void collectComputationData(
+					const TimePointType& t0, const TimePointType& th,	//input
+					const RealType& dt, const CurveType& x, 	 		// input
+					VariableStorageType& out_u, 						// output
+					size_type& out_admissible_order) const {			// output
+		throw std::logic_error("collectComputationData(Nonrigorous) should not be called in rigorous setting!");
+	}
 
 	/** virtual destructor for warning suppresion */
 	virtual ~DDERigorousFunctionalMap() {}
