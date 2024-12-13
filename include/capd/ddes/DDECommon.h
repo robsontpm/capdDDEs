@@ -31,12 +31,6 @@
 #ifndef _CAPD_DDES_DDECOMMON_H_
 #define _CAPD_DDES_DDECOMMON_H_
 
-// TODO: (URGENT): why this ifdef here???? Test if works without it...
-//#if defined(_CAPD_CAPDLIB_H_) || defined(_CAPD_MPCAPD_H_)
-//#else
-//#include <capd/capdlib.h>
-//#endif
-
 #include <capd/capdlib.h>
 
 #include <vector>		// I use std::vectors for convient containers in some places
@@ -168,7 +162,8 @@ public:
 	/** Badge must be a single word! */
 	static std::string badge() { return "DiscreteTimeGrid"; }
 
-	typedef DiscreteTimeGrid ClassType;
+	typedef DiscreteTimeGrid Class;
+	typedef DiscreteTimeGrid GridType;
 	class TimePointType {
 	public:
 		typedef RealSpec RealType;
@@ -176,111 +171,145 @@ public:
 		/** Badge must be a single word! */
 		static std::string badge() { return "DiscreteTimePoint"; }
 
-		explicit operator int() const { return this->toInt(); } // explicit keyword only in C++11
-		int toInt() const { return this->m_i; }
-		operator RealType() const { return m_h * RealType(m_i); }
-		bool isZero() const { return m_i == 0 || m_h == RealType(0); }
-		std::string show() { std::ostringstream oss; oss << m_h << " * " << m_i; return oss.str(); }
-		friend TimePointType operator+(TimePointType const & a, TimePointType const & b) {
+		inline const GridType& grid() const { return this->m_grid; }
+		explicit operator int() const { return this->toInt(); }
+		inline int toInt() const { return this->m_i; }
+		inline operator RealType() const { return *(m_grid.m_ptr_h) * RealType(m_i); }
+		inline bool isZero() const { return m_i == 0 || m_grid.m_ptr_h == ptr_zero; }
+		inline std::string show() { std::ostringstream oss; oss << (*m_ptr_h) << " * " << m_i; return oss.str(); }
+		friend inline TimePointType operator+(TimePointType const & a, TimePointType const & b) {
 			a.checkGridCompatible(b, "Cannot add time points");
-			return TimePointType(a.isZero() ? b.m_h : a.m_h, a.m_i + b.m_i);
+			return TimePointType(a.isZero() ? b.m_grid : a.m_grid, a.m_i + b.m_i);
 		}
-		friend TimePointType operator-(TimePointType const & a, TimePointType const & b) {
+		friend inline TimePointType operator-(TimePointType const & a, TimePointType const & b) {
 			a.checkGridCompatible(b, "Cannot subtract time points");
-			return TimePointType(a.isZero() ? b.m_h : a.m_h, a.m_i - b.m_i);
+			return TimePointType(a.isZero() ? b.m_grid : a.m_grid, a.m_i - b.m_i);
 		}
-		TimePointType operator+=(TimePointType const & b) {
+		inline TimePointType operator+=(TimePointType const & b) {
 			checkGridCompatible(b, "Cannot add time to this point");
 			m_i += b.m_i;
 			return *this;
 		}
-		TimePointType operator-=(TimePointType const & b) {
+		inline TimePointType operator-=(TimePointType const & b) {
 			checkGridCompatible(b, "Cannot subtract time from this point");
 			m_i -= b.m_i;
 			return *this;
 		}
-		friend TimePointType operator-(const TimePointType& a) { return TimePointType(a.m_h, - a.m_i); }
-		friend TimePointType operator*(int const & a, TimePointType const & b) { return TimePointType(b.m_h, b.m_i * a); }
-		friend TimePointType operator*(TimePointType const & a, int const & b) { return b * a; }
-		friend TimePointType operator*(RealType const & a, TimePointType const & b) { throw std::logic_error("DiscreteTimeGrid::TimePoints does not support multiplication by a real value! Only integer multiplication is allowed!"); }
-		friend TimePointType operator*(TimePointType const & a, RealType const & b) { return b * a; }
-		friend bool operator==(TimePointType const & a, TimePointType const & b) { return (&a.m_h == &b.m_h) && (a.m_i == b.m_i); }
-		friend bool operator!=(TimePointType const & a, TimePointType const & b) { return !(a == b); }
-		TimePointType(TimePointType const & orig): m_h(orig.m_h), m_i(orig.m_i) {}
-		TimePointType(): m_h(zero), m_i(0) {}
+		/**
+		 * Returns a point that is b steps after the point a on the grid.
+		 * this is faster than adding two TimePoints, does not need to check compatibility!
+		 */
+		friend TimePointType operator+(TimePointType const & a, int b) {
+			return TimePointType(a.m_grid, a.m_i + b);
+		}
+		/**
+		 * Returns a point that is b steps before on the grid.
+		 * this is faster than adding two TimePoints, does not need to check compatibility!
+		 */
+		friend inline TimePointType operator-(TimePointType const & a, int b) { return a + (-b); }
+		/**
+		 * Moves the point b steps further on the grid.
+		 * this is faster than adding two TimePoints, does not need to check compatibility!
+		 */
+		inline TimePointType operator+=(int b) {
+			m_i += b;
+			return *this;
+		}
+		/**
+		 * Moves the point is b steps back on the grid.
+		 * this is faster than adding two TimePoints, does not need to check compatibility!
+		 */
+		inline TimePointType operator-=(int b) { return this->operator+=(-b); }
+		/** this is getting -t from t */
+		friend inline TimePointType operator-(const TimePointType& a) { return TimePointType(a.m_grid, - a.m_i); }
+		friend inline TimePointType operator*(int const & a, TimePointType const & b) { return TimePointType(b.m_grid, b.m_i * a); }
+		friend inline TimePointType operator*(TimePointType const & a, int const & b) { return b * a; }
+		friend inline TimePointType operator*(RealType const & a, TimePointType const & b) { throw std::logic_error("DiscreteTimeGrid::TimePoints does not support multiplication by a real value! Only integer multiplication is allowed!"); }
+		friend inline TimePointType operator*(TimePointType const & a, RealType const & b) { return b * a; }
+		inline bool operator==(TimePointType const & other) const { return (&this->m_grid == &other.m_grid) && (this->m_i == other.m_i); }
+		inline bool operator!=(TimePointType const & other) const { return !(*this == other); }
+		TimePointType(TimePointType const & orig): m_grid(orig.m_grid), m_i(orig.m_i) {}
+		TimePointType(): m_grid(GridType::trivialGrid), m_i(0) {}
 		TimePointType& operator=(TimePointType const & orig) {
 			this->checkGridCompatible(orig);
-			if (m_h == DiscreteTimeGrid::zero)
+			if (m_grid.m_ptr_h == ptr_zero)
 				throw std::logic_error("DiscreteTimeGrid::TimePointType: cannot assign to absolute zero-point");
 			this->m_i = orig.m_i;
 			return *this;
 		}
-		friend bool operator<(TimePointType const & a, TimePointType const & b) {
+		friend inline  bool operator<(TimePointType const & a, TimePointType const & b) {
 			try { a.checkGridCompatible(b); } catch (std::logic_error& e) { return RealType(a) < RealType(b); }
 			return a.m_i < b.m_i;
 		}
-		friend bool operator>(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return b < a; }
-		friend bool operator<=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(a > b); }
-		friend bool operator>=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(b > a); }
+		friend inline bool operator>(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return b < a; }
+		friend inline bool operator<=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(a > b); }
+		friend inline bool operator>=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(b > a); }
 
 		friend std::ostream& operator<<(std::ostream & out, TimePointType const & t) {
-			// TODO: IMPORTANT: test adding the representation in front!
 			out << RealType(t) << " := " << TimePointType::badge() << " ";
-			out << t.m_i << " " << t.m_h;
+			out << t.m_i << " " << t.m_grid.h();
 			return out;
 		}
 		friend std::istream& operator>>(std::istream & in, TimePointType & t) {
-			// TODO: IMPORTANT: test adding the representation in front!
 			RealType dump_repr; in >> dump_repr;
 			helper_dump_badge(in); // dump ":="
 			helper_dump_badge(in); // dump badge() = "DiscreteTimePoint"
 			RealType tmp;
 			in >> t.m_i >> tmp;
-			if (tmp != t.m_h){ // check at least values
+			if (tmp != *(t.m_grid.m_ptr_h)){ // check at least values
 				std::ostringstream info;
 				info << "TimePointType: Point from input is probably from some other grid. ";
-				info << "Input h = " << tmp << " vs grid h = " << t.m_h;
+				info << "Input h = " << tmp << " vs grid h = " << *(t.m_grid.m_ptr_h);
 				throw std::logic_error(info.str());
 			}
 			return in;
 		}
 	protected:
-		const RealSpec& m_h;
+		const GridType& m_grid;
 		int m_i;
 		void checkGridCompatible(TimePointType const & other, std::string extraInfo = "") const {
-			if (this->isZero() || other.isZero()) return; 	// zero is compatible to all
-			if (&(this->m_h) != &(other.m_h)){  			// point to the same m_h!
+			if (this->isZero() || other.isZero()) return; 		// zero is compatible to all
+			if (this->m_grid.m_ptr_h != other.m_grid.m_ptr_h){	// points must be physically the same
 				std::ostringstream info;
-				info << "DiscreteTimePoint: " << extraInfo << ". Incompatible grid step: ";
-				info << this->m_h << " vs " << other.m_h << "\n";
-				info << "[" <<  &(this->m_h) << " vs " << &(other.m_h) << "]\n";
+				info << "DiscreteTimePoint: " << extraInfo << ". The points come from different grids (even if they have the same step size h)!";
+				info << *(this->m_grid.m_ptr_h) << " vs " << *(other.m_grid.m_ptr_h) << "\n";
+				info << "[" <<  this->m_grid.m_ptr_h << " vs " << other.m_grid.m_ptr_h << "]\n";
 				throw std::logic_error(info.str());
 			}
 		}
-		TimePointType(RealType const & h, int i): m_h(h), m_i(i){}
+		TimePointType(GridType const & grid, int i): m_grid(grid), m_i(i){}
 		friend class DiscreteTimeGrid<RealType>;
 	};
+	friend class TimePointType;
 
-	DiscreteTimeGrid(DiscreteTimeGrid const& orig): m_h(orig.m_h) {}
-	DiscreteTimeGrid& operator=(DiscreteTimeGrid const& orig) { m_h = orig.m_h; return *this; }
-	friend bool operator==(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return a.m_h == b.m_h; }
+	DiscreteTimeGrid(DiscreteTimeGrid const& orig): m_ptr_h(orig.m_ptr_h) {}
+	DiscreteTimeGrid& operator=(DiscreteTimeGrid const& orig) { m_ptr_h = orig.m_ptr_h; return *this; }
+	friend bool operator==(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return a.m_ptr_h == b.m_ptr_h; }
 	friend bool operator!=(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return !(a == b); }
-	DiscreteTimeGrid(): m_h(1.0) {}
-	DiscreteTimeGrid(RealSpec h): m_h(h) {}
-	TimePointType point(int i) const { return TimePointType(m_h, i); }
-	TimePointType operator()(int i) const { return TimePointType(m_h, i); }
+	DiscreteTimeGrid(): m_ptr_h(ptr_zero) {}
+	DiscreteTimeGrid(const RealSpec& h): m_ptr_h(h == zero? ptr_zero : std::make_shared<RealSpec>(h)) {} // this way we always point out to the same 0!
+	TimePointType point(int i) const { return TimePointType(*this, i); }
+	TimePointType operator()(int i) const { return TimePointType(*this, i); }
 	void split(RealSpec t, TimePointType& ti, RealSpec& epsi) const {
 		int i = 0;
-		if (m_h != zero){ i = closestSmallerInt(t / m_h); }
-		ti = TimePointType(m_h, i);
+		if (m_ptr_h != ptr_zero){ i = closestSmallerInt(t / *m_ptr_h); }
+		ti = TimePointType(this, i);
 		epsi = t - RealSpec(ti);
 	}
-	static const RealSpec zero;
+	RealSpec h() const { return *m_ptr_h; }
+	static const RealSpec zero;  						// this way there is always exactly one physical zero we can use
+	static const std::shared_ptr<RealSpec> ptr_zero;  	// used to initialize shared ptrs
+	static const GridType trivialGrid;  				// this way there is always at least one grid
 protected:
-	RealSpec m_h;
+	std::shared_ptr<RealSpec> m_ptr_h;
+	DiscreteTimeGrid(const std::shared_ptr<RealSpec> ptr_h): m_ptr_h(ptr_h) {} 	 // making it private, so no one tries to override
 };
 template<typename RealSpec>
-const RealSpec DiscreteTimeGrid<RealSpec>::zero = RealSpec(0);
+const RealSpec DiscreteTimeGrid<RealSpec>::zero = 0;
+template<typename RealSpec>
+const std::shared_ptr<RealSpec>  DiscreteTimeGrid<RealSpec>::ptr_zero = std::make_shared<RealSpec>(DiscreteTimeGrid<RealSpec>::zero);
+template<typename RealSpec>
+const DiscreteTimeGrid<RealSpec> DiscreteTimeGrid<RealSpec>::trivialGrid(ptr_zero);
 
 /**
  * computes Taylor sum given step and coefficients:
