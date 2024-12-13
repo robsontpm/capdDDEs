@@ -70,12 +70,14 @@ public:
 	typedef typename Matrix::ScalarType Scalar;
 	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
 	typedef typename Eq::ParamsVectorType ParamsVector;
-	typedef capd::ddes::DiscreteTimeGrid<Real> Grid;
-	typedef typename Grid::TimePointType TimePoint;
-	typedef capd::ddes::GenericJet<TimePoint, Vector, Vector, Matrix> Jet;
-	typedef capd::ddes::GenericJet<TimePoint, capd::ddes::VectorWithJacData<Vector, Matrix>, Vector, Matrix> C1Jet;
-	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, Jet> Solution;
-	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, C1Jet> C1Solution;
+	typedef capd::ddes::DiscreteTimeGrid<Real> Grid;  ///< important class, defining the computation grid to produce $t_i$ points
+	typedef typename Grid::TimePointType TimePoint;	  ///< important class, defining the grid points $t_i = ih$
+	typedef capd::ddes::GenericJet<TimePoint, Vector, Vector, Matrix> Jet;   ///< this is to be used in C1Solution, you will probably not use this directly
+	typedef capd::ddes::GenericJet<TimePoint, capd::ddes::VectorWithJacData<Vector, Matrix>, Vector, Matrix> C1Jet;  ///< this is to be used in C1Solution, you will probably not use this directly
+	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, Jet> Solution;     ///< basic class to store solutions
+	typedef capd::ddes::DDEPiecewisePolynomialCurve<Grid, C1Jet> C1Solution; ///< a class to store solutions when doing C^1 computations (e.g. computing Jacobian of a Poincare Map)
+	typedef Solution Segment; 		///< alias for Solution
+	typedef C1Solution C1Segment; 	///< alias for C1Solution
 	typedef Jet CurvePiece;
 	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, C1Solution> C1DDEq;
 	typedef capd::ddes::BasicDiscreteDelaysFunctionalMap<Eq, Solution> DDEq;

@@ -42,7 +42,22 @@ namespace capd{
 namespace ddes{
 
 /**
- * TODO: docs
+ * This class represents a piecewise polynomial function of time
+ * $x : \R \to \R^d$. The function must be over some uniform grid
+ * $t_i = ih$, and the function is a polynomial of some order $n_i$
+ * on $I_i = [t_i, t_{i+1})$.
+ *
+ * The best way to get this class is to use @see capd::ddes::NonrigorousSetup:
+ *
+ * typedef capd::ddes::NonrigorousSetup<MyEquation> DSetup;
+ * DSetup::Solution
+ *
+ *
+ * if you have a DDEPiecewisePolynomialCurve variable constructed like that:
+ *
+ * Vector v =
+ * DDEPiecewisePolynomialCurve x(grid, grid(i), grid(j), v); // check available
+ *
  */
 template<typename GridSpec, typename JetSpec>
 class DDEPiecewisePolynomialCurve {
@@ -71,7 +86,7 @@ public:
 	virtual std::string badge() const { return "DDEPiecewisePolynomialCurve"; }
 
 	/** copy constructor, standard thing */
-	DDEPiecewisePolynomialCurve(const DDEPiecewisePolynomialCurve& orig):
+	DDEPiecewisePolynomialCurve(const Class& orig):
 			m_grid(orig.m_grid), m_t_current(orig.m_t_current),
 			m_valueAtCurrent(orig.m_valueAtCurrent),
 			m_dimension(orig.m_dimension)
@@ -617,9 +632,9 @@ public:
 
 	/** show human readable representation */
 	std::string show() const;
-	/** friend operator must be inline, or the linker gets confused, so we use writeTo/readFrom */
+	/** friend operator must be inline (in fact it does not, but then I have to move this to .cpp to avoid linker error... I leave it as it is for now. TODO:), or the linker gets confused, so we use writeTo/readFrom */
 	friend std::ostream& operator<<(std::ostream& out, Class const& curve){ curve.writeTo(out); return out; }
-	/** friend operator must be inline, or the linker gets confused, so we use writeTo/readFrom */
+	/** friend operator must be inline (in fact it does not, but then I have to move this to .cpp to avoid linker error... I leave it as it is for now. TODO:), or the linker gets confused, so we use writeTo/readFrom */
 	friend std::istream& operator>>(std::istream& in, Class const& curve){ curve.readFrom(in); return in; }
 
 	/**
@@ -663,6 +678,8 @@ public:
 	 * starting at at_t0 - tau - h up to -h, to t0 - tau - h + epsi, ..., -h + epsi.
 	 * The coefficients will be stored in out_result at -tau, .., 0, respectively!
 	 *
+	 * NOTE: epsilon should be >= 0!
+	 *
 	 * TODO: (FUTURE) this should be not templated by DynSysSpec but concrete "interfaced" type, known in advance
 	 */
 	template<typename DynSysSpec>
@@ -670,8 +687,10 @@ public:
 				DynSysSpec const& solver,
 				TimePointType const& at_t0, RealType const& epsilon,
 				Class& out_result) const {
-		// TODO: (FUTURE) this is only forward epsilon step. Implement backward step later
-		// TODO: (FUTURE) use solver and history to recompute Xi over shorter intervals t_i + [0, \epsi], when computing coefficients.
+		// this is only forward epsilon step. I have tried implementing backward step,
+		// but it was a disaster, due to the representation mismatch at grid points.
+		// backward epsi step might be better when a smooth representation is available!
+		// TODO: (FUTURE) use solver and history to recompute Xi over shorter intervals t_i + [0, \epsi], when computing coefficients?
 		// TODO: (NOT URGENT) add checks for sanity of the input before proceeding.
 		TimePointType how_far = out_result.t0() - out_result.pastTime();
 		auto ijet_out = out_result.begin();
@@ -742,11 +761,13 @@ protected:
 		for (; from != to; ++from)
 			m_pieces.push_back(new CurvePieceType(*from));
 	}
+	/** low level, does not care about changing time points, does not clear m_pieces, etc. just copies from to */
 	void copyPieces(iterator from, iterator to){
 		// TODO: (NOT URGENT) that's not the most optimal implementation...
 		for (; from != to; ++from)
 			m_pieces.push_back(new CurvePieceType(**from));
 	}
+	/** low level, does not care about changing time points, does not clear m_pieces, etc. just copies from to */
 	void copyPieces(const_iterator from, const_iterator to){
 		// TODO: (NOT URGENT) that's not the most optimal implementation...
 		for (; from != to; ++from)
