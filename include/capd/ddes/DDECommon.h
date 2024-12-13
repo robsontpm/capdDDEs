@@ -215,6 +215,14 @@ public:
 			m_i += b;
 			return *this;
 		}
+		/** Moves the point to the next point in the grid (preincrement), faster than increment! */
+		inline const TimePointType& operator++() { ++m_i; return *this; }
+		/** Moves the point to the next point in the grid (postincrement), slower than predecrement! */
+		inline TimePointType operator++(int) { TimePointType cpy(*this); ++m_i; return cpy; }
+		/** Moves the point to the previous point in the grid (predecrement), faster than increment! */
+		inline const TimePointType& operator--() { --m_i; return *this; }
+		/** Moves the point to the next point in the grid (postdecrement), slower than predecrement! */
+		inline TimePointType operator--(int) { TimePointType cpy(*this); --m_i; return cpy; }
 		/**
 		 * Moves the point is b steps back on the grid.
 		 * this is faster than adding two TimePoints, does not need to check compatibility!
