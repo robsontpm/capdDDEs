@@ -164,7 +164,7 @@ public:
 			m_valueAtCurrent(value),
 			m_dimension(value.dimension())
 	{
-		for (TimePointType t = t0; t < t1; t += grid.point(1))
+		for (TimePointType t = t0; t < t1; ++t)
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent));
 	}
 
@@ -183,7 +183,7 @@ public:
 			m_valueAtCurrent(value),
 			m_dimension(value.dimension())
 	{
-		for (TimePointType t = grid(-p); t < grid(0); t += grid.point(1))
+		for (TimePointType t = grid(-p); t < grid(0); ++t)
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent));
 	}
 
@@ -573,7 +573,7 @@ public:
 	JetType jet(RealType t0, RealType t1) const { throw std::logic_error(badge() + "::jet: only supports jets over grid intervals."); }
 	/** jet at grid point t0 and valid until t1 (copy, see j() for reference) */
 	JetType jet(TimePointType t0, TimePointType t1) const {
-		if (t0 + m_grid(1) != t1) throw std::logic_error(badge() + "::jet: does not support intervals longer than grid step size");
+		if (t0 + 1 != t1) throw std::logic_error(badge() + "::jet: does not support intervals longer than grid step size");
 		try { return getPiece(t0); } catch (std::domain_error &e){ throw rethrow(badge() + "::jet(TimePoints):", e); }
 	}
 	/** jet at grid point t0, and valid for t0 to t0 + grid_step (copy, see j() for reference) */
@@ -665,7 +665,7 @@ public:
 				DynSysSpec const& solver,
 				RealType const& epsilon,
 				Class& out_result) const {
-		epsilonShift(solver, t0() - m_grid(1), epsilon, out_result);
+		epsilonShift(solver, t0() - 1, epsilon, out_result);
 	}
 
 	/**

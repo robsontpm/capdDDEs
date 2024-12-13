@@ -200,7 +200,7 @@ public:
 			m_valueAtCurrent(value, m_r0),
 			m_dimension(VectorType(value).dimension())
 	{
-		for (TimePointType t = t0; t < t1; t += grid.point(1))
+		for (TimePointType t = t0; t < t1; ++t)
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent, m_r0), true); // is faster than by reference, true => pass the ownership
 		// do not need to updateCommonR0(), we used constructors to assure it.
 	}
@@ -227,7 +227,7 @@ public:
 		}catch (std::logic_error& e) {
 			throw rethrow("DDESolutionCurve::__construct__(grid,t0,t1,order,set): ", e);
 		}
-		for (TimePointType t = t0; t < t1; t += grid.point(1))
+		for (TimePointType t = t0; t < t1; ++t)
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent, m_r0), true); // is faster than by reference, true => pass the ownership
 		// do not need to updateCommonR0(), we used constructors to assure it.
 	}
@@ -288,7 +288,7 @@ public:
 			throw std::logic_error(info.str());
 		}
 		try {
-			for (TimePointType t = t0; t < t1; t += grid.point(1)){
+			for (TimePointType t = t0; t < t1; ++t){
 				FJet tt(f.imageDimension(), 1, order + 2);
 				auto tti = tt.begin(0);
 				*(tti) = ScalarType(t);
@@ -616,7 +616,7 @@ public:
 
 	JetType jet(RealType t0, RealType t1) const { throw std::logic_error("DDESolutionCurve::jet: only supports jets over grid intervals."); }
 	JetType jet(TimePointType t0, TimePointType t1) const {
-		if (t0 + m_grid(1) != t1) throw std::logic_error("DDESolutionCurve::jet: does not support intervals longer than grid step size");
+		if (t0 + 1 != t1) throw std::logic_error("DDESolutionCurve::jet: does not support intervals longer than grid step size");
 		try { return getPiece(t0); } catch (std::domain_error &e){ throw rethrow("DDESolutionCurve::jet(TimePoints):", e); }
 	}
 	JetType jet(TimePointType t0) const {
@@ -716,7 +716,7 @@ public:
 				DynSysSpec const& solver,
 				RealType const& epsilon,
 				DDESolutionCurve& out_result) const {
-		epsilonShift(solver, t0() - m_grid(1), epsilon, out_result);
+		epsilonShift(solver, t0() - 1, epsilon, out_result);
 	}
 
 	/**

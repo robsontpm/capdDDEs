@@ -59,7 +59,7 @@ DDESolutionCurve<SetSpec>::addPiece(CurvePieceType* newPiece, bool passOwnership
 	m_pieceOwner.push_back(passOwnership);
 	newPiece->setT0(currentTime());
 	newPiece->set_r0(m_r0);
-	m_t_current += m_grid.point(1);
+	++m_t_current;
 	return *this;
 }
 template<typename SetSpec>
