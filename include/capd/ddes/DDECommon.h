@@ -151,10 +151,18 @@ VectorType joinVectors(VectorType const & first, VectorTypes const & ...others) 
 }
 
 /**
- * represents time points on a grid i * h, i - integer, h - real
+ * This represents time points on a grid i * h, i - integer, h - real
+ * The mechanism is that, the grid holds a pointer to a scalar (physical quantity)
+ * which might be an interval, but our interpretation is that: the scalar
+ * represents exact point on the grid. If another point comes from the
+ * grid then it is also an exact point on the grid, even if we have only estimation on it.
+ * We prevent two grids with different physical step sizes h to mix, e.g. adding together, or
+ * going into the same piecewise Taylor curve representation. By evaluating the curve
+ * on the grid points, we can warrant some other properties or use better estimates.
  *
- * TODO: (NOT URGENT, FAR FUTURE, RETHINK) rewrite so that TimePoint holds ref to Grid, then no problems will be presented!
- * TODO: (NOT URGENT, FAR FUTURE, RETHINK) (one problem: when we want to have TimePoint(), i.e. to have 0.0 time point)
+ * In general, you create one grid for all your computations and use this grid to
+ * supply all time points for all other objects. You can use
+ * capd::ddeshelper::(Non)RigorousHelper to handle this.
  */
 template<typename RealSpec>
 class DiscreteTimeGrid {
@@ -170,26 +178,35 @@ public:
 
 		/** Badge must be a single word! */
 		static std::string badge() { return "DiscreteTimePoint"; }
-
+		/** returns the reference to a grid this points belongs to */
 		inline const GridType& grid() const { return this->m_grid; }
+		/** returns the number of the point in the grid, i.e. i from t_i = ih */
 		explicit operator int() const { return this->toInt(); }
+		/** returns the number of the point in the grid, i.e. i from t_i = ih */
 		inline int toInt() const { return this->m_i; }
+		/** conversion operator. It gives the evaluation of the point as a basic scalar type, i.e. the value of t_i = ih */
 		inline operator RealType() const { return *(m_grid.m_ptr_h) * RealType(m_i); }
+		/** tests if this point is a true zero */
 		inline bool isZero() const { return m_i == 0 || m_grid.m_ptr_h == ptr_zero; }
+		/** shows the human readable representation, without badge */
 		inline std::string show() { std::ostringstream oss; oss << (*m_ptr_h) << " * " << m_i; return oss.str(); }
+		/** add two time points together. It tests if they come from the same grid */
 		friend inline TimePointType operator+(TimePointType const & a, TimePointType const & b) {
 			a.checkGridCompatible(b, "Cannot add time points");
 			return TimePointType(a.isZero() ? b.m_grid : a.m_grid, a.m_i + b.m_i);
 		}
+		/** difference between two time points. It tests if they come from the same grid */
 		friend inline TimePointType operator-(TimePointType const & a, TimePointType const & b) {
 			a.checkGridCompatible(b, "Cannot subtract time points");
 			return TimePointType(a.isZero() ? b.m_grid : a.m_grid, a.m_i - b.m_i);
 		}
+		/** add the value of a time point to this one. It tests if they come from the same grid */
 		inline TimePointType operator+=(TimePointType const & b) {
 			checkGridCompatible(b, "Cannot add time to this point");
 			m_i += b.m_i;
 			return *this;
 		}
+		/** substracts the value of a time point to this one. It tests if they come from the same grid */
 		inline TimePointType operator-=(TimePointType const & b) {
 			checkGridCompatible(b, "Cannot subtract time from this point");
 			m_i -= b.m_i;
@@ -230,14 +247,23 @@ public:
 		inline TimePointType operator-=(int b) { return this->operator+=(-b); }
 		/** this is getting -t from t */
 		friend inline TimePointType operator-(const TimePointType& a) { return TimePointType(a.m_grid, - a.m_i); }
+		/** we only support multiplication by integers */
 		friend inline TimePointType operator*(int const & a, TimePointType const & b) { return TimePointType(b.m_grid, b.m_i * a); }
+		/** we only support multiplication by integers */
 		friend inline TimePointType operator*(TimePointType const & a, int const & b) { return b * a; }
+		/** we only support multiplication by integers */
 		friend inline TimePointType operator*(RealType const & a, TimePointType const & b) { throw std::logic_error("DiscreteTimeGrid::TimePoints does not support multiplication by a real value! Only integer multiplication is allowed!"); }
+		/** we only support multiplication by integers */
 		friend inline TimePointType operator*(TimePointType const & a, RealType const & b) { return b * a; }
-		inline bool operator==(TimePointType const & other) const { return (&this->m_grid == &other.m_grid) && (this->m_i == other.m_i); }
+		/** NOTE: If the grid step is not the same physical value, than they are different. */
+		inline bool operator==(TimePointType const & other) const { return (this->m_grid.m_ptr_h == other.m_grid.m_ptr_h) && (this->m_i == other.m_i); }
+		/** NOTE: If the grid step is not the same physical value, than they are different. */
 		inline bool operator!=(TimePointType const & other) const { return !(*this == other); }
+		/** copy constructor */
 		TimePointType(TimePointType const & orig): m_grid(orig.m_grid), m_i(orig.m_i) {}
+		/** this creates a dummy time point on a grid that contains only point 0. You should avoid this, as you cannot change this point to anything else! */
 		TimePointType(): m_grid(GridType::trivialGrid), m_i(0) {}
+		/** this copies the point */
 		TimePointType& operator=(TimePointType const & orig) {
 			this->checkGridCompatible(orig);
 			if (m_grid.m_ptr_h == ptr_zero)
@@ -245,19 +271,25 @@ public:
 			this->m_i = orig.m_i;
 			return *this;
 		}
+		/** works only if the grids are compatible, i.e. have the same physical step h. Otherwise throws std::logic_error. */
 		friend inline  bool operator<(TimePointType const & a, TimePointType const & b) {
 			try { a.checkGridCompatible(b); } catch (std::logic_error& e) { return RealType(a) < RealType(b); }
 			return a.m_i < b.m_i;
 		}
+		/** works only if the grids are compatible, i.e. have the same physical step h. Otherwise throws std::logic_error. */
 		friend inline bool operator>(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return b < a; }
+		/** works only if the grids are compatible, i.e. have the same physical step h. Otherwise throws std::logic_error. */
 		friend inline bool operator<=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(a > b); }
+		/** works only if the grids are compatible, i.e. have the same physical step h. Otherwise throws std::logic_error. */
 		friend inline bool operator>=(TimePointType const & a, TimePointType const & b) { a.checkGridCompatible(b); return !(b > a); }
 
+		/** standard output, it is compatible with standard input */
 		friend std::ostream& operator<<(std::ostream & out, TimePointType const & t) {
 			out << RealType(t) << " := " << TimePointType::badge() << " ";
 			out << t.m_i << " " << t.m_grid.h();
 			return out;
 		}
+		/** standard input, it is compatible with standard output */
 		friend std::istream& operator>>(std::istream & in, TimePointType & t) {
 			RealType dump_repr; in >> dump_repr;
 			helper_dump_badge(in); // dump ":="
@@ -275,6 +307,7 @@ public:
 	protected:
 		const GridType& m_grid;
 		int m_i;
+		/** points are compatible only if one of them is 0, or if the grids have the same physical h */
 		void checkGridCompatible(TimePointType const & other, std::string extraInfo = "") const {
 			if (this->isZero() || other.isZero()) return; 		// zero is compatible to all
 			if (this->m_grid.m_ptr_h != other.m_grid.m_ptr_h){	// points must be physically the same
@@ -285,32 +318,48 @@ public:
 				throw std::logic_error(info.str());
 			}
 		}
+		/** this is protected to prevent user of creating TimePoints without defining grid first. */
 		TimePointType(GridType const & grid, int i): m_grid(grid), m_i(i){}
 		friend class DiscreteTimeGrid<RealType>;
 	};
 	friend class TimePointType;
 
+	/** copy constructor */
 	DiscreteTimeGrid(DiscreteTimeGrid const& orig): m_ptr_h(orig.m_ptr_h) {}
+	/** copy operator */
 	DiscreteTimeGrid& operator=(DiscreteTimeGrid const& orig) { m_ptr_h = orig.m_ptr_h; return *this; }
+	/** two grids are equal if they have the same physical h */
 	friend bool operator==(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return a.m_ptr_h == b.m_ptr_h; }
+	/** two grids are equal if they have the same physical h */
 	friend bool operator!=(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return !(a == b); }
+	/** this creates a dummy grid that contain the only point 0, with step size 0 */
 	DiscreteTimeGrid(): m_ptr_h(ptr_zero) {}
+	/** the most common contructor, it constructs a grid with step size h */
 	DiscreteTimeGrid(const RealSpec& h): m_ptr_h(h == zero? ptr_zero : std::make_shared<RealSpec>(h)) {} // this way we always point out to the same 0!
+	/** returns a new time point on this grid t_i = h*i */
 	TimePointType point(int i) const { return TimePointType(*this, i); }
+	/** returns a new time point on this grid t_i = h*i */
 	TimePointType operator()(int i) const { return TimePointType(*this, i); }
+	/**
+	 * it tries to compute the representation of t as $t_i + \epsilon$,
+	 * where $t_i = i * h$. It works only if $t_i$ is from this grid.
+	 */
 	void split(RealSpec t, TimePointType& ti, RealSpec& epsi) const {
 		int i = 0;
 		if (m_ptr_h != ptr_zero){ i = closestSmallerInt(t / *m_ptr_h); }
 		ti = TimePointType(this, i);
 		epsi = t - RealSpec(ti);
 	}
+	/** returns the value of step size h */
 	RealSpec h() const { return *m_ptr_h; }
-	static const RealSpec zero;  						// this way there is always exactly one physical zero we can use
-	static const std::shared_ptr<RealSpec> ptr_zero;  	// used to initialize shared ptrs
-	static const GridType trivialGrid;  				// this way there is always at least one grid
+	static const RealSpec zero;  						///< this way there is always exactly one physical zero we can use
+	static const std::shared_ptr<RealSpec> ptr_zero;  	///< used to initialize shared ptrs
+	static const GridType trivialGrid;  				///< this way there is always at least one grid
 protected:
+	/** this is the pointer to a physical copy. The pointer is used to be able to have a physical reference and also to be able to modify it if needed */
 	std::shared_ptr<RealSpec> m_ptr_h;
-	DiscreteTimeGrid(const std::shared_ptr<RealSpec> ptr_h): m_ptr_h(ptr_h) {} 	 // making it private, so no one tries to override
+	/** making it private, so no one tries to override my check if the h is zero form the other constructor. */
+	DiscreteTimeGrid(const std::shared_ptr<RealSpec> ptr_h): m_ptr_h(ptr_h) {}
 };
 template<typename RealSpec>
 const RealSpec DiscreteTimeGrid<RealSpec>::zero = 0;
