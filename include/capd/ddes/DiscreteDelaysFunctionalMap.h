@@ -292,6 +292,7 @@ public:
 		typedef fadbad::T<ScalarType> AutoDiffTScalar; 		// Auto Diff T (Taylor) scalar type
 		typedef typename VectorType::template rebind<AutoDiffTScalar>::other TADVectorType;
 		TADVectorType args(dimension(), false);
+		AutoDiffTScalar targ(t0); targ[1] = 1; // we have targ(t) = t, targ'(t) = 1, targ^{(k > 1)} = 0;
 		// propagate arguments in a given order - first value at t0
 		// then jet of x at t0-\tau_1, then t0-\tau_2, etc...
 		// please note that u is a Value storage (not variable storage), that is, it
@@ -323,7 +324,7 @@ public:
 			// with anything, each position in v will be just a fresh AD variable.
 			// in (2024) there was an error introduced by use of other constructor, when CAPD changed.
 			TADVectorType v(imageDimension(), false);
-			m_map(t0, args, v);
+			m_map(targ, args, v);
 			// propagate AD jets and output.
 			// this will be F_k from the latest paper on DDE integration (FoCM 2024).
 			VectorType Fk(imageDimension());
@@ -415,6 +416,7 @@ public:
 		// variables inside the vector, not dependent on each other, not a vector (x, x, x, x), that
 		// depends on x. I leave this comment for future if we encounter similar problem.
 		TFADVectorType args(dimension(), false);
+		TFADScalar targ(t0); targ[1] = 1; // we have targ(t) = t, targ'(t) = 1, targ^{(k > 1)} = 0;
 
 		// we will successively fill-in TFAD args below as the recursion will go on
 		// using this iterator to u variable.
@@ -459,7 +461,7 @@ public:
 			// eval AutoDiff routine so we would be able to extract v[.][k-1] = F^{[k-1]}(...)
 			// together with partial derivatives with respect to coefficients in the past.
 			TFADVectorType v(imageDimension(), false);
-			m_map(t0, args, v);
+			m_map(targ, args, v);
 
 			// propagate AD jets and output.
 			VectorType Fk(imageDimension());

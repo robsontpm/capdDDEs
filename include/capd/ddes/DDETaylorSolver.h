@@ -160,8 +160,8 @@ public:
 		out_JacPhi_z.clear(); out_JacPhi_z.resize(1); 	// so, there will be only one Jacobian entry
 		out_JacPhi_z[0].resize(out_u.size(), Zero); 	// but it will be dependent on  the same variables in u
 
-		// we explicitely eval jet at t0 as a Taylor series to assure that the
-		// jacobian computed along is valid.
+		// we explicitly eval jet at t0 as a Taylor series to assure that the
+		// Jacobian computed along is valid.
 		// TODO: (NOT URGENT) rewrite as iterators?
 		// TODO: change it to: do {} while(k--) loop, instead of a hack for unsigned. Test.
 		size_type k = order;
@@ -187,9 +187,9 @@ public:
 		// then w propagate it with the map
 		m_map.computeDDECoefficients(in_t0, out_u_encl, out_Y);
 
+		// implement extra expansion when order = maxOrder (as in old codes)
 		if (extraOrder){
 			// TODO: (NOT URGENT, RETHINK) this is just to be sure the code is the same as old one, but probably not needed, since expansion of the representation is more natural...
-			// implement extra expansion when order = maxOrder (as in old codes)
 
 			// THIS IS BAD HACK JUST FOR TEST PURPOSES (move logic in solver to get better results)
 			// HACK STARTS HERE
@@ -205,7 +205,6 @@ public:
 			VectorType extra_x(d), extra_r(d);
 			extra_x  = out_Phi_coeffs_t0[coeffs_order] + out_Rem_coeffs_t0[coeffs_order];
 			split(extra_x, extra_r);
-			// split(extra_C, S); // TODO: (IMPORTANT) this was redundant! We lost content of S! TEST then remove this line.
 			// TODO: also, rething removing this part as stated elsewhere!
 			extra_r += S * in_curve.get_r0();
 			for (size_type iu = 0; iu < out_u.size(); ++iu)
