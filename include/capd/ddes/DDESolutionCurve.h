@@ -64,6 +64,8 @@ namespace ddes{
  * From technical point of view, there might be some ways to improve current
  * methods using the history (out of scope as of now).
  *
+ * TODO: (NOT URGENT, RETHINK) see the comments about allowing change of m_grid in DDEPiecewisePolynomialCurve
+ * TODO: (DRY, RETHINK) now a lot of code is duplicated from DDEPIecewisePolynomiaCurve, this class should inherit from there maybe and implement extra! (The problem here is that, we have extra Lohner set structure here, and how to make it compatible with DDEPIecewisePolynomial which works on simple vectors?)
  * TODO: (FAR FUTURE) see notes below this line
  * TODOs / DevNOTEs:
  *
@@ -115,7 +117,7 @@ public:
 	typedef typename PiecesStorageType::reverse_iterator reverse_iterator;
 	typedef typename PiecesStorageType::const_reverse_iterator const_reverse_iterator;
 
-	/** copy constructor, standard thing */
+	/** copy constructor, standard thing. */
 	DDESolutionCurve(const DDESolutionCurve& orig):
 			m_grid(orig.m_grid), m_t_current(orig.m_t_current),
 			m_r0(new VectorType(*orig.m_r0)),
@@ -126,7 +128,7 @@ public:
 		updateCommonR0();
 	}
 
-	/** assign operator, standard thing */
+	/** assign operator. NOTE: it wont work if the @param orig has different grid! It will throw std::logic_error(). */
 	DDESolutionCurve& operator=(const DDESolutionCurve& orig){
 		if (&m_grid != &(orig.m_grid))
 			throw std::logic_error("DDESolutionCurve::operator=(orig): cannot assign solution over a different grid.");
@@ -154,16 +156,16 @@ public:
 	{ /* no need to update, no pieces, current updated in constructor */ }
 
 	/** makes a Curve that is d dimensional, over given grid starting at a given TimePoint, and its r0 vector is N0 dimensional */
-	DDESolutionCurve(const GridType& grid, const TimePointType& t0, size_type d = 0, size_type N0 = 0):
-			m_grid(grid), m_t_current(t0),
+	DDESolutionCurve(const TimePointType& t0, size_type d = 0, size_type N0 = 0):
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(new VectorType(N0)),
 			m_valueAtCurrent(VectorType(d), m_r0),
 			m_dimension(d)
 	{ /* no need to update, no pieces, current updated in constructor */ }
 
 	/** creates a Curve that is a single point of given value at time point t0,m the r0 part of value is used as r0 of the Curve */
-	DDESolutionCurve(const GridType& grid, const TimePointType& t0, const SetType& value):
-			m_grid(grid), m_t_current(t0),
+	DDESolutionCurve(const TimePointType& t0, const SetType& value):
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(new VectorType(value.get_r0())),	// I do not assume in DoubletonInterface, that I can transfer ownership (Yet, TODO: (NOT URGENT) rething take_*() semantics and implement it simply in BasicDoubleton as return new Vector(m_r0), it should work)
 			m_valueAtCurrent(value),				// copy set structure. we will need to update r0 (se above)
 			m_dimension(VectorType(value).dimension())
@@ -174,8 +176,8 @@ public:
 	 * It splits x = value vector into the set mid(x) + C * r0, C = Id, r0 = x - mid(x), as in CAPD.
 	 * It will use this r0 for the Lohner structure for the subsequent jets, i.e. when doing ODE integration.
 	 */
-	DDESolutionCurve(const GridType& grid, const TimePointType& t0, const VectorType& value):
-			m_grid(grid), m_t_current(t0),
+	DDESolutionCurve(const TimePointType& t0, const VectorType& value):
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(0),
 			m_valueAtCurrent(value),
 			m_dimension(value.dimension())
@@ -190,12 +192,11 @@ public:
 	 * The r0 part will be COPIED from the set and will be common to all elements.
 	 */
 	DDESolutionCurve(
-				const GridType& grid,
 				const TimePointType& t0,
 				const TimePointType& t1,
 				size_type order,
 				const SetType& value):
-			m_grid(grid), m_t_current(t0),
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(new VectorType(value.get_r0())),
 			m_valueAtCurrent(value, m_r0),
 			m_dimension(VectorType(value).dimension())
@@ -212,12 +213,11 @@ public:
 	 * from the set and will be common to all elements.
 	 */
 	DDESolutionCurve(
-				const GridType& grid,
 				const TimePointType& t0,
 				const TimePointType& t1,
 				size_type order,
 				SetType& value):
-			m_grid(grid), m_t_current(t0),
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(value.take_r0()),
 			m_valueAtCurrent(value),
 			m_dimension(VectorType(value).dimension())
@@ -238,18 +238,17 @@ public:
 	 * The r0 part will be N0 dimensional (default = 0, i.e. no C*r0 set part).
 	 */
 	DDESolutionCurve(
-				const GridType& grid,
 				const TimePointType& t0,
 				const TimePointType& t1,
 				size_type order,
 				const VectorType& value,
 				size_type N0 = 0):
-			m_grid(grid), m_t_current(t0),
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(new VectorType(N0)),
 			m_valueAtCurrent(value, m_r0),
 			m_dimension(value.dimension())
 	{
-		for (TimePointType t = t0; t < t1; t += grid.point(1))
+		for (TimePointType t = t0; t < t1; ++t)
 			addPiece(new CurvePieceType(t, order, value, m_r0), true); // is faster than by reference, true => pass the ownership
 
 		try {
@@ -262,19 +261,17 @@ public:
 	 * creates a representation of the function f over the interval [t0,t1]
 	 * The r0 part will be N0 dimensional (default = 0, i.e. no C*r0 set part).
 	 *
-	 * TODO: rethink: move to a ddeshelper?
-	 * TODO: only support for the same MatrixType as the internal MatrixType?
-	 * TODO: now we have some overlap with DDEPiecewisePolynomial (Nonrigorous version), cleanup the code and make the good inheritance structure?
+	 * TODO: (RETHINK) only support for the same MatrixType as the internal MatrixType? Better for static compilation. Might include FMapType in the list of datattypes of this curve.... On the other hand, this way we might mix IMap with our custom Solution<MyMatrix>...
+	 * TODO: (DRY, RETHINK) now we have some overlap with DDEPiecewisePolynomial (Nonrigorous version), cleanup the code and make the good inheritance structure?
 	 */
 	template<typename AnyMatrixSpec>
 	DDESolutionCurve(
-				const GridType& grid,
 				const TimePointType& t0,
 				const TimePointType& t1,
 				size_type order,
 				const capd::map::Map<AnyMatrixSpec>& f,
 				size_type N0 = 0):
-			m_grid(grid), m_t_current(t0),
+			m_grid(t0.grid()), m_t_current(t0),
 			m_r0(new VectorType(N0)),
 			m_valueAtCurrent(VectorType(f.imageDimension()), m_r0),
 			m_dimension(f.imageDimension())
@@ -302,7 +299,7 @@ public:
 						items[j][i] = (*fti);
 					}
 				}
-				ScalarType HH(0., ScalarType(grid.point(1)).rightBound()); // TODO: this is kind of bad code...
+				ScalarType HH(0., ScalarType(m_grid.point(1)).rightBound()); // TODO: this is kind of bad code...
 				tti = tt.begin(0);
 				*(tti) = ScalarType(t) + HH;
 				*(++tti) = 1.;
@@ -337,7 +334,7 @@ public:
 	 */
 	DDESolutionCurve subcurve(size_type index1, size_type index2) const {
 		TimePointType from = (index1 == m_pieces.size() ? t0() : m_pieces[index1]->t0());
-		DDESolutionCurve result(m_grid, from, dimension(), storageN0());
+		DDESolutionCurve result(from, dimension(), storageN0());
 		result.set_r0(get_r0());
 		for (size_type i = index1; i < index2; ++i){
 			result.addPiece(*m_pieces[i]);

@@ -233,7 +233,7 @@ public:
 		capd::vectalg::split(rr, r0);
 		auto tau = m_grid.point(m_p);
 		auto t_0 = m_grid.point(0);
-		Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+		Solution X(-tau, t_0, m_n, Vector(DIMENSION));
 		X.set_x(coords.reference + coords.coords * dx + coords.coords * rr);
 		X.set_Cr0(coords.coords, r0);
 		X.set_Xi(Xi);
@@ -259,7 +259,7 @@ public:
 			throw std::logic_error("DDERigorousHelper::constantInitialSolution(): incompatible dimension in value.");
 		auto tau = m_grid.point(m_p);
 		auto t_0 = m_grid.point(0);
-		Solution X(m_grid, -tau, t_0, order, vx);
+		Solution X(-tau, t_0, order, vx);
 		if (order == m_n)
 			X.set_Cr0(coords().coords, Vector(coords().coords.numberOfColumns()));
 		else {
@@ -285,7 +285,7 @@ public:
 		auto tau = m_grid.point(m_p);
 		auto t_0 = m_grid.point(0);
 		auto N0 = coords().coords.numberOfColumns();
-		Solution X(m_grid, -tau, t_0, m_n, f, N0);
+		Solution X(-tau, t_0, m_n, f, N0);
 		X.set_Cr0(coords().coords, Vector(N0));
 		return X;
 	}
@@ -305,7 +305,7 @@ public:
 		}
 		auto t_tau = m_grid.point(-m_p + starti);
 		auto t_0 = m_grid.point(starti);
-		Solution X(m_grid, t_tau, t_0, m_n, f);
+		Solution X(t_tau, t_0, m_n, f);
 		X.set_Cr0(coords().coords, Vector(coords().coords.numberOfColumns()));
 		return X;
 	}
@@ -335,7 +335,7 @@ public:
 	capd::poincare::CrossingDirection detectCrossingDirection(){
 //		auto tau = m_grid.point(m_p);
 //		auto t_0 = m_grid.point(0);
-//		Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+//		Solution X(-tau, t_0, m_n, Vector(DIMENSION));
 //		X.set_x(x);
 //		DDEq dde(Eq(m_params), tau);
 //		Solver solver(dde, m_maxOrder);

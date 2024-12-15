@@ -50,14 +50,15 @@ namespace ddes{
  * The best way to get this class is to use @see capd::ddes::NonrigorousSetup:
  *
  * typedef capd::ddes::NonrigorousSetup<MyEquation> DSetup;
- * DSetup::Solution
+ * DSetup t(1./10.); // grid with h = 0.1
+ * DSetup::Solution x(t(-10), t(0), {1.0, 2.0}); // a function [-1, 0] -> \R^2,  x(t) = {1, 2} for all t
  *
+ * NOTE: once you create a solution X on a given grid (by specifying a time point from a grid),
+ * you cannot use the same physical variable X to store a solution on a different grid.
+ * E.g the assign operator will throw an exception if you try to copy data from a solution
+ * with a different grid.
  *
- * if you have a DDEPiecewisePolynomialCurve variable constructed like that:
- *
- * Vector v =
- * DDEPiecewisePolynomialCurve x(grid, grid(i), grid(j), v); // check available
- *
+ * TODO: (NOT URGENT RETHINK): With the new implementation of Grid, I think I can remove the above requirement, as the Grid can be changed (it has a pointer to h not the h itself, and all operations are done on this pointer, which might be shared among many grids, but it is the same physical h)
  */
 template<typename GridSpec, typename JetSpec>
 class DDEPiecewisePolynomialCurve {
@@ -137,15 +138,15 @@ public:
 	{ }
 
 	/** makes a Curve that is d dimensional, over given grid starting at a given TimePoint */
-	DDEPiecewisePolynomialCurve(const GridType& grid, const TimePointType& t0, size_type d = 0):
-			m_grid(grid), m_t_current(t0),
+	DDEPiecewisePolynomialCurve(const TimePointType& t0, size_type d = 0):
+			m_grid(t0.grid()), m_t_current(t0),
 			m_valueAtCurrent(VectorType(d)),
 			m_dimension(d)
 	{ }
 
 	/** creates a Curve that is a single point of given value at time point t0 */
-	DDEPiecewisePolynomialCurve(const GridType& grid, const TimePointType& t0, const DataType& value):
-			m_grid(grid), m_t_current(t0),
+	DDEPiecewisePolynomialCurve(const TimePointType& t0, const DataType& value):
+			m_grid(t0.grid()), m_t_current(t0),
 			m_valueAtCurrent(value),
 			m_dimension(value.dimension())
 	{ }
@@ -155,15 +156,15 @@ public:
 	 * and with given order (useful for future use as a a set in integration).
 	 */
 	DDEPiecewisePolynomialCurve(
-				const GridType& grid,
 				const TimePointType& t0,
 				const TimePointType& t1,
 				size_type order,
 				const DataType& value):
-			m_grid(grid), m_t_current(t0),
+			m_grid(t0.grid()), m_t_current(t0),
 			m_valueAtCurrent(value),
 			m_dimension(value.dimension())
 	{
+		if (t0)
 		for (TimePointType t = t0; t < t1; ++t)
 			addPiece(new CurvePieceType(t, order, m_valueAtCurrent));
 	}
@@ -194,12 +195,11 @@ public:
 	 */
 	template<typename AnyMatrixSpec>
 	DDEPiecewisePolynomialCurve(
-				const GridType& grid,
 				const TimePointType& t0,
 				const TimePointType& t1,
 				size_type order,
 				const capd::map::Map<AnyMatrixSpec>& f):
-			m_grid(grid), m_t_current(t0),
+			m_grid(t0.grid()), m_t_current(t0),
 			m_valueAtCurrent(VectorType(f.imageDimension())),
 			m_dimension(f.imageDimension())
 	{
@@ -212,7 +212,7 @@ public:
 			throw std::logic_error(info.str());
 		}
 		try {
-			for (TimePointType t = t0; t < t1; t += grid.point(1)){
+			for (TimePointType t = t0; t < t1; t += m_grid.point(1)){
 				FJet tt(f.imageDimension(), 1, order + 1);
 				auto tti = tt.begin(0);
 				*(tti) = ScalarType(t);
@@ -243,7 +243,7 @@ public:
 	 */
 	Class subcurve(size_type index1, size_type index2) const {
 		TimePointType from = (index1 == m_pieces.size() ? t0() : m_pieces[index1]->t0());
-		Class result(m_grid, from, dimension());
+		Class result(from, dimension());
 		for (size_type i = index1; i < index2; ++i){
 			result.addPiece(*m_pieces[i]);
 		}
@@ -504,7 +504,7 @@ public:
 
 	Class dt(DataType const& valueAtCurrent, size_type n = 1) const {
 		if (n == 0) { return *this; } // no need to compute anything
-		Class result(m_grid, pastTime(), dimension());
+		Class result(pastTime(), dimension());
 		for (auto ijet = begin(); ijet != end(); ++ijet)
 			result.addPiece((*ijet)->dt(n));
 		result.setValueAtCurrent(valueAtCurrent);
@@ -514,7 +514,7 @@ public:
 	template<typename FunctionalSpec>
 	Class dt(FunctionalSpec const& f, size_type n = 1) const {
 		if (n == 0) { return *this; } // no need to compute anything
-		Class result(m_grid, pastTime(), dimension());
+		Class result(pastTime(), dimension());
 		for (auto ijet = begin(); ijet != end(); ++ijet)
 			result.addPiece((*ijet)->dt(n));
 		if (n == 1){
@@ -534,7 +534,7 @@ public:
 
 	Class increasedOrder(size_type r = 1){
 		if (r == 0) { return *this; } // no need to compute anything
-		Class result(m_grid, pastTime(), dimension());
+		Class result(pastTime(), dimension());
 		for (auto ijet = begin(); ijet != end(); ++ijet)
 			result.addPiece((*ijet)->increasedOrder(r));
 		result.setValueAtCurrent(m_valueAtCurrent);
@@ -542,7 +542,7 @@ public:
 	}
 	Class decreasedOrder(size_type r = 1){
 		if (r == 0) { return *this; } // no need to compute anything
-		Class result(m_grid, pastTime(), dimension());
+		Class result(pastTime(), dimension());
 		for (auto ijet = begin(); ijet != end(); ++ijet)
 			result.addPiece((*ijet)->decreasedOrder(r));
 		result.setValueAtCurrent(m_valueAtCurrent);

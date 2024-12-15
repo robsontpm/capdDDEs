@@ -501,7 +501,7 @@ public:
 //		return detectCorssingDirectionTemplate<JacJetSection>(section, x)
 //		auto tau = m_grid.point(m_p);
 //		auto t_0 = m_grid.point(0);
-//		JacSolution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
+//		JacSolution X(-tau, t_0, m_n, Vector(DIMENSION));
 //		X.set_x(x);
 //		JacDDEq dde(Eq(m_params), tau);
 //		JacSolver solver(dde, m_maxOrder);
@@ -571,34 +571,6 @@ public:
 				Vector const& x, Matrix& initV,
 				double& reachTime, int& steps, Vector& Px, Vector& fPx,
 				Matrix& V, Matrix& DP){
-
-//		// TODO: (NOT URGENT) refactor it to be more DRY.
-//		auto tau = m_grid.point(m_p);
-//		auto t_0 = m_grid.point(0);
-//		C1Solution X(m_grid, -tau, t_0, m_n, Vector(DIMENSION));
-//		X.set_x(x);
-//
-//		C1DDEq dde(Eq(m_params), tau);
-//		C1Solver solver(dde, m_maxOrder);
-//
-//		C1PoincareMap pm(solver, section);
-//		pm.setDirection(this->crossingDirection);
-//		pm.setRequiredSteps(m_reqSteps);
-//		pm.setMaxSteps(m_maxSteps);
-//
-//		capd::vectalg::EuclLNorm<Vector, Matrix> euclNorm;
-//		Px = Vector(M()); fPx = Vector(M());
-//		V = Matrix(M(), M()); DP = Matrix(M(), M());
-//		Matrix Id(X.storageDimension(), X.storageDimension()); Id.setToIdentity();
-//		pm.setNormalizeVariational(m_experimentalRenormalizeVariational);
-//		pm.setInitialV(X, initV);
-//		C1Solution PX(X); PX *= 0.;
-//		Vector dump = x;
-//		pm(X, PX, reachTime, dump, Px, fPx, V, DP);
-//		steps = pm.getLastStepsAfterSection();
-//		return X; // X contains full trajectory
-
-
 		C1Solution X0 = makeC1Segment(x);
 		C1Solution PX = X0; PX *= 0.;
 		C1Solution trajectory = poincare(section, X0, initV, reachTime, steps, PX, fPx, V, DP);
@@ -856,7 +828,7 @@ public:
 		auto tau = m_grid.point(m_p);
 		auto t_0 = m_grid.point(0);
 		Vector v(DIMENSION);
-		Solution X(m_grid, -tau, t_0, m_n, v);
+		Solution X(-tau, t_0, m_n, v);
 		X.set_x(x);
 		return drawSolution(dirpath, filename, X, tshift);
 	}
@@ -948,7 +920,7 @@ private:
 		auto tau = m_grid.point(m_p);
 		Vector v0(d());
 		if (v.dimension() == d()) v0 = v;
-		SegSpec X(m_grid, -tau, zero, n, v0);
+		SegSpec X(-tau, zero, n, v0);
 		if (v.dimension() != d() && v.dimension() != Vector(X).dimension()){
 			std::ostringstream info;
 			info << "NonrigorousHelper::makeSegment/Solution(): dim(v) = " << v.dimension() << ", ";
@@ -988,7 +960,7 @@ private:
 		}
 		auto zero = m_grid.point(0);
 		auto tau = m_grid.point(m_p);
-		SegSpec X(m_grid, -tau, zero, n, f);
+		SegSpec X(-tau, zero, n, f);
 		return X;
 	}
 

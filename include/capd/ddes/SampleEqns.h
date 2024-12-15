@@ -49,10 +49,7 @@ namespace ddes{
  * the problem with the grid over which the solution is defined (as of now). See the problem
  * with the continuity of solution at grid points and long enough integration time described
  * in the papers. Because of those problems, the grid, the solution and the equation
- * (DiscreteDelaysFunctionalMap) must be aware to some extent of each other.
- * TODO: (FAR FUTURE) try to reduce dependency only to Grid (i.e. DiscreteDelaysFunctionalMap and Solution depend on the Grid,
- * TODO: (FAR FUTURE) but not on each other). It could be done, if DiscreteDelaysFunctionalMap accepts all solutions that can
- * TODO: (FAR FUTURE) produce concrete Interface of a Jet at Grid::TimePoints)
+ * (e.g. DiscreteDelaysFunctionalMap) must be aware to some extent of each other.
  *
  * Example:
  * 		typedef BasicDoubleton<IMatrix> SetType;
@@ -65,9 +62,13 @@ namespace ddes{
  * 		F f(2.0, 1.0, 8.0);
  * 		RHS rhs(f, grid(2 * p));
  *
+ * TODO: (FAR FUTURE) try to reduce dependency between only to Grid (i.e. DiscreteDelaysFunctionalMap and Solution depend on the Grid,
+ * TODO: (FAR FUTURE) but not on each other). It could be done, if DiscreteDelaysFunctionalMap accepts all solutions that can
+ * TODO: (FAR FUTURE) produce concrete Interface of a Jet at Grid::TimePoints)
+ *
  * TODO: (FAR FUTURE) make a class that can use integral differential equation to computeDDECoefficients()
  *
- * TODO: (FAR FUTURE) Unfortunatelly, as of today, capd::map::Map is not good for my use.
+ * TODO: (FAR FUTURE) Unfortunately, as of today, capd::map::Map is not good for my use.
  * TODO: (FAR FUTURE) Need to consult Daniel Wilczak on the matter.
  * TODO: (FAR FUTURE) Need to understand the Node and the Graph of execution used by Daniel Wilczak
  * TODO: (FAR FUTURE) to implement my version of computeDDECoefficients with capd::map::Map (seems doable)

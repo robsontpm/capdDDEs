@@ -25,11 +25,12 @@
 // comment or uncomment the following for extra options
 // DDES_ALLOW_SYSTEM 		when uncommented, the program can produce some pictures from the proof,
 //							you need gnuplot installed fpr this to work, and system() command available in C++
+//							(NOTE: even if this is commented, the setup in Makefile mike overrride it, check makefiles!)
 // CHECK_TRAPPING_REGION 	checking that the trapping region exists is a long run (many subdivisions),
 //							if you only interested in the proof of (2) then you can uncomment it
 // EXTRA_OUTPUT				uncommenting this will output more information to the standard output
 
-#define DDES_ALLOW_SYSTEM
+//#define DDES_ALLOW_SYSTEM
 #define CHECK_TRAPPING_REGION
 //#define EXTRA_OUTPUT
 
@@ -94,7 +95,7 @@ template<class Condition>
 std::pair<IVector, IVector> checkConditionDDE(std::ostream &out, Grid& grid, DDEPoincare& pm, double y1, double y2, int i, int N, Condition c, bool& result, int iteration = 2) {
 	interval p = (interval(y2) - interval(y1)) / interval(N);							// same as ODE
 	IVector x = {interval(0.), y1 + interval(i,i+1) * p, interval(g_bottom, g_top)};	// same as ODE
-	DDESolution X(grid, grid(0), x); 		// compared to ODE, we need to make a set in form of a Solution over a time line divided into a Grid.
+	DDESolution X(grid(0), x); 		// compared to ODE, we need to make a set in form of a Solution over a time line divided into a Grid.
 	interval t = 0;							// same as ODE
 	DDESolution Y = pm(X, t, iteration);	// almost the same as ODE, we only store result as a Solution
 	IVector	y = Y;							// and we need to cast it to Vector

@@ -304,6 +304,7 @@ public:
 			}
 			return in;
 		}
+		inline bool sameGrid(TimePointType const& other){ return this->grid() == other.grid(); }
 	protected:
 		const GridType& m_grid;
 		int m_i;
@@ -340,6 +341,8 @@ public:
 	TimePointType point(int i) const { return TimePointType(*this, i); }
 	/** returns a new time point on this grid t_i = h*i */
 	TimePointType operator()(int i) const { return TimePointType(*this, i); }
+	/** checks if a given point is from that grid */
+	bool has(TimePointType const& ti) const { return *this == ti.grid(); }
 	/**
 	 * it tries to compute the representation of t as $t_i + \epsilon$,
 	 * where $t_i = i * h$. It works only if $t_i$ is from this grid.
@@ -347,7 +350,7 @@ public:
 	void split(RealSpec t, TimePointType& ti, RealSpec& epsi) const {
 		int i = 0;
 		if (m_ptr_h != ptr_zero){ i = closestSmallerInt(t / *m_ptr_h); }
-		ti = TimePointType(this, i);
+		ti = TimePointType(*this, i);
 		epsi = t - RealSpec(ti);
 	}
 	/** returns the value of step size h */

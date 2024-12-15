@@ -77,7 +77,7 @@ DDESolutionCurve<SetSpec>::addPastPiece(CurvePieceType* newPiece, bool passOwner
 		newPiece = new CurvePieceType(*newPiece);
 	m_pieces.push_front(newPiece);
 	m_pieceOwner.push_front(passOwnership);
-	newPiece->setT0(pastTime() - m_grid.point(1));
+	newPiece->setT0(pastTime() - 1);
 	newPiece->set_r0(m_r0);
 	return *this;
 }
