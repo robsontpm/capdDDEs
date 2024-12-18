@@ -233,6 +233,51 @@ bool relativeReadData(std::istream& in, T& item){
 	}
 }
 
+/**
+ * this is a helper function that returns the combined dimension of several explicitely given vectors.
+ * Usage:
+ * 		auto d = commonDimension(v, u, w);			// any number of arguments.
+ * 		auto d = commonDimension(v, u, w, x, y, z); // etc.
+ * TODO: test it.
+ */
+template<typename VectorType, typename ...VectorTypes>
+typename VectorType::size_type
+commonDimension(VectorType const & first, VectorTypes const & ...others) {
+    return first.dimension() + (sizeof...(others) ? commonDimension(others...) : 0);
+}
+/**
+ * this is a helper function that puts all the vectors into out vectors,
+ * sequentially: out = (first[0],..., first[first.dimension()-1], ...)
+ * WARNING this does not resize out to accommodate all and only the elements of input vectors.
+ * WARNING: if you want to get the right dimension, use the joinVectors(...) function.
+ * Usage:
+ *      capd::DVector v(1), u(2), w(3), out(8);
+ * 		joinVectorsRaw(out, v, u, w); // out will still be dimension 8, and first 6 coordinates will be v, u, w.
+ * TODO: test it.
+ */
+template<typename OutIterator, typename VectorType, typename ...VectorTypes>
+void joinVectorsRaw(OutIterator& out, VectorType const & first, VectorTypes const & ...others) {
+	for (auto vIt = first.begin(); vIt != first.end(); ++vIt, ++out)
+		*out = *vIt;
+	if (sizeof...(others))
+		joinVectorsRaw(out, others...);
+}
+/**
+ * this is a helper function that puts all the vectors into one vector,
+ * sequentially: out = (first[0],..., first[first.dimension()-1], ...)
+ * Usage:
+ *      capd::DVector v(1), u(2), w(3);
+ * 		auto out = joinVectorsRaw(out, v, u, w); // out will be of dimension 6
+ * TODO: test it.
+ */
+template<typename VectorType, typename ...VectorTypes>
+VectorType joinVectors(VectorType const & first, VectorTypes const & ...others) {
+	typename VectorType::size_type dim = commonDimension(first, others...);
+	VectorType result(dim);
+	joinVectorsRaw(result.begin(), first, others...);
+	return result;
+}
+
 } // namespace ddeshelper
 } // namespace capd
 

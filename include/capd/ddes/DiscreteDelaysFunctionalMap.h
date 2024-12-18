@@ -39,6 +39,9 @@
 #include <capd/fadbad/fadbad.h>
 #include <capd/fadbad/tadiff.h>
 #include <capd/fadbad/fadiff.h>
+// DEV NOTE: this enables to use fadbad on filib special
+// DEV NOTE: functions such as exp, power, etc.
+#include <capd/dynsys/filibfadbad.h>
 
 namespace capd{
 namespace ddes{

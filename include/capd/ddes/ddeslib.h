@@ -31,32 +31,34 @@
 #ifndef _CAPD_DDES_DDESSLIB_H_
 #define _CAPD_DDES_DDESSLIB_H_
 
+// those are the common things both non-rigorous and rigorous code uses
 #include <capd/ddes/DDECommon.hpp>
 #include <capd/ddes/storage/storage.h>
-#include <capd/ddes/DDEForwardTaylorCurvePiece.hpp>
-#include <capd/ddes/DDEPiecewisePolynomialCurve.hpp>
-#include <capd/ddes/DDESolutionCurve.hpp>
-#include <capd/ddes/SampleEqns.hpp>
 #include <capd/ddes/FunctionalMap.hpp>
-#include <capd/ddes/BasicDiscreteDelaysFunctionalMap.h> // TODO: (!!!URGENT) PRAWDOPODOBNIE USUNAC JAK SKONCZE REFACTOR!
-#include <capd/ddes/DiscreteDelaysFunctionalMap.hpp>
-#include <capd/ddes/DDENonrigorousTaylorSolver.hpp>
-#include <capd/ddes/DDETaylorSolver.hpp>
 #include <capd/ddes/DDEJetSection.hpp>
+#include <capd/ddes/SampleEqns.hpp>
+
+// those are for nonrigorous code
+#include <capd/ddes/DDEPiecewisePolynomialCurve.hpp>
+#include <capd/ddes/BasicDiscreteDelaysFunctionalMap.hpp>
+#include <capd/ddes/DDENonrigorousTaylorSolver.hpp>
 #include <capd/ddes/DDEBasicPoincareMap.hpp> // TODO: (!!!URGENT) PRAWDOPODOBNIE USUNAC JAK SKONCZE REFACTOR! (PoincareMap bedzie sciagac dane z tego)
 #include <capd/ddes/DDEBasicTimeMap.hpp>
+
+// those are for rigorous code.
+#include <capd/ddes/DDEForwardTaylorCurvePiece.hpp>
+#include <capd/ddes/DDESolutionCurve.hpp>
+#include <capd/ddes/DiscreteDelaysFunctionalMap.hpp>
+#include <capd/ddes/DDETaylorSolver.hpp>
 #include <capd/ddes/DDEPoincareMap.hpp>
 
 namespace capd {
 
 namespace ddes {
 
-// TODO: NOT-IMPORTANT Rethink what to use?
-//template<
-//	typename EqSpec,
-//	typename MatrixSpec = capd::vectalg::Matrix<typename EqSpec::ParamType, 0, 0>,
-//	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>
-//>
+
+// TODO: (IMPORTANT) DOCS!
+// TODO: (IMPORTANT) TESTS!
 template<
 	typename EqSpec,
 	typename MatrixSpec = capd::DMatrix,
@@ -96,12 +98,8 @@ public:
 };
 
 
-// TODO: NOT-IMPORTANT Rethink what to use?
-//template<
-//	typename EqSpec,
-//	typename MatrixSpec = capd::vectalg::Matrix<typename EqSpec::ParamType, 0, 0>,
-//	typename VectorSpec = capd::vectalg::Vector<typename EqSpec::ParamType, 0>
-//>
+// TODO: (IMPORTANT) DOCS!
+// TODO: (IMPORTANT) TESTS!
 template<
 	typename EqSpec,
 	typename MatrixSpec = capd::IMatrix,

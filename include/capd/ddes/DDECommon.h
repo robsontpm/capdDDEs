@@ -4,7 +4,7 @@
  *
  * 		"Rigorous Integration of Delay Differential Equations", Jagiellonian University, 2015
  *
- * When using in scientific work please consider citing my articles (preffered),
+ * When using in scientific work please consider citing my articles (preferred),
  * PhD thesis and/or my webpage. For the publications describing the source code
  * please refer to http://scirsc.org/p/papers. Most notable paper up to date is:
  *
@@ -40,7 +40,7 @@
 namespace capd{
 namespace ddes{
 
-/** this is used in many places, so DRY */
+/** this is used in many places. Pretty technical. Nothing to do with DDEs actually. */
 template<typename PtrT>
 void helper_safe_delete(PtrT& item, bool is_owner){
 	if (item && is_owner){
@@ -49,7 +49,7 @@ void helper_safe_delete(PtrT& item, bool is_owner){
 	}
 }
 
-/** this is used in many places, so DRY */
+/** this is used in many places. Pretty technical. Nothing to do with DDEs actually. */
 template<typename PtrT>
 void helper_safe_array_delete(PtrT& item, bool is_owner){
 	if (item && is_owner){
@@ -58,10 +58,10 @@ void helper_safe_array_delete(PtrT& item, bool is_owner){
 	}
 }
 
-/** After reconsider, this probably will be removed. TODO: (NOT URGENT) probably remove */
+/** this is used in many places. Pretty technical. Nothing to do with DDEs actually. */
 void helper_dump_line(std::istream & in);
 
-/** After reconsider, this probably will be removed. TODO: (NOT URGENT) probably remove  */
+/** this is used in many places. Pretty technical. Nothing to do with DDEs actually. */
 void helper_dump_badge(std::istream & in);
 
 /** helper function, to be used to simply override versions for double (numerical nonrigorous) and Interval (rigorous) */
@@ -70,13 +70,17 @@ RealSpec ecloseStep(RealSpec h){ return RealSpec(0.0, 1.0) * h; }
 /** nonrigorous version for double numerical only method */
 double ecloseStep(double h);
 
-/** helper function for pretty printing. TODO: (NOT URGENT) move to other files (helper?) */
+/** helper function for pretty printing. */
 template<typename RealSpec>
 std::string showEnclosedInterval(RealSpec a, RealSpec b){ std::ostringstream oss; oss << "[" << a.leftBound() << ", " << b.rightBound() << ")"; return oss.str(); }
-/** nonrigorous version for double numerical only method TODO: (NOT URGENT) move to other files (helper?) */
+/** nonrigorous version for double numerical only method */
 std::string showEnclosedInterval(double a, double b);
 
 /**
+ * this is used in many places. Pretty technical. Nothing to do with DDEs actually.
+ * It allows to have some kind of stack trace as in Python, but in C++. Now
+ * probably there is some library for this in boost/std.
+ *
  * makes an exception with extra message in front and glued with glue. Default glue = "\n    "
  * makes a good work to produce some kind of stack trace.
  * Sugested usage:
@@ -95,6 +99,10 @@ ExceptionSpec rethrow(std::string msg, ExceptionSpec const &e, std::string glue 
 }
 
 /**
+ * this is used in many places. Pretty technical. Nothing to do with DDEs actually.
+ * It allows to have some kind of stack trace as in Python, but in C++. Now
+ * probably there is some library for this in boost/std.
+ *
  * makes an exception with extra message in front and glued with glue. Default glue = "\n    "
  * makes a good work to produce some kind of stack trace.
  * Sugested usage:
@@ -126,29 +134,6 @@ template<typename T_Bound, typename T_Rnd>
 int closestSmallerInt(capd::intervals::Interval<T_Bound, T_Rnd> const & value){ return closestSmallerInt(value.leftBound()); }
 /** special case for capd::interval template */
 int closestSmallerInt(capd::interval const & value);
-
-/** require C++11 */
-template<typename VectorType, typename ...VectorTypes>
-typename VectorType::size_type
-commonDimension(VectorType const & first, VectorTypes const & ...others) {
-    return first.dimension(sizeof...(others) ? commonDimension(others...) : 0);
-}
-/** require C++11 TODO: (NOT URGENT) probably remove  */
-template<typename OutIterator, typename VectorType, typename ...VectorTypes>
-void joinVectorsRaw(OutIterator& out, VectorType const & first, VectorTypes const & ...others) {
-	for (auto vIt = first.begin(); vIt != first.end(); ++vIt, ++out)
-		*out = *vIt;
-	if (sizeof...(others))
-		joinVectorsRaw(out, others...);
-}
-/** require C++11 TODO: (NOT URGENT) probably remove  */
-template<typename VectorType, typename ...VectorTypes>
-VectorType joinVectors(VectorType const & first, VectorTypes const & ...others) {
-	typename VectorType::size_type dim = commonDimension(first, others...);
-	VectorType result(dim);
-	joinVectorsRaw(result.begin(), first, others...);
-	return result;
-}
 
 /**
  * This represents time points on a grid i * h, i - integer, h - real
