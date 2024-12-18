@@ -69,24 +69,7 @@ public:
 private:
 	typedef void (Class::*SingleStepFn)(CurveType&);
 	void singleStep(CurveType& curve){ m_dynsys(curve); }
-	void singleStepWithVariational(CurveType& curve){
-		m_dynsys(curve, m_variational);
-		// if (m_normalizeVariational && m_steps % m_storedInitialShape.size() == 0){
-		if (m_normalizeVariational && m_steps > 0){
-			std::cout << "Doing renormalization at " << m_steps << std::endl;
-			MatrixType fullV, redV;
-			extractVariationalMatrix(curve, fullV, redV, m_storedInitialShape, m_storedInitialShape.size());
-			std::cout << fullV.numberOfColumns() << " " << redV.numberOfColumns() << std::endl;
-			if (fullV.numberOfColumns() != redV.numberOfColumns())
-				throw std::logic_error("DDEBasicPoincareMap::singleStepWithVariational(): (EXPERIMENTAL) fullV has diff shape than redV (num cols) ");
-			for (size_type j = 0; j < fullV.numberOfColumns(); ++j){
-				ScalarType norm = sqrt(redV.column(j) * redV.column(j)); // TODO: use EuclNorm from CAPD
-				fullV.column(j) /= norm;
-				// std::cout << "   Norm at " << j << " : " << norm << std::endl;
-			}
-			setCurrentV(curve, fullV);
-		}
-	}
+	void singleStepWithVariational(CurveType& curve){ m_dynsys(curve, m_variational); }
 
 public:
 
@@ -94,8 +77,7 @@ public:
 		m_dynsys(other.m_dynsys), m_section(other.m_section),
 		m_direction(other.m_direction),
 		m_requiredSteps(other.m_requiredSteps), m_maxSteps(other.m_maxSteps), m_steps(other.m_steps),
-		m_binsearchEpsilon(other.m_binsearchEpsilon),
-		m_normalizeVariational(false)
+		m_binsearchEpsilon(other.m_binsearchEpsilon)
 	{}
 
 	DDEBasicPoincareMap(
@@ -108,8 +90,7 @@ public:
 		m_dynsys(dynsys), m_section(section),
 		m_direction(direction),
 		m_requiredSteps(reqSteps), m_maxSteps(maxSteps), m_steps(0),
-		m_binsearchEpsilon(binsearchEpsilon),
-		m_normalizeVariational(false)
+		m_binsearchEpsilon(binsearchEpsilon)
 	{}
 
 	/**
@@ -207,7 +188,7 @@ public:
 	 *        for the formula to make sense. This is usual notion of the section to be transversal
 	 *        to the flow at x.
 	 *
-	 *  Finally, note that x, Px, fPx can be used in .set_x() to
+	 *  Finally, note that x, Px, fPx can be used in .set_x() to get
 	 *  a curve of a proper structure (important!) to get interesting data.
 	 *  The proper structure is stored in Pcurve, i.e. usually, one can do:
 	 *  curve_x = Pcurve; curve_x.set_x(out_x); 		// guaranteed: curve_x == curve.subcurve([-tau, 0])
@@ -230,12 +211,6 @@ public:
 		auto& curve = in_out_curve;
 		auto& Pcurve = in_out_Pcurve;
 
-		// we need to take this before we start to move things! To store its dimension etc.
-		out_x = curve.get_x();
-		m_storedInitialShape.clear();  // we store shape because I need it in one experimental procedure to propagate vectors through Variational equation.
-		for (auto ijet = curve.rbegin(); ijet != curve.rend(); ++ijet)
-			m_storedInitialShape.push_back((*ijet)->end() - (*ijet)->begin());
-
 		integrateUntilSectionCrossing(curve, m_lastTimeBeforeSection, &Class::singleStepWithVariational);
 		CurveType on_section = Pcurve.increasedOrder(); // we need extra order to compute fPx
 		findCrossingTime(curve, on_section, m_lastEpsilonTime, -1);
@@ -249,25 +224,7 @@ public:
 		out_fPx = fPcurve.get_x();
 		out_V = MatrixType(out_Px.dimension(), out_x.dimension());
 
-		extractVariationalMatrix(Pcurve, out_V);
-//		JacobianStorageType V; // it will be easier to iterate over the complete structure to join it into V matrix later.
-//		V.push_back(Pcurve.getValueAtCurrent().getMatrixData());
-//		for (auto ijet = Pcurve.rbegin(); ijet != Pcurve.rend(); ++ijet)
-//			for (auto icoeff = (*ijet)->begin(); icoeff != (*ijet)->end(); ++icoeff)
-//				V.push_back(icoeff->getMatrixData());
-//
-//		size_type I = 0, J = 0;
-//		size_type i = 0, j = 0;
-//		for (auto a = V.begin(); a != V.end(); ++a){
-//			J = 0;
-//			for (auto b = a->begin(); b != a->end(); ++b){
-//				for (i = 0; i < b->numberOfRows(); ++i)
-//					for (j = 0; j < b->numberOfColumns(); ++j)
-//						out_V[I+i][J+j] = (*b)[i][j];
-//				J += j;
-//			}
-//			I += i;
-//		}
+		m_dynsys.extractVariationalMatrix(Pcurve, out_V);
 
 		// makes a Vector compatible with the structure of fPcurve
 		// (note that section might not be defined for higher orders in curve!)
@@ -327,33 +284,6 @@ public:
 		for (auto ij = in_out_curve.rbegin(); ij != in_out_curve.rend(); ++ij){
 			for (auto ik = (*ij)->begin(); ik != (*ij)->end(); ++ik){
 				I += d;
-				for (size_type i = 0; i < d; ++i)
-					for (size_type j = 0; j < xcount; ++j)
-						initialD[i][j] = V[I + i][j];
-				ik->setMatrix(initialD);
-			}
-		}
-	}
-
-	/**
-	 * Experimental...
-	 */
-	void setCurrentV(CurveType& in_out_curve, MatrixType const& V){
-		size_type d = in_out_curve.dimension();
-		if (V.numberOfRows() < d) return;
-		size_type xcount = V.numberOfColumns();
-		MatrixType initialD(d, xcount);
-		size_type I = 0;
-		for (size_type i = 0; i < d; ++i)
-			for (size_type j = 0; j < xcount; ++j)
-				initialD[i][j] = V[I + i][j];
-
-		in_out_curve.getValueAtCurrent().setMatrix(initialD);
-		for (auto ij = in_out_curve.rbegin(); ij != in_out_curve.rend(); ++ij){
-			for (auto ik = (*ij)->begin(); ik != (*ij)->end(); ++ik){
-				I += d;
-				if (V.numberOfRows() < I + d)
-					continue;
 				for (size_type i = 0; i < d; ++i)
 					for (size_type j = 0; j < xcount; ++j)
 						initialD[i][j] = V[I + i][j];
@@ -468,9 +398,6 @@ public:
 
 	int getLastStepsAfterSection() { return m_steps; }
 
-	bool isNormalizeVariational() const { return m_normalizeVariational; }
-	Class& setNormalizeVariational(bool value) { m_normalizeVariational = value; return *this; }
-
 protected:
 	DynSysType& m_dynsys;
 	SectionType& m_section;
@@ -481,9 +408,12 @@ protected:
 	double m_binsearchEpsilon;
 	RealType m_lastTimeBeforeSection;
 	RealType m_lastEpsilonTime;
+	/**
+	 * the data of the last call to the DynSys with the variational part computed.
+	 * NOTE: Now it is not even used directly, user can get it, but will rater not use it, it's
+	 * very technical. The true variational data is still stored in the appropriate Solution class.
+	 */
 	JacobianStorageType m_variational;
-	bool m_normalizeVariational;
-	std::vector<size_type> m_storedInitialShape;
 
 	void checkSteps(){
 		if (m_maxSteps > 0 && m_steps > m_maxSteps){
@@ -491,71 +421,6 @@ protected:
 			info << "DDEBasicPoincareMap::checkSteps(): Made a maximum of " << m_steps << ". Integration stopped.";
 			throw std::logic_error(info.str());
 		}
-	}
-
-	void extractVariationalMatrix(
-				CurveType const& curve,
-				MatrixType& fullV, MatrixType& reducedV,
-				std::vector<size_type> reducedShape, int p_howFar = -1) const {
-		JacobianStorageType V, R; // it will be easier to iterate over the complete structure to join it into V matrix later.
-		bool doReduced = reducedShape.size() != 0;
-		size_type howFar = (p_howFar >= 0 ? p_howFar : curve.rend() - curve.rbegin());
-
-		V.push_back(curve.getValueAtCurrent().getMatrixData());
-		if (doReduced) R.push_back(curve.getValueAtCurrent().getMatrixData());
-
-		size_type pMax = reducedShape.size();
-		size_type pCount = 0;
-		for (auto ijet = curve.rbegin(); (ijet != curve.rend()) && (pCount < howFar); ++ijet, ++pCount){
-			size_type nCount = 0;
-			for (auto icoeff = (*ijet)->begin(); icoeff != (*ijet)->end(); ++icoeff, ++nCount){
-				V.push_back(icoeff->getMatrixData());
-				if (doReduced && pCount < pMax && nCount < reducedShape[pCount])
-					R.push_back(icoeff->getMatrixData());
-			}
-		}
-
-		size_type allRowsCount = V.size() * curve.dimension();
-		size_type redRowsCount = R.size() * curve.dimension();
-		size_type columnsCount = V[0].size() * curve.dimension();
-
-		size_type I = 0, J = 0;
-		size_type i = 0, j = 0;
-		fullV = MatrixType(allRowsCount, columnsCount);
-		for (auto a = V.begin(); a != V.end(); ++a){
-			J = 0;
-			for (auto b = a->begin(); b != a->end(); ++b){
-				for (i = 0; i < b->numberOfRows(); ++i)
-					for (j = 0; j < b->numberOfColumns(); ++j)
-						fullV[I+i][J+j] = (*b)[i][j];
-				J += j;
-			}
-			I += i;
-		}
-
-		if (redRowsCount){
-			if (&fullV == &reducedV)
-				throw std::logic_error("Same storage variable used for full and reduced V. Might result is a crash.");
-			reducedV = MatrixType(redRowsCount, columnsCount);
-			size_type I = 0, J = 0;
-			size_type i = 0, j = 0;
-			for (auto a = R.begin(); a != R.end(); ++a){
-				J = 0;
-				for (auto b = a->begin(); b != a->end(); ++b){
-					for (i = 0; i < b->numberOfRows(); ++i)
-						for (j = 0; j < b->numberOfColumns(); ++j)
-							reducedV[I+i][J+j] = (*b)[i][j];
-					J += j;
-				}
-				I += i;
-			}
-		}
-
-	} // END of void extractVariationalMatrix()
-
-	void extractVariationalMatrix(CurveType const& curve, MatrixType& fullV) const {
-		std::vector<size_type> noShape;
-		extractVariationalMatrix(curve, fullV, fullV, noShape);
 	}
 };
 

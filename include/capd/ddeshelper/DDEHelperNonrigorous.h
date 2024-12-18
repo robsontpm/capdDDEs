@@ -130,7 +130,6 @@ public:
 	typedef capd::ddes::DDEBasicPoincareMap<Solver, JetSection> PoincareMap;
 	static const size_type PARAMS_COUNT;
 	static const size_type DIMENSION;
-
 	typedef capd::ddeshelper::CoordinateFrame<Matrix, Vector, Scalar> CoordinateFrame;
 
 	/**
@@ -491,6 +490,32 @@ public:
 		drawMap(solution, outconfig);
 		return solution;
 	}
+
+//	/**
+//	 * Just integrate the solution and computes the monodromy matrix.
+//	 */
+//	Solution integrate(int iters, const Solution& initial, Solution& result, Matrix &DT, bool use_extension=false){
+//		try {
+//			checkGrid(initial); checkGrid(result);
+//		} catch (std::logic_error& e){
+//			throw capd::ddes::rethrow("NonrigorousHelper::integrate(int, Solution, Solution, Matrix, bool): initial and result must have the same grid!", e);
+//		}
+//		if (iters < 0) iters = -m_p * iters;
+//		auto tau = m_grid.point(m_p);
+//		DDEq dde(Eq(m_params), tau);
+//		Solver solver(dde, use_extension ? m_maxOrder : m_n);
+//
+//		Jacobians V;
+//		Solution XXX = initial;
+//		for (int i = 0; i < iters; i++)
+//			solver(XXX, V);
+//		 Solution X = XXX.subcurve(XXX.currentTime() - tau);
+//		 capd::ddeshelper::copyReduce(X, result);
+//
+//		 //deprecated_extractVariationalMatrix();
+//		 return XXX;
+//	}
+
 //	/**
 //	 * Detects the crossing direction of the section just by integration.
 //	 * Can be helpful, when section is weird and you cannot decide.

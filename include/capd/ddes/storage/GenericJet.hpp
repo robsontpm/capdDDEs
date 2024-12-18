@@ -236,12 +236,15 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalCoe
 	size_type j = this->m_order;
 	const_iterator coeff = this->end();
 	while (coeff-- != begin()){
-		// TODO: (tabularize the weights for some minor speed?)
-		out *= (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));	// this way it is easier to impelement neccessary (unary) operators, and no copy operator is involved! TODO: (make the same in the rigorous code)
-		out += (*coeff); 											// this way it is easier to impelement neccessary (unary) operators, and no copy operator is involved! TODO: (make the same in the rigorous code)
-		// out = (*coeff) + out * (delta_t * (RealType(j + 1) / RealType(j + 1 - n))); // old version, one line.
-		if (j == n) break; // this will always be valid even if size_type is unsigned and even if n = 0
-		--j;
+		// TODO: (NOT URGENT, FUTURE, RETHINK) tabularize the weights for some minor speed?
+		// old version in one line: out = (*coeff) + out * (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));
+		// is not so good as the new version, that does not use cause copy constructors, etc.
+		// (just with the unary +=, *= operators):
+		out *= (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));
+		out += (*coeff);
+		// to prevent infinite loop in case of unsigned data.
+		// This will always be valid even if size_type is unsigned and even if n = 0
+		if (j == n) break; --j;
 	}
 }
 

@@ -44,6 +44,7 @@
 #include <capd/ddes/DDETaylorSolver.hpp>
 #include <capd/ddes/DDEJetSection.hpp>
 #include <capd/ddes/DDEBasicPoincareMap.hpp> // TODO: (!!!URGENT) PRAWDOPODOBNIE USUNAC JAK SKONCZE REFACTOR! (PoincareMap bedzie sciagac dane z tego)
+#include <capd/ddes/DDEBasicTimeMap.hpp>
 #include <capd/ddes/DDEPoincareMap.hpp>
 
 namespace capd {

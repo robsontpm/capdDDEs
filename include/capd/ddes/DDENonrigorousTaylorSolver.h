@@ -42,6 +42,16 @@ namespace ddes{
 /**
  * a class to hold additional data to compute Jacobian of the
  * (nonrigorous / approximate) flow w.r.t. initial data.
+ * Used in the Taylor integrator to do the C^1 computations.
+ *
+ * It has the same interface as the VectorSpec, but holds extra data.
+ * The current implementation holds the matrix D of shape d x M
+ * as a collection of blocks d x d. This is beneficial from the
+ * implementation point of view in the Taylor integration
+ * and in the extraction of data. Basically, each coefficient coeff
+ * in Taylor representation is a d dimensional vector, so the
+ * derivative of coeff w.r.t. other coeff is a d x d matrix. The derivative
+ * of a coeff w.r.t. collection of coeffs is a collection of such matrices.
  */
 template<typename VectorSpec, typename MatrixSpec>
 class VectorWithJacData : public VectorSpec {
@@ -52,6 +62,9 @@ public:
 	typedef VectorSpec BaseClass;
 	typedef typename BaseClass::size_type size_type;
 	typedef std::vector<MatrixSpec> MatrixStorageType;
+
+	// DEV NOTE: I deliberately left the implementations here, they are very short
+	// DEV NOTE: and i like to have them in one place. Please do not refactor this.
 
 	VectorWithJacData(size_type d = 0): BaseClass(d) {}
 	VectorWithJacData(const VectorWithJacData& orig): BaseClass(orig), m_Jac(orig.m_Jac) {}
@@ -65,10 +78,19 @@ public:
 		}
 	}
 
+	/**
+	 * sets the data with a given matrix,
+	 * matrix must be d x M, where d is the dimension of
+	 * this vector. Otherwise std::logic_error is thrown.
+	 */
 	VectorWithJacData& setMatrix(MatrixType const& D){
 		size_type d = this->dimension();
-		if (D.numberOfRows() != d)
-			throw std::logic_error("VectorWithJacData::setMatrix(): D has bad number of rows");
+		if (D.numberOfRows() != d){
+			std::ostringstream info;
+			info << "VectorWithJacData::setMatrix(): D has bad number of rows, ";
+			info << "expected: " << d << ", is: " << D.numberOfRows();
+			throw std::logic_error(info.str());
+		}
 		size_type I = 0;
 		m_Jac.clear();
 		while(I < D.numberOfColumns()){
@@ -85,24 +107,36 @@ public:
 		return *this;
 	}
 
+	/** standard assign */
 	VectorWithJacData& operator=(const VectorWithJacData& orig){
 		BaseClass::operator=(BaseClass(orig));
 		m_Jac = orig.m_Jac;
 		return *this;
 	}
 
+	/** standard assign from the base class, with empty matirx data. */
 	VectorWithJacData& operator=(const BaseClass& orig){
 		BaseClass::operator=(orig);
 		m_Jac.clear();
 		return *this;
 	}
 
+	/**
+	 * standard multiplication by a scalar. It also modifies Matrix data D,
+	 * as if D is the derivative of x, then cD is derivative of cx.
+	 */
 	VectorWithJacData& operator*=(ScalarType const& c){
 		this->VectorSpec::operator*=(c);
 		for (auto i = m_Jac.begin(); i != m_Jac.end(); ++i) (*i) *= c;
 		return *this;
 	}
 
+	/**
+	 * adds two vectors with data.
+	 * WARNING: the matrix data must be compatible!
+	 *          If not, there will be probably an exception thrown
+	 *          by the CAPD internal implementation.
+	 */
 	VectorWithJacData& operator+=(VectorWithJacData const& other){
 		this->VectorSpec::operator+=(other);
 		auto i = m_Jac.begin();
@@ -111,7 +145,9 @@ public:
 		return *this;
 	}
 
+	/** conversion to the basic vector type */
 	operator VectorSpec() { return *this; }
+	/** converts the sequence of Matrices d x d, into one big matrix d x M */
 	operator MatrixSpec() {
 		size_type d = this->dimension();
 		size_type N0 = d * m_Jac.size();
@@ -124,145 +160,226 @@ public:
 		return M;
 	}
 
+	/** returns the internal matrix data for a protected variable */
 	const MatrixStorageType& getMatrixData() const { return m_Jac; }
+	/** returns the internal matrix data and allows modyfication. */
 	MatrixStorageType& getMatrixData() { return m_Jac; }
 
 protected:
 	std::vector<MatrixSpec> m_Jac;
 };
 
+/**
+ * This is nonrigorous Taylor method for general FDE/DDEs,
+ * such that they can provide some basic Jet data on their
+ * representation (@see computeDDECoefficients in an exemplary class
+ * from @see BasicDiscreteDelaysFunctionalMap.h).
+ *
+ * This is the implementation of an algorithm given
+ * in a series of FoCM papers (2018 and 2024). See them for
+ * mathematical background.
+ */
 template<typename FunctionalMapSpec>
 class DDENonrigorousTaylorSolver {
 public:
+	/** naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef FunctionalMapSpec FunctionalMapType;
-	typedef typename FunctionalMapType::CurveType SolutionCurveType;
+	/**
+	 * naming required by CAPD and other ddes codes. It simplifies coding
+	 * this is not the Vector Field per se, but it should suffice for now, and I think it is what is called in DDEs literature.
+	 * for now, it is just to have some compatibility with CAPD if we plan to include this library in CAPD
+	 */
+	typedef FunctionalMapType VectorFieldType;
+	/** ddes compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
+	typedef typename FunctionalMapType::CurveType SolutionCurveType; // (For now, I will stick to my version, I think CAPD has here a problem with naming convention)
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
+	typedef typename FunctionalMapType::CurveType SolutionCurve;
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::CurveType CurveType;
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::JetType JetType;
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::DataType DataType; 	// it is in fact SetType
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::VectorType VectorType;
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::MatrixType MatrixType;
+	/** Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::TimePointType TimePointType;
+	/** Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::RealType RealType;
+	/** CAPD compatible. Naming required by CAPD and other ddes codes. It simplifies coding */
+	typedef typename FunctionalMapType::ScalarType ScalarType;
+	/** Naming required by CAPD and other ddes codes. It simplifies coding */
 	typedef typename FunctionalMapType::size_type size_type;
+	/** This is needed by C^1 computations only */
 	typedef typename FunctionalMapType::VariableStorageType VariableStorageType;
+	/** This is needed by C^1 computations only */
 	typedef typename FunctionalMapType::JacobianStorageType JacobianStorageType;
+	/** This is needed by C^1 computations only */
 	typedef typename FunctionalMapType::ValueStorageType ValueStorageType;
 
-	DDENonrigorousTaylorSolver(DDENonrigorousTaylorSolver const& solver): m_map(solver.m_map), m_maxOrder(solver.m_maxOrder) {}
+	/**
+	 * basic constructor.
+	 * We assume that no solver can be created without giving the FDE/DDE
+	 * in form of FunctionalMapType (@see BasicDiscreteDelaysFunctionalMap.h
+	 * for an exemplary class that can be used here).
+	 */
 	DDENonrigorousTaylorSolver(FunctionalMapType const& map, size_type maxOrder = 20): m_map(map), m_maxOrder(maxOrder) {}
+	/** copy constructor. NOTE: there is also a default assign operator=(). */
+	DDENonrigorousTaylorSolver(DDENonrigorousTaylorSolver const& solver): m_map(solver.m_map), m_maxOrder(solver.m_maxOrder) {}
+
 
 	/**
-	 * a nice operator to do several steps at once
-	 * by default it only do one step, so computes solution on [t_0, t_0 + h]
-	 * NOTE: You can supply TimePointType as steps (see other function)! So the following code is valid:
-	 * NOTE: auto tau = grid(p); solver(solution, tau*4); // integrate on [t_0, t_0 + 4\tau]
+	 * Basic form of the operator to do one step. It has additional parameter
+	 * that allows to do many steps at once (basically computing a time map, but only for the full steps
+	 * of size h from the grid).
+	 * By default it only do one step, so it computes approximate solution on [t_0, t_0 + h]
+	 *
+	 * @param in_out_curve
+	 * 		this is the representation of a solution on some interval $[-t_past, t_0]$,
+	 * 		after the procedure, it will contain the representation over $[-t_past, t_0 + steps*h]$
+	 * @param steps number of full steps of size h to do, default is just 1
+	 *
+	 * NOTE: You can supply TimePointType as steps (see other function)!
+	 * So the following code is valid:
+	 *      int p = 128;			 // 128 points per one delay
+	 *      Grid grid(1.0 / p);		 // make a grid with step 2 / p (we assume tau = 1 in the equation)
+	 *		auto tau = grid(p); 	 // get a point from the grid that corresponds to the delay
+	 *		solver(solution, tau*4); // integrate on [t_0, t_0 + 4\tau]
 	 */
-	void operator()(CurveType& in_out_curve, size_type steps=1){
-		// TODO: DRY (see other)
-		auto& curve = in_out_curve;
-
-		TimePointType t0 = curve.t0();
-		TimePointType th = t0 + curve.getStep();
-		RealType h = curve.getStep();
-
-		size_type d = m_map.imageDimension();
-		VectorType zero(d);
-
-		// collecting computation data
-		size_type coeffs_order = m_maxOrder;
-		VariableStorageType u;
-
-		for (size_type i = 0; i < steps; ++i){
-			m_map.collectComputationData(t0, th, h, curve, u, coeffs_order);
-			if (coeffs_order > m_maxOrder) coeffs_order = m_maxOrder;
-			ValueStorageType v; FunctionalMapType::convert(u, v);
-
-			ValueStorageType Phi_coeffs_t0(coeffs_order + 1);
-			ValueStorageType Phi_z(1); Phi_z[0] = zero;
-
-			this->oneStep(t0, th, h, v, Phi_coeffs_t0, Phi_z);
-
-			VariableStorageType new_jet;
-			FunctionalMapType::deconvert(Phi_coeffs_t0, new_jet);
-			curve.addPiece(new JetType(th, new_jet));
-			curve.setValueAtCurrent(Phi_z[0]);
-
-			t0 = th; th = t0 + curve.getStep();
-		}
-	}
+	void operator()(CurveType& in_out_curve, size_type steps=1);
 
 	/*
 	 * This allows to supply TimePointType as the destination time!
+	 *
+	 * @param in_out_curve
+	 * 		this is the representation of a solution on some interval $[-t_past, t_0]$,
+	 * 		after the procedure, it will contain the representation over $[-t_past, t_0 + T]$
+	 * @param T the time to extend the solution
 	 * So the following code is valid:
-	 * 		auto tau = grid(p);
-	 * 		solver(solution, tau*4); // integrate on [t_0, t_0 + 4\tau]
+	 *      int p = 128;			 // 128 points per one delay
+	 *      Grid grid(1.0 / p);		 // make a grid with step 2 / p (we assume tau = 1 in the equation)
+	 *		auto tau = grid(p); 	 // get a point from the grid that corresponds to the delay
+	 *		solver(solution, tau*4); // integrate on [t_0, t_0 + 4\tau]
 	 */
 	inline void operator()(CurveType& in_out_curve, TimePointType const&T){
 		this->operator()(in_out_curve, int(T));
 	}
 
 	/**
-	 * a nice operator form of the one step solver
-	 * NOTE IMPORTANT: we assume that DataType of Jet can hold value and Matrix
-	 *                 we provide candidate for this: VectorWithJacobianData
-	 *                 you cannot use this function with the basic data structure for SolutionCurve
-	 *                 this is also motivated with the optimization in computation of rhs (if we do not use all past data, but only e.g. single discrete delay)
-	 *                 the VectorWithJacobianData is to bind value of a variable with the derivative of coefficients w.r.t. initial data.
-	 *                 Please check examples on how to use this in your code.
-	 * TODO: (FUTURE): make this more user friendly...
+	 * This does one step of integration with computing the variational
+	 * equation. It is used to get the so called C^1 computations,
+	 * i.e. computing the derivative of the flow w.r.t. initial data.
+	 * Note this is rather cumbersome to use by the End User, so
+	 * we propose to use the specialized class to get the derivative of the
+	 * solution w.r.t. initial data, such as DDEBasicPoincareMap or
+	 * DDETimeMap.
+	 *
+	 * NOTE: (important!)
+	 * 		we assume that DataType of Jet can hold value and Matrix.
+	 *      We provide candidate for this: VectorWithJacobianData
+	 *      you cannot use this function with the basic data structure for SolutionCurve
+	 *      this is also motivated with the optimization in computation of rhs
+	 *      (if we do not use all past data, but only e.g. single discrete delay)
+	 *      the VectorWithJacobianData is to bind value of a variable with the
+	 *      derivative of coefficients w.r.t. initial data.
+	 *      Please check examples on how to use this in your code.
 	 */
-	void operator()(CurveType&	 in_out_curve, JacobianStorageType& D){
-		// TODO: DRY (see other)
-		auto& curve = in_out_curve;
+	void operator()(CurveType& in_out_curve, JacobianStorageType& D);
 
-		TimePointType t0 = curve.t0();
-		TimePointType th = t0 + curve.getStep();
-		RealType h = curve.getStep();
+	/** returns the functional map defining the r.h.s. of the equation (with delays and everything) */
+	FunctionalMapType const& getMap() const { return m_map; }
+	/** returns the functional map defining the r.h.s. of the equation (with delays and everything) */
+	FunctionalMapType & getMap() { return m_map; }
 
-		size_type d = m_map.imageDimension();
-		VectorType zero(d);
-		MatrixType Zero(d, d);
+	/**
+	 * This extracts the variational matrix
+	 * (i.e. the derivative of the solution with respect to initial segment)
+	 * computed in the curve during the integration procedure.
+	 *
+	 * NOTE: the solution can be unaware about having "C^1-data" needed to obtain
+	 * the variational matrix. Therefore, the procedure is not part of the
+	 * solution class, but it is tied to the Solver class, which produces
+	 * along the way the C^1 data if needed.
+	 *
+	 * See the FoCM papers for more details. But basically,
+	 * here we treat the curve as a solution depending on the initial
+	 * data curve = curve(initial). We want compute \partial{curve}\over\partial{u}(initial),
+	 * where $u$ is from a functional space, so we have a Frechet derivative problem
+	 * and hard to treat explicitly. But on the other hand, we know that
+	 * u \equiv x \in \R^M, that is, there is a vector x in finite space
+	 * that represents the u. The same for curve(u), it is represented by y.
+	 * Therefore we can work on y(x), a map from \R^M to \R^{M'} (it is possible that)
+	 * $M' \ne M$. And me can compute a matrix of the shape M' x M that
+	 * decodes the partial derivatives \partial y_i \over \partial x_j.
+	 * And this is what fullV below is.
+	 *
+	 * The reducedV is a technical thing, in fact, I use it only when computing
+	 * M x M matrix, that decodes subset of the fullV that coresponds to the
+	 * projection of y(x) to the space of representation of x.
+	 *
+	 * NOTE: the end user should hardly need to call this procedure
+	 *
+	 * For more information on the possible use:
+	 * @see extractVariationalMatrix(SolutionCurve const&, MatrixType&, MatrixType&) const
+	 */
+	void extractVariationalMatrix(
+	            SolutionCurve const& curve,
+	            MatrixType& fullV, MatrixType& reducedV,
+	            std::vector<size_type> reducedShape, int p_howFar = -1) const;
 
-		// collecting computation data
-		size_type coeffs_order = m_maxOrder;
-		VariableStorageType u;
-		m_map.collectComputationData(t0, th, h, curve, u, coeffs_order);
-		if (coeffs_order > m_maxOrder) coeffs_order = m_maxOrder;
-		ValueStorageType v; FunctionalMapType::convert(u, v);
+	/**
+	 * This extracts the variational matrix from a given curve. This is
+	 * the basic version, that extracts all data for all coefficients
+	 * over the whole curve. It might be good for images of Poincare or TIme maps,
+	 * but for a whole solution it might give you some weirdly shaped matrix
+	 * without any meaning. You can get more control in the other version.
+	 *
+	 * For example (this is pseudocode, you need to setup computations first):
+	 * Grid grid(1./100.);
+	 * DDETimeMap T(...);
+	 * C1SolutionCurve X(...);
+	 * capd::DMatrix V;
+	 * auto PX = T(grid(100), X); // move by time t = 1 = 100*grid.h()
+	 * P.getSolver().extractVariationalMatrix(X, V);
+	 *
+	 * In the case of PoincareMaps it is better to use:
+	 * capd::DMatrix DP;
+	 * DDEBasicPoincareMap P(...);
+	 * auto PX = P(X, DP);
+	 * which return the true Jacobian of the map, corrected by the terms related to the return time t_p
+	 * See the FoCM papers for more details.
+	 *
+	 * For more information:
+	 * @see extractVariationalMatrix(SolutionCurve const&, MatrixType&, MatrixType&, std::vector<size_type>, int) const
+	 */
+	void extractVariationalMatrix(SolutionCurve const& curve, MatrixType& fullV) const;
 
-		ValueStorageType Phi_coeffs_t0(coeffs_order + 1);
-		ValueStorageType Phi_z(1); Phi_z[0] = zero;
-		JacobianStorageType JacPhi_z(1); JacPhi_z[0].resize(u.size(), Zero);
-		JacobianStorageType JacPhi_coeffs_t0(coeffs_order + 1);
-		for (auto jaci = JacPhi_coeffs_t0.begin(); jaci != JacPhi_coeffs_t0.end(); ++jaci)
-			jaci->resize(u.size(), Zero);
-
-		this->oneStep(t0, th, h, v, Phi_coeffs_t0, JacPhi_coeffs_t0, Phi_z, JacPhi_z);
-
-		// FunctionalMapType::deconvert(Phi_coeffs_t0, new_jet);
-		typedef typename DataType::MatrixStorageType MatrixStorageType;
-		VariableStorageType new_jet;
-		// IMPORTANT: we assume that other coeffs (PhiCoeffs) are dependent on the same list of variables as the z(t)
-		size_type varCount = u[0].getMatrixData().size();
-		for (size_type k = 0; k <= coeffs_order; ++k){
-			MatrixStorageType DJet_k(varCount, Zero);
-			for (size_type i = 0; i < varCount; ++i)
-				for (size_type j = 0; j < u.size(); ++j)
-					DJet_k[i] += JacPhi_coeffs_t0[k][j] * u[j].getMatrixData()[i];
-
-			new_jet.push_back(DataType(Phi_coeffs_t0[k], DJet_k));
-			if (k > 0) D.push_back(DJet_k);
-		}
-		curve.addPiece(new JetType(th, new_jet));
-
-		MatrixStorageType Dz(varCount, Zero);
-		for (size_type i = 0; i < varCount; ++i)
-			for (size_type j = 0; j < u.size(); ++j)
-				Dz[i] += JacPhi_z[0][j] * u[j].getMatrixData()[i];
-
-		curve.setValueAtCurrent(DataType(Phi_z[0], Dz));
-		D.push_back(Dz);
-	}
+protected:
+	/**
+	 * same as the other oneStep, but without computing JacPhi
+	 * NOTE: out_Phi_z is a collection, for possible future use,
+	 *       I assume that there might be more than only value of x(t+h),
+	 *       maybe from different algorithms and then we will combine them?
+	 *       Or maybe we will compute more coefficients? We will see.
+	 *
+	 * It is designed to be used internally. Operators() and epsilonShift() use this.
+	 *
+	 * @param in_t0 the current time
+	 * @param in_th next time, should be that th \approx t0 + h, note we want to have this as this is from grid, and t0 + h might be not (approximation)!
+	 * @param in_h  step size, see above
+	 * @param in_u  this is a representation of the past history that is needed to compute one step. Usually m_dynsys takes care of providing this parameter by collectComputationData()
+	 * @param out_Phi_coeffs_t0 here will be stored the coefficients of the solution at t = t0
+	 * @param out_Phi_z here will be stored the value(s) of the representation at t = th, usually just one = the value of solution = x(th)
+	 */
+	void oneStep(
+			TimePointType const& 		in_t0,
+			TimePointType const&		in_th,
+			RealType const&				in_h,
+			ValueStorageType const&		in_u,
+			ValueStorageType& 			out_Phi_coeffs_t0,
+			ValueStorageType& 			out_Phi_z);
 
 	/**
 	 * this function produces approximation to the solution
@@ -276,7 +393,20 @@ public:
 	 *
 	 * It is designed to be used internally. Operators() and epsilonShift() use this.
 	 *
-	 * TODO: RETHINK: Maybe it should be private?
+	 * NOTE: out_Phi_z is a collection, see other version of oneStep for more info.
+	 * NOTE: in out_JacPhi_z I need storage for as many as there will be entries in out_Phi_z
+	 *
+	 * @param out_JacPhi_coeffs_t0
+	 * 		this is a collection of matrices o shape d x M
+	 *		(M = size of the representation of the initial function, see papers)
+	 *		it stores the derivative \partial{coef}\over\partial{initial}(initial),
+	 *		i.e. the derivative of the given coefficient w.r.t. initial data.
+	 *		It looks terrible written like this, but see FoCM 2024 paper for proper
+	 *		mathematical treatment.
+	 * @param out_JacPhi_z
+	 * 		similar as the above, but the derivative of the value at th w.r.t. initial data.
+	 *
+	 * NOTE: See other version of this procedure to get info on other parameters.
 	 */
 	void oneStep(
 			TimePointType const& 		in_t0,
@@ -285,71 +415,21 @@ public:
 			ValueStorageType const&		in_u,
 			ValueStorageType& 			out_Phi_coeffs_t0,
 			JacobianStorageType& 		out_JacPhi_coeffs_t0,
-			ValueStorageType& 			out_Phi_z,			// for possible future use, I assume that there might be more than only value of x(t+h) !
-			JacobianStorageType& 		out_JacPhi_z)		// I need storage for as many as there will be entries in out_Phi_z
-	{
-		auto& h = in_h;
-		auto& u = in_u;
-
-		// compute both value and Jacobian (in nonrigorous version u is a point vector!)
-		m_map.computeDDECoefficients(in_t0, u, out_Phi_coeffs_t0, out_JacPhi_coeffs_t0);
-		// now we have Taylor coefficients at t0, we now simply use standard
-		// Taylor method, as in case of ODEs
-		// we explicitely eval jet at t0 as a Taylor series to assure that the
-		// jacobian computed along is valid.
-		// TODO: (NOT URGENT) rewrite as iterators?
-		size_type k = out_Phi_coeffs_t0.size() - 1;
-		while(true){
-			out_Phi_z[0] = out_Phi_coeffs_t0[k] + h * out_Phi_z[0];
-			for (size_type j = 0; j < u.size(); ++j){
-				out_JacPhi_z[0][j] = out_JacPhi_coeffs_t0[k][j] + h * out_JacPhi_z[0][j];
-			}
-			if (k == 0) break; // this prevents from infinite loop in case size_type is unsigned
-			--k;
-		}
-
-		// and we are done!
-	}
-
-	/**
-	 * same as the other oneStep, but without computing JacPhi
-	 * TODO: RETHINK: Maybe it should be private?
-	 */
-	void oneStep(
-			TimePointType const& 		in_t0,
-			TimePointType const&		in_th,
-			RealType const&				in_h,
-			ValueStorageType const&		in_u,
-			ValueStorageType& 			out_Phi_coeffs_t0,
-			ValueStorageType& 			out_Phi_z)			// for possible future use, I assume that there might be more than only value of x(t+h) !
-	{
-		auto& h = in_h;
-		auto& Phi_coeffs_t0 = out_Phi_coeffs_t0;
-		auto& Phi_z = out_Phi_z;
-		auto& u = in_u;
-
-		// compute both value and Jacobian (in nonrigorous version u is a point vector!)
-		m_map.computeDDECoefficients(in_t0, u, Phi_coeffs_t0);
-		// now we have Taylor coefficients at t0, we now simply use standard
-		// Taylor method, as in case of ODEs
-		// TODO: (NOT URGENT) rewrite as iterators?
-		size_type k = Phi_coeffs_t0.size() - 1;
-		while(true){
-			out_Phi_z[0] = Phi_coeffs_t0[k] + h * Phi_z[0];
-			if (k == 0) break; else --k; // this prevents from infinite loop in case size_type is unsigned
-		}
-		// and we are done!
-	}
-
-	FunctionalMapType const& getMap() const { return m_map; }
-	FunctionalMapType & getMap() { return m_map; }
+			ValueStorageType& 			out_Phi_z,
+			JacobianStorageType& 		out_JacPhi_z);
 
 private:
-	/** used in basic computations */
+	/**
+	 * definition of the actual FDE/DDE, with delays ant everything.
+	 * @see BasicDiscreteDelaysFunctionalMap.h for the representative
+	 * of such a class.
+	 */
 	FunctionalMapType m_map;
-	/** used in computation with Jacobian / Monodromy matrix */
-//	JacobianNodeFunctionalMapType m_JacMap;
-	/** maximal order of jet produced at each step. This might be reduced by the max allowed order due to the Curve continuity. */
+	/**
+	 * maximal order of jet produced at each step.
+	 * This might be reduced by the max allowed order due to the Curve continuity.
+	 * See FoCM papers for more information.
+	 */
 	size_type m_maxOrder;
 };
 

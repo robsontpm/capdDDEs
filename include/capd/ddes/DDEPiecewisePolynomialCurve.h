@@ -80,6 +80,8 @@ public:
 	typedef typename PiecesStorageType::reverse_iterator reverse_iterator;
 	typedef typename PiecesStorageType::const_reverse_iterator const_reverse_iterator;
 
+	typedef bool HessianType; ///< CAPD compatibility. We do not support C^2 computations, so I have unusable type here!
+
     template<typename OtherJetTypeSpec>
 	struct rebind { typedef DDEPiecewisePolynomialCurve<GridSpec, OtherJetTypeSpec> other; };
 

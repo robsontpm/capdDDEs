@@ -289,8 +289,8 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::midCurve() const
 }
 
 template<typename TimePointSpec, typename SetSpec, bool isInterval>							// template spec
-DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>									// return type
-DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::dt(size_type n) const {	// function decl
+DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>								// return type
+DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::dt(size_type n) const {		// function decl
 	if (m_order < n){
 		std::ostringstream info;
 		info << "DDEForwardTaylorCurvePiece::dt(n): curve order < n for n = " << n << ", curve order = " << m_order << ".";
@@ -324,8 +324,14 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::evalCoeffAtDelta
 	size_type j = this->m_order;
 	const_iterator it = this->backJet();
 	while (true){
-		result = VectorType(*it) + result * (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));
-		if (j == n) break; else { --j; --it; } // makes sure that j is good if size_type is unsigned! (case n=0)
+		// old version in one line: result = VectorType(*it) + result * (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));
+		// here we split into two steps, so that we do not need to invoke copy constructor on result, etc.
+		// we are just using in-place operations: += and *=:
+		// TODO: (NOT URGENT, FUTURE, RETHINK) tabularize the weights for some minor speed?
+		result *= (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));
+		result += VectorType(*it);
+		// makes sure that j is good if size_type is unsigned! (case n=0)
+		if (j == n) break; else { --j; --it; }
 	}
 	return result;
 }
@@ -382,8 +388,8 @@ void DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::evalCoeffAt
 	out.set_r(s);
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>										// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::VectorType						// return type
+template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::VectorType		// return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::taylorAtDelta(const RealType& delta_t) const {		// function decl
 	VectorType result(dimension());
 	const_iterator coeff = endJet();
@@ -432,8 +438,8 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::summaAtDelta(con
 	return (get_Xi() * power(delta_t, order() + 1));
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::VectorType		// return type
+template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::VectorType	// return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_x() const {		// function decl
 	VectorType result = makeStorage_x();
 	size_type I = 0;
@@ -446,8 +452,8 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_x() const {	
 	return result;
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::MatrixType		// return type
+template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::MatrixType	// return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_C() const {		// function decl
 	MatrixType result = makeStorage_C();
 	size_type I = 0;
@@ -466,8 +472,8 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_r0() const {
 	return *m_r0;
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::MatrixType		// return type
+template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::MatrixType	// return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_B() const {		// function decl
 	MatrixType result = makeStorage_B();
 	size_type I = 0;
@@ -482,8 +488,8 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_B() const {	
 	return result;
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::VectorType		// return type
+template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::VectorType	// return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_r() const {		// function decl
 	VectorType result = makeStorage_x();
 	size_type I = 0;
@@ -495,9 +501,9 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::get_r() const {	
 }
 
 template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& // return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_x(				// function decl
-		VectorType const &x) 																// params
+		VectorType const &x) 														// params
 {
 	size_type I = 0;
 	VectorType v(dimension());
@@ -510,10 +516,10 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_x(				// fun
 	return *this;
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
+template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
 typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
-DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_C(				// function decl
-		MatrixType const &C) 																// params
+DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_C(					// function decl
+		MatrixType const &C) 															// params
 {
 	size_type I = 0;
 	MatrixType M(dimension(), storageN0());
@@ -526,10 +532,10 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_C(				// fun
 	return *this;
 }
 
-template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
+template<typename TimePointSpec, typename SetSpec, bool isInterval>						// template spec
 typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
-DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_Cr0(			// function decl
-		MatrixType const &C, VectorType const &r0)											// params
+DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_Cr0(				// function decl
+		MatrixType const &C, VectorType const &r0)										// params
 {
 	// TODO: (NOT URGENT) rewrite with iterators (see taylorAtDelta(const RealType& delta_t) for inspiration)
 	if (C.numberOfColumns() != r0.dimension())
@@ -551,9 +557,9 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_Cr0(			// fu
 }
 
 template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& // return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_B(				// function decl
-		MatrixType const &B) 																// params
+		MatrixType const &B) 														// params
 {
 	if (B.numberOfColumns() != B.numberOfRows())
 		throw std::logic_error("DDEForwardTaylorCurvePiece::set_B(): B must be square");
@@ -572,9 +578,9 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_B(				// fun
 }
 
 template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& // return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_Binv(			// function decl
-		MatrixType const &invB) 															// params
+		MatrixType const &invB) 													// params
 {
 	// TODO: (NOT URGENT) DRY (see set_B())
 	if (invB.numberOfColumns() != invB.numberOfRows())
@@ -594,9 +600,9 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_Binv(			// f
 }
 
 template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& // return type
 DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_r(				// function decl
-		VectorType const &r) 																// params
+		VectorType const &r) 														// params
 {
 	// TODO: (NOT URGENT) rewrite with iterators (see taylorAtDelta(const RealType& delta_t) for inspiration)
 	size_type I = 0;
@@ -610,9 +616,9 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_r(				// fun
 }
 
 template<typename TimePointSpec, typename SetSpec, bool isInterval>					// template spec
-typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& 	// return type
-DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_r0(			// function decl
-		VectorType const &r0) 																// params
+typename DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::BaseClass& // return type
+DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::set_r0(				// function decl
+		VectorType const &r0) 														// params
 {
 	// if dimension is bad, then setting r0 would destroy the sanity of the doubleton structure.
 	if (r0.dimension() != storageN0())

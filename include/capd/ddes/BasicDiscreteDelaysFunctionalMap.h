@@ -267,8 +267,8 @@ public:
 		// we assume this order in u (because we produce it this way in collectComputationData()!).
 		// We will successively fill-in TFAD args below as the recursion will go on
 		// using this iterator to u variable.
-		// NOTE: IMPORTANT!
-		//		this iterator only goes forward, newer should get reset!
+		// NOTE: important fact!
+		//		this iterator only goes forward, never it should get reset!
 		// 		because the older data was inserted into 'args', and we only need to fill new data,
 		// This is why we expect the u to be organized in this way!
 		auto current_u = u.begin();
@@ -386,8 +386,8 @@ public:
 
 		// we will successively fill-in TFAD args below as the recursion will go on
 		// using this iterator to u variable.
-		// NOTE: IMPORTANT!
-		//		this iterator only goes forward, newer should get reset!
+		// NOTE: important fact!
+		//		this iterator only goes forward, never it should get reset!
 		// 		because the older data was inserted into 'args', and we only need to fill new data,
 		// This is why we expect the u to be organized in this way!
 		auto current_u = u.begin();
@@ -477,6 +477,27 @@ public:
 			// now we are ready for the next level of recursion.
 		} // for k loop
 	} // function computeDDECoefficients
+
+	/**
+	 * returns maximal delay.
+	 * Note: running time O(m), m - number of delays.
+	 * TODO: (NOT URGENT, RETHINK) cache max delay? Now the problem is that TimePoint has a reference to grid, and in case of 0 there is incompatibility... maybe I need to refactor m_grid in Time point to pointer and have an option to change it?
+	 */
+	TimePointType getMaxDelay(){
+		if (m_delays.size() == 0)
+			return TimePointType();
+		TimePointType max_tau = *(this->begin());
+		for (auto tau = this->begin() + 1; tau < this->end(); ++tau)
+			if (tau > max_tau) max_tau = tau;
+		return max_tau;
+	}
+
+	CurveType makeSegment(VectorType v={}){
+		// if (v == {}) v = VectorType();
+		auto max_tau = getMaxDelay();
+		CurveType segment(-max_tau, -max_tau.gird()(0));
+		return segment;
+	}
 
 
 	using BaseClass::operator();

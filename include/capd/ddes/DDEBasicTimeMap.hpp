@@ -28,12 +28,10 @@
  * (v.2 or whatever compatible with CAPD license)
  */
 
-#ifndef _CAPD_DDES_DDE_BASICPOINCARE_MAP_HPP_
-#define _CAPD_DDES_DDE_BASICPOINCARE_MAP_HPP_
+#ifndef _CAPD_DDES_DDE_BASICTIME_MAP_HPP_
+#define _CAPD_DDES_DDE_BASICTIME_MAP_HPP_
 
 #include <capd/ddes/DDECommon.hpp>
-#include <capd/ddes/DDEBasicPoincareMap.h>
+#include <capd/ddes/DDEBasicTimeMap.h>
 
-#include <capd/poincare/TimeMap.hpp>
-
-#endif /* _CAPD_DDES_DDE_BASICPOINCARE_MAP_HPP_ */
+#endif /* _CAPD_DDES_DDE_BASICTIME_MAP_HPP_ */
