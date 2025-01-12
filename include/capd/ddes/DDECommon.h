@@ -386,7 +386,8 @@ void sumTaylorForward(ForwardIteratorInSpec a, int n, StepScalarSpec step, OutSp
 /**
  * computes Taylor sum given step and coefficients:
  * sum_{k=0}^{n} a[k] * step^k
- * a is backward iterator, so we can take the advantage of Horner's algorithm
+ * a is backward iterator (that supports operator--()!),
+ * so we can take the advantage of Horner's algorithm
  * OutSpec - scalar or vector to store result. 
  *
  * NOTE: out variable should be set to appropriate 0 outside of function!
@@ -395,13 +396,14 @@ void sumTaylorForward(ForwardIteratorInSpec a, int n, StepScalarSpec step, OutSp
  * Taylor collection can be viewed from the back. See sumTaylorBackward()
  * for a more robust version with Horner's sumation algorithm.
  *
+ * TODO: (NOT URGENT) Name might be misleading, as somebody might think of using vector.rbegin(), but in that case the iterator goes back by ++, not -- and this procedure returns rubbish! Rethink. Or maybe just add some docs notes?
  * TODO: (NOT URGENT) there should be a version of this that accepts begin and end iterators.
  * TODO: (NOT URGENT) propose to implement this somewhere in CAPD itself (I have seen a lot of reimplementations there, DRY)
  * TODO: (NOT URGENT) I myself does not use this to DRY... :(
  */
 template<typename BackwardIteratorInSpec, typename StepScalarSpec, typename OutSpec>
 void sumTaylorBackward(BackwardIteratorInSpec a, int n, StepScalarSpec step, OutSpec& out){			
-	for (int j = 0; j <= n; j++){						
+	for (int j = 0; j <= n; j++){
 		out = *a + (step * out);
 		--a;
 	}
