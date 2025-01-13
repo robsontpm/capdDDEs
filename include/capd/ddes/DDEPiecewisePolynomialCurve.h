@@ -513,6 +513,20 @@ public:
 		return result;
 	}
 
+	Class dt(size_type n = 1) const {
+		if (n == 0) { return *this; } // no need to compute anything
+		Class result(pastTime(), dimension());
+		auto lastjet = end();
+		for (auto ijet = begin(); ijet != end(); ++ijet){
+			result.addPiece((*ijet)->dt(n));
+			lastjet = ijet;
+		}
+		result.setValueAtCurrent((*lastjet)->evalAtDelta(RealType(m_grid(1))));
+		return result;
+	}
+	/** @see Class dt(size_type n) const; this is just to fight ambigious C++ parameter match */
+	Class dt(int n) const { return dt(size_type(n)); }
+
 	template<typename FunctionalSpec>
 	Class dt(FunctionalSpec const& f, size_type n = 1) const {
 		if (n == 0) { return *this; } // no need to compute anything

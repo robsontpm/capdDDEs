@@ -5,9 +5,15 @@ This demo was prepared during a stay in SZTE Bolyai Instutute, Hungary.
 
 The examples should be inspected in the order: ``1_nonrig.cpp``
 then ``2_manipulations``, etc.,
-as the later does not contain comments in the previously explained sections. 
+as the later programs does not contain comments explained already in the previous files. 
 
-TODO: expand the README
+The programs start with a numeral to keep the order of files in the operating systems.
+
+Extra files generated from programs will have names that will put them behind any other files. 
+Please do not run the programs from the source directory (e.g. invoking ```./bin/1_nonrig```),
+because then the files will appear in the source code directory and it will be a mess. 
+
+TODO: Expand the documentation.
 
 Compilation
 -----------

@@ -97,6 +97,10 @@ typedef capd::ddes::NonrigorousSetup<DEq> DS;
 // this is the setup for rigorous computations.
 typedef capd::ddes::RigorousSetup<IEq> IS;
 
+// NOTE: You do not need those below, if you are only going to use rigorous integration
+// NOTE: for a given fixed time interval. The below code helps to construct and
+// NOTE: compute Poincare maps for DDEs.
+
 // those are optional libraries (capd::ddeshelper namespace)
 // we use ploting subrotines that generates gnuplot compatible figures
 // and the *Helper classes with some subroutines usually needed
@@ -112,46 +116,5 @@ typedef capd::ddeshelper::NonrigorousHelper<DEq, 1, capd::DMatrix, capd::DVector
 // this is a helper to assist in rigorous computations.
 typedef capd::ddeshelper::RigorousHelper<IEq, 1, capd::IMatrix, capd::IVector> IHelper;
 
-
-
-
-
-//// TODO: add it to helper!
-//#include <capd/mpcapdlib.h>
-//
-//using namespace capd;
-//using namespace multiPrec;
-//
-//MpInterval interval_to_mpi(const interval& a){
-//	return MpInterval(a.leftBound(), a.rightBound());
-//}
-//
-//MpInterval interval_to_mpi(const Interval& a, int precission){
-//	int old_precision = MpReal::getDefaultPrecision();
-//	MpReal::setDefaultPrecision(precission);
-//	return MpInterval(a.leftBound(), a.rightBound());
-//	MpReal::setDefaultPrecision(old_precision);
-//}
-//
-//template<typename MatrixSpec>
-//void to_mpi_matrix(const MatrixSpec& inA, MpIMatrix& outA, int precission = 512){
-//	int old_precision = MpReal::getDefaultPrecision();
-//	MpReal::setDefaultPrecision(precission);
-//	int size = inA.numberOfColumns(); // assume square matrix
-//	outA = MpIMatrix(size, size);
-//	for (int i = 0; i < size; ++i)
-//		for (int j = 0; j < size; ++j)
-//			outA[i][j] = MpInterval(leftBound(inA[i][j]), rightBound(inA[i][j]));
-//	MpReal::setDefaultPrecision(old_precision);
-//}
-//
-//template<typename MatrixSpec>
-//void from_mpi_matrix(const MpIMatrix& inA, MatrixSpec& outA){
-//	int size = inA.numberOfColumns(); // assume square matrix
-//	outA = MatrixSpec(size, size);
-//	for (int i = 0; i < size; ++i)
-//		for (int j = 0; j < size; ++j)
-//			outA[i][j] = mpi_to_interval(inA[i][j]);
-//}
 
 #endif /* DEMO_ELNINIO_NONRIG_SETUP_H_ */

@@ -262,6 +262,22 @@ public:
 	const FunctionalMapType& getMap() const { return m_map; }
 	FunctionalMapType& getMap() { return m_map; }
 
+	/** similarly to what is in the CAPD */
+	template<typename SetSpec>
+	void operator()(SetSpec &set, size_type steps=1){
+		for (size_type i = 0; i < steps; ++i)
+			set.move(*this);
+	}
+	/** this allows to move sets by multiple of grid step */
+	template<typename SetSpec>
+	void operator()(SetSpec &set, TimePointType const& T){
+		if (!set.getGrid().has(T))
+			throw std::logic_error("DDETaylorSolver::operator()(set, T): time T is incompatible with grid in the set!");
+		if (int(T) < 0)
+			throw std::logic_error("DDETaylorSolver::operator()(set, T): time T is negative! DDEs generally cannot be solved backwards, thus this operation is not allowed.");
+		this->operator()(set, size_type(int(T)));
+	}
+
 private:
 	FunctionalMapType m_map;
 	size_type m_maxOrder;

@@ -336,6 +336,7 @@ public:
 		int i = 0;
 		if (m_ptr_h != ptr_zero){ i = closestSmallerInt(t / *m_ptr_h); }
 		ti = TimePointType(*this, i);
+		if (RealSpec(ti + 1) <= t) ++ti;
 		epsi = t - RealSpec(ti);
 	}
 	/** returns the value of step size h */
