@@ -76,7 +76,7 @@ public:
 
 	template<typename iterator>
 	void fill(iterator from, iterator to){
-		for (iterator p = from; i < to; p++)
+		for (iterator p = from; p < to; p++)
 			*p = *this;
 	}
 
