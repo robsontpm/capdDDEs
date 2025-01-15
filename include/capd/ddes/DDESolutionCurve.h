@@ -284,6 +284,13 @@ public:
 			info << "is R^" << f.dimension() << " -> R^" << f.imageDimension() << ".";
 			throw std::logic_error(info.str());
 		}
+		if (f.degree() < order+2){
+			std::ostringstream info;
+			info << "DDESolutionCurve::__construct__(): f should have degree at least " << order+2 << ", ";
+			info << "now f is of order " << f.degree() << ". ";
+			info << "Consider using f.setOrder(order+2) on the parameter f, before calling this constructor. ";
+			throw std::logic_error(info.str());
+		}
 		try {
 			for (TimePointType t = t0; t < t1; ++t){
 				FJet tt(f.imageDimension(), 1, order + 2);
@@ -295,7 +302,6 @@ public:
 				for (size_type i = 0; i < f.imageDimension(); ++i){
 					size_type j = 0;
 					for (auto fti = ft.begin(i); j <= order; ++fti, ++j){
-						std::cout << ScalarType(t) << " " << j << " " << (*fti) << std::endl;
 						items[j][i] = (*fti);
 					}
 				}
@@ -308,10 +314,7 @@ public:
 				for (size_type i = 0; i < f.imageDimension(); ++i){
 					auto ftxi = FtXi.begin(i) + order + 1;
 					xi[i] = *ftxi;
-					// TODO: (URGENT!!!) test finally and remove verbose!
-					std::cout << ScalarType(t) << " " << order + 1 << " " << xi[i] << " (over interval)" << std::endl;
 				}
-				std::cout << "N0" << N0 << std::endl;
 				CurvePieceType* piece = new CurvePieceType(t, items, N0);
 				addPiece(piece, true); // is faster than by reference, true => pass the ownership
 			}
@@ -563,7 +566,7 @@ public:
 		RealType epsi;
 		TimePointType ti = m_grid.point(0);
 		m_grid.split(t, ti, epsi);
-		std::cerr << "eval t = " << ti << " " << epsi << std::endl;
+		// std::cerr << "eval t = " << ti << " " << epsi << std::endl;
 		try{
 			return (ti == t0() && epsi == 0.0) ? VectorType(m_valueAtCurrent) : /* getPiece(ti).eval(t); */ getPiece(ti).evalAtDelta(epsi);
 		} catch (std::domain_error &e){
