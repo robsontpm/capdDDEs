@@ -141,7 +141,8 @@ void value_to_gnuplot(
 }
 
 template<typename TimePointSpec, typename CurveSpec, typename StepSpec>
-void plot_value(
+std::pair<std::string, std::string>
+plot_value(
 		std::string const& pathprefix,
 		TimePointSpec const &t0,
 		TimePointSpec const &t1,
@@ -167,34 +168,40 @@ void plot_value(
 		outg << "set terminal png size 1600,1200" << std::endl;
 		outg << "set output '" << pngname << "'" << std::endl;
 	}
-	outg << "plot '" << datname << "' using 1:($3-$4) with lines, '" << datname << "' using 1:($3+$4) with lines" << std::endl;
+	std::ostringstream gpplotargs;
+	gpplotargs << "'" << datname << "' using 1:($3-$4) with lines, '" << datname << "' using 1:($3+$4) with lines";
+	outg << "plot " << gpplotargs.str() << std::endl;
 	outg.close();
 	#ifdef DDES_ALLOW_SYSTEM
 	std::ostringstream cmd; cmd << "cd '" << dirpath << "' && gnuplot " << (live ? "-p " : "") << "'" << gpname << "'";
 	capd::ddeshelper::runSystemCommand(cmd.str());
 	#endif
+
+	return std::make_pair(datpath, gpplotargs.str());
 }
 
 template<typename CurveSpec, typename StepSpec>
-void plot_value(
+std::pair<std::string, std::string>
+plot_value(
 		std::string const& pathprefix,
 		StepSpec const & h,
 		CurveSpec const & curve,
 		bool live = true){
 	typename CurveSpec::TimePointType t0 = curve.leftDomain();
 	typename CurveSpec::TimePointType t1 = curve.rightDomain();
-	plot_value(pathprefix, t0, t1, h, curve, live);
+	return plot_value(pathprefix, t0, t1, h, curve, live);
 }
 
 template<typename CurveSpec>
-void plot_value(
+std::pair<std::string, std::string>
+plot_value(
 		std::string const& pathprefix,
 		CurveSpec const & curve,
 		bool live = true){
 	typename CurveSpec::TimePointType t0 = curve.leftDomain();
 	typename CurveSpec::TimePointType t1 = curve.rightDomain();
 	typename CurveSpec::RealType h = (t1 - t0); h /= 128.0; // arbitrarily...
-	plot_value(pathprefix, t0, t1, h, curve, live);
+	return plot_value(pathprefix, t0, t1, h, curve, live);
 }
 
 /**
@@ -242,7 +249,7 @@ void splot_many(
 
 template<typename TimePointSpec, typename CurveSpec, typename StepSpec>
 void plot_phasespace(
-		std::string& pathprefix,
+		std::string const& pathprefix,
 		TimePointSpec const &t0,
 		TimePointSpec const &t1,
 		StepSpec const & h,

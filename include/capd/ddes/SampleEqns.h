@@ -625,6 +625,7 @@ public:
 	template<typename RealSpec, typename InVectorSpec, typename OutVectorSpec>
 	void operator()(const RealSpec& t, const InVectorSpec x, OutVectorSpec& fx) const {
 		fx[0] = a * (x[1] - x[1]*x[1]*x[1]);
+		//fx[0] = a * x[1] * (1 - x[1]*x[1]);
 	}
 
 	static std::string show(){
