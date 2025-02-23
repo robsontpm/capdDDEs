@@ -47,7 +47,7 @@ namespace ddeshelper {
  *
  * @param M is the dimension of the vectors in U (TODO: (NOT URGENT< RETHINK) - remove it as unnecessary?)
  * @param U is the set of vectors from the process (time snapshots).
- * @param avg (out) here will be the avg pasition of U
+ * @param avg (out) here will be the avg position of U
  * @param coords (out) here will be the coordinates around avg for the process (the eigenfunction of the correlation matrix)
  * @param eigen (out) here will be the eigenvalues associated to the respective coordinates in the matrix (dominant first)
  * @param eigen normalize (optional, default: true), if set to true, then the columns of coords will be normalized
