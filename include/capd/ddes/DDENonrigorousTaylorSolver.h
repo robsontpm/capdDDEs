@@ -66,7 +66,8 @@ public:
 	// DEV NOTE: I deliberately left the implementations here, they are very short
 	// DEV NOTE: and i like to have them in one place. Please do not refactor this.
 
-	VectorWithJacData(size_type d = 0): BaseClass(d) {}
+	VectorWithJacData(): BaseClass() {}
+	VectorWithJacData(size_type d): BaseClass(d) {}
 	VectorWithJacData(const VectorWithJacData& orig): BaseClass(orig), m_Jac(orig.m_Jac) {}
 	VectorWithJacData(const VectorSpec& orig): BaseClass(orig) {}
 	VectorWithJacData(const VectorSpec& v, const std::vector<MatrixSpec>& D): BaseClass(v), m_Jac(D) { }

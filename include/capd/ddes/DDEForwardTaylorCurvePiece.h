@@ -278,7 +278,7 @@ public:
 	 * evaluates the jet at time t0 + delta_t, delta_t should be positive!
 	 * Note: out should be set representing [0,0]^d. Procedure do not test for it!
 	 */
-	void evalCoeff(size_type n, const RealType& t, SetType& out) const { evalDtAtDelta(n, t - RealType(t0()),  out); } ;
+	void evalCoeff(size_type n, const RealType& t, SetType& out) const { evalDtAtDelta(n, t - RealType(t0()),  out); } ; // TODO: (VERY IMPORTANT! URGENT!) - chek if this is used and check its correctnes, I think it should be evalCoeffAtDt. Correct, but check for usage first!
 
 	/** returns jet with Taylor part of diameter 0 and the same Xi */
 	DDEForwardTaylorCurvePiece midCurve() const;
@@ -529,7 +529,6 @@ protected:
 		m_dimension = it->dimension();  // we assume dimension of the first element
 		reallocate(storageN0());					// this will unnecessary reallocate R0, rethink...
 		MatrixType eachC(m_dimension, storageN0()); // to make sets of good shape to N0. The matrix = 0, so it should be set later by end user.
-		std::cout << "storageN0-piece" << storageN0() << std::endl;
 		for (auto jk = beginJet(); it != itEnd; ++it, ++jk){
 			try{ dimCheck(&(*it)); } catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece::copyFromData(): incompatible dimension.", e); }
 			try{*jk = SetType(*it, eachC, *m_r0);} catch (std::logic_error& e) { throw rethrow("DDEForwardTaylorCurvePiece::copyFromData(): SetType constructor error.", e); }

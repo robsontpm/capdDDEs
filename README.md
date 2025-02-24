@@ -12,7 +12,7 @@ then to see the project in action, you can run:
 
 ```bash
 sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool
-git clone git@github.com:robsontpm/capdDDEs.git capdDDEs
+git clone https://github.com/robsontpm/capdDDEs.git
 cd capdDDEs
 cp build-conf-bundle.mk build-conf.mk 
 chmod a+x tldr.sh
@@ -21,6 +21,9 @@ chmod a+x tldr.sh
 
 It might take some time to compile everything. 
 The next sections describes what is done in ```tldr.sh``` script. 
+
+**NOTE FOR DEVELOPERS ONLY:** use ```git@github.com:robsontpm/capdDDEs.git capdDDEs``` 
+instead of ```https://github.com/robsontpm/capdDDEs.git```.
 
 Requirements
 ------------

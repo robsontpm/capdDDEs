@@ -38,6 +38,8 @@
 #include <capd/ddes/DDECommon.h>
 #include <capd/ddes/storage/GenericJet.h>
 
+/** TODO: (NOT URGENT, REFACTOR) move impl. to separate file. Cleanup. Fix docs. */
+
 namespace capd{
 namespace ddes{
 
@@ -322,9 +324,19 @@ public:
 //		catch (std::domain_error &e) { throw rethrow("DDESolutionCurve::at(t) const: ", e); }
 	}
 
-	/** todo: docs */
+	/**
+	 * Returns the grid over which this function is defined.
+	 * This function ($x$) is a piecewise polynomial, i.e. it is a polynomial
+	 * on each interval $[grid(i), grid(i+1))$, iff $[grid(i), grid(i+1)) \subset domain(x)$.
+	 */
 	GridType const& grid() const { return m_grid; }
-	/** todo: docs */
+	/**
+	 * Returns the dimension of the real ('ambient') space of this function,
+	 * that is dimension $d$ of each $x(t) \in \R^d$.
+	 * For the full dimension of the representation
+	 * (count on number of coefficients used to represent function $x$),
+	 * @see storageDimension()
+	 */
 	size_type dimension() const { return m_dimension; }
 	/** todo: docs */
 	size_type storageDimension() const {
@@ -356,6 +368,8 @@ public:
 	TimePointType pastTime() const { return getPastTime(); }
 	/** TODO: (NOT URGENT) deprecated? left for backward compatibility? */
 	TimePointType currentTime() const { return getCurrentTime(); }
+	/** returns the pair that defines the domian of this function */
+	std::pair<TimePointType, TimePointType> domain(){ return std::make_pair(leftDomain(), rightDomain()); }
 
 	/**
 	 * returns raw representation of this solution as a vector.
@@ -453,6 +467,7 @@ public:
 		if (i >= i0) 	throw std::domain_error(badge() + "::pointToIndex(): piece index bigger than number of jets.");
 		return i;
 	}
+	/** todo: docs */
 	CurvePieceType& getPiece(TimePointType const& t) const {
 		size_type i;
 		try { i = pointToIndex(t); } catch (std::domain_error &e) { throw rethrow(badge() + "::getPiece(TimePoint):", e); }
@@ -493,6 +508,7 @@ public:
 			throw rethrow(badge() + "::eval(Real):", e);
 		}
 	}
+	/** todo: docs */
 	void eval(TimePointType t, DataType& out) const {
 		try{
 			out = (t == t0() ? m_valueAtCurrent : getPiece(t)[0]);
@@ -500,10 +516,11 @@ public:
 			throw rethrow(badge() + "::eval(TimePoint, SetType&):", e);
 		}
 	}
+	/** todo: docs */
 	void eval(RealType t, DataType& out) const {
 		throw std::logic_error(badge() + "::eval(RealType, SetType&): Not implemented yet.");
 	}
-
+	/** todo: docs */
 	Class dt(DataType const& valueAtCurrent, size_type n = 1) const {
 		if (n == 0) { return *this; } // no need to compute anything
 		Class result(pastTime(), dimension());
@@ -512,7 +529,22 @@ public:
 		result.setValueAtCurrent(valueAtCurrent);
 		return result;
 	}
+	/** todo: docs */
+	Class dt(size_type n = 1) const {
+		if (n == 0) { return *this; } // no need to compute anything
+		Class result(pastTime(), dimension());
+		auto lastjet = end();
+		for (auto ijet = begin(); ijet != end(); ++ijet){
+			result.addPiece((*ijet)->dt(n));
+			lastjet = ijet;
+		}
+		result.setValueAtCurrent((*lastjet)->evalAtDelta(RealType(m_grid(1))));
+		return result;
+	}
+	/** @see Class dt(size_type n) const; this is just to fight ambigious C++ parameter match */
+	Class dt(int n) const { return dt(size_type(n)); }
 
+	/** todo: docs */
 	template<typename FunctionalSpec>
 	Class dt(FunctionalSpec const& f, size_type n = 1) const {
 		if (n == 0) { return *this; } // no need to compute anything
@@ -534,6 +566,7 @@ public:
 		return result;
 	}
 
+	/** todo: docs */
 	Class increasedOrder(size_type r = 1){
 		if (r == 0) { return *this; } // no need to compute anything
 		Class result(pastTime(), dimension());
@@ -542,6 +575,7 @@ public:
 		result.setValueAtCurrent(m_valueAtCurrent);
 		return result;
 	}
+	/** todo: docs */
 	Class decreasedOrder(size_type r = 1){
 		if (r == 0) { return *this; } // no need to compute anything
 		Class result(pastTime(), dimension());

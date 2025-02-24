@@ -174,7 +174,7 @@ public:
 		/** tests if this point is a true zero */
 		inline bool isZero() const { return m_i == 0 || m_grid.m_ptr_h == ptr_zero; }
 		/** shows the human readable representation, without badge */
-		inline std::string show() { std::ostringstream oss; oss << (*m_ptr_h) << " * " << m_i; return oss.str(); }
+		inline std::string show() { std::ostringstream oss; oss << *(m_grid.m_ptr_h) << " * " << m_i; return oss.str(); }
 		/** add two time points together. It tests if they come from the same grid */
 		friend inline TimePointType operator+(TimePointType const & a, TimePointType const & b) {
 			a.checkGridCompatible(b, "Cannot add time points");
@@ -336,6 +336,7 @@ public:
 		int i = 0;
 		if (m_ptr_h != ptr_zero){ i = closestSmallerInt(t / *m_ptr_h); }
 		ti = TimePointType(*this, i);
+		if (RealSpec(ti + 1) <= t) ++ti;
 		epsi = t - RealSpec(ti);
 	}
 	/** returns the value of step size h */
