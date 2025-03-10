@@ -1,5 +1,5 @@
 # a list of all the programs in your package
-EXECUTABLES = capd-ddes-DDECommon
+EXECUTABLES = capd-ddes-DDECommon capd-ddes-storage-BasicDoubleton
 
 # a list of all your units to be linked with your programs
 OTHERS = 

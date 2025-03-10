@@ -99,10 +99,11 @@ int main(int argc, char** argv){
 
 	// TODO: make different algorithms
 
-	cout << "# |0%==============100%|" << endl << "# |" << flush;
+	if (d / 20 > 0)
+		cout << "# |0%==============100%|" << endl << "# |" << flush;
 	// NOW only simplest one
 	for (int i = 0; i < d; i++){
-		if ((i+1) % (d / 20) == 0) cout << "*" << flush;
+		if (d / 20 > 0 && (i+1) % (d / 20) == 0) cout << "*" << flush;
 		for (int j = i + 1; j < d; ++j){
 			MpVector qi = C.column(i);
 			qi.normalize();

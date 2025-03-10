@@ -320,7 +320,20 @@ public:
 	friend bool operator!=(DiscreteTimeGrid const& a, DiscreteTimeGrid const& b) { return !(a == b); }
 	/** this creates a dummy grid that contain the only point 0, with step size 0 */
 	DiscreteTimeGrid(): m_ptr_h(ptr_zero) {}
-	/** the most common contructor, it constructs a grid with step size h */
+	/**
+	 * the most common constructor, it constructs a grid with step size h
+	 * WARNING:
+	 * two grids created with the same physical constant, e.g.
+	 * double h = 0.1;
+	 * Grid g1(h); Grid g2(h);
+	 * Then g1 != g2. This is done for technical reasons to guarantee in rigorous
+	 * code that user does not use the code for two different theoretical step values
+	 * but represented with the same interval.
+	 *
+	 * TODO: (FUTURE): Re-think how to solve the above in a better way.
+	 * This could be solved with h being the reference, but then we would have
+	 * a problem with capturing local variables with pointers and then causing SEG_FAULTs...
+	 */
 	DiscreteTimeGrid(const RealSpec& h): m_ptr_h(h == zero? ptr_zero : std::make_shared<RealSpec>(h)) {} // this way we always point out to the same 0!
 	/** returns a new time point on this grid t_i = h*i */
 	TimePointType point(int i) const { return TimePointType(*this, i); }

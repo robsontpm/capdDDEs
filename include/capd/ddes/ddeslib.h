@@ -95,6 +95,8 @@ public:
 	typedef capd::ddes::DDEBasicPoincareMap<C1Solver, C1Section> C1PoincareMap;
 	typedef capd::ddes::DDEJetSection<Solution> Section;
 	typedef capd::ddes::DDEBasicPoincareMap<Solver, Section> PoincareMap;
+
+	typedef capd::DMap CAPDMap;
 };
 
 
@@ -130,6 +132,8 @@ public:
 	typedef capd::ddes::DDEJetSection<Solution> Section;
 	typedef typename Section::JetType SectionJet;
 	typedef capd::ddes::DDEPoincareMap<Solver, Section> PoincareMap;
+
+	typedef capd::IMap CAPDMap;
 };
 
 } // namespace ddes;

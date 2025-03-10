@@ -53,15 +53,15 @@ BOOST_AUTO_TEST_SUITE_END()
 BOOST_AUTO_TEST_SUITE(DiscreteTimeGridTests)
 
 using RealType = double; // You can change this to test with different types
-using TestGrid = DiscreteTimeGrid<RealType>;
-using TestTimePoint = typename TestGrid::TimePointType;
+using Grid = DiscreteTimeGrid<RealType>;
+using TimePoint = typename Grid::TimePointType;
 
 BOOST_FIXTURE_TEST_CASE(GridConstructionTest, DiscreteTimeGridFixture<RealType>)
 {
     BOOST_CHECK_EQUAL(grid.h(), step);
     
     // Test trivial grid
-    TestGrid trivial;
+    Grid trivial;
     BOOST_CHECK_EQUAL(trivial.h(), 0.0);
 }
 
@@ -105,6 +105,83 @@ BOOST_FIXTURE_TEST_CASE(TimePointComparisonTest, DiscreteTimeGridFixture<RealTyp
     
     auto p3 = grid.point(5);
     BOOST_CHECK(p1 == p3);
+}
+
+// Test the default constructor
+BOOST_AUTO_TEST_CASE(DefaultConstructorTest) {
+    Grid grid;
+    BOOST_CHECK_EQUAL(grid.h(), 0);
+}
+
+// Test the constructor with step size
+BOOST_AUTO_TEST_CASE(ConstructorWithStepSizeTest) {
+    double h = 0.1;
+    Grid grid(h);
+    BOOST_CHECK_EQUAL(grid.h(), h);
+}
+
+// Test the point creation
+BOOST_AUTO_TEST_CASE(PointCreationTest) {
+    double h = 0.1;
+    Grid grid(h);
+    TimePoint point = grid.point(5);
+    BOOST_CHECK_EQUAL(static_cast<double>(point), h * 5);
+}
+
+// Test the operator==
+BOOST_AUTO_TEST_CASE(EqualityOperatorTest) {
+    double h = 0.1;
+    Grid grid1(h);
+    Grid grid2(grid1);
+    // only the copy of a given grid works! See the docs for default constructor!
+    BOOST_CHECK(grid1 == grid2);
+}
+
+// Test the operator!=
+BOOST_AUTO_TEST_CASE(InequalityOperatorTest) {
+    double h1 = 0.1;
+    double h2 = 0.2;
+    Grid grid1(h1);
+    Grid grid2(h2);
+    BOOST_CHECK(grid1 != grid2);
+}
+
+// Test the TimePoint addition
+BOOST_AUTO_TEST_CASE(TimePointAdditionTest) {
+    double h = 0.1;
+    Grid grid(h);
+    TimePoint point1 = grid.point(5);
+    TimePoint point2 = grid.point(3);
+    TimePoint result = point1 + point2;
+    BOOST_CHECK_EQUAL(static_cast<double>(result), h * 8);
+}
+
+// Test the TimePoint subtraction
+BOOST_AUTO_TEST_CASE(TimePointSubtractionTest) {
+    double h = 0.1;
+    Grid grid(h);
+    TimePoint point1 = grid.point(5);
+    TimePoint point2 = grid.point(3);
+    TimePoint result = point1 - point2;
+    BOOST_CHECK_EQUAL(static_cast<double>(result), h * 2);
+}
+
+// Test the TimePoint increment
+BOOST_AUTO_TEST_CASE(TimePointIncrementTest) {
+    double h = 0.1;
+    Grid grid(h);
+    TimePoint point = grid.point(5);
+    ++point;
+    BOOST_CHECK_EQUAL(static_cast<double>(point), h * 6);
+}
+
+// Test the TimePoint decrement
+BOOST_AUTO_TEST_CASE(TimePointDecrementTest) {
+    double h = 0.1;
+    Grid grid(h);
+    TimePoint point = grid.point(5);
+    --point;
+    BOOST_CHECK_EQUAL(static_cast<double>(point), h * 4);
 }
 
 BOOST_AUTO_TEST_SUITE_END()
