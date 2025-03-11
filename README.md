@@ -360,6 +360,28 @@ The above solution requires admin rights. I think the following option:
 	_TODO: Try to implement this method instead of ldconfig._
 
 
+RELATED LINKS/PROJECTS
+----------------------
+
+ - author's webpage: http://scirsc.org
+
+ - CAPD library: http://capd.ii.uj.edu.pl
+
+
+ACKNOWLEDGEMENTS
+----------------
+
+This work is an effect of a continuous work on rigorous methods for DDEs and FDEs that I started
+with my PhD dissertation and continued to expand over the years. During that time, this work was
+founded by several grants:
+
+ - Polish National Science Center (NCN) Maestro grant no. 2016/22/A/ST1/00077
+
+ - Polish National Science Center (NCN) Opus grant no. 2023/49/B/ST6/02801
+
+ - NAWA BEKKER grant no. BPN/BEK/2023/1/00
+
+
 REFERENCES
 ----------
 
