@@ -301,7 +301,7 @@ public:
 	 */
 	bool parse(const std::string &param, const char *const help_s=0) {
 		startNewParam(param);
-		if (help_s) (*this) << *help_s << "\n";
+		if (help_s) (*this) << help_s << "\n";
 		(*this) << "[this is a flag parameter (present/absent)]";
 		std::string dump;
 		for (ArgcType i = 0; i < argc; ++i)
@@ -310,7 +310,7 @@ public:
 		return false;
 	}
 
-	/** same as the other tempated parse, but accepts old-fashion strings */
+	/** same as the other templated parse, but accepts strings */
 	template<typename T>
 	bool parse(const std::string &param, const std::string& help_s) {
 		return parse(param, help_s.c_str());
@@ -321,15 +321,15 @@ public:
 	 * tries to parse with istringstream the type T to out.
 	 * The value given in out will be used as default value shown in help.
 	 * If parsing fails, the value in out will stay not changed.
-	 * help_s is the extra information to ut into help string for this paramater.
+	 * help_s is the extra information to put into help string for this paramater.
 	 *
 	 * It returns true if the requested parameter was in the command line.
 	 */
 	template<typename T>
 	bool parse(const std::string &param, T &out,
-			const std::string &help_s = "") {
+			const char *const help_s=0) {
 		startNewParam(param);
-		if (help_s != "") (*this) << help_s << "\n";
+		if (help_s) (*this) << help_s << "\n";
 		(*this) << "[default: " << out << "]";
 		bool found = false;
 		for (ArgcType i = 0; i < argc; ++i)
@@ -337,19 +337,19 @@ public:
 		return found;
 	}
 
-	/** same as the other tempated parse, but accepts old-fashion strings */
+	/** same as the other templated parse, but accepts strings */
 	template<typename T>
-	bool parse(const std::string &param, T &out, const char *const help_s) {
-		return parse(param, out, std::string(help_s));
+	bool parse(const std::string &param, T &out, const std::string &help_s) {
+		return parse(param, out, help_s.c_str());
 	}
 
 	/** this verison is almost the same as basic paring, but has a list of allowed values */
 	template<typename T>
 	bool parse(const std::string &param, T &out,
 			std::initializer_list<T> allowed_values,
-			const std::string &help_s="") {
+			const char *const help_s=0) {
 		startNewParam(param);
-		if (help_s != "") (*this) << help_s << "\n";
+		if (help_s) (*this) << help_s << "\n";
 		(*this) << "[default: " << out << "] ";
 		(*this) << "[allowed: "; std::string sep = " ";
 		for (auto v : allowed_values){
@@ -376,6 +376,14 @@ public:
 		return found;
 	}
 
+	/** to accept strings as help */
+	template<typename T>
+	bool parse(const std::string &param, T &out,
+			std::initializer_list<T> allowed_values,
+			const std::string &help_s="") {
+		return parse(param, out, allowed_values, help_s.c_str());
+	}
+
 	/**
 	 * this can check parsed value against given predicate (e.g. lambda [](T item) -> bool)
 	 * since I cannot get docs automatically from predicate, you should provide
@@ -383,9 +391,9 @@ public:
 	 */
 	template<typename T, typename F>
 	bool parse(const std::string &param, T &out,
-			F predicate, const std::string &help_s="") {
+			F predicate, const char *const help_s=0) {
 		startNewParam(param);
-		if (help_s != "") (*this) << help_s << "\n";
+		if (help_s) (*this) << help_s << "\n";
 		(*this) << "[default: " << out << "] ";
 		(*this) << "[note: has predicate, check docs] ";
 		T tmp_out;
@@ -398,6 +406,13 @@ public:
 			}
 		}
 		return found;
+	}
+
+	/** to accept strings as help */
+	template<typename T, typename F>
+	bool parse(const std::string &param, T &out,
+			F predicate, const std::string &help_s="") {
+		return parse(param, out, predicate, help_s.c_str());
 	}
 };
 
