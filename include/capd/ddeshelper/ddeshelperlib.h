@@ -299,15 +299,21 @@ public:
 	 * parsing a flag, i.e. a parameter without value, such as -h, --help, itp.
 	 * help_s is the extra message to include in help string.
 	 */
-	bool parse(const std::string &param, const std::string &help_s="") {
+	bool parse(const std::string &param, const char *const help_s=0) {
 		startNewParam(param);
-		if (help_s != "") (*this) << help_s << "\n";
+		if (help_s) (*this) << *help_s << "\n";
 		(*this) << "[this is a flag parameter (present/absent)]";
 		std::string dump;
 		for (ArgcType i = 0; i < argc; ++i)
 			if (argv[i] == param)
 				return true;
 		return false;
+	}
+
+	/** same as the other tempated parse, but accepts old-fashion strings */
+	template<typename T>
+	bool parse(const std::string &param, const std::string& help_s) {
+		return parse(param, help_s.c_str());
 	}
 
 	/**
