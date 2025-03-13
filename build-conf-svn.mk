@@ -52,3 +52,10 @@ EXTRACOMPILEROPTIONS=-DDDES_ALLOW_SYSTEM
 #GPROF_OPTION=-pg
 # TODO: think if uncomment some of those to get cleaner code?
 #CXXWARNINGFLAGS = -pedantic -Wall -Wclobbered -Wempty-body -Wignored-qualifiers -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wundef -Wcast-align -Wwrite-strings -Wlogical-op
+
+# TODO: rethink removing EXTRALINKEROPTIONS and EXTRACOMPILEROPTIONS above...
+
+# flags to be used by the user for specyfic tasks
+USERLINKERFLAGS ?=
+# flags to be used by the user for specyfic tasks
+USERCXXFLAGS ?=
