@@ -406,10 +406,13 @@ public:
 	}
 	/** todo: docs */
 	Class& set_x(VectorType const& x) {
-		if (x.dimension() < storageDimension())
-			throw std::logic_error("DDEPiecewisePolynomialCurve::set_x(): dimension of x not enough to fill all data in the curve.");
-		if (x.dimension() > storageDimension())
-			throw std::logic_error("DDEPiecewisePolynomialCurve::set_x(): dimension of x too big to fit data in the curve.");
+		if (x.dimension() != storageDimension()){
+			std::ostringstream info;
+			info << "DDEPiecewisePolynomialCurve::set_x(): dimension of the argument x is different from expected by the curve: ";
+			info << "is " << x.dimension() << ", ";
+			info << "expected " << storageDimension();
+			throw std::logic_error(info.str());
+		}
 		size_type d = dimension();
 		VectorType part(d);
 		size_type I = 0;

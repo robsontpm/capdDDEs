@@ -39,6 +39,9 @@
 
 #include <capd/vectalg/iobject.hpp>				// helper algorithms for any interval objects (IVectors, intervals, IMatrices, etc...
 
+#include <capd/capdlib.h>
+#include <capd/mpcapdlib.h>
+
 namespace capd {
 namespace ddeshelper {
 
@@ -46,15 +49,26 @@ using namespace capd;
 using namespace vectalg;
 using namespace intervals;
 
-/** TODO: (NOT URGENT) docs */
-interval mpi_to_interval(const MpInterval& a){
-	return interval(capd::multiPrec::toDouble(a.leftBound(), MpReal::RoundDown), capd::multiPrec::toDouble(a.rightBound(), MpReal::RoundUp));
+/**
+ * converts a MpInterval to a given CAPD interval type.
+ */
+template<typename T>
+inline void from_mpi_interval(const MpInterval& a, T& res){
+	res = T(
+		capd::multiPrec::toDouble(a.leftBound(), MpReal::RoundDown),
+		capd::multiPrec::toDouble(a.rightBound(), MpReal::RoundUp)
+	);
 };
-/** TODO: (NOT URGENT) docs */
-MpInterval interval_to_mpi(const interval& a){
-	return MpInterval(a.leftBound(), a.rightBound());
+/**
+ *  Converts a type that looks like an CAPD interval into MpInterval.
+ *  NOTE: Use MpReal::setDefaultPrecision(precision); before using to get the desired precision.
+ *  This function does not do that, because to avoid excessive calling to MpReal::setDefaultPrecision
+ */
+template<typename T>
+inline void to_mpi_interval(const T& a, MpInterval& res){
+	res = MpInterval(a.leftBound(), a.rightBound());
 };
-/** TODO: (NOT URGENT) docs */
+/** converts an CAPD-like matrix into MpIMatrix */
 template<typename MatrixSpec>
 void to_mpi_matrix(const MatrixSpec& inA, MpIMatrix& outA, int precission = 512){
 	int old_precision = MpReal::getDefaultPrecision();
@@ -63,19 +77,19 @@ void to_mpi_matrix(const MatrixSpec& inA, MpIMatrix& outA, int precission = 512)
 	outA = MpIMatrix(size, size);
 	for (int i = 0; i < size; ++i)
 		for (int j = 0; j < size; ++j)
-			outA[i][j] = MpInterval(inA[i][j].leftBound(), inA[i][j].rightBound());
+			to_mpi_interval(inA[i][j], outA[i][j]);
 	MpReal::setDefaultPrecision(old_precision);
 }
-/** TODO: (NOT URGENT) docs */
+/** converts MpIMatrix to a CAPD-like matrix */
 template<typename MatrixSpec>
 void from_mpi_matrix(const MpIMatrix& inA, MatrixSpec& outA){
 	int size = inA.numberOfColumns(); // assume square matrix
 	outA = MatrixSpec(size, size);
 	for (int i = 0; i < size; ++i)
 		for (int j = 0; j < size; ++j)
-			outA[i][j] = mpi_to_interval(inA[i][j]);
+			from_mpi_interval(inA[i][j], outA[i][j]);
 }
-/** TODO: (NOT URGENT) docs */
+/** converts a CAPD-like vector into MpIVector */
 template<typename VectorSpec>
 void to_mpi_vector(const VectorSpec& inx, MpIVector& outx, int precission = 512){
 	int old_precision = MpReal::getDefaultPrecision();
@@ -83,78 +97,83 @@ void to_mpi_vector(const VectorSpec& inx, MpIVector& outx, int precission = 512)
 	int size = inx.dimension();
 	outx = MpIVector(size);
 	for (int i = 0; i < size; ++i)
-		outx[i] = MpInterval(inx[i].leftBound(), inx[i].rightBound());
+		to_mpi_interval(inx[i], outx[i]);
 	MpReal::setDefaultPrecision(old_precision);
 }
-/** TODO: (NOT URGENT) docs */
+/** converts MpIVector to a CAPD-like vector */
 template<typename VectorSpec>
 void from_mpi_vector(const MpIVector& inx, VectorSpec& outx){
 	int size = inx.dimension();
 	outx = VectorSpec(size);
 	for (int i = 0; i < size; ++i)
-		outx[i] = mpi_to_interval(inx[i]);
+		mpi_to_interval(inx[i], outx[i]);
 }
-/** TODO: (NOT URGENT) docs */
+/** Inverts a matrix using multiprecission */
 template<typename MatrixSpec>
-MpIMatrix mpi_inverse(MatrixSpec& A, int precission = 512){
+MatrixSpec mpi_inverse(MatrixSpec const& A, int precission = 512){
 	int old_precision = MpReal::getDefaultPrecision();
 	MpReal::setDefaultPrecision(precission);
-	MpIMatrix mpA = double_to_mpi_matrix(A, precission);
-	mpA.Transpose();
+	MpIMatrix mpA(A.numberOfRows(), A.numberOfColumns());
+	to_mpi_matrix(A, mpA);
+	// mpA.Transpose(); // <- TODO: one of those gives better results for applications, when inverse matrix will be used to compute sets in good coordinates. Do some experiemtns, and remove those or uncomment thos (both lines)
 	MpIMatrix mpAinv = capd::matrixAlgorithms::inverseMatrix(mpA);
-	mpAinv.Transpose();
+	// mpAinv.Transpose(); // <- TODO: one of those gives better results for applications, when inverse matrix will be used to compute sets in good coordinates. Do some experiemtns, and remove those or uncomment thos (both lines)
+	MatrixSpec Ainv(A.numberOfRows(), A.numberOfColumns());
+	from_mpi_matrix(mpAinv, Ainv);
 	MpReal::setDefaultPrecision(old_precision);
 	return mpAinv;
 }
 
-// @see: this is to prevent errors when mistakenly mpi_multiply() two MpIMatrices...
-void mpi_multiply(MpIMatrix& inA, MpIMatrix& inB, MpIMatrix& outAB, int precission = 512){
-	outAB = inA * inB;
-}
+// TODO: decide if those below are necessary:
 
-// TODO: (NOT URGENT) only square matrices...
-/** TODO: (NOT URGENT) docs */
-template<typename MatrixSpec>
-void mpi_multiply(MatrixSpec& inA, MpIMatrix& inB, MatrixSpec& outAB, int precission = 512){
-	int old_precision = MpReal::getDefaultPrecision();
-	MpReal::setDefaultPrecision(precission);
-	int size = inA.numberOfColumns(); // assume square matrix
-	MpIMatrix mpA(size, size);
-	to_mpi_matrix(inA, mpA, precission);
-	MpIMatrix mpAB = mpA * inB;
-	outAB = MatrixSpec(size, size);
-	from_mpi_matrix(mpAB, outAB);
-	MpReal::setDefaultPrecision(old_precision);
-}
-
-// TODO: (NOT URGENT) only square matrices...
-/** TODO: (NOT URGENT) docs */
-template<typename MatrixSpec>
-void mpi_multiply(MpIMatrix& inA, MatrixSpec& inB, MatrixSpec& outAB, int precission = 512){
-	int old_precision = MpReal::getDefaultPrecision();
-	MpReal::setDefaultPrecision(precission);
-	int size = inA.numberOfColumns(); // assume square matrix
-	MpIMatrix mpB(size, size);
-	to_mpi_matrix(inB, mpB, precission);
-	MpIMatrix mpAB = inA * mpB;
-	outAB = MatrixSpec(size, size);
-	from_mpi_matrix(mpAB, outAB);
-	MpReal::setDefaultPrecision(old_precision);
-}
-
-// TODO: (NOT URGENT) only square matrices...
-/** TODO: (NOT URGENT) docs */
-template<typename VectorSpec>
-void mpi_multiply_Ax(MpIMatrix& inA, VectorSpec& inx, VectorSpec& outAx, int precission = 512){
-	int old_precision = MpReal::getDefaultPrecision();
-	MpReal::setDefaultPrecision(precission);
-	MpIVector mpx(inx.dimension());
-	to_mpi_vector(inx, mpx, precission);
-	MpIVector mpAx = inA * mpx;
-	outAx = VectorSpec(inx.dimension());
-	from_mpi_vector(mpAx, outAx);
-	MpReal::setDefaultPrecision(old_precision);
-}
+//// @see: this is to prevent errors when mistakenly mpi_multiply() two MpIMatrices...
+//void mpi_multiply(MpIMatrix& inA, MpIMatrix& inB, MpIMatrix& outAB, int precission = 512){
+//	outAB = inA * inB;
+//}
+//
+//// TODO: (NOT URGENT) only square matrices...
+///** TODO: (NOT URGENT) docs */
+//template<typename MatrixSpec>
+//void mpi_multiply(MatrixSpec& inA, MpIMatrix& inB, MatrixSpec& outAB, int precission = 512){
+//	int old_precision = MpReal::getDefaultPrecision();
+//	MpReal::setDefaultPrecision(precission);
+//	int size = inA.numberOfColumns(); // assume square matrix
+//	MpIMatrix mpA(size, size);
+//	to_mpi_matrix(inA, mpA, precission);
+//	MpIMatrix mpAB = mpA * inB;
+//	outAB = MatrixSpec(size, size);
+//	from_mpi_matrix(mpAB, outAB);
+//	MpReal::setDefaultPrecision(old_precision);
+//}
+//
+//// TODO: (NOT URGENT) only square matrices...
+///** TODO: (NOT URGENT) docs */
+//template<typename MatrixSpec>
+//void mpi_multiply(MpIMatrix& inA, MatrixSpec& inB, MatrixSpec& outAB, int precission = 512){
+//	int old_precision = MpReal::getDefaultPrecision();
+//	MpReal::setDefaultPrecision(precission);
+//	int size = inA.numberOfColumns(); // assume square matrix
+//	MpIMatrix mpB(size, size);
+//	to_mpi_matrix(inB, mpB, precission);
+//	MpIMatrix mpAB = inA * mpB;
+//	outAB = MatrixSpec(size, size);
+//	from_mpi_matrix(mpAB, outAB);
+//	MpReal::setDefaultPrecision(old_precision);
+//}
+//
+//// TODO: (NOT URGENT) only square matrices...
+///** TODO: (NOT URGENT) docs */
+//template<typename VectorSpec>
+//void mpi_multiply_Ax(MpIMatrix& inA, VectorSpec& inx, VectorSpec& outAx, int precission = 512){
+//	int old_precision = MpReal::getDefaultPrecision();
+//	MpReal::setDefaultPrecision(precission);
+//	MpIVector mpx(inx.dimension());
+//	to_mpi_vector(inx, mpx, precission);
+//	MpIVector mpAx = inA * mpx;
+//	outAx = VectorSpec(inx.dimension());
+//	from_mpi_vector(mpAx, outAx);
+//	MpReal::setDefaultPrecision(old_precision);
+//}
 
 } // namespace capd
 } // namespace ddeshelper

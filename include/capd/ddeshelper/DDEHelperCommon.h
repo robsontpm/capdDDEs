@@ -110,6 +110,8 @@ std::streamsize binsize(const BinaryData<T>& d){
 	return sizeof(T);
 }
 
+// TODO: write helpers for readText ?
+
 /**
  * User must supply out which supports write and is set to binary!
  * It does not store Vector size, it might be used for both vectors and matrices
