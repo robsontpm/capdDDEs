@@ -40,6 +40,9 @@
 namespace capd {
 namespace ddeshelper {
 
+// TODO: move out!
+/** wrapper for calling system commands, we use it for plotting */
+void runSystemCommand(std::string cmd);
 
 template<typename T>
 std::string slice(T const& item, int len = 72){
@@ -47,52 +50,6 @@ std::string slice(T const& item, int len = 72){
 	oss << item;
 	return oss.str().substr(0, len);
 }
-
-/** wrapper for calling system commands, we use it for plotting */
-void runSystemCommand(std::string cmd);
-
-/**
- * used in some helpers to define where the output goes.
- * It does not check the correctness of those paths! You need to assure they are correct!
- *
- * dirPath - a base directory to where the output save
- * prefix - as name says - prefix of all generated files.
- */
-class PathConfig {
-public:
-	std::string dirPath;
-	std::string prefix;
-
-	/** make a config path, default is ./ with no prefix */
-	PathConfig(std::string dirPath=".", std::string prefix=""):
-			dirPath(dirPath), prefix(prefix) {
-		if (dirPath != "" && dirPath.back() != '/')
-			dirPath += "/";
-	}
-
-	/** make a new PathConfix with a longer prefix : "prefix-suffix" */
-	PathConfig suffix(std::string suffix) const {
-		return PathConfig(dirPath, prefix + "-" + suffix);
-	}
-	/** dirpath with prefix */
-	std::string fullpath() const { return dirPath + "/" + prefix; }
-	/** makes a new prefixed filepath for a given filename */
-	std::string filepath(std::string name) const { return dirPath + "/" + prefix + "-" + name; }
-	/** makes just a prefixed filename (no path attached) */
-	std::string filename(std::string name) const { return prefix + "-" + name; }
-
-	/** assure there is really this folder - not very safe!!! */
-	void mkdir_p() const {
-		if (dirPath != "/" && dirPath != "./" && dirPath != ""){
-			if (dirPath != ".")
-				capd::ddeshelper::runSystemCommand(std::string("mkdir -p '") + dirPath + "' ");
-		}else{
-			throw std::logic_error("PathConfig::mkdir_p(): path is unsafe!");
-		}
-	}
-
-	std::string dirpath() const  { return dirPath; };
-};
 
 // TODO: (NOT URGENT) move those to other files!
 template<typename T>
