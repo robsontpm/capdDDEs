@@ -40,7 +40,7 @@
 namespace capd {
 namespace ddeshelper {
 
-// TODO: move out!
+// TODO: move out! move to OSHelper
 /** wrapper for calling system commands, we use it for plotting */
 void runSystemCommand(std::string cmd);
 

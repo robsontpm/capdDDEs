@@ -1,1 +1,1 @@
-DDEHelperDrawing ddeshelperlib DDEHelperCommon DDECommon
+DDEHelperDrawing ddeshelperlib DDEHelperCommon DDESystemOSHelper DDECommon
