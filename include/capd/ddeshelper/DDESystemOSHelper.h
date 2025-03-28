@@ -444,11 +444,12 @@ public:
 	std::string filename(std::string name) const { return prefix + (prefix == "" ? " " : "-") + name; }
 
 	/** assure there is really this folder - not very safe!!! */
-	void mkdir_p() const {
+	bool mkdir_p() const {
 		if (dirPath != "/" && dirPath != "./" && dirPath != "" && dirPath != "."){
 			capd::ddeshelper::runSystemCommand(std::string("mkdir -p '") + dirPath + "' ");
+			return true;
 		}else{
-			throw std::logic_error("PathConfig::mkdir_p(): path seems unsafe: '" + dirPath + "'");
+			return false;
 		}
 	}
 

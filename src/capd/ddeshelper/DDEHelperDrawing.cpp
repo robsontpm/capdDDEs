@@ -94,11 +94,15 @@ void xplot_many(
 		outg << "set terminal png size 1600,1200" << std::endl;
 		outg << "set output '" << pngname << "'" << std::endl;
 	}
-	outg << plottype << " \\\n";
-	for (auto& item: gpplots){
-		outg << "    " << item << ", \\\n";
+	if (gpplots.size() > 0){
+		std::string sep = " ";
+		outg << plottype;
+		for (auto& item: gpplots){
+			outg << sep << item;
+			sep = ", \\\n";
+		}
+		outg << "\n\n";
 	}
-	outg << "\n\n";
 	outg.close();
 	#ifdef DDES_ALLOW_SYSTEM
 	std::ostringstream cmd; cmd << "cd '" << dirpath << "' && gnuplot " << (live ? "-p " : "") << "'" << gpname << "'";
