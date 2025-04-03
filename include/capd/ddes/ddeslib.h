@@ -67,12 +67,12 @@ template<
 class NonrigorousSetup{
 public:
 	typedef EqSpec Eq;
-	typedef typename Eq::ParamType ParamType;
+	//typedef typename Eq::ParamType ParamType; // TODO: removed from here, as in the basic setup user should control them themself
 	typedef VectorSpec Vector;
 	typedef MatrixSpec Matrix;
 	typedef typename Matrix::ScalarType Scalar;
 	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
-	typedef typename Eq::ParamsVectorType ParamsVector;
+	//typedef typename Eq::ParamsVectorType ParamsVector; // TODO: removed from here, as in the basic setup user should control them themself
 	typedef capd::ddes::DiscreteTimeGrid<Real> Grid;  ///< important class, defining the computation grid to produce $t_i$ points
 	typedef typename Grid::TimePointType TimePoint;	  ///< important class, defining the grid points $t_i = ih$
 	typedef capd::ddes::GenericJet<TimePoint, Vector, Vector, Matrix> Jet;   ///< this is to be used in C1Solution, you will probably not use this directly
@@ -111,12 +111,12 @@ template<
 class RigorousSetup{
 public:
 	typedef EqSpec Eq;
-	typedef typename Eq::ParamType ParamType;
+	// typedef typename Eq::ParamType ParamType; // TODO: removed from here, as in the basic setup user should control them themself
 	typedef VectorSpec Vector;
 	typedef MatrixSpec Matrix;
 	typedef typename Matrix::ScalarType Scalar;
 	typedef typename Matrix::ScalarType Real; // TODO: (FUTURE) Rethink? What if scalar is Complex?
-	typedef typename Eq::ParamsVectorType ParamsVector;
+	// typedef typename Eq::ParamsVectorType ParamsVector; // TODO: removed from here, as in the basic setup user should control them themself
 	typedef PoliciesSpec Policies;
 	typedef capd::ddes::SharedDoubleton<Matrix, Policies> SetType;
 	typedef capd::ddes::DDESolutionCurve<SetType> Solution;

@@ -172,9 +172,9 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::setupCo
 }
 
 template<typename TimePointSpec, typename DataSpec, typename VectorSpec, typename MatrixSpec, bool isInterval>	// template spec
-VectorSpec																													// return type
+VectorSpec																										// return type
 GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalAtDelta(							// func decl
-		const RealType& delta_t																								// params
+		const RealType& delta_t																					// params
 ) const {
 	VectorType result(dimension());
 	auto coeff = this->end();
@@ -186,7 +186,7 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalAtD
 }
 
 template<typename TimePointSpec, typename DataSpec, typename VectorSpec, typename MatrixSpec, bool isInterval>	// template spec
-void																														// return type
+void																											// return type
 GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalAtDelta(							// func decl
 			const RealType& delta_t, DataSpec& out) const {
 	// naive implementation, but safe for all types

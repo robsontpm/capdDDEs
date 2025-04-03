@@ -482,8 +482,12 @@ public:
 		// TODO: (IMPORTANT, CHECK): check other time-critical code if it uses getPiece(TimePoint) or this one and make sure it uses this one, without checking.
 		int ibase = int(pastTime());
 		int i0 = int(currentTime()) - ibase;
-		if (index < 0 || index >= i0)
-			throw std::domain_error(badge() + "::getPiece(size_type): piece index outside range.");
+		if (index < 0 || index >= i0){
+			std::ostringstream info;
+			info << badge() + "::getPiece(size_type): piece index outside range.";
+			info << "requested: " << index << " available: [" << 0 << "," << i0 << "]";
+			throw std::domain_error(info.str());
+		}
 		return *(m_pieces[index]);
 	}
 
@@ -492,7 +496,10 @@ public:
 		try{
 			return t == t0() ? VectorType(m_valueAtCurrent) : getPiece(t).eval(t);
 		} catch (std::domain_error &e){
-			throw rethrow(badge() + "::eval(TimePoint):", e);
+			std::ostringstream info;
+			info << badge() + "::eval(TimePoint): time is outside the domain: ";
+			info << "t=" << RealType(t) << ", domain=[" << RealType(pastTime()) << "," << RealType(t0()) << "]";
+			throw rethrow(info.str(), e);
 		}
 	}
 	/**
@@ -508,15 +515,25 @@ public:
 		try{
 			return (ti == t0() && epsi == 0.0) ? VectorType(m_valueAtCurrent) : getPiece(ti).evalAtDelta(epsi);
 		} catch (std::domain_error &e){
-			throw rethrow(badge() + "::eval(Real):", e);
+			std::ostringstream info;
+			info << badge() + "::eval(TimePoint): time is outside the domain: ";
+			info << "t=" << RealType(t) << ", domain=[" << RealType(pastTime()) << "," << RealType(t0()) << "]";
+			throw rethrow(info.str(), e);
 		}
 	}
+	/** todo: docs */
+	VectorType operator()(TimePointType t) const { try{ return this->eval(t); } catch (std::domain_error& e){ throw rethrow(badge() + "::operator()" , e); }}
+	/** todo: docs */
+	VectorType operator()(RealType t) const { try{ return this->eval(t); } catch (std::domain_error& e){ throw rethrow(badge() + "::operator()" , e); }}
 	/** todo: docs */
 	void eval(TimePointType t, DataType& out) const {
 		try{
 			out = (t == t0() ? m_valueAtCurrent : getPiece(t)[0]);
 		} catch (std::domain_error &e){
-			throw rethrow(badge() + "::eval(TimePoint, SetType&):", e);
+			std::ostringstream info;
+			info << badge() + "::eval(TimePoint): time is outside the domain: ";
+			info << "t=" << RealType(t) << ", domain=[" << RealType(pastTime()) << "," << RealType(t0()) << "]";
+			throw rethrow(info.str(), e);
 		}
 	}
 	/** todo: docs */
