@@ -191,7 +191,7 @@ public:
 	 * is used for this purpose.
 	 */
 	virtual void computeDDECoefficients(
-				const RealType& t0, const ValueStorageType& u, 				// input
+				const RealType& t0, const ValueStorageType& u, 					// input
 				ValueStorageType& coeffs, JacobianStorageType& Du) const = 0;	// output
 
 	/**
