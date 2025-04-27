@@ -207,14 +207,16 @@ public:
 	virtual void collectComputationData(
 					const TimePointType& t0, const TimePointType& th,
 					const RealType& dt, const CurveType& x,
+					ValueStorageType& out_v,
 					VariableStorageType& out_u,
+					JacobianStorageType& out_dvdu,
 					size_type& out_admissible_order) const;
 	/**
 	 * Implementation of virtual func. See Interface docs.
 	 * Basically it computes Taylor coefficients of the solution at t0
 	 */
 	virtual void computeDDECoefficients(
-					const RealType& t0, const ValueStorageType& u,
+					const RealType& t0, const ValueStorageType& v,
 					ValueStorageType& coeffs) const;
 
 	/**
@@ -228,8 +230,8 @@ public:
 	 * but we do some extra steps. The comments from that procedure apply to this.
 	 */
 	virtual void computeDDECoefficients(
-				const RealType& t0, const ValueStorageType& u,
-				ValueStorageType& coeffs, JacobianStorageType& Du) const;
+				const RealType& t0, const ValueStorageType& v,
+				ValueStorageType& coeffs, JacobianStorageType& Dv) const;
 
 	/**
 	 * returns maximal delay.
@@ -347,16 +349,17 @@ public:
 	virtual TimePointType inf(const TimePointType& t, const CurveType& x) const = 0;
 	/** Returns the lower upper on the delay as a TimePoint on the grid, for the current value of the state */
 	virtual TimePointType sup(const TimePointType& t, const CurveType& x) const = 0;
-	/**
-	 * Returns the lower bound on the delay as a TimePoint for all the solutions.
-	 * User should define this based on the theoretical considerations.
-	 */
-	virtual TimePointType inf(const TimePointType& t) const = 0;
-	/**
-	 * Returns the upper bound on the delay as a TimePoint on the grid
-	 * User should define this based on the theoretical considerations.
-	 */
-	virtual TimePointType sup(const TimePointType& t) const = 0;
+	// TODO: I think we dont need this.
+//	/**
+//	 * Returns the lower bound on the delay as a TimePoint for all the solutions.
+//	 * User should define this based on the theoretical considerations.
+//	 */
+//	virtual TimePointType inf(const TimePointType& t) const = 0;
+//	/**
+//	 * Returns the upper bound on the delay as a TimePoint on the grid
+//	 * User should define this based on the theoretical considerations.
+//	 */
+//	virtual TimePointType sup(const TimePointType& t) const = 0;
 	/**
 	 * Returns the global lower bound on the delay as a TimePoint for all the arguments.
 	 * User should define this based on the theoretical considerations.
@@ -411,11 +414,11 @@ public:
 	TimePointType inf(const TimePointType& t, const CurveType& x) const { return t - m_tau; }
 	/** Returns the upper bound on the delay as a TimePoint on the grid */
 	TimePointType sup(const TimePointType& t, const CurveType& x) const { return t - m_tau; }
-	/** Returns the lower bound on the delay as a TimePoint on the grid */
-	TimePointType inf(const TimePointType& t) const { return t - m_tau; }
-	/** Returns the upper bound on the delay as a TimePoint on the grid */
-	TimePointType sup(const TimePointType& t) const { return t - m_tau; }
-	/** Returns the lower bound on the delay as a TimePoint on the grid */
+//	/** Returns the lower bound on the delay as a TimePoint on the grid */
+//	TimePointType inf(const TimePointType& t) const { return t - m_tau; }
+//	/** Returns the upper bound on the delay as a TimePoint on the grid */
+//	TimePointType sup(const TimePointType& t) const { return t - m_tau; }
+//	/** Returns the lower bound on the delay as a TimePoint on the grid */
 	TimePointType inf() const { return -m_tau; }
 
 	operator TimePointType() const { return m_tau; }
@@ -594,7 +597,9 @@ public:
 	virtual void collectComputationData(
 					const TimePointType& t0, const TimePointType& th,
 					const RealType& dt, const CurveType& x,
+					ValueStorageType& out_v,
 					VariableStorageType& out_u,
+					JacobianStorageType& out_dvdu,
 					size_type& out_admissible_order) const;
 	/**
 	 * Implementation of virtual func. See Interface docs.

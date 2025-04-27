@@ -61,10 +61,10 @@ template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>		
 void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::collectComputationData( 	// method name
 				const TimePointType& t0, const TimePointType& th,	//input
 				const RealType& dt, const CurveType& x, 	 		// input
+				ValueStorageType& out_v, 							// output
 				VariableStorageType& out_u, 						// output
+				JacobianStorageType& out_dvdu, 						// output
 				size_type& out_admissible_order) const {			// output
-	// TODO: (NOT URGENT) DRY with the other  collectComputationData() method.
-	// TODO: (NOT URGENT) I'm not sure it will be possible, but think about it!
 	out_u.clear();
 	// we collect jets and compute admissible order
 	// TODO: (NOT URGENT) rewrite using pointers to Jets (will be faster)!
@@ -81,16 +81,24 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 	for (size_type k = 0; k < out_admissible_order; ++k)
 		for (auto jit = jets.begin(); jit != jets.end(); ++jit)
 			out_u.push_back((*jit)[k]);
+
+	// empty the container. We exploit the fact that in case it is empty
+	// then the FunctionalMap assume it is identity, i.e. v == u
+	// and can optimize some computations.
+	out_dvdu.clear();
+
+	// and here we say that v = u (but we forget the variable DataClass and convert to pure Vector
+	BaseClass::convert(out_u, out_v);
 }
 
 
-template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>								// template spec
+template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>		// template spec
 void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::computeDDECoefficients(
-			const RealType& t0, const ValueStorageType& u, 		// input
-			ValueStorageType& coeffs) const {					// output
+			const RealType& t0, const ValueStorageType& v, 							// input
+			ValueStorageType& coeffs) const {										// output
 	// we assume u[0] is always present, and all other u[i] has the same dimension
 	// we only check once. If other have different, then the CAPD will throw a generic exception
-	checkDimension(u[0].dimension());
+	checkDimension(v[0].dimension());
 	// we assume that coeffs has a proper size for the computation.
 	// for example, set when user took data u with collectComputationData()
 	// if not, then some other generic exceptions can happen.
@@ -112,33 +120,33 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 	//		this iterator only goes forward, never it should get reset!
 	// 		because the older data was inserted into 'args', and we only need to fill new data,
 	// This is why we expect the u to be organized in this way!
-	auto current_u = u.begin();
+	auto current_v = v.begin();
 	auto iarg = args.begin();
 	// here we start from 0, as we are extracting the value at t0
 	// later in the code you might notice we start from 1.
-	for (size_type idelay = 0; idelay <= delaysCount(); ++idelay, ++current_u)
-		for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
+	for (size_type idelay = 0; idelay <= delaysCount(); ++idelay, ++current_v)
+		for (auto iu = current_v->begin(); iu != current_v->end(); ++iu, ++iarg)
 			(*iarg)[0] = *iu;
 
 	// now we are ready to go for the recurrent relation on coefficients
 	// to produce first derivative. Later, after each loop, we will have
 	// all derivatives up to order n and we are ready to compute n+1'st.
-	coeffs[0] = u[0]; // by definition, see paper
+	coeffs[0] = v[0]; // by definition, see paper
 	for (size_type k = 1 ; k <= resultOrder; ++k){
 		// eval Autodiff routine so that we would be able to
 		// extract v[k-1] = F^{[k-1]}(...), as in the paper.
 		// The constructor with false here is important to not initialize v data
 		// with anything, each position in v will be just a fresh AD variable.
 		// in (2024) there was an error introduced by use of other constructor, when CAPD changed.
-		TADVectorType v(imageDimension(), false);
-		m_map(targ, args, v);
+		TADVectorType fv(imageDimension(), false);
+		m_map(targ, args, fv);
 		// propagate AD jets and output.
 		// this will be F_k from the latest paper on DDE integration (FoCM 2024).
 		VectorType Fk(imageDimension());
 		auto iarg = args.begin();
 		for (size_type i = 0; i < imageDimension(); ++i, ++iarg){
-			v[i].eval(k-1);
-			Fk[i] = v[i][k-1];
+			fv[i].eval(k-1);
+			Fk[i] = fv[i][k-1];
 			// propagate computed recurrent formula into args with proper scaling!
 			(*iarg)[k] = Fk[i] / ScalarType(k);
 		}
@@ -151,24 +159,24 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 		// propagate higher order coefficients in the past to the args Vector.
 		// note that we have already updated the vector with value at t0,
 		// therefore we are starting from idelay = 1.
-		for (size_type idelay = 1; idelay <= delaysCount(); ++idelay, ++current_u){
-			for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
+		for (size_type idelay = 1; idelay <= delaysCount(); ++idelay, ++current_v){
+			for (auto iu = current_v->begin(); iu != current_v->end(); ++iu, ++iarg)
 				(*iarg)[k] = *iu;
 		}
 	} /// for k loop
 } /// computeDDECoefficients
 
 
-template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>								// template spec
+template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>	// template spec
 void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::computeDDECoefficients(
-			const RealType& t0, const ValueStorageType& u, 				// input
-			ValueStorageType& coeffs, JacobianStorageType& Du) const {	// output
+			const RealType& t0, const ValueStorageType& v, 						// input
+			ValueStorageType& coeffs, JacobianStorageType& Dv) const {			// output
 	 // TODO: (NOT URGENT, FUTURE, RETHINK) there is some redundancy in the code (with the other version),
 	 // TODO: (NOT URGENT, FUTURE, RETHINK) but I don't believe we can make it more DRY without sacrificing speed/RAM usage...
 
 	// we assume u[0] is always present, and all other u[i] has the same dimension
 	// we only check once. If other have different, then the CAPD will throw a generic exception
-	checkDimension(u[0].dimension());
+	checkDimension(v[0].dimension());
 	// we assume that coeffs has a proper size for the computation.
 	// for example, set when user took data u with collectComputationData()
 	// if not, then some other generic exceptions can happen.
@@ -184,21 +192,21 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 	// This is obviously the number of d-dimensional variables
 	// that the coefficients at t0 depend on.
 	// Those will be basically 1 + num-delays * resultOrder
-	size_type partialsCount = u.size();
+	size_type partialsCount = v.size();
 	// in partialsDimension we keep how many actual coefficients from all of the Jets used to
 	// compute rhs of the equation. As we are computing jets up to coeffs.order() (incl.).
 	// then we are going to use only coefficients of all jets up to coeffs.order() - 1 (incl).
 	// Thus, the formula. Please note in all those computations we have 0,..,resultOrder-1
 	// Taylor coefficients in any jet used. Therefore the number of Taylor coeffs at each
 	// jet used is resultOrder. This is trivial, but I want this to be reiterated for readability.
-	size_type partialsDimension = d * u.size();
+	size_type partialsDimension = d * v.size();
 	// we make room to store Jacobian matrices. Each matrix will be of shape d x d.
 	// Du is shorthand for $D_u coeffs = \frac{\partial coeffs_j}{\partial u_i}$
 	// (the last notation means we are iterating over all possibilities and we put it into a matrix)
 	// in Du[i][j] we will have $\frac{\partial coeffs[i]}{\partial u[j]}$ (a d x d Matrix)
-	Du.clear(); Du.resize(resultOrder + 1);
-	for (auto iDu = Du.begin(); iDu != Du.end(); ++iDu)
-		iDu->resize(partialsCount);
+	Dv.clear(); Dv.resize(resultOrder + 1);
+	for (auto iDv = Dv.begin(); iDv != Dv.end(); ++iDv)
+		iDv->resize(partialsCount);
 
 	typedef fadbad::F<ScalarType> FADScalar; 		// Auto Diff Forward scalar type (i.e. w.r.t. initial coefficients)
 	typedef fadbad::T<FADScalar> TFADScalar;		// Auto Diff Taylor type with option to compute derivatives wrt initials
@@ -223,7 +231,7 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 	//		this iterator only goes forward, never it should get reset!
 	// 		because the older data was inserted into 'args', and we only need to fill new data,
 	// This is why we expect the u to be organized in this way!
-	auto current_u = u.begin();
+	auto current_v = v.begin();
 	auto iarg = args.begin();
 	// this will hold current number of parameter (among 0,.., partialsDimension-1)
 	// we need those for AutoDiff types (they use this kind of numbering)
@@ -238,10 +246,10 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 	// i.e. the value \frac{\partial coeffs}{\partial u[partialu]}
 	// Note: here k = 0, and we iterate idelay from 0. Later, it will be from 1. See docs there.
 	// we start from 0to fill the data corresponding to the value u[0] = x(t0) (see other version of the computeDDECoefficients)
-	for (size_type idelay = 0; idelay <= numDelays; ++idelay, ++current_u, ++partialu){
-		for (auto iu = current_u->begin(); iu != current_u->end(); ++iarg, ++iu, ++partialAD){
+	for (size_type idelay = 0; idelay <= numDelays; ++idelay, ++current_v, ++partialu){
+		for (auto iv = current_v->begin(); iv != current_v->end(); ++iarg, ++iv, ++partialAD){
 			// (*iarg)[0] is [0]-th order Taylor coefficient
-			(*iarg)[0] = *iu;
+			(*iarg)[0] = *iv;
 			// and we mark it as dependent only on self among all 0,..,partialsDimension-1 variables
 			// (i.e. \frac{\partial{(*iarg)[0]}}{\partial{(*iarg)[0]}} = 1, and 0 otherwise)
 			(*iarg)[0].diff(partialAD, partialsDimension);
@@ -249,26 +257,26 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 	}
 
 	// we compute coeffs[0] and derivatives...
-	coeffs[0] = u[0];		// coeffs[0] = x(t0) by definition of (see paper)
-	Du[0][0] = Id; 			// \frac{Dcoeffs_{[0]}}{Dx(t0)} = Id (as a matrix M(d, d)) (since coeffs[0] = x(t0))
+	coeffs[0] = v[0];		// coeffs[0] = x(t0) by definition of (see paper)
+	Dv[0][0] = Id; 			// \frac{Dcoeffs_{[0]}}{Dx(t0)} = Id (as a matrix M(d, d)) (since coeffs[0] = x(t0))
 	// Next... \frac{Dcoeffs_{[0]}}{{Djet_m}_{[mk]}} = 0 (as a matrix M(d, d)) (since coeffs[0] = x(t0))
 	for (size_type par = 1; par < partialsCount; ++par)
-		Du[0][par] = Zero;
+		Dv[0][par] = Zero;
 
 	// then we compute higher order coeffs, with recurrent Taylor formula (see paper)
 	for (size_type k = 1; k <= resultOrder; ++k){
 		// eval AutoDiff routine so we would be able to extract v[.][k-1] = F^{[k-1]}(...)
 		// together with partial derivatives with respect to coefficients in the past.
-		TFADVectorType v(imageDimension());
-		m_map(targ, args, v);
+		TFADVectorType fv(imageDimension());
+		m_map(targ, args, fv);
 
 		// propagate AD jets and output.
 		VectorType Fk(imageDimension());
 		auto iarg = args.begin();
 		for (size_type i = 0; i < imageDimension(); ++i, ++iarg){
-			v[i].eval(k-1);
-			Fk[i] = v[i][k-1].val(); 					// here we need to .value(), to convert from FAD to VectorType
-			(*iarg)[k] = v[i][k-1] / ScalarType(k);		// here we need to propagate things with all partial derivatives! So we copy from v (appropriate AutoDiff Type)
+			fv[i].eval(k-1);
+			Fk[i] = fv[i][k-1].val(); 					// here we need to .value(), to convert from FAD to VectorType
+			(*iarg)[k] = fv[i][k-1] / ScalarType(k);	// here we need to propagate things with all partial derivatives! So we copy from v (appropriate AutoDiff Type)
 		}
 
 		// we output the value, properly scaled
@@ -280,12 +288,12 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 			// Du[k][par] = \frac{\partial coeffs[k]}{\partial u[par]}
 			for (size_type i = 0; i < d; ++i)								// we use formula par*d+j
 				for (size_type j = 0; j < d; ++j)							// to obtain the local index
-					parDu[i][j] = v[i][k-1].d(par * d + j) / ScalarType(k);	// among all partialsCount variables
-			Du[k][par] = parDu;
+					parDu[i][j] = fv[i][k-1].d(par * d + j) / ScalarType(k);// among all partialsCount variables
+			Dv[k][par] = parDu;
 		}
 		// mark that this order coeff does not depend on higher order u's
 		for (size_type par = partialu; par < partialsCount; ++par)
-			Du[k][par] = Zero;
+			Dv[k][par] = Zero;
 
 
 		// this if is to ensure that we do not copy, if there is no more values left in u.
@@ -295,8 +303,8 @@ void BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>
 		// present time t0 to Du. Now, finally, we propagate higher order
 		// coefficients in the past to args for the next level of recurrence.
 		// we fill from idelay = 1 because we have filled the respective value from computation above.
-		for (size_type idelay = 1; idelay <= numDelays; ++idelay, ++current_u, ++partialu){
-			for (auto iu = current_u->begin(); iu != current_u->end(); ++iarg, ++iu, ++partialAD){
+		for (size_type idelay = 1; idelay <= numDelays; ++idelay, ++current_v, ++partialu){
+			for (auto iu = current_v->begin(); iu != current_v->end(); ++iarg, ++iu, ++partialAD){
 				// (*iarg)[0] is [0]-th order Taylor coefficient
 				(*iarg)[k] = *iu;
 				// and we mark it as dependent only on self among all 0,..,partialsDimension-1 variables
@@ -407,7 +415,9 @@ template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>		
 void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::collectComputationData( // method name
 				const TimePointType& t0, const TimePointType& th,	//input
 				const RealType& dt, const CurveType& x, 	 		// input
-				VariableStorageType& out_u, 						// output
+				ValueStorageType& out_v,							// output
+				VariableStorageType& out_u,							// output
+				JacobianStorageType& out_dvdu,						// output
 				size_type& out_admissible_order) const {			// output
 	// TODO: (NOT URGENT) DRY with the other  collectComputationData() method.
 	// TODO: (NOT URGENT) I'm not sure it will be possible, but think about it!
@@ -417,7 +427,7 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	out_admissible_order = 40; // TODO: (NOT URGENT) Magic Constant....
 	std::vector<JetType> jets;
 	for (auto tau = begin(); tau != end(); ++tau){
-		jets.push_back(x.jet((*tau)->inf(t0, x)));
+		jets.push_back(x.jet((*tau)->inf(t0, x)));   // TODO: here I just get the lower bound on the delay. The next quest is to make it truly evaluation of the delay and the jet at the delay
 		//jets.push_back((*tau)->jet(t0, x)); // return the jet at the retarded argument
 		size_type k = jets.back().order();
 		if (k + 1 < out_admissible_order) out_admissible_order = k + 1;
@@ -428,16 +438,30 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	for (size_type k = 0; k < out_admissible_order; ++k)
 		for (auto jit = jets.begin(); jit != jets.end(); ++jit)
 			out_u.push_back((*jit)[k]);
+
+	// and here we say that v = u (but we forget the variable DataClass and convert to pure Vector
+	BaseClass::convert(out_u, out_v);
+
+	// for test, I put a true Id here
+	// TODO: later, I need to get this from the delays...
+	auto d = imageDimension();
+	auto M = out_u.size(); // == out_v.size();
+	MatrixType Zero(d, d), Id = MatrixType::Identity(d);
+	out_dvdu.resize(M);
+	for (size_type i = 0; i < M; ++i){
+		out_dvdu[i].resize(M, Zero);
+		out_dvdu[i][i] = Id;
+	}
 }
 
 
-template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>								// template spec
+template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>		// template spec
 void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::computeDDECoefficients(
-			const RealType& t0, const ValueStorageType& u, 		// input
-			ValueStorageType& coeffs) const {					// output
+			const RealType& t0, const ValueStorageType& v, 							// input
+			ValueStorageType& coeffs) const {										// output
 	// we assume u[0] is always present, and all other u[i] has the same dimension
 	// we only check once. If other have different, then the CAPD will throw a generic exception
-	checkDimension(u[0].dimension());
+	checkDimension(v[0].dimension());
 	// we assume that coeffs has a proper size for the computation.
 	// for example, set when user took data u with collectComputationData()
 	// if not, then some other generic exceptions can happen.
@@ -459,33 +483,33 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	//		this iterator only goes forward, never it should get reset!
 	// 		because the older data was inserted into 'args', and we only need to fill new data,
 	// This is why we expect the u to be organized in this way!
-	auto current_u = u.begin();
+	auto current_v = v.begin();
 	auto iarg = args.begin();
 	// here we start from 0, as we are extracting the value at t0
 	// later in the code you might notice we start from 1.
-	for (size_type idelay = 0; idelay <= delaysCount(); ++idelay, ++current_u)
-		for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
+	for (size_type idelay = 0; idelay <= delaysCount(); ++idelay, ++current_v)
+		for (auto iu = current_v->begin(); iu != current_v->end(); ++iu, ++iarg)
 			(*iarg)[0] = *iu;
 
 	// now we are ready to go for the recurrent relation on coefficients
 	// to produce first derivative. Later, after each loop, we will have
 	// all derivatives up to order n and we are ready to compute n+1'st.
-	coeffs[0] = u[0]; // by definition, see paper
+	coeffs[0] = v[0]; // by definition, see paper
 	for (size_type k = 1 ; k <= resultOrder; ++k){
 		// eval Autodiff routine so that we would be able to
 		// extract v[k-1] = F^{[k-1]}(...), as in the paper.
 		// The constructor with false here is important to not initialize v data
 		// with anything, each position in v will be just a fresh AD variable.
 		// in (2024) there was an error introduced by use of other constructor, when CAPD changed.
-		TADVectorType v(imageDimension(), false);
-		m_map(targ, args, v);
+		TADVectorType fv(imageDimension(), false);
+		m_map(targ, args, fv);
 		// propagate AD jets and output.
 		// this will be F_k from the latest paper on DDE integration (FoCM 2024).
 		VectorType Fk(imageDimension());
 		auto iarg = args.begin();
 		for (size_type i = 0; i < imageDimension(); ++i, ++iarg){
-			v[i].eval(k-1);
-			Fk[i] = v[i][k-1];
+			fv[i].eval(k-1);
+			Fk[i] = fv[i][k-1];
 			// propagate computed recurrent formula into args with proper scaling!
 			(*iarg)[k] = Fk[i] / ScalarType(k);
 		}
@@ -498,24 +522,24 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 		// propagate higher order coefficients in the past to the args Vector.
 		// note that we have already updated the vector with value at t0,
 		// therefore we are starting from idelay = 1.
-		for (size_type idelay = 1; idelay <= delaysCount(); ++idelay, ++current_u){
-			for (auto iu = current_u->begin(); iu != current_u->end(); ++iu, ++iarg)
+		for (size_type idelay = 1; idelay <= delaysCount(); ++idelay, ++current_v){
+			for (auto iu = current_v->begin(); iu != current_v->end(); ++iu, ++iarg)
 				(*iarg)[k] = *iu;
 		}
 	} /// for k loop
 } /// computeDDECoefficients
 
 
-template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>								// template spec
+template<typename FinDimMapSpec, typename SolutionCurveSpec, typename JetSpec>	// template spec
 void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::computeDDECoefficients(
-			const RealType& t0, const ValueStorageType& u, 				// input
-			ValueStorageType& coeffs, JacobianStorageType& Du) const {	// output
+			const RealType& t0, const ValueStorageType& v, 						// input
+			ValueStorageType& coeffs, JacobianStorageType& Dv) const {			// output
 	 // TODO: (NOT URGENT, FUTURE, RETHINK) there is some redundancy in the code (with the other version),
 	 // TODO: (NOT URGENT, FUTURE, RETHINK) but I don't believe we can make it more DRY without sacrificing speed/RAM usage...
 
 	// we assume u[0] is always present, and all other u[i] has the same dimension
 	// we only check once. If other have different, then the CAPD will throw a generic exception
-	checkDimension(u[0].dimension());
+	checkDimension(v[0].dimension());
 	// we assume that coeffs has a proper size for the computation.
 	// for example, set when user took data u with collectComputationData()
 	// if not, then some other generic exceptions can happen.
@@ -531,21 +555,21 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	// This is obviously the number of d-dimensional variables
 	// that the coefficients at t0 depend on.
 	// Those will be basically 1 + num-delays * resultOrder
-	size_type partialsCount = u.size();
+	size_type partialsCount = v.size();
 	// in partialsDimension we keep how many actual coefficients from all of the Jets used to
 	// compute rhs of the equation. As we are computing jets up to coeffs.order() (incl.).
 	// then we are going to use only coefficients of all jets up to coeffs.order() - 1 (incl).
 	// Thus, the formula. Please note in all those computations we have 0,..,resultOrder-1
 	// Taylor coefficients in any jet used. Therefore the number of Taylor coeffs at each
 	// jet used is resultOrder. This is trivial, but I want this to be reiterated for readability.
-	size_type partialsDimension = d * u.size();
+	size_type partialsDimension = d * v.size();
 	// we make room to store Jacobian matrices. Each matrix will be of shape d x d.
 	// Du is shorthand for $D_u coeffs = \frac{\partial coeffs_j}{\partial u_i}$
 	// (the last notation means we are iterating over all possibilities and we put it into a matrix)
 	// in Du[i][j] we will have $\frac{\partial coeffs[i]}{\partial u[j]}$ (a d x d Matrix)
-	Du.clear(); Du.resize(resultOrder + 1);
-	for (auto iDu = Du.begin(); iDu != Du.end(); ++iDu)
-		iDu->resize(partialsCount);
+	Dv.clear(); Dv.resize(resultOrder + 1);
+	for (auto iDv = Dv.begin(); iDv != Dv.end(); ++iDv)
+		iDv->resize(partialsCount);
 
 	typedef fadbad::F<ScalarType> FADScalar; 		// Auto Diff Forward scalar type (i.e. w.r.t. initial coefficients)
 	typedef fadbad::T<FADScalar> TFADScalar;		// Auto Diff Taylor type with option to compute derivatives wrt initials
@@ -570,7 +594,7 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	//		this iterator only goes forward, never it should get reset!
 	// 		because the older data was inserted into 'args', and we only need to fill new data,
 	// This is why we expect the u to be organized in this way!
-	auto current_u = u.begin();
+	auto current_v = v.begin();
 	auto iarg = args.begin();
 	// this will hold current number of parameter (among 0,.., partialsDimension-1)
 	// we need those for AutoDiff types (they use this kind of numbering)
@@ -585,10 +609,10 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	// i.e. the value \frac{\partial coeffs}{\partial u[partialu]}
 	// Note: here k = 0, and we iterate idelay from 0. Later, it will be from 1. See docs there.
 	// we start from 0to fill the data corresponding to the value u[0] = x(t0) (see other version of the computeDDECoefficients)
-	for (size_type idelay = 0; idelay <= numDelays; ++idelay, ++current_u, ++partialu){
-		for (auto iu = current_u->begin(); iu != current_u->end(); ++iarg, ++iu, ++partialAD){
+	for (size_type idelay = 0; idelay <= numDelays; ++idelay, ++current_v, ++partialu){
+		for (auto iv = current_v->begin(); iv != current_v->end(); ++iarg, ++iv, ++partialAD){
 			// (*iarg)[0] is [0]-th order Taylor coefficient
-			(*iarg)[0] = *iu;
+			(*iarg)[0] = *iv;
 			// and we mark it as dependent only on self among all 0,..,partialsDimension-1 variables
 			// (i.e. \frac{\partial{(*iarg)[0]}}{\partial{(*iarg)[0]}} = 1, and 0 otherwise)
 			(*iarg)[0].diff(partialAD, partialsDimension);
@@ -596,26 +620,26 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	}
 
 	// we compute coeffs[0] and derivatives...
-	coeffs[0] = u[0];		// coeffs[0] = x(t0) by definition of (see paper)
-	Du[0][0] = Id; 			// \frac{Dcoeffs_{[0]}}{Dx(t0)} = Id (as a matrix M(d, d)) (since coeffs[0] = x(t0))
+	coeffs[0] = v[0];		// coeffs[0] = x(t0) by definition of (see paper)
+	Dv[0][0] = Id; 			// \frac{Dcoeffs_{[0]}}{Dx(t0)} = Id (as a matrix M(d, d)) (since coeffs[0] = x(t0))
 	// Next... \frac{Dcoeffs_{[0]}}{{Djet_m}_{[mk]}} = 0 (as a matrix M(d, d)) (since coeffs[0] = x(t0))
 	for (size_type par = 1; par < partialsCount; ++par)
-		Du[0][par] = Zero;
+		Dv[0][par] = Zero;
 
 	// then we compute higher order coeffs, with recurrent Taylor formula (see paper)
 	for (size_type k = 1; k <= resultOrder; ++k){
 		// eval AutoDiff routine so we would be able to extract v[.][k-1] = F^{[k-1]}(...)
 		// together with partial derivatives with respect to coefficients in the past.
-		TFADVectorType v(imageDimension());
-		m_map(targ, args, v);
+		TFADVectorType fv(imageDimension());
+		m_map(targ, args, fv);
 
 		// propagate AD jets and output.
 		VectorType Fk(imageDimension());
 		auto iarg = args.begin();
 		for (size_type i = 0; i < imageDimension(); ++i, ++iarg){
-			v[i].eval(k-1);
-			Fk[i] = v[i][k-1].val(); 					// here we need to .value(), to convert from FAD to VectorType
-			(*iarg)[k] = v[i][k-1] / ScalarType(k);		// here we need to propagate things with all partial derivatives! So we copy from v (appropriate AutoDiff Type)
+			fv[i].eval(k-1);
+			Fk[i] = fv[i][k-1].val(); 					// here we need to .value(), to convert from FAD to VectorType
+			(*iarg)[k] = fv[i][k-1] / ScalarType(k);	// here we need to propagate things with all partial derivatives! So we copy from v (appropriate AutoDiff Type)
 		}
 
 		// we output the value, properly scaled
@@ -627,12 +651,12 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 			// Du[k][par] = \frac{\partial coeffs[k]}{\partial u[par]}
 			for (size_type i = 0; i < d; ++i)								// we use formula par*d+j
 				for (size_type j = 0; j < d; ++j)							// to obtain the local index
-					parDu[i][j] = v[i][k-1].d(par * d + j) / ScalarType(k);	// among all partialsCount variables
-			Du[k][par] = parDu;
+					parDu[i][j] = fv[i][k-1].d(par * d + j) / ScalarType(k);// among all partialsCount variables
+			Dv[k][par] = parDu;
 		}
 		// mark that this order coeff does not depend on higher order u's
 		for (size_type par = partialu; par < partialsCount; ++par)
-			Du[k][par] = Zero;
+			Dv[k][par] = Zero;
 
 
 		// this if is to ensure that we do not copy, if there is no more values left in u.
@@ -642,8 +666,8 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 		// present time t0 to Du. Now, finally, we propagate higher order
 		// coefficients in the past to args for the next level of recurrence.
 		// we fill from idelay = 1 because we have filled the respective value from computation above.
-		for (size_type idelay = 1; idelay <= numDelays; ++idelay, ++current_u, ++partialu){
-			for (auto iu = current_u->begin(); iu != current_u->end(); ++iarg, ++iu, ++partialAD){
+		for (size_type idelay = 1; idelay <= numDelays; ++idelay, ++current_v, ++partialu){
+			for (auto iu = current_v->begin(); iu != current_v->end(); ++iarg, ++iu, ++partialAD){
 				// (*iarg)[0] is [0]-th order Taylor coefficient
 				(*iarg)[k] = *iu;
 				// and we mark it as dependent only on self among all 0,..,partialsDimension-1 variables

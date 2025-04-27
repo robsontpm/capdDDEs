@@ -50,17 +50,17 @@ void DDENonrigorousTaylorSolver<FunctionalMapSpec>::oneStep(
 		TimePointType const& 		in_t0,
 		TimePointType const&		in_th,
 		RealType const&				in_h,
-		ValueStorageType const&		in_u,
+		ValueStorageType const&		in_v,
 		ValueStorageType& 			out_Phi_coeffs_t0,
 		ValueStorageType& 			out_Phi_z)			// for possible future use, I assume that there might be more than only value of x(t+h) !
 {
 	auto& h = in_h;
 	auto& Phi_coeffs_t0 = out_Phi_coeffs_t0;
 	auto& Phi_z = out_Phi_z;
-	auto& u = in_u;
+	auto& v = in_v;
 
 	// compute both value and Jacobian (in nonrigorous version u is a point vector!)
-	m_map.computeDDECoefficients(in_t0, u, Phi_coeffs_t0);
+	m_map.computeDDECoefficients(in_t0, v, Phi_coeffs_t0);
 	// now we have Taylor coefficients at t0, we now simply use standard
 	// Taylor method, as in case of ODEs
 	// TODO: (NOT URGENT) rewrite as iterators?
@@ -78,17 +78,21 @@ void DDENonrigorousTaylorSolver<FunctionalMapSpec>::oneStep(
 		TimePointType const& 		in_t0,
 		TimePointType const&		in_th,
 		RealType const&				in_h,
-		ValueStorageType const&		in_u,
+		ValueStorageType const&		in_v,
+		VariableStorageType const&	in_u,
+		JacobianStorageType const&	in_dvdu,
 		ValueStorageType& 			out_Phi_coeffs_t0,
 		JacobianStorageType& 		out_JacPhi_coeffs_t0,
 		ValueStorageType& 			out_Phi_z,			// for possible future use, I assume that there might be more than only value of x(t+h) !
 		JacobianStorageType& 		out_JacPhi_z)		// I need storage for as many as there will be entries in out_Phi_z
 {
 	auto& h = in_h;
+	auto& v = in_v;
 	auto& u = in_u;
+	auto& dvdu = in_dvdu;
 
 	// compute both value and Jacobian (in nonrigorous version u is a point vector!)
-	m_map.computeDDECoefficients(in_t0, u, out_Phi_coeffs_t0, out_JacPhi_coeffs_t0);
+	m_map.computeDDECoefficients(in_t0, v, u, dvdu, out_Phi_coeffs_t0, out_JacPhi_coeffs_t0);
 	// now we have Taylor coefficients at t0, we now simply use standard
 	// Taylor method, as in case of ODEs
 	// we explicitely eval jet at t0 as a Taylor series to assure that the
@@ -204,9 +208,9 @@ void DDENonrigorousTaylorSolver<FunctionalMapSpec>::operator()(
 	VariableStorageType u;
 
 	for (size_type i = 0; i < steps; ++i){
-		m_map.collectComputationData(t0, th, h, curve, u, coeffs_order);
+		VariableStorageType u; ValueStorageType v; JacobianStorageType dvdu;
+		m_map.collectComputationData(t0, th, h, curve, v, u, dvdu, coeffs_order);
 		if (coeffs_order > m_maxOrder) coeffs_order = m_maxOrder;
-		ValueStorageType v; FunctionalMapType::convert(u, v);
 
 		ValueStorageType Phi_coeffs_t0(coeffs_order + 1);
 		ValueStorageType Phi_z(1); Phi_z[0] = zero;
@@ -242,10 +246,9 @@ void DDENonrigorousTaylorSolver<FunctionalMapSpec>::operator()(
 
 	// collecting computation data
 	size_type coeffs_order = m_maxOrder;
-	VariableStorageType u;
-	m_map.collectComputationData(t0, th, h, curve, u, coeffs_order);
+	VariableStorageType u; ValueStorageType v; JacobianStorageType dvdu;
+	m_map.collectComputationData(t0, th, h, curve, v, u, dvdu, coeffs_order);
 	if (coeffs_order > m_maxOrder) coeffs_order = m_maxOrder;
-	ValueStorageType v; FunctionalMapType::convert(u, v);
 
 	ValueStorageType Phi_coeffs_t0(coeffs_order + 1);
 	ValueStorageType Phi_z(1); Phi_z[0] = zero;
@@ -254,7 +257,7 @@ void DDENonrigorousTaylorSolver<FunctionalMapSpec>::operator()(
 	for (auto jaci = JacPhi_coeffs_t0.begin(); jaci != JacPhi_coeffs_t0.end(); ++jaci)
 		jaci->resize(u.size(), Zero);
 
-	this->oneStep(t0, th, h, v, Phi_coeffs_t0, JacPhi_coeffs_t0, Phi_z, JacPhi_z);
+	this->oneStep(t0, th, h, v, u, dvdu, Phi_coeffs_t0, JacPhi_coeffs_t0, Phi_z, JacPhi_z);
 
 	typedef typename DataType::MatrixStorageType MatrixStorageType;
 	VariableStorageType new_jet;

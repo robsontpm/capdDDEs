@@ -116,6 +116,7 @@ public:
 
 	/** helper to convert from collection of sets to collection of vectors */
 	static void convert(VariableStorageType const& u, ValueStorageType &v){
+		// TODO: (REFACTOR, SD-DDES) this might be obsolete after changing the interface of the collectComputationData
 		v.clear();
 		for (auto it = u.begin(); it != u.end(); ++it)
 			v.push_back(VectorType(*it));
@@ -127,6 +128,7 @@ public:
 	 *       in some instances, and this would make compilation ambiguous.
 	 */
 	static void deconvert(ValueStorageType const& u, VariableStorageType &v){
+		// TODO: (REFACTOR, SD-DDES) this might be obsolete after changing the interface of the collectComputationData
 		v.clear();
 		for (auto it = u.begin(); it != u.end(); ++it)
 			v.push_back(DataType(*it));
@@ -165,13 +167,17 @@ public:
 	 *       There is one problem with this however: in rigorous code we need to check if the section is not crossed
 	 *       between steps in Poincare map. Please see comments in JetSection / DDEPoincareMap classes.
 	 *
-	 * Param: out_u 			a finite-dimensional collection of data that is used to compute the map
-	 * Param: admissible_order	will tell how high order of expansion is able to produce with data in u
+	 * @param out_v 			a finite-dimensional collection of the values that are needed to compute the map (may be different than the data from the representation)
+	 * @param out_u 			a finite-dimensional collection of actual data from the representation that is used to compute the map
+	 * @param out_dvdu			a representation of the derivative of v w.r.t. u, optionally it might be empty if v == u (only then! therwise code might not work properly). Of course you can return the Id operator here, but it might increase the computational complexity unnecessarily
+	 * @param admissible_order	will tell how high order of expansion is able to produce with data in u
 	 */
 	virtual void collectComputationData(
 				const TimePointType& t0, const TimePointType& th, 	 	// input
 				const RealType& dt, const CurveType& x, 	 			// input
+				ValueStorageType& out_v, 								// output
 				VariableStorageType& out_u, 							// output
+				JacobianStorageType& out_dvdu, 							// output
 				size_type& out_admissible_order) const = 0;				// output
 
 	/**
@@ -179,7 +185,7 @@ public:
 	 * It takes as an input the proper set of variables representing input data to this map
 	 * at time t0 (e.g. (appropriate subset of) output of collectComputationData())
 	 * and makes use of it to compute recursively the Taylor expansion of the solution
-	 * (coeffs) at t0. It also computes $\frac{\partial coeffs[i]}{\partial u}$ (in Du).
+	 * (coeffs) at t0. It also computes $\frac{\partial coeffs[i]}{\partial v}$ (in Dv).
 	 * It assumes that u contain appropriate data in u for this
 	 * specific point t0, the user must assure this is true.
 	 *
@@ -191,8 +197,8 @@ public:
 	 * is used for this purpose.
 	 */
 	virtual void computeDDECoefficients(
-				const RealType& t0, const ValueStorageType& u, 					// input
-				ValueStorageType& coeffs, JacobianStorageType& Du) const = 0;	// output
+				const RealType& t0, const ValueStorageType& v, 					// input
+				ValueStorageType& coeffs, JacobianStorageType& Dv) const = 0;	// output
 
 	/**
 	 * this is one of two computeDDECoefficients functions that needs to be implemented
@@ -212,8 +218,71 @@ public:
 	 *
 	 */
 	virtual void computeDDECoefficients(
-				const RealType& t0, const ValueStorageType& u, 	// input
+				const RealType& t0, const ValueStorageType& v, 	// input
 				ValueStorageType& coeffs) const = 0;			// output
+
+	/**
+	 * Same as computeDDECoefficients(const TimePointType&, const CurveType&, JetType&),
+	 * but also computes the partial derivative:
+	 *
+	 * 		Du[k] = \frac{\partial coeffs[k]}{\partial u}
+	 *
+	 * where u are all the variables used to evaluate the map.
+	 * In u[j] is a d-dimensional set used in computation.
+	 * In Du[k][j] is a matrix of dimension M(d,d) and of course it is
+	 *
+	 * 		Du[k][j] = \frac{\partial coeffs[k]}{\partial u[j]}
+	 *
+	 * It is done this way to allow Solvers to use this structure to reduce
+	 * wrapping effect of interval arithmetics with the help of Lohner algorithm.
+	 *
+	 * This is a low-level version, that operates on data that collectComputationData() returns.
+	 * It is probably better to use other versions.
+	 *
+	 * NOTE: WARNING: We are assuming thet the coeffs container is set to a desired order, and that this order is achievable!
+	 *                with the current representation (i.e. is the admissible order form collectComputationalData!
+	 */
+	virtual void computeDDECoefficients(
+			const TimePointType& t0,
+			const ValueStorageType& v,
+			const VariableStorageType& u,
+			const JacobianStorageType& dvdu,
+			// those are the output:
+			ValueStorageType& coeffs, JacobianStorageType& Du) const {
+		JacobianStorageType Dv;
+		computeDDECoefficients(t0, v, coeffs, Dv);
+		if (dvdu.size() > 0){
+			// correct the Dv to Du: Du = Dv \circ dvdu
+			// NOTE: Dv represents \frac{d coeffs}{d v}
+			//       Dv[i] is the derivative of the coeff[i] w.r.t. all of v
+			//       The size of Dv[i] should be the same as size of dvdu
+			// NOTE: what is done below is basically matrix multiplication, but the matrix elements are other matrices...
+			Du.clear(); Du.resize(Dv.size());
+			auto d = imageDimension();
+			try{
+				// TODO: (NOT URGENT) rewrite using iterators
+				for (size_type i = 0; i < coeffs.size(); ++i){
+					Du[i].resize(u.size());
+					for (size_type k = 0; k < u.size(); ++k)
+						// NOTE: this should be basically Matrix(d,d), where d = imageDimension(),
+						//       but let us make this more general, maybe it will be useful in the future.
+						Du[i][k] = MatrixType(coeffs[i].dimension(), u[i].dimension());
+					for (size_type j = 0; j < coeffs.size(); ++j) // j is for v_j
+						for (size_type k = 0; k < u.size(); ++k)  // k is for u_k
+							Du[i][k] += Dv[i][j] * dvdu[j][k];
+				}
+			}catch(std::exception &ex){
+				// this is in case an data is missing or matrices has wrong dimensions.
+				// this way we should get at least some information. Sadly, CAPD provides very little extra info
+				// in their exceptions... on the other hand, it at least uses std::exceptions (it seems) :)
+				std::ostringstream info;
+				info << "BasicFunctionalMap::computeDDECoefficients(): cannot compute Du.";
+				info << "Most probably problem with the dimensions.\n";
+				info << "The exception is: \n" << ex.what();
+				throw std::logic_error(info.str());
+			}
+		}
+	}
 
 	/**
 	 * computes recursively the Jet at time t for a given curve for a DDE of the form:
@@ -231,12 +300,12 @@ public:
 	virtual void computeDDECoefficients(
 				const TimePointType& t0, const CurveType& x,
 				ValueStorageType& coeffs) const {
-		checkCurveDimension(x, "computeDDECoefficients");
+		checkCurveDimension(x, "computeDDECoefficients(t,curve,coeffs)");
 		VariableStorageType u; size_type order;
-		collectComputationData(t0, t0, RealType(0.), x, u, order);
+		ValueStorageType v; JacobianStorageType dvdu;
+		collectComputationData(t0, t0, RealType(0.), x, v, u, dvdu, order);
 		if (coeffs.size() == 0 || order + 1 < coeffs.size())
 			coeffs.resize(order + 1);
-		ValueStorageType v; convert(u, v);
 		computeDDECoefficients(t0, v, coeffs);
 	}
 
@@ -258,14 +327,13 @@ public:
 	virtual void computeDDECoefficients(
 			const TimePointType& t0, const CurveType& x,
 			ValueStorageType& coeffs, VariableStorageType& u, JacobianStorageType& Du) const {
-		checkCurveDimension(x, "computeDDECoefficients");
+		checkCurveDimension(x, "computeDDECoefficients(t,curve,coeffs,jacobian)");
 		size_type order;
-		collectComputationData(t0, t0, RealType(0.), x, u, order);
+		ValueStorageType v; JacobianStorageType dvdu;
+		collectComputationData(t0, t0, RealType(0.), x, v, u, dvdu, order);
 		if (coeffs.size() == 0 || order + 1 < coeffs.size())
 			coeffs.resize(order + 1);
-		ValueStorageType v;
-		convert(u, v);
-		computeDDECoefficients(t0, v, coeffs, Du);
+		computeDDECoefficients(t0, v, u, dvdu, coeffs, Du);
 	}
 
 	/** this is for a current time in the solution. It provides basic implementation by call to the other function. */
@@ -380,7 +448,9 @@ public:
 	virtual void collectComputationData(
 					const TimePointType& t0, const TimePointType& th,	//input
 					const RealType& dt, const CurveType& x, 	 		// input
+					ValueStorageType& out_v, 							// output
 					VariableStorageType& out_u, 						// output
+					JacobianStorageType& out_dvdu, 						// output
 					size_type& out_admissible_order) const {			// output
 		throw std::logic_error("collectComputationData(Nonrigorous) should not be called in rigorous setting!");
 	}
