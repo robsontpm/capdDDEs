@@ -349,22 +349,44 @@ public:
 	virtual TimePointType inf(const TimePointType& t, const CurveType& x) const = 0;
 	/** Returns the lower upper on the delay as a TimePoint on the grid, for the current value of the state */
 	virtual TimePointType sup(const TimePointType& t, const CurveType& x) const = 0;
-	// TODO: I think we dont need this.
-//	/**
-//	 * Returns the lower bound on the delay as a TimePoint for all the solutions.
-//	 * User should define this based on the theoretical considerations.
-//	 */
-//	virtual TimePointType inf(const TimePointType& t) const = 0;
-//	/**
-//	 * Returns the upper bound on the delay as a TimePoint on the grid
-//	 * User should define this based on the theoretical considerations.
-//	 */
-//	virtual TimePointType sup(const TimePointType& t) const = 0;
 	/**
 	 * Returns the global lower bound on the delay as a TimePoint for all the arguments.
 	 * User should define this based on the theoretical considerations.
 	 */
 	virtual TimePointType inf() const = 0;
+	/**
+	 * the most important function. It collects the data
+	 * needed to do computation on this retarded argument.
+	 *
+	 * It is assumed that a RetardedArgument is of the form
+	 * v(t_0, x_{t_0}), so the out_v represents the evaluation
+	 * of this value. Please note that v = v(t) = v(t, x_t),
+	 * therefore it has a jet: v(t) = v_0 + v_1 * t + ... .
+	 * The vector out_v represents this jet, i.e.
+	 * k-th element of VariableStorage out_v is the k-th Taylor coefficient
+	 * of v(t) (it's value).
+	 *
+	 * Next, x_{t_0} has some representation by variables u
+	 * The RetardedArgument must return those u's that it uses
+	 * to compute itself. And also the derivative w.r.t. u of
+	 * all v's.
+	 *
+	 * This is done to reduce computatonal complexity, if
+	 * there is a lot of u's describing x_{t_0}, but
+	 * only a few are used to compute the RetardedArgment.
+	 * A classic example is when $v(t, x(t)) = x(t_0 - \tau)$
+	 * for constant $\tau = i \cdot h$, $h$ is the grid step.
+	 * In such a situation v(t) depends only on n variables
+	 * (describing jet of x at $t_0-\tau$ - grid point,
+	 * and the dependence dvdu is just an identity.
+	 * In this situation dim(all of u) = O(p * n) (where p - grid size, n - order)
+	 * and dim(used u) = O(n). For p = 100 and n = 4 we have 400 vs 4.
+	 */
+	virtual void collectComputationData(
+			const TimePointType& in_t0, const CurveType& in_x,
+			ValueStorageType& out_v,
+			VariableStorageType& out_u,
+			JacobianStorageType& out_dvdu) const = 0;
 
 	/** standard virtual destructor */
 	virtual ~RetardedArgument(){};
@@ -373,6 +395,7 @@ public:
 
 ///**
 // * implementation of the simplest delay
+// TODO: this is the formulation without FunctionalMap, but it might also be bad, because it depends on SolutionCurve... SO you cannot have the same delay for C1 and C0 now, unfortunatelly.
 // */
 //template<
 //	typename SolutionCurveSpec,
@@ -384,6 +407,65 @@ public:
 
 /**
  * implementation of the simplest delay
+ */
+template<typename FunctionalMapSpec>
+class ConstGridPointDelay : public RetardedArgument<FunctionalMapSpec> {
+public:
+	typedef RetardedArgument<FunctionalMapSpec> BaseClass; 	///< User Friendly Renaming. It is very convenient when declaring functions working on this class or returning this class. It's like Java and I like it :)
+	typedef ConstGridPointDelay<FunctionalMapSpec> Class; 	///< User Friendly Renaming. It is very convenient when declaring functions working on this class or returning this class. It's like Java and I like it :)
+	typedef FunctionalMapSpec FunctionalMapType;			///< User Friendly Renaming. Data type that represents an INTERFACE (abstract) of a functional map that will use those Delays.
+	typedef typename BaseClass::CurveType CurveType;///< User Friendly Renaming. Data type that can be used to evaluate the functional map on
+	typedef typename BaseClass::JetType JetType;	///< User Friendly Renaming. Type for the Jet of the solution
+	typedef typename BaseClass::RealType RealType;			///< User Friendly Renaming. In theory Scalar might be something like Complex, so this might differ from ScalarTtpe, but for now we support only ScalarType here.
+	typedef typename BaseClass::TimePointType TimePointType;///< User Friendly Renaming. Time point type for the grid used in computations. See papers for the idea of the time grid.
+	typedef typename BaseClass::MatrixType MatrixType;		///< User Friendly Renaming.
+	typedef typename BaseClass::VectorType VectorType;		///< User Friendly Renaming.
+	typedef typename BaseClass::ScalarType ScalarType;		///< User Friendly Renaming. Scalar type for the Matrix and Vector types.
+	typedef typename BaseClass::size_type size_type;		///< User Friendly Renaming. Usually some unsigned integer.
+	typedef typename BaseClass::DataType DataType;			///< User Friendly Renaming. DataType to be used to represent the chunks of the finite representation of Curve. Basically it is VectorType, but can differ in some instances. In rigorous code it is more important.
+	typedef typename BaseClass::ValueStorageType ValueStorageType;			///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of VectorType
+	typedef typename BaseClass::VariableStorageType VariableStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
+	typedef typename BaseClass::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
+
+	ConstGridPointDelay(TimePointType const& tau): m_tau(tau) {}
+
+	// TODO: RETHINK: If this should return time point of the argment, or just the delay (and we assume the delay is always $t - tau(x, t)$ ??
+
+	/** Implementation of the evaluation of this delay on the given curve at a given time point */
+	RealType operator()(const TimePointType& t, const CurveType& x) const { return RealType(t - m_tau); }
+	/** Returns the lower bound on the delay as a TimePoint on the grid */
+	TimePointType inf(const TimePointType& t, const CurveType& x) const { return t - m_tau; }
+	/** Returns the upper bound on the delay as a TimePoint on the grid */
+	TimePointType sup(const TimePointType& t, const CurveType& x) const { return t - m_tau; }
+	/** Returns the lower bound on the delay as a TimePoint on the grid */
+	TimePointType inf() const { return -m_tau; }
+	/** Returns the data for the computations. @see BaseClass for explanation */
+	void collectComputationData(
+			const TimePointType& t0, const CurveType& x,
+			ValueStorageType& v,
+			VariableStorageType& u,
+			JacobianStorageType& dvdu) const {
+		u.clear(); v.clear(); dvdu.clear();
+		auto jet = x.jet(inf(t0, x));
+		for (auto coeff_k = jet.begin(); coeff_k != jet.end(); ++coeff_k)
+			u.push_back(*coeff_k);
+		FunctionalMapType::convert(u, v);
+		auto d = v[0].dimension();
+		auto M = u.size(); // == out_v.size();
+		MatrixType Zero(d, d), Id = MatrixType::Identity(d);
+		dvdu.resize(M);
+		for (size_type i = 0; i < M; ++i){
+			dvdu[i].resize(M, Zero);
+			dvdu[i][i] = Id;
+		}
+	}
+
+private:
+	TimePointType m_tau;
+};
+
+/**
+ * implementation of the const delay that may not be located on the grid, but halfway
  */
 template<typename FunctionalMapSpec>
 class ConstDelay : public RetardedArgument<FunctionalMapSpec> {
@@ -404,27 +486,59 @@ public:
 	typedef typename BaseClass::VariableStorageType VariableStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
 	typedef typename BaseClass::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
 
-	ConstDelay(TimePointType const& tau): m_tau(tau) {}
+	/**
+	 * this is just for testing. It represents the delay of the form:
+	 * -grid_point + epsilon \in [grid_point, grid_point + h)
+	 * TODO: make a normal constructor that deduces delay from just a RealType
+	 */
+	ConstDelay(TimePointType const& grid_point, RealType const& epsilon): m_grid_point(grid_point), m_epsilon(epsilon) {
+		// TODO: check m_epsi > 0  and m_epsi < grid(1)
+	}
 
 	// TODO: RETHINK: If this should return time point of the argment, or just the delay (and we assume the delay is always $t - tau(x, t)$ ??
 
 	/** Implementation of the evaluation of this delay on the given curve at a given time point */
-	RealType operator()(const TimePointType& t, const CurveType& x) const { return RealType(t - m_tau); }
+	RealType operator()(const TimePointType& t, const CurveType& x) const {
+		return RealType(t - m_grid_point) + m_epsilon;
+	}
 	/** Returns the lower bound on the delay as a TimePoint on the grid */
-	TimePointType inf(const TimePointType& t, const CurveType& x) const { return t - m_tau; }
+	TimePointType inf(const TimePointType& t, const CurveType& x) const {
+		return t - m_grid_point;
+	}
 	/** Returns the upper bound on the delay as a TimePoint on the grid */
-	TimePointType sup(const TimePointType& t, const CurveType& x) const { return t - m_tau; }
-//	/** Returns the lower bound on the delay as a TimePoint on the grid */
-//	TimePointType inf(const TimePointType& t) const { return t - m_tau; }
-//	/** Returns the upper bound on the delay as a TimePoint on the grid */
-//	TimePointType sup(const TimePointType& t) const { return t - m_tau; }
-//	/** Returns the lower bound on the delay as a TimePoint on the grid */
-	TimePointType inf() const { return -m_tau; }
+	TimePointType sup(const TimePointType& t, const CurveType& x) const {
+		return t - m_grid_point;
+	}
+	/** Returns the lower bound on the delay as a TimePoint on the grid */
+	TimePointType inf() const {
+		return -m_grid_point;
+	}
 
-	operator TimePointType() const { return m_tau; }
+	/** Returns the data for the computations. @see BaseClass for explanation */
+	void collectComputationData(
+			const TimePointType& t0, const CurveType& x,
+			ValueStorageType& v,
+			VariableStorageType& u,
+			JacobianStorageType& dvdu) const {
+		u.clear(); v.clear(); dvdu.clear();
+		auto jet = x.jet(inf(t0, x)); // I have a copy here, can I have reference?... Check the PiecewiseCurve interface
+		for (auto coeff_k = jet.begin(); coeff_k != jet.end(); ++coeff_k)
+			u.push_back(*coeff_k);
+		// TODO: this is not finished yet, need to include epsilon in the computation!
+		FunctionalMapType::convert(u, v);
+		auto d = v[0].dimension();
+		auto M = u.size(); // == out_v.size();
+		MatrixType Zero(d, d), Id = MatrixType::Identity(d);
+		dvdu.resize(M);
+		for (size_type i = 0; i < M; ++i){
+			dvdu[i].resize(M, Zero);
+			dvdu[i][i] = Id;
+		}
+	}
 
 private:
-	TimePointType m_tau;
+	TimePointType m_grid_point;
+	RealType m_epsilon;
 };
 
 
@@ -490,9 +604,10 @@ public:
 	typedef typename BaseClass::ScalarType ScalarType;		///< User Friendly Renaming. Scalar type for the Matrix and Vector types.
 	typedef typename BaseClass::size_type size_type;		///< User Friendly Renaming. Usually some unsigned integer.
 	typedef typename BaseClass::DataType DataType;			///< User Friendly Renaming. DataType to be used to represent the chunks of the finite representation of Curve. Basically it is VectorType, but can differ in some instances. In rigorous code it is more important.
-	typedef typename BaseClass::ValueStorageType ValueStorageType;			///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of VectorType
-	typedef typename BaseClass::VariableStorageType VariableStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
-	typedef typename BaseClass::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
+	typedef typename BaseClass::ValueStorageType ValueStorageType;						///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of VectorType
+	typedef typename BaseClass::VariableStorageType VariableStorageType;				///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
+	typedef typename BaseClass::ValueDependenceStorageType ValueDependenceStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
+	typedef typename BaseClass::JacobianStorageType JacobianStorageType;				///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
 	typedef RetardedArgument<BaseClass> DelayType;
 	typedef DelayType* DelayPtr;
 	/** storage type for discrete number of delays */

@@ -222,7 +222,8 @@ public:
 				*(tti) = ScalarType(t);
 				*(++tti) = 1.;
 				FJet ft = f(tt);
-				std::vector<VectorType> items(order + 1, VectorType(m_dimension));
+				// std::vector<VectorType> items(order + 1, VectorType(m_dimension)); // TODO: fixed with the following line. Remove after check!
+				std::vector<DataType> items(order + 1, VectorType(m_dimension));
 				for (size_type i = 0; i < f.imageDimension(); ++i){
 					size_type j = 0;
 					for (auto fti = ft.begin(i); j <= order; ++fti, ++j){
@@ -234,9 +235,32 @@ public:
 			}
 			setValueAtCurrent(f({ScalarType(t1)}));
 		} catch (std::logic_error &e) {
-			throw rethrow("DDEPiecewisePolynomialCurve::__construct__(grid,t0,t1,order,capd::map): ", e);
+			throw rethrow("DDEPiecewisePolynomialCurve::__construct__(t0,t1,order,capd::map): ", e);
 		}
 	}
+
+//	/**
+//	 * creates a representation of the function f over the interval [t0,t1],
+//	 * The function f is a string that is compatible with the capd::Map interface
+//	 * It cannot have parameters (as of now, TODO: rethink possible extra argument to have parameters for f).
+//	 * Example: f = "var:t;fun:t^2-2*t+3*cos(t)"
+//	 *
+//	 * TODO: move impl to .hpp
+//	 */
+//	DDEPiecewisePolynomialCurve(
+//				const TimePointType& t0,
+//				const TimePointType& t1,
+//				size_type order,
+//				const std::string& f):
+//			m_grid(t0.grid()), m_t_current(t0),
+//			m_valueAtCurrent(VectorType(1)),
+//			m_dimension(1)
+//	{
+//		// TODO: (IMPORTANT!) implement... (The problem is, I cannot init m_dimension and m_valueAtCurrent
+//		// TODO: (IMPORTANT!) from within initializers list, as  need to construct temporary capd::Map
+//		// TODO: (IMPORTANT!)
+//		throw std::logic_error("DDEPiecewisePolynomialCurve::__construct__(t0,t1,order,string)");
+//	}
 
 	/** number of pieces */
 	size_type length() const { return m_pieces.size(); }

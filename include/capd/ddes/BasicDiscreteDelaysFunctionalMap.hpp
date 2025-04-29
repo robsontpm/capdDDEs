@@ -419,38 +419,95 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 				VariableStorageType& out_u,							// output
 				JacobianStorageType& out_dvdu,						// output
 				size_type& out_admissible_order) const {			// output
-	// TODO: (NOT URGENT) DRY with the other  collectComputationData() method.
-	// TODO: (NOT URGENT) I'm not sure it will be possible, but think about it!
-	out_u.clear();
-	// we collect jets and compute admissible order
-	// TODO: (NOT URGENT) rewrite using pointers to Jets (will be faster)!
+//	// TODO: (NOT URGENT) DRY with the other  collectComputationData() method.
+//	// TODO: (NOT URGENT) I'm not sure it will be possible, but think about it!
+//	out_u.clear();
+//	// we collect jets and compute admissible order
+//	// TODO: (NOT URGENT) rewrite using pointers to Jets (will be faster)!
+//	out_admissible_order = 40; // TODO: (NOT URGENT) Magic Constant....
+//	std::vector<JetType> jets;
+//	for (auto tau = begin(); tau != end(); ++tau){
+//		jets.push_back(x.jet((*tau)->inf(t0, x)));   // TODO: here I just get the lower bound on the delay. The next quest is to make it truly evaluation of the delay and the jet at the delay
+//		//jets.push_back((*tau)->jet(t0, x)); // return the jet at the retarded argument
+//		size_type k = jets.back().order();
+//		if (k + 1 < out_admissible_order) out_admissible_order = k + 1;
+//	}
+//	// Then we fill in at u[0] the value at current time (always present in u, by assumption)
+//	out_u.push_back(x.getValueAtCurrent());
+//	// and then all jets, order by order (in this way it is easier to fill AutoDiff later)
+//	for (size_type k = 0; k < out_admissible_order; ++k)
+//		for (auto jit = jets.begin(); jit != jets.end(); ++jit)
+//			out_u.push_back((*jit)[k]);
+//
+//	// and here we say that v = u (but we forget the variable DataClass and convert to pure Vector
+//	BaseClass::convert(out_u, out_v);
+//
+//	// for test, I put a true Id here
+//	// TODO: later, I need to get this from the delays...
+//	auto d = imageDimension();
+//	auto M = out_u.size(); // == out_v.size();
+//	MatrixType Zero(d, d), Id = MatrixType::Identity(d);
+//	out_dvdu.resize(M);
+//	for (size_type i = 0; i < M; ++i){
+//		out_dvdu[i].resize(M, Zero);
+//		out_dvdu[i][i] = Id;
+//	}
+
+	// NEW VERSION FOR STATE DEPENDENT DELAYS
+	// TODO: (RETHINK) what I am implementing here is in fact some form automatic differentiation of v(t, u) w.r.t. to both t and u
+	// TODO: (RETHINK) but with variables u which are d-dimensional by default
+	// TODO: (RETHINK) also, if one delay returns a Variable it might be the same Variable
+	// TODO: (RETHINK)as in the other delay. So I store this twice. It's ok, because I will use those same representations of variables for both, but the redundancy might be large... (but for usual r.h.s. of DDEs this should happen very very rarely)
 	out_admissible_order = 40; // TODO: (NOT URGENT) Magic Constant....
-	std::vector<JetType> jets;
+	std::vector<ValueStorageType> values;			// represents v(u)
+	std::vector<VariableStorageType> variables;		// represents u
+	std::vector<JacobianStorageType> derivatives;	// represents \frac{\partial v}{\partial u}
 	for (auto tau = begin(); tau != end(); ++tau){
-		jets.push_back(x.jet((*tau)->inf(t0, x)));   // TODO: here I just get the lower bound on the delay. The next quest is to make it truly evaluation of the delay and the jet at the delay
-		//jets.push_back((*tau)->jet(t0, x)); // return the jet at the retarded argument
-		size_type k = jets.back().order();
-		if (k + 1 < out_admissible_order) out_admissible_order = k + 1;
+		ValueStorageType v;
+		VariableStorageType u;
+		JacobianStorageType dvdu;
+		(*tau)->collectComputationData(t0, x, v, u, dvdu);
+		size_type k = v.size();
+		// we assume that v represents values of some variable v, then v',
+		// then v'', etc. (actually v^{[k]} = v^{[k]}/k!, i.e. Taylor coefficients)
+		// therefore the order is 0, ..., v.size() - 1, and v.size() + 1 is the
+		// admissible order, because of the smoothing of solutions
+		if (k < out_admissible_order) out_admissible_order = k;
 	}
-	// Then we fill in at u[0] the value at current time (always present in u, by assumption)
-	out_u.push_back(x.getValueAtCurrent());
+
+	// reorganize data to match the algorithm
+	// TODO: maybe reorganize algorithm to match the data?
+	// NOTE: here we cut out the variables that we cannot use in our computations
+	//       because of the admissible order.
+
+	 // TODO: it should be eval at t0! (RETHINK!) (KIND OF IMPORTANT!)
+	auto x_at_t0 = x.getValueAtCurrent();
+	out_v.push_back(x_at_t0);
+	out_u.push_back(x_at_t0);
+	auto d = out_v.back().dimension();
+	MatrixType Id = MatrixType::Identity(d), Zero(d, d);
+	out_dvdu.push_back({Id});
+	auto& dvdu_0 = out_dvdu.back();
+
 	// and then all jets, order by order (in this way it is easier to fill AutoDiff later)
-	for (size_type k = 0; k < out_admissible_order; ++k)
-		for (auto jit = jets.begin(); jit != jets.end(); ++jit)
-			out_u.push_back((*jit)[k]);
+	// i - "index" of the delay, this just denotes that this is index of delay, i use interators here
+	// k - index of the Taylor coefficient used (the derivative w.r.t. t of the jet of v treated as a function v = v(t)
+	for (size_type k = 0; k < out_admissible_order; ++k){
+		for (auto u_i = variables.begin(); u_i != variables.end(); ++u_i){
+			dvdu_0.push_back(Zero); // no dependence of x(t0) on that variable
+			out_v.push_back((*u_i)[k]);
+		}
 
-	// and here we say that v = u (but we forget the variable DataClass and convert to pure Vector
-	BaseClass::convert(out_u, out_v);
-
-	// for test, I put a true Id here
-	// TODO: later, I need to get this from the delays...
-	auto d = imageDimension();
-	auto M = out_u.size(); // == out_v.size();
-	MatrixType Zero(d, d), Id = MatrixType::Identity(d);
-	out_dvdu.resize(M);
-	for (size_type i = 0; i < M; ++i){
-		out_dvdu[i].resize(M, Zero);
-		out_dvdu[i][i] = Id;
+		auto derivative_i = derivatives.begin();
+		for (auto v_i = values.begin(); v_i != values.end(); ++v_i, ++derivative_i){
+			out_v.push_back((*v_i)[k]);
+			ValueDependenceStorageType dv_ik_over_du;
+			auto derivative_ik = (*derivative_i)[k].begin();
+			for (auto u_j = variables.begin(); u_j != variables.end(); ++u_j, ++derivative_ik){
+				dv_ik_over_du.push_back(*derivative_ik);
+			}
+			out_dvdu.push_back(dv_ik_over_du);
+		}
 	}
 }
 

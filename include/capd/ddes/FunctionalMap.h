@@ -108,11 +108,17 @@ public:
 	 */
 	typedef std::vector< VectorType > ValueStorageType;
 	/**
+	 * this represents the dependence of a one value w.r.t. to many variables
+	 * (i.e. a "row" in Jacobian Matrix)
+	 */
+	typedef std::vector<MatrixType> ValueDependenceStorageType;
+	/**
 	 * This type will store partial derivatives with respect
 	 * to variables from input curve used in the computations.
-	 * Each matrix will be of M(d, d) type.
+	 * (Usually, each matrix will be of M(d, d) type d=imageDimension())
+	 * TODO: (FUTURE): in fact I require that dF/dv_j * dv_j/du_i is a d x d matrix, for any v_j for the Lohner algorithm with QR to work. Investigate the code in this regards (i.e. if we have a value given e.g. as an integral v_j = \int_{-\tau}^{0} x_i(s) ds, or such.
 	 */
-	typedef std::vector< std::vector<MatrixType> > JacobianStorageType;
+	typedef std::vector< ValueDependenceStorageType > JacobianStorageType;
 
 	/** helper to convert from collection of sets to collection of vectors */
 	static void convert(VariableStorageType const& u, ValueStorageType &v){
