@@ -257,7 +257,9 @@ public:
 			ValueStorageType& coeffs, JacobianStorageType& Du) const {
 		JacobianStorageType Dv;
 		computeDDECoefficients(t0, v, coeffs, Dv);
-		if (dvdu.size() > 0){
+		if (dvdu.size() == 0){
+			Du = Dv;
+		} else {
 			// correct the Dv to Du: Du = Dv \circ dvdu
 			// NOTE: Dv represents \frac{d coeffs}{d v}
 			//       Dv[i] is the derivative of the coeff[i] w.r.t. all of v
@@ -272,9 +274,9 @@ public:
 					for (size_type k = 0; k < u.size(); ++k)
 						// NOTE: this should be basically Matrix(d,d), where d = imageDimension(),
 						//       but let us make this more general, maybe it will be useful in the future.
-						Du[i][k] = MatrixType(coeffs[i].dimension(), u[i].dimension());
-					for (size_type j = 0; j < coeffs.size(); ++j) // j is for v_j
-						for (size_type k = 0; k < u.size(); ++k)  // k is for u_k
+						Du[i][k] = MatrixType(coeffs[i].dimension(), u[k].dimension());
+					for (size_type j = 0; j < v.size(); ++j) 	// j is for v_j
+						for (size_type k = 0; k < u.size(); ++k)// k is for u_k
 							Du[i][k] += Dv[i][j] * dvdu[j][k];
 				}
 			}catch(std::exception &ex){

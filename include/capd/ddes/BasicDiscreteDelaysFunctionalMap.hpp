@@ -419,6 +419,8 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 				VariableStorageType& out_u,							// output
 				JacobianStorageType& out_dvdu,						// output
 				size_type& out_admissible_order) const {			// output
+
+	// TODO: remove after testing everything below
 //	// TODO: (NOT URGENT) DRY with the other  collectComputationData() method.
 //	// TODO: (NOT URGENT) I'm not sure it will be possible, but think about it!
 //	out_u.clear();
@@ -454,20 +456,45 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 //	}
 
 	// NEW VERSION FOR STATE DEPENDENT DELAYS
+
+	// First, we extract data at t0 - which is always present in the data
+	// (I always assume that x'(t) = f(x(t), ...) - that way I always have at least one variable to do Lohner stuff later)
+	// TODO: it should be eval at t0! (RETHINK!) (KIND OF IMPORTANT!)
+	auto x_at_t0 = x.getValueAtCurrent();
+	out_v.push_back(x_at_t0);
+	out_u.push_back(x_at_t0);
+	auto d = out_v.back().dimension();
+	MatrixType Id = MatrixType::Identity(d), Zero(d, d);
+	out_dvdu.push_back({Id});
+	auto& dvdu_0 = out_dvdu.back();
+
 	// TODO: (RETHINK) what I am implementing here is in fact some form automatic differentiation of v(t, u) w.r.t. to both t and u
 	// TODO: (RETHINK) but with variables u which are d-dimensional by default
 	// TODO: (RETHINK) also, if one delay returns a Variable it might be the same Variable
-	// TODO: (RETHINK)as in the other delay. So I store this twice. It's ok, because I will use those same representations of variables for both, but the redundancy might be large... (but for usual r.h.s. of DDEs this should happen very very rarely)
+	// TODO: (RETHINK) as in the other delay. So I store this twice. It's ok, because I will use those same representations of variables for both, but the redundancy might be large... (but for usual r.h.s. of DDEs this should happen very very rarely)
+	// TODO: (RETHINK) maybe rethink to store v, u, dvdu as a common collection?
+	// TODO: (RETHINK, FUTURE) maybe rethink to store u as pointers to datastructures inside the solution curve, so that I can identify them, and then remove redundancy in variables?
 	out_admissible_order = 40; // TODO: (NOT URGENT) Magic Constant....
-	std::vector<ValueStorageType> values;			// represents v(u)
-	std::vector<VariableStorageType> variables;		// represents u
-	std::vector<JacobianStorageType> derivatives;	// represents \frac{\partial v}{\partial u}
+//	std::vector<ValueStorageType> values;			// represents v(u)
+//	std::vector<VariableStorageType> variables;		// represents u
+//	std::vector<JacobianStorageType> derivatives;	// represents \frac{\partial v}{\partial u}
+	std::vector<std::tuple<ValueStorageType, VariableStorageType, JacobianStorageType>> data;
 	for (auto tau = begin(); tau != end(); ++tau){
-		ValueStorageType v;
-		VariableStorageType u;
-		JacobianStorageType dvdu;
-		(*tau)->collectComputationData(t0, x, v, u, dvdu);
-		size_type k = v.size();
+		ValueStorageType tau_v;
+		VariableStorageType tau_u;
+		JacobianStorageType tau_dvdu;
+		size_type k;
+		(*tau)->collectComputationData(t0, th, dt, x, tau_v, tau_u, tau_dvdu, k);
+		data.push_back(std::make_tuple(tau_v, tau_u, tau_dvdu));
+		// we put all variables to the common structure to be used later
+		// see comments later why we put all the variables, but we will
+		// use admissible order to filter some values.
+		for (auto u_i = tau_u.begin(); u_i != tau_u.end(); ++u_i){
+			MatrixType locZero(d, u_i->dimension());
+			out_u.push_back(*u_i);
+			dvdu_0.push_back(locZero);
+		}
+
 		// we assume that v represents values of some variable v, then v',
 		// then v'', etc. (actually v^{[k]} = v^{[k]}/k!, i.e. Taylor coefficients)
 		// therefore the order is 0, ..., v.size() - 1, and v.size() + 1 is the
@@ -480,33 +507,44 @@ void BasicStateDependentDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, Je
 	// NOTE: here we cut out the variables that we cannot use in our computations
 	//       because of the admissible order.
 
-	 // TODO: it should be eval at t0! (RETHINK!) (KIND OF IMPORTANT!)
-	auto x_at_t0 = x.getValueAtCurrent();
-	out_v.push_back(x_at_t0);
-	out_u.push_back(x_at_t0);
-	auto d = out_v.back().dimension();
-	MatrixType Id = MatrixType::Identity(d), Zero(d, d);
-	out_dvdu.push_back({Id});
-	auto& dvdu_0 = out_dvdu.back();
+	// TODO: (FUTURE) I definitely need to put variables, values and derivatives together in a more robust structure
+	// TODO: (FUTURE) because now I have to put a lot of zeros. I think, I now understands why Daniel did the Node-based AutoDiff
+	// TODO: (FUTURE) I need to ask him if this is indeed the reason. Then, I think I might be able to rewrite this using Node algebra
+	// TODO: (FUTURE) and maybe then I will be able to rewrite this code with Nodes.
+	// TODO: (RETHINK, FUTURE): after looking at Node it seems that Daniel is indexing Nodes with integers too (the dag is just a vector of Nodes).
+	// TODO: (RETHINK, FUTURE): on the other hand, maybe I can create DAGs for Delays and for Function itself, and then combine them? Rethink... Maybe meet with Daniel nevertheless.
 
 	// and then all jets, order by order (in this way it is easier to fill AutoDiff later)
-	// i - "index" of the delay, this just denotes that this is index of delay, i use interators here
+	// i - "index" of the delay, this just denotes that this is index of delay, i use iterators here
 	// k - index of the Taylor coefficient used (the derivative w.r.t. t of the jet of v treated as a function v = v(t)
+	// j - index of the variable within the given delay
 	for (size_type k = 0; k < out_admissible_order; ++k){
-		for (auto u_i = variables.begin(); u_i != variables.end(); ++u_i){
-			dvdu_0.push_back(Zero); // no dependence of x(t0) on that variable
-			out_v.push_back((*u_i)[k]);
-		}
-
-		auto derivative_i = derivatives.begin();
-		for (auto v_i = values.begin(); v_i != values.end(); ++v_i, ++derivative_i){
-			out_v.push_back((*v_i)[k]);
-			ValueDependenceStorageType dv_ik_over_du;
-			auto derivative_ik = (*derivative_i)[k].begin();
-			for (auto u_j = variables.begin(); u_j != variables.end(); ++u_j, ++derivative_ik){
-				dv_ik_over_du.push_back(*derivative_ik);
+		size_type base_u_i = 1; //because we have x_at_t0 in out_u[0]
+		for (size_type i = 0; i < data.size(); ++i){
+			auto& item = data[i];
+			// unpack the data at i-th tau
+			auto& v_i = std::get<0>(item);
+			auto& u_i = std::get<1>(item);
+			auto& dvdu_i = std::get<2>(item);
+			auto& v_ik = v_i[k]; 		// k-th value at i-th delay
+			auto& dvdu_ik = dvdu_i[k]; 	// the derivative of k-th value at i-th delay wrt all variables at i-th delay
+			out_v.push_back(v_ik);
+			out_dvdu.push_back({Zero}); // dependence of v_ik on x_at_t0 is theoretically 0
+			auto& out_dv_ik__du = out_dvdu.back();
+			auto u_i_count = u_i.size();
+			auto dvdu_ik_j = dvdu_ik.begin();
+			for (int j = 1; j < out_u.size(); ++j){ // we skip the first variable = x_at_t0, therefore we start at 1
+				MatrixType D(v_ik.dimension(), out_u[j].dimension()); // by default Zero
+				if (base_u_i <= j && j < base_u_i + u_i_count){
+					// extract data dependence, instead of assuming Zero
+					// we can increase linearly iterator to dvdu_ik, as we added u_i's in this order,
+					// and in this loop we are processing them in this order
+					D = *dvdu_ik_j;
+					++dvdu_ik_j;
+				}
+				out_dv_ik__du.push_back(D);
 			}
-			out_dvdu.push_back(dv_ik_over_du);
+			base_u_i += u_i_count; // increase the base index where u_i's starts in the out_u collection
 		}
 	}
 }

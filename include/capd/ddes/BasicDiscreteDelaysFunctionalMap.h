@@ -337,6 +337,7 @@ public:
 	typedef typename FunctionalMapType::DataType DataType;			///< User Friendly Renaming. DataType to be used to represent the chunks of the finite representation of Curve. Basically it is VectorType, but can differ in some instances. In rigorous code it is more important.
 	typedef typename FunctionalMapType::ValueStorageType ValueStorageType;			///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of VectorType
 	typedef typename FunctionalMapType::VariableStorageType VariableStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
+	typedef typename FunctionalMapType::ValueDependenceStorageType ValueDependenceStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^1 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
 	typedef typename FunctionalMapType::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
 
 	/** standard rebind of the types as in many C++ std classes */
@@ -383,10 +384,12 @@ public:
 	 * and dim(used u) = O(n). For p = 100 and n = 4 we have 400 vs 4.
 	 */
 	virtual void collectComputationData(
-			const TimePointType& in_t0, const CurveType& in_x,
+			const TimePointType& in_t0, const TimePointType& in_th,
+			const RealType& in_dt, const CurveType& in_x,
 			ValueStorageType& out_v,
 			VariableStorageType& out_u,
-			JacobianStorageType& out_dvdu) const = 0;
+			JacobianStorageType& out_dvdu,
+			size_type& out_order) const = 0;
 
 	/** standard virtual destructor */
 	virtual ~RetardedArgument(){};
@@ -425,6 +428,7 @@ public:
 	typedef typename BaseClass::DataType DataType;			///< User Friendly Renaming. DataType to be used to represent the chunks of the finite representation of Curve. Basically it is VectorType, but can differ in some instances. In rigorous code it is more important.
 	typedef typename BaseClass::ValueStorageType ValueStorageType;			///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of VectorType
 	typedef typename BaseClass::VariableStorageType VariableStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
+	typedef typename BaseClass::ValueDependenceStorageType ValueDependenceStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^1 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
 	typedef typename BaseClass::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
 
 	ConstGridPointDelay(TimePointType const& tau): m_tau(tau) {}
@@ -441,10 +445,12 @@ public:
 	TimePointType inf() const { return -m_tau; }
 	/** Returns the data for the computations. @see BaseClass for explanation */
 	void collectComputationData(
-			const TimePointType& t0, const CurveType& x,
+			const TimePointType& t0, const TimePointType& th,
+			const RealType& dt, const CurveType& x,
 			ValueStorageType& v,
 			VariableStorageType& u,
-			JacobianStorageType& dvdu) const {
+			JacobianStorageType& dvdu,
+			size_type& out_order) const {
 		u.clear(); v.clear(); dvdu.clear();
 		auto jet = x.jet(inf(t0, x));
 		for (auto coeff_k = jet.begin(); coeff_k != jet.end(); ++coeff_k)
@@ -458,6 +464,7 @@ public:
 			dvdu[i].resize(M, Zero);
 			dvdu[i][i] = Id;
 		}
+		out_order = v.size(); // this is exactly (the order of v as a jet) + 1, and is due to the smoothing of solutions.
 	}
 
 private:
@@ -484,7 +491,8 @@ public:
 	typedef typename BaseClass::DataType DataType;			///< User Friendly Renaming. DataType to be used to represent the chunks of the finite representation of Curve. Basically it is VectorType, but can differ in some instances. In rigorous code it is more important.
 	typedef typename BaseClass::ValueStorageType ValueStorageType;			///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of VectorType
 	typedef typename BaseClass::VariableStorageType VariableStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data needed for computation. This will usually be a collection (e.g. std::vector) of DataType
-	typedef typename BaseClass::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^11 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
+	typedef typename BaseClass::ValueDependenceStorageType ValueDependenceStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^1 computation.  This will usually be a collection (e.g. std::vector) of MatrixType
+	typedef typename BaseClass::JacobianStorageType JacobianStorageType;	///< User Friendly Renaming. The data type used by this class to store Raw data for C^1 computation. This will usually be a collection (e.g. std::vector) of the ValueDependenceStorageType
 
 	/**
 	 * this is just for testing. It represents the delay of the form:
@@ -516,24 +524,75 @@ public:
 
 	/** Returns the data for the computations. @see BaseClass for explanation */
 	void collectComputationData(
-			const TimePointType& t0, const CurveType& x,
+			const TimePointType& t0, const TimePointType& th,
+			const RealType& dt, const CurveType& x,
 			ValueStorageType& v,
 			VariableStorageType& u,
-			JacobianStorageType& dvdu) const {
+			JacobianStorageType& dvdu,
+			size_type& out_order) const {
+		auto d = x.dimension();
 		u.clear(); v.clear(); dvdu.clear();
 		auto jet = x.jet(inf(t0, x)); // I have a copy here, can I have reference?... Check the PiecewiseCurve interface
+		size_type n = jet.order();
+		out_order = n + 1;
 		for (auto coeff_k = jet.begin(); coeff_k != jet.end(); ++coeff_k)
 			u.push_back(*coeff_k);
-		// TODO: this is not finished yet, need to include epsilon in the computation!
-		FunctionalMapType::convert(u, v);
-		auto d = v[0].dimension();
-		auto M = u.size(); // == out_v.size();
-		MatrixType Zero(d, d), Id = MatrixType::Identity(d);
-		dvdu.resize(M);
-		for (size_type i = 0; i < M; ++i){
-			dvdu[i].resize(M, Zero);
-			dvdu[i][i] = Id;
+
+		MatrixType Epsi = MatrixType::Identity(d), Zero(d, d);
+		// fill lower triangular matrix
+		for (size_type i = 0; i <= n; ++i){
+			dvdu.push_back({});
+			auto& dvidu = dvdu.back();
+			for (size_type j = 0; j < i; ++j)
+				dvidu.push_back(Zero);
 		}
+		// fill on diagonals
+		for (size_type i = 0; i <= n; ++i){
+			for (size_type j = 0; j <= n-i; ++j)
+				dvdu[j].push_back(Epsi);
+			Epsi *= m_epsilon;
+		}
+
+		// TODO: here I am computing the value explicitly again, and violate DRY with evalAtDelta in Jet
+		// TODO: but I want control over what is happening, and I need to extract the derivative
+		// TODO: maybe need to move this to Jet?
+		size_type j = n;
+		auto coeff = jet.end();
+		VectorType out(x.dimension());
+		while (coeff-- != jet.begin()){
+			out *= m_epsilon;
+			out += (*coeff);
+		}
+		v.push_back(out);
+
+		for (int k = 1; k <= n; ++k){
+			// compute the k-th coefficent
+			size_type j = n;
+			auto coeff = jet.end();
+			VectorType out(x.dimension());
+			while (coeff-- != jet.begin()){
+				// TODO: (NOT URGENT, FUTURE, RETHINK) tabularize the weights for some minor speed?
+				RealType w = (RealType(j + 1) / RealType(j + 1 - k)); // TODO: this might cause overestimates as computed on intervals. The weights are integers INTEGERS!: n!/k!(n-k)!
+				for (size_type i = j+1; i <= n; ++i) dvdu[k][i] *= w; // include weights in the matrix
+				out *= m_epsilon * w;
+				out += (*coeff);
+				if (j == k) break; --j;
+			}
+			v.push_back(out);
+		}
+
+
+//		// TODO: this is not finished yet, need to include epsilon in the computation!
+//		FunctionalMapType::convert(u, v);
+//		auto d = v[0].dimension();
+//		auto M = u.size(); // == out_v.size();
+//		MatrixType Zero(d, d), Id = MatrixType::Identity(d);
+//		dvdu.resize(M);
+//		for (size_type i = 0; i < M; ++i){
+//			dvdu[i].resize(M, Zero);
+//			dvdu[i][i] = Id;
+//		}
+//		out_order = v.size(); // this is exactly (the order of v as a jet) + 1, and is due to the smoothing of solutions.
 	}
 
 private:

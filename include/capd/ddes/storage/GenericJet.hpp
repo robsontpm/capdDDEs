@@ -230,11 +230,15 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalCoe
 
 	// NOTE: we assume out is of good shape (i.e. dimension, other data if neccessary), and set to 0
 	if (n == 0) this->evalAtDelta(delta_t, out);
-	else if (n > m_order) {
+	else if (n > m_order) { // out is zero, as we represent polynomial of orde m_order.
 		return;
 	}
+
 	size_type j = this->m_order;
 	const_iterator coeff = this->end();
+
+	// NOTE: this is ok, the loop will break when coeff = begin() - 1 in the worst case (n=0)
+	//       but this will also not happen, because I have if'ed this case for simplicity above.
 	while (coeff-- != begin()){
 		// TODO: (NOT URGENT, FUTURE, RETHINK) tabularize the weights for some minor speed?
 		// old version in one line: out = (*coeff) + out * (delta_t * (RealType(j + 1) / RealType(j + 1 - n)));
