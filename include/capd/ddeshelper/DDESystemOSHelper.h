@@ -434,14 +434,14 @@ public:
 
 	/** make a new PathConfix with a longer prefix : "prefix-suffix" */
 	PathConfig suffix(std::string suffix) const {
-		return PathConfig(dirPath, (prefix == "" ? " " : "-") + suffix);
+		return PathConfig(dirPath, (prefix == "" ? "" : "-") + suffix);
 	}
 	/** dirpath with prefix */
 	std::string fullpath() const { return dirPath + "/" + prefix; }
 	/** makes a new prefixed filepath for a given filename */
-	std::string filepath(std::string name) const { return dirPath + (prefix == "" ? " " : "-") + name; }
+	std::string filepath(std::string name) const { return fullpath() + (prefix == "" ? "" : "-") + name; }
 	/** makes just a prefixed filename (no path attached) */
-	std::string filename(std::string name) const { return prefix + (prefix == "" ? " " : "-") + name; }
+	std::string filename(std::string name) const { return prefix + (prefix == "" ? "" : "-") + name; }
 
 	/** assure there is really this folder - not very safe!!! */
 	bool mkdir_p() const {
