@@ -313,7 +313,7 @@ public:
 		(*this) << "[default: " << std::setprecision(16) << out << "]";
 		bool found = false;
 		for (ArgcType i = 0; i < argc; ++i)
-			found = found or conditionalExtractValue(argv[i], param, out);
+			found = conditionalExtractValue(argv[i], param, out) or found;
 		return found;
 	}
 
