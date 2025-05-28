@@ -379,7 +379,7 @@ founded by several grants:
 
  - Polish National Science Center (NCN) Opus grant no. 2023/49/B/ST6/02801
 
- - NAWA BEKKER grant no. BPN/BEK/2023/1/00
+ - NAWA BEKKER grant no. BPN/BEK/2023/1/00 [<img src="img/NAWA-logo.png">](https://nawa.gov.pl/)
 
 
 REFERENCES
