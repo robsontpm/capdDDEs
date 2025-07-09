@@ -153,14 +153,20 @@ void mkdir_p(const std::string &dirpath);
  *	TODO: (not important) add option to handle separated values, ie. "--param data"
  *	TODO: (not important) add option to include help header and help footer (before and after params)
  *	TODO: (not important) move implementation outside class to a .cpp/.hpp file.
+ *
+ *	NOTE: a lot of the methods does not have const modifier. I assume this object is rather volatile and it has only one instance.
  */
 class ArgumentParser {
 	const unsigned int MAX_LENGTH = 78;
 	typedef char** ArgvType;
 	typedef int ArgcType;
-	ArgcType& argc;
-	ArgvType& argv;
+	typedef std::string TokenType;
+	typedef std::vector<TokenType> TokenListType;
+	ArgcType argc;
+	ArgvType argv;
+	TokenListType tokens;
 	std::ostringstream help_oss;
+	std::ostringstream parsing_log;
 	std::string current_pad;
 	unsigned int current_col;
 	std::string parse_time = "";
@@ -220,19 +226,91 @@ class ArgumentParser {
 		}
 		return out;
 	}
+	/**
+	 * converts argv to tokens
+	 * TODO: NOTE: this might be used now to convert consecutive pairs into tokens, like in the old programs. Rethink!
+	 */
+	void argv2Tokens(){
+		parsing_log << "argv/argc:" << argc << "\n";
+		for (int i = 0; i < argc; ++i) {
+			parsing_log << "token: " << argv[i] << "\n";
+			tokens.push_back(std::string(argv[i]));
+		}
+	}
 public:
 	/**
 	 * this should be called first after entering main(int argc, char* argv[]).
 	 * Parameters are obvious from the above.
 	 */
-	ArgumentParser(ArgcType& argc, ArgvType& argv, int help_line_length=78):
+	ArgumentParser(ArgcType argc, ArgvType argv, int help_line_length=78):
 		argc(argc), argv(argv), current_col(0), MAX_LENGTH(help_line_length) {
 		std::time_t time = std::time(0);
 		const int M = 30; char time_c_str[M+1] = {};
 		std::strftime(time_c_str, M, "%c", std::localtime(&time));
 		parse_time = std::string(time_c_str);
+		argv2Tokens();
 	}
-
+	/** repopulate data from the given argc and argv. Probably not used that much. */
+	void setup(ArgcType argc, ArgvType argv, bool remove_old=false) {
+		this->argv = argv;
+		this->argc = argc;
+		if (remove_old) tokens.clear();
+		argv2Tokens();
+	}
+	/**
+	 * setup data from the given stream. The stream is read in whole,
+	 * lines that starts with # are skipped, and each line becomes one token.
+	 */
+	void setup(std::istream& input, bool remove_old=false) {
+		if (remove_old) tokens.clear();
+	    std::string line;
+	    while (std::getline(input, line)) {
+	    	parsing_log << "line: " << line << "\n";
+	    	// erase the front white spaces
+	        line.erase(0, line.find_first_not_of(" \t"));
+	        // if the line is just a comment or empty, do nothing
+	        if (line.empty() || line[0] == '#') continue;
+	        // now we have, that line has some chars not being white and for sure don't start with #
+	        std::istringstream iss(line);
+	        std::getline(iss, line, '#'); // this will remove potential comment at the end of the line
+	        // we have removed comment, but we might have some trailing white spaces.
+	        // but we know that there must be some non-white chars in the front, so we
+	        // do not need to worry about find_last_not_of returning npos.
+	        line.erase(line.find_last_not_of(" \t") + 1);
+	        // line is in good shape now!
+	        parsing_log << "token: " << line << "\n";
+	        tokens.push_back(line);
+	    }
+	}
+	/**
+	 * setup data from the given filepath (read through ifstream).
+	 * @see setup(std::ifstream&, bool)
+	 */
+	void setupFromFile(std::string& filepath, bool remove_old=false) {
+		parsing_log << "file: " << filepath << "\n";
+	    std::ifstream f(filepath);
+	    setup(f, remove_old);
+	    f.close();
+	}
+	/**
+	 * Checks if the given parameter is present in the current tikens list (e.g. from argv)
+	 * if so, it loads the file given by this param, and then repopulates the
+	 * token list as given in @see setup(std::ifstream&, bool).
+	 * If overwrite_argv=false (default), then argv params takes precedence over those from files
+	 * if it is true, then the config file params takes precedence.
+	 */
+	void checkConfigFile(
+				std::string param="--config=",
+				std::string help_s="The configuration file for extra parameters.",
+				bool overwrite_argv=false){
+		std::string filepath;
+		if (this->parse(param, filepath, help_s)){
+			this->setupFromFile(filepath);
+			// repopulate the argv in the end of the list,
+			// so that they takes precendence
+			if (!overwrite_argv) argv2Tokens();
+		}
+	}
 	/**
 	 * returns the command line formatted.
 	 *
@@ -271,8 +349,13 @@ public:
 	}
 
 	/** Returns the help string with all parameters formatted */
-	std::string getHelp() {
+	std::string getHelp() const {
 		return help_oss.str();
+	}
+
+	/** Returns the log of all parsed tokens. Might be useful for debug or for history. */
+	std::string getParsingLog() const {
+		return parsing_log.str();
 	}
 
 	/**
@@ -284,8 +367,11 @@ public:
 		if (help_s) (*this) << help_s << "\n";
 		(*this) << "[this is a flag parameter (present/absent)]";
 		std::string dump;
-		for (ArgcType i = 0; i < argc; ++i)
-			if (argv[i] == param)
+//		for (ArgcType i = 0; i < argc; ++i)
+//			if (argv[i] == param)
+//				return true;
+		for (auto& item: tokens)
+			if (item == param)
 				return true;
 		return false;
 	}
@@ -312,8 +398,10 @@ public:
 		if (help_s) (*this) << help_s << "\n";
 		(*this) << "[default: " << std::setprecision(16) << out << "]";
 		bool found = false;
-		for (ArgcType i = 0; i < argc; ++i)
-			found = conditionalExtractValue(argv[i], param, out) or found;
+//		for (ArgcType i = 0; i < argc; ++i)
+//			found = conditionalExtractValue(argv[i], param, out) or found;
+		for (auto& item: tokens)
+			found = conditionalExtractValue(item, param, out) or found;
 		return found;
 	}
 
@@ -339,8 +427,10 @@ public:
 		(*this) << "] ";
 		T tmp_out;
 		bool found = false;
-		for (ArgcType i = 0; i < argc; ++i){
-			if (!conditionalExtractValue(argv[i], param, tmp_out)) continue;
+//		for (ArgcType i = 0; i < argc; ++i){
+//			if (!conditionalExtractValue(argv[i], param, tmp_out)) continue;
+		for (auto& item: tokens){
+			if (!conditionalExtractValue(item, param, tmp_out)) continue;
 			bool allowed = false;
 			for (auto v : allowed_values){
 				if (v == tmp_out){
@@ -378,8 +468,10 @@ public:
 		(*this) << "[note: has predicate, check docs] ";
 		T tmp_out;
 		bool found = false;
-		for (ArgcType i = 0; i < argc; ++i){
-			if (!conditionalExtractValue(argv[i], param, tmp_out)) continue;
+//		for (ArgcType i = 0; i < argc; ++i){
+//			if (!conditionalExtractValue(argv[i], param, tmp_out)) continue;
+		for (auto& item: tokens){
+			if (!conditionalExtractValue(item, param, tmp_out)) continue;
 			if (F(tmp_out)){
 				out = tmp_out;
 				found = true;
