@@ -364,7 +364,7 @@ protected:
 	DiscreteTimeGrid(const std::shared_ptr<RealSpec> ptr_h): m_ptr_h(ptr_h) {}
 };
 template<typename RealSpec>
-const RealSpec DiscreteTimeGrid<RealSpec>::zero = 0;
+const RealSpec DiscreteTimeGrid<RealSpec>::zero = RealSpec(0);
 template<typename RealSpec>
 const std::shared_ptr<RealSpec>  DiscreteTimeGrid<RealSpec>::ptr_zero = std::make_shared<RealSpec>(DiscreteTimeGrid<RealSpec>::zero);
 template<typename RealSpec>

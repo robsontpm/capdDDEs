@@ -106,6 +106,7 @@ template<
 	typename EqSpec,
 	typename MatrixSpec = capd::IMatrix,
 	typename VectorSpec = capd::IVector,
+	typename CAPDMapSpec = capd::IMap,
 	typename PoliciesSpec=capd::dynset::C11Rect2Policies
 >
 class RigorousSetup{
@@ -133,7 +134,7 @@ public:
 	typedef typename Section::JetType SectionJet;
 	typedef capd::ddes::DDEPoincareMap<Solver, Section> PoincareMap;
 
-	typedef capd::IMap CAPDMap;
+	typedef CAPDMapSpec CAPDMap;
 };
 
 } // namespace ddes;
