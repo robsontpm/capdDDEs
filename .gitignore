@@ -58,3 +58,6 @@ external/capd/capdDynSys4/docs/*.log
 *.exe
 *.out
 *.app
+
+# CMake build directory
+build/
