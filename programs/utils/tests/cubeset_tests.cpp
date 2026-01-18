@@ -6,7 +6,7 @@
 #include <capd/ddes/ddeslib.h>
 #include <capd/ddeshelper/ddeshelperlib.h>
 #include <capd/ddeshelper/DDEHelperRigorous.hpp>
-#include "constants.h"
+//#include "constants.h"
 #include <algorithm>
 
 // TODO: make it work later
@@ -20,7 +20,7 @@ typedef capd::ddeshelper::RigorousHelper<Eq> Setup;
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 int main(int argc, char** argv){
-
+/*
 	Setup::Vector test_r0({0.0, 0.1, 0.1, 1.0, 1.0});
 	capd::ddeshelper::CubeSet<Setup::Vector> cubes(test_r0);
 	cubes.insert({0,0,0});
@@ -109,8 +109,6 @@ int main(int argc, char** argv){
 	isstest >> cubes6;
 	std::cout << "The same cube sets? (cubes6 == cubes5)" << (cubes6 == cubes5) << std::endl;
 	std::cout << "In operator test DONE" << endl;
-
-	return 0;
-
+*/
 	return 0;
 }

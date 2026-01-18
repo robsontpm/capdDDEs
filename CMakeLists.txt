@@ -69,5 +69,5 @@ target_link_libraries(capdDDEs PUBLIC ${CAPD_LIBRARIES})
 include(AddSubdirectoryPrograms)
 
 add_subdirectory(programs/utils)
-add_subdirectory(programs/results)
+#add_subdirectory(programs/results)
 add_subdirectory(programs/examples)
