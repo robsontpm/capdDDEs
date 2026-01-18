@@ -67,10 +67,9 @@ function(add_programs_from_subdir SUBDIR)
         # Add include directories (current subdirectory)
         target_include_directories(${TARGET_NAME} PRIVATE "${SUBDIR_ABS}")
 
-        # Set output directory to match the original layout: ./bin/ inside the subdirectory
-        # We put it in the build tree but mimicking the structure.
+        # Set output directory to match the original layout: ./bin/ inside the source subdirectory
         set_target_properties(${TARGET_NAME} PROPERTIES
-            RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${REL_SUBDIR}/bin"
+            RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin"
         )
     endforeach()
 endfunction()

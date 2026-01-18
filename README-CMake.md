@@ -40,7 +40,14 @@ This repository now supports building with CMake, alongside the existing Makefil
     or simply `make` (if using Make generator).
 
     This will build the `capdDDEs` static library and all programs in `programs/examples` and `programs/utils`.
-    The executables will be placed in `build/programs/examples/...` mirroring the source structure.
+
+    **Note:** The compiled executables are placed in the `bin` subdirectory of the respective program folder in the source tree (e.g., `programs/examples/mackey-glass-stable-periodic/bin/`).
+    To run a program, it is recommended to navigate to that directory first, so that any output files are generated locally:
+
+    ```bash
+    cd programs/examples/mackey-glass-stable-periodic/bin
+    ./nonrig-find
+    ```
 
 ## Using capdDDEs in Your Project
 
