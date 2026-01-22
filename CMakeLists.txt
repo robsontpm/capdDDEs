@@ -70,4 +70,4 @@ include(AddSubdirectoryPrograms)
 
 add_subdirectory(programs/utils)
 #add_subdirectory(programs/results)
-add_subdirectory(programs/examples)
+#add_subdirectory(programs/examples)
