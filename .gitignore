@@ -58,3 +58,28 @@ external/capd/capdDynSys4/docs/*.log
 *.exe
 *.out
 *.app
+
+# CMake build directory
+build/
+
+# Ignore artifact files in specific directories
+/*.gp
+/*.png
+/*.dat
+/*.pdf
+cmake/**/*.gp
+cmake/**/*.png
+cmake/**/*.dat
+cmake/**/*.pdf
+include/**/*.gp
+include/**/*.png
+include/**/*.dat
+include/**/*.pdf
+programs/**/*.gp
+programs/**/*.png
+programs/**/*.dat
+programs/**/*.pdf
+src/**/*.gp
+src/**/*.png
+src/**/*.dat
+src/**/*.pdf

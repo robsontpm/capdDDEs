@@ -30,7 +30,7 @@ int main(int argc, char** argv){
 	DS::Solver dde_solver(dde);
 
 	capd::DMap y_0("var:t;fun:sin(t)+cos(2*t);", n+1);
-	DS::Solution X(grid, -tau, zero, n, y_0);
+	DS::Solution X(-tau, zero, n, y_0);
 
 	// those operations are for the nonrigorous version,
 	// but **should** be available also in rigorous.

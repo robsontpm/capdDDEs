@@ -281,10 +281,10 @@ public:
 			helper_dump_badge(in); // dump badge() = "DiscreteTimePoint"
 			RealType tmp;
 			in >> t.m_i >> tmp;
-			if (tmp != *(t.m_grid.m_ptr_h)){ // check at least values
+			if (tmp != t.m_grid.h()){ // check at least values
 				std::ostringstream info;
 				info << "TimePointType: Point from input is probably from some other grid. ";
-				info << "Input h = " << tmp << " vs grid h = " << *(t.m_grid.m_ptr_h);
+				info << "Input h = " << tmp << " vs grid h = " << t.m_grid.h();
 				throw std::logic_error(info.str());
 			}
 			return in;
