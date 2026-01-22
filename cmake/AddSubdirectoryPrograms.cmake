@@ -38,8 +38,13 @@ function(add_programs_from_subdir SUBDIR)
         return()
     endif()
 
+    foreach(SOURCE ${SOURCES})
+        message(STATUS "Using extra source file (no main): ${SOURCE}")
+    endforeach()    
+
     # Process executables
     foreach(EXE_SOURCE ${EXECUTABLES})
+        message(STATUS "Adding entry for executable: ${EXE_SOURCE}")
         get_filename_component(EXE_NAME "${EXE_SOURCE}" NAME_WE)
 
         # Create a unique target name by sanitizing the subdirectory path

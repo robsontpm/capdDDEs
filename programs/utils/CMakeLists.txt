@@ -17,7 +17,7 @@ endforeach()
 set(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -std=c++17")
 
 check_cxx_source_compiles("
-#include <capd/capdlib.h>
+#include <capd/mpcapdlib.h>
 int main() {
     capd::MpInterval a;
     return 0;

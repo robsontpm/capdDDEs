@@ -2,3 +2,4 @@
 !.gitignore
 !makefile-run.mk
 !README.md
+!CMakeLists.txt
