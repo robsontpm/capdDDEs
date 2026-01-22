@@ -24,6 +24,12 @@ Separated old (no boost::test) and new (Boost) test,
 as they were not compatible with new autodiscovery system.
 As a side note, I plan to move completely to tests based
 on Boost now. 
+
+### Fixed
+
+A problem with the grid, where some template functions accessed
+private pointer of grid, causing compilation failure in case
+they are used. 
  
 ## [Unreleased] - 2024-12-13
  
