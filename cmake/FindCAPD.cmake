@@ -1,17 +1,30 @@
 # FindCAPD.cmake
 
 # Try to find capd-config
+# Prioritize bundled CAPD build directory
 find_program(CAPD_CONFIG_EXECUTABLE
     NAMES capd-config
     PATHS
-        ${CAPD_DIR}/bin
         ${CMAKE_SOURCE_DIR}/bin/capd_build/bin
-        /usr/local/bin
-        /usr/bin
-    DOC "Path to capd-config executable"
+        ${CAPD_DIR}/bin
+    NO_DEFAULT_PATH
+    DOC "Path to bundled or specified capd-config executable"
 )
 
+# Fallback to system paths only if not found above and not strictly forbidden
+if(NOT CAPD_CONFIG_EXECUTABLE)
+    find_program(CAPD_CONFIG_EXECUTABLE
+        NAMES capd-config
+        PATHS
+            /usr/local/bin
+            /usr/bin
+        DOC "Path to system capd-config executable"
+    )
+endif()
+
 if(CAPD_CONFIG_EXECUTABLE)
+    message(STATUS "Using CAPD from: ${CAPD_CONFIG_EXECUTABLE}")
+
     execute_process(
         COMMAND ${CAPD_CONFIG_EXECUTABLE} --cflags
         OUTPUT_VARIABLE CAPD_CFLAGS
