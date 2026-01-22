@@ -55,10 +55,10 @@ target_include_directories(capdDDEs PUBLIC
 )
 
 if(CAPD_COMPILE_OPTIONS)
-    target_compile_options(capdDDEs PRIVATE ${CAPD_COMPILE_OPTIONS})
+    target_compile_options(capdDDEs PUBLIC ${CAPD_COMPILE_OPTIONS})
 endif()
 if(CAPD_COMPILE_DEFINITIONS)
-    target_compile_definitions(capdDDEs PRIVATE ${CAPD_COMPILE_DEFINITIONS})
+    target_compile_definitions(capdDDEs PUBLIC ${CAPD_COMPILE_DEFINITIONS})
 endif()
 
 target_link_libraries(capdDDEs PUBLIC ${CAPD_LIBRARIES})
@@ -71,3 +71,5 @@ include(AddSubdirectoryPrograms)
 add_subdirectory(programs/utils)
 add_subdirectory(programs/results)
 add_subdirectory(programs/examples)
+enable_testing()
+add_subdirectory(tests)

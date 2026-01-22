@@ -47,7 +47,7 @@ echo "cd to build directory: $BUILD_DIR"
 cd "$BUILD_DIR"
 # no install prefix now, as we do not do cmake --install, per github capd docs
 #cmake --install-prefix "$PREFIX" "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
-cmake "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=true
+cmake "$CAPD_REL_PATH" -DCAPD_ENABLE_MULTIPRECISION=false
 make
 # this is no longer needed, we just do make (see above)
 # cmake --build .

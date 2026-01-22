@@ -1,0 +1,9 @@
+Test project /app
+    Start 1: capd-ddes-DDECommon
+1/2 Test #1: capd-ddes-DDECommon ................   Passed    0.02 sec
+    Start 2: capd-ddes-storage-BasicDoubleton
+2/2 Test #2: capd-ddes-storage-BasicDoubleton ...   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.04 sec
