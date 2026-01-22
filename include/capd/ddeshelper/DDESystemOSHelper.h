@@ -450,7 +450,7 @@ public:
 	template<typename T>
 	bool parse(const std::string &param, T &out,
 			std::initializer_list<T> allowed_values,
-			const std::string &help_s="") {
+			const std::string &help_s) {
 		return parse(param, out, allowed_values, help_s.c_str());
 	}
 
@@ -483,7 +483,7 @@ public:
 	/** to accept strings as help */
 	template<typename T, typename F>
 	bool parse(const std::string &param, T &out,
-			F predicate, const std::string &help_s="") {
+			F predicate, const std::string &help_s) {
 		return parse(param, out, predicate, help_s.c_str());
 	}
 };
