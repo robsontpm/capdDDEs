@@ -2,6 +2,10 @@
 
 This repository now supports building with CMake, alongside the existing Makefiles.
 
+This support is now experimental and might change in the near future. 
+
+In a long run cmake should replace old method (Makefiles). 
+
 ## Prerequisites
 
 *   CMake 3.13 or newer
