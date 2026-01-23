@@ -7,7 +7,7 @@ based on [^phd-thesis], [^rignum-ddes], [^high-order-ddes].
 TL;DR
 -----
 
-If you have ```Debian``` based system (tested: Ubuntu 20.04),
+If you have ``Debian`` based system (tested: Ubuntu 20.04),
 then to see the project in action, you can run:
 
 ```bash
@@ -20,7 +20,7 @@ chmod a+x tldr.sh
 ```
 
 It might take some time to compile everything. 
-The next sections describes what is done in ```tldr.sh``` script. 
+The next sections describes what is done in ``tldr.sh`` script. 
 
 **NOTE FOR DEVELOPERS ONLY:** use ```git@github.com:robsontpm/capdDDEs.git capdDDEs``` 
 instead of ```https://github.com/robsontpm/capdDDEs.git```.
@@ -43,12 +43,15 @@ In Debian based systems you can run:
 sudo apt-get install libgmp-dev libmpfr-dev libboost-all-dev git cmake autoconf libtool
 ```
 
-The documentation and the compilation system uses for now the ```g++``` compiler.
-You can change it in your ```build-conf.mk``` file in the root directory 
+The documentation and the compilation system uses for now the ``g++`` compiler.
+You can change it in your ``build-conf.mk`` file in the root directory 
 (see docs below).
 
 Compilation
 -----------
+
+**Starting 2026**: there is a new experimental build system using ``cmake``, 
+see [here](README-CMake.md) (or directly ``README-CMake.md``).
 
 Assuming you have all the needed requirements, 
 to start using this project you can do the following steps 
@@ -66,10 +69,10 @@ You should choose one of the possible configs of the building system:
 ls | grep "build-conf-"
 ```
 
-You need to copy one of them into file named ```build-conf.mk```.
-This file is not tracked by the ```git``` version control.
+You need to copy one of them into file named ``build-conf.mk``.
+This file is not tracked by the ``git`` version control.
 Currently, the difference between various versions 
-lies in where the library will look for ```CAPD``` library.
+lies in where the library will look for ``CAPD`` library.
 
 Currently, you have two options: decide to go with the ```CAPD``` 
 that is a submodule of this project and is maintained by github git

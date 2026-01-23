@@ -10,6 +10,13 @@ will be reported here.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased] - 2026-01-24
+
+### Fixed
+
+Some corrections to cmake building system. Made all tests into Boost tests using jules. Tests now only build using cmake bulding method. 
+
+
 ## [Unreleased] - 2026-01-22
 
 ### Added
