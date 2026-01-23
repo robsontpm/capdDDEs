@@ -1,10 +1,14 @@
 find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
-# automatically scan this folder for all .cpp files
-# TODO: rethink, if there should be separated subfolders? When there is a lot of tests...
 file(GLOB TEST_SOURCES "*.cpp")
+
 foreach(TEST_SRC ${TEST_SOURCES})
     get_filename_component(TEST_NAME "${TEST_SRC}" NAME_WE)
+
+    # Check if file has "main" to avoid conflict with BOOST_TEST_MODULE which provides main
+    # Actually, Boost Test sources usually define BOOST_TEST_MODULE and include unit_test.hpp,
+    # which generates main.
+    # If we are refactoring existing files that HAD main, we will remove it.
 
     add_executable(${TEST_NAME} "${TEST_SRC}")
 

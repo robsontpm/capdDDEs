@@ -1,0 +1,30 @@
+-- Using CAPD from: /app/bin/capd_build/bin/capd-config
+-- CAPD Found: -L/app/bin/capd_build;-L/app/bin/capd_build/capdExt/filibsrc;-lcapd;-lfilib
+-- CAPD Includes: /app/external/capd/capdDynSys/include;/app/external/capd/capdAlg/include;/app/external/capd/capdAux/include;/app/external/capd/capdExt/include;/app/external/capd/capdExt/filibsrc
+-- CAPD multiprecision support not found (MpInterval check failed). Skipping 'converter' programs.
+-- Boost unit_test_framework found.
+-- Adding entry for executable: /app/programs/examples/command-line-helper/cmd-parser.cpp
+-- Using extra source file (no main): /app/programs/examples/demo-elninio/setup-nonrig.cpp
+-- Adding entry for executable: /app/programs/examples/demo-elninio/draw-nonrig.cpp
+-- Using extra source file (no main): /app/programs/examples/demo-gamm/setup.cpp
+-- Adding entry for executable: /app/programs/examples/demo-gamm/numeric.cpp
+-- Adding entry for executable: /app/programs/examples/demo-gamm/validated.cpp
+-- Using extra source file (no main): /app/programs/examples/demo-szeged/setup.cpp
+-- Adding entry for executable: /app/programs/examples/demo-szeged/1_nonrig.cpp
+-- Adding entry for executable: /app/programs/examples/demo-szeged/2_manipulations.cpp
+-- Adding entry for executable: /app/programs/examples/demo-szeged/3_rigorous_timemap.cpp
+-- Adding entry for executable: /app/programs/examples/demo-szeged/4_periodic_candidate.cpp
+-- Adding entry for executable: /app/programs/examples/demo-szeged/5_rigorous_poincare.cpp
+-- Using extra source file (no main): /app/programs/examples/mackey-glass-stable-periodic/nonrig-setup.cpp
+-- Using extra source file (no main): /app/programs/examples/mackey-glass-stable-periodic/rig-setup.cpp
+-- Adding entry for executable: /app/programs/examples/mackey-glass-stable-periodic/nonrig-find.cpp
+-- Adding entry for executable: /app/programs/examples/mackey-glass-stable-periodic/rig-prove.cpp
+-- Using extra source file (no main): /app/programs/examples/rossler-ode-vs-dde-code/gnuplot.cpp
+-- Using extra source file (no main): /app/programs/examples/rossler-ode-vs-dde-code/setup.cpp
+-- Adding entry for executable: /app/programs/examples/rossler-ode-vs-dde-code/capd-original-code.cpp
+-- Adding entry for executable: /app/programs/examples/rossler-ode-vs-dde-code/dde-vs-ode-code.cpp
+-- Using extra source file (no main): /app/programs/examples/user-program-template/setup.cpp
+-- Adding entry for executable: /app/programs/examples/user-program-template/program.cpp
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /app

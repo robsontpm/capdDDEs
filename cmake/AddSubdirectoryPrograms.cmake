@@ -74,7 +74,7 @@ function(add_programs_from_subdir SUBDIR)
 
         # Set output directory to match the original layout: ./bin/ inside the source subdirectory
         set_target_properties(${TARGET_NAME} PROPERTIES
-            RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin"
+            RUNTIME_OUTPUT_DIRECTORY "${SUBDIR_ABS}/bin"
         )
     endforeach()
 endfunction()
