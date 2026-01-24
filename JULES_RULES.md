@@ -1,0 +1,3 @@
+- Never attempt cmake . in the root directory of the program!
+- Always build, make and compile from within ./build/ directory!
+- Do not remove anything from .gitignore when not asked to!

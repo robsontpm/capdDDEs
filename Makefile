@@ -23,18 +23,18 @@ PROGRAMS=${RESULTS} ${EXAMPLES} ${DEVEL} ${UTILS}
 export ${PROGRAMS}
 
 #@ at the begining tells make not to print the command
-list:	
+list:
 	@echo "=== List of possible make targets ==="
 	@echo "(type make <target/name>) to compile"
-	@echo "1) examples (simple progs for learning):" 
+	@echo "1) examples (simple progs for learning):"
 	@for item in ${EXAMPLES}; do echo "    * $$item"; done
-	@echo "2) results (from publications):" 
+	@echo "2) results (from publications):"
 	@for item in ${RESULTS}; do echo "    * $$item"; done
-	@echo "3) devel (in development):" 
-	@for item in ${DEVEL}; do echo "    * $$item"; done	
-	@echo "4) utils (for general use):" 
-	@for item in ${UTILS}; do echo "    * $$item"; done		
-	@echo "5) misc:" 
+	@echo "3) devel (in development):"
+	@for item in ${DEVEL}; do echo "    * $$item"; done
+	@echo "4) utils (for general use):"
+	@for item in ${UTILS}; do echo "    * $$item"; done
+	@echo "5) misc:"
 	@echo "    * all\n    * test\n    * clean\n    * list\n    * programs"
 	@echo "==================================="
 
@@ -47,7 +47,7 @@ default: list
 # Clean up the executable files
 clean:
 	rm -rf ./.obj
-	
+
 programs: $(PROGRAMS)
 
 test:
@@ -57,5 +57,4 @@ all: programs
 
 #lib: capdddes.a
 #
-#capdddes.a: 
-
+#capdddes.a:
