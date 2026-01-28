@@ -1,4 +1,4 @@
-NEW ./include/capd/ddes/storage/DoubletonInterface.h
+DONE ./include/capd/ddes/storage/DoubletonInterface.h
 NEW ./include/capd/ddes/storage/BasicDoubleton.h
 NEW ./include/capd/ddes/storage/SharedDoubleton.h
 NEW ./include/capd/ddes/storage/GenericJet.h
