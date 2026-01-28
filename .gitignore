@@ -83,3 +83,10 @@ src/**/*.gp
 src/**/*.png
 src/**/*.dat
 src/**/*.pdf
+
+# Coverage artifacts
+build-coverage/
+coverage_report/
+*.gcda
+*.gcno
+*.info
