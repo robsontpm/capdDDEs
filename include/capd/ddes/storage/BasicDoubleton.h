@@ -148,6 +148,9 @@ public:
 	}
 	/** setup this set with a given data but the set does not own the data (user is responsible for deleting) */
 	BasicDoubleton(VectorType* x, MatrixType* C, VectorType* r0, MatrixType* B, VectorType* r){
+		// BUG: This constructor implementation is broken.
+		// 1. It passes pointers 'x' and 'C' to setupFromData which expects const references.
+		// 2. It uses VectorType(0) which is ambiguous (pointer vs size_type).
 		if (!x) throw std::logic_error("BasicDoubleton::__construct__: x cannot be NULL");
 		if (!C) throw std::logic_error("BasicDoubleton::__construct__: C cannot be NULL");
 		MatrixType BB;
@@ -165,6 +168,9 @@ public:
 	}
 	/** setup this set as zero vector, but the structure of given dimensions. If second arg is < 0 then d is used instead. */
 	BasicDoubleton(size_type d, size_type N0 = -1){
+		// BUG: N0 is size_type (unsigned). Passing -1 results in MAX_SIZE_TYPE.
+		// The condition (N0 < 0) is always false.
+		// This causes massive memory allocation failure in setupDimension.
 		if (N0 < 0) N0 = d;
 		setupDimension(d, N0); // sets m_B to Id
 	}
