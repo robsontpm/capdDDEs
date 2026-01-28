@@ -4,6 +4,14 @@ project(capdDDEs LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(ENABLE_COVERAGE "Enable code coverage generation" OFF)
+
+if(ENABLE_COVERAGE)
+    message(STATUS "Enabling code coverage")
+    add_compile_options(-g -O0 --coverage)
+    add_link_options(--coverage)
+endif()
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 # Find CAPD
