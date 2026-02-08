@@ -10,4 +10,5 @@
 - Tests implemented in `tests/capd-ddes-storage-SharedDoubleton.cpp`. Coverage ~27.6% (low).
 - **Known Bug 1:** `SharedDoubleton::add(SharedDoubleton const &)` fails with `std::bad_alloc` for small test vectors (size 2), likely due to memory corruption or huge allocation in `capd::vectalg::split` or internal logic.
 - **Test Disabled:** `AddSetTest` is commented out/disabled. `MulThenAddTest` is also disabled. `MulTest` catches `std::bad_alloc` but warns.
+- **Verification:** The bug was verified to persist even after a clean rebuild with coverage enabled.
 - Future work: Debug memory issue in `add`. Improve test coverage for complex ownership logic (`rawSetup`, `assureOwner`, `sanityCheck`, `deallocate`).
