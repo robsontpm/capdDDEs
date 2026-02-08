@@ -1,3 +1,4 @@
+- when creating a new feature branch for working on a task, make sure it's name starts with 'jules', e.g. 'jules/my-new-feature'
 - Never attempt cmake . in the root directory of the program!
 - Always build, make and compile from within ./build/ directory!
 - Do not remove anything from .gitignore when not asked to!
