@@ -1,6 +1,7 @@
 # programs/utils/CMakeLists.txt
 
 add_programs_from_subdir(benchmark)
+add_programs_from_subdir(issue_bad_alloc)
 
 include(CheckCXXSourceCompiles)
 

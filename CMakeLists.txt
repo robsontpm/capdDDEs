@@ -4,6 +4,12 @@ project(capdDDEs LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(ENABLE_COVERAGE "Enable code coverage" OFF)
+if(ENABLE_COVERAGE)
+    message(STATUS "Enabling code coverage")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
+endif()
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 # Find CAPD
@@ -68,8 +74,13 @@ target_link_libraries(capdDDEs PUBLIC ${CAPD_LIBRARIES})
 # Helper function
 include(AddSubdirectoryPrograms)
 
-add_subdirectory(programs/utils)
-add_subdirectory(programs/results)
-add_subdirectory(programs/examples)
+option(BUILD_PROGRAMS "Build programs" ON)
+
+if(BUILD_PROGRAMS)
+    add_subdirectory(programs/utils)
+    add_subdirectory(programs/results)
+    add_subdirectory(programs/examples)
+endif()
+
 enable_testing()
 add_subdirectory(tests)
