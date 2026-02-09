@@ -207,6 +207,8 @@ public:
 	SharedDoubleton(size_type d, size_type N0 = -1):
 			m_x(0), m_C(0), m_r0(0), m_B(0), m_r(0), m_Binv(0),
 			m_owner(OWN_ALL){
+		// BUG: N0 is unsigned, so checking < 0 is always false. -1 becomes MAX_SIZE.
+		// This causes massive allocation and bad_alloc if N0 is default.
 		if (N0 < 0) N0 = d;
 		rawSetup(d, N0, NULL, NULL, NULL, NULL, NULL, NULL, m_owner);
 		// no need for sanity check
