@@ -1,8 +1,8 @@
 DONE ./include/capd/ddes/storage/DoubletonInterface.h
 DONE ./include/capd/ddes/storage/BasicDoubleton.h
 DONE ./include/capd/ddes/storage/SharedDoubleton.h
-UNFINISHED ./include/capd/ddes/storage/GenericJet.h
-NEW ./include/capd/ddes/DDECommon.h
+DONE ./include/capd/ddes/storage/GenericJet.h
+UNFINISHED ./include/capd/ddes/DDECommon.h
 NEW ./include/capd/ddes/DDEJetSection.h
 NEW ./include/capd/ddes/FunctionalMap.h
 NEW ./include/capd/ddes/BasicDiscreteDelaysFunctionalMap.h
