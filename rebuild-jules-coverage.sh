@@ -1,7 +1,6 @@
 #!/bin/bash
 # rebuild-jules-coverage.sh
-# Script to rebuild the project with coverage enabled, run SharedDoubleton tests, and generate coverage report.
-# Similar to rebuild-jules-tests.sh but focused on coverage analysis.
+# Script to rebuild the project with coverage enabled, run tests, and generate coverage report.
 
 set -e
 
@@ -34,14 +33,16 @@ cd "$BUILD_DIR"
 echo ">> Configuring CMake with ENABLE_COVERAGE=ON..."
 cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" ..
 
-# Build only the relevant test target to save time
-echo ">> Compiling SharedDoubleton tests..."
-make -j4 capd-ddes-storage-SharedDoubleton
+# Build test targets
+echo ">> Compiling tests..."
+make -j4 capd-ddes-storage-SharedDoubleton capd-ddes-DDECommon
 
-# Run the test
+# Run the tests
 echo ">> Running SharedDoubleton tests..."
-# Using ctest to run specific test
 ctest -V -R "^capd-ddes-storage-SharedDoubleton$"
+
+echo ">> Running DDECommon tests..."
+ctest -V -R "^capd-ddes-DDECommon$"
 
 # Generate Coverage Report
 echo ">> Generating Coverage Report..."
@@ -49,8 +50,10 @@ echo ">> Generating Coverage Report..."
 # Ignoring mismatch errors which can happen with templates/headers
 lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --base-directory ..
 
-# Generate summary for SharedDoubleton.h
+# Generate summary
 echo ">> Coverage for SharedDoubleton.h:"
 lcov --list coverage.info | grep "SharedDoubleton.h"
+echo ">> Coverage for DDECommon.h:"
+lcov --list coverage.info | grep "DDECommon.h"
 
 echo ">> Done."

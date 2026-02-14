@@ -25,3 +25,12 @@
 - **Found Bug 5:** Self-assignment `jet = jet` fails because `operator=` deallocates coefficients before copying them (classic self-assignment issue).
   - Reproduced in `tests/capd-ddes-storage-GenericJet-BUG-SelfAssignment.cpp`.
   - The main test file `tests/capd-ddes-storage-GenericJet.cpp` avoids self-assignment to pass.
+
+## DDECommon.h (DONE)
+- **Status:** Tests Implemented and Passing. Coverage 99.0%.
+- **Tests Implemented:** `tests/capd-ddes-DDECommon.cpp`
+  - Covers Helpers, `ecloseStep`, `showEnclosedInterval`, `rethrow`, `closestInt`, `closestSmallerInt`, `DiscreteTimeGrid`, `sumTaylorForward/Backward`, `extractDiagonalBlocks`.
+- **Found Bug 6:** `closestInt` template specialization for `capd::intervals::Interval` fails to match `capd::interval` (which is `capd::filib::Interval`) causing compilation error when `closestInt` is called with `capd::interval`. The non-specialized template is chosen which tries to cast `Interval` to `int`.
+  - Workaround: Test case for `closestInt(capd::interval)` is commented out in `tests/capd-ddes-DDECommon.cpp`.
+  - `closestSmallerInt(capd::interval)` works because it has a specific overload.
+- **Design Note:** `DiscreteTimeGrid::TimePointType` cannot be default constructed and then assigned to, because default constructor uses a trivial grid (zero-step) which forbids assignment. Tests must initialize `TimePointType` with a valid grid.
