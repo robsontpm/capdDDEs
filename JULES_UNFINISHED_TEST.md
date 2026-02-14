@@ -12,8 +12,8 @@
   - Consolidated all previous isolated tests (`Add`, `Mul`, `EdgeCases`, `Coverage`, `Constructors`).
   - All tests PASS, including previously problematic `AddSetTest`, `MulTest`.
   - **Fixed Crash:** `SanityCheckTest` was causing a crash because it reused a `SharedDoubleton` object after it was corrupted by exceptions (e.g. `set_x(nullptr)`). Fixed by using separate scopes for each check.
-  - **Known Bug 3:** Constructor `SharedDoubleton(size_type d, size_type N0 = -1)` causes `std::bad_alloc`. This is reproduced in `KnownBugConstructorTest` (caught exception).
-  - **Potential Bug 4:** `SharedDoubleton` constructor with explicit data (e.g. `Doubleton(x, C, r0...)`) does not verify dimensions of `C` against `x` and `r0` before assignment. If dimensions mismatch (e.g. `C` is 2x3 but `x` implies 2x2), `IMatrix` assignment may crash or cause undefined behavior. This was observed in `SanityCheckTest` when testing `Doubleton(x, Cbad, ...)` and caused a segfault. The test case for this specific constructor failure is currently commented out with a note.
+  - **Known Bug 3:** Constructor `SharedDoubleton(size_type d, size_type N0 = -1)` causes `std::bad_alloc`. This is reproduced in `tests/capd-ddes-storage-SharedDoubleton-BUG-Constructor.cpp` (catches exception).
+  - **Confirmed Bug 4:** `SharedDoubleton` constructor with explicit data (e.g. `Doubleton(x, C, r0...)`) does not verify dimensions of `C` against `x` and `r0` before assignment. If dimensions mismatch, `IMatrix` assignment crashes (segfault). This is reproduced in `tests/capd-ddes-storage-SharedDoubleton-BUG-DataConstructor.cpp` (disabled by default to avoid crash).
 - **Coverage:** ~23% reported by `lcov`. This is believed to be inaccurate for the template class `SharedDoubleton` as tests cover:
   - All constructors (Default, Vector, Copy, Data, Pointer, Dimension, ZeroDim).
   - All getters/setters (Value and Pointer variants, `set_Cr0`).
