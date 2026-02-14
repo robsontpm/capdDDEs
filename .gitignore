@@ -5,6 +5,7 @@ bin/
 *_bak
 *_old
 .obj/
+*.info
 __deprecated__
 /devel
 /programs/devel/*/

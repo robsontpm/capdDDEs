@@ -47,7 +47,7 @@ ctest -V -R "^capd-ddes-storage-SharedDoubleton$"
 echo ">> Generating Coverage Report..."
 # Capture coverage data using lcov
 # Ignoring mismatch errors which can happen with templates/headers
-lcov --capture --directory . --output-file coverage.info --ignore-errors mismatch,gcov --base-directory ..
+lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --base-directory ..
 
 # Generate summary for SharedDoubleton.h
 echo ">> Coverage for SharedDoubleton.h:"

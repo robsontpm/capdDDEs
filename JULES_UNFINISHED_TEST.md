@@ -20,6 +20,13 @@
   - Logic methods: `add`, `mul`, `mulThenAdd`, `affineTransform`, `translate`, `hull`, `midPoint`.
   - Memory management: `take_*` methods, `deallocate` (via destructors/setters).
   - Exceptions: `reinit`, `sanityCheck`, invalid inputs.
+  - Maintainer's note: the coverage on my computer is high: 
+    lcov --list coverage.info | grep "SharedDoubleton.h" gives:
+    SharedDoubleton.h                              |98.2%   272|76.6%  64|    -    0
+    Note, that I have removed --ignore-errors mismatch. My current command for coverage is:
+    lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --base-directory ..
+    My lcov: LCOV version 1.14.
+    Please investigate this issue further.
 - **Next Steps:**
   - Investigate `lcov` configuration for templates or try a different coverage tool to get true coverage numbers.
   - Fix the `SharedDoubleton` bugs (Constructor N0 underflow, Constructor dimension check).
