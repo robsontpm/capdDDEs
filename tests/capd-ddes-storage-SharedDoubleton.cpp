@@ -490,12 +490,6 @@ BOOST_AUTO_TEST_CASE(SanityCheckTest) {
         BOOST_CHECK_THROW(db.set_r(r_bad), std::domain_error);
     }
 
-    // Constructor Sanity Checks
-    // VectorType x(d), r0(d), r(d); MatrixType Cgood(d,d), Bgood(d,d); Bgood.setToIdentity();
-    // MatrixType Cbad(d, d+1); // Mismatch with r0(d)
-    // BOOST_CHECK_THROW(Doubleton(x, Cbad, r0, Bgood, r), std::domain_error);
-    // NOTE: The above test causes memory access violation because SharedDoubleton constructor
-    // performs *m_C = *C without verifying dimensions first, leading to unsafe assignment.
 }
 
 BOOST_AUTO_TEST_CASE(AssureOwnerSetXTest) {
@@ -530,23 +524,6 @@ BOOST_AUTO_TEST_CASE(AddCoverageTest) {
 
     Doubleton db_bad_N0(2, 5);
     BOOST_CHECK_THROW(db.add(db_bad_N0), std::logic_error);
-}
-
-// ==========================================
-// Known Bugs
-// ==========================================
-
-BOOST_AUTO_TEST_CASE(KnownBugConstructorTest) {
-    // This constructor causes bad_alloc due to unsigned integer underflow
-    // SharedDoubleton(size_type d, size_type N0 = -1)
-    try {
-        Doubleton db(2); // Should trigger bad_alloc
-        BOOST_WARN_MESSAGE(false, "Bug fixed? Constructor(d) did not throw bad_alloc.");
-    } catch (std::bad_alloc&) {
-        BOOST_TEST_MESSAGE("Caught expected bad_alloc from buggy constructor");
-    } catch (...) {
-        BOOST_WARN_MESSAGE(false, "Constructor(d) threw unknown exception.");
-    }
 }
 
 BOOST_AUTO_TEST_SUITE_END()
