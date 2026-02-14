@@ -1,6 +1,6 @@
 DONE ./include/capd/ddes/storage/DoubletonInterface.h
 DONE ./include/capd/ddes/storage/BasicDoubleton.h
-UNFINISHED ./include/capd/ddes/storage/SharedDoubleton.h
+DONE ./include/capd/ddes/storage/SharedDoubleton.h
 NEW ./include/capd/ddes/storage/GenericJet.h
 NEW ./include/capd/ddes/DDECommon.h
 NEW ./include/capd/ddes/DDEJetSection.h
@@ -15,5 +15,5 @@ NEW ./include/capd/ddes/DDEBasicTimeMap.h
 NEW ./include/capd/ddes/DDEBasicPoincareMap.h
 NEW ./include/capd/ddes/DDETaylorSolver.h
 NEW ./include/capd/ddes/DDEPoincareMap.h
-NEW ./include/capd/ddeshelper/DDECompareHelper.h
-NEW ./include/capd/ddeshelper/DDECoordinateFrameHelper.h
+NEW ./include/capd/ddes/ddeshelper/DDECompareHelper.h
+NEW ./include/capd/ddes/ddeshelper/DDECoordinateFrameHelper.h
