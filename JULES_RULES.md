@@ -3,7 +3,7 @@
 - Always build, make and compile from within ./build/ directory!
 - Do not remove anything from .gitignore when not asked to!
 - Do not alter './external/capd-build.sh', if you need to change something, use a copy of the 'capd-build.sh', e.g. 'jules-capd-build.sh'
-- For test coverage use lconv version 1.16, as the never versions has problems with templates in C++.
+- IMPORTANT: For test coverage use lconv version 1.16, as the never versions has problems with templates in C++.
 
 
 
