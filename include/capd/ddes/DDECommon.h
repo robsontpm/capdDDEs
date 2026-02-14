@@ -126,6 +126,8 @@ int closestInt(AnythingSpec const & value){ return int(value); }
 /** special case for capd::intervals::Interval template */
 template<typename T_Bound, typename T_Rnd>
 int closestInt(capd::intervals::Interval<T_Bound, T_Rnd> const & value){ return closestInt(value.leftBound()); }
+/** special case for capd::interval template */
+int closestInt(capd::interval const & value);
 /** returns closest int smaller than the value */
 template<typename AnythingSpec>
 int closestSmallerInt(AnythingSpec const & value){ return int(value) - (value < 0 ? 1 : 0); }

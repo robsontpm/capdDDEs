@@ -34,14 +34,12 @@ cd "$BUILD_DIR"
 echo ">> Configuring CMake with ENABLE_COVERAGE=ON..."
 cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" ..
 
-# Build only the relevant test target to save time
-echo ">> Compiling SharedDoubleton tests..."
-make -j4 capd-ddes-storage-SharedDoubleton
+# make all tests
+make -j4
 
-# Run the test
-echo ">> Running SharedDoubleton tests..."
-# Using ctest to run specific test
-ctest -V -R "^capd-ddes-storage-SharedDoubleton$"
+# Run the tests
+echo ">> Running ALL tests..."
+ctest -V -R
 
 # Generate Coverage Report
 echo ">> Generating Coverage Report..."
@@ -50,7 +48,10 @@ echo ">> Generating Coverage Report..."
 lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --base-directory ..
 
 # Generate summary for SharedDoubleton.h
-echo ">> Coverage for SharedDoubleton.h:"
+echo ">> Coverage for specyfic components:"
+lcov --list coverage.info | grep "DoubletonInterface.h"
+lcov --list coverage.info | grep "BasicDoubleton.h"
 lcov --list coverage.info | grep "SharedDoubleton.h"
+lcov --list coverage.info | grep "GenericJet.h"
 
 echo ">> Done."
