@@ -37,13 +37,7 @@ cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR=$(pwd)/../bin/capd_bu
 echo ">> Compiling..."
 make -j4
 
-# 3. Run the specific test that triggers bad_alloc (if enabled)
-echo ">> Running SharedDoubleton tests..."
-# Note: The specific failing tests (AddSetTest, MulTest) are currently DISABLED in the source code
-# to allow the suite to pass. To observe the crash, one must uncomment them in tests/capd-ddes-storage-SharedDoubleton.cpp.
-ctest -V -R capd-ddes-storage-SharedDoubleton
-
-echo ">> Running DDECommon tests..."
-ctest -V -R capd-ddes-DDECommon
+# 3. Run all tests
+ctest -V -R 
 
 echo ">> Done."

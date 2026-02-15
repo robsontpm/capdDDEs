@@ -34,7 +34,7 @@ cd "$BUILD_DIR"
 echo ">> Configuring CMake with ENABLE_COVERAGE=ON..."
 cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" ..
 
-# make all tests
+# make all
 make -j4
 
 # Run the tests
@@ -50,6 +50,7 @@ lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --
 # Generate summary for SharedDoubleton.h
 echo ">> Coverage for specyfic components:"
 lcov --list coverage.info | grep "DDECommon.h"
+lcov --list coverage.info | grep "DDECommon.cpp"
 lcov --list coverage.info | grep "DoubletonInterface.h"
 lcov --list coverage.info | grep "BasicDoubleton.h"
 lcov --list coverage.info | grep "SharedDoubleton.h"
