@@ -84,3 +84,4 @@ src/**/*.gp
 src/**/*.png
 src/**/*.dat
 src/**/*.pdf
+_deps/
