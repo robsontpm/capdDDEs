@@ -235,3 +235,211 @@ BOOST_AUTO_TEST_CASE(ExtractDiagonalBlocksTest)
 }
 
 BOOST_AUTO_TEST_SUITE_END()
+
+BOOST_AUTO_TEST_SUITE(DDECommonAdditionalTests)
+
+BOOST_AUTO_TEST_CASE(HelperDumpTests)
+{
+    std::stringstream ss;
+    ss << "line1\nline2";
+    helper_dump_line(ss);
+    // Should have read "line1"
+    std::string remaining;
+    ss >> remaining;
+    BOOST_CHECK_EQUAL(remaining, "line2");
+
+    std::stringstream ss2;
+    ss2 << "badge1 badge2";
+    helper_dump_badge(ss2);
+    // Should have read "badge1"
+    ss2 >> remaining;
+    BOOST_CHECK_EQUAL(remaining, "badge2");
+}
+
+BOOST_AUTO_TEST_CASE(EcloseStepTest)
+{
+    // Test double version
+    double h = 0.5;
+    BOOST_CHECK_EQUAL(ecloseStep(h), 0.5);
+
+    // Test Interval version
+    capd::interval h_int(0.5);
+    capd::interval res = ecloseStep(h_int);
+    // res should be [0, 1] * 0.5 = [0, 0.5]
+    BOOST_CHECK_EQUAL(res.leftBound(), 0.0);
+    BOOST_CHECK_EQUAL(res.rightBound(), 0.5);
+}
+
+BOOST_AUTO_TEST_CASE(ShowEnclosedIntervalTest)
+{
+    // Test double version
+    std::string s = showEnclosedInterval(1.0, 2.0);
+    BOOST_CHECK_EQUAL(s, "[1, 2)");
+
+    // Test Interval version
+    capd::interval a(1.0);
+    capd::interval b(2.0);
+    std::string s2 = showEnclosedInterval(a, b);
+    BOOST_CHECK_EQUAL(s2, "[1, 2)");
+}
+
+BOOST_AUTO_TEST_CASE(RethrowTest)
+{
+    try {
+        throw std::runtime_error("original error");
+    } catch (const std::exception& e) {
+        // Test rethrow<std::exception>
+        // rethrow returns the exception object, it doesn't throw it.
+        std::runtime_error new_e = rethrow<std::exception, std::runtime_error>("Context", e);
+        // glue is "\n    "
+        BOOST_CHECK(std::string(new_e.what()).find("Context\n    original error") != std::string::npos);
+
+        // Test rethrow<std::exception, std::logic_error>
+        std::logic_error new_logic = rethrow<std::exception, std::logic_error>("Logic", e);
+        BOOST_CHECK(std::string(new_logic.what()).find("Logic\n    original error") != std::string::npos);
+    }
+}
+
+BOOST_AUTO_TEST_CASE(ClosestIntTest)
+{
+    // Test generic version (double)
+    BOOST_CHECK_EQUAL(closestInt(3.1), 3);
+    BOOST_CHECK_EQUAL(closestInt(3.9), 3); // int(3.9) is 3
+    BOOST_CHECK_EQUAL(closestInt(-3.1), -3);
+    BOOST_CHECK_EQUAL(closestInt(-3.9), -3);
+
+    // Test closestSmallerInt
+    BOOST_CHECK_EQUAL(closestSmallerInt(3.1), 3);
+    BOOST_CHECK_EQUAL(closestSmallerInt(3.9), 3);
+    BOOST_CHECK_EQUAL(closestSmallerInt(-3.1), -4);
+
+    // Test capd::interval version
+    capd::interval iv(3.5);
+    BOOST_CHECK_EQUAL(closestInt(iv), 3);
+    BOOST_CHECK_EQUAL(closestSmallerInt(iv), 3);
+
+    capd::interval iv_neg(-3.5);
+    BOOST_CHECK_EQUAL(closestInt(iv_neg), -3);
+    BOOST_CHECK_EQUAL(closestSmallerInt(iv_neg), -4);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+BOOST_AUTO_TEST_SUITE(DiscreteTimeGridExtendedTests)
+
+using RealType = double;
+using Grid = DiscreteTimeGrid<RealType>;
+using TimePoint = typename Grid::TimePointType;
+
+BOOST_AUTO_TEST_CASE(SplitTest)
+{
+    double h = 0.5;
+    Grid grid(h);
+
+    // Test exact point
+    double t = 1.0; // 2 * h
+    TimePoint ti = grid.point(0);
+    double epsi;
+    grid.split(t, ti, epsi);
+
+    BOOST_CHECK_EQUAL(ti.toInt(), 2);
+    BOOST_CHECK_SMALL(epsi, 1e-14);
+
+    // Test point slightly after grid point
+    t = 1.1; // 2*h + 0.1
+    grid.split(t, ti, epsi);
+    BOOST_CHECK_EQUAL(ti.toInt(), 2);
+    BOOST_CHECK_CLOSE(epsi, 0.1, 1e-10);
+
+    // Test point slightly before grid point
+    t = 0.9; // 1.8*h
+    grid.split(t, ti, epsi);
+    BOOST_CHECK_EQUAL(ti.toInt(), 1);
+    BOOST_CHECK_CLOSE(epsi, 0.4, 1e-10);
+
+    // Let's test with negative numbers
+    t = -0.9;
+    grid.split(t, ti, epsi);
+    BOOST_CHECK_EQUAL(ti.toInt(), -2);
+    BOOST_CHECK_CLOSE(epsi, 0.1, 1e-10);
+}
+
+BOOST_AUTO_TEST_CASE(TimePointExtendedTest)
+{
+    Grid grid(0.1);
+    TimePoint p = grid.point(0);
+
+    // Test isZero
+    BOOST_CHECK(p.isZero());
+    TimePoint p2 = grid.point(1);
+    BOOST_CHECK(!p2.isZero());
+
+    // Test show
+    // format: value := badge i h
+    // 0.1 := DiscreteTimePoint 1 0.1
+    std::string s = p2.show();
+    BOOST_CHECK(s.find("0.1") != std::string::npos);
+    BOOST_CHECK(s.find("1") != std::string::npos);
+
+    // Test stream IO
+    std::stringstream ss;
+    ss << p2;
+    // Format: value := badge i h
+    // We must initialize p_target with compatible grid
+    TimePoint p_target = grid.point(0);
+    ss >> p_target;
+    BOOST_CHECK(p_target == p2);
+}
+
+BOOST_AUTO_TEST_CASE(GridCompatibilityTest)
+{
+    Grid g1(0.1);
+    Grid g2(0.2); // Different h
+    Grid g3(0.1); // Same h, but different object.
+
+    TimePoint p1 = g1.point(1);
+    TimePoint p2 = g2.point(1);
+    TimePoint p3 = g3.point(1);
+
+    // Arithmetic with incompatible grids should throw
+    BOOST_CHECK_THROW(p1 + p2, std::logic_error);
+    BOOST_CHECK_THROW(p1 + p3, std::logic_error);
+
+    // Comparison
+    // p1 < p2 falls back to value comparison
+    BOOST_CHECK(p1 < p2);
+
+    // Zero compatibility
+    TimePoint z1 = g1.point(0);
+    TimePoint z2 = g2.point(0);
+
+    TimePoint sum = p1 + z2;
+    BOOST_CHECK_EQUAL(sum.toInt(), 1);
+    BOOST_CHECK(sum.sameGrid(p1));
+}
+
+BOOST_AUTO_TEST_CASE(ExtractDiagonalBlocksExtendedTest)
+{
+    capd::DMatrix M(5, 5); // 5x5
+    size_t off;
+    // extract with block size 2.
+    // 5 is not multiple of 2. Should throw range_error.
+    BOOST_CHECK_THROW(extractDiagonalBlocks(M, size_t(2), off), std::range_error);
+
+    capd::DMatrix M4(4, 4);
+    // Fill diagonal with blocks
+    // Block 0: rows 0-1, cols 0-1.
+    M4[0][0] = 1; M4[1][1] = 1;
+    // Block 1: rows 2-3, cols 2-3.
+    M4[2][2] = 1; M4[3][3] = 1;
+    // Off diagonal element
+    M4[0][3] = 9;
+
+    off = 0;
+    auto blocks = extractDiagonalBlocks(M4, size_t(2), off);
+    BOOST_CHECK_EQUAL(blocks.size(), 2);
+    // off should be 1
+    BOOST_CHECK_EQUAL(off, 1);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
