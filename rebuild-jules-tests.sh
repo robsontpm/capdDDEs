@@ -43,4 +43,7 @@ echo ">> Running SharedDoubleton tests..."
 # to allow the suite to pass. To observe the crash, one must uncomment them in tests/capd-ddes-storage-SharedDoubleton.cpp.
 ctest -V -R capd-ddes-storage-SharedDoubleton
 
+echo ">> Running DDECommon tests..."
+ctest -V -R capd-ddes-DDECommon
+
 echo ">> Done."

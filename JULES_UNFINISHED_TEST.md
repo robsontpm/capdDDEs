@@ -25,3 +25,12 @@
 - **Found Bug 5:** Self-assignment `jet = jet` fails because `operator=` deallocates coefficients before copying them (classic self-assignment issue).
   - Reproduced in `tests/capd-ddes-storage-GenericJet-BUG-SelfAssignment.cpp`.
   - The main test file `tests/capd-ddes-storage-GenericJet.cpp` avoids self-assignment to pass.
+
+## DDECommon.h (DONE)
+- **Status:** Tests Implemented and Passing. Coverage 99.3% (header), 100% (source).
+- **Tests Implemented:** `tests/capd-ddes-DDECommon.cpp`
+  - Covers `helper_dump_*`, `ecloseStep`, `showEnclosedInterval`, `rethrow`, `closestInt`, `closestSmallerInt`, `DiscreteTimeGrid`, `extractDiagonalBlocks`.
+- **Known Issue:** `closestInt` (and related) implements truncation (casting to int) instead of rounding to nearest integer, despite the name suggesting otherwise.
+  - Verified in `tests/capd-ddes-DDECommon-BUG-ClosestInt.cpp` which emits a warning if truncation is observed instead of rounding.
+  - The implementation uses `int(value)` which truncates towards zero.
+- **Coverage Tooling:** `lcov` 1.16 used.

@@ -39,7 +39,7 @@ make -j4
 
 # Run the tests
 echo ">> Running ALL tests..."
-ctest -V -R
+ctest -V
 
 # Generate Coverage Report
 echo ">> Generating Coverage Report..."
@@ -49,6 +49,7 @@ lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --
 
 # Generate summary for SharedDoubleton.h
 echo ">> Coverage for specyfic components:"
+lcov --list coverage.info | grep "DDECommon.h"
 lcov --list coverage.info | grep "DoubletonInterface.h"
 lcov --list coverage.info | grep "BasicDoubleton.h"
 lcov --list coverage.info | grep "SharedDoubleton.h"
