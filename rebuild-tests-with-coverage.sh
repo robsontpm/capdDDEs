@@ -8,10 +8,11 @@ set -e
 WD=$(pwd)
 BUILD_DIR="build"
 CAPD_DIR="$WD/bin/capd_build"
+DEPS_DIR="$HOME/jules_deps"
 
 # Define lcov command
-if [ -f "$WD/_deps/lcov-1.16/bin/lcov" ]; then
-    LCOV_CMD="$WD/_deps/lcov-1.16/bin/lcov"
+if [ -f "$DEPS_DIR/lcov-1.16/bin/lcov" ]; then
+    LCOV_CMD="$DEPS_DIR/lcov-1.16/bin/lcov"
     echo ">> Using local lcov: $LCOV_CMD"
 else
     LCOV_CMD="lcov"
@@ -20,9 +21,9 @@ fi
 
 # Define Boost options if local boost exists
 BOOST_OPTS=""
-if [ -d "$WD/_deps/boost_1_82_0" ]; then
-    echo ">> Using local Boost at $WD/_deps/boost_1_82_0"
-    BOOST_OPTS="-DBOOST_ROOT=$WD/_deps/boost_1_82_0 -DBoost_ROOT=$WD/_deps/boost_1_82_0 -DBoost_INCLUDE_DIR=$WD/_deps/boost_1_82_0 -DBoost_NO_SYSTEM_PATHS=ON"
+if [ -d "$DEPS_DIR/boost_1_82_0" ]; then
+    echo ">> Using local Boost at $DEPS_DIR/boost_1_82_0"
+    BOOST_OPTS="-DBOOST_ROOT=$DEPS_DIR/boost_1_82_0 -DBoost_ROOT=$DEPS_DIR/boost_1_82_0 -DBoost_INCLUDE_DIR=$DEPS_DIR/boost_1_82_0 -DBoost_NO_SYSTEM_PATHS=ON"
 fi
 
 echo ">> Checking CAPD build..."
