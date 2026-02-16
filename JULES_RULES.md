@@ -9,3 +9,4 @@
 
 
 
+- **External Dependencies**: Do NOT install temporary tools (lcov, boost, etc) inside the repository. Use '$HOME/jules_deps/' and reference it in your scripts.
