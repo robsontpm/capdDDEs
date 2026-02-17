@@ -10,14 +10,9 @@ BUILD_DIR="build"
 CAPD_DIR="$WD/bin/capd_build"
 DEPS_DIR="$HOME/jules_deps"
 
-# Define lcov command
-if [ -f "$DEPS_DIR/lcov-1.16/bin/lcov" ]; then
-    LCOV_CMD="$DEPS_DIR/lcov-1.16/bin/lcov"
-    echo ">> Using local lcov: $LCOV_CMD"
-else
-    LCOV_CMD="lcov"
-    echo ">> Using system lcov: $LCOV_CMD"
-fi
+# Standard lcov command should work now if symlinked correctly in $HOME/.local/bin
+LCOV_CMD="lcov"
+echo ">> Using lcov: $(which lcov)"
 
 # Define Boost options if local boost exists
 BOOST_OPTS=""

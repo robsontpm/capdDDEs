@@ -28,3 +28,15 @@ To prevent future agents from installing dependencies inside the repository and 
     *   Do not modify `.gitignore` to hide local dependency folders; keep the repo structure clean.
 
 I will update `JULES_RULES.md` with a condensed version of this rule.
+
+## Update on lcov Installation (Session 2)
+
+**User Request:** "Try this: install lcov 1.16 in $HOME/jules_deps, but symlink it from /usr/bin/lcov, so that standard lcov command can be used."
+
+**Result:**
+1.  **Permission Denied:** Creating a symlink in `/usr/bin/lcov` failed because I do not have root/sudo privileges in this environment.
+2.  **Alternative Success:** I created a symlink in `$HOME/.local/bin/lcov` pointing to `$HOME/jules_deps/lcov-1.16/bin/lcov`.
+3.  **Verification:** `$HOME/.local/bin` is in the standard `$PATH`. Running `lcov --version` now correctly reports version 1.16 without needing a special alias or path in the build scripts.
+
+**Conclusion:**
+While I cannot modify system directories, symlinking to a user-local bin directory achieves the user's goal of using the standard command.
