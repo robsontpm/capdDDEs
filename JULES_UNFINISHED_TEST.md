@@ -43,3 +43,4 @@
 - **Found Bug 6:** `getMaxDelay` in `BasicDiscreteDelaysFunctionalMap.hpp` fails to compile because it compares an iterator (`tau`) with a value (`max_tau`). It should dereference the iterator (`*tau`).
   - The bug is marked in the header file.
   - The failing test case is extracted to `tests/capd-ddes-BasicDiscreteDelaysFunctionalMap-BUG-GetMaxDelay.cpp` (disabled by default to allow compilation).
+- **Boost Test Framework:** Tests now use the precompiled `Boost::unit_test_framework` library (installed in `${HOME}/deps/boost`) instead of the header-only variant, to improve compilation speed and match project conventions. `BOOST_TEST_DYN_LINK` is defined in the new test files.
