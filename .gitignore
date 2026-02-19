@@ -10,6 +10,9 @@ __deprecated__
 /devel
 /programs/devel/*/
 
+# ctest if run within main directory by mistake
+Testing/
+
 # ignore the actual config file - each user must choose what they use!
 # the choice is made by coping and maybe modyfingi other build-*.mk files
 build-conf.mk
