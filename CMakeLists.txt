@@ -68,7 +68,7 @@ target_link_libraries(capdDDEs PUBLIC ${CAPD_LIBRARIES})
 # Helper function
 include(AddSubdirectoryPrograms)
 
-add_subdirectory(programs/utils)
+# add_subdirectory(programs/utils)
 add_subdirectory(programs/results)
 add_subdirectory(programs/examples)
 enable_testing()
