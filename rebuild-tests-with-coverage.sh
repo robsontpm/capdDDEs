@@ -8,18 +8,6 @@ set -e
 WD=$(pwd)
 BUILD_DIR="build"
 CAPD_DIR="$WD/bin/capd_build"
-DEPS_DIR="$HOME/jules_deps"
-
-# Standard lcov command should work now if symlinked correctly in $HOME/.local/bin
-LCOV_CMD="lcov"
-echo ">> Using lcov: $(which lcov)"
-
-# Define Boost options if local boost exists
-BOOST_OPTS=""
-if [ -d "$DEPS_DIR/boost_1_82_0" ]; then
-    echo ">> Using local Boost at $DEPS_DIR/boost_1_82_0"
-    BOOST_OPTS="-DBOOST_ROOT=$DEPS_DIR/boost_1_82_0 -DBoost_ROOT=$DEPS_DIR/boost_1_82_0 -DBoost_INCLUDE_DIR=$DEPS_DIR/boost_1_82_0 -DBoost_NO_SYSTEM_PATHS=ON"
-fi
 
 echo ">> Checking CAPD build..."
 if [ ! -f "$CAPD_DIR/bin/capd-config" ]; then
@@ -44,7 +32,7 @@ cd "$BUILD_DIR"
 
 # Configure with Coverage enabled
 echo ">> Configuring CMake with ENABLE_COVERAGE=ON..."
-cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" $BOOST_OPTS ..
+cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" ..
 
 # make all
 make -j4
@@ -57,16 +45,16 @@ ctest -V
 echo ">> Generating Coverage Report..."
 # Capture coverage data using lcov
 # Ignoring mismatch errors which can happen with templates/headers
-$LCOV_CMD --capture --directory . --output-file coverage.info --ignore-errors gcov --base-directory ..
+lcov --capture --directory . --output-file coverage.info --ignore-errors gcov --base-directory ..
 
-# Generate summary
-echo ">> Coverage for specific components:"
-$LCOV_CMD --list coverage.info | grep "DDECommon.h"
-$LCOV_CMD --list coverage.info | grep "DDECommon.cpp"
-$LCOV_CMD --list coverage.info | grep "DoubletonInterface.h"
-$LCOV_CMD --list coverage.info | grep "BasicDoubleton.h"
-$LCOV_CMD --list coverage.info | grep "SharedDoubleton.h"
-$LCOV_CMD --list coverage.info | grep "GenericJet.h"
-$LCOV_CMD --list coverage.info | grep "DDEJetSection.h"
+# Generate summary for SharedDoubleton.h
+echo ">> Coverage for specyfic components:"
+lcov --list coverage.info | grep "DDECommon.h"
+lcov --list coverage.info | grep "DDECommon.cpp"
+lcov --list coverage.info | grep "DoubletonInterface.h"
+lcov --list coverage.info | grep "BasicDoubleton.h"
+lcov --list coverage.info | grep "SharedDoubleton.h"
+lcov --list coverage.info | grep "GenericJet.h"
+lcov --list coverage.info | grep "DDEJetSection.h"
 
 echo ">> Done."
