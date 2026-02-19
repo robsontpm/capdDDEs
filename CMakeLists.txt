@@ -4,7 +4,7 @@ project(capdDDEs LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # Find CAPD
 find_package(CAPD REQUIRED)
@@ -34,7 +34,7 @@ foreach(SRC_NAME ${LIB_SOURCES_LIST})
     set(FOUND_SRC FALSE)
     foreach(PATH ${VPATH_LIST})
         string(STRIP "${PATH}" PATH)
-        if(EXISTS "${CMAKE_SOURCE_DIR}/src/${PATH}/${SRC_NAME}.cpp")
+        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/${PATH}/${SRC_NAME}.cpp")
             list(APPEND LIB_SOURCES "src/${PATH}/${SRC_NAME}.cpp")
             set(FOUND_SRC TRUE)
             break()
@@ -49,7 +49,7 @@ endforeach()
 add_library(capdDDEs STATIC ${LIB_SOURCES})
 
 target_include_directories(capdDDEs PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
     ${CAPD_INCLUDE_DIRS}
 )
