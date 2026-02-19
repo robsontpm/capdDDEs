@@ -32,7 +32,8 @@ cd "$BUILD_DIR"
 
 # Configure with Coverage enabled
 echo ">> Configuring CMake with ENABLE_COVERAGE=ON..."
-cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" ..
+export BOOST_ROOT="${HOME}/deps/boost"
+cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" -DBOOST_ROOT="$BOOST_ROOT" ..
 
 # make all
 make -j4
@@ -56,5 +57,6 @@ lcov --list coverage.info | grep "BasicDoubleton.h"
 lcov --list coverage.info | grep "SharedDoubleton.h"
 lcov --list coverage.info | grep "GenericJet.h"
 lcov --list coverage.info | grep "DDEJetSection.h"
+lcov --list coverage.info | grep "BasicDiscreteDelaysFunctionalMap"
 
 echo ">> Done."
