@@ -4,7 +4,6 @@ DONE ./include/capd/ddes/storage/SharedDoubleton.h
 DONE ./include/capd/ddes/storage/GenericJet.h
 DONE ./include/capd/ddes/DDECommon.h
 DONE ./include/capd/ddes/DDEJetSection.h
-NEW ./include/capd/ddes/FunctionalMap.h
 NEW ./include/capd/ddes/BasicDiscreteDelaysFunctionalMap.h
 NEW ./include/capd/ddes/DiscreteDelaysFunctionalMap.h
 NEW ./include/capd/ddes/DDEForwardTaylorCurvePiece.h
