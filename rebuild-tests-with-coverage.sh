@@ -56,5 +56,6 @@ lcov --list coverage.info | grep "BasicDoubleton.h"
 lcov --list coverage.info | grep "SharedDoubleton.h"
 lcov --list coverage.info | grep "GenericJet.h"
 lcov --list coverage.info | grep "DDEJetSection.h"
+lcov --list coverage.info | grep "BasicDiscreteDelaysFunctionalMap"
 
 echo ">> Done."

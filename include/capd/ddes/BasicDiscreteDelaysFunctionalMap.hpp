@@ -320,6 +320,7 @@ BasicDiscreteDelaysFunctionalMap<FinDimMapSpec, SolutionCurveSpec, JetSpec>::get
 		return TimePointType();
 	TimePointType max_tau = *(this->begin());
 	for (auto tau = this->begin() + 1; tau < this->end(); ++tau)
+		// BUG: This compares iterator with TimePointType! Should be *tau.
 		if (tau > max_tau) max_tau = tau;
 	return max_tau;
 }
