@@ -1,5 +1,6 @@
 #define BOOST_TEST_MODULE DDEJetSectionTests
-#include <boost/test/included/unit_test.hpp>
+#define BOOST_TEST_DYN_LINK
+#include <boost/test/unit_test.hpp>
 #include <capd/ddes/DDEJetSection.h>
 // Include GenericJet.hpp because we use GenericJet with custom types (via MockCurve)
 // and DDEJetSection.h only includes GenericJet.h
