@@ -32,8 +32,7 @@ cd "$BUILD_DIR"
 
 # Configure with Coverage enabled
 echo ">> Configuring CMake with ENABLE_COVERAGE=ON..."
-export BOOST_ROOT="${HOME}/deps/boost"
-cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" -DBOOST_ROOT="$BOOST_ROOT" ..
+cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR="$CAPD_DIR" ..
 
 # make all
 make -j4

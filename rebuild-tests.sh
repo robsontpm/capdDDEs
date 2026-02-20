@@ -32,8 +32,7 @@ cd build
 # -std=gnu++17 -std=c++17 -g -O0 --coverage -frounding-math ...
 # These are set by cmake -DENABLE_COVERAGE=ON and the project configuration.
 
-export BOOST_ROOT="${HOME}/deps/boost"
-cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR=$(pwd)/../bin/capd_build -DBOOST_ROOT="$BOOST_ROOT" ..
+cmake -DENABLE_COVERAGE=ON -DBUILD_PROGRAMS=OFF -DCAPD_DIR=$(pwd)/../bin/capd_build ..
 
 echo ">> Compiling..."
 make -j4
