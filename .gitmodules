@@ -1,3 +1,6 @@
 [submodule "external/capd"]
 	path = external/capd
 	url = https://github.com/CAPDGroup/CAPD.git
+[submodule "external/cmake/BoostTestDiscoverTests"]
+	path = external/cmake/BoostTestDiscoverTests
+	url = https://github.com/DenizThatMenace/cmake-modules.git
