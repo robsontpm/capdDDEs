@@ -44,3 +44,11 @@
   - The bug is marked in the header file.
   - The failing test case is extracted to `tests/capd-ddes-BasicDiscreteDelaysFunctionalMap-BUG-GetMaxDelay.cpp` (disabled by default to allow compilation).
 - **Boost Test Framework:** Tests now use the precompiled `Boost::unit_test_framework` library (installed in `${HOME}/deps/boost`) instead of the header-only variant, to improve compilation speed and match project conventions. `BOOST_TEST_DYN_LINK` is defined in the new test files.
+
+## DiscreteDelaysFunctionalMap.h (DONE)
+- **Status:** Tests Implemented and Passing. Coverage 93.1%.
+- **Tests Implemented:** `tests/capd-ddes-DiscreteDelaysFunctionalMap.cpp`
+  - Covers Constructors, `operator()`, `collectComputationData`, `computeDDECoefficients`, `findRoughEnclosure`.
+  - Uses `capd::Interval` and `capd::IVector` to verify rigorous logic.
+- **Found Issue:** Template `checkDimension(AnyVector const&)` shadows `checkDimension(size_type)` if `AnyVector` type matches closer (or exactly) while `size_type` (usually `std::size_t`) requires conversion from `Vector::dimension()` return type (often `unsigned int` or `int`).
+  - Workaround: In `MockSolutionCurve`, `size_type` was explicitly set to `unsigned int` to match `IVector::dimension()` and avoid ambiguity/shadowing.
