@@ -40,8 +40,7 @@ struct MockJet {
 };
 
 // Mock Solution Curve
-struct MockSolutionCurve {
-    using RealType = ScalarType;
+struct MockSolutionCurve {    
     using VectorType = capd::DVector;
     using MatrixType = capd::DMatrix;
     using ScalarType = double;
@@ -49,6 +48,7 @@ struct MockSolutionCurve {
     using JetType = MockJet;
     using size_type = std::size_t;
     using DataType = VectorType;
+    using RealType = ScalarType;
 
     int dim;
 

@@ -39,11 +39,10 @@ struct MockJet {
 };
 
 // Mock Solution Curve
-struct MockSolutionCurve {
+struct MockSolutionCurve {    
     using RealType = ScalarType;
     using VectorType = capd::DVector;
     using MatrixType = capd::DMatrix;
-    using ScalarType = double;
     using TimePointType = double;
     using JetType = MockJet;
     using size_type = std::size_t;
