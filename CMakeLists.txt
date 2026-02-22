@@ -4,72 +4,101 @@ project(capdDDEs LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Find CAPD
-find_package(CAPD REQUIRED)
-message(STATUS "CAPD Found: ${CAPD_LIBRARIES}")
-message(STATUS "CAPD Includes: ${CAPD_INCLUDE_DIRS}")
+option(capdDDEs_BUILD_TESTS "Build capdDDEs tests" ON)
+option(capdDDEs_BUILD_EXAMPLES "Build capdDDEs examples" ON)
+option(capdDDEs_BUILD_UTILS "Build capdDDEs utility programs" ON)
+option(
+  capdDDEs_USE_SYSTEM_CAPD
+  "Build with the bundled version of the CAPD library" ON
+)
+option(capdDDEs_INSTALL "Enable installation of capdDDEs library" ON)
 
-# --- Build capdDDEs library ---
-
-# Read source list
-file(READ "src/libcapdddes.txt" LIB_SOURCES_RAW)
-string(REPLACE " " ";" LIB_SOURCES_LIST "${LIB_SOURCES_RAW}")
-string(REPLACE "\n" ";" LIB_SOURCES_LIST "${LIB_SOURCES_LIST}")
-
-# Read VPATH
-file(READ "src/libvpath.txt" VPATH_RAW)
-string(REPLACE " " ";" VPATH_LIST "${VPATH_RAW}")
-string(REPLACE "\n" ";" VPATH_LIST "${VPATH_LIST}")
-
-# Resolve source paths
-set(LIB_SOURCES "")
-foreach(SRC_NAME ${LIB_SOURCES_LIST})
-    string(STRIP "${SRC_NAME}" SRC_NAME)
-    if(NOT SRC_NAME)
-        continue()
-    endif()
-
-    set(FOUND_SRC FALSE)
-    foreach(PATH ${VPATH_LIST})
-        string(STRIP "${PATH}" PATH)
-        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/${PATH}/${SRC_NAME}.cpp")
-            list(APPEND LIB_SOURCES "src/${PATH}/${SRC_NAME}.cpp")
-            set(FOUND_SRC TRUE)
-            break()
-        endif()
-    endforeach()
-
-    if(NOT FOUND_SRC)
-        message(FATAL_ERROR "Could not find source file: ${SRC_NAME}.cpp in VPATH: ${VPATH_LIST}")
-    endif()
-endforeach()
-
-add_library(capdDDEs STATIC ${LIB_SOURCES})
-
-target_include_directories(capdDDEs PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-    ${CAPD_INCLUDE_DIRS}
+list(
+  APPEND CMAKE_MODULE_PATH
+  "${CMAKE_CURRENT_SOURCE_DIR}/external/cmake/BoostTestDiscoverTests/modules"
 )
 
-if(CAPD_COMPILE_OPTIONS)
-    target_compile_options(capdDDEs PUBLIC ${CAPD_COMPILE_OPTIONS})
+include(CTest)
+
+if(capdDDEs_USE_SYSTEM_CAPD)
+  find_package(capd)
+  if(NOT capd_FOUND)
+    message(FATAL_ERROR
+"System CAPD library not found!
+To use the bundled version of the CAPD library instead, set \
+capdDDEs_USE_SYSTEM_CAPD=OFF"
+    )
+  endif()
+  message("-- Using system CAPD.")
+else()
+  set(CAPD_ENABLE_MULTIPRECISION ON)
+  add_subdirectory(external/capd)
+  add_library(capd::capd ALIAS capd)
+  message("-- Using bundled CAPD.")
 endif()
-if(CAPD_COMPILE_DEFINITIONS)
-    target_compile_definitions(capdDDEs PUBLIC ${CAPD_COMPILE_DEFINITIONS})
+
+add_library(capdDDEs)
+add_library(capdDDEs::capdDDEs ALIAS capdDDEs)
+
+target_sources(capdDDEs
+  PRIVATE
+    "src/capd/ddes/DDECommon.cpp"
+    "src/capd/ddeshelper/DDEHelperCommon.cpp"
+    "src/capd/ddeshelper/DDEHelperDrawing.cpp"
+    "src/capd/ddeshelper/DDESystemOSHelper.cpp"
+    "src/capd/ddeshelper/ddeshelperlib.cpp"
+)
+
+target_include_directories(capdDDEs
+  PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    "$<INSTALL_INTERFACE:include>"
+)
+
+target_link_libraries(capdDDEs PUBLIC capd::capd)
+
+if(capdDDEs_BUILD_TESTS AND BUILD_TESTING)
+  add_subdirectory(tests)
 endif()
 
-target_link_libraries(capdDDEs PUBLIC ${CAPD_LIBRARIES})
+if(capd_DDEs_BUILD_EXAMPLES)
+  add_subdirectory(programs/examples)
+endif()
 
-# --- Subdirectories ---
+if(capdDDEs_BUILD_UTILS)
+  add_subdirectory(programs/utils)
+endif()
 
-# Helper function
-include(AddSubdirectoryPrograms)
+if(capdDDEs_INSTALL)
+  include(CMakePackageConfigHelpers)
+  include(GNUInstallDirs)
 
-# add_subdirectory(programs/utils)
-add_subdirectory(programs/results)
-add_subdirectory(programs/examples)
-enable_testing()
-add_subdirectory(tests)
+  install(
+    TARGETS capdDDEs
+    EXPORT capdddes-targets
+  )
+
+  install(
+    DIRECTORY "include/"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+  )
+
+  install(
+    EXPORT capdddes-targets
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+    NAMESPACE capdDDEs::
+  )
+
+  configure_package_config_file(
+    "cmake/capdddes-config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake/capdddes-config.cmake"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+  )
+
+  install(
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/cmake/capdddes-config.cmake"
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+  )
+endif()

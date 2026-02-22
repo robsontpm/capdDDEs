@@ -1,15 +1,25 @@
 find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
-# automatically scan this folder for all .cpp files
-# TODO: rethink, if there should be separated subfolders? When there is a lot of tests...
-file(GLOB TEST_SOURCES "*.cpp")
-foreach(TEST_SRC ${TEST_SOURCES})
-    get_filename_component(TEST_NAME "${TEST_SRC}" NAME_WE)
+include(BoostTestDiscoverTests)
 
-    add_executable(${TEST_NAME} "${TEST_SRC}")
+function(add_simple_boost_test target_name)
+  add_executable(${target_name})
+  target_sources(${target_name}
+    PRIVATE
+      "${target_name}.cpp")
+  target_link_libraries(${target_name}
+    PRIVATE
+      # Boost::unit_test_framework
+      capdDDEs::capdDDEs
+  )
+  target_include_directories(${target_name}
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+  )
+  boosttest_discover_tests(${target_name})
+endfunction()
 
-    target_link_libraries(${TEST_NAME} PRIVATE capdDDEs Boost::unit_test_framework)
-    target_include_directories(${TEST_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/programs/utils) # In case they need headers from there
-
-    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-endforeach()
+add_simple_boost_test(capd-ddes-DDECommon)
+add_simple_boost_test(capd-ddes-storage-BasicDoubleton)
+add_simple_boost_test(cubeset_tests)
+add_simple_boost_test(legacy_tests)

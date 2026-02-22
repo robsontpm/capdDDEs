@@ -1,9 +1,7 @@
-# programs/examples/CMakeLists.txt
-
-# Iterate over subdirectories and add programs
-file(GLOB children RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*)
-foreach(child ${children})
-    if(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${child})
-        add_programs_from_subdir(${child})
-    endif()
-endforeach()
+add_subdirectory(command-line-helper)
+add_subdirectory(demo-elninio)
+add_subdirectory(demo-gamm)
+add_subdirectory(demo-szeged)
+add_subdirectory(mackey-glass-stable-periodic)
+add_subdirectory(rossler-ode-vs-dde-code)
+add_subdirectory(user-program-template)
