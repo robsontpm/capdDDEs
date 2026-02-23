@@ -73,7 +73,7 @@ void to_mpi_matrix(const MatrixSpec& inA, MpMatrix& outA, int precission = 512){
 	int old_precision = MpReal::getDefaultPrecision();
 	MpReal::setDefaultPrecision(precission);
 	int size = inA.numberOfColumns(); // assume square matrix
-	outA = MpIMatrix(size, size);
+	outA = MpMatrix(size, size);
 	for (int i = 0; i < size; ++i)
 		for (int j = 0; j < size; ++j)
 			outA[i][j] = MpFloat(inA[i][j]);
