@@ -5,7 +5,7 @@ DONE ./include/capd/ddes/storage/GenericJet.h
 DONE ./include/capd/ddes/DDECommon.h
 DONE ./include/capd/ddes/DDEJetSection.h
 DONE ./include/capd/ddes/BasicDiscreteDelaysFunctionalMap.h
-NEW ./include/capd/ddes/DiscreteDelaysFunctionalMap.h
+DONE ./include/capd/ddes/DiscreteDelaysFunctionalMap.h
 NEW ./include/capd/ddes/DDEForwardTaylorCurvePiece.h
 NEW ./include/capd/ddes/DDEPiecewisePolynomialCurve.h
 NEW ./include/capd/ddes/DDESolutionCurve.h
