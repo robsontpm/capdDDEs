@@ -63,3 +63,4 @@
   - `dt(n)` derivative function is unimplemented and correctly throws `std::logic_error("Not implemented yet")`.
   - `reinitialize(d, N0)` is unimplemented and correctly throws `std::logic_error("Not Supported Yet")`.
   - Both these cases are isolated in `tests/capd-ddes-DDEForwardTaylorCurvePiece-BUG-NotImplemented.cpp`.
+- **Note on `jetAt` Template Ambiguity:** In previous review it was identified that `jetAt(TimePointType)` and `jetAt(RealType)` cause compilation errors if `TimePointType` and `RealType` match. The user clarified this is intentional by design, as these types represent different domains in the application. Tests implement `MockTimePoint` to accurately reflect this.

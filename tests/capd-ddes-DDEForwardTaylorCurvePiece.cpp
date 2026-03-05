@@ -18,8 +18,7 @@ typedef Matrix<DInterval, 0, 0> DIMatrix;
 
 typedef BasicDoubleton<DIMatrix, capd::dynset::IdQRPolicy> DBasicDoubleton;
 
-// To avoid the `jetAt` ambiguity, TimePointSpec is set to `double` and
-// SetSpec uses `DInterval`, making RealType = `DInterval`
+// By design, TimePointType (e.g. from DiscreteTimeGrid) must differ from RealType (e.g. DInterval).
 typedef DDEForwardTaylorCurvePiece<double, DBasicDoubleton, true> DBasicCurve;
 
 // Helper to create an initialized vector
