@@ -51,6 +51,7 @@ DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::operator=(
 )
 {
 	// we need to handle memory allocations carefuly
+	// BUG: Does not copy m_t0. This will leave the assigned object with a default m_t0 instead of orig.m_t0.
 	deallocate();
 	m_dimension = orig.m_dimension;
 	m_order = orig.m_order;

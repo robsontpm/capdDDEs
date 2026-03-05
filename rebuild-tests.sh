@@ -38,6 +38,13 @@ echo ">> Compiling..."
 make -j4
 
 # 3. Run all tests
-ctest -V -R 
+ctest -V -R "DDECommon"
+ctest -V -R "BasicDoubleton"
+ctest -V -R "SharedDoubleton"
+ctest -V -R "GenericJet"
+ctest -V -R "DDEJetSection"
+ctest -V -R "BasicDiscreteDelaysFunctionalMap"
+ctest -V -R "DiscreteDelaysFunctionalMap"
+ctest -V -R "DDEForwardTaylorCurvePiece"
 
 echo ">> Done."

@@ -247,7 +247,11 @@ public:
 	VectorType summa(const RealType& t) const { return this->summaAtDelta(t - RealType(t0())); }
 	/** returns jet at t for a function represented by this. It is rigorous, so it returns validated estimates (overestimates) */
 	JetType jetAt(const TimePointType& t) const { if (t == m_t0) { return *this; } else { return this->jetAt((RealType)t); } }
-	/** returns jet at t for a function represented by this. It is rigorous, so it returns validated estimates (overestimates) */
+	/**
+	 * returns jet at t for a function represented by this. It is rigorous, so it returns validated estimates (overestimates)
+	 * BUG: This method is currently not implemented and throws std::logic_error.
+	 * BUG: If TimePointType is equal to RealType, having both `jetAt(TimePointType)` and `jetAt(RealType)` leads to a compile error ("cannot be overloaded with").
+	 */
 	JetType jetAt(const RealType& t) const { throw std::logic_error("DDEForwardTaylorCurvePiece::jetAt(RealType t): Not implemented yet"); };
 	/**
 	 * evaluates the Taylor part of the jet at t0 + delta_t, delta_t should be positive.

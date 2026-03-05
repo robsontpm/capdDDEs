@@ -58,5 +58,6 @@ lcov --list coverage.info | grep "GenericJet.h"
 lcov --list coverage.info | grep "DDEJetSection.h"
 lcov --list coverage.info | grep "BasicDiscreteDelaysFunctionalMap"
 lcov --list coverage.info | grep "DiscreteDelaysFunctionalMap.h"
+lcov --list coverage.info | grep "DDEForwardTaylorCurvePiece"
 
 echo ">> Done."
