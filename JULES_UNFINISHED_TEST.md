@@ -64,3 +64,14 @@
   - `reinitialize(d, N0)` is unimplemented and correctly throws `std::logic_error("Not Supported Yet")`.
   - Both these cases are isolated in `tests/capd-ddes-DDEForwardTaylorCurvePiece-BUG-NotImplemented.cpp`.
 - **Note on `jetAt` Template Ambiguity:** In previous review it was identified that `jetAt(TimePointType)` and `jetAt(RealType)` cause compilation errors if `TimePointType` and `RealType` match. The user clarified this is intentional by design, as these types represent different domains in the application. Tests implement `MockTimePoint` to accurately reflect this.
+
+## DDEPiecewisePolynomialCurve.h (DONE)
+- **Status:** Tests Implemented and Passing. Coverage 96.8% (header), 100% (hpp).
+- **Tests Implemented:** `tests/capd-ddes-DDEPiecewisePolynomialCurve.cpp`
+  - Covers Constructors, Assignment, Equality, Iterators, Subcurves, Evaluation methods (`eval`, `j`, `value`), Modifiers (`dt`, `increasedOrder`, `decreasedOrder`, `addPiece`, `addPastPiece`, `clear`, `mul`, `set_x`).
+  - Covers un-implemented methods properly throwing `std::logic_error`.
+- **Found Bug 8:** `epsilonShift` uses a loop that requires the curve to contain history over `[out_result.pastTime(), out_result.t0()]`. However, if the source curve is not properly initialized with history, it accesses out of bounds pieces via `this->at(...)` resulting in `std::range_error`.
+  - The failing test case is extracted to `tests/capd-ddes-DDEPiecewisePolynomialCurve-BUG-EpsilonShiftAndConstructor.cpp`.
+- **Found Bug 9:** `DDEPiecewisePolynomialCurve(t0, t1, order, value)` constructor contains a condition `if(t0)` which delegates to the `TimePointType::operator bool()`. In `DiscreteTimeGrid`, this operator evaluates to `!isZero()`. This incorrectly skips adding pieces if the curve starts precisely at the zero grid point.
+  - The failing test case is extracted to `tests/capd-ddes-DDEPiecewisePolynomialCurve-BUG-EpsilonShiftAndConstructor.cpp`.
+- **Issues Handled:** Instantiating `GenericJet` with `BasicDoubleton` templates caused profound compilation errors due to conversion ambiguities in `std::vector` initializers inside CAPD library itself (`capd::vectalg::Vector` explicit casts). The issue was bypassed in the tests by directly injecting `capd::DVector` as the internal `DataType` to verify the functionality of the Curve object independently of `Doubleton` quirks.

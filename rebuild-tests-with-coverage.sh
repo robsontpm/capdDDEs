@@ -59,5 +59,6 @@ lcov --list coverage.info | grep "DDEJetSection.h"
 lcov --list coverage.info | grep "BasicDiscreteDelaysFunctionalMap"
 lcov --list coverage.info | grep "DiscreteDelaysFunctionalMap.h"
 lcov --list coverage.info | grep "DDEForwardTaylorCurvePiece"
+lcov --list coverage.info | grep "DDEPiecewisePolynomialCurve.h"
 
 echo ">> Done."
