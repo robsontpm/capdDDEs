@@ -44,3 +44,23 @@
   - The bug is marked in the header file.
   - The failing test case is extracted to `tests/capd-ddes-BasicDiscreteDelaysFunctionalMap-BUG-GetMaxDelay.cpp` (disabled by default to allow compilation).
 - **Boost Test Framework:** Tests now use the precompiled `Boost::unit_test_framework` library (installed in `${HOME}/deps/boost`) instead of the header-only variant, to improve compilation speed and match project conventions. `BOOST_TEST_DYN_LINK` is defined in the new test files.
+
+## DiscreteDelaysFunctionalMap.h (DONE)
+- **Status:** Tests Implemented and Passing. Coverage 93.1%.
+- **Tests Implemented:** `tests/capd-ddes-DiscreteDelaysFunctionalMap.cpp`
+  - Covers Constructors, `operator()`, `collectComputationData`, `computeDDECoefficients`, `findRoughEnclosure`.
+  - Uses `capd::Interval` and `capd::IVector` to verify rigorous logic.
+- **Found Issue:** Template `checkDimension(AnyVector const&)` shadows `checkDimension(size_type)` if `AnyVector` type matches closer (or exactly) while `size_type` (usually `std::size_t`) requires conversion from `Vector::dimension()` return type (often `unsigned int` or `int`).
+  - Workaround: In `MockSolutionCurve`, `size_type` was explicitly set to `unsigned int` to match `IVector::dimension()` and avoid ambiguity/shadowing.
+
+## DDEForwardTaylorCurvePiece.h (DONE)
+- **Status:** Tests Implemented and Passing. Coverage 89.8% (header), 92.0% (hpp).
+- **Tests Implemented:** `tests/capd-ddes-DDEForwardTaylorCurvePiece.cpp`
+  - Covers Constructors (Default, TimePoint, Copy, DimOrder, Vector, Set, iterators), Assignment, Evaluation methods (`taylor`, `summa`, `eval`, `evalCoeffs` and their Delta variants), operations (`mul`, `midCurve`), accessors/setters, iterators, exceptions, and `GenericJet` integration dot product.
+- **Found Bug 7:** `AssignmentOperator` does not copy the base time `m_t0` from the source object.
+  - Reproduced and verified in `tests/capd-ddes-DDEForwardTaylorCurvePiece-BUG-Assignment.cpp` (disabled by default, emits warning).
+- **Found Issues:**
+  - `dt(n)` derivative function is unimplemented and correctly throws `std::logic_error("Not implemented yet")`.
+  - `reinitialize(d, N0)` is unimplemented and correctly throws `std::logic_error("Not Supported Yet")`.
+  - Both these cases are isolated in `tests/capd-ddes-DDEForwardTaylorCurvePiece-BUG-NotImplemented.cpp`.
+- **Note on `jetAt` Template Ambiguity:** In previous review it was identified that `jetAt(TimePointType)` and `jetAt(RealType)` cause compilation errors if `TimePointType` and `RealType` match. The user clarified this is intentional by design, as these types represent different domains in the application. Tests implement `MockTimePoint` to accurately reflect this.
