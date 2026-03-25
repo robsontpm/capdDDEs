@@ -38,6 +38,6 @@ echo ">> Compiling..."
 make -j4
 
 # 3. Run all tests
-ctest -V -R 
+ctest -V -R
 
 echo ">> Done."
