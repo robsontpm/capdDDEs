@@ -406,7 +406,7 @@ void DDEForwardTaylorCurvePiece<TimePointSpec, SetSpec, isInterval>::taylorAtDel
 			const RealType& delta_t, SetSpec& out) const {
 	const_iterator coeff = endJet();
 	const_iterator stop = beginJet();
-	out *= 0.0; // this will assure ownership... and zero the output (do I want this?)
+	out *= 0.0; // this will assure ownership... and zero the output (do I want this? EDIT: YES I WANT THIS. This is important, otherwise we need to tell user explicitly to pass zeroed output. I had a problem with this in Poincare)
 	size_type d = this->dimension();
 	size_type N0 = this->storageN0();
 	VectorType* x = new VectorType(d);

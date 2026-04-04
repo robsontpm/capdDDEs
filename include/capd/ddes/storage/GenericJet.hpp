@@ -192,6 +192,7 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalAtD
 	// naive implementation, but safe for all types
 	// out = DataSpec(this->evalAtDelta(delta_t));
 	const_iterator coeff = this->end();
+	out *= 0.; // make sure it's zero initially!
 	while (coeff-- != begin()){
 		out *= delta_t;   // this way it is easier to impelement neccessary (unary) operators, and no copy operator is involved! TODO: (make the same in the rigorous code)
 		out += (*coeff);  // this way it is easier to impelement neccessary (unary) operators, and no copy operator is involved! TODO: (make the same in the rigorous code)
@@ -228,11 +229,14 @@ GenericJet<TimePointSpec, DataSpec, VectorSpec, MatrixSpec, isInterval>::evalCoe
 	// naive implementation, but safe for all types
 	// out = DataSpec(this->evalCoeffAtDelta(n, delta_t));
 
-	// NOTE: we assume out is of good shape (i.e. dimension, other data if neccessary), and set to 0
-	if (n == 0) this->evalAtDelta(delta_t, out);
-	else if (n > m_order) {
+	// NOTE: we assume out is of good shape (i.e. dimension, other data if neccessary), and set to 0 (TODO: Rethink: MAYBE I should not assume = 0...)
+	if (n == 0) {
+		this->evalAtDelta(delta_t, out);
 		return;
+	} else if (n > m_order) {
+		out *= 0.; return;
 	}
+	out *= 0.;
 	size_type j = this->m_order;
 	const_iterator coeff = this->end();
 	while (coeff-- != begin()){
