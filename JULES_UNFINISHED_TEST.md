@@ -75,3 +75,17 @@
 - **Found Bug 9:** `DDEPiecewisePolynomialCurve(t0, t1, order, value)` constructor contains a condition `if(t0)` which delegates to the `TimePointType::operator bool()`. In `DiscreteTimeGrid`, this operator evaluates to `!isZero()`. This incorrectly skips adding pieces if the curve starts precisely at the zero grid point.
   - The failing test case is extracted to `tests/capd-ddes-DDEPiecewisePolynomialCurve-BUG-EpsilonShiftAndConstructor.cpp`.
 - **Issues Handled:** Instantiating `GenericJet` with `BasicDoubleton` templates caused profound compilation errors due to conversion ambiguities in `std::vector` initializers inside CAPD library itself (`capd::vectalg::Vector` explicit casts). The issue was bypassed in the tests by directly injecting `capd::DVector` as the internal `DataType` to verify the functionality of the Curve object independently of `Doubleton` quirks.
+
+## DDESolutionCurve.h (UNFINISHED)
+- **Status:** Tests Implemented and Passing. Coverage: 61.3%
+- **Tests Implemented:** `tests/capd-ddes-DDESolutionCurve.cpp`
+  - Covered Constructors: `DDESolutionCurve(orig)`, `DDESolutionCurve(grid, d, N0)`, `DDESolutionCurve(t0, d, N0)`, `DDESolutionCurve(t0, value_set)`, `DDESolutionCurve(t0, value_vector)`.
+  - Covered Accessors: `dimension`, `storageN0`, `length`, `pastTime`, `currentTime`, `t0`, `leftDomain`, `rightDomain`, `storageDimension`, `pointToIndex`.
+  - Covered Piece Manipulation and Iterators: `addPiece`, `addPastPiece`, `setValueAtCurrent`, `getPiece`, `at`, `begin`, `end`, `rbegin`, `rend`.
+  - Covered Doubleton Interface and Setters: `set_C`, `set_r0`, `set_x`, `set_B`, `take_x`, `take_C`, `take_r0`, `take_B` (verifying proper pointer ownership semantics).
+  - Covered Operations: `dot` (VectorType and JetSection mocked variants), `midCurve`, `dt(1)` (catches unimplemented).
+  - Covered `reinitialize`, `add`, `mulThenAdd`, and pointer `set_Cr0` throwing `std::logic_error`.
+  - Covered IO/Reduce/EpsilonShift: `show`, `writeTo` via operator `<<`, `reduce` and `epsilonShift` basic functionality tested via mock structures.
+- **Future Directions:**
+  - `move` using a mock or non-rigorous TaylorSolver is difficult to implement at the unit-test level due to deep template constraints in CAPD's interval sets and map evaluations. Mocking `MockSolver` required highly complex definitions of `Variables`, `Jacobians`, `Values`, etc., matching the exact inner types.
+  - The coverage sits at `61.3%`, mainly leaving `move`, `set_Binv`, and specific rigorous intersections inside `epsilonShift` / `reduce` uncovered. Given the class size (~650 loc with implementations included), this provides a solid base unit-test.

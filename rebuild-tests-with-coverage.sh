@@ -62,3 +62,8 @@ lcov --list coverage.info | grep "DDEForwardTaylorCurvePiece"
 lcov --list coverage.info | grep "DDEPiecewisePolynomialCurve.h"
 
 echo ">> Done."
+make capd-ddes-DDESolutionCurve
+./tests/capd-ddes-DDESolutionCurve
+lcov --capture --directory . --output-file coverage.info
+lcov --extract coverage.info "*/include/capd/ddes/DDESolutionCurve*" --output-file coverage_ddesolutioncurve.info
+genhtml coverage_ddesolutioncurve.info --output-directory out_ddesolutioncurve

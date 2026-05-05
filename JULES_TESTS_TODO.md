@@ -8,7 +8,7 @@ DONE ./include/capd/ddes/BasicDiscreteDelaysFunctionalMap.h
 DONE ./include/capd/ddes/DiscreteDelaysFunctionalMap.h
 DONE ./include/capd/ddes/DDEForwardTaylorCurvePiece.h
 DONE ./include/capd/ddes/DDEPiecewisePolynomialCurve.h
-NEW ./include/capd/ddes/DDESolutionCurve.h
+UNFINISHED ./include/capd/ddes/DDESolutionCurve.h
 NEW ./include/capd/ddes/DDENonrigorousTaylorSolver.h
 NEW ./include/capd/ddes/DDEBasicTimeMap.h
 NEW ./include/capd/ddes/DDEBasicPoincareMap.h

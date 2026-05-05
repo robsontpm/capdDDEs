@@ -84,3 +84,8 @@ endif()
 
 enable_testing()
 add_subdirectory(tests)
+
+add_executable(capd-ddes-DDESolutionCurve "tests/capd-ddes-DDESolutionCurve.cpp")
+target_link_libraries(capd-ddes-DDESolutionCurve PRIVATE capdDDEs Boost::unit_test_framework)
+target_include_directories(capd-ddes-DDESolutionCurve PRIVATE ${CMAKE_SOURCE_DIR}/programs/utils)
+add_test(NAME capd-ddes-DDESolutionCurve COMMAND capd-ddes-DDESolutionCurve)
