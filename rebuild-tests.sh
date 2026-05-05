@@ -41,3 +41,5 @@ make -j4
 ctest -V -R
 
 echo ">> Done."
+make capd-ddes-DDESolutionCurve
+./tests/capd-ddes-DDESolutionCurve
