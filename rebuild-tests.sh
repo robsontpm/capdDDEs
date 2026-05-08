@@ -41,3 +41,17 @@ make -j4
 ctest -V -R
 
 echo ">> Done."
+
+# Run DDESolutionCurve tests
+if [ -f tests/capd-ddes-DDESolutionCurve ]; then
+    ./tests/capd-ddes-DDESolutionCurve
+fi
+if [ -f tests/capd-ddes-DDESolutionCurve-BUG-MidCurve ]; then
+    ./tests/capd-ddes-DDESolutionCurve-BUG-MidCurve
+fi
+if [ -f tests/capd-ddes-DDESolutionCurve-BUG-dt ]; then
+    ./tests/capd-ddes-DDESolutionCurve-BUG-dt
+fi
+if [ -f tests/capd-ddes-DDESolutionCurve-BUG-IO ]; then
+    ./tests/capd-ddes-DDESolutionCurve-BUG-IO
+fi
