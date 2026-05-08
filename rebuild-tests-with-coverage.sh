@@ -60,5 +60,20 @@ lcov --list coverage.info | grep "BasicDiscreteDelaysFunctionalMap"
 lcov --list coverage.info | grep "DiscreteDelaysFunctionalMap.h"
 lcov --list coverage.info | grep "DDEForwardTaylorCurvePiece"
 lcov --list coverage.info | grep "DDEPiecewisePolynomialCurve.h"
+lcov --list coverage.info | grep "DDESolutionCurve"
 
 echo ">> Done."
+
+# Run DDESolutionCurve tests
+if [ -f tests/capd-ddes-DDESolutionCurve ]; then
+    ./tests/capd-ddes-DDESolutionCurve
+fi
+if [ -f tests/capd-ddes-DDESolutionCurve-BUG-MidCurve ]; then
+    ./tests/capd-ddes-DDESolutionCurve-BUG-MidCurve
+fi
+if [ -f tests/capd-ddes-DDESolutionCurve-BUG-dt ]; then
+    ./tests/capd-ddes-DDESolutionCurve-BUG-dt
+fi
+if [ -f tests/capd-ddes-DDESolutionCurve-BUG-IO ]; then
+    ./tests/capd-ddes-DDESolutionCurve-BUG-IO
+fi
