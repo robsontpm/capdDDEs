@@ -45,13 +45,13 @@ namespace capd{
 namespace ddes{
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::affineTransform(MatrixType const &M, VectorType const &v) {
 	throw std::logic_error("DDESolutionCurve::affineTransform: Not implemented yet");
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::translate(typename DDESolutionCurve<SetSpec>::VectorType const &v) {
 	throw std::logic_error("DDESolutionCurve::translate: Not implemented yet");
 }
@@ -153,7 +153,7 @@ DDESolutionCurve<SetSpec>::get_Binv() const {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_x(VectorType const &x) {
 	if (x.dimension() != storageDimension()){
 		std::ostringstream info;
@@ -179,7 +179,7 @@ DDESolutionCurve<SetSpec>::set_x(VectorType const &x) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_C(MatrixType const &C) {
 	if (storageN0() != C.numberOfColumns()){
 		std::ostringstream info;
@@ -217,7 +217,7 @@ DDESolutionCurve<SetSpec>::set_C(MatrixType const &C) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_r0(VectorType const &r0) {
 	if (r0.dimension() != storageN0())
 		throw std::logic_error("DDESolutionCurve::set_r0: new r0 has incompatible dimension to the whole structure");
@@ -226,7 +226,7 @@ DDESolutionCurve<SetSpec>::set_r0(VectorType const &r0) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_Cr0(MatrixType const &C, VectorType const &r0) {
 	size_type new_N0 = r0.dimension();
 	if (new_N0 != C.numberOfColumns()){
@@ -266,7 +266,7 @@ DDESolutionCurve<SetSpec>::set_Cr0(MatrixType const &C, VectorType const &r0) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_B(MatrixType const &B) {
 	if (B.numberOfColumns() != B.numberOfRows())
 		throw std::logic_error("DDESolutionCurve::set_B(): B must be square");
@@ -287,7 +287,7 @@ DDESolutionCurve<SetSpec>::set_B(MatrixType const &B) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_r(VectorType const &r) {
 	if (r.dimension() != storageDimension()){
 		std::ostringstream info;
@@ -315,7 +315,7 @@ DDESolutionCurve<SetSpec>::set_r(VectorType const &r) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_Binv(MatrixType const &invB) {
 	if (invB.numberOfColumns() != invB.numberOfRows())
 		throw std::logic_error("DDESolutionCurve::set_invB(): invB must be square");
@@ -335,7 +335,7 @@ DDESolutionCurve<SetSpec>::set_Binv(MatrixType const &invB) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_x(VectorType* x, bool passOwnership) {
 	if (x->dimension() != storageDimension()){
 		std::ostringstream info;
@@ -361,7 +361,7 @@ DDESolutionCurve<SetSpec>::set_x(VectorType* x, bool passOwnership) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_C(MatrixType* C, bool passOwnership) {
 	if (!C) throw std::logic_error("DDESolutionCurve::set_C(ptr, flag): C is NULL");
 	try { set_C(*C); } catch (std::logic_error& e) { rethrow("DDESolutionCurve::set_C(ptr, flag):", e); }
@@ -370,7 +370,7 @@ DDESolutionCurve<SetSpec>::set_C(MatrixType* C, bool passOwnership) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_r0(VectorType* r0, bool passOwnership) {
 	if (r0->dimension() != storageN0())
 		throw std::logic_error("DDESolutionCurve::set_r0(ptr, flag): new r0 has incompatible dimension to the whole structure");
@@ -388,7 +388,7 @@ DDESolutionCurve<SetSpec>::set_r0(VectorType* r0, bool passOwnership) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_Cr0(MatrixType* C, VectorType* r0, bool passCOwnership, bool passR0Ownership) {
 	//
 	// TODO: (!!!URGENT) this does not take into account passOwnership and also forgets previous ptr! FIX FIX FIX! FIX ALSO OTHERS!
@@ -433,7 +433,7 @@ DDESolutionCurve<SetSpec>::set_Cr0(MatrixType* C, VectorType* r0, bool passCOwne
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_B(MatrixType* B, bool passOwnership) {
 	if (!B) throw std::logic_error("DDESolutionCurve::set_B(ptr, flag): B is NULL");
 	try { set_B(*B); } catch (std::logic_error& e) { rethrow("DDESolutionCurve::set_B(ptr, flag):", e); }
@@ -442,7 +442,7 @@ DDESolutionCurve<SetSpec>::set_B(MatrixType* B, bool passOwnership) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_r(VectorType* r, bool passOwnership) {
 	if (!r) throw std::logic_error("DDESolutionCurve::set_r(ptr, flag): r is NULL");
 	try { set_r(*r); } catch (std::logic_error& e) { rethrow("DDESolutionCurve::set_r(ptr, flag):", e); }
@@ -451,7 +451,7 @@ DDESolutionCurve<SetSpec>::set_r(VectorType* r, bool passOwnership) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::set_Binv(MatrixType* invB, bool passOwnership) {
 	if (!invB) throw std::logic_error("DDESolutionCurve::set_Binv(ptr, flag): invB is NULL");
 	try { set_Binv(*invB); } catch (std::logic_error& e) { rethrow("DDESolutionCurve::set_Binv(ptr, flag):", e); }
@@ -490,7 +490,7 @@ typename DDESolutionCurve<SetSpec>::MatrixType* DDESolutionCurve<SetSpec>::take_
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::mul(ScalarType const &c) {
 	m_valueAtCurrent.mul(c);
 	for (auto j = begin(); j != end(); ++j) (*j)->mul(c);
@@ -498,21 +498,21 @@ DDESolutionCurve<SetSpec>::mul(ScalarType const &c) {
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::add(VectorType const &set) {
 	// TODO: (NOT URGENT) implement
 	throw std::logic_error("DDESolutionCurve::add(vector): Not implemented yet");
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::add(BaseClass const &set) {
 	// TODO: (NOT URGENT) implement
 	throw std::logic_error("DDESolutionCurve::add(set): Not implemented yet");
 }
 
 template<typename SetSpec>
-typename DDESolutionCurve<SetSpec>::BaseClass&
+typename DDESolutionCurve<SetSpec>::Class&
 DDESolutionCurve<SetSpec>::mulThenAdd(ScalarType const &c, BaseClass const &set) {
 	// TODO: (NOT URGENT) implement
 	throw std::logic_error("DDESolutionCurve::mulThenAdd: Not implemented yet");
