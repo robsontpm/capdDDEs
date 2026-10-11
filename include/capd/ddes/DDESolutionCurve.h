@@ -424,9 +424,9 @@ public:
 	/** DoubletonStorageInterface: returns a dimension of the r0 vector */
 	size_type storageN0() const { return m_r0->dimension(); }
 	/** see DoubletonInterface */
-	BaseClass& affineTransform(MatrixType const &M, VectorType const &v);
+	Class& affineTransform(MatrixType const &M, VectorType const &v);
 	/** see DoubletonInterface */
-	BaseClass& translate(VectorType const &v);
+	Class& translate(VectorType const &v);
 	/** see DoubletonInterface */
 	VectorType get_x() const;
 	/** see DoubletonInterface */
@@ -440,11 +440,11 @@ public:
 	/** see DoubletonInterface */
 	MatrixType get_Binv() const;
 	/** see DoubletonInterface */
-	BaseClass& set_x(VectorType const &x);
+	Class& set_x(VectorType const &x);
 	/** see DoubletonInterface */
-	BaseClass& set_C(MatrixType const &C);
+	Class& set_C(MatrixType const &C);
 	/** see DoubletonInterface */
-	BaseClass& set_r0(VectorType const &r0);
+	Class& set_r0(VectorType const &r0);
 	/**
 	 * Set C * r0 part of this set (as a doubleton). Because this set is defined by many sub-sets
 	 * then we need to assume some order. The order is that, the value at current time is
@@ -452,27 +452,27 @@ public:
 	 * in the following d rows,..., finally last d rows is the Jet at pastTime().
 	 * see also DoubletonInterface.
 	 */
-	BaseClass& set_Cr0(MatrixType const &C, VectorType const &r0);
+	Class& set_Cr0(MatrixType const &C, VectorType const &r0);
 	/** see DoubletonInterface */
-	BaseClass& set_B(MatrixType const &B);
+	Class& set_B(MatrixType const &B);
 	/** see DoubletonInterface */
-	BaseClass& set_r(VectorType const &r);
+	Class& set_r(VectorType const &r);
 	/** see DoubletonInterface */
-	BaseClass& set_Binv(MatrixType const &Binv);
+	Class& set_Binv(MatrixType const &Binv);
 	/** see DoubletonInterface */
-	BaseClass& set_x(VectorType* x, bool passOwnership = false);
+	Class& set_x(VectorType* x, bool passOwnership = false);
 	/** see DoubletonInterface */
-	BaseClass& set_C(MatrixType* C, bool passOwnership = false);
+	Class& set_C(MatrixType* C, bool passOwnership = false);
 	/** see DoubletonInterface */
-	BaseClass& set_r0(VectorType* r0, bool passOwnership = false);
+	Class& set_r0(VectorType* r0, bool passOwnership = false);
 	/** see DoubletonInterface */
-	BaseClass& set_Cr0(MatrixType* C, VectorType* r0, bool passCOwnership = false, bool passr0Ownership = false);
+	Class& set_Cr0(MatrixType* C, VectorType* r0, bool passCOwnership = false, bool passr0Ownership = false);
 	/** see DoubletonInterface */
-	BaseClass& set_B(MatrixType* B, bool passOwnership = false);
+	Class& set_B(MatrixType* B, bool passOwnership = false);
 	/** see DoubletonInterface */
-	BaseClass& set_r(VectorType* r, bool passOwnership = false);
+	Class& set_r(VectorType* r, bool passOwnership = false);
 	/** see DoubletonInterface */
-	BaseClass& set_Binv(MatrixType* B, bool passOwnership = false);
+	Class& set_Binv(MatrixType* B, bool passOwnership = false);
 	/** see DoubletonInterface */
 	VectorType* take_x();
 	/** see DoubletonInterface */
@@ -493,13 +493,13 @@ public:
 	using BaseClass::hull;  			///< see DoubletonInterface
 	using BaseClass::midPoint;  		///< see DoubletonInterface
 	/** see DoubletonInterface */
-	BaseClass& add(VectorType const & v);
+	Class& add(VectorType const & v);
 	/** see DoubletonInterface */
-	BaseClass& add(BaseClass const & set);
+	Class& add(BaseClass const & set);
 	/** see DoubletonInterface */
-	BaseClass& mulThenAdd(ScalarType const& c, BaseClass const & set);
+	Class& mulThenAdd(ScalarType const& c, BaseClass const & set);
 	/** see DoubletonInterface */
-	BaseClass& mul(ScalarType const& c);
+	Class& mul(ScalarType const& c);
 
 	/** allows to set Xi for all Jets */
 	BaseClass& set_Xi(VectorType const &Xi){

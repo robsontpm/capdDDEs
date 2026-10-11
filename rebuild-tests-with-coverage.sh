@@ -62,3 +62,5 @@ lcov --list coverage.info | grep "DDEForwardTaylorCurvePiece"
 lcov --list coverage.info | grep "DDEPiecewisePolynomialCurve.h"
 
 echo ">> Done."
+lcov --list coverage.info | grep "DDESolutionCurve.h"
+lcov --list coverage.info | grep "DDESolutionCurve.hpp"

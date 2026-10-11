@@ -75,3 +75,7 @@
 - **Found Bug 9:** `DDEPiecewisePolynomialCurve(t0, t1, order, value)` constructor contains a condition `if(t0)` which delegates to the `TimePointType::operator bool()`. In `DiscreteTimeGrid`, this operator evaluates to `!isZero()`. This incorrectly skips adding pieces if the curve starts precisely at the zero grid point.
   - The failing test case is extracted to `tests/capd-ddes-DDEPiecewisePolynomialCurve-BUG-EpsilonShiftAndConstructor.cpp`.
 - **Issues Handled:** Instantiating `GenericJet` with `BasicDoubleton` templates caused profound compilation errors due to conversion ambiguities in `std::vector` initializers inside CAPD library itself (`capd::vectalg::Vector` explicit casts). The issue was bypassed in the tests by directly injecting `capd::DVector` as the internal `DataType` to verify the functionality of the Curve object independently of `Doubleton` quirks.
+
+## DDESolutionCurve.h
+- **BUG**: In constructors like `DDESolutionCurve(t0, t1, order, ...)`, `m_t_current` is initialized to `t0` instead of `t1`. Extracted failing test in `capd-ddes-DDESolutionCurve-BUG-Constructors.cpp`.
+- **BUG**: In `subcurve(t0, t1)`, it throws `std::domain_error` if `t1 == currentTime()` due to a strict bounds check inside `pointToIndex(t1)`. Isolated in `capd-ddes-DDESolutionCurve-BUG-Subcurve.cpp`.

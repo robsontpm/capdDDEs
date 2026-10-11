@@ -39,7 +39,7 @@ make -j4 capd-ddes-DDECommon
 
 # Run the tests
 echo ">> Running current test..."
-ctest -V capd-ddes-DDECommon
+ctest -V
 
 # Generate Coverage Report
 echo ">> Generating Coverage Report..."
